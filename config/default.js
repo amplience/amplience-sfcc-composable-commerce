@@ -1,4 +1,5 @@
 const sites = require('./sites.js')
+const amplience = require('./amplience.config.js')
 module.exports = {
     app: {
         // Customize how your 'site' and 'locale' are displayed in the url.
@@ -18,6 +19,8 @@ module.exports = {
         // },
         // The sites for your app, which is imported from sites.js
         sites,
+        // Amplience Config
+        amplience,
         // Commerce api config
         commerceAPI: {
             proxyPath: `/mobify/proxy/api`,

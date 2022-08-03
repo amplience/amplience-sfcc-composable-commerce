@@ -1,3 +1,4 @@
-export const amplienceConfig = {
-    hub: 'aria'
-}
+module.exports = 
+    {
+        hub: 'sfcccomposable'
+    }

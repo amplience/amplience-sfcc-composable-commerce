@@ -1,5 +1,5 @@
 import { ContentClient } from 'dc-delivery-sdk-js';
-import { amplienceConfig } from '../../config/amplience.config'
+import { app } from '../../config/default';
 
 /*
 Make a service to set VSE on it...
@@ -9,7 +9,7 @@ Get from storage
 Clear functionality would need to be there too.
 */
 
-const client: ContentClient = new ContentClient({ hubName: amplienceConfig.hubName });
+const client: ContentClient = new ContentClient({ hubName: app.amplience.hub });
 export type IdOrKey = { id: string } | { key: string }
 async function fetchContent(args: IdOrKey[]) {
     let responses = await (await client.getContentItems(args)).responses
