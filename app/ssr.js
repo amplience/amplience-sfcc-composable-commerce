@@ -7,9 +7,9 @@
 'use strict'
 
 const path = require('path')
-const {getRuntime} = require('pwa-kit-runtime/ssr/server/express')
-const {isRemote} = require('pwa-kit-runtime/utils/ssr-server')
-const {getConfig} = require('pwa-kit-runtime/utils/ssr-config')
+const { getRuntime } = require('pwa-kit-runtime/ssr/server/express')
+const { isRemote } = require('pwa-kit-runtime/utils/ssr-server')
+const { getConfig } = require('pwa-kit-runtime/utils/ssr-config')
 const helmet = require('helmet')
 
 const options = {
@@ -32,7 +32,7 @@ const options = {
 
 const runtime = getRuntime()
 
-const {handler} = runtime.createHandler(options, (app) => {
+const { handler } = runtime.createHandler(options, (app) => {
     // Set HTTP security headers
     app.use(
         helmet({
