@@ -29,6 +29,9 @@ import Seo from '../../components/seo'
 import Section from '../../components/section'
 import ProductScroller from '../../components/product-scroller'
 
+// Amplience Wrapper Component
+import AmplienceWrapper from '../../components/amplience/Wrapper'
+
 // Others
 import {getAssetUrl} from 'pwa-kit-react-sdk/ssr/universal/utils'
 import {heroFeatures, features} from './data'
@@ -40,6 +43,7 @@ import {
     HOME_SHOP_PRODUCTS_LIMIT
 } from '../../constants'
 import fetchContent from '../../amplience/api'
+import BasicTile from '../../components/basic-tile'
 
 /**
  * This is the home page for Retail React App.
@@ -50,7 +54,16 @@ import fetchContent from '../../amplience/api'
 const Home = ({productSearchResult, isLoading}) => {
     const intl = useIntl()
 
-    fetchContent('995ad4df-d340-4172-a3b6-dcf30694a2d2');
+    //fetchContent('995ad4df-d340-4172-a3b6-dcf30694a2d2');
+
+    var tiledata = {
+        href: 'https://www.amplience.com',
+                img: PropTypes.shape({
+                    src: 'https://cdn.media.amplience.net/i/sfcccomposable/hero.jpg',
+                    alt: 'some alt text'
+                }).isRequired,
+                title: 'this is a basic tile'
+    }
 
     return (
         <Box data-testid="home-page" layerStyle="page">
@@ -59,6 +72,10 @@ const Home = ({productSearchResult, isLoading}) => {
                 description="Commerce Cloud Retail React App"
                 keywords="Commerce Cloud, Retail React App, React Storefront"
             />
+            {/* Must be removed */}
+            <BasicTile {...tiledata} />
+            <AmplienceWrapper {...tiledata}></AmplienceWrapper>
+            {/* End Remove */}
 
             <Hero
                 title={intl.formatMessage({
