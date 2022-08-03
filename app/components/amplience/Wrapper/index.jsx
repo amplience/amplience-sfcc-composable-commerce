@@ -14,7 +14,7 @@ const AmplienceWrapper = ({ fetch, content, components = componentsMapping }) =>
     if (fetch) {
         useEffect(() => {
             fetchContent([fetch]).then(c => c.pop()).then(setFetchedContent)
-        }, [fetchedContent])
+        }, [])
     }
     else {
         setFetchedContent(content)
