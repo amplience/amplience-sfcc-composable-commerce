@@ -42,6 +42,7 @@ const {handler} = runtime.createHandler(options, (app) => {
                     'img-src': ["'self'", '*.commercecloud.salesforce.com', 'data:', '*.cdn.content.amplience.net'],
                     'script-src': ["'self'", "'unsafe-eval'", 'storage.googleapis.com', '*.cdn.content.amplience.net'],
                     'default-src': ["'self'", "'unsafe-eval'", '*.cdn.content.amplience.net'],
+                    'frame-ancestors': ["'self'", '*.amplience.net'],
                     // Do not upgrade insecure requests for local development
                     'upgrade-insecure-requests': isRemote() ? [] : null
                 }
