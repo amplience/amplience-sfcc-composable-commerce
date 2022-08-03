@@ -1,4 +1,3 @@
-module.exports = 
-    {
-        hub: 'sfcccomposable'
-    }
+module.exports = {
+    hub: 'sfcccomposable'
+}

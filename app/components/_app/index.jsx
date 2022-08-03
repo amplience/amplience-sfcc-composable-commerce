@@ -51,7 +51,7 @@ import {DEFAULT_SITE_TITLE, HOME_HREF, THEME_COLOR} from '../../constants'
 import Seo from '../seo'
 import {resolveSiteFromUrl} from '../../utils/site-utils'
 
-import { init } from 'dc-visualization-sdk';
+import {init} from 'dc-visualization-sdk'
 
 const DEFAULT_NAV_DEPTH = 3
 const DEFAULT_ROOT_CATEGORY = 'root'
@@ -87,15 +87,14 @@ const App = (props) => {
     const currency = locale.preferredCurrency || l10n.defaultCurrency
 
     // Setup Realtime Viz
-    const [status, setStatus] = useState('connecting');
+    const [status, setStatus] = useState('connecting')
     const [ampVizSdk, setAmpVizSdk] = useState(null)
 
     const connectRealtimeViz = async () => {
-        const sdk = await init({ debug: true })
+        const sdk = await init({debug: true})
 
         setAmpVizSdk(sdk)
         setStatus('connected')
-
     }
 
     // Set up customer and basket
@@ -188,7 +187,10 @@ const App = (props) => {
                         <RealtimeVisualization.Provider value={{ampVizSdk, status}}>
                             <Seo>
                                 <meta name="theme-color" content={THEME_COLOR} />
-                                <meta name="apple-mobile-web-app-title" content={DEFAULT_SITE_TITLE} />
+                                <meta
+                                    name="apple-mobile-web-app-title"
+                                    content={DEFAULT_SITE_TITLE}
+                                />
                                 <link
                                     rel="apple-touch-icon"
                                     href={getAssetUrl('static/img/global/apple-touch-icon.png')}
@@ -211,9 +213,12 @@ const App = (props) => {
                                 <link
                                     rel="alternate"
                                     hrefLang={site.l10n.defaultLocale.slice(0, 2)}
-                                    href={`${appOrigin}${getPathWithLocale(site.l10n.defaultLocale, {
-                                        location
-                                    })}`}
+                                    href={`${appOrigin}${getPathWithLocale(
+                                        site.l10n.defaultLocale,
+                                        {
+                                            location
+                                        }
+                                    )}`}
                                 />
                                 {/* A wider fallback for user locales that the app does not support */}
                                 <link rel="alternate" hrefLang="x-default" href={`${appOrigin}/`} />
@@ -243,7 +248,9 @@ const App = (props) => {
                                             </HideOnDesktop>
 
                                             <HideOnMobile>
-                                                <ListMenu root={allCategories[DEFAULT_ROOT_CATEGORY]} />
+                                                <ListMenu
+                                                    root={allCategories[DEFAULT_ROOT_CATEGORY]}
+                                                />
                                             </HideOnMobile>
                                         </Header>
                                     ) : (

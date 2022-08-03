@@ -86,13 +86,13 @@ CurrencyProvider.propTypes = {
 
 /**
  * This is the global Amplience Realtime Visualization Context on Non-category pages
- * 
+ *
  * To use these context's simply import them into the component requiring context
  * like the below example:
  *
  * import React, {useContext} from 'react'
  * import {RealtimeVisualization} from './contexts'
- * 
+ *
  * const RTV = useContext(RealtimeVisualization)
  *
  * export const RootCurrencyLabel = () => {
@@ -100,26 +100,30 @@ CurrencyProvider.propTypes = {
  *    return <div>{currency}</div>
  * }
  */
-import { init } from 'dc-visualization-sdk';
+import {init} from 'dc-visualization-sdk'
 
 export const RealtimeVisualization = React.createContext()
 
 // Q: is there a way for a react context to run its own async function?
-// thinking it would be nice NOT to init the viz SDK at the app level so we can 
+// thinking it would be nice NOT to init the viz SDK at the app level so we can
 // import/init only where needed
 export const RealtimeVisualizationProvider = ({status: initState, ampViz}) => {
     const [status, setStatus] = useState(initState)
     const [ampVizSdk, setAmpVizSdk] = useState(ampViz)
 
-    async () => {
-        const sdk = await init({ debug: true })
+    ;async () => {
+        const sdk = await init({debug: true})
 
         setAmpVizSdk(sdk)
         setStatus('connected')
-
     }
 
     return (
-        <RealtimeVisualization.Provider value={[{status, setStatus}, {ampVizSdk, setAmpVizSdk}]} />
+        <RealtimeVisualization.Provider
+            value={[
+                {status, setStatus},
+                {ampVizSdk, setAmpVizSdk}
+            ]}
+        />
     )
 }

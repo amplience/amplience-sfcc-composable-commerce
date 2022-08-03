@@ -11,9 +11,9 @@ import {Box, Flex, Heading, Stack, Image} from '@chakra-ui/react'
 import Button from '../button'
 import {getImageUrl} from '../../utils/image'
 
-const Hero = ({title, img = {}, actions, ...props}) => {
+const Hero = ({title, img, actions, ...props}) => {
     const {image, alt} = img
-    const src = getImageUrl(image);
+    const src = getImageUrl(image)
 
     return (
         <Box
@@ -38,7 +38,13 @@ const Hero = ({title, img = {}, actions, ...props}) => {
                         {title}
                     </Heading>
 
-                    {actions && <Box width={{base: 'full', lg: 'inherit'}}>{actions.map((props) => <Button {...props} />)}</Box>}
+                    {actions && (
+                        <Box width={{base: 'full', lg: 'inherit'}}>
+                            {actions.map((props, ind) => (
+                                <Button key={ind} {...props} />
+                            ))}
+                        </Box>
+                    )}
                 </Stack>
                 <Flex
                     flex={1}
@@ -75,7 +81,7 @@ Hero.propTypes = {
             id: PropTypes.string,
             name: PropTypes.string,
             endpoint: PropTypes.string,
-            defaultHost: PropTypes.string,
+            defaultHost: PropTypes.string
         }),
         alt: PropTypes.string
     }),
@@ -86,10 +92,12 @@ Hero.propTypes = {
     /**
      * Call to action component(s)
      */
-    actions: PropTypes.arrayOf(PropTypes.shape({
-        label: PropTypes.string,
-        url: PropTypes.string,
-    }))
+    actions: PropTypes.arrayOf(
+        PropTypes.shape({
+            label: PropTypes.string,
+            url: PropTypes.string
+        })
+    )
 }
 
 export default Hero

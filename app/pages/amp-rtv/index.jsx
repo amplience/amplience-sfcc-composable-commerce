@@ -5,16 +5,16 @@
  * For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
 
-import React, { useContext, useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import React, {useContext, useEffect, useState} from 'react'
+import {useParams} from 'react-router-dom'
 import PropTypes from 'prop-types'
-import { useIntl } from 'react-intl'
-import { Box } from '@chakra-ui/react'
+import {useIntl} from 'react-intl'
+import {Box} from '@chakra-ui/react'
 import Seo from '../../components/seo'
 
 // Amplience
-import { RealtimeVisualization } from '../../contexts'
-import AmplienceWrapper from '../../components/amplience/Wrapper';
+import {RealtimeVisualization} from '../../contexts'
+import AmplienceWrapper from '../../components/amplience/Wrapper'
 
 /**
  * This is the home page for Retail React App.
@@ -25,45 +25,36 @@ import AmplienceWrapper from '../../components/amplience/Wrapper';
 const AmpRtv = () => {
     const intl = useIntl()
 
-    const {
-        hubname,
-        contentId,
-        vse,
-        locale
-    } = useParams()
+    const {hubname, contentId, vse, locale} = useParams()
 
     const RTV = useContext(RealtimeVisualization)
-    let removeChangedSubscription = undefined;
+    let removeChangedSubscription = undefined
     const [formContent, setFormContent] = useState({})
 
     console.log('RTV: ', RTV)
 
     useEffect(() => {
-        console.log('RTV-Viz Page:', RTV);
+        console.log('RTV-Viz Page:', RTV)
 
         if (RTV !== null && RTV.ampVizSdk !== null) {
-
             const options = {
                 format: 'inline',
                 depth: 'all'
-            };
+            }
 
-            RTV.ampVizSdk.form.get(options).then(model => {
-                setFormContent(model.content);
-            });
-
+            RTV.ampVizSdk.form.get(options).then((model) => {
+                setFormContent(model.content)
+            })
 
             removeChangedSubscription = RTV.ampVizSdk.form.changed((model) => {
                 // handle form model change
-                setFormContent(model.content);
-            });
-
+                setFormContent(model.content)
+            })
         }
-
 
         return () => {
             if (removeChangedSubscription != undefined) {
-                removeChangedSubscription();
+                removeChangedSubscription()
             }
         }
     }, [RTV.ampVizSdk])
@@ -82,7 +73,6 @@ const AmpRtv = () => {
             <p>Content ID: {contentId}</p>
 
             <AmplienceWrapper content={formContent} type="SLOT" />
-
         </Box>
     )
 }
@@ -93,6 +83,6 @@ AmpRtv.propTypes = {
     isLoading: PropTypes.bool
 }
 
-AmpRtv.getProps = async () => { }
+AmpRtv.getProps = async () => {}
 
 export default AmpRtv

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, {useEffect, useState} from 'react'
 // MUST BE REMOVED
 import PropTypes from 'prop-types'
 
@@ -16,7 +16,7 @@ import ShoppableImage from '../ShoppableImage/ShoppableImage'; */
 
 const componentsMapping = {
     // MUST BE REMOVED
-    'examplemappingtobasictile': BasicTile
+    examplemappingtobasictile: BasicTile
     /* 'https://amp-rsa.amplience.com/card-enhanced.json': CardEnhanced,
     'https://amp-rsa.amplience.com/grid-lock.json': GridLock,
     'https://amp-rsa.amplience.com/image.json': Image,
@@ -28,27 +28,31 @@ const componentsMapping = {
     'https://amp-rsa.amplience.com/sfcc-product-carousel.json': ProductCarousel */
 }
 
-const AmplienceWrapper = ({ content, components = componentsMapping }) => {
+const AmplienceWrapper = ({content, components = componentsMapping}) => {
     const [publishedContent, setPublishedContent] = useState(undefined)
 
-    var passedContent = publishedContent || content;
+    var passedContent = publishedContent || content
     //MUST BE REMOVED
-        passedContent = {
-            _meta:{
-                schema: 'examplemappingtobasictile'
-            },
-            href: 'https://www.amplience.com',
-            img: PropTypes.shape({
-                src: 'https://cdn.media.amplience.net/i/sfcccomposable/hero',
-                alt: 'some alt text'
-            }).isRequired,
-            title: 'this is a basic tile'
-        }
+    passedContent = {
+        _meta: {
+            schema: 'examplemappingtobasictile'
+        },
+        href: 'https://www.amplience.com',
+        img: PropTypes.shape({
+            src: 'https://cdn.media.amplience.net/i/sfcccomposable/hero',
+            alt: 'some alt text'
+        }).isRequired,
+        title: 'this is a basic tile'
+    }
     // END REMOVE
-    const Component = components[passedContent?._meta?.schema];
-    const children = Component ? <Component {...passedContent} /> : <>{JSON.stringify(passedContent)}</>;
+    const Component = components[passedContent?._meta?.schema]
+    const children = Component ? (
+        <Component {...passedContent} />
+    ) : (
+        <>{JSON.stringify(passedContent)}</>
+    )
 
-    return children;
+    return children
 }
 
 AmplienceWrapper.displayName = 'Amplience Wrapper Block'

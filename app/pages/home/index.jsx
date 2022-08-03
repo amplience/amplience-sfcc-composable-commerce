@@ -67,25 +67,24 @@ const Home = ({productSearchResult, isLoading}) => {
     }
 
     return (
-        <Box data-testid='home-page' layerStyle='page'>
+        <Box data-testid="home-page" layerStyle="page">
             <Seo
-                title='Home Page'
-                description='Commerce Cloud Retail React App'
-                keywords='Commerce Cloud, Retail React App, React Storefront'
+                title="Home Page"
+                description="Commerce Cloud Retail React App"
+                keywords="Commerce Cloud, Retail React App, React Storefront"
             />
             {/* Must be removed */}
             <BasicTile {...tiledata} />
             <AmplienceWrapper {...tiledata}></AmplienceWrapper>
             {/* End Remove */}
-            {console.log(heroTestData)}
             <Hero {...heroTestData.content} />
 
             <Section
                 background={'gray.50'}
-                marginX='auto'
+                marginX="auto"
                 paddingY={{base: 8, md: 16}}
                 paddingX={{base: 4, md: 8}}
-                borderRadius='base'
+                borderRadius="base"
                 width={{base: '100vw', md: 'inherit'}}
                 position={{base: 'relative', md: 'inherit'}}
                 left={{base: '50%', md: 'inherit'}}
@@ -107,7 +106,7 @@ const Home = ({productSearchResult, isLoading}) => {
                                 boxShadow={'0px 2px 2px rgba(0, 0, 0, 0.1)'}
                                 borderRadius={'4px'}
                             >
-                                <Link target='_blank' href={feature.href}>
+                                <Link target="_blank" href={feature.href}>
                                     <HStack>
                                         <Flex
                                             paddingLeft={6}
@@ -117,7 +116,7 @@ const Home = ({productSearchResult, isLoading}) => {
                                         >
                                             {feature.icon}
                                         </Flex>
-                                        <Text fontWeight='700'>
+                                        <Text fontWeight="700">
                                             {intl.formatMessage(featureMessage.title)}
                                         </Text>
                                     </HStack>
@@ -147,7 +146,7 @@ const Home = ({productSearchResult, isLoading}) => {
                         {
                             docLink: (
                                 <Link
-                                    target='_blank'
+                                    target="_blank"
                                     href={'https://sfdc.co/business-manager-manage-catalogs'}
                                     textDecoration={'none'}
                                     position={'relative'}
@@ -229,7 +228,7 @@ const Home = ({productSearchResult, isLoading}) => {
                 padding={4}
                 paddingTop={32}
                 title={intl.formatMessage({
-                    defaultMessage: 'We\'re here to help',
+                    defaultMessage: "We're here to help",
                     id: 'home.heading.here_to_help'
                 })}
                 subtitle={
@@ -252,13 +251,13 @@ const Home = ({productSearchResult, isLoading}) => {
                 actions={
                     <Button
                         as={Link}
-                        href='https://help.salesforce.com/s/?language=en_US'
-                        target='_blank'
+                        href="https://help.salesforce.com/s/?language=en_US"
+                        target="_blank"
                         width={'auto'}
                         paddingX={7}
                         _hover={{textDecoration: 'none'}}
                     >
-                        <FormattedMessage defaultMessage='Contact Us' id='home.link.contact_us' />
+                        <FormattedMessage defaultMessage="Contact Us" id="home.link.contact_us" />
                     </Button>
                 }
                 maxWidth={'xl'}
