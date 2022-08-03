@@ -8,7 +8,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {useIntl, FormattedMessage} from 'react-intl'
-import {heroTestData} from '../../components/hero/data'
 
 // Components
 import {
@@ -25,7 +24,6 @@ import {
 } from '@chakra-ui/react'
 
 // Project Components
-import Hero from '../../components/hero'
 import Seo from '../../components/seo'
 import Section from '../../components/section'
 import ProductScroller from '../../components/product-scroller'
@@ -34,7 +32,6 @@ import ProductScroller from '../../components/product-scroller'
 import AmplienceWrapper from '../../components/amplience/Wrapper'
 
 // Others
-import {getAssetUrl} from 'pwa-kit-react-sdk/ssr/universal/utils'
 import {heroFeatures, features} from './data'
 
 // Constants
@@ -43,8 +40,6 @@ import {
     HOME_SHOP_PRODUCTS_CATEGORY_ID,
     HOME_SHOP_PRODUCTS_LIMIT
 } from '../../constants'
-import fetchContent from '../../amplience/api'
-import BasicTile from '../../components/basic-tile'
 
 /**
  * This is the home page for Retail React App.
@@ -55,17 +50,6 @@ import BasicTile from '../../components/basic-tile'
 const Home = ({productSearchResult, isLoading}) => {
     const intl = useIntl()
 
-    //fetchContent('995ad4df-d340-4172-a3b6-dcf30694a2d2');
-
-    var tiledata = {
-        href: 'https://www.amplience.com',
-        img: PropTypes.shape({
-            src: 'https://cdn.media.amplience.net/i/sfcccomposable/hero.jpg',
-            alt: 'some alt text'
-        }).isRequired,
-        title: 'this is a basic tile'
-    }
-
     return (
         <Box data-testid="home-page" layerStyle="page">
             <Seo
@@ -73,11 +57,8 @@ const Home = ({productSearchResult, isLoading}) => {
                 description="Commerce Cloud Retail React App"
                 keywords="Commerce Cloud, Retail React App, React Storefront"
             />
-            {/* Must be removed */}
-            <BasicTile {...tiledata} />
-            <AmplienceWrapper {...tiledata}></AmplienceWrapper>
-            {/* End Remove */}
-            <Hero {...heroTestData.content} />
+
+            <AmplienceWrapper fetch={{ key: 'hero' }}></AmplienceWrapper>
 
             <Section
                 background={'gray.50'}
@@ -104,16 +85,14 @@ const Home = ({productSearchResult, isLoading}) => {
                                 key={index}
                                 background={'white'}
                                 boxShadow={'0px 2px 2px rgba(0, 0, 0, 0.1)'}
-                                borderRadius={'4px'}
-                            >
+                                borderRadius={'4px'}>
                                 <Link target="_blank" href={feature.href}>
                                     <HStack>
                                         <Flex
                                             paddingLeft={6}
                                             height={24}
                                             align={'center'}
-                                            justify={'center'}
-                                        >
+                                            justify={'center'}>
                                             {feature.icon}
                                         </Flex>
                                         <Text fontWeight="700">

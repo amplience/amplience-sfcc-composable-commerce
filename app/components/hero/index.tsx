@@ -11,6 +11,16 @@ import {Box, Flex, Heading, Stack, Image} from '@chakra-ui/react'
 import Button from '../button'
 import {getImageUrl} from '../../utils/image'
 
+type LocalizedValues = {
+    values: LocaleValue[]
+}
+
+type LocaleValue = {
+    locale: string
+    value: string
+}
+
+const findDefaultLocaleString = (lva: LocalizedValues) => lva.values.find(val => val.locale === 'en-US')?.value || lva.values[0]?.value
 const Hero = ({title, img, actions, ...props}) => {
     const {image, alt} = img
     const src = getImageUrl(image)
@@ -35,13 +45,17 @@ const Hero = ({title, img, actions, ...props}) => {
                         fontSize={{base: '4xl', md: '5xl', lg: '6xl'}}
                         maxWidth={{base: '75%', md: '50%', lg: 'md'}}
                     >
-                        {title}
+                        {findDefaultLocaleString(title)}
                     </Heading>
 
                     {actions && (
                         <Box width={{base: 'full', lg: 'inherit'}}>
                             {actions.map((props, ind) => (
-                                <Button key={ind} {...props} />
+                                <Button 
+                                    key={ind} 
+                                    label={findDefaultLocaleString(props.label)}
+                                    url={props.url}>
+                                </Button>
                             ))}
                         </Box>
                     )}
@@ -72,6 +86,15 @@ const Hero = ({title, img, actions, ...props}) => {
 
 Hero.displayName = 'Hero'
 
+const localeValueArray = PropTypes.shape({
+    values: PropTypes.arrayOf(
+        PropTypes.shape({
+            locale: PropTypes.string,
+            value: PropTypes.string
+        })
+    )
+})
+
 Hero.propTypes = {
     /**
      * Hero component image
@@ -88,13 +111,14 @@ Hero.propTypes = {
     /**
      * Hero component main title
      */
-    title: PropTypes.string,
+    // title: PropTypes.string,
+    title: localeValueArray,
     /**
      * Call to action component(s)
      */
     actions: PropTypes.arrayOf(
         PropTypes.shape({
-            label: PropTypes.string,
+            label: localeValueArray,
             url: PropTypes.string
         })
     )
