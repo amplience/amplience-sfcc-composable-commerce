@@ -52,8 +52,6 @@ import {
 const Home = ({ productSearchResult, isLoading, homeSlotTop }) => {
     const intl = useIntl()
 
-    console.log('What is the content', homeSlotTop)
-
     return (
         <Box data-testid="home-page" layerStyle="page">
             <Seo

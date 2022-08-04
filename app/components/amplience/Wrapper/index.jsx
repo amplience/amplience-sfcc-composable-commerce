@@ -4,10 +4,13 @@ import React, {useEffect, useState} from 'react'
 import fetchContent from '../../../amplience/api'
 import Hero from '../../hero'
 import Section from '../../section'
+// Slots
+import flexibleListSlot from '../flexibleListSlot'
 
 const componentsMapping = {
     'https://sfcc.com/hero': Hero,
-    'https://sfcc.com/section': Section
+    'https://sfcc.com/section': Section,
+    'https://sfcc.com/slots/flexiblelist': flexibleListSlot
 }
 
 const AmplienceWrapper = ({fetch, content, components = componentsMapping}) => {
@@ -24,6 +27,7 @@ const AmplienceWrapper = ({fetch, content, components = componentsMapping}) => {
         }
     }, [fetch, content])
 
+    
     const Component = components[fetchedContent?._meta?.schema]
     return Component ? <Component {...fetchedContent} /> : <>{JSON.stringify(fetchedContent)}</>
 }
