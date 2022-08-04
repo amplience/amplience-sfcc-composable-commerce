@@ -148,10 +148,8 @@ export const AmplienceContextProvider = ({vse, vseTimestamp, children}) => {
     // Init client using VSE
     const [client] = useState(new AmplienceAPI())
 
-    useEffect(() => {
-        // Switch the API to use the provided VSE, if present.
-        client.setVse(vse)
-    }, [vse, vseTimestamp])
+    // Switch the API to use the provided VSE, if present.
+    client.setVse(vse)
 
     return (
         <AmplienceContext.Provider value={{vse, vseTimestamp, client}}>
