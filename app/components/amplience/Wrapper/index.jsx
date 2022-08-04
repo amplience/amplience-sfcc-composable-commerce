@@ -12,8 +12,6 @@ const componentsMapping = {
 
 const AmplienceWrapper = ({fetch, content, components = componentsMapping}) => {
     const [fetchedContent, setFetchedContent] = useState(undefined)
-
-    console.log(content)
     useEffect(() => {
         const fetchCont = async () => {
             const data = await fetchContent([fetch])

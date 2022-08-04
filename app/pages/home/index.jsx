@@ -7,7 +7,9 @@
 
 import React from 'react'
 import PropTypes from 'prop-types'
-import {useIntl, FormattedMessage} from 'react-intl'
+import { useIntl, FormattedMessage } from 'react-intl'
+import fetchContent from '../../amplience/api'
+import { Heading } from '@chakra-ui/react'
 
 // Components
 import {
@@ -32,7 +34,7 @@ import ProductScroller from '../../components/product-scroller'
 import AmplienceWrapper from '../../components/amplience/Wrapper'
 
 // Others
-import {heroFeatures, features} from './data'
+import { heroFeatures, features } from './data'
 
 // Constants
 import {
@@ -47,8 +49,10 @@ import {
  * The page renders SEO metadata and a few promotion
  * categories and products, data is from local file.
  */
-const Home = ({productSearchResult, isLoading}) => {
+const Home = ({ productSearchResult, isLoading, homeSlotTop }) => {
     const intl = useIntl()
+
+    console.log('What is the content', homeSlotTop)
 
     return (
         <Box data-testid="home-page" layerStyle="page">
@@ -57,27 +61,45 @@ const Home = ({productSearchResult, isLoading}) => {
                 description="Commerce Cloud Retail React App"
                 keywords="Commerce Cloud, Retail React App, React Storefront"
             />
+            <Heading
+                as="h3"
+            >
+                Slot - Amplience Wrapper by key
+            </Heading>
+            <AmplienceWrapper fetch={{ key: 'home/slot/top' }}></AmplienceWrapper>
 
+            <Heading
+                as="h3"
+            >
+                Slot - Amplience Wrapper by Content
+            </Heading>
+            <AmplienceWrapper content={homeSlotTop}></AmplienceWrapper>
+
+            <Heading
+                as="h3"
+            >
+                Content Directly by key
+            </Heading>
             <AmplienceWrapper fetch={{ key: 'hero' }}></AmplienceWrapper>
             <AmplienceWrapper fetch={{ key: 'section' }}></AmplienceWrapper>
 
             <Section
                 background={'gray.50'}
                 marginX="auto"
-                paddingY={{base: 8, md: 16}}
-                paddingX={{base: 4, md: 8}}
+                paddingY={{ base: 8, md: 16 }}
+                paddingX={{ base: 4, md: 8 }}
                 borderRadius="base"
-                width={{base: '100vw', md: 'inherit'}}
-                position={{base: 'relative', md: 'inherit'}}
-                left={{base: '50%', md: 'inherit'}}
-                right={{base: '50%', md: 'inherit'}}
-                marginLeft={{base: '-50vw', md: 'auto'}}
-                marginRight={{base: '-50vw', md: 'auto'}}
+                width={{ base: '100vw', md: 'inherit' }}
+                position={{ base: 'relative', md: 'inherit' }}
+                left={{ base: '50%', md: 'inherit' }}
+                right={{ base: '50%', md: 'inherit' }}
+                marginLeft={{ base: '-50vw', md: 'auto' }}
+                marginRight={{ base: '-50vw', md: 'auto' }}
             >
                 <SimpleGrid
-                    columns={{base: 1, md: 1, lg: 3}}
-                    spacingX={{base: 1, md: 4}}
-                    spacingY={{base: 4, md: 14}}
+                    columns={{ base: 1, md: 1, lg: 3 }}
+                    spacingX={{ base: 1, md: 4 }}
+                    spacingY={{ base: 4, md: 14 }}
                 >
                     {heroFeatures.map((feature, index) => {
                         const featureMessage = feature.message
@@ -140,7 +162,7 @@ const Home = ({productSearchResult, isLoading}) => {
                                         right: 0,
                                         background: 'gray.700'
                                     }}
-                                    _hover={{textDecoration: 'none'}}
+                                    _hover={{ textDecoration: 'none' }}
                                 >
                                     {intl.formatMessage({
                                         defaultMessage: 'Read docs',
@@ -174,7 +196,7 @@ const Home = ({productSearchResult, isLoading}) => {
                 })}
             >
                 <Container maxW={'6xl'} marginTop={10}>
-                    <SimpleGrid columns={{base: 1, md: 2, lg: 3}} spacing={10}>
+                    <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={10}>
                         {features.map((feature, index) => {
                             const featureMessage = feature.message
                             return (
@@ -236,10 +258,10 @@ const Home = ({productSearchResult, isLoading}) => {
 
 Home.getTemplateName = () => 'home'
 
-Home.shouldGetProps = ({previousLocation, location}) =>
+Home.shouldGetProps = ({ previousLocation, location }) =>
     !previousLocation || previousLocation.pathname !== location.pathname
 
-Home.getProps = async ({res, api}) => {
+Home.getProps = async ({ res, api }) => {
     if (res) {
         res.set('Cache-Control', `max-age=${MAX_CACHE_AGE}`)
     }
@@ -251,10 +273,11 @@ Home.getProps = async ({res, api}) => {
         }
     })
 
-    // const homepage = await (await fetchContent([{ key: 'homepage' }])).pop()
+    const homeSlotTop = await (await fetchContent([{ key: 'home/slot/top' }])).pop()
+
     // const slots = await (await fetchContent(homepage.slots.map(slot => ({ id: slot.id }))))
 
-    return {productSearchResult}
+    return { productSearchResult, homeSlotTop }
 }
 
 Home.propTypes = {
