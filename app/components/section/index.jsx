@@ -23,12 +23,12 @@ const Section = ({title, subtitle, actions, maxWidth, children, ...props}) => {
             <Stack spacing={4} as={Container} maxW={sectionMaxWidth} textAlign={'center'}>
                 {title && (
                     <Heading as='h2' fontSize={40} textAlign='center'>
-                        {findDefaultLocaleString(title)}
+                        {title}
                     </Heading>
                 )}
                 {subtitle && (
                     <Text color={'gray.700'} fontWeight={600}>
-                        {findDefaultLocaleString(subtitle)}
+                        {subtitle}
                     </Text>
                 )}
 
@@ -37,7 +37,7 @@ const Section = ({title, subtitle, actions, maxWidth, children, ...props}) => {
                         {actions.map((props, ind) => (
                             <Button
                                 key={ind}
-                                label={findDefaultLocaleString(props.label)}
+                                label={props.label}
                                 url={props.url}>
                             </Button>
                         ))}
@@ -55,11 +55,11 @@ Section.propTypes = {
     /**
      * Section component main title
      */
-    title: localeValueArray,
+    title: PropTypes.string,
     /**
      * Section component subtitle
      */
-    subtitle: localeValueArray,
+    subtitle: PropTypes.string,
     /**
      * Section children node(s)
      */
@@ -69,7 +69,7 @@ Section.propTypes = {
      */
     actions: PropTypes.arrayOf(
         PropTypes.shape({
-            label: localeValueArray,
+            label: PropTypes.string,
             url: PropTypes.string
         })
     ),

@@ -4,6 +4,8 @@ import React, {useEffect, useState} from 'react'
 import fetchContent from '../../../amplience/api'
 import Hero from '../../hero'
 import Section from '../../section'
+import useLocale from '../../../hooks/use-locale'
+import {useIntl} from 'react-intl'
 
 const componentsMapping = {
     'https://sfcc.com/hero': Hero,
@@ -12,9 +14,10 @@ const componentsMapping = {
 
 const AmplienceWrapper = ({fetch, content, components = componentsMapping}) => {
     const [fetchedContent, setFetchedContent] = useState(undefined)
+    const {locale} = useIntl();
     useEffect(() => {
         const fetchCont = async () => {
-            const data = await fetchContent([fetch])
+            const data = await fetchContent([fetch], locale)
             setFetchedContent(data.pop())
         }
         if (fetch) {
