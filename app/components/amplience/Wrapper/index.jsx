@@ -3,9 +3,11 @@ import React, {useEffect, useState} from 'react'
 //Amplience Rendering Templates
 import fetchContent from '../../../amplience/api'
 import Hero from '../../hero'
+import Section from '../../section'
 
 const componentsMapping = {
-    'https://sfcc.com/hero': Hero
+    'https://sfcc.com/hero': Hero,
+    'https://sfcc.com/section': Section
 }
 
 const AmplienceWrapper = ({fetch, content, components = componentsMapping}) => {

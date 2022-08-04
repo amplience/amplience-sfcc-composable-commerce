@@ -20,7 +20,7 @@ type LocaleValue = {
     value: string
 }
 
-const findDefaultLocaleString = (lva: LocalizedValues) => lva && lva.values ? lva.values.find(val => val.locale === 'en-US')?.value || lva.values[0]?.value : lva;
+export const findDefaultLocaleString = (lva: LocalizedValues) => lva && lva.values ? lva.values.find(val => val.locale === 'en-US')?.value || lva.values[0]?.value : lva;
 const Hero = ({title, img, actions, ...props}) => {
     const {image, alt} = img
     const src = getImageUrl(image)
@@ -86,7 +86,7 @@ const Hero = ({title, img, actions, ...props}) => {
 
 Hero.displayName = 'Hero'
 
-const localeValueArray = PropTypes.shape({
+export const localeValueArray = PropTypes.shape({
     values: PropTypes.arrayOf(
         PropTypes.shape({
             locale: PropTypes.string,
