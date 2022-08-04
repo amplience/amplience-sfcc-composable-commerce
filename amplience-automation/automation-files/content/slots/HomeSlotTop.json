@@ -1,0 +1,38 @@
+{
+  "id": "efd4fdec-3586-4bfd-9dc4-602e8b198ef6",
+  "contentRepositoryId": "62e973a2c9e77c0001659dd9",
+  "folderId": null,
+  "body": {
+    "_meta": {
+      "name": "Home/Slot/Top",
+      "schema": "https://sfcc.com/slots/flexiblelist",
+      "deliveryKey": "home/slot/top",
+      "edition": {
+        "id": "62eb93804cedfd0001cc3565",
+        "start": "2022-08-06T23:00:00.443Z",
+        "end": "2022-08-13T22:59:59.999Z"
+      }
+    },
+    "content": [
+      {
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link",
+          "locked": false,
+          "rootContentItemId": "f02a8387-fa6e-4875-b263-724db2d41334"
+        },
+        "contentType": "https://sfcc.com/hero",
+        "id": "f02a8387-fa6e-4875-b263-724db2d41334"
+      }
+    ]
+  },
+  "version": 8,
+  "label": "Home/Slot/Top",
+  "status": "ACTIVE",
+  "createdBy": "9afdef5b-e35e-472a-8265-f37d29ff1154",
+  "createdDate": "2022-08-04T09:25:08.509Z",
+  "lastModifiedBy": "9afdef5b-e35e-472a-8265-f37d29ff1154",
+  "lastModifiedDate": "2022-08-04T09:38:23.005Z",
+  "lastPublishedVersion": 5,
+  "lastPublishedDate": "2022-08-04T10:00:09.491Z",
+  "deliveryId": "efd4fdec-3586-4bfd-9dc4-602e8b198ef6"
+}

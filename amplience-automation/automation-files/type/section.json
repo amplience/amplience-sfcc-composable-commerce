@@ -1,0 +1,31 @@
+{
+  "contentTypeUri": "https://sfcc.com/section",
+  "status": "ACTIVE",
+  "settings": {
+    "label": "Section",
+    "icons": [
+      {
+        "size": 256,
+        "url": "https://bigcontent.io/cms/icons/ca-types-primitives.png"
+      }
+    ],
+    "visualizations": [
+      {
+        "label": "Localhost",
+        "templatedUri": "http://localhost:3000/visualization/{{hub.name}}/{{content.sys.id}}/{{vse.domain}}/{{locales}}",
+        "default": true
+      }
+    ],
+    "cards": []
+  },
+  "repositories": [
+    "content",
+    "slots",
+    "sitestructure",
+    "contentfr",
+    "contentde",
+    "contentit",
+    "contentes",
+    "emailmarketing"
+  ]
+}

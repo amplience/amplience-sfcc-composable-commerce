@@ -1,0 +1,55 @@
+{
+  "id": "62e96f2bc9e77c0001d98ec5",
+  "name": "sfcccomposable",
+  "label": "SFCC Composable Commerce",
+  "settings": {
+    "devices": [
+      {
+        "name": "Desktop",
+        "width": 1024,
+        "height": 768,
+        "orientate": false
+      },
+      {
+        "name": "Tablet",
+        "width": 640,
+        "height": 768,
+        "orientate": false
+      },
+      {
+        "name": "Mobile",
+        "width": 320,
+        "height": 512,
+        "orientate": false
+      },
+      {
+        "name": "Desktop HD",
+        "width": 1920,
+        "height": 1080,
+        "orientate": false
+      },
+      {
+        "name": "4k",
+        "width": 3840,
+        "height": 2160,
+        "orientate": false
+      }
+    ],
+    "applications": [
+      {
+        "name": "LocalHost",
+        "templatedUri": "http://localhost:3000/?vse={{vse.domain}}&vse-timestamp={{context.timestamp}}"
+      }
+    ],
+    "localization": {
+      "locales": [
+        "en-US",
+        "fr-FR",
+        "de-DE",
+        "es-ES",
+        "it-IT"
+      ]
+    }
+  },
+  "workflowStates": []
+}

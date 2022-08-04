@@ -1,0 +1,50 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://sfcc.com/slots/flexiblelist",
+	"title": "Slexible List Slot",
+	"description": "A slot that contains a flexible list of content",
+	"allOf": [
+		{
+			"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+		}
+	],
+	"type": "object",
+	"properties": {
+		"_meta": {
+			"type": "object",
+			"properties": {
+				"deliveryKey": {
+					"type": "string",
+					"title": "Delivery Key",
+					"description": "A unique key for this slot in your application (home/top)"
+				}
+			}
+		},
+		"content": {
+			"title": "Content",
+			"type": "array",
+			"minItems": 0,
+			"maxItems": 10,
+			"items": {
+				"allOf": [
+					{
+						"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+					},
+					{
+						"properties": {
+							"contentType": {
+								"enum": [
+									"https://sfcc.com/hero",
+									"https://sfcc.com/section"
+								]
+							}
+						}
+					}
+				]
+			}
+		}
+	},
+	"propertyOrder": [
+		"content"
+	]
+}

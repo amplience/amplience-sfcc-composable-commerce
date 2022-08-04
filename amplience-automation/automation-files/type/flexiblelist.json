@@ -1,0 +1,24 @@
+{
+  "contentTypeUri": "https://sfcc.com/slots/flexiblelist",
+  "status": "ACTIVE",
+  "settings": {
+    "label": "Flexible List Slot",
+    "icons": [
+      {
+        "size": 256,
+        "url": "https://bigcontent.io/cms/icons/experience-management/exp-slot.png"
+      }
+    ],
+    "visualizations": [
+      {
+        "label": "LocalHost",
+        "templatedUri": "http://localhost:3000/visualization/{{hub.name}}/{{content.sys.id}}/{{vse.domain}}/{{locales}}",
+        "default": true
+      }
+    ],
+    "cards": []
+  },
+  "repositories": [
+    "slots"
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "id": "a14b3f21-b6b0-43d1-9e35-f50c2addd5cc",
+  "contentRepositoryId": "62e9739cc9e77c0001659dd7",
+  "folderId": null,
+  "body": {
+    "_meta": {
+      "name": "Hero Version 02",
+      "schema": "https://sfcc.com/hero"
+    },
+    "title": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Hero Version 02"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Héros Version 02"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Heldenversion 02"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Héroe Versión 02"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Eroe versione 02"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "img": {
+      "image": {
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+        },
+        "id": "9350bcc5-3a22-4e4d-be56-03e1c31aaa09",
+        "name": "hero",
+        "endpoint": "sfcccomposable",
+        "defaultHost": "cdn.media.amplience.net"
+      },
+      "alt": "img"
+    },
+    "actions": [
+      {
+        "label": {
+          "values": [
+            {
+              "locale": "en-US",
+              "value": "Get Started"
+            },
+            {
+              "locale": "fr-FR",
+              "value": "Commencer"
+            },
+            {
+              "locale": "de-DE",
+              "value": "Loslegen"
+            },
+            {
+              "locale": "es-ES",
+              "value": "Empezar"
+            },
+            {
+              "locale": "it-IT",
+              "value": "Iniziare"
+            }
+          ],
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+          }
+        },
+        "url": "https://developer.salesforce.com/docs/commerce/pwa-kit-managed-runtime/guide/getting-started.html"
+      }
+    ]
+  },
+  "version": 2,
+  "label": "Hero Version 02",
+  "status": "ACTIVE",
+  "createdBy": "9afdef5b-e35e-472a-8265-f37d29ff1154",
+  "createdDate": "2022-08-04T09:31:26.843Z",
+  "lastModifiedBy": "9afdef5b-e35e-472a-8265-f37d29ff1154",
+  "lastModifiedDate": "2022-08-04T09:31:39.318Z",
+  "deliveryId": "a14b3f21-b6b0-43d1-9e35-f50c2addd5cc"
+}

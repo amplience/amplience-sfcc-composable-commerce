@@ -1,0 +1,5 @@
+{
+  "body": "./schemas/section-schema.json",
+  "schemaId": "https://sfcc.com/section",
+  "validationLevel": "CONTENT_TYPE"
+}
