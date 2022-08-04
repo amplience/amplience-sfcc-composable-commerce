@@ -8,7 +8,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {useIntl, FormattedMessage} from 'react-intl'
-import fetchContent from '../../amplience/api'
 import {Heading} from '@chakra-ui/react'
 
 // Components
@@ -224,7 +223,7 @@ Home.getTemplateName = () => 'home'
 Home.shouldGetProps = ({previousLocation, location}) =>
     !previousLocation || previousLocation.pathname !== location.pathname
 
-Home.getProps = async ({res, api}) => {
+Home.getProps = async ({res, api, ampClient}) => {
     if (res) {
         res.set('Cache-Control', `max-age=${MAX_CACHE_AGE}`)
     }
@@ -236,7 +235,7 @@ Home.getProps = async ({res, api}) => {
         }
     })
 
-    const homeSlotTop = await (await fetchContent([{key: 'home/slot/top'}])).pop()
+    const homeSlotTop = await (await ampClient.fetchContent([{key: 'home/slot/top'}])).pop()
 
     // const slots = await (await fetchContent(homepage.slots.map(slot => ({ id: slot.id }))))
 

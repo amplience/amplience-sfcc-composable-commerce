@@ -1,12 +1,12 @@
-import React, {useEffect, useState} from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 
 //Amplience Rendering Templates
-import fetchContent from '../../../amplience/api'
 import Hero from '../../hero'
 import Section from '../../section'
 // Slots
 import flexibleListSlot from '../flexibleListSlot'
 import {useIntl} from 'react-intl'
+import {AmplienceContext} from '../../../contexts'
 
 const componentsMapping = {
     'https://sfcc.com/hero': Hero,
@@ -15,11 +15,13 @@ const componentsMapping = {
 }
 
 const AmplienceWrapper = ({fetch, content, components = componentsMapping}) => {
+    const {client} = useContext(AmplienceContext)
     const [fetchedContent, setFetchedContent] = useState(undefined)
-    const {locale} = useIntl();
+    const {locale} = useIntl()
+
     useEffect(() => {
         const fetchCont = async () => {
-            const data = await fetchContent([fetch], locale)
+            const data = await client.fetchContent([fetch], locale)
             setFetchedContent(data.pop())
         }
         if (fetch) {
@@ -29,7 +31,6 @@ const AmplienceWrapper = ({fetch, content, components = componentsMapping}) => {
         }
     }, [fetch, content])
 
-    
     const Component = components[fetchedContent?._meta?.schema]
     return Component ? <Component {...fetchedContent} /> : <>{JSON.stringify(fetchedContent)}</>
 }

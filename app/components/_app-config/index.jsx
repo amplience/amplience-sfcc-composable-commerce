@@ -22,6 +22,7 @@ import {
 import {resolveSiteFromUrl} from '../../utils/site-utils'
 import {resolveLocaleFromUrl} from '../../utils/utils'
 import {getConfig} from 'pwa-kit-runtime/utils/ssr-config'
+import {AmplienceAPI} from '../../amplience/api'
 
 /**
  * Use the AppConfig component to inject extra arguments into the getProps
@@ -66,13 +67,15 @@ AppConfig.restore = (locals = {}) => {
     apiConfig.parameters.siteId = site.id
 
     locals.api = new CommerceAPI({...apiConfig, locale: locale.id, currency})
+    locals.ampClient = new AmplienceAPI()
 }
 
 AppConfig.freeze = () => undefined
 
 AppConfig.extraGetPropsArgs = (locals = {}) => {
     return {
-        api: locals.api
+        api: locals.api,
+        ampClient: locals.ampClient
     }
 }
 

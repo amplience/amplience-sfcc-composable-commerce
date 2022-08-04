@@ -16,7 +16,13 @@ import {Box, useDisclosure, useStyleConfig} from '@chakra-ui/react'
 import {SkipNavLink, SkipNavContent} from '@chakra-ui/skip-nav'
 
 // Contexts
-import {CategoriesProvider, CurrencyProvider, RealtimeVisualization} from '../../contexts'
+import {
+    CategoriesProvider,
+    CurrencyProvider,
+    generateVseProps,
+    RealtimeVisualization,
+    AmplienceContextProvider
+} from '../../contexts'
 
 // Local Project Components
 import Header from '../../components/header'
@@ -52,12 +58,13 @@ import Seo from '../seo'
 import {resolveSiteFromUrl} from '../../utils/site-utils'
 
 import {init} from 'dc-visualization-sdk'
+import PreviewHeader from '../amplience/preview-header'
 
 const DEFAULT_NAV_DEPTH = 3
 const DEFAULT_ROOT_CATEGORY = 'root'
 
 const App = (props) => {
-    const {children, targetLocale, messages, categories: allCategories = {}} = props
+    const {children, targetLocale, messages, categories: allCategories = {}, vseProps} = props
 
     const appOrigin = getAppOrigin()
 
@@ -162,6 +169,12 @@ const App = (props) => {
         history.push(path)
     }
 
+    const headerStyles = {...styles.headerWrapper}
+
+    if (vseProps.vse) {
+        Object.assign(headerStyles, styles.headerAmpPreview)
+    }
+
     return (
         <Box className="sf-app" {...styles.container}>
             <IntlProvider
@@ -184,110 +197,113 @@ const App = (props) => {
             >
                 <CategoriesProvider categories={allCategories}>
                     <CurrencyProvider currency={currency}>
-                        <RealtimeVisualization.Provider value={{ampVizSdk, status}}>
-                            <Seo>
-                                <meta name="theme-color" content={THEME_COLOR} />
-                                <meta
-                                    name="apple-mobile-web-app-title"
-                                    content={DEFAULT_SITE_TITLE}
-                                />
-                                <link
-                                    rel="apple-touch-icon"
-                                    href={getAssetUrl('static/img/global/apple-touch-icon.png')}
-                                />
-                                <link rel="manifest" href={getAssetUrl('static/manifest.json')} />
+                        <AmplienceContextProvider {...vseProps}>
+                            {vseProps.vse && <PreviewHeader {...vseProps} />}
+                            <RealtimeVisualization.Provider value={{ampVizSdk, status}}>
+                                <Seo>
+                                    <meta name="theme-color" content={THEME_COLOR} />
+                                    <meta
+                                        name="apple-mobile-web-app-title"
+                                        content={DEFAULT_SITE_TITLE}
+                                    />
+                                    <link
+                                        rel="apple-touch-icon"
+                                        href={getAssetUrl('static/img/global/apple-touch-icon.png')}
+                                    />
+                                    <link rel="manifest" href={getAssetUrl('static/manifest.json')} />
 
-                                {/* Urls for all localized versions of this page (including current page)
-                                For more details on hrefLang, see https://developers.google.com/search/docs/advanced/crawling/localized-versions */}
-                                {site.l10n?.supportedLocales.map((locale) => (
+                                    {/* Urls for all localized versions of this page (including current page)
+                                    For more details on hrefLang, see https://developers.google.com/search/docs/advanced/crawling/localized-versions */}
+                                    {site.l10n?.supportedLocales.map((locale) => (
+                                        <link
+                                            rel="alternate"
+                                            hrefLang={locale.id.toLowerCase()}
+                                            href={`${appOrigin}${getPathWithLocale(locale.id, {
+                                                location
+                                            })}`}
+                                            key={locale.id}
+                                        />
+                                    ))}
+                                    {/* A general locale as fallback. For example: "en" if default locale is "en-GB" */}
                                     <link
                                         rel="alternate"
-                                        hrefLang={locale.id.toLowerCase()}
-                                        href={`${appOrigin}${getPathWithLocale(locale.id, {
-                                            location
-                                        })}`}
-                                        key={locale.id}
+                                        hrefLang={site.l10n.defaultLocale.slice(0, 2)}
+                                        href={`${appOrigin}${getPathWithLocale(
+                                            site.l10n.defaultLocale,
+                                            {
+                                                location
+                                            }
+                                        )}`}
                                     />
-                                ))}
-                                {/* A general locale as fallback. For example: "en" if default locale is "en-GB" */}
-                                <link
-                                    rel="alternate"
-                                    hrefLang={site.l10n.defaultLocale.slice(0, 2)}
-                                    href={`${appOrigin}${getPathWithLocale(
-                                        site.l10n.defaultLocale,
-                                        {
-                                            location
-                                        }
-                                    )}`}
-                                />
-                                {/* A wider fallback for user locales that the app does not support */}
-                                <link rel="alternate" hrefLang="x-default" href={`${appOrigin}/`} />
-                            </Seo>
+                                    {/* A wider fallback for user locales that the app does not support */}
+                                    <link rel="alternate" hrefLang="x-default" href={`${appOrigin}/`} />
+                                </Seo>
 
-                            <ScrollToTop />
+                                <ScrollToTop />
 
-                            <Box id="app" display="flex" flexDirection="column" flex={1}>
-                                <SkipNavLink zIndex="skipLink">Skip to Content</SkipNavLink>
+                                <Box id="app" display="flex" flexDirection="column" flex={1}>
+                                    <SkipNavLink zIndex="skipLink">Skip to Content</SkipNavLink>
 
-                                <Box {...styles.headerWrapper}>
-                                    {!isCheckout ? (
-                                        <Header
-                                            onMenuClick={onOpen}
-                                            onLogoClick={onLogoClick}
-                                            onMyCartClick={onCartClick}
-                                            onMyAccountClick={onAccountClick}
-                                            onWishlistClick={onWishlistClick}
+                                    <Box {...headerStyles}>
+                                        {!isCheckout ? (
+                                            <Header
+                                                onMenuClick={onOpen}
+                                                onLogoClick={onLogoClick}
+                                                onMyCartClick={onCartClick}
+                                                onMyAccountClick={onAccountClick}
+                                                onWishlistClick={onWishlistClick}
+                                            >
+                                                <HideOnDesktop>
+                                                    <DrawerMenu
+                                                        isOpen={isOpen}
+                                                        onClose={onClose}
+                                                        onLogoClick={onLogoClick}
+                                                        root={allCategories[DEFAULT_ROOT_CATEGORY]}
+                                                    />
+                                                </HideOnDesktop>
+
+                                                <HideOnMobile>
+                                                    <ListMenu
+                                                        root={allCategories[DEFAULT_ROOT_CATEGORY]}
+                                                    />
+                                                </HideOnMobile>
+                                            </Header>
+                                        ) : (
+                                            <CheckoutHeader />
+                                        )}
+                                    </Box>
+
+                                    {!isOnline && <OfflineBanner />}
+                                    <AddToCartModalProvider>
+                                        <SkipNavContent
+                                            style={{
+                                                display: 'flex',
+                                                flexDirection: 'column',
+                                                flex: 1,
+                                                outline: 0
+                                            }}
                                         >
-                                            <HideOnDesktop>
-                                                <DrawerMenu
-                                                    isOpen={isOpen}
-                                                    onClose={onClose}
-                                                    onLogoClick={onLogoClick}
-                                                    root={allCategories[DEFAULT_ROOT_CATEGORY]}
-                                                />
-                                            </HideOnDesktop>
+                                            <Box
+                                                as="main"
+                                                id="app-main"
+                                                role="main"
+                                                display="flex"
+                                                flexDirection="column"
+                                                flex="1"
+                                            >
+                                                <OfflineBoundary isOnline={false}>
+                                                    {children}
+                                                </OfflineBoundary>
+                                            </Box>
+                                        </SkipNavContent>
 
-                                            <HideOnMobile>
-                                                <ListMenu
-                                                    root={allCategories[DEFAULT_ROOT_CATEGORY]}
-                                                />
-                                            </HideOnMobile>
-                                        </Header>
-                                    ) : (
-                                        <CheckoutHeader />
-                                    )}
+                                        {!isCheckout ? <Footer /> : <CheckoutFooter />}
+
+                                        <AuthModal {...authModal} />
+                                    </AddToCartModalProvider>
                                 </Box>
-
-                                {!isOnline && <OfflineBanner />}
-                                <AddToCartModalProvider>
-                                    <SkipNavContent
-                                        style={{
-                                            display: 'flex',
-                                            flexDirection: 'column',
-                                            flex: 1,
-                                            outline: 0
-                                        }}
-                                    >
-                                        <Box
-                                            as="main"
-                                            id="app-main"
-                                            role="main"
-                                            display="flex"
-                                            flexDirection="column"
-                                            flex="1"
-                                        >
-                                            <OfflineBoundary isOnline={false}>
-                                                {children}
-                                            </OfflineBoundary>
-                                        </Box>
-                                    </SkipNavContent>
-
-                                    {!isCheckout ? <Footer /> : <CheckoutFooter />}
-
-                                    <AuthModal {...authModal} />
-                                </AddToCartModalProvider>
-                            </Box>
-                        </RealtimeVisualization.Provider>
+                            </RealtimeVisualization.Provider>
+                        </AmplienceContextProvider>
                     </CurrencyProvider>
                 </CategoriesProvider>
             </IntlProvider>
@@ -300,7 +316,7 @@ App.shouldGetProps = () => {
     return typeof window === 'undefined'
 }
 
-App.getProps = async ({api, res}) => {
+App.getProps = async ({api, res, ...rest}) => {
     const site = resolveSiteFromUrl(res.locals.originalUrl)
     const l10nConfig = site.l10n
     const targetLocale = getTargetLocale({
@@ -355,11 +371,16 @@ Learn more with our localization guide. https://sfdc.co/localization-guide
     // the application.
     const categories = flatten(rootCategory, 'categories')
 
+    // The serverside and clientside both have an Amplience client, both should receive the VSE params.
+    const vseProps = generateVseProps({req: rest.req, res, query: rest.req.query})
+    rest.ampClient.setVse(vseProps.vse)
+
     return {
         targetLocale,
         messages,
         categories,
-        config: res?.locals?.config
+        config: res?.locals?.config,
+        vseProps
     }
 }
 
@@ -368,7 +389,8 @@ App.propTypes = {
     targetLocale: PropTypes.string,
     messages: PropTypes.object,
     categories: PropTypes.object,
-    config: PropTypes.object
+    config: PropTypes.object,
+    vseProps: PropTypes.object
 }
 
 export default App

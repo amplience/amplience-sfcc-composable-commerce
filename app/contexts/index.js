@@ -5,8 +5,10 @@
  * For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
 
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import PropTypes from 'prop-types'
+//import Cookies from 'cookies'
+import {AmplienceAPI} from '../amplience/api'
 
 /**
  * This is the global state for categories, we use this for navigation and for
@@ -126,4 +128,72 @@ export const RealtimeVisualizationProvider = ({status: initState, ampViz}) => {
             ]}
         />
     )
+}
+
+/**
+ * This is the global Amplience Visualization Context
+ *
+ * To use these context's simply import them into the component requiring context
+ * like the below example:
+ *
+ * import React, {useContext} from 'react'
+ * import {AmplienceContext} from './contexts'
+ *
+ * const vis = useContext(AmplienceContext)
+ */
+
+export const AmplienceContext = React.createContext()
+
+export const AmplienceContextProvider = ({vse, vseTimestamp, children}) => {
+    // Init client using VSE
+    const [client] = useState(new AmplienceAPI())
+
+    useEffect(() => {
+        // Switch the API to use the provided VSE, if present.
+        client.setVse(vse)
+    }, [vse, vseTimestamp])
+
+    return (
+        <AmplienceContext.Provider value={{vse, vseTimestamp, client}}>
+            {children}
+        </AmplienceContext.Provider>
+    )
+}
+
+export const generateVseProps = ({req, res, query}) => {
+    let vse = null
+    let vseTimestamp = 0
+
+    if (res) {
+        //const cookies = new Cookies(req, res)
+
+        vse = query.vse
+        vseTimestamp = query['vse-timestamp']
+        vseTimestamp = vseTimestamp == 'null' ? 0 : Number(vseTimestamp)
+
+        const clearVse = query['clear-vse']
+
+        /*
+        if (vse == null && clearVse === undefined) {
+            //console.log('trying to get cookies')
+            vse = cookies.get('vse')
+            vseTimestamp = cookies.get('vse-timestamp')
+            vseTimestamp = vseTimestamp != null ? Number(vseTimestamp) : undefined
+            //console.log(vse)
+            //console.log(vseTimestamp)
+        } else {
+            cookies.set('vse', vse)
+            cookies.set('vse-timestamp', vseTimestamp)
+        }
+        */
+    }
+
+    return {vse, vseTimestamp}
+}
+
+AmplienceContextProvider.propTypes = {
+    vse: PropTypes.string,
+    vseTimestamp: PropTypes.number,
+
+    children: PropTypes.node.isRequired
 }
