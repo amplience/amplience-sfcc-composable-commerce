@@ -8,6 +8,7 @@
     "npm": "^6.14.4 || ^7.0.0 || ^8.0.0"
   },
   "devDependencies": {
+    "@amplience/dc-cli": "^0.15.1",
     "@chakra-ui/icons": "^1.0.6",
     "@chakra-ui/react": "^1.7.1",
     "@chakra-ui/skip-nav": "^1.1.4",
@@ -25,7 +26,6 @@
     "base64-arraybuffer": "^0.2.0",
     "bundlesize2": "^0.0.30",
     "card-validator": "^8.1.0",
-    "chalk": "1.1.3",
     "commerce-sdk-isomorphic": "^1.5.2",
     "core-js": "2.4.0",
     "cross-env": "^5.2.0",
@@ -56,6 +56,7 @@
     "react-hook-form": "^6.15.5",
     "react-intl": "^5.13.1",
     "react-router-dom": "^5.1.2",
+    "ts-node": "^10.9.1",
     "whatwg-fetch": "1.0.0"
   },
   "scripts": {
@@ -75,7 +76,8 @@
     "start:pseudolocale": "npm run extract-default-translations && npm run compile-translations:pseudo && cross-env USE_PSEUDOLOCALE=true npm run start",
     "test": "pwa-kit-dev test",
     "test:lighthouse": "cross-env NODE_ENV=production lhci autorun --config=tests/lighthouserc.js",
-    "test:max-file-size": "npm run build && bundlesize"
+    "test:max-file-size": "npm run build && bundlesize",
+    "import": "ts-node scripts/index.ts import"
   },
   "bundlesize": [
     {
