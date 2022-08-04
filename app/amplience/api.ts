@@ -7,7 +7,11 @@ export class AmplienceAPI {
     client
     vse
 
+    clientReady
+    clientReadyResolve
+
     constructor() {
+        this.clientReady = new Promise((resolve) => (this.clientReadyResolve = resolve))
         this.client = new ContentClient({hubName: app.amplience.hub})
     }
 
@@ -20,9 +24,13 @@ export class AmplienceAPI {
 
             this.vse = vse
         }
+
+        this.clientReadyResolve()
     }
 
     async fetchContent(args: IdOrKey[], locale = 'en-US') {
+        await this.clientReady
+
         let responses = await (await this.client.getContentItems(args, {locale})).responses
         return responses.map((response) => {
             if ('content' in response) {
