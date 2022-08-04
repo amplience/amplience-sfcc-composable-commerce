@@ -59,6 +59,7 @@ const Home = ({productSearchResult, isLoading}) => {
             />
 
             <AmplienceWrapper fetch={{ key: 'hero' }}></AmplienceWrapper>
+            <AmplienceWrapper fetch={{ key: 'section' }}></AmplienceWrapper>
 
             <Section
                 background={'gray.50'}
@@ -226,18 +227,6 @@ const Home = ({productSearchResult, isLoading}) => {
                             })}
                         </>
                     </>
-                }
-                actions={
-                    <Button
-                        as={Link}
-                        href="https://help.salesforce.com/s/?language=en_US"
-                        target="_blank"
-                        width={'auto'}
-                        paddingX={7}
-                        _hover={{textDecoration: 'none'}}
-                    >
-                        <FormattedMessage defaultMessage="Contact Us" id="home.link.contact_us" />
-                    </Button>
                 }
                 maxWidth={'xl'}
             />

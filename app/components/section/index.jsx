@@ -26,11 +26,15 @@ const Section = ({title, subtitle, actions, maxWidth, children, ...props}) => {
                         {findDefaultLocaleString(title)}
                     </Heading>
                 )}
-                {subtitle && (
+               {/* {subtitle && (
                     <Text color={'gray.700'} fontWeight={600}>
+                        {
+                            debugger;
+                            Array.isArray(subtitle) ? findDefaultLocaleString(subtitle) : {subtitle}
+                        }
                         {findDefaultLocaleString(subtitle)}
                     </Text>
-                )}
+                )}*/}
                 {actions && (
                     <Box paddingTop='2' width={{base: 'full', md: 'auto'}}>
                         {actions.map((props, ind) => (
@@ -58,7 +62,7 @@ Section.propTypes = {
     /**
      * Section component subtitle
      */
-    subtitle: localeValueArray,
+    subtitle: PropTypes.oneOfType([PropTypes.array, localeValueArray, PropTypes.node]),
     /**
      * Section children node(s)
      */
