@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, {useEffect, useState} from 'react'
 
 //Amplience Rendering Templates
 import fetchContent from '../../../amplience/api'
@@ -8,20 +8,24 @@ const componentsMapping = {
     'https://sfcc.com/hero': Hero
 }
 
-const AmplienceWrapper = ({ fetch, content, components = componentsMapping }) => {
+const AmplienceWrapper = ({fetch, content, components = componentsMapping}) => {
     const [fetchedContent, setFetchedContent] = useState(undefined)
 
-    if (fetch) {
-        useEffect(() => {
-            fetchContent([fetch]).then(c => c.pop()).then(setFetchedContent)
-        }, [])
-    }
-    else {
-        setFetchedContent(content)
-    }
+    console.log(content)
+    useEffect(() => {
+        const fetchCont = async () => {
+            const data = await fetchContent([fetch])
+            setFetchedContent(data.pop())
+        }
+        if (fetch) {
+            fetchCont()
+        } else if (content) {
+            setFetchedContent(content)
+        }
+    }, [fetch, content])
 
-    const Component = components[fetchedContent?._meta?.schema];
-    return Component ? <Component {...fetchedContent} /> : <>{JSON.stringify(fetchedContent)}</>;
+    const Component = components[fetchedContent?._meta?.schema]
+    return Component ? <Component {...fetchedContent} /> : <>{JSON.stringify(fetchedContent)}</>
 }
 
 AmplienceWrapper.displayName = 'Amplience Wrapper Block'

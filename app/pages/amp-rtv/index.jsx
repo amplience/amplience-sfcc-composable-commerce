@@ -31,11 +31,7 @@ const AmpRtv = () => {
     let removeChangedSubscription = undefined
     const [formContent, setFormContent] = useState({})
 
-    console.log('RTV: ', RTV)
-
     useEffect(() => {
-        console.log('RTV-Viz Page:', RTV)
-
         if (RTV !== null && RTV.ampVizSdk !== null) {
             const options = {
                 format: 'inline',
