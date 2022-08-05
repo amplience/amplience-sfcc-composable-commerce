@@ -78,10 +78,10 @@ const configureYargs = (yargInstance: Argv): Promise<Arguments> => {
           childProcess.execSync(`./node_modules/.bin/dc-cli settings import ${context.automationDir}/settings/hub-settings-62e96f2bc9e77c0001d98ec5-sfcccomposable.json --mapFile ${context.automationDir}/mapping.json`, {stdio: "inherit"});
 
           console.log(`Importing content type schemas...`)
-          childProcess.execSync(`./node_modules/.bin/dc-cli content-type-schema import ${context.automationDir}/schema --mapFile ${context.automationDir}/mapping.json`, {stdio: "inherit"});
+          childProcess.execSync(`./node_modules/.bin/dc-cli content-type-schema import ${context.automationDir}/schema`, {stdio: "inherit"});
 
           console.log(`Importing content types...`)
-          childProcess.execSync(`./node_modules/.bin/dc-cli content-type import ${context.automationDir}/type --mapFile ${context.automationDir}/mapping.json`, {stdio: "inherit"});
+          childProcess.execSync(`./node_modules/.bin/dc-cli content-type import ${context.automationDir}/type`, {stdio: "inherit"});
 
           console.log(`Importing content...`)
           childProcess.execSync(`./node_modules/.bin/dc-cli content-item import ${context.automationDir}/content/content --baseRepo ${context.contentRepoId} --media true --publish true --mapFile ${context.automationDir}/mapping.json`, {stdio: "inherit"});
