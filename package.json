@@ -95,7 +95,10 @@
     "last 4 ChromeAndroid versions"
   ],
   "dependencies": {
+    "child_process": "^1.0.2",
     "dc-visualization-sdk": "^1.1.0",
-    "react-json-tree": "^0.17.0"
+    "lodash": "^4.17.21",
+    "react-json-tree": "^0.17.0",
+    "yargs": "^17.5.1"
   }
 }

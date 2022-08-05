@@ -75,7 +75,7 @@ const configureYargs = (yargInstance: Argv): Promise<Arguments> => {
           childProcess.execSync(`./node_modules/.bin/dc-cli configure --clientId ${context.clientId} --clientSecret ${context.clientSecret} --hubId ${context.hubId}`);
 
           console.log(`importing settings...`)
-          childProcess.execSync(`./node_modules/.bin/dc-cli settings import ${context.automationDir}/settings`);
+          childProcess.execSync(`./node_modules/.bin/dc-cli settings import ${context.automationDir}/settings/hub-settings-62e96f2bc9e77c0001d98ec5-sfcccomposable.json`);
 
           console.log(`importing content type schemas...`)
           childProcess.execSync(`./node_modules/.bin/dc-cli content-type-schema import ${context.automationDir}/schema`);
