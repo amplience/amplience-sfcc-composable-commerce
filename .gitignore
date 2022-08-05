@@ -1,6 +1,7 @@
 .nyc_output
 .DS_Store
 build.tar
+*/mapping.json
 
 coverage
 tests/reports
