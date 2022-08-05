@@ -1,3 +1,19 @@
+# Amplience specifics
+This is a version of the Retail React app with a starting point for Amplience fundamentals. The documentation below is 'as-is' from Salesforce. For Amplience specifics please see the following.
+
+> Note: This code is built against the code version @latest at the time which was PWAKit v2.1.0 released on July 5th 2022: https://github.com/SalesforceCommerceCloud/pwa-kit/releases/tag/v2.1.0
+
+## Amplience Contents
+* [Overview](./docs/overview.md)
+* [Security Updates](./docs/security-updates.md) 
+* [Amplience API](./docs/amplience-api.md)
+* [AmplienceWrapper Component](./docs/ampliencewrapper-component.md)
+* [Visualization](./docs/visualization.md)
+* [Preview](./docs/preview.md)
+* [Amplience Account](./docs/amplience-account.md)
+* [Automation](./docs/automation.md)  
+
+
 # The Retail React App
 
 The Retail React App is an isomorphic JavaScript storefront and [Progressive Web App](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps) built using [React](https://reactjs.org/) and [Express](https://expressjs.com/). It uses a modern headless architecture that enables developers to decouple front-end code from back-end systems. It leverages popular open-source libraries in the React ecosystem, such as [Chakra UI](https://chakra-ui.com/) components, [Emotion](https://emotion.sh/docs/introduction) (CSS-in-JS), [Webpack](https://webpack.js.org/), and many more.
