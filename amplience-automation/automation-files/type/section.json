@@ -19,13 +19,6 @@
     "cards": []
   },
   "repositories": [
-    "content",
-    "slots",
-    "sitestructure",
-    "contentfr",
-    "contentde",
-    "contentit",
-    "contentes",
-    "emailmarketing"
+    "content"
   ]
 }
