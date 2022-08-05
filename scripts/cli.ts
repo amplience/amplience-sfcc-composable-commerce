@@ -71,28 +71,28 @@ const configureYargs = (yargInstance: Argv): Promise<Arguments> => {
             })
     
         }, async (context: Arguments<Context>): Promise<any> => {
-          console.log(`configuring dc-cli...`)
-          childProcess.execSync(`./node_modules/.bin/dc-cli configure --clientId ${context.clientId} --clientSecret ${context.clientSecret} --hubId ${context.hubId}`);
+          console.log(`Configuring dc-cli...`)
+          childProcess.execSync(`./node_modules/.bin/dc-cli configure --clientId ${context.clientId} --clientSecret ${context.clientSecret} --hubId ${context.hubId}`, {stdio: "inherit"});
 
-          console.log(`importing settings...`)
-          childProcess.execSync(`./node_modules/.bin/dc-cli settings import ${context.automationDir}/settings/hub-settings-62e96f2bc9e77c0001d98ec5-sfcccomposable.json`);
+          console.log(`Importing settings...`)
+          childProcess.execSync(`./node_modules/.bin/dc-cli settings import ${context.automationDir}/settings/hub-settings-62e96f2bc9e77c0001d98ec5-sfcccomposable.json --mapFile ${context.automationDir}/mapping.json`, {stdio: "inherit"});
 
-          console.log(`importing content type schemas...`)
-          childProcess.execSync(`./node_modules/.bin/dc-cli content-type-schema import ${context.automationDir}/schema`);
+          console.log(`Importing content type schemas...`)
+          childProcess.execSync(`./node_modules/.bin/dc-cli content-type-schema import ${context.automationDir}/schema --mapFile ${context.automationDir}/mapping.json`, {stdio: "inherit"});
 
-          console.log(`importing content types...`)
-          childProcess.execSync(`./node_modules/.bin/dc-cli content-type import ${context.automationDir}/type`);
+          console.log(`Importing content types...`)
+          childProcess.execSync(`./node_modules/.bin/dc-cli content-type import ${context.automationDir}/type --mapFile ${context.automationDir}/mapping.json`, {stdio: "inherit"});
 
-          console.log(`importing content...`)
-          childProcess.execSync(`./node_modules/.bin/dc-cli content-item import ${context.automationDir}/content/content --baseRepo ${context.contentRepoId}`);
+          console.log(`Importing content...`)
+          childProcess.execSync(`./node_modules/.bin/dc-cli content-item import ${context.automationDir}/content/content --baseRepo ${context.contentRepoId} --media true --publish true --mapFile ${context.automationDir}/mapping.json`, {stdio: "inherit"});
 
-          console.log(`importing slots...`)
-          childProcess.execSync(`./node_modules/.bin/dc-cli content-item import ${context.automationDir}/content/slots --baseRepo ${context.slotsRepoId}`);
+          console.log(`Importing slots...`)
+          childProcess.execSync(`./node_modules/.bin/dc-cli content-item import ${context.automationDir}/content/slots --baseRepo ${context.slotsRepoId} --mapFile ${context.automationDir}/mapping.json`, {stdio: "inherit"});
 
-          console.log(`importing events...`)
-          childProcess.execSync(`./node_modules/.bin/dc-cli event import ${context.automationDir}/events`);
+          console.log(`Importing events...`)
+          childProcess.execSync(`./node_modules/.bin/dc-cli event import ${context.automationDir}/events --acceptSnapshotLimits true --schedule true --catchup true --mapFile ${context.automationDir}/mapping.json`, {stdio: "inherit"});
 
-          console.log(`done!`)
+          console.log(`Done!`)
         })
         .strict()
         .demandCommand(1, 'Please specify at least one command')
