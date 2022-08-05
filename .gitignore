@@ -32,3 +32,4 @@ app/loader-cache-hash-manifest.json
 
 .vscode
 .DS_Store
+amplience-automation/automation-files/mapping.json
