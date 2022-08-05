@@ -59,6 +59,7 @@ import {resolveSiteFromUrl} from '../../utils/site-utils'
 
 import {init} from 'dc-visualization-sdk'
 import PreviewHeader from '../amplience/preview-header'
+import {defaultAmpClient} from '../../amplience/api'
 
 const DEFAULT_NAV_DEPTH = 3
 const DEFAULT_ROOT_CATEGORY = 'root'
@@ -134,6 +135,13 @@ const App = (props) => {
         // location path is changed.
         onClose()
     }, [location])
+
+    if (typeof window !== 'undefined') {
+        // On the clientside, make sure the default Amplience client has the vse set up.
+        useEffect(() => {
+            defaultAmpClient.setVse(vseProps.vse)
+        }, [vseProps])
+    }
 
     const onLogoClick = () => {
         // Goto the home page.
@@ -316,7 +324,7 @@ App.shouldGetProps = () => {
     return typeof window === 'undefined'
 }
 
-App.getProps = async ({api, res, ...rest}) => {
+App.getProps = async ({api, res, req, ampClient}) => {
     const site = resolveSiteFromUrl(res.locals.originalUrl)
     const l10nConfig = site.l10n
     const targetLocale = getTargetLocale({
@@ -372,8 +380,8 @@ Learn more with our localization guide. https://sfdc.co/localization-guide
     const categories = flatten(rootCategory, 'categories')
 
     // The serverside and clientside both have an Amplience client, both should receive the VSE params.
-    const vseProps = generateVseProps({req: rest.req, res, query: rest.req.query})
-    rest.ampClient.setVse(vseProps.vse)
+    const vseProps = generateVseProps({req, res, query: req.query})
+    ampClient.setVse(vseProps.vse)
 
     return {
         targetLocale,

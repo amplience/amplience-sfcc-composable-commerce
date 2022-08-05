@@ -224,7 +224,7 @@ Home.shouldGetProps = ({previousLocation, location}) =>
     !previousLocation || previousLocation.pathname !== location.pathname
 
 Home.getProps = async ({res, api, ampClient}) => {
-    if (res) {
+    if (res && !ampClient.vse) {
         res.set('Cache-Control', `max-age=${MAX_CACHE_AGE}`)
     }
 
@@ -248,6 +248,10 @@ Home.propTypes = {
      * in the supplied category.
      */
     productSearchResult: PropTypes.object,
+    /**
+     * Home slot data requested from Amplience.
+     */
+    homeSlotTop: PropTypes.object,
     /**
      * The current state of `getProps` when running this value is `true`, otherwise it's
      * `false`. (Provided internally)

@@ -40,3 +40,5 @@ export class AmplienceAPI {
         })
     }
 }
+
+export const defaultAmpClient = new AmplienceAPI()
