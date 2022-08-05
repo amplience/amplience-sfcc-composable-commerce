@@ -1,6 +1,7 @@
 .nyc_output
 .DS_Store
 build.tar
+*/mapping.json
 
 coverage
 tests/reports
@@ -32,3 +33,4 @@ app/loader-cache-hash-manifest.json
 
 .vscode
 .DS_Store
+amplience-automation/automation-files/mapping.json
