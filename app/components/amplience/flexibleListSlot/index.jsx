@@ -1,27 +1,25 @@
-import React, {useEffect, useState} from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 
 //Amplience Rendering Templates
 import AmplienceWrapper from '../Wrapper'
 
 const flexibleListSlot = ({...props}) => {
-
-    const content = props.content;
+    const content = props.content
 
     return (
         <>
-            { 
-                content.map(content => {
-                    return <AmplienceWrapper content={content} />;
-                })
-            }
+            {content.map((content, index) => {
+                return <AmplienceWrapper content={content} key={index} />
+            })}
         </>
-    );
+    )
 }
 
-flexibleListSlot.displayName = "Flexible List Slot"
+flexibleListSlot.displayName = 'Flexible List Slot'
 
 flexibleListSlot.propTypes = {
-    content: {}
+    content: PropTypes.array
 }
 
 export default flexibleListSlot
