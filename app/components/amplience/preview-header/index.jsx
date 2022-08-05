@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  * For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
-import React from 'react'
+import React, {useEffect} from 'react'
 import PropTypes from 'prop-types'
 import {Box, Button, useMultiStyleConfig} from '@chakra-ui/react'
 import {useIntl} from 'react-intl'
@@ -21,9 +21,26 @@ const timestampToString = (intl, timestamp) => {
     return date.toLocaleString()
 }
 
-const PreviewHeader = ({vseTimestamp, ...otherProps}) => {
+const PreviewHeader = ({vse, vseTimestamp, ...otherProps}) => {
     const intl = useIntl()
     const styles = useMultiStyleConfig('PreviewHeader')
+
+    useEffect(() => {
+        if (vse) {
+            document.cookie = `vse=${vse};`
+            document.cookie = `vse-timestamp=${vseTimestamp};`
+        }
+    }, [vse, vseTimestamp])
+
+    const deleteCookie = (name) => {
+        document.cookie = name + '=; max-age=0;'
+    }
+
+    const clearVse = () => {
+        deleteCookie('vse')
+        deleteCookie('vse-timestamp')
+        window.location.assign('/')
+    }
 
     return (
         <Box {...styles.container} {...otherProps}>
@@ -32,7 +49,7 @@ const PreviewHeader = ({vseTimestamp, ...otherProps}) => {
                 defaultMessage: 'Preview Active: '
             })}{' '}
             {timestampToString(intl, vseTimestamp)}
-            <Button variant="link" onClick={() => window.location.assign('/?vse-clear=true')}>
+            <Button variant="link" onClick={clearVse}>
                 {intl.formatMessage({
                     id: 'amplience.preview.cancel',
                     defaultMessage: 'Cancel'
@@ -43,6 +60,7 @@ const PreviewHeader = ({vseTimestamp, ...otherProps}) => {
 }
 
 PreviewHeader.propTypes = {
+    vse: PropTypes.string,
     vseTimestamp: PropTypes.number
 }
 

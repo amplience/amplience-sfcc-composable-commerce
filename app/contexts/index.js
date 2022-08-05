@@ -5,9 +5,9 @@
  * For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
 
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import PropTypes from 'prop-types'
-//import Cookies from 'cookies'
+import * as cookie from 'cookie'
 import {AmplienceAPI} from '../amplience/api'
 
 /**
@@ -130,6 +130,11 @@ export const RealtimeVisualizationProvider = ({status: initState, ampViz}) => {
     )
 }
 
+RealtimeVisualizationProvider.propTypes = {
+    status: PropTypes.string,
+    ampViz: PropTypes.object
+}
+
 /**
  * This is the global Amplience Visualization Context
  *
@@ -158,32 +163,31 @@ export const AmplienceContextProvider = ({vse, vseTimestamp, children}) => {
     )
 }
 
+const getCookies = (headers) => {
+    for (let i = 0; i < headers.length; i += 2) {
+        if (headers[i] === 'Cookie') {
+            return cookie.parse(headers[i + 1])
+        }
+    }
+
+    return {}
+}
+
 export const generateVseProps = ({req, res, query}) => {
     let vse = null
     let vseTimestamp = 0
 
     if (res) {
-        //const cookies = new Cookies(req, res)
-
         vse = query.vse
         vseTimestamp = query['vse-timestamp']
         vseTimestamp = vseTimestamp == 'null' ? 0 : Number(vseTimestamp)
 
-        const clearVse = query['clear-vse']
-
-        /*
-        if (vse == null && clearVse === undefined) {
-            //console.log('trying to get cookies')
-            vse = cookies.get('vse')
-            vseTimestamp = cookies.get('vse-timestamp')
+        if (vse == null) {
+            const cookies = getCookies(req.rawHeaders)
+            vse = cookies['vse']
+            vseTimestamp = cookies['vse-timestamp']
             vseTimestamp = vseTimestamp != null ? Number(vseTimestamp) : undefined
-            //console.log(vse)
-            //console.log(vseTimestamp)
-        } else {
-            cookies.set('vse', vse)
-            cookies.set('vse-timestamp', vseTimestamp)
         }
-        */
     }
 
     return {vse, vseTimestamp}
