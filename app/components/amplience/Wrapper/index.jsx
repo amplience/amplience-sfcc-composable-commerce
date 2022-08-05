@@ -1,4 +1,5 @@
 import React, {useContext, useEffect, useState} from 'react'
+import PropTypes from 'prop-types'
 
 //Amplience Rendering Templates
 import Hero from '../../hero'
@@ -16,7 +17,7 @@ const componentsMapping = {
 
 const AmplienceWrapper = ({fetch, content, components = componentsMapping}) => {
     const {client} = useContext(AmplienceContext)
-    const [fetchedContent, setFetchedContent] = useState(undefined)
+    const [fetchedContent, setFetchedContent] = useState(content)
     const {locale} = useIntl()
 
     useEffect(() => {
@@ -26,7 +27,7 @@ const AmplienceWrapper = ({fetch, content, components = componentsMapping}) => {
         }
         if (fetch) {
             fetchCont()
-        } else if (content) {
+        } else if (content !== fetchedContent) {
             setFetchedContent(content)
         }
     }, [fetch, content])
@@ -36,5 +37,11 @@ const AmplienceWrapper = ({fetch, content, components = componentsMapping}) => {
 }
 
 AmplienceWrapper.displayName = 'Amplience Wrapper Block'
+
+AmplienceWrapper.propTypes = {
+    fetch: PropTypes.object,
+    content: PropTypes.object,
+    components: PropTypes.object
+}
 
 export default AmplienceWrapper
