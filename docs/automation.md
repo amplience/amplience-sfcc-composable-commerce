@@ -12,7 +12,14 @@ Install the Amplience Dynamic Content CLI as can be found [here](https://github.
 
 Configure the CLI to point to your account (you will need your Amplience hub ID, clientID and clientSecret)
 
-You will also need you repository ID’s (Content and Slots) which you can get from [here](https://amplience.com/docs/intro/repositorysettings.html)
+You will need the following information from your Ampliene account:
+* Amplience Hub ID
+* API details: Note the [Amplience Account](./amplience-account.md) specifics which require admin and DAM-API access.
+    * API Client ID
+    * API Client Secret
+* Repository IDs: which you can get from [here](https://amplience.com/docs/intro/repositorysettings.html)
+    * Content
+    * Clots
 
 Run the following command replacing the variables with details from your Amplience account:
 
