@@ -1,0 +1,41 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://sfcc.com/seo",
+
+	"definitions": {
+		"seo": {
+			"title": "Seo",
+			"description": "",
+			"type": "object",
+			"properties": {
+				"title": {
+					"title": "Seo Title",
+					"description": "A Short SEO Title",
+					"type": "string",
+					"minLength": 0,
+					"maxLength": 20
+				},
+				"description": {
+					"title": "Seo Description",
+					"description": "A Short Description for SEO",
+					"type": "string",
+					"minLength": 0,
+					"maxLength": 50
+				},
+				"keywords": {
+					"title": "SEO Keywords",
+					"description": "description",
+					"type": "string",
+					"minLength": 0,
+					"maxLength": 60
+				},
+				"noindex": {
+					"title": "No Index",
+					"description": "Tell robots, don't index this",
+					"type": "boolean"
+				}
+			}
+		}
+		
+	}
+}

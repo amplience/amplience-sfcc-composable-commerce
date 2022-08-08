@@ -1,0 +1,5 @@
+{
+    "body": "./schemas/static-page-schema.json",
+    "schemaId": "https://sfcc.com/staticpage",
+    "validationLevel": "CONTENT_TYPE"
+}

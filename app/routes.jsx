@@ -37,8 +37,9 @@ const ProductList = loadable(() => import('./pages/product-list'), {fallback})
 const Wishlist = loadable(() => import('./pages/account/wishlist'), {fallback})
 const PageNotFound = loadable(() => import('./pages/page-not-found'))
 
-//Amplience RTV Page
+//Amplience Pages
 const RealtimeVisualization = loadable(() => import('./pages/amp-rtv'))
+const ContentPage = loadable(() => import('./pages/amplience/page'))
 
 const routes = [
     {
@@ -105,6 +106,10 @@ const routes = [
         path: '/visualization/:hubname/:contentId/:vse/:locale',
         component: RealtimeVisualization,
         exact: false
+    },
+    {
+        path: '/:locale/page/:pageId',
+        component: ContentPage
     },
     {
         path: '*',
