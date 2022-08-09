@@ -1,9 +1,10 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import PropTypes from 'prop-types'
-
-//Amplience Rendering Templates
+import {useCommerceAPI} from '../../../commerce-api/contexts'
+import {handleAsyncError} from '../../../commerce-api/utils'
 import ProductScroller from '../../product-scroller'
 
+/*
 const tempMapProducts = (ids) => {
     return ids.map((id) => ({
         currency: 'GBP',
@@ -18,11 +19,50 @@ const tempMapProducts = (ids) => {
         productId: id
     }))
 }
+*/
+
+const tempMapProductIDs = () => {
+    return ['74974310M', '78916783M', '25604455M', '25585429M', '69309284M']
+}
+
+const selectImage = (product) => {
+    const groups = product.imageGroups
+    if (groups == null || groups.length === 0) {
+        return {}
+    }
+
+    const desiredViewType = 'large'
+    const desiredGroup = groups.find((group) => group.viewType === desiredViewType) ?? groups[0]
+
+    return desiredGroup.images[0]
+}
 
 const CuratedProductList = ({...props}) => {
-    const mappedProducts = tempMapProducts(props.products)
+    const api = useCommerceAPI()
+    const [products, setProducts] = useState([])
+    const [isLoading, setIsLoading] = useState(true)
 
-    return <ProductScroller title={props.title} products={mappedProducts} />
+    useEffect(
+        handleAsyncError(async () => {
+            const response = await api.shopperProducts.getProducts({
+                parameters: {ids: tempMapProductIDs(props.products).join(',')}
+            })
+
+            const products = response.data.map((product) => ({
+                ...product,
+                productId: product.id,
+                image: selectImage(product)
+            }))
+
+            setProducts(products)
+            setIsLoading(false)
+        }),
+        [api, props.products]
+    )
+
+    //const mappedProducts = tempMapProducts(props.products)
+
+    return <ProductScroller title={props.title} products={products} isLoading={isLoading} />
 }
 
 CuratedProductList.displayName = 'Curated Product List'
