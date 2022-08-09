@@ -37,32 +37,44 @@ const selectImage = (product) => {
     return desiredGroup.images[0]
 }
 
-const CuratedProductList = ({...props}) => {
+const CuratedProductList = ({title, products, ...props}) => {
     const api = useCommerceAPI()
-    const [products, setProducts] = useState([])
+    const [apiProducts, setApiProducts] = useState([])
     const [isLoading, setIsLoading] = useState(true)
 
-    useEffect(
+    useEffect(() => {
+        let active = true
+
+        if (products.length === 0) {
+            // No products likely means that the IDs haven't arrived yet.
+            setApiProducts([])
+            setIsLoading(true)
+            return
+        }
+
         handleAsyncError(async () => {
             const response = await api.shopperProducts.getProducts({
                 parameters: {ids: tempMapProductIDs(props.products).join(',')}
             })
 
-            const products = response.data.map((product) => ({
-                ...product,
-                productId: product.id,
-                image: selectImage(product)
-            }))
+            if (active) {
+                const products = response.data.map((product) => ({
+                    ...product,
+                    productId: product.id,
+                    image: selectImage(product)
+                }))
 
-            setProducts(products)
-            setIsLoading(false)
-        }),
-        [api, props.products]
-    )
+                setApiProducts(products)
+                setIsLoading(false)
+            }
+        })()
 
-    //const mappedProducts = tempMapProducts(props.products)
+        return () => (active = false)
+    }, [api, products])
 
-    return <ProductScroller title={props.title} products={products} isLoading={isLoading} />
+    //const mappedProducts = tempMapProducts(products)
+
+    return <ProductScroller title={title} products={apiProducts} isLoading={isLoading} />
 }
 
 CuratedProductList.displayName = 'Curated Product List'
