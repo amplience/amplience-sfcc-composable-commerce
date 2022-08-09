@@ -8,9 +8,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {Box, Flex, Heading, Stack, Image} from '@chakra-ui/react'
+import Button from '../button'
+import {getImageUrl} from '../../../utils/image'
 
 const Hero = ({title, img, actions, ...props}) => {
-    const {src, alt} = img
+    const {image, alt} = img
+    const src = getImageUrl(image)
 
     return (
         <Box
@@ -28,14 +31,24 @@ const Hero = ({title, img, actions, ...props}) => {
             >
                 <Stack flex={1} spacing={{base: 5, md: 8}}>
                     <Heading
-                        as="h1"
+                        as='h1'
                         fontSize={{base: '4xl', md: '5xl', lg: '6xl'}}
                         maxWidth={{base: '75%', md: '50%', lg: 'md'}}
                     >
                         {title}
                     </Heading>
 
-                    {actions && <Box width={{base: 'full', lg: 'inherit'}}>{actions}</Box>}
+                    {actions && (
+                        <Box width={{base: 'full', lg: 'inherit'}}>
+                            {actions.map((props, ind) => (
+                                <Button
+                                    key={ind}
+                                    label={props.label}
+                                    url={props.url}>
+                                </Button>
+                            ))}
+                        </Box>
+                    )}
                 </Stack>
                 <Flex
                     flex={1}
@@ -68,17 +81,28 @@ Hero.propTypes = {
      * Hero component image
      */
     img: PropTypes.shape({
-        src: PropTypes.string,
+        image: PropTypes.shape({
+            id: PropTypes.string,
+            name: PropTypes.string,
+            endpoint: PropTypes.string,
+            defaultHost: PropTypes.string
+        }),
         alt: PropTypes.string
     }),
     /**
      * Hero component main title
      */
+    // title: PropTypes.string,
     title: PropTypes.string,
     /**
      * Call to action component(s)
      */
-    actions: PropTypes.element
+    actions: PropTypes.arrayOf(
+        PropTypes.shape({
+            label: PropTypes.string,
+            url: PropTypes.string
+        })
+    )
 }
 
 export default Hero

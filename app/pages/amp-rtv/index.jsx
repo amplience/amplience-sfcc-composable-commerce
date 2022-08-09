@@ -14,7 +14,7 @@ import Seo from '../../components/seo'
 
 // Amplience
 import {RealtimeVisualization} from '../../contexts'
-import AmplienceWrapper from '../../components/amplience/Wrapper'
+import AmplienceWrapper from '../../components/amplience/wrapper'
 
 /**
  * This is the home page for Retail React App.

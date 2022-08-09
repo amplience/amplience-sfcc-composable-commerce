@@ -8,6 +8,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {Box, Heading, Stack, Text, Container} from '@chakra-ui/react'
+import Button from '../button'
 
 /**
  * Section component used on content pages like home page.
@@ -17,10 +18,10 @@ import {Box, Heading, Stack, Text, Container} from '@chakra-ui/react'
 const Section = ({title, subtitle, actions, maxWidth, children, ...props}) => {
     const sectionMaxWidth = maxWidth || '3xl'
     return (
-        <Box as={'section'} paddingBottom="16" {...props}>
+        <Box as={'section'} paddingBottom='16' {...props}>
             <Stack spacing={4} as={Container} maxW={sectionMaxWidth} textAlign={'center'}>
                 {title && (
-                    <Heading as="h2" fontSize={40} textAlign="center">
+                    <Heading as='h2' fontSize={40} textAlign='center'>
                         {title}
                     </Heading>
                 )}
@@ -29,9 +30,12 @@ const Section = ({title, subtitle, actions, maxWidth, children, ...props}) => {
                         {subtitle}
                     </Text>
                 )}
+
                 {actions && (
-                    <Box paddingTop="2" width={{base: 'full', md: 'auto'}}>
-                        {actions}
+                    <Box paddingTop='2' width={{base: 'full', md: 'auto'}}>
+                        {actions.map((props, ind) => (
+                            <Button key={ind} label={props.label} url={props.url} />
+                        ))}
                     </Box>
                 )}
             </Stack>
@@ -58,7 +62,12 @@ Section.propTypes = {
     /**
      * Call to action component(s)
      */
-    actions: PropTypes.element,
+    actions: PropTypes.arrayOf(
+        PropTypes.shape({
+            label: PropTypes.string,
+            url: PropTypes.string
+        })
+    ),
     /**
      * Section maximum width
      */

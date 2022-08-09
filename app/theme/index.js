@@ -52,7 +52,7 @@ import SwatchGroup from './components/project/swatch-group'
 import ImageGallery from './components/project/image-gallery'
 
 // Amplience Components
-import PreviewHeader from './components/amplience/preview-header';
+import PreviewHeader from './components/amplience/preview-header'
 
 // Please refer to the Chakra-Ui theme customization docs found
 // here https://chakra-ui.com/docs/theming/customize-theme to learn

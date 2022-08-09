@@ -218,7 +218,10 @@ const App = (props) => {
                                         rel="apple-touch-icon"
                                         href={getAssetUrl('static/img/global/apple-touch-icon.png')}
                                     />
-                                    <link rel="manifest" href={getAssetUrl('static/manifest.json')} />
+                                    <link
+                                        rel="manifest"
+                                        href={getAssetUrl('static/manifest.json')}
+                                    />
 
                                     {/* Urls for all localized versions of this page (including current page)
                                     For more details on hrefLang, see https://developers.google.com/search/docs/advanced/crawling/localized-versions */}
@@ -244,7 +247,11 @@ const App = (props) => {
                                         )}`}
                                     />
                                     {/* A wider fallback for user locales that the app does not support */}
-                                    <link rel="alternate" hrefLang="x-default" href={`${appOrigin}/`} />
+                                    <link
+                                        rel="alternate"
+                                        hrefLang="x-default"
+                                        href={`${appOrigin}/`}
+                                    />
                                 </Seo>
 
                                 <ScrollToTop />

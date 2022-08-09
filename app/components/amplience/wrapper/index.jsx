@@ -2,8 +2,8 @@ import React, {useContext, useEffect, useState} from 'react'
 import PropTypes from 'prop-types'
 
 //Amplience Rendering Templates
-import Hero from '../../hero'
-import Section from '../../section'
+import Hero from '../hero'
+import Section from '../section'
 // Slots
 import flexibleListSlot from '../flexibleListSlot'
 import {useIntl} from 'react-intl'
