@@ -5,7 +5,7 @@
  * For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
 
-import React, {useEffect} from 'react'
+import React, {useEffect, useContext, useState} from 'react'
 import {Heading} from '@chakra-ui/react'
 import PropTypes from 'prop-types'
 //import {useIntl, FormattedMessage} from 'react-intl'
@@ -20,6 +20,7 @@ import Seo from '../../../components/seo'
 
 // Amplience Wrapper Component
 import AmplienceWrapper from '../../../components/amplience/Wrapper'
+import {RealtimeVisualization} from '../../../contexts'
 
 // Constants
 import {MAX_CACHE_AGE} from '../../../constants'
@@ -30,19 +31,42 @@ import {MAX_CACHE_AGE} from '../../../constants'
  * The page renders SEO metadata and a few promotion
  * categories and products, data is from local file.
  */
-const ContentPage = ({isLoading, page, slots}) => {
+const ContentPage = ({isLoading, page}) => {
     //const intl = useIntl()
 
-    console.log('page', page)
-
     useEffect(() => {}, [isLoading, page])
+
+    const RTV = useContext(RealtimeVisualization)
+    let removeChangedSubscription = undefined
+    const [pageModel, setPageModel] = useState(page)
+
+    console.log('page', pageModel)
+
+    useEffect(() => {
+        if (RTV.ampVizSdk !== null) {
+            RTV.ampVizSdk.form.saved(() => {
+                window.location.reload()
+            })
+
+            removeChangedSubscription = RTV.ampVizSdk.form.changed((model) => {
+                // handle form model change
+                setPageModel(model.content)
+            })
+        }
+
+        return () => {
+            if (removeChangedSubscription != undefined) {
+                removeChangedSubscription()
+            }
+        }
+    }, [RTV.ampVizSdk])
 
     return (
         <Box data-testid="amplience-page" layerStyle="page">
             <Seo
-                title={page.seo.title}
-                description={page.seo.description}
-                keywords={page.seo.keywords}
+                title={pageModel.seo.title}
+                description={pageModel.seo.description}
+                keywords={pageModel.seo.keywords}
             />
 
             <Heading
@@ -50,10 +74,10 @@ const ContentPage = ({isLoading, page, slots}) => {
                 fontSize={{base: '4xl', md: '5xl', lg: '6xl'}}
                 maxWidth={{base: '75%', md: '50%', lg: 'md'}}
             >
-                {page.pagetitle}
+                {pageModel.pagetitle}
             </Heading>
 
-            {slots.map((slot) => {
+            {pageModel.content.map((slot) => {
                 return <AmplienceWrapper key={slot._meta.deliveryId} content={slot} type="SLOT" />
             })}
         </Box>
@@ -82,8 +106,7 @@ ContentPage.getProps = async ({res, params, location, api, ampClient}) => {
         l10nConfig
     })
 
-    var slots = [],
-        page = {}
+    var page = {}
 
     console.log('params: ', params)
     console.log('page ID: ', pageId)
@@ -92,13 +115,8 @@ ContentPage.getProps = async ({res, params, location, api, ampClient}) => {
         page = await (await ampClient.fetchContent([{key: pageId}], targetLocale)).pop()
     }
 
-    if ('slots' in page) {
-        slots = await ampClient.fetchContent(page.slots.map((slot) => ({id: slot.id})))
-    }
-
     return {
-        page,
-        slots
+        page
     }
 }
 
@@ -108,8 +126,7 @@ ContentPage.propTypes = {
      * `false`. (Provided internally)
      */
     isLoading: PropTypes.bool,
-    page: PropTypes.object,
-    slots: PropTypes.array
+    page: PropTypes.object
 }
 
 export default ContentPage
