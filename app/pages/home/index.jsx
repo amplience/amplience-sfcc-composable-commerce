@@ -79,6 +79,7 @@ const Home = ({productSearchResult, isLoading, homeSlotTop}) => {
             </Heading>
             <AmplienceWrapper fetch={{key: 'hero'}}></AmplienceWrapper>
             <AmplienceWrapper fetch={{key: 'section'}}></AmplienceWrapper>
+            <AmplienceWrapper fetch={{key: 'simple-product-list'}}></AmplienceWrapper>
 
             <Section
                 background={'gray.50'}

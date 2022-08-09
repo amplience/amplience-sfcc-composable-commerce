@@ -45,7 +45,8 @@ const { handler } = runtime.createHandler(options, (app) => {
                         'data:',
                         '*.cdn.content.amplience.net',
                         'cdn.media.amplience.net',
-                        '*.staging.bigcontent.io'
+                        '*.staging.bigcontent.io',
+                        'i8.amplience.net'
                     ],
                     'script-src': [
                         "'self'",

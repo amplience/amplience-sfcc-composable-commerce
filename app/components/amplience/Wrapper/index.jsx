@@ -8,10 +8,12 @@ import Section from '../../section'
 import flexibleListSlot from '../flexibleListSlot'
 import {useIntl} from 'react-intl'
 import {AmplienceContext} from '../../../contexts'
+import CuratedProductList from '../curated-product-list'
 
 const componentsMapping = {
     'https://sfcc.com/hero': Hero,
     'https://sfcc.com/section': Section,
+    'https://sfcc.com/curated-product': CuratedProductList,
     'https://sfcc.com/slots/flexiblelist': flexibleListSlot
 }
 
