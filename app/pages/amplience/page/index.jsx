@@ -6,14 +6,13 @@
  */
 
 import React, {useEffect, useContext, useState} from 'react'
-import {Heading} from '@chakra-ui/react'
 import PropTypes from 'prop-types'
 //import {useIntl, FormattedMessage} from 'react-intl'
 import {resolveSiteFromUrl} from '../../../utils/site-utils'
 import {getTargetLocale} from '../../../utils/locale'
 
 // Components
-import {Box} from '@chakra-ui/react'
+import {Box, Heading, Skeleton} from '@chakra-ui/react'
 
 // Project Components
 import Seo from '../../../components/seo'
@@ -31,16 +30,17 @@ import {MAX_CACHE_AGE} from '../../../constants'
  * The page renders SEO metadata and a few promotion
  * categories and products, data is from local file.
  */
-const ContentPage = ({isLoading, page}) => {
+const ContentPage = ({page}) => {
     //const intl = useIntl()
-
-    useEffect(() => {}, [isLoading, page])
 
     const RTV = useContext(RealtimeVisualization)
     let removeChangedSubscription = undefined
-    const [pageModel, setPageModel] = useState(page)
+    const [pageModel, setPageModel] = useState(undefined)
 
-    console.log('page', page)
+    useEffect(() => {
+        setPageModel(page)
+        console.log('page', pageModel)
+    }, [page])
 
     useEffect(() => {
         if (RTV.ampVizSdk !== null) {
@@ -63,23 +63,34 @@ const ContentPage = ({isLoading, page}) => {
 
     return (
         <Box data-testid="amplience-page" layerStyle="page">
-            <Seo
-                title={pageModel.seo.title}
-                description={pageModel.seo.description}
-                keywords={pageModel.seo.keywords}
-            />
-
-            <Heading
-                as="h1"
-                fontSize={{base: '4xl', md: '5xl', lg: '6xl'}}
-                maxWidth={{base: '75%', md: '50%', lg: 'md'}}
-            >
-                {pageModel.seo.title}
-            </Heading>
-
-            {pageModel.content.map((slot) => {
-                return <AmplienceWrapper key={slot._meta.deliveryId} content={slot} type="SLOT" />
-            })}
+            {pageModel == undefined ? (
+                <Skeleton height="20px" />
+            ) : (
+                <>
+                    <Seo
+                        title={pageModel.seo.title}
+                        description={pageModel.seo.description}
+                        keywords={pageModel.seo.keywords}
+                        noIndex={pageModel.seo.noindex}
+                    />
+                    <Heading
+                        as="h1"
+                        fontSize={{base: '4xl', md: '5xl', lg: '6xl'}}
+                        maxWidth={{base: '75%', md: '50%', lg: 'md'}}
+                    >
+                        {pageModel.seo.title}
+                    </Heading>
+                </>
+            )}
+            {pageModel == undefined ? (
+                <Skeleton height="200px" />
+            ) : (
+                <>
+                    {pageModel.content.map((item) => {
+                        return <AmplienceWrapper key={item._meta.deliveryId} content={item} />
+                    })}
+                </>
+            )}
         </Box>
     )
 }
@@ -106,7 +117,7 @@ ContentPage.getProps = async ({res, params, location, api, ampClient}) => {
         l10nConfig
     })
 
-    var page = {}
+    var page
 
     console.log('params: ', params)
     console.log('page ID: ', pageId)
