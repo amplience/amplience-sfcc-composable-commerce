@@ -40,7 +40,7 @@ const ContentPage = ({isLoading, page}) => {
     let removeChangedSubscription = undefined
     const [pageModel, setPageModel] = useState(page)
 
-    console.log('page', pageModel)
+    console.log('page', page)
 
     useEffect(() => {
         if (RTV.ampVizSdk !== null) {
@@ -74,7 +74,7 @@ const ContentPage = ({isLoading, page}) => {
                 fontSize={{base: '4xl', md: '5xl', lg: '6xl'}}
                 maxWidth={{base: '75%', md: '50%', lg: 'md'}}
             >
-                {pageModel.pagetitle}
+                {pageModel.seo.title}
             </Heading>
 
             {pageModel.content.map((slot) => {
