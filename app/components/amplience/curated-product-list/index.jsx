@@ -4,27 +4,6 @@ import {useCommerceAPI} from '../../../commerce-api/contexts'
 import {handleAsyncError} from '../../../commerce-api/utils'
 import ProductScroller from '../../product-scroller'
 
-/*
-const tempMapProducts = (ids) => {
-    return ids.map((id) => ({
-        currency: 'GBP',
-        image: {
-            alt: 'Example Image',
-            disBaseLink: 'https://i8.amplience.net/s/willow/082387',
-            link: 'https://i8.amplience.net/s/willow/082387'
-        },
-        price: 50,
-        name: 'Product ' + id,
-        productName: 'Product ' + id,
-        productId: id
-    }))
-}
-*/
-
-const tempMapProductIDs = () => {
-    return ['74974310M', '78916783M', '25604455M', '25585429M', '69309284M']
-}
-
 const selectImage = (product) => {
     const groups = product.imageGroups
     if (groups == null || groups.length === 0) {
@@ -37,7 +16,7 @@ const selectImage = (product) => {
     return desiredGroup.images[0]
 }
 
-const CuratedProductList = ({title, products, ...props}) => {
+const CuratedProductList = ({title, products}) => {
     const api = useCommerceAPI()
     const [apiProducts, setApiProducts] = useState([])
     const [isLoading, setIsLoading] = useState(true)
@@ -54,7 +33,7 @@ const CuratedProductList = ({title, products, ...props}) => {
 
         handleAsyncError(async () => {
             const response = await api.shopperProducts.getProducts({
-                parameters: {ids: tempMapProductIDs(props.products).join(',')}
+                parameters: {ids: products.join(',')}
             })
 
             if (active) {
@@ -71,8 +50,6 @@ const CuratedProductList = ({title, products, ...props}) => {
 
         return () => (active = false)
     }, [api, products])
-
-    //const mappedProducts = tempMapProducts(products)
 
     return <ProductScroller title={title} products={apiProducts} isLoading={isLoading} />
 }
