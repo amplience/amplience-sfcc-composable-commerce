@@ -15,7 +15,7 @@ import {getTargetLocale} from '../../../utils/locale'
 import {Box, Heading, Skeleton} from '@chakra-ui/react'
 
 // Project Components
-import Seo from '../../../components/seo'
+import Seo from '../../../components/amplience/seo'
 
 // Amplience Wrapper Component
 import AmplienceWrapper from '../../../components/amplience/Wrapper'
