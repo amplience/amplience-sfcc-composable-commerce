@@ -9,7 +9,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {Box, Flex, Heading, Stack, Image} from '@chakra-ui/react'
 import Button from '../button'
-import {getImageUrl} from '../../../utils/image'
+import {getImageUrl} from '../../../utils/amplience/image'
 
 const Hero = ({title, img, actions, ...props}) => {
     const {image, alt} = img

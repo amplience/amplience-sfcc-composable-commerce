@@ -13,7 +13,7 @@ import {Box} from '@chakra-ui/react'
 import Seo from '../../components/seo'
 
 // Amplience
-import {RealtimeVisualization} from '../../contexts'
+import {RealtimeVisualization} from '../../contexts/amplience'
 import AmplienceWrapper from '../../components/amplience/wrapper'
 
 /**

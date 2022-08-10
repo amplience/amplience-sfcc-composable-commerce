@@ -16,5 +16,5 @@ The homepage is already set up with content which has already been published.
 
 ## Automated Steps:
 
-* Run the automation bash script found in [Automation](./automation.md)
+* Run the automation bash script found in [Automation](automation.md)
 > Note: This functionality is still in progress. Please follow manual steps*

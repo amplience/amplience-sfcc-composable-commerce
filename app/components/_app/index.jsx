@@ -16,13 +16,12 @@ import {Box, useDisclosure, useStyleConfig} from '@chakra-ui/react'
 import {SkipNavLink, SkipNavContent} from '@chakra-ui/skip-nav'
 
 // Contexts
+import {CategoriesProvider, CurrencyProvider} from '../../contexts'
 import {
-    CategoriesProvider,
-    CurrencyProvider,
     generateVseProps,
     RealtimeVisualization,
     AmplienceContextProvider
-} from '../../contexts'
+} from '../../contexts/amplience'
 
 // Local Project Components
 import Header from '../../components/header'
@@ -59,7 +58,7 @@ import {resolveSiteFromUrl} from '../../utils/site-utils'
 
 import {init} from 'dc-visualization-sdk'
 import PreviewHeader from '../amplience/preview-header'
-import {defaultAmpClient} from '../../amplience/api'
+import {defaultAmpClient} from '../../amplience-api'
 
 const DEFAULT_NAV_DEPTH = 3
 const DEFAULT_ROOT_CATEGORY = 'root'

@@ -10,7 +10,7 @@ const Button = ({label, url, ...props}) => {
         <Btn
             as={Link}
             href={url}
-            target='_blank'
+            target="_blank"
             width={{base: 'full', md: 'inherit'}}
             paddingX={7}
             _hover={{textDecoration: 'none'}}
