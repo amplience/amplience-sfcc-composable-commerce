@@ -22,16 +22,9 @@
                 }
             }
         },
-		"pagetitle": {
-			"title": "Title",
-			"description": "",
-			"allOf": [
-				{ "$ref": "http://bigcontent.io/cms/schema/v1/localization#/definitions/localized-string" }
-			]
-		},
 		"seo": {
 			"allOf": [
-				{ "$ref": "https://sfcc.com/seo#/definitions/seo"}
+				{ "$ref": "https://sfcc.com/seo#/definitions/localized-seo"}
 			]
 		},
 		"content": {
@@ -47,8 +40,8 @@
 						"properties": {
 							"contentType": {
 								"enum": [
-									"http://sfcc.com/hero",
-									"http://sfcc.com/section"
+									"https://sfcc.com/hero",
+									"https://sfcc.com/section"
 								]
 							}
 						}
