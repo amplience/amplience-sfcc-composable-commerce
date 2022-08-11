@@ -10,22 +10,20 @@
 			"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
 		}
 	],
-	
+
 	"type": "object",
 	"properties": {
 		"_meta": {
-            "title": "",
-            "properties": {
-                "deliveryKey": { 
-                    "title": "Key",
-                    "type": "string"
-                }
-            }
-        },
+			"title": "",
+			"properties": {
+				"deliveryKey": {
+					"title": "Key",
+					"type": "string"
+				}
+			}
+		},
 		"seo": {
-			"allOf": [
-				{ "$ref": "https://sfcc.com/seo#/definitions/localized-seo"}
-			]
+			"allOf": [{"$ref": "https://sfcc.com/seo#/definitions/localized-seo"}]
 		},
 		"content": {
 			"title": "Content",
@@ -35,14 +33,11 @@
 			"items": {
 				"title": "Page Content",
 				"allOf": [
-					{ "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link" },
+					{"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"},
 					{
 						"properties": {
 							"contentType": {
-								"enum": [
-									"https://sfcc.com/hero",
-									"https://sfcc.com/section"
-								]
+								"enum": ["https://sfcc.com/hero", "https://sfcc.com/section"]
 							}
 						}
 					}

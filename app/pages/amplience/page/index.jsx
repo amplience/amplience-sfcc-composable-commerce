@@ -7,7 +7,6 @@
 
 import React, {useEffect, useContext, useState} from 'react'
 import PropTypes from 'prop-types'
-//import {useIntl, FormattedMessage} from 'react-intl'
 import {resolveSiteFromUrl} from '../../../utils/site-utils'
 import {getTargetLocale} from '../../../utils/locale'
 
@@ -31,15 +30,12 @@ import {MAX_CACHE_AGE} from '../../../constants'
  * categories and products, data is from local file.
  */
 const ContentPage = ({page}) => {
-    //const intl = useIntl()
-
     const RTV = useContext(RealtimeVisualization)
-    let removeChangedSubscription = undefined
+    let removeChangedSubscription
     const [pageModel, setPageModel] = useState(undefined)
 
     useEffect(() => {
         setPageModel(page)
-        console.log('page', pageModel)
     }, [page])
 
     useEffect(() => {
@@ -103,7 +99,7 @@ ContentPage.shouldGetProps = ({previousLocation, location}) =>
 ContentPage.getProps = async ({res, params, location, api, ampClient}) => {
     const {pageId} = params
 
-    if (res) {
+    if (res && !ampClient.vse) {
         res.set('Cache-Control', `max-age=${MAX_CACHE_AGE}`)
     }
 
@@ -117,7 +113,7 @@ ContentPage.getProps = async ({res, params, location, api, ampClient}) => {
         l10nConfig
     })
 
-    var page
+    let page
 
     console.log('params: ', params)
     console.log('page ID: ', pageId)
