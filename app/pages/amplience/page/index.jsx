@@ -17,8 +17,8 @@ import {Box, Heading, Skeleton} from '@chakra-ui/react'
 import Seo from '../../../components/amplience/seo'
 
 // Amplience Wrapper Component
-import AmplienceWrapper from '../../../components/amplience/Wrapper'
-import {RealtimeVisualization} from '../../../contexts'
+import AmplienceWrapper from '../../../components/amplience/wrapper'
+import {RealtimeVisualization} from '../../../contexts/amplience'
 
 // Constants
 import {MAX_CACHE_AGE} from '../../../constants'

@@ -4,7 +4,7 @@ In terms of building components, you do not have to do anything different when m
 
 In this application, we have provided an approach to make your live easier. Lets introduce the Amplience Wrapper Component
 
-`app/components/amplience/Wrapper/index.jsx`
+`app/components/amplience/wrapper/index.jsx`
 
 This component makes it really easy for you to add content aware components to anywhere on your application. You simply put it onto a page and provide it with either:
 
