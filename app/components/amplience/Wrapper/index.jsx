@@ -8,10 +8,12 @@ import Section from '../../section'
 import flexibleListSlot from '../flexibleListSlot'
 import {useIntl} from 'react-intl'
 import {AmplienceContext} from '../../../contexts'
+import CuratedProductList from '../curated-product-list'
 
 const componentsMapping = {
     'https://sfcc.com/hero': Hero,
     'https://sfcc.com/section': Section,
+    'https://sfcc.com/curated-product': CuratedProductList,
     'https://sfcc.com/slots/flexiblelist': flexibleListSlot
 }
 
@@ -21,15 +23,21 @@ const AmplienceWrapper = ({fetch, content, components = componentsMapping}) => {
     const {locale} = useIntl()
 
     useEffect(() => {
+        let active = true
+
         const fetchCont = async () => {
             const data = await client.fetchContent([fetch], locale)
-            setFetchedContent(data.pop())
+            if (active) {
+                setFetchedContent(data.pop())
+            }
         }
         if (fetch) {
             fetchCont()
         } else if (content !== fetchedContent) {
             setFetchedContent(content)
         }
+
+        return () => (active = false)
     }, [fetch, content])
 
     const Component = components[fetchedContent?._meta?.schema]
