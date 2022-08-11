@@ -2,13 +2,13 @@ import React, {useContext, useEffect, useState} from 'react'
 import PropTypes from 'prop-types'
 
 //Amplience Rendering Templates
-import Hero from '../../hero'
-import Section from '../../section'
+import Hero from '../hero'
+import Section from '../section'
+import CuratedProductList from '../curated-product-list'
 // Slots
 import flexibleListSlot from '../flexibleListSlot'
 import {useIntl} from 'react-intl'
-import {AmplienceContext} from '../../../contexts'
-import CuratedProductList from '../curated-product-list'
+import {AmplienceContext} from '../../../contexts/amplience'
 
 const componentsMapping = {
     'https://sfcc.com/hero': Hero,

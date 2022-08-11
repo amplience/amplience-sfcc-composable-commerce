@@ -1,5 +1,5 @@
 const sites = require('./sites.js')
-const amplience = require('./amplience.config.js')
+const amplience = require('./amplience/default.js')
 module.exports = {
     app: {
         // Customize how your 'site' and 'locale' are displayed in the url.

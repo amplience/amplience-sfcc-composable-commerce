@@ -7,9 +7,9 @@
 'use strict'
 
 const path = require('path')
-const { getRuntime } = require('pwa-kit-runtime/ssr/server/express')
-const { isRemote } = require('pwa-kit-runtime/utils/ssr-server')
-const { getConfig } = require('pwa-kit-runtime/utils/ssr-config')
+const {getRuntime} = require('pwa-kit-runtime/ssr/server/express')
+const {isRemote} = require('pwa-kit-runtime/utils/ssr-server')
+const {getConfig} = require('pwa-kit-runtime/utils/ssr-config')
 const helmet = require('helmet')
 
 const options = {
@@ -32,7 +32,7 @@ const options = {
 
 const runtime = getRuntime()
 
-const { handler } = runtime.createHandler(options, (app) => {
+const {handler} = runtime.createHandler(options, (app) => {
     // Set HTTP security headers
     app.use(
         helmet({
@@ -56,7 +56,13 @@ const { handler } = runtime.createHandler(options, (app) => {
                         'cdn.media.amplience.net',
                         '*.staging.bigcontent.io'
                     ],
-                    'default-src': ["'self'", "'unsafe-eval'", '*.cdn.content.amplience.net', 'cdn.media.amplience.net', '*.staging.bigcontent.io'],
+                    'default-src': [
+                        "'self'",
+                        "'unsafe-eval'",
+                        '*.cdn.content.amplience.net',
+                        'cdn.media.amplience.net',
+                        '*.staging.bigcontent.io'
+                    ],
                     'frame-ancestors': ["'self'", '*.amplience.net'],
                     // Do not upgrade insecure requests for local development
                     'upgrade-insecure-requests': isRemote() ? [] : null

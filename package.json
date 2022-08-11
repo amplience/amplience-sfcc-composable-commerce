@@ -78,7 +78,7 @@
     "test": "pwa-kit-dev test",
     "test:lighthouse": "cross-env NODE_ENV=production lhci autorun --config=tests/lighthouserc.js",
     "test:max-file-size": "npm run build && bundlesize",
-    "import": "ts-node scripts/index.ts import"
+    "import": "ts-node scripts/amplience/index.ts import"
   },
   "bundlesize": [
     {

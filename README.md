@@ -8,10 +8,10 @@ This is a version of the Retail React app with a starting point for Amplience fu
 * [Security Updates](./docs/security-updates.md) 
 * [Amplience API](./docs/amplience-api.md)
 * [AmplienceWrapper Component](./docs/ampliencewrapper-component.md)
-* [Visualization](./docs/visualization.md)
-* [Preview](./docs/preview.md)
-* [Amplience Account](./docs/amplience-account.md)
-* [Automation](./docs/automation.md)  
+* [Visualization](docs/amplience/visualization.md)
+* [Preview](docs/amplience/preview.md)
+* [Amplience Account](docs/amplience/amplience-account.md)
+* [Automation](docs/amplience/automation.md)  
 
 
 # The Retail React App

@@ -14,7 +14,7 @@ Configure the CLI to point to your account (you will need your Amplience hub ID,
 
 You will need the following information from your Ampliene account:
 * Amplience Hub ID
-* API details: Note the [Amplience Account](./amplience-account.md) specifics which require admin and DAM-API access.
+* API details: Note the [Amplience Account](amplience-account.md) specifics which require admin and DAM-API access.
     * API Client ID
     * API Client Secret
 * Repository IDs: which you can get from [here](https://amplience.com/docs/intro/repositorysettings.html)
