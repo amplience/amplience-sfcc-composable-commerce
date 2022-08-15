@@ -1,6 +1,6 @@
 {
-  "name": "demo-storefront",
-  "version": "0.0.1",
+  "name": "amplience-pwa-kit",
+  "version": "1.0.0",
   "license": "See license in LICENSE",
   "private": true,
   "engines": {
