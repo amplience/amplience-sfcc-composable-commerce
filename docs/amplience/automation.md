@@ -31,3 +31,30 @@ npm run import \
     --contentRepoId <contentRepoId> \
     --slotsRepoId <slotsRepoId>
 ```
+
+## Hub clean
+
+The script run will clean out the hub, delete or archive next items:
+ - content type schemas
+ - content types
+ - content items and slots
+ - events and editions
+ - webhooks
+ - extensions
+ - settings
+ - default `.amplience/imports/sfcc-<hubId>.json` or specified mapFile
+
+You will need the following information from your Ampliene account:
+* Amplience Hub ID
+* API details: Note the [Amplience Account](amplience-account.md) specifics which require admin and DAM-API access.
+  * API Client ID
+  * API Client Secret
+* mapFile path, if custom one was used during import (optional)
+
+```
+npm run clean \
+    -- --hubId <hubId> \
+    --clientId <clientId> \
+    --clientSecret <clientSecret> \
+    --mapFile <mapFilePath> 
+```

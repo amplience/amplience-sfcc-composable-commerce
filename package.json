@@ -81,6 +81,7 @@
     "test:lighthouse": "cross-env NODE_ENV=production lhci autorun --config=tests/lighthouserc.js",
     "test:max-file-size": "npm run build && bundlesize",
     "import": "ts-node scripts/amplience/index.ts import",
+    "clean": "ts-node scripts/amplience/index.ts clean",
     "version:patch": "standard-version",
     "version:minor": "standard-version --release-as minor",
     "version:major": "standard-version --release-as major",
@@ -106,6 +107,7 @@
   "dependencies": {
     "child_process": "^1.0.2",
     "cookie": "^0.5.0",
+    "dc-management-sdk-js": "^1.17.1",
     "dc-visualization-sdk": "^1.1.0",
     "lodash": "^4.17.21",
     "react-json-tree": "^0.17.0",
