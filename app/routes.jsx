@@ -38,7 +38,7 @@ const Wishlist = loadable(() => import('./pages/account/wishlist'), {fallback})
 const PageNotFound = loadable(() => import('./pages/page-not-found'))
 
 //Amplience Pages
-const RealtimeVisualization = loadable(() => import('./pages/amp-rtv'))
+const RealtimeVisualization = loadable(() => import('./pages/amplience/realtime-visualization'))
 const ContentPage = loadable(() => import('./pages/amplience/page'))
 
 const routes = [
