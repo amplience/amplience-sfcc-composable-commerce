@@ -1,3 +1,3 @@
 module.exports = {
-    hub: 'automation01'
+    hub: 'sfcccomposable'
 }
