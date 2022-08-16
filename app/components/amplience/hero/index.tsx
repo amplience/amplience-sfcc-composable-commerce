@@ -12,8 +12,12 @@ import Button from '../button'
 import {getImageUrl} from '../../../utils/amplience/image'
 
 const Hero = ({title, img, actions, ...props}) => {
-    const {image, alt} = img
-    const src = getImageUrl(image)
+    let src = ''
+    let alt = ''
+    if ( img ) {
+        src = getImageUrl(img.image)
+        alt = img.alt
+    }
 
     return (
         <Box
@@ -50,25 +54,29 @@ const Hero = ({title, img, actions, ...props}) => {
                         </Box>
                     )}
                 </Stack>
-                <Flex
-                    flex={1}
-                    justify={'center'}
-                    align={'center'}
-                    position={'relative'}
-                    width={'full'}
-                    paddingTop={{base: 4, lg: 0}}
-                >
-                    <Box position={'relative'} width={{base: 'full', md: '80%', lg: 'full'}}>
-                        <Image
-                            fit={'cover'}
-                            align={'center'}
-                            width={'100%'}
-                            height={'100%'}
-                            src={src}
-                            alt={alt}
-                        />
-                    </Box>
-                </Flex>
+                {
+
+                    src &&
+                    <Flex
+                        flex={1}
+                        justify={'center'}
+                        align={'center'}
+                        position={'relative'}
+                        width={'full'}
+                        paddingTop={{base: 4, lg: 0}}
+                    >
+                        <Box position={'relative'} width={{base: 'full', md: '80%', lg: 'full'}}>
+                            <Image
+                                fit={'cover'}
+                                align={'center'}
+                                width={'100%'}
+                                height={'100%'}
+                                src={src}
+                                alt={alt}
+                            />
+                        </Box>
+                    </Flex>
+                    }
             </Stack>
         </Box>
     )
