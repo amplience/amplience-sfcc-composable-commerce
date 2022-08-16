@@ -1,5 +1,5 @@
 {
-    "contentTypeUri": "https://sfcc.com/staticpage",
+    "contentTypeUri": "https://sfcc.com/site/pages/content-page",
     "status": "ACTIVE",
     "settings": {
       "label": "Static Page",

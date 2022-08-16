@@ -5,7 +5,7 @@
   "body": {
     "_meta": {
       "name": "Amplience FAQ",
-      "schema": "https://sfcc.com/staticpage",
+      "schema": "https://sfcc.com/site/pages/content-page",
       "deliveryKey": "faq"
     },
     "seo": {
@@ -49,21 +49,21 @@
         "_meta": {
           "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
         },
-        "contentType": "https://sfcc.com/hero",
+        "contentType": "https://sfcc.com/components/hero",
         "id": "f02a8387-fa6e-4875-b263-724db2d41334"
       },
       {
         "_meta": {
           "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
         },
-        "contentType": "https://sfcc.com/curated-product",
+        "contentType": "https://sfcc.com/components/curated-product",
         "id": "bf8b5951-a9e5-4e56-a70c-a4d0e369a221"
       },
       {
         "_meta": {
           "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
         },
-        "contentType": "https://sfcc.com/section",
+        "contentType": "https://sfcc.com/components/section",
         "id": "164c1306-4c74-49cf-90b8-011872158370"
       }
     ]

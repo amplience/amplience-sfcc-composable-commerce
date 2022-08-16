@@ -5,7 +5,7 @@
   "body": {
     "_meta": {
       "name": "Hero Version 04",
-      "schema": "https://sfcc.com/hero"
+      "schema": "https://sfcc.com/components/hero"
     },
     "title": {
       "values": [

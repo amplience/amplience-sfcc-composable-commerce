@@ -1,5 +1,5 @@
 {
-  "contentTypeUri": "https://sfcc.com/curated-product",
+  "contentTypeUri": "https://sfcc.com/components/curated-product",
   "status": "ACTIVE",
   "settings": {
     "label": "Curated Product List",

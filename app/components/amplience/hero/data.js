@@ -2,7 +2,7 @@ export const heroTestData = {
     content: {
         _meta: {
             name: 'Hero',
-            schema: 'https://sfcc.com/hero',
+            schema: 'https://sfcc.com/components/hero',
             deliveryId: '81cbd4ca-e71b-40f5-b944-19d466bbde36'
         },
         title: 'The React PWA Starter Store for Retail',

@@ -5,7 +5,7 @@
   "body": {
     "_meta": {
       "name": "Section",
-      "schema": "https://sfcc.com/section",
+      "schema": "https://sfcc.com/components/section",
       "deliveryKey": "section"
     },
     "title": {

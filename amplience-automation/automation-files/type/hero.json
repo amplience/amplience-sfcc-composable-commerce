@@ -1,5 +1,5 @@
 {
-  "contentTypeUri": "https://sfcc.com/hero",
+  "contentTypeUri": "https://sfcc.com/components/hero",
   "status": "ACTIVE",
   "settings": {
     "label": "Hero",

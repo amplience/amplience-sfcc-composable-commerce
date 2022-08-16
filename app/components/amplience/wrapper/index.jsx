@@ -11,10 +11,10 @@ import {useIntl} from 'react-intl'
 import {AmplienceContext} from '../../../contexts/amplience'
 
 const componentsMapping = {
-    'https://sfcc.com/hero': Hero,
-    'https://sfcc.com/section': Section,
-    'https://sfcc.com/curated-product': CuratedProductList,
-    'https://sfcc.com/slots/flexiblelist': flexibleListSlot
+    'https://sfcc.com/components/hero': Hero,
+    'https://sfcc.com/components/section': Section,
+    'https://sfcc.com/components/curated-product': CuratedProductList,
+    'https://sfcc.com/slots/flexible-list': flexibleListSlot
 }
 
 const AmplienceWrapper = ({fetch, content, components = componentsMapping}) => {

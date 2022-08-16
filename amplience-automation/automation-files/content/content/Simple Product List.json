@@ -5,7 +5,7 @@
   "body": {
     "_meta": {
       "name": "Simple Product List",
-      "schema": "https://sfcc.com/curated-product",
+      "schema": "https://sfcc.com/components/curated-product",
       "deliveryKey": "simple-product-list"
     },
     "title": {

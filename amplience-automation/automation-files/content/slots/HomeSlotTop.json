@@ -5,7 +5,7 @@
   "body": {
     "_meta": {
       "name": "Home/Slot/Top",
-      "schema": "https://sfcc.com/slots/flexiblelist",
+      "schema": "https://sfcc.com/slots/flexible-list",
       "deliveryKey": "home/slot/top",
       "edition": {
         "id": "62eb93804cedfd0001cc3565",
@@ -20,7 +20,7 @@
           "locked": false,
           "rootContentItemId": "f02a8387-fa6e-4875-b263-724db2d41334"
         },
-        "contentType": "https://sfcc.com/hero",
+        "contentType": "https://sfcc.com/components/hero",
         "id": "f02a8387-fa6e-4875-b263-724db2d41334"
       }
     ]

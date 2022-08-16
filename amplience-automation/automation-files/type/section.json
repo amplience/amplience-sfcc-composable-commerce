@@ -1,5 +1,5 @@
 {
-  "contentTypeUri": "https://sfcc.com/section",
+  "contentTypeUri": "https://sfcc.com/components/section",
   "status": "ACTIVE",
   "settings": {
     "label": "Section",

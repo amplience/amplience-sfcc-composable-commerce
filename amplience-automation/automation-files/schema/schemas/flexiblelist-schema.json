@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
-	"$id": "https://sfcc.com/slots/flexiblelist",
+	"$id": "https://sfcc.com/slots/flexible-list",
 	"title": "Slexible List Slot",
 	"description": "A slot that contains a flexible list of content",
 	"allOf": [
@@ -34,9 +34,9 @@
 						"properties": {
 							"contentType": {
 								"enum": [
-									"https://sfcc.com/hero",
-									"https://sfcc.com/section",
-									"https://sfcc.com/curated-product"
+									"https://sfcc.com/components/hero",
+									"https://sfcc.com/components/section",
+									"https://sfcc.com/components/curated-product"
 								]
 							}
 						}

@@ -1,5 +1,5 @@
 {
   "body": "./schemas/hero-schema.json",
-  "schemaId": "https://sfcc.com/hero",
+  "schemaId": "https://sfcc.com/components/hero",
   "validationLevel": "CONTENT_TYPE"
 }

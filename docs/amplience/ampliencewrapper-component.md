@@ -44,7 +44,7 @@ The component mapping matches the schema name to the component:
 
 ```
 const componentsMapping = {
-    'https://sfcc.com/hero': Hero
+    'https://sfcc.com/components/hero': Hero
 }
 ```
 

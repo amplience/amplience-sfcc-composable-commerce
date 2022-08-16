@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
-	"$id": "https://sfcc.com/staticpage",
+	"$id": "https://sfcc.com/site/pages/content-page",
 
 	"title": "Title",
 	"description": "Description",
@@ -23,7 +23,7 @@
 			}
 		},
 		"seo": {
-			"allOf": [{"$ref": "https://sfcc.com/seo#/definitions/localized-seo"}]
+			"allOf": [{"$ref": "https://sfcc.com/libs/seo#/definitions/localized-seo"}]
 		},
 		"content": {
 			"title": "Content",
@@ -38,9 +38,9 @@
 						"properties": {
 							"contentType": {
 								"enum": [
-									"https://sfcc.com/hero", 
-									"https://sfcc.com/section", 
-									"https://sfcc.com/curated-product"
+									"https://sfcc.com/components/hero", 
+									"https://sfcc.com/components/section", 
+									"https://sfcc.com/components/curated-product"
 								]
 							}
 						}
