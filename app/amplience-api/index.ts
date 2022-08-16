@@ -44,11 +44,14 @@ export class AmplienceAPI {
         const id = parent._meta.deliveryId
 
         // TODO: pagination, rate limit
-        const result = await this.client.filterByParentId(id).request({
-            format: 'inlined',
-            depth: 'all',
-            locale
-        })
+        const result = await this.client
+            .filterByParentId(id)
+            .sortBy('default', 'ASC')
+            .request({
+                format: 'inlined',
+                depth: 'all',
+                locale
+            })
 
         const items = result.responses
             .filter((response) => response.content != null)
