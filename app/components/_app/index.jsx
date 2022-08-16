@@ -32,7 +32,7 @@ import Footer from '../../components/amplience/footer'
 import CheckoutHeader from '../../pages/checkout/partials/checkout-header'
 import CheckoutFooter from '../../pages/checkout/partials/checkout-footer'
 import DrawerMenu from '../drawer-menu'
-import ListMenu from '../list-menu'
+import AmplienceListMenu from '../amplience/list-menu'
 import {HideOnDesktop, HideOnMobile} from '../responsive'
 
 // Hooks
@@ -64,7 +64,7 @@ const DEFAULT_NAV_DEPTH = 3
 const DEFAULT_ROOT_CATEGORY = 'root'
 
 const App = (props) => {
-    const {children, targetLocale, messages, categories: allCategories = {}, vseProps} = props
+    const {children, targetLocale, messages, categories: allCategories = {}, vseProps, headerNav} = props
 
     const appOrigin = getAppOrigin()
 
@@ -277,9 +277,7 @@ const App = (props) => {
                                                 </HideOnDesktop>
 
                                                 <HideOnMobile>
-                                                    <ListMenu
-                                                        root={allCategories[DEFAULT_ROOT_CATEGORY]}
-                                                    />
+                                                    <AmplienceListMenu root={headerNav} />
                                                 </HideOnMobile>
                                             </Header>
                                         ) : (
@@ -389,12 +387,15 @@ Learn more with our localization guide. https://sfdc.co/localization-guide
     const vseProps = generateVseProps({req, res, query: req.query})
     ampClient.setVse(vseProps.vse)
 
+    const headerNav = await ampClient.fetchHierarchy({key: 'test-nav'})
+
     return {
         targetLocale,
         messages,
         categories,
         config: res?.locals?.config,
-        vseProps
+        vseProps,
+        headerNav
     }
 }
 
@@ -404,7 +405,8 @@ App.propTypes = {
     messages: PropTypes.object,
     categories: PropTypes.object,
     config: PropTypes.object,
-    vseProps: PropTypes.object
+    vseProps: PropTypes.object,
+    headerNav: PropTypes.object
 }
 
 export default App
