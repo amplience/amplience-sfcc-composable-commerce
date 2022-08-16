@@ -1,0 +1,5 @@
+{
+  "body": "./schemas/flexible-list-schema.json",
+  "schemaId": "https://sfcc.com/slots/flexible-list",
+  "validationLevel": "SLOT"
+}

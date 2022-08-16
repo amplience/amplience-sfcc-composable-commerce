@@ -1,0 +1,5 @@
+{
+    "body": "./schemas/content-page-schema.json",
+    "schemaId": "https://sfcc.com/site/pages/content-page",
+    "validationLevel": "CONTENT_TYPE"
+}

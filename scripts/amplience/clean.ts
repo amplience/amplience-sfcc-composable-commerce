@@ -64,12 +64,12 @@ export const cleanHandler = async (context: Arguments<Context>): Promise<any> =>
     execSync(`./node_modules/.bin/dc-cli configure --clientId ${context.clientId} --clientSecret ${context.clientSecret} --hubId ${context.hubId}`, {stdio: 'inherit'})
 
     console.log(`Cleaning hub...`)
-    execSync(`./node_modules/.bin/dc-cli hub clean`, {stdio: 'inherit'})
+    execSync(`./node_modules/.bin/dc-cli hub clean --force`, {stdio: 'inherit'})
 
     console.log(`Archiving events...`)
     const events = await paginator(hub.related.events.list)
     for (let i = events.length - 1; i >= 0; i--) {
-        execSync(`./node_modules/.bin/dc-cli event archive ${events[i].id}`, {stdio: 'inherit'})
+        execSync(`./node_modules/.bin/dc-cli event archive ${events[i].id} --force`, {stdio: 'inherit'})
     }
 
     console.log(`Deleting extensions...`)

@@ -1,0 +1,56 @@
+{
+  "id": "bf8b5951-a9e5-4e56-a70c-a4d0e369a221",
+  "contentRepositoryId": "62e9739cc9e77c0001659dd7",
+  "folderId": null,
+  "body": {
+    "_meta": {
+      "name": "Simple Product List",
+      "schema": "https://sfcc.com/components/curated-product",
+      "deliveryKey": "simple-product-list"
+    },
+    "title": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Simple Product List"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Simple Product List (fr)"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Simple Product List (de)"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Simple Product List (es)"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Simple Product List (it)"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "products": [
+      "25585429M",
+      "22962004M",
+      "25604455M",
+      "74974310M",
+      "78916783M"
+    ]
+  },
+  "version": 4,
+  "label": "Simple Product List",
+  "status": "ACTIVE",
+  "createdBy": "4635dbc4-416a-445c-8b51-7969626b077d",
+  "createdDate": "2022-08-09T11:16:21.978Z",
+  "lastModifiedBy": "4635dbc4-416a-445c-8b51-7969626b077d",
+  "lastModifiedDate": "2022-08-10T12:08:54.859Z",
+  "lastPublishedVersion": 4,
+  "lastPublishedDate": "2022-08-11T14:34:12.316Z",
+  "deliveryId": "bf8b5951-a9e5-4e56-a70c-a4d0e369a221"
+}

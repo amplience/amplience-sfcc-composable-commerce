@@ -1,9 +1,9 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
-	"$id": "https://sfcc.com/hero",
+	"$id": "https://sfcc.com/components/hero",
 
 	"title": "Hero",
-	"description": "",
+	"description": "Hero schema",
 
 	"allOf": [
 		{

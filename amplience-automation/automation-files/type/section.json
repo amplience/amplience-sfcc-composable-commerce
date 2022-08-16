@@ -1,5 +1,5 @@
 {
-  "contentTypeUri": "https://sfcc.com/section",
+  "contentTypeUri": "https://sfcc.com/components/section",
   "status": "ACTIVE",
   "settings": {
     "label": "Section",
@@ -14,6 +14,11 @@
         "label": "Localhost",
         "templatedUri": "http://localhost:3000/visualization/{{hub.name}}/{{content.sys.id}}/{{vse.domain}}/{{locales}}",
         "default": true
+      },
+      {
+        "label": "JSON",
+        "templatedUri": "https://delivery-preview.visualizations.content.amplience.net?id={{content.sys.id}}&vse={{vse.domain}}&locale={{locales}}&hub={{cms.hub}}&realtime=true",
+        "default": false
       }
     ],
     "cards": []

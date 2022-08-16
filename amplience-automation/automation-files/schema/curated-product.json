@@ -1,5 +1,5 @@
 {
   "body": "./schemas/curated-product-schema.json",
-  "schemaId": "https://sfcc.com/curated-product",
+  "schemaId": "https://sfcc.com/components/curated-product",
   "validationLevel": "CONTENT_TYPE"
 }

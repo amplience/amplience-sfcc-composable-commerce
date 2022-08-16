@@ -44,7 +44,7 @@
             "body": {
               "_meta": {
                 "name": "Hero Version 01",
-                "schema": "https://sfcc.com/slots/flexiblelist"
+                "schema": "https://sfcc.com/slots/flexible-list"
               },
               "content": [
                 {
@@ -53,7 +53,7 @@
                     "locked": false,
                     "rootContentItemId": "d97fa8ac-85da-4594-8734-84070bdc249c"
                   },
-                  "contentType": "https://sfcc.com/hero",
+                  "contentType": "https://sfcc.com/components/hero",
                   "id": "62eb9327c9e77c0001663ae0"
                 }
               ]
@@ -107,7 +107,7 @@
             "body": {
               "_meta": {
                 "name": "Hero Version 02",
-                "schema": "https://sfcc.com/slots/flexiblelist"
+                "schema": "https://sfcc.com/slots/flexible-list"
               },
               "content": [
                 {
@@ -116,7 +116,7 @@
                     "locked": false,
                     "rootContentItemId": "a14b3f21-b6b0-43d1-9e35-f50c2addd5cc"
                   },
-                  "contentType": "https://sfcc.com/hero",
+                  "contentType": "https://sfcc.com/components/hero",
                   "id": "62eb9352c9e77c0001eab940"
                 }
               ]
@@ -170,7 +170,7 @@
             "body": {
               "_meta": {
                 "name": "Hero Version 03",
-                "schema": "https://sfcc.com/slots/flexiblelist"
+                "schema": "https://sfcc.com/slots/flexible-list"
               },
               "content": [
                 {
@@ -179,7 +179,7 @@
                     "locked": false,
                     "rootContentItemId": "33f6bd43-d774-410b-adfe-7ef144c9435e"
                   },
-                  "contentType": "https://sfcc.com/hero",
+                  "contentType": "https://sfcc.com/components/hero",
                   "id": "62eb936cc9e77c0001fed534"
                 }
               ]
@@ -233,7 +233,7 @@
             "body": {
               "_meta": {
                 "name": "Hero Version 04",
-                "schema": "https://sfcc.com/slots/flexiblelist"
+                "schema": "https://sfcc.com/slots/flexible-list"
               },
               "content": [
                 {
@@ -242,7 +242,7 @@
                     "locked": false,
                     "rootContentItemId": "f02a8387-fa6e-4875-b263-724db2d41334"
                   },
-                  "contentType": "https://sfcc.com/hero",
+                  "contentType": "https://sfcc.com/components/hero",
                   "id": "62eb938ac9e77c00013c36b8"
                 }
               ]
