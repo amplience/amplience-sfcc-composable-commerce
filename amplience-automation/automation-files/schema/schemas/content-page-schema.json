@@ -33,19 +33,13 @@
 			"items": {
 				"title": "Page Content",
 				"allOf": [
-					{"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"},
-					{
-						"properties": {
-							"contentType": {
-								"enum": [
-									"https://sfcc.com/components/hero", 
-									"https://sfcc.com/components/section", 
-									"https://sfcc.com/components/curated-product"
-								]
-							}
-						}
-					}
-				]
+                    { "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link" },
+                    {
+                        "properties": {
+                            "contentType": { "$ref": "https://sfcc.com/libs/all-definitions#/definitions/anyComponent" }
+                        }
+                    }
+                ]
 			}
 		}
 	}
