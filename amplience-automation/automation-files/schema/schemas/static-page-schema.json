@@ -37,7 +37,11 @@
 					{
 						"properties": {
 							"contentType": {
-								"enum": ["https://sfcc.com/hero", "https://sfcc.com/section", "https://sfcc.com/curated-product"]
+								"enum": [
+									"https://sfcc.com/hero", 
+									"https://sfcc.com/section", 
+									"https://sfcc.com/curated-product"
+								]
 							}
 						}
 					}

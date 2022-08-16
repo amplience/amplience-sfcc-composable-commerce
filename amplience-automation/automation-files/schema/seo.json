@@ -1,5 +1,5 @@
 {
   "body": "./schemas/seo-schema.json",
   "schemaId": "https://sfcc.com/seo",
-  "validationLevel": "CONTENT_TYPE"
+  "validationLevel": "PARTIAL"
 }
