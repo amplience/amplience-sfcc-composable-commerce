@@ -7,13 +7,17 @@ import AmplienceWrapper from '../wrapper'
 const flexibleListSlot = ({...props}) => {
     const content = props.content
 
-    return (
-        <>
-            {content.map((content, index) => {
-                return <AmplienceWrapper content={content} key={index} />
-            })}
-        </>
-    )
+    if ( content ) {
+        return (
+            <>
+                {content.map((content, index) => {
+                    return <AmplienceWrapper content={content} key={index} />
+                })}
+            </>
+        )
+    } else {
+        return <></>
+    }
 }
 
 flexibleListSlot.displayName = 'Flexible List Slot'
