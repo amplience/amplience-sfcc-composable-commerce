@@ -12,7 +12,7 @@ Location: `app/routes.jsx`
 
 Import:
 ``` 
-const RealtimeVisualization = loadable(() => import('./pages/amp-rtv'))
+const RealtimeVisualization = loadable(() => import('./pages/amplience/realtime-visualization'))
 ```
 
 Additional Route:
@@ -34,4 +34,4 @@ http://localhost:3000/visualization/{{hub.name}}/{{content.sys.id}}/{{vse.domain
 
 Real time visualisation uses the Amplience [Real Time visualization SDK](https://github.com/amplience/dc-visualization-sdk) in order to load content and change props in your component in real time as you are editing.
 
-Location: `app/pages/amp-rtv/index.jsx`
+Location: `app/pages/amplience/realtime-visualization/index.jsx`
