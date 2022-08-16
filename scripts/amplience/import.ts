@@ -151,7 +151,7 @@ export const importHandler = async (context: Arguments<Context>): Promise<any> =
         execSync(`./node_modules/.bin/dc-cli content-type-schema import ${context.tempDir}/schema`, {stdio: 'inherit'})
 
         console.log(`Importing content types...`)
-        execSync(`./node_modules/.bin/dc-cli content-type import ${context.tempDir}/type`, {stdio: 'inherit'})
+        execSync(`./node_modules/.bin/dc-cli content-type import ${context.tempDir}/type --sync`, {stdio: 'inherit'})
 
         console.log(`Importing content...`)
         execSync(`./node_modules/.bin/dc-cli content-item import ${context.tempDir}/content/content --baseRepo ${context.contentRepoId} --media true --publish true --mapFile ${mappingFile}`, {stdio: 'inherit'})
