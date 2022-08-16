@@ -3,7 +3,7 @@
 	"$id": "https://sfcc.com/components/hero",
 
 	"title": "Hero",
-	"description": "",
+	"description": "Hero schema",
 
 	"allOf": [
 		{

@@ -3,7 +3,7 @@
 	"$id": "https://sfcc.com/components/section",
 
 	"title": "Section",
-	"description": "",
+	"description": "Section schema",
 
 	"allOf": [
 		{

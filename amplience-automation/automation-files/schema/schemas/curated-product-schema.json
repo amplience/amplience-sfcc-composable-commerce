@@ -2,8 +2,8 @@
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "https://sfcc.com/components/curated-product",
 
-	"title": "Title",
-	"description": "Description",
+	"title": "Curated Product",
+	"description": "Curated Product schema",
 
 	"allOf": [
 		{
