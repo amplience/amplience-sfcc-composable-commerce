@@ -10,11 +10,11 @@ import {useParams} from 'react-router-dom'
 import PropTypes from 'prop-types'
 import {useIntl} from 'react-intl'
 import {Box} from '@chakra-ui/react'
-import Seo from '../../components/seo'
+import Seo from '../../../components/seo'
 
 // Amplience
-import {RealtimeVisualization} from '../../contexts/amplience'
-import AmplienceWrapper from '../../components/amplience/wrapper'
+import {RealtimeVisualization} from '../../../contexts/amplience'
+import AmplienceWrapper from '../../../components/amplience/wrapper'
 
 /**
  * This is the home page for Retail React App.

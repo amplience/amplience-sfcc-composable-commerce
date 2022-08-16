@@ -82,6 +82,7 @@
     "test:max-file-size": "npm run build && bundlesize",
     "import": "ts-node scripts/amplience/index.ts import",
     "clean": "ts-node scripts/amplience/index.ts clean",
+    "clean": "ts-node scripts/amplience/index.ts clean"
     "version:patch": "standard-version",
     "version:minor": "standard-version --release-as minor",
     "version:major": "standard-version --release-as major",

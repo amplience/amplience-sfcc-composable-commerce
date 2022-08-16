@@ -12,7 +12,7 @@ Install the Amplience Dynamic Content CLI as can be found [here](https://github.
 
 Configure the CLI to point to your account (you will need your Amplience hub ID, clientID and clientSecret)
 
-You will need the following information from your Ampliene account:
+You will need the following information from your Ampliene and SFCC account:
 * Amplience Hub ID
 * API details: Note the [Amplience Account](amplience-account.md) specifics which require admin and DAM-API access.
     * API Client ID
@@ -20,6 +20,14 @@ You will need the following information from your Ampliene account:
 * Repository IDs: which you can get from [here](https://amplience.com/docs/intro/repositorysettings.html)
     * Content
     * Clots
+* Mapping file path: optional file path to write mapping file, default `.amplience/imports/sfcc-<hubId>.json`
+* Temporary directory path: optional temporary directory for all run files, default `amplience-sfcc/amplience-sfcc-${nanoid()}`
+* SFCC credentials to create Product selector extension:
+    * SFCC url
+    * SFCC version
+    * Auth client ID
+    * Auth secret
+    * Site ID
 
 Run the following command replacing the variables with details from your Amplience account:
 
@@ -29,7 +37,14 @@ npm run import \
     --clientId <clientId> \
     --clientSecret <clientSecret> \
     --contentRepoId <contentRepoId> \
-    --slotsRepoId <slotsRepoId>
+    --slotsRepoId <slotsRepoId> \
+    --mapFile <mapFile> \
+    --tempDir <tempDir> \
+    --sfccUrl <sfccUrl> \
+    --sfccVersion <sfccVersion> \
+    --authClientId <authClientId> \
+    --authSecret <authSecret> \
+    --siteId <siteId>
 ```
 
 ## Hub clean
