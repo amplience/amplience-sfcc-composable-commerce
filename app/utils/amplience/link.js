@@ -1,9 +1,10 @@
 const contentPageLinkBuilder = (link) => {
-    if (!link.contentpage?._meta?.deliveryKey) {
+    // Delivery key appears in the reference due to our enrich method.
+    if (!link.contentpage?.deliveryKey) {
         return '#'
     }
 
-    return '/page/' + link.contentpage._meta.deliveryKey
+    return '/page/' + link.contentpage.deliveryKey
 }
 
 const externalLinkBuilder = (link, forRelative) => {
