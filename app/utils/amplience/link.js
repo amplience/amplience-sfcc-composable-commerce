@@ -1,11 +1,9 @@
 const contentPageLinkBuilder = (link) => {
-    console.log(link)
-
-    if (!link.contentpage?._meta?.properties?.deliveryKey) {
+    if (!link.contentpage?._meta?.deliveryKey) {
         return '#'
     }
 
-    return '/page/' + link.contentpage._meta.properties.deliveryKey
+    return '/page/' + link.contentpage._meta.deliveryKey
 }
 
 const externalLinkBuilder = (link, forRelative) => {
