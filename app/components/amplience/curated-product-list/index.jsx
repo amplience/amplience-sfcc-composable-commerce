@@ -24,7 +24,7 @@ const CuratedProductList = ({title, products}) => {
     useEffect(() => {
         let active = true
 
-        if (products.length === 0) {
+        if (products?.length === 0) {
             // No products likely means that the IDs haven't arrived yet.
             setApiProducts([])
             setIsLoading(true)

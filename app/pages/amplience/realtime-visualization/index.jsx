@@ -42,6 +42,14 @@ const AmpRtv = () => {
                 setFormContent(model.content)
             })
 
+            RTV.ampVizSdk.form.saved((value) => {
+                window.location.reload();
+            });
+
+            RTV.ampVizSdk.locale.changed((value) => {
+                window.location.reload();
+            });
+
             removeChangedSubscription = RTV.ampVizSdk.form.changed((model) => {
                 // handle form model change
                 setFormContent(model.content)
