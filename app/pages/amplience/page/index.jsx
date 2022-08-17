@@ -64,17 +64,17 @@ const ContentPage = ({page}) => {
             ) : (
                 <>
                     <Seo
-                        title={pageModel.seo.title}
-                        description={pageModel.seo.description}
-                        keywords={pageModel.seo.keywords}
-                        noIndex={pageModel.seo.noindex}
+                        title={pageModel.seo?.title}
+                        description={pageModel.seo?.description}
+                        keywords={pageModel.seo?.keywords}
+                        noIndex={pageModel.seo?.noindex}
                     />
                     <Heading
                         as="h1"
                         fontSize={{base: '4xl', md: '5xl', lg: '6xl'}}
                         maxWidth={{base: '75%', md: '50%', lg: 'md'}}
                     >
-                        {pageModel.seo.title}
+                        {pageModel.seo?.title}
                     </Heading>
                 </>
             )}
@@ -82,7 +82,7 @@ const ContentPage = ({page}) => {
                 <Skeleton height="200px" />
             ) : (
                 <>
-                    {pageModel.content.map((item) => {
+                    {pageModel.content?.map((item) => {
                         return <AmplienceWrapper key={item._meta.deliveryId} content={item} />
                     })}
                 </>

@@ -1,3 +1,23 @@
+# Changelog
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [1.1.0](https://github.com/amplience/amplience-sfcc-composable-commerce/compare/v1.0.0...v1.1.0) (2022-08-16)
+
+
+### Features
+
+* Added all-definitions partial to draw content in a re-usable way ([d3ef956](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/d3ef956b5bff965d1dc7d34337b123a16d01363d))
+* **clean:** create a clean hub script to delete/archive content types, schemas, content items, events/editions, extensions, webhooks, update settings ([26a3ab4](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/26a3ab4f8aa93ea4b33ada587f40c15f2c7c37de))
+* Updated icons related to content types ([ea141d3](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/ea141d394980afdcc376aa92f3dba79cd0c747e2))
+
+
+### Bug Fixes
+
+* check if content is defined ([896437a](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/896437a0c6e9b47e9bb14e5b39cf6d294e4ea805))
+* handle empty fields and reload rtv on save ([1d71488](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/1d71488502c6d73f33956b4341d4181d00a19394))
+* title and content can be empty ([869c2e0](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/869c2e0d5ed8cc1750cdf4f89c320958b9694023))
+
 ### Bug Fixes
 
 - Various instances of hard-coded text have been replaced with translatable messages (see [Translations](#translations)).

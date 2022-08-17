@@ -2,11 +2,11 @@
     "contentTypeUri": "https://sfcc.com/site/pages/content-page",
     "status": "ACTIVE",
     "settings": {
-      "label": "Static Page",
+      "label": "Content Page",
       "icons": [
         {
           "size": 256,
-          "url": "https://bigcontent.io/cms/icons/potter/potter-page.png"
+          "url": "https://sfcccomposable.a.bigcontent.io/v1/static/icon-component-content-page"
         }
       ],
       "visualizations": [
