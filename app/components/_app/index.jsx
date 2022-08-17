@@ -387,7 +387,10 @@ Learn more with our localization guide. https://sfdc.co/localization-guide
     const vseProps = generateVseProps({req, res, query: req.query})
     ampClient.setVse(vseProps.vse)
 
-    const headerNav = await ampClient.fetchHierarchy({key: 'test-nav'})
+    const headerNav = await ampClient.fetchHierarchy(
+        {key: 'test-nav'},
+        (item) => item.common.visible
+    )
 
     return {
         targetLocale,

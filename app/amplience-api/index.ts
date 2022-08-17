@@ -2,6 +2,7 @@ import {ContentClient} from 'dc-delivery-sdk-js'
 import {app} from '../../config/default'
 
 export type IdOrKey = {id: string} | {key: string}
+export type FilterType = ((item: any) => boolean) | undefined
 
 export class AmplienceAPI {
     client
@@ -40,7 +41,7 @@ export class AmplienceAPI {
         })
     }
 
-    async getChildren(parent: any, locale = 'en-US') {
+    async getChildren(parent: any, filter: FilterType, locale = 'en-US') {
         const id = parent._meta.deliveryId
 
         // TODO: pagination, rate limit
@@ -54,20 +55,22 @@ export class AmplienceAPI {
             })
 
         const items = result.responses
-            .filter((response) => response.content != null)
             .map((response) => response.content)
+            .filter((response) => response != null && (!filter || filter(response)))
 
-        parent.children = items
+        if (items.length > 0) {
+            parent.children = items
+        }
 
-        await Promise.all(items.map((item) => this.getChildren(item, locale)))
+        await Promise.all(items.map((item) => this.getChildren(item, filter, locale)))
     }
 
-    async fetchHierarchy(parent: IdOrKey, locale = 'en-US') {
+    async fetchHierarchy(parent: IdOrKey, filter: FilterType, locale = 'en-US') {
         await this.clientReady
 
         const root = (await this.fetchContent([parent], locale))[0]
 
-        await this.getChildren(root)
+        await this.getChildren(root, filter, locale)
 
         return root
     }
