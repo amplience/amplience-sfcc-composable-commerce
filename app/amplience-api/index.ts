@@ -4,16 +4,18 @@ import {app} from '../../config/default'
 export type IdOrKey = {id: string} | {key: string}
 export type FilterType = ((item: any) => boolean) | undefined
 
+export type FetchParams = {locale?: string; depth?: 'all' | 'root'; format?: 'inlined'}
+
 const referenceTypes = [
     'http://bigcontent.io/cms/schema/v1/core#/definitions/content-link',
     'http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference'
 ]
 
 export class AmplienceAPI {
-    client
-    vse
+    client: ContentClient
+    vse: string
 
-    clientReady
+    clientReady: Promise<void>
     clientReadyResolve
 
     constructor() {
@@ -34,10 +36,14 @@ export class AmplienceAPI {
         this.clientReadyResolve()
     }
 
-    async fetchContent(args: IdOrKey[], locale = 'en-US') {
+    async fetchContent(args: IdOrKey[], params?: FetchParams) {
         await this.clientReady
 
-        let responses = await (await this.client.getContentItems(args, {locale})).responses
+        if (params && !params.locale) {
+            params.locale = 'en-US'
+        }
+
+        let responses = await (await this.client.getContentItems(args, params)).responses
         return responses.map((response) => {
             if ('content' in response) {
                 return response.content
@@ -105,12 +111,12 @@ export class AmplienceAPI {
         const ids = Array.from(refs.keys()).map((id) => ({id}))
 
         if (ids.length > 0) {
-            const items = await this.fetchContent(ids, locale)
+            const items = await this.fetchContent(ids, {locale, depth: 'root'})
 
             for (let item of items) {
                 const key = item._meta.deliveryKey
                 if (key) {
-                    refs.get(item._meta.deliveryId)._meta.deliveryKey = key
+                    refs.get(item._meta.deliveryId).deliveryKey = key
                 }
             }
         }
@@ -119,7 +125,7 @@ export class AmplienceAPI {
     async fetchHierarchy(parent: IdOrKey, filter: FilterType, locale = 'en-US') {
         await this.clientReady
 
-        const root = (await this.fetchContent([parent], locale))[0]
+        const root = (await this.fetchContent([parent], {locale}))[0]
 
         await this.getChildren(root, filter, locale)
 

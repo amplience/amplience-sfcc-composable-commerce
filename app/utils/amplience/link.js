@@ -1,18 +1,31 @@
+import {categoryUrlBuilder} from '../url'
+
 const contentPageLinkBuilder = (link) => {
-    if (!link.contentpage?._meta?.deliveryKey) {
+    // Delivery key appears in the reference due to our enrich method.
+    if (!link.contentpage?.deliveryKey) {
         return '#'
     }
 
-    return '/page/' + link.contentpage._meta.deliveryKey
+    return '/page/' + link.contentpage.deliveryKey
 }
 
 const externalLinkBuilder = (link, forRelative) => {
     return forRelative ? '$' + link.externalUrl : link.externalUrl
 }
 
+const internalLinkBuilder = (link) => {
+    return link.internalUrl
+}
+
+const categoryLinkBuilder = (link) => {
+    return categoryUrlBuilder({id: link.category})
+}
+
 const handlers = {
     'https://sfcc.com/site/navigation/external': externalLinkBuilder,
-    'https://sfcc.com/site/navigation/content-page': contentPageLinkBuilder
+    'https://sfcc.com/site/navigation/internal': internalLinkBuilder,
+    'https://sfcc.com/site/navigation/content-page': contentPageLinkBuilder,
+    'https://sfcc.com/site/navigation/category': categoryLinkBuilder
 }
 
 export const getLinkUrl = (link, forRelative = true) => {
