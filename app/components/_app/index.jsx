@@ -64,7 +64,15 @@ const DEFAULT_NAV_DEPTH = 3
 const DEFAULT_ROOT_CATEGORY = 'root'
 
 const App = (props) => {
-    const {children, targetLocale, messages, categories: allCategories = {}, vseProps, headerNav} = props
+    const {
+        children,
+        targetLocale,
+        messages,
+        categories: allCategories = {},
+        vseProps,
+        headerNav,
+        footerNav
+    } = props
 
     const appOrigin = getAppOrigin()
 
@@ -309,7 +317,11 @@ const App = (props) => {
                                             </Box>
                                         </SkipNavContent>
 
-                                        {!isCheckout ? <Footer /> : <CheckoutFooter />}
+                                        {!isCheckout ? (
+                                            <Footer root={footerNav} />
+                                        ) : (
+                                            <CheckoutFooter />
+                                        )}
 
                                         <AuthModal {...authModal} />
                                     </AddToCartModalProvider>
@@ -392,13 +404,19 @@ Learn more with our localization guide. https://sfdc.co/localization-guide
         (item) => item.common.visible
     )
 
+    const footerNav = await ampClient.fetchHierarchy(
+        {key: 'test-footer-nav'},
+        (item) => item.common.visible
+    )
+
     return {
         targetLocale,
         messages,
         categories,
         config: res?.locals?.config,
         vseProps,
-        headerNav
+        headerNav,
+        footerNav
     }
 }
 
@@ -409,7 +427,8 @@ App.propTypes = {
     categories: PropTypes.object,
     config: PropTypes.object,
     vseProps: PropTypes.object,
-    headerNav: PropTypes.object
+    headerNav: PropTypes.object,
+    footerNav: PropTypes.object
 }
 
 export default App

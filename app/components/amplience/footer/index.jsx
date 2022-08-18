@@ -28,10 +28,11 @@ import LinksList from '../../links-list'
 import SocialIcons from '../../social-icons'
 import {HideOnDesktop, HideOnMobile} from '../../responsive'
 import {getPathWithLocale} from '../../../utils/url'
+import {getLinkUrl} from '../../../utils/amplience/link'
 import LocaleText from '../../locale-text'
 import useSite from '../../../hooks/use-site'
 
-const Footer = ({...otherProps}) => {
+const Footer = ({root, ...otherProps}) => {
     const styles = useMultiStyleConfig('Footer')
     const intl = useIntl()
     const [locale, setLocale] = useState(intl.locale)
@@ -40,85 +41,24 @@ const Footer = ({...otherProps}) => {
     const supportedLocaleIds = l10n?.supportedLocales.map((locale) => locale.id)
     const showLocaleSelector = supportedLocaleIds?.length > 1
 
+    const topLevel = root.children
+
     return (
         <Box as="footer" {...styles.container} {...otherProps}>
             <Box {...styles.content}>
                 <StylesProvider value={styles}>
                     <HideOnMobile>
-                        <SimpleGrid columns={4} spacing={3}>
-                            <LinksList
-                                heading={intl.formatMessage({
-                                    id: 'footer.column.customer_support',
-                                    defaultMessage: 'Customer Support'
-                                })}
-                                links={[
-                                    {
-                                        href: '/',
-                                        text: intl.formatMessage({
-                                            id: 'footer.link.contact_us',
-                                            defaultMessage: 'Contact Us'
-                                        })
-                                    },
-                                    {
-                                        href: '/',
-                                        text: intl.formatMessage({
-                                            id: 'footer.link.shipping',
-                                            defaultMessage: 'Shipping'
-                                        })
-                                    },
-                                    {
-                                        href: '/page/faq',
-                                        text: intl.formatMessage({
-                                            id: 'footer.link.page',
-                                            defaultMessage: 'Amplience FAQ'
-                                        })
-                                    }
-                                ]}
-                            />
-                            <LinksList
-                                heading={intl.formatMessage({
-                                    id: 'footer.column.account',
-                                    defaultMessage: 'Account'
-                                })}
-                                links={[
-                                    {
-                                        href: '/',
-                                        text: intl.formatMessage({
-                                            id: 'footer.link.order_status',
-                                            defaultMessage: 'Order Status'
-                                        })
-                                    },
-                                    {
-                                        href: '/',
-                                        text: intl.formatMessage({
-                                            id: 'footer.link.signin_create_account',
-                                            defaultMessage: 'Sign in or create account'
-                                        })
-                                    }
-                                ]}
-                            />
-                            <LinksList
-                                heading={intl.formatMessage({
-                                    id: 'footer.column.our_company',
-                                    defaultMessage: 'Our Company'
-                                })}
-                                links={[
-                                    {
-                                        href: '/',
-                                        text: intl.formatMessage({
-                                            id: 'footer.link.store_locator',
-                                            defaultMessage: 'Store Locator'
-                                        })
-                                    },
-                                    {
-                                        href: '/',
-                                        text: intl.formatMessage({
-                                            id: 'footer.link.about_us',
-                                            defaultMessage: 'About Us'
-                                        })
-                                    }
-                                ]}
-                            />
+                        <SimpleGrid columns={topLevel.length + 1} spacing={3}>
+                            {topLevel.map((item, index) => (
+                                <LinksList
+                                    key={index}
+                                    heading={item.common.title}
+                                    links={(item.children ?? []).map((subitem) => ({
+                                        href: getLinkUrl(subitem),
+                                        text: subitem.common.title
+                                    }))}
+                                />
+                            ))}
                             <Box>
                                 <Subscribe />
                             </Box>
@@ -189,6 +129,13 @@ const Footer = ({...otherProps}) => {
             </Box>
         </Box>
     )
+}
+
+Footer.propTypes = {
+    /**
+     * Amplience content hierarchy of navigation items.
+     */
+    root: PropTypes.object
 }
 
 export default Footer
