@@ -113,7 +113,7 @@ const AmplienceListMenuContent = ({maxColumns, items, onClose, initialFocusRef})
                     >
                         {items.map((item, index) => {
                             const name = item.common ? item.common.title : ''
-                            const items = item.children
+                            const subitems = item.children
 
                             const heading = {
                                 href: getLinkUrl(item),
@@ -124,12 +124,13 @@ const AmplienceListMenuContent = ({maxColumns, items, onClose, initialFocusRef})
                                 }
                             }
 
-                            const links = items
-                                ? items.map((item) => {
-                                      const {name} = item
+                            console.log(subitems)
+
+                            const links = subitems
+                                ? subitems.map((item) => {
                                       return {
                                           href: getLinkUrl(item),
-                                          text: name,
+                                          text: item.common ? item.common.title : '',
                                           styles: {
                                               fontSize: 'md',
                                               paddingTop: 3,

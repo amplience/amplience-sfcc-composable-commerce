@@ -400,7 +400,7 @@ Learn more with our localization guide. https://sfdc.co/localization-guide
     ampClient.setVse(vseProps.vse)
 
     const headerNav = await ampClient.fetchHierarchy(
-        {key: 'test-nav'},
+        {key: 'main-nav'},
         (item) => item.common.visible
     )
 
