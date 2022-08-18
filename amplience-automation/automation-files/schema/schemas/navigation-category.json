@@ -1,0 +1,66 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://sfcc.com/site/navigation/category",
+  "title": "Navigation Content Page",
+  "description": "Navigation item for SFCC categories",
+  "allOf": [
+    {
+      "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+    }
+  ],
+  "trait:hierarchy": {
+    "childContentTypes": [
+      "https://sfcc.com/site/navigation/external",
+      "https://sfcc.com/site/navigation/internal",
+      "https://sfcc.com/site/navigation/content-page",
+      "https://sfcc.com/site/navigation/category"
+    ]
+  },
+  "trait:sortable": {
+    "sortBy": [
+      {
+        "key": "default",
+        "paths": [
+          "/common/priority"
+        ]
+      }
+    ]
+  },
+  "trait:filterable": {
+    "filterBy": [
+      {
+        "paths": [
+          "/common/visible"
+        ]
+      }
+    ]
+  },
+  "type": "object",
+  "properties": {
+    "common": {
+      "allOf": [
+        {
+          "$ref": "https://sfcc.com/site/navigation/partial#/definitions/common"
+        }
+      ]
+    },
+    "category": {
+      "title": "Category",
+      "description": "Single-select Category and store ID as string",
+      "type": "string",
+      "ui:extension": {
+        "name": "ecomm-toolkit",
+        "params": {
+          "label": "Linked Category",
+          "view": "single",
+          "data": "category",
+          "type": "string"
+        }
+      }
+    }
+  },
+  "required": [
+    "common"
+  ],
+  "propertyOrder": []
+}

@@ -1,0 +1,5 @@
+{
+  "body": "./schemas/navigation-category.json",
+  "schemaId": "https://sfcc.com/site/navigation/category",
+  "validationLevel": "CONTENT_TYPE"
+}

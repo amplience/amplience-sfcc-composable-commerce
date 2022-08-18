@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://sfcc.com/site/navigation/external",
+  "title": "Navigation External Link",
+  "description": "Navigation item for external links",
+  "allOf": [
+    {
+      "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+    }
+  ],
+  "trait:hierarchy": {
+    "childContentTypes": [
+      "https://sfcc.com/site/navigation/external",
+      "https://sfcc.com/site/navigation/internal",
+      "https://sfcc.com/site/navigation/content-page",
+      "https://sfcc.com/site/navigation/category"
+    ]
+  },
+  "trait:sortable": {
+    "sortBy": [
+      {
+        "key": "default",
+        "paths": [
+          "/common/priority"
+        ]
+      }
+    ]
+  },
+  "trait:filterable": {
+    "filterBy": [
+      {
+        "paths": [
+          "/common/visible"
+        ]
+      }
+    ]
+  },
+  "type": "object",
+  "properties": {
+    "common": {
+      "allOf": [
+        {
+          "$ref": "https://sfcc.com/site/navigation/partial#/definitions/common"
+        }
+      ]
+    },
+    "externalUrl": {
+      "title": "External URL",
+      "description": "The external URL this link points to.",
+      "allOf": [
+        {
+          "$ref": "http://bigcontent.io/cms/schema/v1/localization#/definitions/localized-string"
+        }
+      ]
+    }
+  },
+  "required": [
+    "common",
+    "externalUrl"
+  ],
+  "propertyOrder": []
+}

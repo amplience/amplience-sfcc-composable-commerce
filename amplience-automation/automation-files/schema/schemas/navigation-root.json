@@ -1,0 +1,60 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://sfcc.com/site/navigation/root",
+  "title": "Navigation Root",
+  "description": "",
+  "allOf": [
+    {
+      "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+    }
+  ],
+  "trait:hierarchy": {
+    "childContentTypes": [
+      "https://sfcc.com/site/navigation/external",
+      "https://sfcc.com/site/navigation/internal",
+      "https://sfcc.com/site/navigation/content-page",
+      "https://sfcc.com/site/navigation/category"
+    ]
+  },
+  "type": "object",
+  "properties": {
+    "_meta": {
+      "title": "Navigation Key",
+      "properties": {
+        "deliveryKey": {
+          "title": "Delivery Key",
+          "type": "string"
+        }
+      },
+      "required": [
+        "deliveryKey"
+      ]
+    },
+    "title": {
+      "title": "Title",
+      "description": "A title for this navigation root.",
+      "type": "string"
+    },
+    "description": {
+      "title": "Description",
+      "description": "A description for this navigation root.",
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 128
+    },
+    "icon": {
+      "title": "Icon",
+      "allOf": [
+        {
+          "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+        }
+      ]
+    }
+  },
+  "propertyOrder": [
+    "_meta",
+    "title",
+    "description",
+    "icon"
+  ]
+}

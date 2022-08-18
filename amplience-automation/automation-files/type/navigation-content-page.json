@@ -1,0 +1,29 @@
+{
+  "contentTypeUri": "https://sfcc.com/site/navigation/content-page",
+  "status": "ACTIVE",
+  "settings": {
+    "label": "Navigation - Content Page",
+    "icons": [
+      {
+        "size": 256,
+        "url": "https://bigcontent.io/cms/icons/experience-management/exp-nodebranch.png"
+      }
+    ],
+    "visualizations": [
+      {
+        "label": "Localhost",
+        "templatedUri": "http://localhost:3000/visualization/{{hub.name}}/{{content.sys.id}}/{{vse.domain}}/{{locales}}",
+        "default": true
+      },
+      {
+        "label": "JSON",
+        "templatedUri": "https://delivery-preview.visualizations.content.amplience.net?id={{content.sys.id}}&vse={{vse.domain}}&locale={{locales}}&hub={{cms.hub}}&realtime=true",
+        "default": false
+      }
+    ],
+    "cards": []
+  },
+  "repositories": [
+    "sitestructure"
+  ]
+}

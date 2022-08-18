@@ -1,0 +1,5 @@
+{
+  "body": "./schemas/navigation-partial.json",
+  "schemaId": "https://sfcc.com/site/navigation-partial",
+  "validationLevel": "PARTIAL"
+}

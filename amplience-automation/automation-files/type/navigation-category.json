@@ -1,0 +1,18 @@
+{
+  "contentTypeUri": "https://sfcc.com/site/navigation/category",
+  "status": "ACTIVE",
+  "settings": {
+    "label": "Navigation - Category",
+    "icons": [
+      {
+        "size": 256,
+        "url": "https://bigcontent.io/cms/icons/experience-management/exp-nodebranch.png"
+      }
+    ],
+    "visualizations": [],
+    "cards": []
+  },
+  "repositories": [
+    "sitestructure"
+  ]
+}
