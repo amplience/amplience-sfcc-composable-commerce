@@ -17,24 +17,44 @@ const Link = React.forwardRef(({href, to, useNavLink = false, ...props}, ref) =>
     const site = useSite()
     const locale = useLocale()
 
-    // if alias is not defined, use site id
-    const updatedHref = buildPathWithUrlConfig(_href, {
-        locale: locale.alias || locale.id,
-        site: site.alias || site.id
-    })
-    return (
-        <ChakraLink
-            as={useNavLink ? NavSPALink : SPALink}
-            {...(useNavLink && {exact: true})}
-            {...props}
-            to={_href === '/' ? '/' : updatedHref}
-            ref={ref}
-        />
-    )
+    const isExternal = _href.length > 0 && _href[0] === '$'
+
+    if (isExternal) {
+        if (props.to) {
+            delete props.to
+        }
+        if (props.as) {
+            delete props.as
+        }
+        props.href = _href.substring(1)
+        props.isExternal = true
+    } else {
+        if (props.href) {
+            delete props.href
+        }
+
+        // if alias is not defined, use site id
+        const updatedHref = isExternal
+            ? _href.substring(1)
+            : buildPathWithUrlConfig(_href, {
+                  locale: locale.alias || locale.id,
+                  site: site.alias || site.id
+              })
+
+        props.to = _href === '/' ? '/' : updatedHref
+        props.as = useNavLink ? NavSPALink : SPALink
+    }
+
+    return <ChakraLink {...(useNavLink && {exact: true})} {...props} ref={ref} />
 })
 
 Link.displayName = 'Link'
 
-Link.propTypes = {href: PropTypes.string, to: PropTypes.string, useNavLink: PropTypes.bool}
+Link.propTypes = {
+    href: PropTypes.string,
+    to: PropTypes.string,
+    useNavLink: PropTypes.bool,
+    as: PropTypes.object
+}
 
 export default React.memo(Link)

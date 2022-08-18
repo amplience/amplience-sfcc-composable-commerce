@@ -103,7 +103,8 @@ const overrides = {
         ImageGallery,
 
         // amplience components
-        PreviewHeader
+        PreviewHeader,
+        AmplienceListMenu: ListMenu
     }
 }
 

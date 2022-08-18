@@ -26,7 +26,7 @@ const AmplienceWrapper = ({fetch, content, components = componentsMapping}) => {
         let active = true
 
         const fetchCont = async () => {
-            const data = await client.fetchContent([fetch], locale)
+            const data = await client.fetchContent([fetch], {locale})
             if (active) {
                 setFetchedContent(data.pop())
             }
