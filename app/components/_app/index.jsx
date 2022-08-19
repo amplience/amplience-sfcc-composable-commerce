@@ -60,20 +60,13 @@ import {resolveSiteFromUrl} from '../../utils/site-utils'
 import {init} from 'dc-visualization-sdk'
 import PreviewHeader from '../amplience/preview-header'
 import {defaultAmpClient} from '../../amplience-api'
+import {applyRtvToHierarchy} from '../../utils/amplience/rtv'
 
 const DEFAULT_NAV_DEPTH = 3
 const DEFAULT_ROOT_CATEGORY = 'root'
 
 const App = (props) => {
-    const {
-        children,
-        targetLocale,
-        messages,
-        categories: allCategories = {},
-        vseProps,
-        headerNav,
-        footerNav
-    } = props
+    const {children, targetLocale, messages, categories: allCategories = {}, vseProps} = props
 
     const appOrigin = getAppOrigin()
 
@@ -87,6 +80,9 @@ const App = (props) => {
 
     const [isOnline, setIsOnline] = useState(true)
     const styles = useStyleConfig('App')
+
+    const [headerNav, setHeaderNav] = useState(props.headerNav)
+    const [footerNav, setFooterNav] = useState(props.footerNav)
 
     const configValues = {
         locale: locale.alias || locale.id,
@@ -112,6 +108,27 @@ const App = (props) => {
         setAmpVizSdk(sdk)
         setStatus('connected')
     }
+
+    useEffect(() => {
+        let removeChangedSubscription
+        if (ampVizSdk !== null) {
+            ampVizSdk.form.saved(() => {
+                window.location.reload()
+            })
+
+            removeChangedSubscription = ampVizSdk.form.changed((model) => {
+                // handle form model change
+                applyRtvToHierarchy(headerNav, model, setHeaderNav)
+                applyRtvToHierarchy(footerNav, model, setFooterNav)
+            })
+        }
+
+        return () => {
+            if (removeChangedSubscription != undefined) {
+                removeChangedSubscription()
+            }
+        }
+    }, [ampVizSdk])
 
     // Set up customer and basket
     useShopper({currency})
