@@ -1,5 +1,17 @@
 import {categoryUrlBuilder} from '../url'
 
+const categorySchemaId = 'https://sfcc.com/site/navigation/category';
+
+const categoryDKToId = (deliveryKey) => {
+    const categoryPrefix = 'category/'
+
+    if (deliveryKey == null || !deliveryKey.startsWith(categoryPrefix)) {
+        throw new Error(`Invalid category delivery key: ${deliveryKey}`)
+    }
+
+    return deliveryKey.substring(categoryPrefix.length)
+}
+
 const contentPageLinkBuilder = (link) => {
     // Delivery key appears in the reference due to our enrich method.
     if (!link.contentpage?.deliveryKey) {
@@ -18,14 +30,7 @@ const internalLinkBuilder = (link) => {
 }
 
 const categoryLinkBuilder = (link) => {
-    const categoryPrefix = 'category/'
-    let category = link._meta.deliveryKey
-
-    if (!category.startsWith(categoryPrefix)) {
-        throw new Error(`Invalid category delivery key: ${category}`)
-    }
-
-    return categoryUrlBuilder({id: category.substring(categoryPrefix.length)})
+    return categoryUrlBuilder({id: categoryDKToId(link._meta.deliveryKey)})
 }
 
 const handlers = {
@@ -41,4 +46,74 @@ export const getLinkUrl = (link, forRelative = true) => {
     const builder = handlers[link._meta.schema]
 
     return builder == null ? '' : builder(link, forRelative)
+}
+
+const processNav = (node, action) => {
+    if (node.children) {
+        for (let child of node.children) {
+            processNav(child, action)
+        }
+    }
+
+    action(node)
+}
+
+const getCategorySFCC = (node, id) => {
+    if (node.id === id) {
+        return node
+    }
+
+    const children = node.categories
+    if (children) {
+        for (let child of children) {
+            const result = getCategorySFCC(child, id)
+
+            if (result) {
+                return result
+            }
+        }
+    }
+
+    return undefined
+}
+
+const sfccToNav = (node) => {
+    const children = node.categories
+        ? node.categories.map((category) => sfccToNav(category))
+        : undefined
+
+    return {
+        _meta: {
+            schema: categorySchemaId,
+            deliveryKey: `category/${node.id}`
+        },
+        common: {
+            title: node.name,
+            visible: true
+        },
+        includeSFCC: false,
+        children
+    }
+}
+
+export const enrichNavigation = (nav, sfccRoot) => {
+    processNav(nav, (node) => {
+        if (node._meta.schema === categorySchemaId) {
+            if (node.includeSFCC) {
+                // Search for the category in the SFCC root.
+                const categoryId = categoryDKToId(node._meta.deliveryKey)
+                const category = getCategorySFCC(sfccRoot, categoryId)
+
+                // If the category was found, generate category links for its children.
+                if (category) {
+                    const newChildren = sfccToNav(category)
+                    if (newChildren.children) {
+                        node.children = [...node.children, ...newChildren.children]
+                    }
+                }
+            }
+        }
+    })
+
+    return nav
 }

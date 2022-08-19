@@ -52,6 +52,7 @@ import {watchOnlineStatus, flatten} from '../../utils/utils'
 import {homeUrlBuilder, getPathWithLocale, buildPathWithUrlConfig} from '../../utils/url'
 import {getTargetLocale, fetchTranslations} from '../../utils/locale'
 import {DEFAULT_SITE_TITLE, HOME_HREF, THEME_COLOR} from '../../constants'
+import {enrichNavigation} from '../../utils/amplience/link'
 
 import Seo from '../seo'
 import {resolveSiteFromUrl} from '../../utils/site-utils'
@@ -399,14 +400,14 @@ Learn more with our localization guide. https://sfdc.co/localization-guide
     const vseProps = generateVseProps({req, res, query: req.query})
     ampClient.setVse(vseProps.vse)
 
-    const headerNav = await ampClient.fetchHierarchy(
-        {key: 'main-nav'},
-        (item) => item.common.visible
+    const headerNav = enrichNavigation(
+        await ampClient.fetchHierarchy({key: 'main-nav'}, (item) => item.common.visible),
+        rootCategory
     )
 
-    const footerNav = await ampClient.fetchHierarchy(
-        {key: 'footer-nav'},
-        (item) => item.common.visible
+    const footerNav = enrichNavigation(
+        await ampClient.fetchHierarchy({key: 'footer-nav'}, (item) => item.common.visible),
+        rootCategory
     )
 
     return {

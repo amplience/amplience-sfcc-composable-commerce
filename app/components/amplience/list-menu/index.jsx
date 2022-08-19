@@ -124,8 +124,6 @@ const AmplienceListMenuContent = ({maxColumns, items, onClose, initialFocusRef})
                                 }
                             }
 
-                            console.log(subitems)
-
                             const links = subitems
                                 ? subitems.map((item) => {
                                       return {
