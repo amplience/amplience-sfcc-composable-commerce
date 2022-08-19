@@ -1,6 +1,6 @@
 import {categoryUrlBuilder} from '../url'
 
-const categorySchemaId = 'https://sfcc.com/site/navigation/category';
+const categorySchemaId = 'https://sfcc.com/site/navigation/category'
 
 const categoryDKToId = (deliveryKey) => {
     const categoryPrefix = 'category/'
@@ -108,7 +108,7 @@ export const enrichNavigation = (nav, sfccRoot) => {
                 if (category) {
                     const newChildren = sfccToNav(category)
                     if (newChildren.children) {
-                        node.children = [...node.children, ...newChildren.children]
+                        node.children = [...(node.children ?? []), ...newChildren.children]
                     }
                 }
             }
