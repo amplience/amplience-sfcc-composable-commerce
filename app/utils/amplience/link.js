@@ -18,7 +18,7 @@ const internalLinkBuilder = (link) => {
 }
 
 const categoryLinkBuilder = (link) => {
-    return categoryUrlBuilder({id: link.category})
+    return categoryUrlBuilder({id: link._meta.category})
 }
 
 const handlers = {
