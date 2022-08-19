@@ -13,7 +13,8 @@ export const applyRtvToHierarchy = (root, rtv, setter) => {
 
     processHierarchy(root, (node) => {
         if (
-            node._meta.deliveryKey === rtv.content._meta.deliveryKey ||
+            (node._meta.deliveryKey != null &&
+                node._meta.deliveryKey === rtv.content._meta.deliveryKey) ||
             node._meta.deliveryId === rtv.content._meta.deliveryId
         ) {
             // Replace this node with the given item.
