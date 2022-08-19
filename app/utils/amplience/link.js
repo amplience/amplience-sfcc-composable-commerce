@@ -19,7 +19,7 @@ const internalLinkBuilder = (link) => {
 
 const categoryLinkBuilder = (link) => {
     const categoryPrefix = 'category/'
-    let category = link._meta.category
+    let category = link._meta.deliveryKey
 
     if (!category.startsWith(categoryPrefix)) {
         throw new Error(`Invalid category delivery key: ${category}`)
