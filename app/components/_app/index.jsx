@@ -31,7 +31,7 @@ import ScrollToTop from '../../components/scroll-to-top'
 import Footer from '../../components/amplience/footer'
 import CheckoutHeader from '../../pages/checkout/partials/checkout-header'
 import CheckoutFooter from '../../pages/checkout/partials/checkout-footer'
-import DrawerMenu from '../drawer-menu'
+import DrawerMenu from '../amplience/drawer-menu'
 import AmplienceListMenu from '../amplience/list-menu'
 import {HideOnDesktop, HideOnMobile} from '../responsive'
 
@@ -280,7 +280,7 @@ const App = (props) => {
                                                         isOpen={isOpen}
                                                         onClose={onClose}
                                                         onLogoClick={onLogoClick}
-                                                        root={allCategories[DEFAULT_ROOT_CATEGORY]}
+                                                        root={headerNav}
                                                     />
                                                 </HideOnDesktop>
 
