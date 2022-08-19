@@ -36,7 +36,7 @@ export class AmplienceAPI {
         this.clientReadyResolve()
     }
 
-    async fetchContent(args: IdOrKey[], params?: FetchParams) {
+    async fetchContent(args: IdOrKey[], params: FetchParams = {}) {
         await this.clientReady
 
         if (params && !params.locale) {
