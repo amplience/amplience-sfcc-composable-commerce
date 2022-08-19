@@ -90,7 +90,10 @@ export class AmplienceAPI {
                 typeof item.contentType === 'string' &&
                 typeof item.id === 'string'
             ) {
-                refs.set(item.id, item)
+                if (!refs.get(item.id)){
+                    refs.set(item.id, []);
+                }
+                refs.set(item.id, [...refs.get(item.id), item])
                 return
             }
 
@@ -116,7 +119,10 @@ export class AmplienceAPI {
             for (let item of items) {
                 const key = item._meta.deliveryKey
                 if (key) {
-                    refs.get(item._meta.deliveryId).deliveryKey = key
+                    refs.get(item._meta.deliveryId).map((el) => {
+                        el.deliveryKey = key;
+                        return el;
+                    })
                 }
             }
         }
