@@ -405,7 +405,7 @@ Learn more with our localization guide. https://sfdc.co/localization-guide
     )
 
     const footerNav = await ampClient.fetchHierarchy(
-        {key: 'test-footer-nav'},
+        {key: 'footer-nav'},
         (item) => item.common.visible
     )
 
