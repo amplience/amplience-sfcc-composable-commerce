@@ -18,7 +18,14 @@ const internalLinkBuilder = (link) => {
 }
 
 const categoryLinkBuilder = (link) => {
-    return categoryUrlBuilder({id: link._meta.category})
+    const categoryPrefix = 'category/'
+    let category = link._meta.category
+
+    if (!category.startsWith(categoryPrefix)) {
+        throw new Error(`Invalid category delivery key: ${category}`)
+    }
+
+    return categoryUrlBuilder({id: category.substring(categoryPrefix.length)})
 }
 
 const handlers = {
