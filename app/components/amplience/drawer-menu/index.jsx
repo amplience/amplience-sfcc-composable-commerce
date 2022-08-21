@@ -64,7 +64,7 @@ const PHONE_DRAWER_SIZE = 'xs'
 const TABLET_DRAWER_SIZE = 'lg'
 
 const DrawerSeparator = () => (
-    <Box paddingTop="6" paddingBottom="6">
+    <Box paddingTop='6' paddingBottom='6'>
         <Divider />
     </Box>
 )
@@ -78,7 +78,7 @@ const STORE_LOCATOR_HREF = '/store-locator'
  * main usage is to navigate from one category to the next, but also homes links to
  * support, log in and out actions, as support links.
  */
-const DrawerMenu = ({isOpen, onClose = noop, onLogoClick = noop, root}) => {
+const DrawerMenu = ({isOpen, onClose = noop, onLogoClick = noop, root, footer}) => {
     const intl = useIntl()
     const customer = useCustomer()
     const navigate = useNavigation()
@@ -99,24 +99,22 @@ const DrawerMenu = ({isOpen, onClose = noop, onLogoClick = noop, root}) => {
     const showLocaleSelector = supportedLocaleIds?.length > 1
 
     return (
-        <Drawer isOpen={isOpen} onClose={onClose} placement="left" size={drawerSize}>
+        <Drawer isOpen={isOpen} onClose={onClose} placement='left' size={drawerSize}>
             <DrawerOverlay>
                 <DrawerContent>
                     {/* Header Content */}
                     <DrawerHeader>
                         <IconButton
                             icon={<BrandLogo {...styles.logo} />}
-                            variant="unstyled"
+                            variant='unstyled'
                             onClick={onLogoClick}
                         />
 
                         <DrawerCloseButton />
                     </DrawerHeader>
 
-
                     <DrawerBody>
                         {showLoading && <LoadingSpinner />}
-
                         {root ? (
                             <Fade in={true}>
                                 <NestedAccordion
@@ -128,15 +126,13 @@ const DrawerMenu = ({isOpen, onClose = noop, onLogoClick = noop, root}) => {
                                 />
                             </Fade>
                         ) : (
-                            <Center p="8">
-                                <Spinner size="xl" />
+                            <Center p='8'>
+                                <Spinner size='xl' />
                             </Center>
                         )}
-
                         <DrawerSeparator />
-
-                         Application Actions
-                        <VStack align="stretch" spacing={0} {...styles.actions} px={0}>
+                        Application Actions
+                        <VStack align='stretch' spacing={0} {...styles.actions} px={0}>
                             <Box {...styles.actionsItem}>
                                 {customer.isRegistered ? (
                                     <NestedAccordion
@@ -147,12 +143,12 @@ const DrawerMenu = ({isOpen, onClose = noop, onLogoClick = noop, root}) => {
                                             depth === 1 && (
                                                 <Button
                                                     {...styles.signout}
-                                                    variant="unstyled"
+                                                    variant='unstyled'
                                                     onClick={onSignoutClick}
                                                 >
                                                     <Flex align={'center'}>
                                                         <SignoutIcon boxSize={5} />
-                                                        <Text {...styles.signoutText} as="span">
+                                                        <Text {...styles.signoutText} as='span'>
                                                             {intl.formatMessage({
                                                                 id: 'drawer_menu.button.log_out',
                                                                 defaultMessage: 'Log Out'
@@ -256,92 +252,18 @@ const DrawerMenu = ({isOpen, onClose = noop, onLogoClick = noop, root}) => {
                                 </Box>
                             )}
                         </VStack>
-
-                        <DrawerSeparator />
-
-                         Support Links
-                        <NestedAccordion
-                            allowMultiple={true}
-                            // NOTE: Modify this content and builder as you see fit.
-                            urlBuilder={() => '/'}
-                            item={{
-                                id: 'links-root',
-                                children: [
-                                    {
-                                        id: 'customersupport',
-                                        children: [
-                                            {
-                                                id: 'contactus',
-                                                title: intl.formatMessage({
-                                                    id:
-                                                        'drawer_menu.link.customer_support.contact_us',
-                                                    defaultMessage: 'Contact Us'
-                                                })
-                                            },
-                                            {
-                                                id: 'shippingandreturns',
-                                                title: intl.formatMessage({
-                                                    id:
-                                                        'drawer_menu.link.customer_support.shipping_and_returns',
-                                                    defaultMessage: 'Shipping & Returns'
-                                                })
-                                            }
-                                        ],
-                                        title: intl.formatMessage({
-                                            id: 'drawer_menu.link.customer_support',
-                                            defaultMessage: 'Customer Support'
-                                        })
-                                    },
-                                    {
-                                        id: 'ourcompany',
-                                        children: [
-                                            {
-                                                id: 'aboutus',
-                                                title: intl.formatMessage({
-                                                    id: 'drawer_menu.link.about_us',
-                                                    defaultMessage: 'About Us'
-                                                })
-                                            }
-                                        ],
-                                        title: intl.formatMessage({
-                                            id: 'drawer_menu.link.our_company',
-                                            defaultMessage: 'Our Company'
-                                        })
-                                    },
-                                    {
-                                        id: 'privacyandsecurity',
-                                        children: [
-                                            {
-                                                id: 'termsandconditions',
-                                                title: intl.formatMessage({
-                                                    id: 'drawer_menu.link.terms_and_conditions',
-                                                    defaultMessage: 'Terms & Conditions'
-                                                })
-                                            },
-                                            {
-                                                id: 'privacypolicy',
-                                                title: intl.formatMessage({
-                                                    id: 'drawer_menu.link.privacy_policy',
-                                                    defaultMessage: 'Privacy Policy'
-                                                })
-                                            },
-                                            {
-                                                id: 'sitemap',
-                                                title: intl.formatMessage({
-                                                    id: 'drawer_menu.link.site_map',
-                                                    defaultMessage: 'Site Map'
-                                                })
-                                            }
-                                        ],
-                                        title: intl.formatMessage({
-                                            id: 'drawer_menu.link.privacy_and_security',
-                                            defaultMessage: 'Privacy & Security'
-                                        })
-                                    }
-                                ]
-                            }}
-                        />
-
+                        {footer ? (
+                            <>
+                                <DrawerSeparator />
+                                {footer.title || 'Support Links'}
+                                <NestedAccordion
+                                    allowMultiple={true}
+                                    // NOTE: Modify this content and builder as you see fit.
+                                    urlBuilder={getLinkUrl}
+                                    item={footer}
+                                />
+                            </>
+                        ) : null}
                         <DrawerSeparator />
                     </DrawerBody>
                     <DrawerFooter>
@@ -360,6 +282,10 @@ DrawerMenu.propTypes = {
      * The root category in your commerce cloud back-end.
      */
     root: PropTypes.object,
+    /**
+     * The footer menu
+     */
+    footer: PropTypes.object,
     /**
      * The opened state of the drawer.
      */

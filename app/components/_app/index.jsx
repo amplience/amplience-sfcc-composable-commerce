@@ -24,7 +24,7 @@ import {
 } from '../../contexts/amplience'
 
 // Local Project Components
-import Header from '../../components/header'
+import Header from '../../components/amplience/header'
 import OfflineBanner from '../../components/offline-banner'
 import OfflineBoundary from '../../components/offline-boundary'
 import ScrollToTop from '../../components/scroll-to-top'
@@ -292,6 +292,7 @@ const App = (props) => {
                                                 onMyCartClick={onCartClick}
                                                 onMyAccountClick={onAccountClick}
                                                 onWishlistClick={onWishlistClick}
+                                                logo={headerNav.icon}
                                             >
                                                 <HideOnDesktop>
                                                     <DrawerMenu
@@ -299,6 +300,7 @@ const App = (props) => {
                                                         onClose={onClose}
                                                         onLogoClick={onLogoClick}
                                                         root={headerNav}
+                                                        footer={footerNav}
                                                     />
                                                 </HideOnDesktop>
 
