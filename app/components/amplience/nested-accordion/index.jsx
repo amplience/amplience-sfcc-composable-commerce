@@ -56,9 +56,8 @@ const NestedAccordion = (props) => {
             {typeof itemsBefore === 'function' ? itemsBefore({item, depth}) : itemsBefore}
 
             {items.filter(filter).map((item) => {
-                debugger;
-                const {id, title: name} = item;
-                const title = item.common ? item.common.title : name;
+                const {id, title: name} = item
+                const title = item.common ? item.common.title : name
                 const items = item[itemsKey]
 
                 return (
