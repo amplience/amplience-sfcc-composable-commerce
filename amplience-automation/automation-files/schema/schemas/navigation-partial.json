@@ -3,7 +3,7 @@
   "$id": "https://sfcc.com/site/navigation/partial",
   "definitions": {
     "common": {
-      "title": "Common Link Properties",
+      "title": "Common Item Properties",
       "type": "object",
       "properties": {
         "visible": {
@@ -13,7 +13,7 @@
           "default": true
         },
         "title": {
-          "title": "Link Title",
+          "title": "Item Title",
           "description": "Title to display for the navigation item",
           "allOf": [
             {
