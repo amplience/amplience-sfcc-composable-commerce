@@ -419,23 +419,14 @@ Learn more with our localization guide. https://sfdc.co/localization-guide
     const vseProps = generateVseProps({req, res, query: req.query})
     ampClient.setVse(vseProps.vse)
 
-    const headerNav = enrichNavigation(
+    const [headerNav, footerNav] = await Promise.all(['main-nav', 'footer-nav'].map(async (key) => enrichNavigation(
         await ampClient.fetchHierarchy(
-            {key: 'main-nav'},
+            {key},
             (item) => item.common.visible,
             targetLocale
         ),
         rootCategory
-    )
-
-    const footerNav = enrichNavigation(
-        await ampClient.fetchHierarchy(
-            {key: 'footer-nav'},
-            (item) => item.common.visible,
-            targetLocale
-        ),
-        rootCategory
-    )
+    )))
 
     return {
         targetLocale,
