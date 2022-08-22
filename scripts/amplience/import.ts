@@ -114,7 +114,21 @@ export const importArgs = (yargs: Argv) => {
             default: null,
             type: 'string'
         })
+        .option('authUrl', {
+            describe: 'auth url',
+            default: null,
+            type: 'string'
+        })
+        .option('authApiToken', {
+            describe: 'auth api token',
+            default: null,
+            type: 'string'
+        })
         .option('authSecret', {
+            describe: 'auth secret',
+            default: null,
+            type: 'string'
+        }).option('authSecret', {
             describe: 'auth secret',
             default: null,
             type: 'string'
