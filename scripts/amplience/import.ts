@@ -94,6 +94,11 @@ export const importArgs = (yargs: Argv) => {
             required: true,
             type: 'string'
         })
+        .option('sitestructureRepoId', {
+            describe: 'site structure repository id',
+            required: true,
+            type: 'string'
+        })
         .option('mapFile', {
             describe: 'mapFile',
             default: null,
@@ -158,6 +163,9 @@ export const importHandler = async (context: Arguments<Context>): Promise<any> =
 
         console.log(`Importing slots...`)
         execSync(`./node_modules/.bin/dc-cli content-item import ${context.tempDir}/content/slots --baseRepo ${context.slotsRepoId} --mapFile ${mappingFile}`, {stdio: 'inherit'})
+
+        console.log(`Importing site components...`)
+        execSync(`./node_modules/.bin/dc-cli content-item import ${context.tempDir}/content/sitestructure --baseRepo ${context.sitestructureRepoId} --mapFile ${mappingFile}`, {stdio: 'inherit'})
 
         console.log(`Importing events...`)
         execSync(`./node_modules/.bin/dc-cli event import ${context.tempDir}/events --acceptSnapshotLimits true --schedule true --catchup true --mapFile ${mappingFile}`, {stdio: 'inherit'})
