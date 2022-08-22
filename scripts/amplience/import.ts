@@ -162,7 +162,7 @@ export const importHandler = async (context: Arguments<Context>): Promise<any> =
         execSync(`./node_modules/.bin/dc-cli content-item import ${context.tempDir}/content/content --baseRepo ${context.contentRepoId} --media true --publish true --mapFile ${mappingFile}`, {stdio: 'inherit'})
 
         console.log(`Importing slots...`)
-        execSync(`./node_modules/.bin/dc-cli content-item import ${context.tempDir}/content/slots --baseRepo ${context.slotsRepoId} --mapFile ${mappingFile}`, {stdio: 'inherit'})
+        execSync(`./node_modules/.bin/dc-cli content-item import ${context.tempDir}/content/slots --baseRepo ${context.slotsRepoId} --publish --mapFile ${mappingFile}`, {stdio: 'inherit'})
 
         console.log(`Importing site components...`)
         execSync(`./node_modules/.bin/dc-cli content-item import ${context.tempDir}/content/sitestructure --baseRepo ${context.sitestructureRepoId} --media true --publish true --mapFile ${mappingFile}`, {stdio: 'inherit'})
