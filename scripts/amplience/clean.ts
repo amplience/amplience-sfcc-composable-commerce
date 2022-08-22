@@ -4,6 +4,7 @@ import {join} from 'path'
 import {execSync} from 'child_process'
 import {rmSync} from 'fs'
 import {Context} from './cli'
+import { AmplienceRestClient } from './amplience-rest-client'
 
 const connectSDK = (context: Context) => {
     return new DynamicContent({
@@ -53,6 +54,16 @@ export const cleanArgs = (yargs: Argv) => {
             default: '',
             type: 'string'
         })
+        .option('contentRepoId', {
+            describe: 'content repository id',
+            required: true,
+            type: 'string'
+        })
+        .option('slotsRepoId', {
+            describe: 'slots repository id',
+            required: true,
+            type: 'string'
+        })
 }
 
 export const cleanHandler = async (context: Arguments<Context>): Promise<any> => {
@@ -100,6 +111,22 @@ export const cleanHandler = async (context: Arguments<Context>): Promise<any> =>
 
     console.log('Deleting mapFile...')
     rmSync(mappingFile, {force: true})
+
+    // novadev-581 Update automation so that cleanup removes all folders from repositories
+    const repositories = await paginator(hub.related.contentRepositories.list)
+    const contentRepo = repositories.find(repo => repo.id === context.contentRepoId)
+    const slotsRepo = repositories.find(repo => repo.id === context.slotsRepoId)
+    const repos = [contentRepo, slotsRepo]
+
+    const restClient = AmplienceRestClient(context)
+    await Promise.all(repos.map(async repo => {
+        if (repo) {
+            return await Promise.all((await paginator(repo.related.folders.list)).map(async folder => {
+                return await restClient.delete(`/folders/${folder.id}`)
+            }))
+        }
+    }))
+    // end novadev-581
 
     console.log(`Done!`)
 
