@@ -26,7 +26,22 @@
           "description": "Determines the order navigation items at the same level appear in, lowest number first.",
           "type": "number",
           "default": 0
-        }
+        },
+				"content": {
+					"title": "Content",
+					"allOf": [
+						{ "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link" },
+						{
+							"properties": {
+								"contentType": {
+									"enum": [
+										"https://sfcc.com/components/hero"
+									]
+								}
+							}
+						}
+					]
+				}
       },
       "required": [
         "visible",
