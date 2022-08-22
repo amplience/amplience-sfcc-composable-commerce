@@ -1,4 +1,4 @@
-import {DynamicContent, Extension, HalResource, Page, Pageable, Settings, Sortable} from 'dc-management-sdk-js'
+import {DynamicContent, Extension, Folder, HalResource, Page, Pageable, Settings, Sortable} from 'dc-management-sdk-js'
 import {Arguments, Argv} from 'yargs'
 import {join} from 'path'
 import {execSync} from 'child_process'
@@ -104,12 +104,16 @@ export const cleanHandler = async (context: Arguments<Context>): Promise<any> =>
 
     // novadev-581 Update automation so that cleanup removes all folders from repositories
     const repositories = await paginator(hub.related.contentRepositories.list)
+
+    const deleteFolder = async (folder: Folder): Promise<any> => {
+        console.log(`Deleting folder ${folder.name}...`)
+        const subfolders = await paginator(folder.related.folders.list)
+        await Promise.all(subfolders.map(deleteFolder))
+        return await restClient.delete(`/folders/${folder.id}`)
+    }
+
     const restClient = AmplienceRestClient(context)
-    await Promise.all(repositories.map(async repo => {
-        return await Promise.all((await paginator(repo.related.folders.list)).map(async folder => {
-            return await restClient.delete(`/folders/${folder.id}`)
-        }))
-    }))
+    await Promise.all(repositories.map(async repo => await Promise.all((await paginator(repo.related.folders.list)).map(deleteFolder))))
     // end novadev-581
 
     console.log(`Done!`)
