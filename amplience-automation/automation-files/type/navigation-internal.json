@@ -2,7 +2,7 @@
   "contentTypeUri": "https://sfcc.com/site/navigation/internal",
   "status": "ACTIVE",
   "settings": {
-    "label": "Navigation - Internal Link",
+    "label": "Internal Link",
     "icons": [
       {
         "size": 256,

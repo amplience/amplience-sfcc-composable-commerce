@@ -10,10 +10,11 @@
   ],
   "trait:hierarchy": {
     "childContentTypes": [
-      "https://sfcc.com/site/navigation/external",
-      "https://sfcc.com/site/navigation/internal",
-      "https://sfcc.com/site/navigation/content-page",
-      "https://sfcc.com/site/navigation/category"
+			"https://sfcc.com/site/navigation/external",
+			"https://sfcc.com/site/navigation/internal",
+			"https://sfcc.com/site/navigation/content-page",
+			"https://sfcc.com/site/navigation/category",
+			"https://sfcc.com/site/navigation/group"
     ]
   },
   "trait:sortable": {

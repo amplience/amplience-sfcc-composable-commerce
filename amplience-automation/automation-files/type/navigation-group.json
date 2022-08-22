@@ -1,12 +1,12 @@
 {
-  "contentTypeUri": "https://sfcc.com/site/navigation/content-page",
+  "contentTypeUri": "https://sfcc.com/site/navigation/group",
   "status": "ACTIVE",
   "settings": {
-    "label": "Content Page",
+    "label": "Group",
     "icons": [
       {
         "size": 256,
-        "url": "https://bigcontent.io/cms/icons/experience-management/exp-nodebranch.png"
+        "url": "https://bigcontent.io/cms/icons/experience-management/exp-noderoot.png"
       }
     ],
     "visualizations": [

@@ -2,7 +2,7 @@
   "contentTypeUri": "https://sfcc.com/site/navigation/root",
   "status": "ACTIVE",
   "settings": {
-    "label": "Navigation Root",
+    "label": "Root",
     "icons": [
       {
         "size": 256,
