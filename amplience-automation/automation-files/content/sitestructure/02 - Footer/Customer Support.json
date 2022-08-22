@@ -1,0 +1,45 @@
+{
+  "id": "9c6ea0e1-98df-48a9-8dfb-7de892792b03",
+  "contentRepositoryId": "62f2da764cedfd0001878250",
+  "folderId": null,
+  "body": {
+    "_meta": {
+      "name": "Customer Support",
+      "schema": "https://sfcc.com/site/navigation/internal",
+      "hierarchy": {
+        "parentId": "9123481a-0979-4d83-811b-c778e3613236",
+        "root": false
+      }
+    },
+    "common": {
+      "visible": true,
+      "title": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "Customer Support"
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      },
+      "priority": 0
+    },
+    "internalUrl": "#"
+  },
+  "version": 6,
+  "label": "Customer Support",
+  "status": "ACTIVE",
+  "createdBy": "fb90fd96-dcaf-4d67-9747-b9676282f661",
+  "createdDate": "2022-08-18T14:32:10.312Z",
+  "lastModifiedBy": "b5b7704b-34ca-4424-a7dc-f6880734c30e",
+  "lastModifiedDate": "2022-08-22T11:04:08.959Z",
+  "lastPublishedVersion": 6,
+  "lastPublishedDate": "2022-08-19T09:37:05.287Z",
+  "hierarchy": {
+    "parentId": "9123481a-0979-4d83-811b-c778e3613236",
+    "root": false
+  },
+  "deliveryId": "9c6ea0e1-98df-48a9-8dfb-7de892792b03"
+}

@@ -1,0 +1,45 @@
+{
+  "id": "2663ff82-e6b4-426f-9fe7-1f0ffdb81ded",
+  "contentRepositoryId": "62f2da764cedfd0001878250",
+  "folderId": null,
+  "body": {
+    "_meta": {
+      "name": "Order Status",
+      "schema": "https://sfcc.com/site/navigation/internal",
+      "hierarchy": {
+        "parentId": "8436d159-6c3e-4c01-a65e-03c817751425",
+        "root": false
+      }
+    },
+    "common": {
+      "visible": true,
+      "title": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "Order Status"
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      },
+      "priority": 0
+    },
+    "internalUrl": "/"
+  },
+  "version": 1,
+  "label": "Order Status",
+  "status": "ACTIVE",
+  "createdBy": "fb90fd96-dcaf-4d67-9747-b9676282f661",
+  "createdDate": "2022-08-18T14:35:16.590Z",
+  "lastModifiedBy": "b5b7704b-34ca-4424-a7dc-f6880734c30e",
+  "lastModifiedDate": "2022-08-22T11:04:09.054Z",
+  "lastPublishedVersion": 1,
+  "lastPublishedDate": "2022-08-19T09:37:05.287Z",
+  "hierarchy": {
+    "parentId": "8436d159-6c3e-4c01-a65e-03c817751425",
+    "root": false
+  },
+  "deliveryId": "2663ff82-e6b4-426f-9fe7-1f0ffdb81ded"
+}

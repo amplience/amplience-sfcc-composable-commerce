@@ -1,0 +1,45 @@
+{
+  "id": "8436d159-6c3e-4c01-a65e-03c817751425",
+  "contentRepositoryId": "62f2da764cedfd0001878250",
+  "folderId": null,
+  "body": {
+    "_meta": {
+      "name": "Account",
+      "schema": "https://sfcc.com/site/navigation/internal",
+      "hierarchy": {
+        "parentId": "9123481a-0979-4d83-811b-c778e3613236",
+        "root": false
+      }
+    },
+    "common": {
+      "visible": true,
+      "title": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "Account"
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      },
+      "priority": 1
+    },
+    "internalUrl": "#"
+  },
+  "version": 4,
+  "label": "Account",
+  "status": "ACTIVE",
+  "createdBy": "fb90fd96-dcaf-4d67-9747-b9676282f661",
+  "createdDate": "2022-08-18T14:32:36.482Z",
+  "lastModifiedBy": "b5b7704b-34ca-4424-a7dc-f6880734c30e",
+  "lastModifiedDate": "2022-08-22T11:04:08.935Z",
+  "lastPublishedVersion": 4,
+  "lastPublishedDate": "2022-08-19T09:37:05.287Z",
+  "hierarchy": {
+    "parentId": "9123481a-0979-4d83-811b-c778e3613236",
+    "root": false
+  },
+  "deliveryId": "8436d159-6c3e-4c01-a65e-03c817751425"
+}

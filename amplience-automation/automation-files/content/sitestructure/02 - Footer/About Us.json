@@ -1,0 +1,45 @@
+{
+  "id": "02602744-899c-42e4-bbd8-bbc6b6e707a1",
+  "contentRepositoryId": "62f2da764cedfd0001878250",
+  "folderId": null,
+  "body": {
+    "_meta": {
+      "name": "About Us",
+      "schema": "https://sfcc.com/site/navigation/internal",
+      "hierarchy": {
+        "parentId": "541cc290-96b5-4f61-9685-e323927efb89",
+        "root": false
+      }
+    },
+    "common": {
+      "visible": true,
+      "title": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "About Us"
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      },
+      "priority": 1
+    },
+    "internalUrl": "/"
+  },
+  "version": 1,
+  "label": "About Us",
+  "status": "ACTIVE",
+  "createdBy": "fb90fd96-dcaf-4d67-9747-b9676282f661",
+  "createdDate": "2022-08-18T14:36:52.256Z",
+  "lastModifiedBy": "b5b7704b-34ca-4424-a7dc-f6880734c30e",
+  "lastModifiedDate": "2022-08-22T11:04:08.982Z",
+  "lastPublishedVersion": 1,
+  "lastPublishedDate": "2022-08-19T09:37:05.287Z",
+  "hierarchy": {
+    "parentId": "541cc290-96b5-4f61-9685-e323927efb89",
+    "root": false
+  },
+  "deliveryId": "02602744-899c-42e4-bbd8-bbc6b6e707a1"
+}

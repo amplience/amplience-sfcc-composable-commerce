@@ -165,7 +165,7 @@ export const importHandler = async (context: Arguments<Context>): Promise<any> =
         execSync(`./node_modules/.bin/dc-cli content-item import ${context.tempDir}/content/slots --baseRepo ${context.slotsRepoId} --mapFile ${mappingFile}`, {stdio: 'inherit'})
 
         console.log(`Importing site components...`)
-        execSync(`./node_modules/.bin/dc-cli content-item import ${context.tempDir}/content/sitestructure --baseRepo ${context.sitestructureRepoId} --mapFile ${mappingFile}`, {stdio: 'inherit'})
+        execSync(`./node_modules/.bin/dc-cli content-item import ${context.tempDir}/content/sitestructure --baseRepo ${context.sitestructureRepoId} --media true --publish true --mapFile ${mappingFile}`, {stdio: 'inherit'})
 
         console.log(`Importing events...`)
         execSync(`./node_modules/.bin/dc-cli event import ${context.tempDir}/events --acceptSnapshotLimits true --schedule true --catchup true --mapFile ${mappingFile}`, {stdio: 'inherit'})

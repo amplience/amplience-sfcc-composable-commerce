@@ -4,7 +4,7 @@
   "folderId": null,
   "body": {
     "_meta": {
-      "name": "Home/Slot/Top",
+      "name": "Home / Slot / Top",
       "schema": "https://sfcc.com/slots/flexible-list",
       "deliveryKey": "home/slot/top",
       "edition": {
@@ -26,7 +26,7 @@
     ]
   },
   "version": 8,
-  "label": "Home/Slot/Top",
+  "label": "Home / Slot / Top",
   "status": "ACTIVE",
   "createdBy": "9afdef5b-e35e-472a-8265-f37d29ff1154",
   "createdDate": "2022-08-04T09:25:08.509Z",

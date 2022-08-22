@@ -1,0 +1,53 @@
+{
+  "id": "1a45207e-8b01-4df0-891d-264b5ce9a9e0",
+  "contentRepositoryId": "62f2da764cedfd0001878250",
+  "folderId": null,
+  "body": {
+    "_meta": {
+      "name": "New Arrivals",
+      "schema": "https://sfcc.com/site/navigation/category",
+      "deliveryKey": "category/newarrivals",
+      "hierarchy": {
+        "parentId": "250114dd-abbe-481c-80d8-4080537c40c4",
+        "root": false
+      }
+    },
+    "common": {
+      "visible": true,
+      "title": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "New Arrivals"
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      },
+      "priority": 0,
+      "content": {
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+        },
+        "contentType": "https://sfcc.com/components/hero",
+        "id": "81cbd4ca-e71b-40f5-b944-19d466bbde36"
+      }
+    },
+    "includeSFCC": true
+  },
+  "version": 8,
+  "label": "New Arrivals",
+  "status": "ACTIVE",
+  "createdBy": "fb90fd96-dcaf-4d67-9747-b9676282f661",
+  "createdDate": "2022-08-18T15:55:57.418Z",
+  "lastModifiedBy": "b5b7704b-34ca-4424-a7dc-f6880734c30e",
+  "lastModifiedDate": "2022-08-22T11:06:29.281Z",
+  "lastPublishedVersion": 8,
+  "lastPublishedDate": "2022-08-22T10:16:47.640Z",
+  "hierarchy": {
+    "parentId": "250114dd-abbe-481c-80d8-4080537c40c4",
+    "root": false
+  },
+  "deliveryId": "1a45207e-8b01-4df0-891d-264b5ce9a9e0"
+}

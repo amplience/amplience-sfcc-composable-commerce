@@ -1,0 +1,45 @@
+{
+  "id": "7b5ee906-24bd-4f1a-ba7f-c2f5a7eae033",
+  "contentRepositoryId": "62f2da764cedfd0001878250",
+  "folderId": null,
+  "body": {
+    "_meta": {
+      "name": "Contact use",
+      "schema": "https://sfcc.com/site/navigation/internal",
+      "hierarchy": {
+        "parentId": "9c6ea0e1-98df-48a9-8dfb-7de892792b03",
+        "root": false
+      }
+    },
+    "common": {
+      "visible": true,
+      "title": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "Contact Us"
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      },
+      "priority": 0
+    },
+    "internalUrl": "/"
+  },
+  "version": 1,
+  "label": "Contact Us",
+  "status": "ACTIVE",
+  "createdBy": "fb90fd96-dcaf-4d67-9747-b9676282f661",
+  "createdDate": "2022-08-18T14:33:33.623Z",
+  "lastModifiedBy": "b5b7704b-34ca-4424-a7dc-f6880734c30e",
+  "lastModifiedDate": "2022-08-22T11:04:19.330Z",
+  "lastPublishedVersion": 1,
+  "lastPublishedDate": "2022-08-19T09:37:05.287Z",
+  "hierarchy": {
+    "parentId": "9c6ea0e1-98df-48a9-8dfb-7de892792b03",
+    "root": false
+  },
+  "deliveryId": "7b5ee906-24bd-4f1a-ba7f-c2f5a7eae033"
+}

@@ -1,0 +1,45 @@
+{
+  "id": "8355b02e-0ff0-4506-bf82-ba6357b51c29",
+  "contentRepositoryId": "62f2da764cedfd0001878250",
+  "folderId": null,
+  "body": {
+    "_meta": {
+      "name": "Store Locator",
+      "schema": "https://sfcc.com/site/navigation/internal",
+      "hierarchy": {
+        "parentId": "541cc290-96b5-4f61-9685-e323927efb89",
+        "root": false
+      }
+    },
+    "common": {
+      "visible": true,
+      "title": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "Store Locator"
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      },
+      "priority": 0
+    },
+    "internalUrl": "/"
+  },
+  "version": 1,
+  "label": "Store Locator",
+  "status": "ACTIVE",
+  "createdBy": "fb90fd96-dcaf-4d67-9747-b9676282f661",
+  "createdDate": "2022-08-18T14:36:32.999Z",
+  "lastModifiedBy": "b5b7704b-34ca-4424-a7dc-f6880734c30e",
+  "lastModifiedDate": "2022-08-22T11:04:09.005Z",
+  "lastPublishedVersion": 1,
+  "lastPublishedDate": "2022-08-19T09:37:05.287Z",
+  "hierarchy": {
+    "parentId": "541cc290-96b5-4f61-9685-e323927efb89",
+    "root": false
+  },
+  "deliveryId": "8355b02e-0ff0-4506-bf82-ba6357b51c29"
+}

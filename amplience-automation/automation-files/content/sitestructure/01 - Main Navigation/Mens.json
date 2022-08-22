@@ -1,0 +1,46 @@
+{
+  "id": "7443ddff-2f13-4969-86fa-5c2419b9ca40",
+  "contentRepositoryId": "62f2da764cedfd0001878250",
+  "folderId": null,
+  "body": {
+    "_meta": {
+      "name": "Mens",
+      "schema": "https://sfcc.com/site/navigation/category",
+      "deliveryKey": "category/mens",
+      "hierarchy": {
+        "parentId": "250114dd-abbe-481c-80d8-4080537c40c4",
+        "root": false
+      }
+    },
+    "common": {
+      "visible": true,
+      "title": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "Mens"
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      },
+      "priority": 2
+    },
+    "includeSFCC": true
+  },
+  "version": 2,
+  "label": "Mens",
+  "status": "ACTIVE",
+  "createdBy": "fb90fd96-dcaf-4d67-9747-b9676282f661",
+  "createdDate": "2022-08-18T15:56:39.101Z",
+  "lastModifiedBy": "b5b7704b-34ca-4424-a7dc-f6880734c30e",
+  "lastModifiedDate": "2022-08-22T11:06:54.359Z",
+  "lastPublishedVersion": 2,
+  "lastPublishedDate": "2022-08-19T11:13:00.545Z",
+  "hierarchy": {
+    "parentId": "250114dd-abbe-481c-80d8-4080537c40c4",
+    "root": false
+  },
+  "deliveryId": "7443ddff-2f13-4969-86fa-5c2419b9ca40"
+}
