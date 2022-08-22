@@ -2,9 +2,9 @@ export default {
     baseStyle: {
         logo: {
             display: 'inline-block',
-            'line-height': '1em',
-            'flex-shrink': 0,
-            'vertical-align': 'bottom',
+            lineHeight: '1em',
+            flexShrink: 0,
+            verticalAlign: 'bottom',
             height: '24px',
             width: 'auto'
         }
