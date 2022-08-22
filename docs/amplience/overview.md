@@ -60,7 +60,7 @@ Allows you to change content, add new content models, visualize, schedule, previ
 
 As option 1, but you will need to:
 
-* Update the Amplience Hub name in the `config/amplience.config.js` to use your specific Amplience hub
+* Update the Amplience Hub name in the `config/amplience/default.js` to use your specific Amplience hub
 * Follow the guide / automated to put in schemas / content to your account
 
 
