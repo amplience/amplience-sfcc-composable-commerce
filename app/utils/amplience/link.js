@@ -33,11 +33,16 @@ const categoryLinkBuilder = (link) => {
     return categoryUrlBuilder({id: categoryDKToId(link._meta.deliveryKey)})
 }
 
+const noLinkBuilder = (link) => {
+    return '#'
+}
+
 const handlers = {
     'https://sfcc.com/site/navigation/external': externalLinkBuilder,
     'https://sfcc.com/site/navigation/internal': internalLinkBuilder,
     'https://sfcc.com/site/navigation/content-page': contentPageLinkBuilder,
-    'https://sfcc.com/site/navigation/category': categoryLinkBuilder
+    'https://sfcc.com/site/navigation/category': categoryLinkBuilder,
+    'https://sfcc.com/site/navigation/group': noLinkBuilder
 }
 
 export const getLinkUrl = (link, forRelative = true) => {
