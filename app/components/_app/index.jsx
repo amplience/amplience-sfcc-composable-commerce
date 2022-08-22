@@ -418,12 +418,20 @@ Learn more with our localization guide. https://sfdc.co/localization-guide
     ampClient.setVse(vseProps.vse)
 
     const headerNav = enrichNavigation(
-        await ampClient.fetchHierarchy({key: 'main-nav'}, (item) => item.common.visible),
+        await ampClient.fetchHierarchy(
+            {key: 'main-nav'},
+            (item) => item.common.visible,
+            targetLocale
+        ),
         rootCategory
     )
 
     const footerNav = enrichNavigation(
-        await ampClient.fetchHierarchy({key: 'footer-nav'}, (item) => item.common.visible),
+        await ampClient.fetchHierarchy(
+            {key: 'footer-nav'},
+            (item) => item.common.visible,
+            targetLocale
+        ),
         rootCategory
     )
 
