@@ -44,21 +44,6 @@
           "$ref": "https://sfcc.com/site/navigation/partial#/definitions/common"
         }
       ]
-    },
-    "contentpage": {
-      "title": "Content page",
-      "allOf": [
-        {
-          "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference"
-        },
-        {
-          "properties": {
-            "contentType": {
-              "$ref": "https://sfcc.com/libs/all-definitions#/definitions/anyPage"
-            }
-          }
-        }
-      ]
     }
   },
   "propertyOrder": []

@@ -34,6 +34,12 @@ import Link from '../../link'
 // Others
 import {getLinkUrl} from '../../../utils/amplience/link'
 import {ChevronDownIcon} from '../../icons'
+import AmplienceWrapper from '../wrapper'
+import NavigationHero from '../hero/navigationHero'
+
+const menuComponents = {
+    'https://sfcc.com/components/hero': NavigationHero
+}
 
 const MAXIMUM_NUMBER_COLUMNS = 5
 
@@ -95,60 +101,72 @@ AmplienceListMenuTrigger.propTypes = {
     hasItems: PropTypes.bool
 }
 
-const AmplienceListMenuContent = ({maxColumns, items, onClose, initialFocusRef}) => {
+const AmplienceListMenuContent = ({maxColumns, items, onClose, initialFocusRef, content}) => {
     const theme = useTheme()
     const {baseStyle} = theme.components.ListMenu
+    const limitWidth = content ? 20 : 0
 
     return (
-        <PopoverContent data-testid="popover-menu" {...baseStyle.popoverContent}>
+        <PopoverContent data-testid='popover-menu' {...baseStyle.popoverContent}>
             <PopoverBody>
                 <Container as={Stack} {...baseStyle.popoverContainer}>
-                    <SimpleGrid
-                        spacing={8}
-                        justifyContent={'left'}
-                        gridTemplateColumns={`repeat(${
-                            items.length > maxColumns ? maxColumns : items.length
-                        }, minmax(0, 21%))`}
-                        marginInlineStart={{lg: '68px', xl: '96px'}}
-                    >
-                        {items.map((item, index) => {
-                            const name = item.common ? item.common.title : ''
-                            const subitems = item.children
+                    <Flex direction={'row'}>
+                        <Box width={`${100 - limitWidth}%`}>
+                            <SimpleGrid
+                                spacing={8}
+                                justifyContent={'left'}
+                                gridTemplateColumns={`repeat(${
+                                    items.length > maxColumns ? maxColumns : items.length
+                                }, minmax(0, 21%))`}
+                                marginInlineStart={{lg: '68px', xl: '96px'}}
+                            >
+                                {items.map((item, index) => {
+                                    const name = item.common ? item.common.title : ''
+                                    const subitems = item.children
 
-                            const heading = {
-                                href: getLinkUrl(item),
-                                text: name,
-                                styles: {
-                                    fontSize: 'md',
-                                    marginBottom: 2
-                                }
-                            }
+                                    const heading = {
+                                        href: getLinkUrl(item),
+                                        text: name,
+                                        styles: {
+                                            fontSize: 'md',
+                                            marginBottom: 2
+                                        }
+                                    }
 
-                            const links = subitems
-                                ? subitems.map((item) => {
-                                      return {
-                                          href: getLinkUrl(item),
-                                          text: item.common ? item.common.title : '',
-                                          styles: {
-                                              fontSize: 'md',
-                                              paddingTop: 3,
-                                              paddingBottom: 3
-                                          }
-                                      }
-                                  })
-                                : []
-                            return (
-                                <LinksList
-                                    key={index}
-                                    heading={heading}
-                                    links={links}
-                                    color={'gray.900'}
-                                    onLinkClick={onClose}
-                                    {...(index === 0 ? {headingLinkRef: initialFocusRef} : {})}
-                                />
-                            )
-                        })}
-                    </SimpleGrid>
+                                    const links = subitems
+                                        ? subitems.map((item) => {
+                                            return {
+                                                href: getLinkUrl(item),
+                                                text: item.common ? item.common.title : '',
+                                                styles: {
+                                                    fontSize: 'md',
+                                                    paddingTop: 3,
+                                                    paddingBottom: 3
+                                                }
+                                            }
+                                        })
+                                        : []
+                                    return (
+                                        <LinksList
+                                            key={index}
+                                            heading={heading}
+                                            links={links}
+                                            color={'gray.900'}
+                                            onLinkClick={onClose}
+                                            {...(index === 0
+                                                ? {headingLinkRef: initialFocusRef}
+                                                : {})}
+                                        />
+                                    )
+                                })}
+                            </SimpleGrid>
+                        </Box>
+                        <Box width={`${limitWidth}%`}>
+                            {content && (
+                                <AmplienceWrapper content={content} components={menuComponents} />
+                            )}
+                        </Box>
+                    </Flex>
                 </Container>
             </PopoverBody>
         </PopoverContent>
@@ -174,7 +192,7 @@ const AmplienceListMenuPopover = ({items, item, name, itemsKey, maxColumns}) => 
                 onOpen={onOpen}
                 onClose={onClose}
                 isOpen={isOpen}
-                variant="fullWidth"
+                variant='fullWidth'
             >
                 <Fragment>
                     <AmplienceListMenuTrigger
@@ -192,6 +210,7 @@ const AmplienceListMenuPopover = ({items, item, name, itemsKey, maxColumns}) => 
                             initialFocusRef={initialFocusRef}
                             onClose={onClose}
                             maxColumns={maxColumns}
+                            content={item.common.content}
                         />
                     )}
                 </Fragment>
@@ -224,7 +243,7 @@ const AmplienceListMenu = ({root, maxColumns = MAXIMUM_NUMBER_COLUMNS}) => {
     const items = root.children
 
     return (
-        <nav aria-label="main">
+        <nav aria-label='main'>
             <Flex {...baseStyle.container}>
                 {items ? (
                     <Stack direction={'row'} spacing={0} {...baseStyle.stackContainer}>
@@ -243,8 +262,8 @@ const AmplienceListMenu = ({root, maxColumns = MAXIMUM_NUMBER_COLUMNS}) => {
                         })}
                     </Stack>
                 ) : (
-                    <Center p="2">
-                        <Spinner size="lg" />
+                    <Center p='2'>
+                        <Spinner size='lg' />
                     </Center>
                 )}
             </Flex>
