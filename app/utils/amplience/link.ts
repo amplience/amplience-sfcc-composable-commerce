@@ -1,4 +1,6 @@
 import {categoryUrlBuilder} from '../url'
+import {EnrichConfig, EnrichConfigMap, processHierarchy} from './enrich'
+import {applyRtvToHierarchy} from './rtv'
 
 const categorySchemaId = 'https://sfcc.com/site/navigation/category'
 
@@ -53,33 +55,20 @@ export const getLinkUrl = (link, forRelative = true) => {
     return builder == null ? '' : builder(link, forRelative)
 }
 
-const processNav = (node, action) => {
-    if (node.children) {
-        for (let child of node.children) {
-            processNav(child, action)
-        }
-    }
+const navCommonVisible = (item) => item.common.visible
+const navCommonOrder = (item) => item.common.priority
 
-    action(node)
+const navCommonEnrich: EnrichConfig = {
+    visibleFunc: navCommonVisible,
+    orderFunc: navCommonOrder
 }
 
-const getCategorySFCC = (node, id) => {
-    if (node.id === id) {
-        return node
-    }
-
-    const children = node.categories
-    if (children) {
-        for (let child of children) {
-            const result = getCategorySFCC(child, id)
-
-            if (result) {
-                return result
-            }
-        }
-    }
-
-    return undefined
+const navEnrichConfig: EnrichConfigMap = {
+    'https://sfcc.com/site/navigation/external': navCommonEnrich,
+    'https://sfcc.com/site/navigation/internal': navCommonEnrich,
+    'https://sfcc.com/site/navigation/content-page': navCommonEnrich,
+    'https://sfcc.com/site/navigation/category': navCommonEnrich,
+    'https://sfcc.com/site/navigation/group': navCommonEnrich
 }
 
 const sfccToNav = (node) => {
@@ -101,24 +90,44 @@ const sfccToNav = (node) => {
     }
 }
 
-export const enrichNavigation = (nav, sfccRoot) => {
-    processNav(nav, (node) => {
-        if (node._meta.schema === categorySchemaId) {
-            if (node.includeSFCC) {
-                // Search for the category in the SFCC root.
-                const categoryId = categoryDKToId(node._meta.deliveryKey)
-                const category = getCategorySFCC(sfccRoot, categoryId)
+export const enrichCategory = (categories) => {
+    return (node) => {
+        if (node.includeSFCC) {
+            // Search for the category in the SFCC root.
+            const categoryId = categoryDKToId(node._meta.deliveryKey)
+            const category = categories[categoryId] //getCategorySFCC(sfccRoot, categoryId)
 
-                // If the category was found, generate category links for its children.
-                if (category) {
-                    const newChildren = sfccToNav(category)
-                    if (newChildren.children) {
-                        node.children = [...(node.children ?? []), ...newChildren.children]
-                    }
+            // If the category was found, generate category links for its children.
+            if (category) {
+                const newChildren = sfccToNav(category)
+                if (newChildren.children) {
+                    node.children = [...(node.children ?? []), ...newChildren.children]
                 }
             }
         }
-    })
+    }
+}
+
+export const enrichNavigation = (nav, categories) => {
+    const enrichConfig = {...navEnrichConfig}
+
+    enrichConfig[categorySchemaId] = {
+        enrichFunc: enrichCategory(categories),
+        ...enrichConfig[categorySchemaId]
+    }
+
+    processHierarchy(nav, enrichConfig)
 
     return nav
+}
+
+export const applyRtvToNav = (root, rtv, setter, categories) => {
+    const enrichConfig = {...navEnrichConfig}
+
+    enrichConfig[categorySchemaId] = {
+        enrichFunc: enrichCategory(categories),
+        ...enrichConfig[categorySchemaId]
+    }
+
+    applyRtvToHierarchy(root, rtv, setter, enrichConfig)
 }

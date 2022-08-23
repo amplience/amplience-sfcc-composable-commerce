@@ -52,7 +52,7 @@ import {watchOnlineStatus, flatten} from '../../utils/utils'
 import {homeUrlBuilder, getPathWithLocale, buildPathWithUrlConfig} from '../../utils/url'
 import {getTargetLocale, fetchTranslations} from '../../utils/locale'
 import {DEFAULT_SITE_TITLE, HOME_HREF, THEME_COLOR} from '../../constants'
-import {enrichNavigation} from '../../utils/amplience/link'
+import {applyRtvToNav, enrichNavigation} from '../../utils/amplience/link'
 
 import Seo from '../seo'
 import {resolveSiteFromUrl} from '../../utils/site-utils'
@@ -60,7 +60,7 @@ import {resolveSiteFromUrl} from '../../utils/site-utils'
 import {init} from 'dc-visualization-sdk'
 import PreviewHeader from '../amplience/preview-header'
 import {defaultAmpClient} from '../../amplience-api'
-import {applyRtvToHierarchy} from '../../utils/amplience/rtv'
+import {useAmpRtvNav} from '../../utils/amplience/rtv'
 
 const DEFAULT_NAV_DEPTH = 3
 const DEFAULT_ROOT_CATEGORY = 'root'
@@ -109,26 +109,16 @@ const App = (props) => {
         setStatus('connected')
     }
 
-    useEffect(() => {
-        let removeChangedSubscription
-        if (ampVizSdk !== null) {
-            ampVizSdk.form.saved(() => {
-                window.location.reload()
-            })
-
-            removeChangedSubscription = ampVizSdk.form.changed((model) => {
-                // handle form model change
-                applyRtvToHierarchy(headerNav, model, setHeaderNav)
-                applyRtvToHierarchy(footerNav, model, setFooterNav)
-            })
-        }
-
-        return () => {
-            if (removeChangedSubscription != undefined) {
-                removeChangedSubscription()
-            }
-        }
-    }, [ampVizSdk])
+    useAmpRtvNav(
+        (model) => {
+            // handle form model change
+            applyRtvToNav(headerNav, model, setHeaderNav, allCategories)
+            applyRtvToNav(footerNav, model, setFooterNav, allCategories)
+        },
+        ampVizSdk,
+        defaultAmpClient,
+        targetLocale
+    )
 
     // Set up customer and basket
     useShopper({currency})
@@ -425,7 +415,7 @@ Learn more with our localization guide. https://sfdc.co/localization-guide
             (item) => item.common.visible,
             targetLocale
         ),
-        rootCategory
+        categories
     )
 
     const footerNav = enrichNavigation(
@@ -434,7 +424,7 @@ Learn more with our localization guide. https://sfdc.co/localization-guide
             (item) => item.common.visible,
             targetLocale
         ),
-        rootCategory
+        categories
     )
 
     return {
