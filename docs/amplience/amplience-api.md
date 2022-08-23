@@ -13,7 +13,7 @@ The package.json should have a dependency for the Amplience DC Delivery SDK.
 
 ## Initialisation
 
-In order for the Amplience SDK to understand which hub to connect to, we need to instantiate the client with the hub name. This is driven from your configuration: config/amplience.config.js.
+In order for the Amplience SDK to understand which hub to connect to, we need to instantiate the client with the hub name. This is driven from your configuration: `config/amplience/default.js`.
 ```
 module.exports =
 {
@@ -25,7 +25,7 @@ Where this is the Amplience hub to connect to.
 Also follow the Composable Commerce pattern of importing this directly into the default configuration: `config/default.js.`
 
 ```
-const amplience = require('./amplience.config.js')
+const amplience = require('./amplience/default.js')
 ```
 
 And then in the app add an attribute for amplience:
