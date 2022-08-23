@@ -140,6 +140,36 @@ export const enrichNavigation = (nav, sfccRoot, targetLocale) => {
                 node.common.title = ampTitleObj ? ampTitleObj.value : ''
             }
         }
+
+        if (node.common && node.common.content) {
+            const ampTitleObj = node.common.content.title.values.find(({locale}) => locale === targetLocale)
+            const ampTitle = ampTitleObj ? ampTitleObj.value : ''
+
+            if (ampTitle) {
+                node.common.content.title = ampTitle
+            } else {
+                const ampTitleObj = node.common.content.title.values.find(({locale}) => locale === 'en-US')
+                node.common.content.title = ampTitleObj ? ampTitleObj.value : ''
+            }
+
+            node.common.content.actions = node.common.content.actions.map((el) => {
+                const ampTitleObj = el.label.values.find(({locale}) => locale === targetLocale)
+                const ampTitle = ampTitleObj ? ampTitleObj.value : ''
+
+                if (ampTitle) {
+                    el.label = ampTitle
+                } else {
+                    const ampTitleObj = el.label.values.find(({locale}) => locale === 'en-US')
+                    el.label = ampTitleObj ? ampTitleObj.value : ''
+                }
+
+                return el
+            })
+
+        }
+
+        console.log(node)
+
     })
 
     return nav
