@@ -1,23 +1,23 @@
-import {DynamicContent, Extension, Folder, HalResource, Page, Pageable, Settings, Sortable} from 'dc-management-sdk-js'
-import {Arguments, Argv} from 'yargs'
-import {join} from 'path'
-import {execSync} from 'child_process'
-import {rmSync} from 'fs'
-import {Context} from './cli'
+import { ContentRepository, DynamicContent, Extension, Folder, HalResource, Page, Pageable, Settings, Sortable } from 'dc-management-sdk-js'
+import { Arguments, Argv } from 'yargs'
+import { join } from 'path'
+import { execSync } from 'child_process'
+import { rmSync, writeFileSync } from 'fs'
+import { Context } from './cli'
 import { AmplienceRestClient } from './amplience-rest-client'
 
-const connectSDK = (context: Context) => {
+export const connectSDK = (context: Context) => {
     return new DynamicContent({
         client_id: context.clientId,
         client_secret: context.clientSecret
     })
 }
 
-const paginator = async <T extends HalResource>(
+export const paginator = async <T extends HalResource>(
     pagableFn: (options?: Pageable & Sortable) => Promise<Page<T>>,
     options: Pageable & Sortable = {}
 ): Promise<T[]> => {
-    const currentPage = await pagableFn({...options, size: 20})
+    const currentPage = await pagableFn({ ...options, size: 20 })
     if (
         currentPage.page &&
         currentPage.page.number !== undefined &&
@@ -26,7 +26,7 @@ const paginator = async <T extends HalResource>(
     ) {
         return [
             ...currentPage.getItems(),
-            ...(await paginator(pagableFn, {...options, page: currentPage.page.number + 1}))
+            ...(await paginator(pagableFn, { ...options, page: currentPage.page.number + 1 }))
         ]
     }
     return currentPage.getItems()
@@ -62,15 +62,15 @@ export const cleanHandler = async (context: Arguments<Context>): Promise<any> =>
     const mappingFile: string = context.mapFile || join(process.env[process.platform == 'win32' ? 'USERPROFILE' : 'HOME'] || __dirname, '.amplience', 'imports', `sfcc-${context.hubId}.json`)
 
     console.log(`Configuring dc-cli...`)
-    execSync(`./node_modules/.bin/dc-cli configure --clientId ${context.clientId} --clientSecret ${context.clientSecret} --hubId ${context.hubId}`, {stdio: 'inherit'})
+    execSync(`./node_modules/.bin/dc-cli configure --clientId ${context.clientId} --clientSecret ${context.clientSecret} --hubId ${context.hubId}`, { stdio: 'inherit' })
 
     console.log(`Cleaning hub...`)
-    execSync(`./node_modules/.bin/dc-cli hub clean --force`, {stdio: 'inherit'})
+    execSync(`./node_modules/.bin/dc-cli hub clean --force`, { stdio: 'inherit' })
 
     console.log(`Archiving events...`)
     const events = await paginator(hub.related.events.list)
     for (let i = events.length - 1; i >= 0; i--) {
-        execSync(`./node_modules/.bin/dc-cli event archive ${events[i].id} --force`, {stdio: 'inherit'})
+        execSync(`./node_modules/.bin/dc-cli event archive ${events[i].id} --force`, { stdio: 'inherit' })
     }
 
     console.log(`Deleting extensions...`)
@@ -100,22 +100,32 @@ export const cleanHandler = async (context: Arguments<Context>): Promise<any> =>
     }))
 
     console.log('Deleting mapFile...')
-    rmSync(mappingFile, {force: true})
+    rmSync(mappingFile, { force: true })
 
     // novadev-581 Update automation so that cleanup removes all folders from repositories
+    const restClient = AmplienceRestClient(context)
     const repositories = await paginator(hub.related.contentRepositories.list)
 
-    const deleteFolder = async (folder: Folder): Promise<any> => {
-        console.log(`Deleting folder ${folder.name}...`)
-        const subfolders = await paginator(folder.related.folders.list)
-        await Promise.all(subfolders.map(deleteFolder))
-        return await restClient.delete(`/folders/${folder.id}`)
+    const deleteFoldersInRepository = async (repo?: ContentRepository): Promise<any> => {
+        if (repo) {
+            console.log(`delete folders in repository ${repo.name}...`)
+            return await Promise.all((await paginator(repo.related.folders.list)).map(deleteFolder))
+        }
     }
 
-    const restClient = AmplienceRestClient(context)
-    await Promise.all(repositories.map(async repo => await Promise.all((await paginator(repo.related.folders.list)).map(deleteFolder))))
+    const deleteFolder = async (folder?: Folder): Promise<any> => {
+        if (folder) {
+            const subfolders = await paginator(folder.related.folders.list)
+            await Promise.all(subfolders.map(deleteFolder))
+
+            console.log(`delete folder ${folder.name}...`)
+            return await restClient.delete(`/folders/${folder.id}`)
+        }
+    }
+
+    await Promise.all(repositories.map(deleteFoldersInRepository))
+    restClient.cleanup()
     // end novadev-581
 
     console.log(`Done!`)
-
 }

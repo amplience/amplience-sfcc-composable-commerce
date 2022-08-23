@@ -6,16 +6,21 @@ export type OAuthRestClientInterface = {
     [Z in keyof typeof HttpMethod as Lowercase<Z>]: (config: AxiosRequestConfig | string) => Promise<any>
 }
 
+export type Cleanable = {
+    cleanup(): any
+}
+
 export const sleep = (delay: number) => new Promise((resolve) => setTimeout(resolve, delay))
 
 type AuthenticationStatus = 'NOT_LOGGED_IN' | 'LOGGING_IN' | 'LOGGED_IN'
-export const AmplienceRestClient = (config: { clientId: string, clientSecret: string }): OAuthRestClientInterface => {
+export const AmplienceRestClient = (config: { clientId: string, clientSecret: string }): OAuthRestClientInterface & Cleanable => {
     let authenticatedAxios: AxiosInstance
     let status: AuthenticationStatus = 'NOT_LOGGED_IN'
 
     const apiUrl = `https://api.amplience.net/v2/content`
     const authUrl = `https://auth.amplience.net/oauth/token?client_id=${config.clientId}&client_secret=${config.clientSecret}&grant_type=client_credentials`
 
+    let authenticationTimeout: NodeJS.Timeout
     const authenticate = async (): Promise<AxiosInstance> => {
         // console.log(`authenticating to ${config.auth_url}`)
 
@@ -34,10 +39,13 @@ export const AmplienceRestClient = (config: { clientId: string, clientSecret: st
                     'content-type': 'application/x-www-form-urlencoded'
                 }
             })
-
-            setTimeout(() => { authenticate() }, auth.expires_in * 999)
+            authenticationTimeout = setTimeout(() => { authenticate() }, auth.expires_in * 999)
         }
         return authenticatedAxios
+    }
+
+    const cleanup = () => {
+        clearTimeout(authenticationTimeout)
     }
 
     const request = (method: HttpMethod) => async (config: AxiosRequestConfig | string): Promise<any> => {
@@ -52,21 +60,14 @@ export const AmplienceRestClient = (config: { clientId: string, clientSecret: st
                 return await request(method)(config)
 
             case 'NOT_LOGGED_IN':
-                status = 'LOGGING_IN'
-                break;
-
+                authenticatedAxios = await authenticate()
+                status = 'LOGGED_IN'
+    
             case 'LOGGED_IN':
                 break;
         }
 
-        authenticatedAxios = await authenticate()
-
-        if (status === 'LOGGING_IN') {
-            status = 'LOGGED_IN'
-        }
-
         try {
-            // console.log(`[ rest ] get ${config.url}`)
             return await (await authenticatedAxios.request({ method, ...config })).data
         } catch (error: any) {
             if (error.response?.status === 429) {
@@ -86,6 +87,7 @@ export const AmplienceRestClient = (config: { clientId: string, clientSecret: st
     }
 
     return {
+        cleanup,
         get:    request(HttpMethod.GET),
         delete: request(HttpMethod.DELETE),
         put:    request(HttpMethod.PUT),
