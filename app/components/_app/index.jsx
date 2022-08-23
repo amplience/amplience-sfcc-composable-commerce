@@ -419,7 +419,7 @@ App.getProps = async ({api, res, req, ampClient}) => {
     const vseProps = generateVseProps({req, res, query: req.query})
     ampClient.setVse(vseProps.vse)
 
-    const [headerNav, footerNav] = await Promise.all(['test-nav-li', 'footer-nav'].map(async (key) => enrichNavigation(
+    const [headerNav, footerNav] = await Promise.all(['main-nav', 'footer-nav'].map(async (key) => enrichNavigation(
         await ampClient.fetchHierarchy(
             {key},
             (item) => item.common.visible,
