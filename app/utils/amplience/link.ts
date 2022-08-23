@@ -58,6 +58,44 @@ export const getLinkUrl = (link, forRelative = true) => {
 const navCommonVisible = (item) => item.common.visible
 const navCommonOrder = (item) => item.common.priority
 
+const enrichTitle = (targetLocale) => (node) => {
+    if (typeof node.common.title === 'object')
+    {
+        const ampTitleObj = node.common.title.values.find(({locale}) => locale === targetLocale)
+        node.common.title = ampTitleObj ? ampTitleObj.value : ''
+    }
+
+    if (node.common && node.common.content) {
+        const ampTitleObj = node.common.content.title.values.find(
+            ({locale}) => locale === targetLocale
+        )
+        const ampTitle = ampTitleObj ? ampTitleObj.value : ''
+
+        if (ampTitle) {
+            node.common.content.title = ampTitle
+        } else {
+            const ampTitleObj = node.common.content.title.values.find(
+                ({locale}) => locale === 'en-US'
+            )
+            node.common.content.title = ampTitleObj ? ampTitleObj.value : ''
+        }
+
+        node.common.content.actions = node.common.content.actions.map((el) => {
+            const ampTitleObj = el.label.values.find(({locale}) => locale === targetLocale)
+            const ampTitle = ampTitleObj ? ampTitleObj.value : ''
+
+            if (ampTitle) {
+                el.label = ampTitle
+            } else {
+                const ampTitleObj = el.label.values.find(({locale}) => locale === 'en-US')
+                el.label = ampTitleObj ? ampTitleObj.value : ''
+            }
+
+            return el
+        })
+    }
+}
+
 const navCommonEnrich: EnrichConfig = {
     visibleFunc: navCommonVisible,
     orderFunc: navCommonOrder
@@ -117,26 +155,27 @@ export const enrichCategory = (categories, targetLocale) => {
                 }
             }
         } else if (node.common) {
-            const ampTitleObj = node.common.title.values.find(({locale}) => locale === targetLocale)
-            const ampTitle = ampTitleObj ? ampTitleObj.value : ''
-
-            if (ampTitle) {
-                node.common.title = ampTitle
-            } else {
-                const ampTitleObj = node.common.title.values.find(({locale}) => locale === 'en-US') //todo change to default
-                node.common.title = ampTitleObj ? ampTitleObj.value : ''
-            }
+            enrichTitle(targetLocale)(node)
         }
     }
 }
 
-export const enrichNavigation = (nav, categories, locale) => {
+const getNavEnrichConfig = (categories, locale) => {
     const enrichConfig = {...navEnrichConfig}
 
-    enrichConfig[categorySchemaId] = {
-        enrichFunc: enrichCategory(categories, locale),
-        ...enrichConfig[categorySchemaId]
+    for (let key of Object.keys(enrichConfig)) {
+        enrichConfig[key] = {
+            enrichFunc:
+                key === categorySchemaId ? enrichCategory(categories, locale) : enrichTitle(locale),
+            ...enrichConfig[key]
+        }
     }
+
+    return enrichConfig
+}
+
+export const enrichNavigation = (nav, categories, locale) => {
+    const enrichConfig = getNavEnrichConfig(categories, locale)
 
     processHierarchy(nav, enrichConfig)
 
@@ -144,12 +183,7 @@ export const enrichNavigation = (nav, categories, locale) => {
 }
 
 export const applyRtvToNav = (root, rtv, setter, categories, locale) => {
-    const enrichConfig = {...navEnrichConfig}
-
-    enrichConfig[categorySchemaId] = {
-        enrichFunc: enrichCategory(categories, locale),
-        ...enrichConfig[categorySchemaId]
-    }
+    const enrichConfig = getNavEnrichConfig(categories, locale)
 
     applyRtvToHierarchy(root, rtv, setter, enrichConfig)
 }
