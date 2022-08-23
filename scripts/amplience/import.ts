@@ -123,10 +123,6 @@ export const importArgs = (yargs: Argv) => {
             describe: 'auth secret',
             default: null,
             type: 'string'
-        }).option('authSecret', {
-            describe: 'auth secret',
-            default: null,
-            type: 'string'
         })
         .option('authClientId', {
             describe: 'auth client id',
