@@ -101,13 +101,25 @@ const sfccToNav = (node) => {
     }
 }
 
-export const enrichNavigation = (nav, sfccRoot) => {
+export const enrichNavigation = (nav, sfccRoot, targetLocale) => {
     processNav(nav, (node) => {
         if (node._meta.schema === categorySchemaId) {
             if (node.includeSFCC) {
                 // Search for the category in the SFCC root.
                 const categoryId = categoryDKToId(node._meta.deliveryKey)
                 const category = getCategorySFCC(sfccRoot, categoryId)
+                const sfccTitle = category.name
+                const ampTitleObj = node.common.title.values.find(({locale}) => locale === targetLocale)
+                const ampTitle = ampTitleObj ? ampTitleObj.value : ''
+
+                if (ampTitle) {
+                    node.common.title = ampTitle
+                } else if (sfccTitle) {
+                    node.common.title = sfccTitle
+                } else {
+                    const ampTitleObj = node.common.title.values.find(({locale}) => locale === 'en-US') //todo change to default
+                    node.common.title = ampTitleObj ? ampTitleObj.value : ''
+                }
 
                 // If the category was found, generate category links for its children.
                 if (category) {
@@ -116,6 +128,16 @@ export const enrichNavigation = (nav, sfccRoot) => {
                         node.children = [...(node.children ?? []), ...newChildren.children]
                     }
                 }
+            }
+        } else if (node.common) {
+            const ampTitleObj = node.common.title.values.find(({locale}) => locale === targetLocale)
+            const ampTitle = ampTitleObj ? ampTitleObj.value : ''
+
+            if (ampTitle) {
+                node.common.title = ampTitle
+            } else {
+                const ampTitleObj = node.common.title.values.find(({locale}) => locale === 'en-US') //todo change to default
+                node.common.title = ampTitleObj ? ampTitleObj.value : ''
             }
         }
     })

@@ -209,7 +209,7 @@ const App = (props) => {
     }
 
     return (
-        <Box className="sf-app" {...styles.container}>
+        <Box className='sf-app' {...styles.container}>
             <IntlProvider
                 onError={(err) => {
                     if (err.code === 'MISSING_TRANSLATION') {
@@ -226,7 +226,7 @@ const App = (props) => {
                 // NOTE: if you update this value, please also update the following npm scripts in `template-retail-react-app/package.json`:
                 // - "extract-default-translations"
                 // - "compile-translations:pseudo"
-                defaultLocale="en-US"
+                defaultLocale='en-US'
             >
                 <CategoriesProvider categories={allCategories}>
                     <CurrencyProvider currency={currency}>
@@ -234,17 +234,17 @@ const App = (props) => {
                             {vseProps.vse && <PreviewHeader {...vseProps} />}
                             <RealtimeVisualization.Provider value={{ampVizSdk, status}}>
                                 <Seo>
-                                    <meta name="theme-color" content={THEME_COLOR} />
+                                    <meta name='theme-color' content={THEME_COLOR} />
                                     <meta
-                                        name="apple-mobile-web-app-title"
+                                        name='apple-mobile-web-app-title'
                                         content={DEFAULT_SITE_TITLE}
                                     />
                                     <link
-                                        rel="apple-touch-icon"
+                                        rel='apple-touch-icon'
                                         href={getAssetUrl('static/img/global/apple-touch-icon.png')}
                                     />
                                     <link
-                                        rel="manifest"
+                                        rel='manifest'
                                         href={getAssetUrl('static/manifest.json')}
                                     />
 
@@ -252,7 +252,7 @@ const App = (props) => {
                                     For more details on hrefLang, see https://developers.google.com/search/docs/advanced/crawling/localized-versions */}
                                     {site.l10n?.supportedLocales.map((locale) => (
                                         <link
-                                            rel="alternate"
+                                            rel='alternate'
                                             hrefLang={locale.id.toLowerCase()}
                                             href={`${appOrigin}${getPathWithLocale(locale.id, {
                                                 location
@@ -262,7 +262,7 @@ const App = (props) => {
                                     ))}
                                     {/* A general locale as fallback. For example: "en" if default locale is "en-GB" */}
                                     <link
-                                        rel="alternate"
+                                        rel='alternate'
                                         hrefLang={site.l10n.defaultLocale.slice(0, 2)}
                                         href={`${appOrigin}${getPathWithLocale(
                                             site.l10n.defaultLocale,
@@ -273,16 +273,16 @@ const App = (props) => {
                                     />
                                     {/* A wider fallback for user locales that the app does not support */}
                                     <link
-                                        rel="alternate"
-                                        hrefLang="x-default"
+                                        rel='alternate'
+                                        hrefLang='x-default'
                                         href={`${appOrigin}/`}
                                     />
                                 </Seo>
 
                                 <ScrollToTop />
 
-                                <Box id="app" display="flex" flexDirection="column" flex={1}>
-                                    <SkipNavLink zIndex="skipLink">Skip to Content</SkipNavLink>
+                                <Box id='app' display='flex' flexDirection='column' flex={1}>
+                                    <SkipNavLink zIndex='skipLink'>Skip to Content</SkipNavLink>
 
                                     <Box {...headerStyles}>
                                         {!isCheckout ? (
@@ -324,12 +324,12 @@ const App = (props) => {
                                             }}
                                         >
                                             <Box
-                                                as="main"
-                                                id="app-main"
-                                                role="main"
-                                                display="flex"
-                                                flexDirection="column"
-                                                flex="1"
+                                                as='main'
+                                                id='app-main'
+                                                role='main'
+                                                display='flex'
+                                                flexDirection='column'
+                                                flex='1'
                                             >
                                                 <OfflineBoundary isOnline={false}>
                                                     {children}
@@ -393,22 +393,22 @@ App.getProps = async ({api, res, req, ampClient}) => {
     await api.auth.login()
 
     // Get the root category, this will be used for things like the navigation.
-    const rootCategory = await api.shopperProducts.getCategory({
+    let rootCategory = await api.shopperProducts.getCategory({
         parameters: {
             id: DEFAULT_ROOT_CATEGORY,
-            levels: DEFAULT_NAV_DEPTH
+            levels: DEFAULT_NAV_DEPTH,
+            locale: targetLocale
         }
     })
 
     if (rootCategory.isError) {
-        const message =
-            rootCategory.title === 'Unsupported Locale'
-                ? `
-It looks like the locale “${rootCategory.locale}” isn’t set up, yet. The locale settings in your package.json must match what is enabled in your Business Manager instance.
-Learn more with our localization guide. https://sfdc.co/localization-guide
-`
-                : rootCategory.detail
-        throw new Error(message)
+        rootCategory = await api.shopperProducts.getCategory({
+            parameters: {
+                id: DEFAULT_ROOT_CATEGORY,
+                levels: DEFAULT_NAV_DEPTH,
+                locale: 'en-US' //todo change to default
+            }
+        })
     }
 
     // Flatten the root so we can easily access all the categories throughout
@@ -419,13 +419,14 @@ Learn more with our localization guide. https://sfdc.co/localization-guide
     const vseProps = generateVseProps({req, res, query: req.query})
     ampClient.setVse(vseProps.vse)
 
-    const [headerNav, footerNav] = await Promise.all(['main-nav', 'footer-nav'].map(async (key) => enrichNavigation(
+    const [headerNav, footerNav] = await Promise.all(['test-nav-li', 'footer-nav'].map(async (key) => enrichNavigation(
         await ampClient.fetchHierarchy(
             {key},
             (item) => item.common.visible,
             targetLocale
         ),
-        rootCategory
+        rootCategory,
+        targetLocale
     )))
 
     return {

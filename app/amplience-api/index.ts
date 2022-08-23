@@ -52,7 +52,7 @@ export class AmplienceAPI {
         })
     }
 
-    async getChildren(parent: any, filter: FilterType, locale = 'en-US') {
+    async getChildren(parent: any, filter: FilterType) {
         const id = parent._meta.deliveryId
 
         // TODO: pagination, rate limit
@@ -61,8 +61,7 @@ export class AmplienceAPI {
             .sortBy('default', 'ASC')
             .request({
                 format: 'inlined',
-                depth: 'all',
-                locale
+                depth: 'all'
             })
 
         const items = result.responses
@@ -73,7 +72,7 @@ export class AmplienceAPI {
             parent.children = items
         }
 
-        await Promise.all(items.map((item) => this.getChildren(item, filter, locale)))
+        await Promise.all(items.map((item) => this.getChildren(item, filter)))
     }
 
     getReferences(item: any, refs: Map<string, any>) {
@@ -133,7 +132,7 @@ export class AmplienceAPI {
 
         const root = (await this.fetchContent([parent], {locale}))[0]
 
-        await this.getChildren(root, filter, locale)
+        await this.getChildren(root, filter)
 
         await this.enrichReferenceDeliveryKeys(root, locale)
 
