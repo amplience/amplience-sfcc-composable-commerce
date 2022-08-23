@@ -106,25 +106,18 @@ export const cleanHandler = async (context: Arguments<Context>): Promise<any> =>
     const restClient = AmplienceRestClient(context)
     const repositories = await paginator(hub.related.contentRepositories.list)
 
-    const deleteFoldersInRepository = async (repo?: ContentRepository): Promise<any> => {
-        if (repo) {
-            console.log(`delete folders in repository ${repo.name}...`)
-            return await Promise.all((await paginator(repo.related.folders.list)).map(deleteFolder))
-        }
+    const deleteFoldersInRepository = async (repo: ContentRepository): Promise<any> => {
+        return await Promise.all((await paginator(repo.related.folders.list)).map(deleteFolder))
     }
 
-    const deleteFolder = async (folder?: Folder): Promise<any> => {
-        if (folder) {
-            const subfolders = await paginator(folder.related.folders.list)
-            await Promise.all(subfolders.map(deleteFolder))
-
-            console.log(`delete folder ${folder.name}...`)
-            return await restClient.delete(`/folders/${folder.id}`)
-        }
+    const deleteFolder = async (folder: Folder): Promise<any> => {
+        const subfolders = await paginator(folder.related.folders.list)
+        await Promise.all(subfolders.map(deleteFolder))
+        return await restClient.delete(`/folders/${folder.id}`)
     }
 
+    console.log(`Deleting folders...`)
     await Promise.all(repositories.map(deleteFoldersInRepository))
-    restClient.cleanup()
     // end novadev-581
 
     console.log(`Done!`)
