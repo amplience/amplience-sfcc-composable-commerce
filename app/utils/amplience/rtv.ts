@@ -106,8 +106,6 @@ export const useAmpRtv = (method, ampVizSdk) => {
     useEffect(() => {
         let removeChangedSubscription
 
-        // If a client is provided, try to fetch the child content assuming the model is a hierarchy.
-
         if (ampVizSdk !== null) {
             ampVizSdk.form.saved(() => {
                 window.location.reload()

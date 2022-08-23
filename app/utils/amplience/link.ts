@@ -90,12 +90,24 @@ const sfccToNav = (node) => {
     }
 }
 
-export const enrichCategory = (categories) => {
+export const enrichCategory = (categories, targetLocale) => {
     return (node) => {
         if (node.includeSFCC) {
             // Search for the category in the SFCC root.
             const categoryId = categoryDKToId(node._meta.deliveryKey)
-            const category = categories[categoryId] //getCategorySFCC(sfccRoot, categoryId)
+            const category = categories[categoryId]
+            const sfccTitle = category.name
+            const ampTitleObj = node.common.title.values.find(({locale}) => locale === targetLocale)
+            const ampTitle = ampTitleObj ? ampTitleObj.value : ''
+
+            if (ampTitle) {
+                node.common.title = ampTitle
+            } else if (sfccTitle) {
+                node.common.title = sfccTitle
+            } else {
+                const ampTitleObj = node.common.title.values.find(({locale}) => locale === 'en-US') //todo change to default
+                node.common.title = ampTitleObj ? ampTitleObj.value : ''
+            }
 
             // If the category was found, generate category links for its children.
             if (category) {
@@ -104,15 +116,25 @@ export const enrichCategory = (categories) => {
                     node.children = [...(node.children ?? []), ...newChildren.children]
                 }
             }
+        } else if (node.common) {
+            const ampTitleObj = node.common.title.values.find(({locale}) => locale === targetLocale)
+            const ampTitle = ampTitleObj ? ampTitleObj.value : ''
+
+            if (ampTitle) {
+                node.common.title = ampTitle
+            } else {
+                const ampTitleObj = node.common.title.values.find(({locale}) => locale === 'en-US') //todo change to default
+                node.common.title = ampTitleObj ? ampTitleObj.value : ''
+            }
         }
     }
 }
 
-export const enrichNavigation = (nav, categories) => {
+export const enrichNavigation = (nav, categories, locale) => {
     const enrichConfig = {...navEnrichConfig}
 
     enrichConfig[categorySchemaId] = {
-        enrichFunc: enrichCategory(categories),
+        enrichFunc: enrichCategory(categories, locale),
         ...enrichConfig[categorySchemaId]
     }
 
@@ -121,11 +143,11 @@ export const enrichNavigation = (nav, categories) => {
     return nav
 }
 
-export const applyRtvToNav = (root, rtv, setter, categories) => {
+export const applyRtvToNav = (root, rtv, setter, categories, locale) => {
     const enrichConfig = {...navEnrichConfig}
 
     enrichConfig[categorySchemaId] = {
-        enrichFunc: enrichCategory(categories),
+        enrichFunc: enrichCategory(categories, locale),
         ...enrichConfig[categorySchemaId]
     }
 

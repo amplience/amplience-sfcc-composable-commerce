@@ -95,6 +95,7 @@ const Header = ({
 
     const styles = useMultiStyleConfig('Header')
     const ampStyles = useMultiStyleConfig('AmplienceHeader')
+    const url = getImageUrl(logo);
 
     const onSignoutClick = async () => {
         setShowLoading(true)
@@ -131,7 +132,7 @@ const Header = ({
                         {...styles.icons}
                         onClick={onMenuClick}
                     />
-                    <IconButton
+                    {url && (<IconButton
                         aria-label={intl.formatMessage({
                             id: 'header.button.assistive_msg.logo',
                             defaultMessage: 'Logo'
@@ -141,13 +142,13 @@ const Header = ({
                                 {...styles.logo}
                                 style={{...ampStyles.logo}}
                                 alt={'logo'}
-                                src={getImageUrl(logo)}
+                                src={url}
                             />
                         }
                         {...styles.icons}
                         variant='unstyled'
                         onClick={onLogoClick}
-                    />
+                    />)}
                     <Box {...styles.bodyContainer}>{children}</Box>
                     <Box {...styles.searchContainer}>
                         <Search
