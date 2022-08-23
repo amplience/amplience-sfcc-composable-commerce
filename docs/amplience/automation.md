@@ -38,6 +38,7 @@ npm run import \
     --clientSecret <clientSecret> \
     --contentRepoId <contentRepoId> \
     --slotsRepoId <slotsRepoId> \
+    --sitestructureRepoId <sitestructureRepoId>
     --mapFile <mapFile> \
     --tempDir <tempDir> \
     --sfccUrl <sfccUrl> \
@@ -53,6 +54,7 @@ The script run will clean out the hub, delete or archive next items:
  - content type schemas
  - content types
  - content items and slots
+ - folders
  - events and editions
  - webhooks
  - extensions
