@@ -4,10 +4,10 @@ This is a version of the Retail React app with a starting point for Amplience fu
 > Note: This code is built against the code version @latest at the time which was PWAKit v2.1.0 released on July 5th 2022: https://github.com/SalesforceCommerceCloud/pwa-kit/releases/tag/v2.1.0
 
 ## Amplience Contents
-* [Overview](./docs/overview.md)
-* [Security Updates](./docs/security-updates.md) 
-* [Amplience API](./docs/amplience-api.md)
-* [AmplienceWrapper Component](./docs/ampliencewrapper-component.md)
+* [Overview](./docs/amplience/overview.md)
+* [Security Updates](./docs/amplience/security-updates.md) 
+* [Amplience API](./docs/amplience/amplience-api.md)
+* [AmplienceWrapper Component](./docs/amplience/ampliencewrapper-component.md)
 * [Visualization](docs/amplience/visualization.md)
 * [Preview](docs/amplience/preview.md)
 * [Amplience Account](docs/amplience/amplience-account.md)

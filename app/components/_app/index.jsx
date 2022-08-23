@@ -52,7 +52,7 @@ import {watchOnlineStatus, flatten} from '../../utils/utils'
 import {homeUrlBuilder, getPathWithLocale, buildPathWithUrlConfig} from '../../utils/url'
 import {getTargetLocale, fetchTranslations} from '../../utils/locale'
 import {DEFAULT_SITE_TITLE, HOME_HREF, THEME_COLOR} from '../../constants'
-import {enrichNavigation} from '../../utils/amplience/link'
+import {applyRtvToNav, enrichNavigation} from '../../utils/amplience/link'
 
 import Seo from '../seo'
 import {resolveSiteFromUrl} from '../../utils/site-utils'
@@ -60,7 +60,7 @@ import {resolveSiteFromUrl} from '../../utils/site-utils'
 import {init} from 'dc-visualization-sdk'
 import PreviewHeader from '../amplience/preview-header'
 import {defaultAmpClient} from '../../amplience-api'
-import {applyRtvToHierarchy} from '../../utils/amplience/rtv'
+import {useAmpRtvNav} from '../../utils/amplience/rtv'
 
 const DEFAULT_NAV_DEPTH = 3
 const DEFAULT_ROOT_CATEGORY = 'root'
@@ -109,26 +109,16 @@ const App = (props) => {
         setStatus('connected')
     }
 
-    useEffect(() => {
-        let removeChangedSubscription
-        if (ampVizSdk !== null) {
-            ampVizSdk.form.saved(() => {
-                window.location.reload()
-            })
-
-            removeChangedSubscription = ampVizSdk.form.changed((model) => {
-                // handle form model change
-                applyRtvToHierarchy(headerNav, model, setHeaderNav)
-                applyRtvToHierarchy(footerNav, model, setFooterNav)
-            })
-        }
-
-        return () => {
-            if (removeChangedSubscription != undefined) {
-                removeChangedSubscription()
-            }
-        }
-    }, [ampVizSdk])
+    useAmpRtvNav(
+        (model) => {
+            // handle form model change
+            applyRtvToNav(headerNav, model, setHeaderNav, allCategories, targetLocale)
+            applyRtvToNav(footerNav, model, setFooterNav, allCategories, targetLocale)
+        },
+        ampVizSdk,
+        defaultAmpClient,
+        targetLocale
+    )
 
     // Set up customer and basket
     useShopper({currency})
@@ -204,7 +194,11 @@ const App = (props) => {
 
     const headerStyles = {...styles.headerWrapper}
 
-    if (vseProps.vse) {
+    const showVse = vseProps.vse && !isNaN(vseProps.vseTimestamp) && vseProps.vseTimestamp != null
+
+    console.log(vseProps.vseTimestamp)
+
+    if (showVse) {
         Object.assign(headerStyles, styles.headerAmpPreview)
     }
 
@@ -231,7 +225,7 @@ const App = (props) => {
                 <CategoriesProvider categories={allCategories}>
                     <CurrencyProvider currency={currency}>
                         <AmplienceContextProvider {...vseProps}>
-                            {vseProps.vse && <PreviewHeader {...vseProps} />}
+                            {showVse && <PreviewHeader {...vseProps} />}
                             <RealtimeVisualization.Provider value={{ampVizSdk, status}}>
                                 <Seo>
                                     <meta name='theme-color' content={THEME_COLOR} />
@@ -420,13 +414,39 @@ App.getProps = async ({api, res, req, ampClient}) => {
     const vseProps = generateVseProps({req, res, query: req.query})
     ampClient.setVse(vseProps.vse)
 
-    const [headerNav, footerNav] = await Promise.all(['main-nav', 'footer-nav'].map(async (key) => enrichNavigation(
+    let headerKey = 'main-nav'
+    let footerKey = 'footer-nav'
+
+    if (req.query['navvis'] != null) {
+        let navName
+        if (req.query['navroot'] != null) {
+            navName = req.query['navroot']
+        } else if (req.query['navchild']) {
+            // Attempt to find the root nav item from the hierarchy child.
+            const root = await ampClient.fetchHierarchyRootFromChild(req.query['navchild'])
+
+            navName = root?._meta?.deliveryKey
+        }
+
+        if (navName != null) {
+            switch (req.query['navvis']) {
+                case 'header':
+                    headerKey = navName
+                    break
+                case 'footer':
+                    footerKey = navName
+                    break
+            }
+        }
+    }
+
+    const [headerNav, footerNav] = await Promise.all([headerKey, footerKey].map(async (key) => enrichNavigation(
         await ampClient.fetchHierarchy(
             {key},
             (item) => item.common.visible,
             targetLocale
         ),
-        rootCategory,
+        categories,
         targetLocale,
         defaultLocale
     )))

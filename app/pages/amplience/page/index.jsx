@@ -18,10 +18,10 @@ import Seo from '../../../components/amplience/seo'
 
 // Amplience Wrapper Component
 import AmplienceWrapper from '../../../components/amplience/wrapper'
-import {RealtimeVisualization} from '../../../contexts/amplience'
 
 // Constants
 import {MAX_CACHE_AGE} from '../../../constants'
+import {useAmpRtv} from '../../../utils/amplience/rtv'
 
 /**
  * This is an example content page for Retail React App.
@@ -30,32 +30,16 @@ import {MAX_CACHE_AGE} from '../../../constants'
  * categories and products, data is from local file.
  */
 const ContentPage = ({page}) => {
-    const RTV = useContext(RealtimeVisualization)
-    let removeChangedSubscription
     const [pageModel, setPageModel] = useState(undefined)
 
     useEffect(() => {
         setPageModel(page)
     }, [page])
 
-    useEffect(() => {
-        if (RTV.ampVizSdk !== null) {
-            RTV.ampVizSdk.form.saved(() => {
-                window.location.reload()
-            })
-
-            removeChangedSubscription = RTV.ampVizSdk.form.changed((model) => {
-                // handle form model change
-                setPageModel(model.content)
-            })
-        }
-
-        return () => {
-            if (removeChangedSubscription != undefined) {
-                removeChangedSubscription()
-            }
-        }
-    }, [RTV.ampVizSdk])
+    useAmpRtv((model) => {
+        // handle form model change
+        setPageModel(model.content)
+    })
 
     return (
         <Box data-testid="amplience-page" layerStyle="page">

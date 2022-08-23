@@ -63,5 +63,5 @@
   "required": [
     "common"
   ],
-  "propertyOrder": []
+  "propertyOrder": ["category", "common"]
 }
