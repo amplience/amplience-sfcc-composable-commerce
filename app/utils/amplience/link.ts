@@ -59,6 +59,10 @@ const navCommonVisible = (item) => item.common.visible
 const navCommonOrder = (item) => item.common.priority
 
 const unpackLocale = (obj, targetLocale) => {
+    if (typeof obj === 'string') {
+        return obj
+    }
+
     const ampTitleObj = obj.values.find(({locale}) => locale === targetLocale)
     const ampTitle = ampTitleObj ? ampTitleObj.value : ''
 
@@ -127,8 +131,14 @@ export const enrichCategory = (categories, targetLocale) => {
             const categoryId = categoryDKToId(node._meta.deliveryKey)
             const category = categories[categoryId]
             const sfccTitle = category.name
-            const ampTitleObj = node.common.title.values.find(({locale}) => locale === targetLocale)
-            const ampTitle = ampTitleObj ? ampTitleObj.value : ''
+
+            let ampTitle
+            if (typeof node.common.title === 'string' || node.common.title == null) {
+                ampTitle = node.common.title
+            } else {
+                const ampTitleObj = node.common.title.values.find(({locale}) => locale === targetLocale)
+                ampTitle = ampTitleObj ? ampTitleObj.value : ''
+            }
 
             if (ampTitle) {
                 node.common.title = ampTitle
