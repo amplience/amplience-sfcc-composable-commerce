@@ -103,12 +103,12 @@ const routes = [
         component: Wishlist
     },
     {
-        path: '/visualization/:hubname/:contentId/:vse/:locale',
+        path: '/visualization/:hubname/:contentId/:vse',
         component: RealtimeVisualization,
         exact: false
     },
     {
-        path: '/:locale/page/:pageId',
+        path: '/page/:pageId',
         component: ContentPage
     },
     {
