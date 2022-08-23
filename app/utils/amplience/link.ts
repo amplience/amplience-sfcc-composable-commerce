@@ -8,7 +8,8 @@ const categoryDKToId = (deliveryKey) => {
     const categoryPrefix = 'category/'
 
     if (deliveryKey == null || !deliveryKey.startsWith(categoryPrefix)) {
-        throw new Error(`Invalid category delivery key: ${deliveryKey}`)
+        console.error(`Invalid category delivery key: ${deliveryKey}`)
+        return 'invalid'
     }
 
     return deliveryKey.substring(categoryPrefix.length)
@@ -130,7 +131,7 @@ export const enrichCategory = (categories, targetLocale) => {
             // Search for the category in the SFCC root.
             const categoryId = categoryDKToId(node._meta.deliveryKey)
             const category = categories[categoryId]
-            const sfccTitle = category.name
+            const sfccTitle = category?.name
 
             let ampTitle
             if (typeof node.common.title === 'string' || node.common.title == null) {

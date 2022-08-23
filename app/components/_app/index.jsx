@@ -194,7 +194,11 @@ const App = (props) => {
 
     const headerStyles = {...styles.headerWrapper}
 
-    if (vseProps.vse) {
+    const showVse = vseProps.vse && !isNaN(vseProps.vseTimestamp) && vseProps.vseTimestamp != null
+
+    console.log(vseProps.vseTimestamp)
+
+    if (showVse) {
         Object.assign(headerStyles, styles.headerAmpPreview)
     }
 
@@ -221,7 +225,7 @@ const App = (props) => {
                 <CategoriesProvider categories={allCategories}>
                     <CurrencyProvider currency={currency}>
                         <AmplienceContextProvider {...vseProps}>
-                            {vseProps.vse && <PreviewHeader {...vseProps} />}
+                            {showVse && <PreviewHeader {...vseProps} />}
                             <RealtimeVisualization.Provider value={{ampVizSdk, status}}>
                                 <Seo>
                                     <meta name='theme-color' content={THEME_COLOR} />
@@ -409,7 +413,33 @@ App.getProps = async ({api, res, req, ampClient}) => {
     const vseProps = generateVseProps({req, res, query: req.query})
     ampClient.setVse(vseProps.vse)
 
-    const [headerNav, footerNav] = await Promise.all(['main-nav', 'footer-nav'].map(async (key) => enrichNavigation(
+    let headerKey = 'main-nav'
+    let footerKey = 'footer-nav'
+
+    if (req.query['navvis'] != null) {
+        let navName
+        if (req.query['navroot'] != null) {
+            navName = req.query['navroot']
+        } else if (req.query['navchild']) {
+            // Attempt to find the root nav item from the hierarchy child.
+            const root = await ampClient.fetchHierarchyRootFromChild(req.query['navchild'])
+
+            navName = root?._meta?.deliveryKey
+        }
+
+        if (navName != null) {
+            switch (req.query['navvis']) {
+                case 'header':
+                    headerKey = navName
+                    break
+                case 'footer':
+                    footerKey = navName
+                    break
+            }
+        }
+    }
+
+    const [headerNav, footerNav] = await Promise.all([headerKey, footerKey].map(async (key) => enrichNavigation(
         await ampClient.fetchHierarchy(
             {key},
             (item) => item.common.visible,
