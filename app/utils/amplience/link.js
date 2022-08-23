@@ -101,7 +101,19 @@ const sfccToNav = (node) => {
     }
 }
 
-export const enrichNavigation = (nav, sfccRoot, targetLocale) => {
+const getLocalizedValue = ({values, targetLocale, ampDefault, defaultLocale}) => {
+    const ampTitleObj = values.find(({locale}) => locale === targetLocale)
+    const ampTitle = ampTitleObj ? ampTitleObj.value : ''
+
+    if (!ampTitle && ampDefault) {
+        const ampTitleObj = values.find(({locale}) => locale === defaultLocale)
+        return ampTitleObj ? ampTitleObj.value : ''
+    }
+
+    return ampTitle
+}
+
+export const enrichNavigation = (nav, sfccRoot, targetLocale, defaultLocale) => {
     processNav(nav, (node) => {
         if (node._meta.schema === categorySchemaId) {
             if (node.includeSFCC) {
@@ -109,16 +121,18 @@ export const enrichNavigation = (nav, sfccRoot, targetLocale) => {
                 const categoryId = categoryDKToId(node._meta.deliveryKey)
                 const category = getCategorySFCC(sfccRoot, categoryId)
                 const sfccTitle = category.name
-                const ampTitleObj = node.common.title.values.find(({locale}) => locale === targetLocale)
-                const ampTitle = ampTitleObj ? ampTitleObj.value : ''
+                const ampTitle = getLocalizedValue({values: node.common.title.values, targetLocale, defaultLocale})
 
                 if (ampTitle) {
                     node.common.title = ampTitle
                 } else if (sfccTitle) {
                     node.common.title = sfccTitle
                 } else {
-                    const ampTitleObj = node.common.title.values.find(({locale}) => locale === 'en-US') //todo change to default
-                    node.common.title = ampTitleObj ? ampTitleObj.value : ''
+                    node.common.title = getLocalizedValue({
+                        values: node.common.title.values,
+                        targetLocale,
+                        ampDefault: true
+                    })
                 }
 
                 // If the category was found, generate category links for its children.
@@ -130,46 +144,22 @@ export const enrichNavigation = (nav, sfccRoot, targetLocale) => {
                 }
             }
         } else if (node.common) {
-            const ampTitleObj = node.common.title.values.find(({locale}) => locale === targetLocale)
-            const ampTitle = ampTitleObj ? ampTitleObj.value : ''
-
-            if (ampTitle) {
-                node.common.title = ampTitle
-            } else {
-                const ampTitleObj = node.common.title.values.find(({locale}) => locale === 'en-US') //todo change to default
-                node.common.title = ampTitleObj ? ampTitleObj.value : ''
-            }
+            node.common.title = getLocalizedValue({values: node.common.title.values, targetLocale, ampDefault: true})
         }
 
         if (node.common && node.common.content) {
-            const ampTitleObj = node.common.content.title.values.find(({locale}) => locale === targetLocale)
-            const ampTitle = ampTitleObj ? ampTitleObj.value : ''
-
-            if (ampTitle) {
-                node.common.content.title = ampTitle
-            } else {
-                const ampTitleObj = node.common.content.title.values.find(({locale}) => locale === 'en-US')
-                node.common.content.title = ampTitleObj ? ampTitleObj.value : ''
-            }
+            node.common.content.title = getLocalizedValue({
+                values: node.common.content.title.values,
+                targetLocale,
+                ampDefault: true
+            })
 
             node.common.content.actions = node.common.content.actions.map((el) => {
-                const ampTitleObj = el.label.values.find(({locale}) => locale === targetLocale)
-                const ampTitle = ampTitleObj ? ampTitleObj.value : ''
-
-                if (ampTitle) {
-                    el.label = ampTitle
-                } else {
-                    const ampTitleObj = el.label.values.find(({locale}) => locale === 'en-US')
-                    el.label = ampTitleObj ? ampTitleObj.value : ''
-                }
+                el.label = getLocalizedValue({values: el.label.values, targetLocale, ampDefault: true})
 
                 return el
             })
-
         }
-
-        console.log(node)
-
     })
 
     return nav

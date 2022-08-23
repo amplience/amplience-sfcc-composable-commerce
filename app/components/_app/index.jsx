@@ -363,6 +363,7 @@ App.shouldGetProps = () => {
 App.getProps = async ({api, res, req, ampClient}) => {
     const site = resolveSiteFromUrl(res.locals.originalUrl)
     const l10nConfig = site.l10n
+    const defaultLocale = l10nConfig.defaultLocale;
     const targetLocale = getTargetLocale({
         getUserPreferredLocales: () => {
             // CONFIG: This function should return an array of preferred locales. They can be
@@ -406,7 +407,7 @@ App.getProps = async ({api, res, req, ampClient}) => {
             parameters: {
                 id: DEFAULT_ROOT_CATEGORY,
                 levels: DEFAULT_NAV_DEPTH,
-                locale: 'en-US' //todo change to default
+                locale: defaultLocale
             }
         })
     }
@@ -426,7 +427,8 @@ App.getProps = async ({api, res, req, ampClient}) => {
             targetLocale
         ),
         rootCategory,
-        targetLocale
+        targetLocale,
+        defaultLocale
     )))
 
     return {
