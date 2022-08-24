@@ -64,15 +64,15 @@ const unpackLocale = (obj, targetLocale) => {
         return obj
     }
 
-    const ampTitleObj = obj.values.find(({locale}) => locale === targetLocale)
+    let ampTitleObj = obj.values.find(({locale}) => locale === targetLocale)
     const ampTitle = ampTitleObj ? ampTitleObj.value : ''
 
     if (ampTitle) {
         return ampTitle
-    } else {
-        const ampTitleObj = obj.values.find(({locale}) => locale === 'en-US')
-        return ampTitleObj ? ampTitleObj.value : ''
     }
+
+    ampTitleObj = obj.values.find(({locale}) => locale === 'en-US')
+    return ampTitleObj ? ampTitleObj.value : ''
 }
 
 const enrichNavContent = (node, targetLocale) => {
@@ -137,8 +137,7 @@ export const enrichCategory = (categories, targetLocale) => {
             if (typeof node.common.title === 'string' || node.common.title == null) {
                 ampTitle = node.common.title
             } else {
-                const ampTitleObj = node.common.title.values.find(({locale}) => locale === targetLocale)
-                ampTitle = ampTitleObj ? ampTitleObj.value : ''
+                ampTitle = unpackLocale(node.common.title, targetLocale)
             }
 
             if (ampTitle) {
@@ -146,8 +145,7 @@ export const enrichCategory = (categories, targetLocale) => {
             } else if (sfccTitle) {
                 node.common.title = sfccTitle
             } else {
-                const ampTitleObj = node.common.title.values.find(({locale}) => locale === 'en-US') //todo change to default
-                node.common.title = ampTitleObj ? ampTitleObj.value : ''
+                node.common.title = unpackLocale(node.common.title, 'en-US')
             }
 
             // If the category was found, generate category links for its children.

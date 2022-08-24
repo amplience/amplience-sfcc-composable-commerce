@@ -196,8 +196,6 @@ const App = (props) => {
 
     const showVse = vseProps.vse && !isNaN(vseProps.vseTimestamp) && vseProps.vseTimestamp != null
 
-    console.log(vseProps.vseTimestamp)
-
     if (showVse) {
         Object.assign(headerStyles, styles.headerAmpPreview)
     }
@@ -447,8 +445,7 @@ App.getProps = async ({api, res, req, ampClient}) => {
             targetLocale
         ),
         categories,
-        targetLocale,
-        defaultLocale
+        targetLocale
     )))
 
     return {
