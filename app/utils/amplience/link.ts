@@ -106,9 +106,17 @@ const navEnrichConfig: EnrichConfigMap = {
     'https://sfcc.com/site/navigation/group': navCommonEnrich
 }
 
-const sfccToNav = (node) => {
+const sfccToNav = (node, ampChildren, index) => {
     const children = node.categories
-        ? node.categories.map((category) => sfccToNav(category))
+        ? node.categories
+              .filter(
+                  (category) =>
+                      ampChildren == undefined ||
+                      ampChildren.findIndex(
+                          (ampChild) => ampChild._meta.deliveryKey === 'category/' + category.id
+                      ) === -1
+              )
+              .map((category, index) => sfccToNav(category, undefined, index))
         : undefined
 
     return {
@@ -118,7 +126,8 @@ const sfccToNav = (node) => {
         },
         common: {
             title: node.name,
-            visible: true
+            visible: true,
+            priority: ((index ?? 0) + 1) * 10
         },
         includeSFCC: false,
         children
@@ -150,7 +159,7 @@ export const enrichCategory = (categories, targetLocale) => {
 
             // If the category was found, generate category links for its children.
             if (category) {
-                const newChildren = sfccToNav(category)
+                const newChildren = sfccToNav(category, node.children, 0)
                 if (newChildren.children) {
                     node.children = [...(node.children ?? []), ...newChildren.children]
                 }
