@@ -73,10 +73,12 @@ const AmpRtv = () => {
                     keywords="Commerce Cloud, Retail React App, React Storefront"
                 />
 
-                <p>Hub: {hubname}</p>
-                <p>VSE: {vse}</p>
-                <p>amp locale: {locale}</p>
-                <p>Content ID: {contentId}</p>
+                <Box style={{padding: 20, marginBottom: 20, backgroundColor: "#fef4fd", border: "1px solid #fba9ed"}}>
+                    <p><b>Hub Name:</b> {hubname}</p>
+                    <p><b>VSE:</b> {vse}</p>
+                    <p><b>Locale:</b> {locale}</p>
+                    <p><b>Content ID:</b> {contentId}</p>
+                </Box>
 
                 <AmplienceWrapper content={formContent} fetch={fetch} type="SLOT" />
             </AmplienceContextProvider>

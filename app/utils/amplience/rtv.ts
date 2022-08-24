@@ -154,7 +154,17 @@ export const useAmpRtvHier = (method, ampVizSdk, ampClient, filter, enrichMethod
 }
 
 export const useAmpRtvNav = (method, ampVizSdk, ampClient, categories, locale) => {
-    const enrichMethod = (nav) => enrichNavigation(nav, categories, locale)
+    const enrichMethod = (nav) => {
+        // Only enrich children of the vis node - the node itself is enriched by the rtv method.
+
+        if (nav.children) {
+            for (let child of nav.children) {
+                enrichNavigation(child, categories, locale)
+            }
+        }
+
+        return nav
+    }
 
     useAmpRtvHier(method, ampVizSdk, ampClient, (item) => item.common.visible, enrichMethod, locale)
 }

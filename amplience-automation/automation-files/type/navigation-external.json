@@ -11,9 +11,19 @@
     ],
     "visualizations": [
       {
-        "label": "Localhost",
-        "templatedUri": "http://localhost:3000/{{locales}}/visualization/{{hub.name}}/{{content.sys.id}}/{{vse.domain}}",
+        "label": "Default - Localhost",
+        "templatedUri": "http://localhost:3000/{{locales}}/visualization/{{hub.name}}/{{content.sys.id}}/{{vse.domain}}?vse={{vse.domain}}",
         "default": true
+      },
+      {
+        "label": "Header - Localhost",
+        "templatedUri": "http://localhost:3000/{{locales}}/visualization/{{hub.name}}/{{content.sys.id}}/{{vse.domain}}?navvis=header&navchild={{content.sys.id}}&vse={{vse.domain}}",
+        "default": false
+      },
+      {
+        "label": "Footer - Localhost",
+        "templatedUri": "http://localhost:3000/{{locales}}/visualization/{{hub.name}}/{{content.sys.id}}/{{vse.domain}}?navvis=footer&navchild={{content.sys.id}}&vse={{vse.domain}}",
+        "default": false
       },
       {
         "label": "JSON",
