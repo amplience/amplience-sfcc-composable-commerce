@@ -1,6 +1,7 @@
 import {categoryUrlBuilder} from '../url'
 import {EnrichConfig, EnrichConfigMap, processHierarchy} from './enrich'
 import {applyRtvToHierarchy} from './rtv'
+import {differenceBy, sortBy} from 'lodash'
 
 const categorySchemaId = 'https://sfcc.com/site/navigation/category'
 
@@ -106,9 +107,9 @@ const navEnrichConfig: EnrichConfigMap = {
     'https://sfcc.com/site/navigation/group': navCommonEnrich
 }
 
-const sfccToNav = (node) => {
+const sfccToNav = (node, ind) => {
     const children = node.categories
-        ? node.categories.map((category) => sfccToNav(category))
+        ? node.categories.map((category, ind) => sfccToNav(category, ind + 1))
         : undefined
 
     return {
@@ -118,7 +119,8 @@ const sfccToNav = (node) => {
         },
         common: {
             title: node.name,
-            visible: true
+            visible: true,
+            priority: node.common?.priority ?? ind * 10,
         },
         includeSFCC: false,
         children
@@ -150,9 +152,10 @@ export const enrichCategory = (categories, targetLocale) => {
 
             // If the category was found, generate category links for its children.
             if (category) {
-                const newChildren = sfccToNav(category)
+                const newChildren = sfccToNav(category, 1)
+
                 if (newChildren.children) {
-                    node.children = [...(node.children ?? []), ...newChildren.children]
+                    node.children = sortBy([...(node.children ?? []), ...differenceBy(newChildren.children, node.children, '_meta.deliveryKey')], 'common.priority')
                 }
             }
 
