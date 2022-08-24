@@ -27,8 +27,8 @@
           "type": "number",
           "default": 0
         },
-				"content": {
-					"title": "Content",
+				"navcontent": {
+					"title": "Navigation Content",
 					"allOf": [
 						{ "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link" },
 						{
