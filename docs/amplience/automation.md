@@ -19,12 +19,14 @@ You will need the following information from your Ampliene and SFCC account:
     * API Client Secret
 * Repository IDs: which you can get from [here](https://amplience.com/docs/intro/repositorysettings.html)
     * Content
-    * Clots
+    * Slots
+    * Site Components
 * Mapping file path: optional file path to write mapping file, default `.amplience/imports/sfcc-<hubId>.json`
 * Temporary directory path: optional temporary directory for all run files, default `amplience-sfcc/amplience-sfcc-${nanoid()}`
 * SFCC credentials to create Product selector extension:
     * SFCC url
     * SFCC version
+    * Auth URL
     * Auth client ID
     * Auth secret
     * Site ID
@@ -45,6 +47,7 @@ npm run import \
     --sfccVersion <sfccVersion> \
     --authClientId <authClientId> \
     --authSecret <authSecret> \
+    --authUrl <authUrl> \
     --siteId <siteId>
 ```
 
@@ -61,7 +64,7 @@ The script run will clean out the hub, delete or archive next items:
  - settings
  - default `.amplience/imports/sfcc-<hubId>.json` or specified mapFile
 
-You will need the following information from your Ampliene account:
+You will need the following information from your Amplience account:
 * Amplience Hub ID
 * API details: Note the [Amplience Account](amplience-account.md) specifics which require admin and DAM-API access.
   * API Client ID

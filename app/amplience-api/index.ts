@@ -119,8 +119,8 @@ export class AmplienceAPI {
                 const key = item._meta.deliveryKey
                 if (key) {
                     refs.get(item._meta.deliveryId).map((el) => {
-                        el.deliveryKey = key;
-                        return el;
+                        el.deliveryKey = key
+                        return el
                     })
                 }
             }
@@ -135,6 +135,20 @@ export class AmplienceAPI {
         await this.getChildren(root, filter)
 
         await this.enrichReferenceDeliveryKeys(root, locale)
+
+        return root
+    }
+
+    async fetchHierarchyRootFromChild(childId: string, locale = 'en-US') {
+        await this.clientReady
+
+        let root: any = undefined
+
+        do {
+            root = (await this.fetchContent([{id: childId}], {locale}))[0]
+
+            childId = root._meta.hierarchy?.parentId
+        } while (childId != null)
 
         return root
     }

@@ -10,11 +10,20 @@ import flexibleListSlot from '../flexibleListSlot'
 import {useIntl} from 'react-intl'
 import {AmplienceContext} from '../../../contexts/amplience'
 
+const Blank = () => <></>
+
 const componentsMapping = {
     'https://sfcc.com/components/hero': Hero,
     'https://sfcc.com/components/section': Section,
     'https://sfcc.com/components/curated-product': CuratedProductList,
-    'https://sfcc.com/slots/flexible-list': flexibleListSlot
+    'https://sfcc.com/slots/flexible-list': flexibleListSlot,
+
+    'https://sfcc.com/site/navigation/root': Blank,
+    'https://sfcc.com/site/navigation/external': Blank,
+    'https://sfcc.com/site/navigation/internal': Blank,
+    'https://sfcc.com/site/navigation/content-page': Blank,
+    'https://sfcc.com/site/navigation/category': Blank,
+    'https://sfcc.com/site/navigation/group': Blank
 }
 
 const AmplienceWrapper = ({fetch, content, components = componentsMapping}) => {
