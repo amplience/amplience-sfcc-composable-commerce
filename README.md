@@ -1,11 +1,14 @@
 <div align="center">
 <h1>The Progressive Web App (PWA) Kit with Amplience</h1>
+</div>
+<div align="center">
 🏖️ [View Amplience Demo](https://ascc-production.mobify-storefront.com/) |
 <br /><br />
 The Amplience PWA Kit is a storefront technology for headless commerce using [Amplience APIs](https://amplience.com/docs/integration/reference.html), Salesforce Commerce APIs and React. It provides front-end developers with a more flexible and agile approach to build and maintain modern eCommerce experiences with the use of [Amplience](https://amplience.com/)
 <br/><br/>
-<img alt="pwa-kit banner" src="./amplience-automation/media/hero.png" style="width: 700px; height:auto;">
+<img alt="Amplience pwa-kit banner" src="./amplience-automation/media/hero.png" style="width: 700px; height:auto;">
 </div>
+---
 
 # Amplience specifics
 This is a version of the Retail React app with a starting point for Amplience fundamentals. The documentation below is 'as-is' from Salesforce. For Amplience specifics please see the following.
