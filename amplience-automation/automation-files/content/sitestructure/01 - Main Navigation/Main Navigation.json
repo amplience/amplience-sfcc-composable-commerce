@@ -21,15 +21,15 @@
     "title": "Main Navigation",
     "description": "The main navigation that appears at the top of the page."
   },
-  "version": 1,
+  "version": 3,
   "label": "Main Navigation",
   "status": "ACTIVE",
   "createdBy": "fb90fd96-dcaf-4d67-9747-b9676282f661",
   "createdDate": "2022-08-18T15:19:48.726Z",
-  "lastModifiedBy": "b5b7704b-34ca-4424-a7dc-f6880734c30e",
-  "lastModifiedDate": "2022-08-22T10:55:26.447Z",
-  "lastPublishedVersion": 1,
-  "lastPublishedDate": "2022-08-19T11:13:00.545Z",
+  "lastModifiedBy": "ec8eae46-fcfe-4c9f-8e2c-5a0f8aea334c",
+  "lastModifiedDate": "2022-08-22T15:55:35.087Z",
+  "lastPublishedVersion": 3,
+  "lastPublishedDate": "2022-08-24T16:19:53.872Z",
   "hierarchy": {
     "root": true
   },

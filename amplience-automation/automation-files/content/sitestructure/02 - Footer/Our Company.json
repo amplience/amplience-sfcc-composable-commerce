@@ -1,5 +1,7 @@
 {
   "id": "541cc290-96b5-4f61-9685-e323927efb89",
+  "contentRepositoryId": "62f2da764cedfd0001878250",
+  "folderId": "63036096c9e77c00013e44e5",
   "body": {
     "_meta": {
       "name": "Our Company",
@@ -16,25 +18,29 @@
           {
             "locale": "en-US",
             "value": "Our Company"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "Notre entreprise"
           }
         ],
         "_meta": {
           "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
         }
       },
-      "priority": 2
+      "priority": 3
     },
     "internalUrl": "#"
   },
-  "version": 1,
+  "version": 3,
   "label": "Our Company",
   "status": "ACTIVE",
   "createdBy": "fb90fd96-dcaf-4d67-9747-b9676282f661",
   "createdDate": "2022-08-18T14:32:57.194Z",
-  "lastModifiedBy": "b5b7704b-34ca-4424-a7dc-f6880734c30e",
-  "lastModifiedDate": "2022-08-22T11:03:41.462Z",
-  "lastPublishedVersion": 1,
-  "lastPublishedDate": "2022-08-19T09:37:05.287Z",
+  "lastModifiedBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
+  "lastModifiedDate": "2022-08-24T21:05:11.557Z",
+  "lastPublishedVersion": 3,
+  "lastPublishedDate": "2022-08-24T21:05:57.663Z",
   "hierarchy": {
     "parentId": "9123481a-0979-4d83-811b-c778e3613236",
     "root": false
