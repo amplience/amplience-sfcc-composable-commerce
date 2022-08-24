@@ -61,5 +61,6 @@
       ]
     }
   },
+  "required": [ "common", "contentpage" ],
   "propertyOrder": []
 }
