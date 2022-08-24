@@ -24,7 +24,7 @@
         }
       },
       "priority": 0,
-      "content": {
+      "navcontent": {
         "_meta": {
           "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
         },

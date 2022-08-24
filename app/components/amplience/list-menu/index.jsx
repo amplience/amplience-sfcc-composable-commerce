@@ -210,7 +210,7 @@ const AmplienceListMenuPopover = ({items, item, name, itemsKey, maxColumns}) => 
                             initialFocusRef={initialFocusRef}
                             onClose={onClose}
                             maxColumns={maxColumns}
-                            content={item.common.content}
+                            content={item.common.navcontent}
                         />
                     )}
                 </Fragment>
