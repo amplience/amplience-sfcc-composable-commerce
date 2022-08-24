@@ -2,6 +2,12 @@
   "settings": {
     "devices": [
       {
+        "name": "Desktop Large",
+        "width": 1280,
+        "height": 720,
+        "orientate": false
+      },
+      {
         "name": "Desktop",
         "width": 1024,
         "height": 768,
@@ -19,6 +25,7 @@
         "height": 512,
         "orientate": false
       },
+
       {
         "name": "Desktop HD",
         "width": 1920,
