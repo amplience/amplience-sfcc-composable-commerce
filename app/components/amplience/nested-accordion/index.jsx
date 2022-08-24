@@ -51,17 +51,33 @@ const NestedAccordion = (props) => {
         typeof itemsFilter === 'function' ? itemsFilter(item) : !!item[itemsFilter]
 
     return (
-        <Accordion className="sf-nested-accordion" allowToggle={true} {...rest}>
+        <Accordion className='sf-nested-accordion' allowToggle={true} {...rest}>
             {/* Optional accordion items before others in items list.  */}
             {typeof itemsBefore === 'function' ? itemsBefore({item, depth}) : itemsBefore}
 
             {items.filter(filter).map((item) => {
-                const {id, title: name} = item
+                const {id, title: name, _meta: {deliveryKey}} = item
                 const title = item.common ? item.common.title : name
                 const items = item[itemsKey]
 
+                const modifiedItem = deliveryKey ? {
+                    ...item,
+                    [itemsKey]: [
+                        {
+                            ...item,
+                            [itemsKey]: [],
+                            _meta: {
+                                ...item._meta,
+                                deliveryKey: '',
+                                id: item._meta.deliveryKey
+                            }
+                        },
+                        ...(item[itemsKey] || [])
+                    ]
+                } : item
+
                 return (
-                    <AccordionItem key={id} border="none">
+                    <AccordionItem key={id} border='none'>
                         {({isExpanded}) => (
                             <>
                                 {/* Heading */}
@@ -105,7 +121,7 @@ const NestedAccordion = (props) => {
                                         <NestedAccordion
                                             {...styles.nestedAccordion}
                                             {...props}
-                                            item={item}
+                                            item={modifiedItem}
                                             initialDepth={depth + 1}
                                         />
                                     </AccordionPanel>
