@@ -10,11 +10,11 @@
   ],
   "trait:hierarchy": {
     "childContentTypes": [
-			"https://sfcc.com/site/navigation/external",
-			"https://sfcc.com/site/navigation/internal",
-			"https://sfcc.com/site/navigation/content-page",
-			"https://sfcc.com/site/navigation/category",
-			"https://sfcc.com/site/navigation/group"
+      "https://sfcc.com/site/navigation/external",
+      "https://sfcc.com/site/navigation/internal",
+      "https://sfcc.com/site/navigation/content-page",
+      "https://sfcc.com/site/navigation/category",
+      "https://sfcc.com/site/navigation/group"
     ]
   },
   "trait:sortable": {
@@ -45,23 +45,40 @@
         }
       ]
     },
-    "category": {
-      "title": "Category",
-      "description": "Single-select Category and store ID as string",
-      "type": "string",
-      "ui:extension": {
-        "name": "ecomm-toolkit",
-        "params": {
-          "label": "Linked Category",
-          "view": "single",
-          "data": "category",
-          "type": "string"
+    "_meta": {
+      "title": "Navigation Key",
+      "properties": {
+        "deliveryKey": {
+          "title": "Category",
+          "description": "Single-select Category and store ID as string",
+          "type": "string",
+          "pattern": "category\/.*",
+          "ui:extension": {
+            "name": "ecomm-toolkit",
+            "params": {
+              "label": "Linked Category",
+              "view": "single",
+              "data": "category",
+              "type": "string"
+            }
+          }
         }
       }
+    },
+    "includeSFCC": {
+      "title": "Include SFCC Subcategories",
+      "description": "Append the subcategories from SFCC into this node's children when rendering navigation.",
+      "type": "boolean",
+      "default": false
     }
   },
   "required": [
-    "common"
+    "common",
+    "_meta"
   ],
-  "propertyOrder": ["category", "common"]
+  "propertyOrder": [
+    "common",
+    "_meta",
+    "includeSFCC"
+  ]
 }
