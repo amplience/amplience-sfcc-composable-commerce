@@ -62,15 +62,29 @@ export const cleanHandler = async (context: Arguments<Context>): Promise<any> =>
     const mappingFile: string = context.mapFile || join(process.env[process.platform == 'win32' ? 'USERPROFILE' : 'HOME'] || __dirname, '.amplience', 'imports', `sfcc-${context.hubId}.json`)
 
     console.log(`Configuring dc-cli...`)
-    execSync(`npx dc-cli configure --clientId ${context.clientId} --clientSecret ${context.clientSecret} --hubId ${context.hubId}`, { stdio: 'inherit' })
+    execSync(
+        `npx dc-cli configure \
+            --clientId ${context.clientId} \
+            --clientSecret ${context.clientSecret} \
+            --hubId ${context.hubId}`, 
+        { stdio: 'inherit' }
+    )
 
     console.log(`Cleaning hub...`)
-    execSync(`npx dc-cli hub clean --force`, { stdio: 'inherit' })
+    execSync(
+        `npx dc-cli hub clean \
+            --force`, 
+        { stdio: 'inherit' }
+    )
 
     console.log(`Archiving events...`)
     const events = await paginator(hub.related.events.list)
     for (let i = events.length - 1; i >= 0; i--) {
-        execSync(`npx dc-cli event archive ${events[i].id} --force`, { stdio: 'inherit' })
+        execSync(
+            `npx dc-cli event archive ${events[i].id} \
+                --force`, 
+            { stdio: 'inherit' }
+        )
     }
 
     console.log(`Deleting extensions...`)
