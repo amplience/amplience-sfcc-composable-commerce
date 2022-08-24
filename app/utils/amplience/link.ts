@@ -33,7 +33,7 @@ const internalLinkBuilder = (link) => {
 }
 
 const categoryLinkBuilder = (link) => {
-    return categoryUrlBuilder({id: categoryDKToId(link._meta.deliveryKey)})
+    return categoryUrlBuilder({id: categoryDKToId(link._meta.deliveryKey || link._meta.id)})
 }
 
 const noLinkBuilder = (link) => {
