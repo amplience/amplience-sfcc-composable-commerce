@@ -64,8 +64,6 @@ export const cleanHandler = async (context: Arguments<Context>): Promise<any> =>
     console.log(`Configuring dc-cli...`)
     execSync(`npx dc-cli configure --clientId ${context.clientId} --clientSecret ${context.clientSecret} --hubId ${context.hubId}`, { stdio: 'inherit' })
 
-    return false
-
     console.log(`Cleaning hub...`)
     execSync(`npx dc-cli hub clean --force`, { stdio: 'inherit' })
 
