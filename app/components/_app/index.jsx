@@ -117,6 +117,7 @@ const App = (props) => {
         },
         ampVizSdk,
         defaultAmpClient,
+        allCategories,
         targetLocale
     )
 
