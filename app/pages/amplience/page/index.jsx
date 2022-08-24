@@ -22,6 +22,8 @@ import AmplienceWrapper from '../../../components/amplience/wrapper'
 // Constants
 import {MAX_CACHE_AGE} from '../../../constants'
 import {useAmpRtv} from '../../../utils/amplience/rtv'
+import { AmplienceContextProvider } from '../../../contexts/amplience'
+import { AmplienceAPI } from '../../../amplience-api'
 
 /**
  * This is an example content page for Retail React App.
@@ -29,7 +31,7 @@ import {useAmpRtv} from '../../../utils/amplience/rtv'
  * The page renders SEO metadata and a few promotion
  * categories and products, data is from local file.
  */
-const ContentPage = ({page}) => {
+const ContentPage = ({page, pageVse}) => {
     const [pageModel, setPageModel] = useState(undefined)
 
     useEffect(() => {
@@ -41,7 +43,7 @@ const ContentPage = ({page}) => {
         setPageModel(model.content)
     })
 
-    return (
+    const pageBody = (
         <Box data-testid="amplience-page" layerStyle="page">
             {pageModel == undefined ? (
                 <Skeleton height="20px" />
@@ -73,6 +75,12 @@ const ContentPage = ({page}) => {
             )}
         </Box>
     )
+
+    if (pageVse) {
+        return <AmplienceContextProvider vse={pageVse}>{pageBody}</AmplienceContextProvider>
+    } else {
+        return pageBody
+    }
 }
 
 ContentPage.getTemplateName = () => 'contentpage'
@@ -80,10 +88,12 @@ ContentPage.getTemplateName = () => 'contentpage'
 ContentPage.shouldGetProps = ({previousLocation, location}) =>
     !previousLocation || previousLocation.pathname !== location.pathname
 
-ContentPage.getProps = async ({res, params, location, api, ampClient}) => {
+ContentPage.getProps = async ({req, res, params, location, api, ampClient}) => {
     const {pageId} = params
 
-    if (res && !ampClient.vse) {
+    const pageVse = req.query['pagevse']
+
+    if (res && !ampClient.vse && !pageVse) {
         res.set('Cache-Control', `max-age=${MAX_CACHE_AGE}`)
     }
 
@@ -97,14 +107,23 @@ ContentPage.getProps = async ({res, params, location, api, ampClient}) => {
         l10nConfig
     })
 
+    let client
+    if (pageVse) {
+        client = new AmplienceAPI()
+        client.setVse(pageVse)
+    } else {
+        client = ampClient
+    }
+
     let page
 
     if (pageId) {
-        page = await (await ampClient.fetchContent([{key: pageId}], {locale: targetLocale})).pop()
+        page = await (await client.fetchContent([{key: pageId}], {locale: targetLocale})).pop()
     }
 
     return {
-        page
+        page,
+        pageVse
     }
 }
 
@@ -114,7 +133,8 @@ ContentPage.propTypes = {
      * `false`. (Provided internally)
      */
     isLoading: PropTypes.bool,
-    page: PropTypes.object
+    page: PropTypes.object,
+    pageVse: PropTypes.string
 }
 
 export default ContentPage
