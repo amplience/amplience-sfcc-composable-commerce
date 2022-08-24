@@ -107,8 +107,8 @@ You’ll need to configure access for both Shop & Data endpoints:
 ## Localisation
 If you are pointing to your own SFCC ODS (On-demand Sandbox), you’ll need to setup localization in both your SFCC ODS and your FE Application.
 
-To get you started, we’ve setup a few things in this reference application itself. In the `config/sites.js`, we've set the URL pattern to path and showDefaults to true. We’ve also configured `en-US`, `fr-FR`, `de-DE`, `es-ES`, and `it-IT` in the `config/sites.js` file. There are more notes on localization for ASCC specifically [here](/app/translations/README.md).
+To get you started, we’ve setup a few things in this reference application itself. In the `config/sites.js`, we've set the URL pattern to path and showDefaults to true. We’ve also configured `en-US`, `fr-FR`, `de-DE`, `es-ES`, and `it-IT` in the `config/sites.js` file. There are more notes on localisation for ASCC specifically [here](/app/translations/README.md).
 
-In addition to the Amplience SF configs, your ODS will also need to have locales setup and enabled for the site you are pointing to, and they **MUST MATCH** the locales setup in `config/sites.js` Setting up locales on your SFCC ODS is well documented in the [SFCC B2C Info Center](https://documentation.b2c.commercecloud.salesforce.com/DOC2/index.jsp?topic=%2Fcom.demandware.dochelp%2Fcontent%2Fb2c_commerce%2Ftopics%2Fadmin%2Fb2c_configuring_site_locales.html)
+In addition to the Amplience SF FE configs, your ODS will also need to have locales setup and enabled for the site you are pointing to, and they **MUST MATCH** the locales setup in `config/sites.js` Setting up locales on your SFCC ODS is well documented in the [SFCC B2C Info Center](https://documentation.b2c.commercecloud.salesforce.com/DOC2/index.jsp?topic=%2Fcom.demandware.dochelp%2Fcontent%2Fb2c_commerce%2Ftopics%2Fadmin%2Fb2c_configuring_site_locales.html)
 
 > Note: if pointing to your own SFCC instance with a localized OOTB site (RefArchGlobal), de-DE won’t have translations even if that locale has been setup in Business Manager
