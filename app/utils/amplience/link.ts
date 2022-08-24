@@ -1,6 +1,7 @@
 import {categoryUrlBuilder} from '../url'
 import {EnrichConfig, EnrichConfigMap, processHierarchy} from './enrich'
 import {applyRtvToHierarchy} from './rtv'
+import {sortBy} from 'lodash'
 
 const categorySchemaId = 'https://sfcc.com/site/navigation/category'
 
@@ -161,7 +162,7 @@ export const enrichCategory = (categories, targetLocale) => {
             if (category) {
                 const newChildren = sfccToNav(category, node.children, 0)
                 if (newChildren.children) {
-                    node.children = [...(node.children ?? []), ...newChildren.children]
+                    node.children = sortBy([...(node.children ?? []), ...newChildren.children], 'common.priority')
                 }
             }
 
