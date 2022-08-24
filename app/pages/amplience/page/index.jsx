@@ -91,7 +91,7 @@ ContentPage.shouldGetProps = ({previousLocation, location}) =>
 ContentPage.getProps = async ({req, res, params, location, api, ampClient}) => {
     const {pageId} = params
 
-    const pageVse = req.query['pagevse']
+    const pageVse = req?.query['pagevse']
 
     if (res && !ampClient.vse && !pageVse) {
         res.set('Cache-Control', `max-age=${MAX_CACHE_AGE}`)
