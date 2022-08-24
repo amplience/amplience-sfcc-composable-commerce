@@ -21,6 +21,7 @@ This is a version of the Retail React app with a starting point for Amplience fu
 * [Salesforce Commerce Cloud Setup](./docs/amplience/sfcc-setup.md)
 * [Security Updates](./docs/amplience/security-updates.md) 
 * [Amplience API](./docs/amplience/amplience-api.md)
+* [Amplience Components List](./docs/amplience/amplience-components-list.md)
 * [AmplienceWrapper Component](./docs/amplience/ampliencewrapper-component.md)
 * [Visualization](docs/amplience/visualization.md)
 * [Preview](docs/amplience/preview.md)
