@@ -1,6 +1,7 @@
 import {useContext, useEffect} from 'react'
 import {RealtimeVisualization} from '../../contexts/amplience'
 import {EnrichConfigMap} from './enrich'
+import { enrichNavigation } from './link'
 
 const processHierarchy = (node, preAction, action) => {
     preAction(node)
@@ -124,7 +125,11 @@ export const useAmpRtv = (method, ampVizSdk) => {
     }, [ampVizSdk])
 }
 
-export const useAmpRtvHier = (method, ampVizSdk, ampClient, filter, locale) => {
+export const useAmpRtvHier = (method, ampVizSdk, ampClient, filter, enrichMethod, locale) => {
+    if (!enrichMethod) {
+        enrichMethod = (nav) => nav
+    }
+
     let childContentPromise
 
     useAmpRtv(async (model) => {
@@ -132,7 +137,10 @@ export const useAmpRtvHier = (method, ampVizSdk, ampClient, filter, locale) => {
             const meta = model.content._meta
             const lookup = meta.deliveryKey ? {key: meta.deliveryKey} : {id: meta.deliveryId}
 
-            childContentPromise = ampClient.fetchHierarchy(lookup, filter, locale)
+            childContentPromise = (async () => {
+                const hierarchy = await ampClient.fetchHierarchy(lookup, filter, locale)
+                return enrichMethod(hierarchy)
+            })()
         }
 
         const hier = await childContentPromise
@@ -145,6 +153,8 @@ export const useAmpRtvHier = (method, ampVizSdk, ampClient, filter, locale) => {
     }, ampVizSdk)
 }
 
-export const useAmpRtvNav = (method, ampVizSdk, ampClient, locale) => {
-    useAmpRtvHier(method, ampVizSdk, ampClient, (item) => item.common.visible, locale)
+export const useAmpRtvNav = (method, ampVizSdk, ampClient, categories, locale) => {
+    const enrichMethod = (nav) => enrichNavigation(nav, categories, locale)
+
+    useAmpRtvHier(method, ampVizSdk, ampClient, (item) => item.common.visible, enrichMethod, locale)
 }
