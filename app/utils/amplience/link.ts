@@ -76,6 +76,16 @@ const unpackLocale = (obj, targetLocale, noDefault = false) => {
     return ampTitleObj ? ampTitleObj.value : ''
 }
 
+const enrichChildrenWithTitle = (children, category) => {
+    return children.map((node) => {
+        if (!node.common.title && node.common.visible) {
+            const sfccItem = category && category.categories.find(({id}) => node._meta.deliveryKey === 'category/' + id)
+            node.common.title = sfccItem?.name || ''
+        }
+        return node
+    })
+}
+
 const enrichNavContent = (node, targetLocale) => {
     if (node.common && node.common.navcontent) {
         node.common.navcontent.title = unpackLocale(node.common.navcontent.title, targetLocale)
@@ -162,7 +172,7 @@ export const enrichCategory = (categories, targetLocale) => {
             if (category) {
                 const newChildren = sfccToNav(category, node.children, 0)
                 if (newChildren.children) {
-                    node.children = sortBy([...(node.children ?? []), ...newChildren.children], 'common.priority')
+                    node.children = sortBy([...enrichChildrenWithTitle(node.children ?? [], category), ...newChildren.children], 'common.priority')
                 }
             }
 
