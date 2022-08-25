@@ -11,7 +11,6 @@ const {getRuntime} = require('pwa-kit-runtime/ssr/server/express')
 const {isRemote} = require('pwa-kit-runtime/utils/ssr-server')
 const {getConfig} = require('pwa-kit-runtime/utils/ssr-config')
 const helmet = require('helmet')
-const rewrite = require('express-urlrewrite')
 
 const options = {
     // The build directory (an absolute path)
@@ -77,6 +76,13 @@ const {handler} = runtime.createHandler(options, (app) => {
     app.get('*%2F*', async (req, res, next) => {
         const [path, query] = req.url.split('?')
         res.redirect(`${path.replace(/%2F/, '/')}?${query}`)
+    })
+
+    // If you gave something with a // in the first instance, put in the default locale
+    app.get('//*', async (req, res, next) => {
+        const [path, query] = req.url.split('?');
+        // TODO: calculate the default locale instead of hard coding to en-US
+        res.redirect(`${path.replace('//', '/en-US/')}?${query}`)
     })
 
     // Handle the redirect from SLAS as to avoid error
