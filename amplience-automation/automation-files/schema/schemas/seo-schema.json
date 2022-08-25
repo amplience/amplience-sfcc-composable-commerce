@@ -13,21 +13,21 @@
 					"description": "A Short SEO Title",
 					"type": "string",
 					"minLength": 0,
-					"maxLength": 20
+					"maxLength": 150
 				},
 				"description": {
 					"title": "Description",
 					"description": "A Short Description for SEO",
 					"type": "string",
 					"minLength": 0,
-					"maxLength": 50
+					"maxLength": 150
 				},
 				"keywords": {
 					"title": "Keywords",
 					"description": "A comma separated list of keywords",
 					"type": "string",
 					"minLength": 0,
-					"maxLength": 60
+					"maxLength": 150
 				},
 				"noindex": {
 					"title": "No Index",
