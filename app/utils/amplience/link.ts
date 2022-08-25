@@ -61,7 +61,7 @@ const navCommonVisible = (item) => item.common.visible
 const navCommonOrder = (item) => item.common.priority
 
 const unpackLocale = (obj, targetLocale, noDefault = false) => {
-    if (typeof obj === 'string') {
+    if (obj && typeof obj === 'string') {
         return obj
     }
 
@@ -78,8 +78,8 @@ const unpackLocale = (obj, targetLocale, noDefault = false) => {
 
 const enrichChildrenWithTitle = (children, category) => {
     return children.map((node) => {
-        if (!node.common.title && node.common.visible) {
-            const sfccItem = category && category.categories.find(({id}) => node._meta.deliveryKey === 'category/' + id)
+        if (!node.common.title) {
+            const sfccItem = category && category.categories && category.categories.find(({id}) => node._meta.deliveryKey === 'category/' + id)
             node.common.title = sfccItem?.name || ''
         }
         return node
