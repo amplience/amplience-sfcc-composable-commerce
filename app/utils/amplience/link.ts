@@ -60,7 +60,7 @@ export const getLinkUrl = (link, forRelative = true) => {
 const navCommonVisible = (item) => item.common.visible
 const navCommonOrder = (item) => item.common.priority
 
-const unpackLocale = (obj, targetLocale) => {
+const unpackLocale = (obj, targetLocale, noDefault = false) => {
     if (typeof obj === 'string') {
         return obj
     }
@@ -68,7 +68,7 @@ const unpackLocale = (obj, targetLocale) => {
     let ampTitleObj = obj.values.find(({locale}) => locale === targetLocale)
     const ampTitle = ampTitleObj ? ampTitleObj.value : ''
 
-    if (ampTitle) {
+    if (ampTitle || noDefault) {
         return ampTitle
     }
 
@@ -147,7 +147,7 @@ export const enrichCategory = (categories, targetLocale) => {
             if (typeof node.common.title === 'string' || node.common.title == null) {
                 ampTitle = node.common.title
             } else {
-                ampTitle = unpackLocale(node.common.title, targetLocale)
+                ampTitle = unpackLocale(node.common.title, targetLocale, true)
             }
 
             if (ampTitle) {
