@@ -61,7 +61,7 @@ const navCommonVisible = (item) => item.common.visible
 const navCommonOrder = (item) => item.common.priority
 
 const unpackLocale = (obj, targetLocale, noDefault = false) => {
-    if (typeof obj === 'string') {
+    if (obj && typeof obj === 'string') {
         return obj
     }
 
@@ -74,6 +74,16 @@ const unpackLocale = (obj, targetLocale, noDefault = false) => {
 
     ampTitleObj = obj.values.find(({locale}) => locale === 'en-US')
     return ampTitleObj ? ampTitleObj.value : ''
+}
+
+const enrichChildrenWithTitle = (children, category) => {
+    return children.map((node) => {
+        if (!node.common.title) {
+            const sfccItem = category && category.categories && category.categories.find(({id}) => node._meta.deliveryKey === 'category/' + id)
+            node.common.title = sfccItem?.name || ''
+        }
+        return node
+    })
 }
 
 const enrichNavContent = (node, targetLocale) => {
@@ -162,7 +172,7 @@ export const enrichCategory = (categories, targetLocale) => {
             if (category) {
                 const newChildren = sfccToNav(category, node.children, 0)
                 if (newChildren.children) {
-                    node.children = sortBy([...(node.children ?? []), ...newChildren.children], 'common.priority')
+                    node.children = sortBy([...enrichChildrenWithTitle(node.children ?? [], category), ...newChildren.children], 'common.priority')
                 }
             }
 
