@@ -28,7 +28,8 @@ import {
 
     // Hooks
     useTheme,
-    useDisclosure
+    useDisclosure,
+    Heading
 } from '@chakra-ui/react'
 import Link from '../../link'
 // Others
@@ -60,19 +61,33 @@ const AmplienceListMenuTrigger = ({item, name, isOpen, onOpen, onClose, hasItems
         Enter: () => onOpen()
     }
 
+    const link = getLinkUrl(item)
+
     return (
         <Box {...baseStyle.listMenuTriggerContainer}>
-            <Link
-                as={RouteLink}
-                to={getLinkUrl(item)}
-                onMouseOver={onOpen}
-                {...baseStyle.listMenuTriggerLink}
-                {...(hasItems ? {name: name + ' __'} : {name: name})}
-                {...(!hasItems ? baseStyle.listMenuTriggerLinkWithIcon : {})}
-                {...(isOpen ? baseStyle.listMenuTriggerLinkActive : {})}
-            >
-                {name}
-            </Link>
+            {link ? (
+                <Link
+                    as={RouteLink}
+                    to={link}
+                    onMouseOver={onOpen}
+                    {...baseStyle.listMenuTriggerLink}
+                    {...(hasItems ? {name: name + ' __'} : {name: name})}
+                    {...(!hasItems ? baseStyle.listMenuTriggerLinkWithIcon : {})}
+                    {...(isOpen ? baseStyle.listMenuTriggerLinkActive : {})}
+                >
+                    {name}
+                </Link>
+            ) : (
+                <Heading
+                    onMouseOver={onOpen}
+                    {...baseStyle.listMenuTriggerLink}
+                    {...(hasItems ? {name: name + ' __'} : {name: name})}
+                    {...(!hasItems ? baseStyle.listMenuTriggerLinkWithIcon : {})}
+                    {...(isOpen ? baseStyle.listMenuTriggerLinkActive : {})}
+                >
+                    {name}
+                </Heading>
+            )}
 
             {hasItems && (
                 <Link
@@ -107,7 +122,7 @@ const AmplienceListMenuContent = ({maxColumns, items, onClose, initialFocusRef, 
     const limitWidth = content ? 20 : 0
 
     return (
-        <PopoverContent data-testid='popover-menu' {...baseStyle.popoverContent}>
+        <PopoverContent data-testid="popover-menu" {...baseStyle.popoverContent}>
             <PopoverBody>
                 <Container as={Stack} {...baseStyle.popoverContainer}>
                     <Flex direction={'row'}>
@@ -135,16 +150,16 @@ const AmplienceListMenuContent = ({maxColumns, items, onClose, initialFocusRef, 
 
                                     const links = subitems
                                         ? subitems.map((item) => {
-                                            return {
-                                                href: getLinkUrl(item),
-                                                text: item.common ? item.common.title : '',
-                                                styles: {
-                                                    fontSize: 'md',
-                                                    paddingTop: 3,
-                                                    paddingBottom: 3
-                                                }
-                                            }
-                                        })
+                                              return {
+                                                  href: getLinkUrl(item),
+                                                  text: item.common ? item.common.title : '',
+                                                  styles: {
+                                                      fontSize: 'md',
+                                                      paddingTop: 3,
+                                                      paddingBottom: 3
+                                                  }
+                                              }
+                                          })
                                         : []
                                     return (
                                         <LinksList
@@ -192,7 +207,7 @@ const AmplienceListMenuPopover = ({items, item, name, itemsKey, maxColumns}) => 
                 onOpen={onOpen}
                 onClose={onClose}
                 isOpen={isOpen}
-                variant='fullWidth'
+                variant="fullWidth"
             >
                 <Fragment>
                     <AmplienceListMenuTrigger
@@ -243,7 +258,7 @@ const AmplienceListMenu = ({root, maxColumns = MAXIMUM_NUMBER_COLUMNS}) => {
     const items = root.children
 
     return (
-        <nav aria-label='main'>
+        <nav aria-label="main">
             <Flex {...baseStyle.container}>
                 {items ? (
                     <Stack direction={'row'} spacing={0} {...baseStyle.stackContainer}>
@@ -262,8 +277,8 @@ const AmplienceListMenu = ({root, maxColumns = MAXIMUM_NUMBER_COLUMNS}) => {
                         })}
                     </Stack>
                 ) : (
-                    <Center p='2'>
-                        <Spinner size='lg' />
+                    <Center p="2">
+                        <Spinner size="lg" />
                     </Center>
                 )}
             </Flex>

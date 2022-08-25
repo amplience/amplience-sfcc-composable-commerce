@@ -37,8 +37,8 @@ const categoryLinkBuilder = (link) => {
     return categoryUrlBuilder({id: categoryDKToId(link._meta.deliveryKey || link._meta.id)})
 }
 
-const noLinkBuilder = (link) => {
-    return '#'
+const noLinkBuilder = () => {
+    return undefined
 }
 
 const handlers = {
