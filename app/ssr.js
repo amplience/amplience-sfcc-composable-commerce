@@ -73,6 +73,7 @@ const {handler} = runtime.createHandler(options, (app) => {
         })
     )
 
+    // Convert %2F to '/' in path coming from category node visualisation
     app.get('*%2F*', async (req, res, next) => {
         const [path, query] = req.url.split('?')
         res.redirect(`${path.replace(/%2F/, '/')}?${query}`)
