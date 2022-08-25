@@ -4,15 +4,39 @@ import {app} from '../../config/default'
 export type IdOrKey = {id: string} | {key: string}
 export type FilterType = ((item: any) => boolean) | undefined
 
-export type FetchParams = {locale?: string; depth?: 'all' | 'root'; format?: 'inlined'}
+export type FetchParams = {
+    locale?: string;
+    depth?: 'all' | 'root';
+    format?: 'inlined';
+    client?: ContentClient;
+}
 
 const referenceTypes = [
     'http://bigcontent.io/cms/schema/v1/core#/definitions/content-link',
     'http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference'
 ]
 
+const isTimeMachineVse = (vse: string): boolean => {
+    if (vse == null || vse.length === 0) {
+        return false
+    }
+
+    const dotSplit = vse.split('.')
+    const dashSplit = dotSplit[0].split('-')
+
+    return dashSplit.length > 1
+}
+
+const clearTimeMachine = (vse: string): string => {
+    const dotSplit = vse.split('.')
+    const dashSplit = dotSplit[0].split('-')
+
+    return [dashSplit[0], ...dotSplit.slice(1)].join('.')
+}
+
 export class AmplienceAPI {
     client: ContentClient
+    hierarchyClient: ContentClient
     vse: string
 
     clientReady: Promise<void>
@@ -21,6 +45,7 @@ export class AmplienceAPI {
     constructor() {
         this.clientReady = new Promise((resolve) => (this.clientReadyResolve = resolve))
         this.client = new ContentClient({hubName: app.amplience.hub})
+        this.hierarchyClient = this.client
     }
 
     setVse(vse) {
@@ -29,6 +54,15 @@ export class AmplienceAPI {
                 hubName: app.amplience.hub,
                 stagingEnvironment: vse
             })
+
+            if (isTimeMachineVse(vse)) {
+                this.hierarchyClient = new ContentClient({
+                    hubName: app.amplience.hub,
+                    stagingEnvironment: clearTimeMachine(vse)
+                })
+            } else {
+                this.hierarchyClient = this.client
+            }
 
             this.vse = vse
         }
@@ -43,7 +77,11 @@ export class AmplienceAPI {
             params.locale = 'en-US'
         }
 
-        let responses = await (await this.client.getContentItems(args, params)).responses
+        const client = params?.client ?? this.client
+
+        delete params.client
+
+        let responses = await (await client.getContentItems(args, params)).responses
         return responses.map((response) => {
             if ('content' in response) {
                 return response.content
@@ -56,7 +94,7 @@ export class AmplienceAPI {
         const id = parent._meta.deliveryId
 
         // TODO: pagination, rate limit
-        const result = await this.client
+        const result = await this.hierarchyClient
             .filterByParentId(id)
             .sortBy('default', 'ASC')
             .request({
@@ -89,8 +127,8 @@ export class AmplienceAPI {
                 typeof item.contentType === 'string' &&
                 typeof item.id === 'string'
             ) {
-                if (!refs.get(item.id)){
-                    refs.set(item.id, []);
+                if (!refs.get(item.id)) {
+                    refs.set(item.id, [])
                 }
                 refs.set(item.id, [...refs.get(item.id), item])
                 return
@@ -113,7 +151,11 @@ export class AmplienceAPI {
         const ids = Array.from(refs.keys()).map((id) => ({id}))
 
         if (ids.length > 0) {
-            const items = await this.fetchContent(ids, {locale, depth: 'root'})
+            const items = await this.fetchContent(ids, {
+                locale,
+                depth: 'root',
+                client: this.hierarchyClient
+            })
 
             for (let item of items) {
                 const key = item._meta.deliveryKey
@@ -130,7 +172,7 @@ export class AmplienceAPI {
     async fetchHierarchy(parent: IdOrKey, filter: FilterType, locale = 'en-US') {
         await this.clientReady
 
-        const root = (await this.fetchContent([parent], {locale}))[0]
+        const root = (await this.fetchContent([parent], {locale, client: this.hierarchyClient}))[0]
 
         await this.getChildren(root, filter)
 
@@ -145,7 +187,9 @@ export class AmplienceAPI {
         let root: any = undefined
 
         do {
-            root = (await this.fetchContent([{id: childId}], {locale}))[0]
+            root = (
+                await this.fetchContent([{id: childId}], {locale, client: this.hierarchyClient})
+            )[0]
 
             childId = root._meta.hierarchy?.parentId
         } while (childId != null)
