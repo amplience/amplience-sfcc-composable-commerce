@@ -16,6 +16,10 @@
           {
             "locale": "en-US",
             "value": "Account"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "Mon compte"
           }
         ],
         "_meta": {
@@ -26,15 +30,15 @@
     },
     "internalUrl": "#"
   },
-  "version": 4,
+  "version": 5,
   "label": "Account",
   "status": "ACTIVE",
   "createdBy": "fb90fd96-dcaf-4d67-9747-b9676282f661",
   "createdDate": "2022-08-18T14:32:36.482Z",
-  "lastModifiedBy": "b5b7704b-34ca-4424-a7dc-f6880734c30e",
-  "lastModifiedDate": "2022-08-22T11:04:08.935Z",
-  "lastPublishedVersion": 4,
-  "lastPublishedDate": "2022-08-19T09:37:05.287Z",
+  "lastModifiedBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
+  "lastModifiedDate": "2022-08-24T21:04:49.248Z",
+  "lastPublishedVersion": 5,
+  "lastPublishedDate": "2022-08-24T21:05:57.663Z",
   "hierarchy": {
     "parentId": "9123481a-0979-4d83-811b-c778e3613236",
     "root": false

@@ -16,6 +16,10 @@
           {
             "locale": "en-US",
             "value": "Customer Support"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "Support client"
           }
         ],
         "_meta": {
@@ -26,15 +30,15 @@
     },
     "internalUrl": "#"
   },
-  "version": 6,
+  "version": 7,
   "label": "Customer Support",
   "status": "ACTIVE",
   "createdBy": "fb90fd96-dcaf-4d67-9747-b9676282f661",
   "createdDate": "2022-08-18T14:32:10.312Z",
-  "lastModifiedBy": "b5b7704b-34ca-4424-a7dc-f6880734c30e",
-  "lastModifiedDate": "2022-08-22T11:04:08.959Z",
-  "lastPublishedVersion": 6,
-  "lastPublishedDate": "2022-08-19T09:37:05.287Z",
+  "lastModifiedBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
+  "lastModifiedDate": "2022-08-24T20:55:45.557Z",
+  "lastPublishedVersion": 7,
+  "lastPublishedDate": "2022-08-24T21:05:57.663Z",
   "hierarchy": {
     "parentId": "9123481a-0979-4d83-811b-c778e3613236",
     "root": false

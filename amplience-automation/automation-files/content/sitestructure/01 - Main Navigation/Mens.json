@@ -27,15 +27,15 @@
     },
     "includeSFCC": true
   },
-  "version": 2,
+  "version": 4,
   "label": "Mens",
   "status": "ACTIVE",
   "createdBy": "fb90fd96-dcaf-4d67-9747-b9676282f661",
   "createdDate": "2022-08-18T15:56:39.101Z",
-  "lastModifiedBy": "b5b7704b-34ca-4424-a7dc-f6880734c30e",
-  "lastModifiedDate": "2022-08-22T11:06:54.359Z",
-  "lastPublishedVersion": 2,
-  "lastPublishedDate": "2022-08-19T11:13:00.545Z",
+  "lastModifiedBy": "fb90fd96-dcaf-4d67-9747-b9676282f661",
+  "lastModifiedDate": "2022-08-24T14:55:58.758Z",
+  "lastPublishedVersion": 4,
+  "lastPublishedDate": "2022-08-24T16:19:53.872Z",
   "hierarchy": {
     "parentId": "250114dd-abbe-481c-80d8-4080537c40c4",
     "root": false

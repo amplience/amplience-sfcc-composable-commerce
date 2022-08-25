@@ -34,15 +34,15 @@
     },
     "includeSFCC": true
   },
-  "version": 8,
+  "version": 17,
   "label": "New Arrivals",
   "status": "ACTIVE",
   "createdBy": "fb90fd96-dcaf-4d67-9747-b9676282f661",
   "createdDate": "2022-08-18T15:55:57.418Z",
   "lastModifiedBy": "b5b7704b-34ca-4424-a7dc-f6880734c30e",
-  "lastModifiedDate": "2022-08-22T11:06:29.281Z",
-  "lastPublishedVersion": 8,
-  "lastPublishedDate": "2022-08-22T10:16:47.640Z",
+  "lastModifiedDate": "2022-08-24T14:24:49.762Z",
+  "lastPublishedVersion": 17,
+  "lastPublishedDate": "2022-08-24T16:19:53.872Z",
   "hierarchy": {
     "parentId": "250114dd-abbe-481c-80d8-4080537c40c4",
     "root": false

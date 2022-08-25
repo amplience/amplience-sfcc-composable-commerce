@@ -16,6 +16,10 @@
           {
             "locale": "en-US",
             "value": "About Us"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "À propos"
           }
         ],
         "_meta": {
@@ -26,15 +30,15 @@
     },
     "internalUrl": "/"
   },
-  "version": 1,
+  "version": 2,
   "label": "About Us",
   "status": "ACTIVE",
   "createdBy": "fb90fd96-dcaf-4d67-9747-b9676282f661",
   "createdDate": "2022-08-18T14:36:52.256Z",
-  "lastModifiedBy": "b5b7704b-34ca-4424-a7dc-f6880734c30e",
-  "lastModifiedDate": "2022-08-22T11:04:08.982Z",
-  "lastPublishedVersion": 1,
-  "lastPublishedDate": "2022-08-19T09:37:05.287Z",
+  "lastModifiedBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
+  "lastModifiedDate": "2022-08-24T21:05:33.761Z",
+  "lastPublishedVersion": 2,
+  "lastPublishedDate": "2022-08-24T21:05:57.663Z",
   "hierarchy": {
     "parentId": "541cc290-96b5-4f61-9685-e323927efb89",
     "root": false
