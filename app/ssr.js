@@ -11,6 +11,7 @@ const {getRuntime} = require('pwa-kit-runtime/ssr/server/express')
 const {isRemote} = require('pwa-kit-runtime/utils/ssr-server')
 const {getConfig} = require('pwa-kit-runtime/utils/ssr-config')
 const helmet = require('helmet')
+const rewrite = require('express-urlrewrite')
 
 const options = {
     // The build directory (an absolute path)
@@ -72,6 +73,11 @@ const {handler} = runtime.createHandler(options, (app) => {
         })
     )
 
+    app.get('*%2F*', async (req, res, next) => {
+        const [path, query] = req.url.split('?')
+        res.redirect(`${path.replace(/%2F/, '/')}?${query}`)
+    })
+
     // Handle the redirect from SLAS as to avoid error
     app.get('/callback?*', (req, res) => {
         res.send()
@@ -80,7 +86,11 @@ const {handler} = runtime.createHandler(options, (app) => {
     app.get('/favicon.ico', runtime.serveStaticFile('static/ico/favicon.ico'))
 
     app.get('/worker.js(.map)?', runtime.serveServiceWorker)
-    app.get('*', runtime.render)
+
+    app.get('*', async (req, res) => {
+        console.log(`\n\n\nreq url: ${req.url}`)
+        return await runtime.render(req, res)
+    })
 })
 // SSR requires that we export a single handler function called 'get', that
 // supports AWS use of the server that we created above.

@@ -12,36 +12,22 @@ import {urlPartPositions} from '../constants'
  * Construct literal routes based on url config
  *      with site and locale references (ids and aliases) from each in your application config
  *
- * @param {array} declaredRoutes - array of routes to be reconstructed
+ * @param {array} routes - array of routes to be reconstructed
  * @param {object} urlConfig
  * @param {object} options - options if there are any
  * @param {array} options.ignoredRoutes - routes that does not need be reconstructed
  * @return {array} - list of routes objects that has site and locale refs
  */
-export const configureRoutes = (declaredRoutes = [], config, {ignoredRoutes = []}) => {
-    if (!declaredRoutes.length) return []
-    if (!config) return declaredRoutes
+export const configureRoutes = (routes = [], config, {ignoredRoutes = []}) => {
+    if (!routes.length) return []
+    if (!config) return routes
 
     const {url: urlConfig} = config?.app
 
     const allSites = getSites()
-    if (!allSites) return declaredRoutes
+    if (!allSites) return routes
 
     let outputRoutes = []
-
-    // add duplicate routes to support '/' in delivery keys
-    let routes = []
-    declaredRoutes.forEach(route => {
-        routes.push(route)
-        if (route.path.indexOf('/:') > -1) {
-            routes.push({
-                ...route,
-                path: route.path.replace(/\/:/g, '%2F:')
-            })
-        }
-    })
-    // end duplicate routes
-
     for (let i = 0; i < routes.length; i++) {
         const {path, ...rest} = routes[i]
 
