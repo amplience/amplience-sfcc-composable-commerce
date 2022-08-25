@@ -11,7 +11,6 @@ const {getRuntime} = require('pwa-kit-runtime/ssr/server/express')
 const {isRemote} = require('pwa-kit-runtime/utils/ssr-server')
 const {getConfig} = require('pwa-kit-runtime/utils/ssr-config')
 const helmet = require('helmet')
-const rewrite = require('express-urlrewrite')
 
 const options = {
     // The build directory (an absolute path)
