@@ -147,7 +147,7 @@ const sfccToNav = (node, ampChildren, index) => {
 
 export const enrichCategory = (categories, targetLocale) => {
     return (node) => {
-        if (node.includeSFCC) {
+        if (node._meta.schema === categorySchemaId) {
             // Search for the category in the SFCC root.
             const categoryId = categoryDKToId(node._meta.deliveryKey)
             const category = categories[categoryId]
@@ -169,7 +169,7 @@ export const enrichCategory = (categories, targetLocale) => {
             }
 
             // If the category was found, generate category links for its children.
-            if (category) {
+            if (category && node.includeSFCC) {
                 const newChildren = sfccToNav(category, node.children, 0)
                 if (newChildren.children) {
                     node.children = sortBy([...enrichChildrenWithTitle(node.children ?? [], category), ...newChildren.children], 'common.priority')
