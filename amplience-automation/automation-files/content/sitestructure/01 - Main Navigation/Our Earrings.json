@@ -13,7 +13,12 @@
         "common": {
             "visible": true,
             "title": {
-                "values": [],
+                "values": [
+                    {
+                        "locale": "en-US",
+                        "value": "Our Earrings"
+                    }
+                ],
                 "_meta": {
                     "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
                 }
