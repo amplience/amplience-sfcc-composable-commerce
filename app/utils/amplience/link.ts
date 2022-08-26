@@ -61,7 +61,7 @@ const navCommonVisible = (item) => item.common.visible
 const navCommonOrder = (item) => item.common.priority
 
 const unpackLocale = (obj, targetLocale, noDefault = false) => {
-    if (obj && typeof obj === 'string') {
+    if (obj == null || typeof obj === 'string') {
         return obj
     }
 
