@@ -2,7 +2,7 @@ import { ContentRepository, DynamicContent, Extension, Folder, HalResource, Page
 import { Arguments, Argv } from 'yargs'
 import { join } from 'path'
 import { execSync } from 'child_process'
-import { rmSync, writeFileSync } from 'fs'
+import { rmSync } from 'fs'
 import { Context } from './cli'
 import { AmplienceRestClient } from './amplience-rest-client'
 
@@ -116,7 +116,7 @@ export const cleanHandler = async (context: Arguments<Context>): Promise<any> =>
     console.log('Deleting mapFile...')
     rmSync(mappingFile, { force: true })
 
-    // novadev-581 Update automation so that cleanup removes all folders from repositories
+    // Cleanup removes all folders from repositories
     const restClient = AmplienceRestClient(context)
     const repositories = await paginator(hub.related.contentRepositories.list)
 
@@ -132,7 +132,6 @@ export const cleanHandler = async (context: Arguments<Context>): Promise<any> =>
 
     console.log(`Deleting folders...`)
     await Promise.all(repositories.map(deleteFoldersInRepository))
-    // end novadev-581
 
     console.log(`Done!`)
 }

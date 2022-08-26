@@ -17,8 +17,6 @@ export const AmplienceRestClient = (config: { clientId: string, clientSecret: st
     const authUrl = `https://auth.amplience.net/oauth/token?client_id=${config.clientId}&client_secret=${config.clientSecret}&grant_type=client_credentials`
 
     const authenticate = async (): Promise<AxiosInstance> => {
-        // console.log(`authenticating to ${config.auth_url}`)
-
         if (!authenticatedAxios) {
             let response = await axios.post(authUrl, {}, {
                 headers: {
@@ -68,10 +66,6 @@ export const AmplienceRestClient = (config: { clientId: string, clientSecret: st
                 // don't throw on a 404 just return an empty result set
                 return null
             }
-
-            // if (error.stack) {
-            //     console.log(error.stack)
-            // }
             console.log(`Error while ${method}ing URL [ ${config.url} ]: ${error.message} ${error.code}`)
         }
     }
