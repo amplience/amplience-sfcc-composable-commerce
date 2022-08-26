@@ -50,7 +50,7 @@
 				}
       },
       "required": [
-        "active",,
+        "active",
         "visible",
         "title",
         "priority"
