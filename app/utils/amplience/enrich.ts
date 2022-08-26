@@ -1,5 +1,5 @@
 export interface EnrichConfig {
-    enrichFunc?: (item: any) => void,
+    enrichFunc?: (item: any, visibleFunc?: any) => void,
     visibleFunc?: (item: any) => boolean,
     orderFunc?: (item: any) => number
 }
@@ -16,6 +16,6 @@ export const processHierarchy = (node: any, configs: EnrichConfigMap) => {
     }
 
     if (relevantConfig?.enrichFunc) {
-        relevantConfig.enrichFunc(node)
+        relevantConfig.enrichFunc(node, relevantConfig.visibleFunc)
     }
 }

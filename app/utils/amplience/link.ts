@@ -117,7 +117,7 @@ const navEnrichConfig: EnrichConfigMap = {
     'https://sfcc.com/site/navigation/group': navCommonEnrich
 }
 
-const sfccToNav = (node, ampChildren, index) => {
+const sfccToNav = (node, ampChildren, index, visibleFunc) => {
     const children = node.categories
         ? node.categories
               .filter(
@@ -127,7 +127,8 @@ const sfccToNav = (node, ampChildren, index) => {
                           (ampChild) => ampChild._meta.deliveryKey === 'category/' + category.id
                       ) === -1
               )
-              .map((category, index) => sfccToNav(category, undefined, index))
+              .map((category, index) => sfccToNav(category, undefined, index, visibleFunc))
+              .filter((content) => visibleFunc(content))
         : undefined
 
     return {
@@ -146,7 +147,7 @@ const sfccToNav = (node, ampChildren, index) => {
 }
 
 export const enrichCategory = (categories, targetLocale) => {
-    return (node) => {
+    return (node, visibleFunc) => {
         if (node._meta.schema === categorySchemaId) {
             // Search for the category in the SFCC root.
             const categoryId = categoryDKToId(node._meta.deliveryKey)
@@ -170,7 +171,7 @@ export const enrichCategory = (categories, targetLocale) => {
 
             // If the category was found, generate category links for its children.
             if (category && node.includeSFCC) {
-                const newChildren = sfccToNav(category, node.children, 0)
+                const newChildren = sfccToNav(category, node.children, 0, visibleFunc)
                 if (newChildren.children) {
                     node.children = sortBy([...enrichChildrenWithTitle(node.children ?? [], category), ...newChildren.children], 'common.priority')
                 }
@@ -180,6 +181,7 @@ export const enrichCategory = (categories, targetLocale) => {
         } else {
             enrichTitle(targetLocale)(node)
         }
+        node.children = node.children ? node.children.filter((content) => visibleFunc ? visibleFunc(content) : true) : undefined
     }
 }
 

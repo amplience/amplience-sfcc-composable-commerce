@@ -64,7 +64,7 @@ export const applyRtvToHierarchy = (root, rtv, setter, enrichConfig?: EnrichConf
             if (nodeMatchesRtv(node, rtv)) {
                 // Replace this node with the given item.
                 if (config?.enrichFunc) {
-                    config.enrichFunc(rtv.content)
+                    config.enrichFunc(rtv.content, config.visibleFunc)
                 }
 
                 // Remove existing properties.
