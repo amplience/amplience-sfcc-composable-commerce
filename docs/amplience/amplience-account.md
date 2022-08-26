@@ -1,5 +1,8 @@
 # Amplience Account pre-requisites
 
+## Recommended account provisioning
+If you are an Amplience Customer / Partner and have access to the Amplience support desk we recommend that you use the [Demo Store Core Provisioning Ticket Item](https://support.amplience.com/support/catalog/items/118) as all of the requirements below are already part of the process.
+
 ## General pre-requisites
 * You must have [Content Delivery 2](https://amplience.com/docs/development/contentdelivery/readme.html) enabled.
 
