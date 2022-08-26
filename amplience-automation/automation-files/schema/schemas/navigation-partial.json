@@ -6,6 +6,12 @@
       "title": "Common Item Properties",
       "type": "object",
       "properties": {
+        "active": {
+          "title": "Active",
+          "description": "Whether this navigation item is active adn not archived.",
+          "type": "boolean",
+          "default": true
+        },
         "visible": {
           "title": "Visible",
           "description": "Whether this navigation item should be visible.",
@@ -44,11 +50,13 @@
 				}
       },
       "required": [
+        "active",,
         "visible",
         "title",
         "priority"
       ],
       "propertyOrder": [
+        "active",
         "visible",
         "title"
       ]
