@@ -104,6 +104,10 @@ const enrichNavContent = (node, targetLocale) => {
 const enrichTitle = (targetLocale) => (node) => {
     node.common.title = unpackLocale(node.common.title, targetLocale)
 
+    if (node.externalUrl){
+        node.externalUrl = unpackLocale(node.externalUrl, targetLocale)
+    }
+
     enrichNavContent(node, targetLocale)
 }
 
@@ -142,6 +146,7 @@ const sfccToNav = (node, ampChildren, index, visibleFunc) => {
         common: {
             title: node.name,
             visible: true,
+            active: true,
             priority: ((index ?? 0) + 1) * 10
         },
         includeSFCC: false,
