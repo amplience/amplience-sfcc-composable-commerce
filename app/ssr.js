@@ -94,10 +94,7 @@ const {handler} = runtime.createHandler(options, (app) => {
 
     app.get('/worker.js(.map)?', runtime.serveServiceWorker)
 
-    app.get('*', async (req, res) => {
-        console.log(`\n\n\nreq url: ${req.url}`)
-        return await runtime.render(req, res)
-    })
+    app.get('*', runtime.render)
 })
 // SSR requires that we export a single handler function called 'get', that
 // supports AWS use of the server that we created above.
