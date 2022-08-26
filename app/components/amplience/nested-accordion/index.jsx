@@ -15,7 +15,7 @@ import {
     AccordionButton,
     AccordionPanel,
     Text,
-
+    Heading,
     // Hooks
     useStyleConfig
 } from '@chakra-ui/react'
@@ -75,6 +75,7 @@ const NestedAccordion = (props) => {
                         ...(item[itemsKey] || [])
                     ]
                 } : item
+                const url = urlBuilder(item);
 
                 return (
                     <AccordionItem key={id} border='none'>
@@ -102,8 +103,8 @@ const NestedAccordion = (props) => {
                                     ) : (
                                         <AccordionButton
                                             {...styles.leafButton}
-                                            as={Link}
-                                            to={urlBuilder(item)}
+                                            as={url && url !== '$' ? Link : Heading}
+                                            to={url}
                                         >
                                             <Text
                                                 fontSize={fontSizes[depth]}
