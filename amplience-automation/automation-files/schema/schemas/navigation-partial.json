@@ -8,7 +8,7 @@
       "properties": {
         "active": {
           "title": "Active",
-          "description": "Whether this navigation item is active adn not archived.",
+          "description": "Whether this navigation item is active and not archived.",
           "type": "boolean",
           "default": true
         },
