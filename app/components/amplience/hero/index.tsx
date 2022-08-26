@@ -14,7 +14,7 @@ import {getImageUrl} from '../../../utils/amplience/image'
 const Hero = ({title, img, actions, ...props}) => {
     let src = ''
     let alt = ''
-    if ( img ) {
+    if (img) {
         src = getImageUrl(img.image)
         alt = img.alt
     }
@@ -35,7 +35,7 @@ const Hero = ({title, img, actions, ...props}) => {
             >
                 <Stack flex={1} spacing={{base: 5, md: 8}}>
                     <Heading
-                        as='h1'
+                        as="h1"
                         fontSize={{base: '4xl', md: '5xl', lg: '6xl'}}
                         maxWidth={{base: '75%', md: '50%', lg: 'md'}}
                     >
@@ -45,18 +45,12 @@ const Hero = ({title, img, actions, ...props}) => {
                     {actions && (
                         <Box width={{base: 'full', lg: 'inherit'}}>
                             {actions.map((props, ind) => (
-                                <Button
-                                    key={ind}
-                                    label={props.label}
-                                    url={props.url}>
-                                </Button>
+                                <Button key={ind} label={props.label} url={props.url}></Button>
                             ))}
                         </Box>
                     )}
                 </Stack>
-                {
-
-                    src &&
+                {src && (
                     <Flex
                         flex={1}
                         justify={'center'}
@@ -76,7 +70,7 @@ const Hero = ({title, img, actions, ...props}) => {
                             />
                         </Box>
                     </Flex>
-                    }
+                )}
             </Stack>
         </Box>
     )
@@ -100,7 +94,6 @@ Hero.propTypes = {
     /**
      * Hero component main title
      */
-    // title: PropTypes.string,
     title: PropTypes.string,
     /**
      * Call to action component(s)
@@ -110,7 +103,15 @@ Hero.propTypes = {
             label: PropTypes.string,
             url: PropTypes.string
         })
-    )
+    ),
+    /**
+     * Hero button label
+     */
+    label: PropTypes.string,
+    /**
+     * Hero button url
+     */
+    url: PropTypes.string
 }
 
 export default Hero
