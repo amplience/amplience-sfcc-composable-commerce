@@ -41,7 +41,7 @@ const Footer = ({root, ...otherProps}) => {
     const supportedLocaleIds = l10n?.supportedLocales.map((locale) => locale.id)
     const showLocaleSelector = supportedLocaleIds?.length > 1
 
-    const topLevel = root.children
+    const topLevel = root.children ?? []
 
     return (
         <Box as="footer" {...styles.container} {...otherProps}>
