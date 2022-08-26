@@ -192,7 +192,8 @@ AmplienceListMenuContent.propTypes = {
     maxColumns: PropTypes.number,
     itemsKey: PropTypes.string,
     onClose: PropTypes.func,
-    initialFocusRef: PropTypes.object
+    initialFocusRef: PropTypes.object,
+    content: PropTypes.object
 }
 
 const AmplienceListMenuPopover = ({items, item, name, itemsKey, maxColumns}) => {

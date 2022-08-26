@@ -73,14 +73,14 @@ const {handler} = runtime.createHandler(options, (app) => {
     )
 
     // Convert %2F to '/' in path coming from category node visualisation
-    app.get('*%2F*', async (req, res, next) => {
+    app.get('*%2F*', async (req, res) => {
         const [path, query] = req.url.split('?')
         res.redirect(`${path.replace(/%2F/, '/')}?${query}`)
     })
 
     // If you gave something with a // in the first instance, put in the default locale
-    app.get('//*', async (req, res, next) => {
-        const [path, query] = req.url.split('?');
+    app.get('//*', async (req, res) => {
+        const [path, query] = req.url.split('?')
         // TODO: calculate the default locale instead of hard coding to en-US
         res.redirect(`${path.replace(/^\/\//, '/en-US/')}?${query}`)
     })
