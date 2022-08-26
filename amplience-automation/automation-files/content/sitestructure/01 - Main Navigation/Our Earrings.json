@@ -1,0 +1,39 @@
+{
+  "id": "c316ddd6-a290-48e0-8170-5bebbb69a9f4",
+  "body": {
+    "_meta": {
+      "name": "Our Earrings",
+      "schema": "https://sfcc.com/site/navigation/category",
+      "deliveryKey": "category/womens-jewelry-earrings",
+      "hierarchy": {
+        "parentId": "73249be6-4dd4-43dc-b4f9-d3ffffe7340c",
+        "root": false
+      }
+    },
+    "common": {
+      "visible": true,
+      "title": {
+        "values": [],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      },
+      "priority": 0
+    },
+    "includeSFCC": false
+  },
+  "version": 9,
+  "label": "Our Earrings",
+  "status": "ACTIVE",
+  "createdBy": "ec8eae46-fcfe-4c9f-8e2c-5a0f8aea334c",
+  "createdDate": "2022-08-25T12:25:18.249Z",
+  "lastModifiedBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
+  "lastModifiedDate": "2022-08-26T08:09:45.927Z",
+  "lastPublishedVersion": 9,
+  "lastPublishedDate": "2022-08-26T08:10:09.929Z",
+  "hierarchy": {
+    "parentId": "73249be6-4dd4-43dc-b4f9-d3ffffe7340c",
+    "root": false
+  },
+  "deliveryId": "c316ddd6-a290-48e0-8170-5bebbb69a9f4"
+}
