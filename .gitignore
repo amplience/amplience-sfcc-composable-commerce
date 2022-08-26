@@ -1,5 +1,4 @@
 .nyc_output
-.DS_Store
 build.tar
 */mapping.json
 
@@ -32,5 +31,4 @@ app/cache-hash-manifest.json
 app/loader-cache-hash-manifest.json
 
 .vscode
-.DS_Store
 .DS_Store
