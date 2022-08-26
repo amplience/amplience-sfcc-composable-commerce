@@ -1,37 +1,37 @@
 {
-  "id": "9123481a-0979-4d83-811b-c778e3613236",
-  "body": {
-    "_meta": {
-      "name": "Test Footer Navigation",
-      "schema": "https://sfcc.com/site/navigation/root",
-      "deliveryKey": "footer-nav",
-      "hierarchy": {
+    "id": "9123481a-0979-4d83-811b-c778e3613236",
+    "body": {
+        "_meta": {
+            "name": "Test Footer Navigation",
+            "schema": "https://sfcc.com/site/navigation/root",
+            "deliveryKey": "footer-nav",
+            "hierarchy": {
+                "root": true
+            }
+        },
+        "icon": {
+            "_meta": {
+                "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+            },
+            "id": "fcac61c1-90d3-4168-a08b-a6547301c795",
+            "name": "hero",
+            "endpoint": "sfcccompdev",
+            "defaultHost": "cdn.media.amplience.net"
+        },
+        "title": "Footer Navigation",
+        "description": "Navigation for the footer."
+    },
+    "version": 3,
+    "label": "Footer Navigation",
+    "status": "ACTIVE",
+    "createdBy": "fb90fd96-dcaf-4d67-9747-b9676282f661",
+    "createdDate": "2022-08-18T14:30:18.187Z",
+    "lastModifiedBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
+    "lastModifiedDate": "2022-08-22T11:06:05.592Z",
+    "lastPublishedVersion": 3,
+    "lastPublishedDate": "2022-08-24T21:05:57.663Z",
+    "hierarchy": {
         "root": true
-      }
     },
-    "icon": {
-      "_meta": {
-        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
-      },
-      "id": "fcac61c1-90d3-4168-a08b-a6547301c795",
-      "name": "hero",
-      "endpoint": "sfcccompdev",
-      "defaultHost": "cdn.media.amplience.net"
-    },
-    "title": "Footer Navigation",
-    "description": "Navigation for the footer."
-  },
-  "version": 3,
-  "label": "Footer Navigation",
-  "status": "ACTIVE",
-  "createdBy": "fb90fd96-dcaf-4d67-9747-b9676282f661",
-  "createdDate": "2022-08-18T14:30:18.187Z",
-  "lastModifiedBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
-  "lastModifiedDate": "2022-08-22T11:06:05.592Z",
-  "lastPublishedVersion": 3,
-  "lastPublishedDate": "2022-08-24T21:05:57.663Z",
-  "hierarchy": {
-    "root": true
-  },
-  "deliveryId": "9123481a-0979-4d83-811b-c778e3613236"
+    "deliveryId": "9123481a-0979-4d83-811b-c778e3613236"
 }

@@ -1,49 +1,49 @@
 {
-  "id": "fc25f445-41e4-4259-9868-7b65a062f3e4",
-  "contentRepositoryId": "62f2da764cedfd0001878250",
-  "folderId": "63036096c9e77c00013e44e5",
-  "body": {
-    "_meta": {
-      "name": "Sign In",
-      "schema": "https://sfcc.com/site/navigation/internal",
-      "hierarchy": {
+    "id": "fc25f445-41e4-4259-9868-7b65a062f3e4",
+    "contentRepositoryId": "62f2da764cedfd0001878250",
+    "folderId": "63036096c9e77c00013e44e5",
+    "body": {
+        "_meta": {
+            "name": "Sign In",
+            "schema": "https://sfcc.com/site/navigation/internal",
+            "hierarchy": {
+                "parentId": "8436d159-6c3e-4c01-a65e-03c817751425",
+                "root": false
+            }
+        },
+        "common": {
+            "visible": true,
+            "title": {
+                "values": [
+                    {
+                        "locale": "en-US",
+                        "value": "Sign in or create account"
+                    },
+                    {
+                        "locale": "fr-FR",
+                        "value": "Connexion"
+                    }
+                ],
+                "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+                }
+            },
+            "priority": 1
+        },
+        "internalUrl": "/"
+    },
+    "version": 2,
+    "label": "Sign In",
+    "status": "ACTIVE",
+    "createdBy": "fb90fd96-dcaf-4d67-9747-b9676282f661",
+    "createdDate": "2022-08-18T14:35:57.544Z",
+    "lastModifiedBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
+    "lastModifiedDate": "2022-08-24T21:05:03.983Z",
+    "lastPublishedVersion": 2,
+    "lastPublishedDate": "2022-08-24T21:05:57.663Z",
+    "hierarchy": {
         "parentId": "8436d159-6c3e-4c01-a65e-03c817751425",
         "root": false
-      }
     },
-    "common": {
-      "visible": true,
-      "title": {
-        "values": [
-          {
-            "locale": "en-US",
-            "value": "Sign in or create account"
-          },
-          {
-            "locale": "fr-FR",
-            "value": "Connexion"
-          }
-        ],
-        "_meta": {
-          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
-        }
-      },
-      "priority": 1
-    },
-    "internalUrl": "/"
-  },
-  "version": 2,
-  "label": "Sign In",
-  "status": "ACTIVE",
-  "createdBy": "fb90fd96-dcaf-4d67-9747-b9676282f661",
-  "createdDate": "2022-08-18T14:35:57.544Z",
-  "lastModifiedBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
-  "lastModifiedDate": "2022-08-24T21:05:03.983Z",
-  "lastPublishedVersion": 2,
-  "lastPublishedDate": "2022-08-24T21:05:57.663Z",
-  "hierarchy": {
-    "parentId": "8436d159-6c3e-4c01-a65e-03c817751425",
-    "root": false
-  },
-  "deliveryId": "fc25f445-41e4-4259-9868-7b65a062f3e4"
+    "deliveryId": "fc25f445-41e4-4259-9868-7b65a062f3e4"
 }

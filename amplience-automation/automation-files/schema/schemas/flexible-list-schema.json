@@ -1,43 +1,47 @@
 {
-	"$schema": "http://json-schema.org/draft-07/schema#",
-	"$id": "https://sfcc.com/slots/flexible-list",
-	"title": "Flexible List Slot",
-	"description": "A slot that contains a flexible list of content",
-	"allOf": [
-		{
-			"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
-		}
-	],
-	"type": "object",
-	"properties": {
-		"_meta": {
-			"type": "object",
-			"properties": {
-				"deliveryKey": {
-					"type": "string",
-					"title": "Delivery Key",
-					"description": "A unique key for this slot in your application (home/top)"
-				}
-			}
-		},
-		"content": {
-			"title": "Content",
-			"type": "array",
-			"minItems": 0,
-			"maxItems": 10,
-			"items": {
-				"allOf": [
-                    { "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link" },
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://sfcc.com/slots/flexible-list",
+    "title": "Flexible List Slot",
+    "description": "A slot that contains a flexible list of content",
+    "allOf": [
+        {
+            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+        }
+    ],
+    "type": "object",
+    "properties": {
+        "_meta": {
+            "type": "object",
+            "properties": {
+                "deliveryKey": {
+                    "type": "string",
+                    "title": "Delivery Key",
+                    "description": "A unique key for this slot in your application (home/top)"
+                }
+            }
+        },
+        "content": {
+            "title": "Content",
+            "type": "array",
+            "minItems": 0,
+            "maxItems": 10,
+            "items": {
+                "allOf": [
+                    {
+                        "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                    },
                     {
                         "properties": {
-                            "contentType": { "$ref": "https://sfcc.com/libs/all-definitions#/definitions/anyComponentAndPage" }
+                            "contentType": {
+                                "$ref": "https://sfcc.com/libs/all-definitions#/definitions/anyComponentAndPage"
+                            }
                         }
                     }
                 ]
-			}
-		}
-	},
-	"propertyOrder": [
-		"content"
-	]
+            }
+        }
+    },
+    "propertyOrder": [
+        "content"
+    ]
 }

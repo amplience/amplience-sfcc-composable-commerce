@@ -1,56 +1,56 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://sfcc.com/site/navigation/group",
-  "title": "Navigation Group",
-  "description": "Navigation item for group of items",
-  "allOf": [
-    {
-      "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
-    }
-  ],
-  "trait:hierarchy": {
-    "childContentTypes": [
-			"https://sfcc.com/site/navigation/external",
-			"https://sfcc.com/site/navigation/internal",
-			"https://sfcc.com/site/navigation/content-page",
-			"https://sfcc.com/site/navigation/category",
-			"https://sfcc.com/site/navigation/group"
-    ]
-  },
-  "trait:sortable": {
-    "sortBy": [
-      {
-        "key": "default",
-        "paths": [
-          "/common/priority"
-        ]
-      }
-    ]
-  },
-  "trait:filterable": {
-    "filterBy": [
-      {
-        "paths": [
-          "/common/active"
-        ]
-      },
-      {
-        "paths": [
-          "/common/active",
-          "/common/visible"
-        ]
-      }
-    ]
-  },
-  "type": "object",
-  "properties": {
-    "common": {
-      "allOf": [
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://sfcc.com/site/navigation/group",
+    "title": "Navigation Group",
+    "description": "Navigation item for group of items",
+    "allOf": [
         {
-          "$ref": "https://sfcc.com/site/navigation/partial#/definitions/common"
+            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
         }
-      ]
-    }
-  },
-  "propertyOrder": []
+    ],
+    "trait:hierarchy": {
+        "childContentTypes": [
+            "https://sfcc.com/site/navigation/external",
+            "https://sfcc.com/site/navigation/internal",
+            "https://sfcc.com/site/navigation/content-page",
+            "https://sfcc.com/site/navigation/category",
+            "https://sfcc.com/site/navigation/group"
+        ]
+    },
+    "trait:sortable": {
+        "sortBy": [
+            {
+                "key": "default",
+                "paths": [
+                    "/common/priority"
+                ]
+            }
+        ]
+    },
+    "trait:filterable": {
+        "filterBy": [
+            {
+                "paths": [
+                    "/common/active"
+                ]
+            },
+            {
+                "paths": [
+                    "/common/active",
+                    "/common/visible"
+                ]
+            }
+        ]
+    },
+    "type": "object",
+    "properties": {
+        "common": {
+            "allOf": [
+                {
+                    "$ref": "https://sfcc.com/site/navigation/partial#/definitions/common"
+                }
+            ]
+        }
+    },
+    "propertyOrder": []
 }

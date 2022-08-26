@@ -1,5 +1,5 @@
 {
-  "body": "./schemas/navigation-group.json",
-  "schemaId": "https://sfcc.com/site/navigation/group",
-  "validationLevel": "CONTENT_TYPE"
+    "body": "./schemas/navigation-group.json",
+    "schemaId": "https://sfcc.com/site/navigation/group",
+    "validationLevel": "CONTENT_TYPE"
 }

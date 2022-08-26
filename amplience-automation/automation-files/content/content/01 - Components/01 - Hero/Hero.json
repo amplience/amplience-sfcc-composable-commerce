@@ -1,60 +1,60 @@
 {
-  "id": "81cbd4ca-e71b-40f5-b944-19d466bbde36",
-  "body": {
-    "_meta": {
-      "name": "Hero",
-      "schema": "https://sfcc.com/components/hero",
-      "deliveryKey": "hero"
-    },
-    "title": {
-      "values": [
-        {
-          "locale": "en-US",
-          "value": "The React PWA Starter Store for Retail"
-        }
-      ],
-      "_meta": {
-        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
-      }
-    },
-    "img": {
-      "image": {
+    "id": "81cbd4ca-e71b-40f5-b944-19d466bbde36",
+    "body": {
         "_meta": {
-          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+            "name": "Hero",
+            "schema": "https://sfcc.com/components/hero",
+            "deliveryKey": "hero"
         },
-        "id": "9350bcc5-3a22-4e4d-be56-03e1c31aaa09",
-        "name": "hero",
-        "endpoint": "sfcccomposable",
-        "defaultHost": "cdn.media.amplience.net"
-      },
-      "alt": "img"
-    },
-    "actions": [
-      {
-        "label": {
-          "values": [
-            {
-              "locale": "en-US",
-              "value": "Get Started"
+        "title": {
+            "values": [
+                {
+                    "locale": "en-US",
+                    "value": "The React PWA Starter Store for Retail"
+                }
+            ],
+            "_meta": {
+                "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
             }
-          ],
-          "_meta": {
-            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
-          }
         },
-        "url": "https://developer.salesforce.com/docs/commerce/pwa-kit-managed-runtime/guide/getting-started.html"
-      }
-    ]
-  },
-  "version": 4,
-  "label": "Hero",
-  "status": "ACTIVE",
-  "createdBy": "80d6035b-48f7-49d0-b4f4-feed71fe7bf8",
-  "locale": "en-US",
-  "createdDate": "2022-08-03T12:06:40.734Z",
-  "lastModifiedBy": "4a8aba40-a4a5-4bf2-89ad-1fd81d82c142",
-  "lastModifiedDate": "2022-08-03T17:58:01.651Z",
-  "lastPublishedVersion": 4,
-  "lastPublishedDate": "2022-08-04T09:36:00.559Z",
-  "deliveryId": "81cbd4ca-e71b-40f5-b944-19d466bbde36"
+        "img": {
+            "image": {
+                "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                },
+                "id": "9350bcc5-3a22-4e4d-be56-03e1c31aaa09",
+                "name": "hero",
+                "endpoint": "sfcccomposable",
+                "defaultHost": "cdn.media.amplience.net"
+            },
+            "alt": "img"
+        },
+        "actions": [
+            {
+                "label": {
+                    "values": [
+                        {
+                            "locale": "en-US",
+                            "value": "Get Started"
+                        }
+                    ],
+                    "_meta": {
+                        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+                    }
+                },
+                "url": "https://developer.salesforce.com/docs/commerce/pwa-kit-managed-runtime/guide/getting-started.html"
+            }
+        ]
+    },
+    "version": 4,
+    "label": "Hero",
+    "status": "ACTIVE",
+    "createdBy": "80d6035b-48f7-49d0-b4f4-feed71fe7bf8",
+    "locale": "en-US",
+    "createdDate": "2022-08-03T12:06:40.734Z",
+    "lastModifiedBy": "4a8aba40-a4a5-4bf2-89ad-1fd81d82c142",
+    "lastModifiedDate": "2022-08-03T17:58:01.651Z",
+    "lastPublishedVersion": 4,
+    "lastPublishedDate": "2022-08-04T09:36:00.559Z",
+    "deliveryId": "81cbd4ca-e71b-40f5-b944-19d466bbde36"
 }

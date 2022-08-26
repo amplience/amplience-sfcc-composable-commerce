@@ -1,42 +1,42 @@
 {
-  "id": "388e47b3-0c2f-495c-8e2a-2bf94a59ee84",
-  "body": {
-    "_meta": {
-      "name": "Amplience",
-      "schema": "https://sfcc.com/site/navigation/group",
-      "hierarchy": {
+    "id": "388e47b3-0c2f-495c-8e2a-2bf94a59ee84",
+    "body": {
+        "_meta": {
+            "name": "Amplience",
+            "schema": "https://sfcc.com/site/navigation/group",
+            "hierarchy": {
+                "parentId": "250114dd-abbe-481c-80d8-4080537c40c4",
+                "root": false
+            }
+        },
+        "common": {
+            "visible": true,
+            "title": {
+                "values": [
+                    {
+                        "locale": "en-US",
+                        "value": "Amplience"
+                    }
+                ],
+                "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+                }
+            },
+            "priority": 5
+        }
+    },
+    "version": 2,
+    "label": "Amplience",
+    "status": "ACTIVE",
+    "createdBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
+    "createdDate": "2022-08-22T09:42:39.173Z",
+    "lastModifiedBy": "b5b7704b-34ca-4424-a7dc-f6880734c30e",
+    "lastModifiedDate": "2022-08-22T11:07:12.567Z",
+    "lastPublishedVersion": 2,
+    "lastPublishedDate": "2022-08-24T16:19:53.872Z",
+    "hierarchy": {
         "parentId": "250114dd-abbe-481c-80d8-4080537c40c4",
         "root": false
-      }
     },
-    "common": {
-      "visible": true,
-      "title": {
-        "values": [
-          {
-            "locale": "en-US",
-            "value": "Amplience"
-          }
-        ],
-        "_meta": {
-          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
-        }
-      },
-      "priority": 5
-    }
-  },
-  "version": 2,
-  "label": "Amplience",
-  "status": "ACTIVE",
-  "createdBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
-  "createdDate": "2022-08-22T09:42:39.173Z",
-  "lastModifiedBy": "b5b7704b-34ca-4424-a7dc-f6880734c30e",
-  "lastModifiedDate": "2022-08-22T11:07:12.567Z",
-  "lastPublishedVersion": 2,
-  "lastPublishedDate": "2022-08-24T16:19:53.872Z",
-  "hierarchy": {
-    "parentId": "250114dd-abbe-481c-80d8-4080537c40c4",
-    "root": false
-  },
-  "deliveryId": "388e47b3-0c2f-495c-8e2a-2bf94a59ee84"
+    "deliveryId": "388e47b3-0c2f-495c-8e2a-2bf94a59ee84"
 }

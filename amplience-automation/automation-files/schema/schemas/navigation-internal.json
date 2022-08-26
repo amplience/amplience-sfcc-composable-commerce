@@ -1,65 +1,65 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://sfcc.com/site/navigation/internal",
-  "title": "Navigation Internal Link",
-  "description": "Navigation item for internal links",
-  "allOf": [
-    {
-      "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
-    }
-  ],
-  "trait:hierarchy": {
-    "childContentTypes": [
-			"https://sfcc.com/site/navigation/external",
-			"https://sfcc.com/site/navigation/internal",
-			"https://sfcc.com/site/navigation/content-page",
-			"https://sfcc.com/site/navigation/category",
-			"https://sfcc.com/site/navigation/group"
-    ]
-  },
-  "trait:sortable": {
-    "sortBy": [
-      {
-        "key": "default",
-        "paths": [
-          "/common/priority"
-        ]
-      }
-    ]
-  },
-  "trait:filterable": {
-    "filterBy": [
-      {
-        "paths": [
-          "/common/active"
-        ]
-      },
-      {
-        "paths": [
-          "/common/active",
-          "/common/visible"
-        ]
-      }
-    ]
-  },
-  "type": "object",
-  "properties": {
-    "common": {
-      "allOf": [
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://sfcc.com/site/navigation/internal",
+    "title": "Navigation Internal Link",
+    "description": "Navigation item for internal links",
+    "allOf": [
         {
-          "$ref": "https://sfcc.com/site/navigation/partial#/definitions/common"
+            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
         }
-      ]
+    ],
+    "trait:hierarchy": {
+        "childContentTypes": [
+            "https://sfcc.com/site/navigation/external",
+            "https://sfcc.com/site/navigation/internal",
+            "https://sfcc.com/site/navigation/content-page",
+            "https://sfcc.com/site/navigation/category",
+            "https://sfcc.com/site/navigation/group"
+        ]
     },
-    "internalUrl": {
-      "title": "Internal URL",
-      "description": "Links to a page on the site, which may be transformed by localization. Should start with /.",
-      "type": "string"
-    }
-  },
-  "required": [
-    "common",
-    "internalUrl"
-  ],
-  "propertyOrder": []
+    "trait:sortable": {
+        "sortBy": [
+            {
+                "key": "default",
+                "paths": [
+                    "/common/priority"
+                ]
+            }
+        ]
+    },
+    "trait:filterable": {
+        "filterBy": [
+            {
+                "paths": [
+                    "/common/active"
+                ]
+            },
+            {
+                "paths": [
+                    "/common/active",
+                    "/common/visible"
+                ]
+            }
+        ]
+    },
+    "type": "object",
+    "properties": {
+        "common": {
+            "allOf": [
+                {
+                    "$ref": "https://sfcc.com/site/navigation/partial#/definitions/common"
+                }
+            ]
+        },
+        "internalUrl": {
+            "title": "Internal URL",
+            "description": "Links to a page on the site, which may be transformed by localization. Should start with /.",
+            "type": "string"
+        }
+    },
+    "required": [
+        "common",
+        "internalUrl"
+    ],
+    "propertyOrder": []
 }

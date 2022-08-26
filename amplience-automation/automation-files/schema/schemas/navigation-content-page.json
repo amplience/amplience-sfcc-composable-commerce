@@ -1,72 +1,75 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://sfcc.com/site/navigation/content-page",
-  "title": "Navigation Content Page",
-  "description": "Navigation item for content page",
-  "allOf": [
-    {
-      "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
-    }
-  ],
-  "trait:hierarchy": {
-    "childContentTypes": [
-			"https://sfcc.com/site/navigation/external",
-			"https://sfcc.com/site/navigation/internal",
-			"https://sfcc.com/site/navigation/content-page",
-			"https://sfcc.com/site/navigation/category",
-			"https://sfcc.com/site/navigation/group"
-    ]
-  },
-  "trait:sortable": {
-    "sortBy": [
-      {
-        "key": "default",
-        "paths": [
-          "/common/priority"
-        ]
-      }
-    ]
-  },
-  "trait:filterable": {
-    "filterBy": [
-      {
-        "paths": [
-          "/common/active"
-        ]
-      },
-      {
-        "paths": [
-          "/common/active",
-          "/common/visible"
-        ]
-      }
-    ]
-  },
-  "type": "object",
-  "properties": {
-    "common": {
-      "allOf": [
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://sfcc.com/site/navigation/content-page",
+    "title": "Navigation Content Page",
+    "description": "Navigation item for content page",
+    "allOf": [
         {
-          "$ref": "https://sfcc.com/site/navigation/partial#/definitions/common"
+            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
         }
-      ]
+    ],
+    "trait:hierarchy": {
+        "childContentTypes": [
+            "https://sfcc.com/site/navigation/external",
+            "https://sfcc.com/site/navigation/internal",
+            "https://sfcc.com/site/navigation/content-page",
+            "https://sfcc.com/site/navigation/category",
+            "https://sfcc.com/site/navigation/group"
+        ]
     },
-    "contentpage": {
-      "title": "Content page",
-      "allOf": [
-        {
-          "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference"
-        },
-        {
-          "properties": {
-            "contentType": {
-              "$ref": "https://sfcc.com/libs/all-definitions#/definitions/anyPage"
+    "trait:sortable": {
+        "sortBy": [
+            {
+                "key": "default",
+                "paths": [
+                    "/common/priority"
+                ]
             }
-          }
+        ]
+    },
+    "trait:filterable": {
+        "filterBy": [
+            {
+                "paths": [
+                    "/common/active"
+                ]
+            },
+            {
+                "paths": [
+                    "/common/active",
+                    "/common/visible"
+                ]
+            }
+        ]
+    },
+    "type": "object",
+    "properties": {
+        "common": {
+            "allOf": [
+                {
+                    "$ref": "https://sfcc.com/site/navigation/partial#/definitions/common"
+                }
+            ]
+        },
+        "contentpage": {
+            "title": "Content page",
+            "allOf": [
+                {
+                    "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference"
+                },
+                {
+                    "properties": {
+                        "contentType": {
+                            "$ref": "https://sfcc.com/libs/all-definitions#/definitions/anyPage"
+                        }
+                    }
+                }
+            ]
         }
-      ]
-    }
-  },
-  "required": [ "common", "contentpage" ],
-  "propertyOrder": []
+    },
+    "required": [
+        "common",
+        "contentpage"
+    ],
+    "propertyOrder": []
 }

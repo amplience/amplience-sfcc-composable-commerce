@@ -1,57 +1,57 @@
 {
-  "id": "bf55e749-7b01-4155-b4a3-600dcd28db1d",
-  "body": {
-    "_meta": {
-      "name": "Amplience",
-      "schema": "https://sfcc.com/site/navigation/external",
-      "hierarchy": {
+    "id": "bf55e749-7b01-4155-b4a3-600dcd28db1d",
+    "body": {
+        "_meta": {
+            "name": "Amplience",
+            "schema": "https://sfcc.com/site/navigation/external",
+            "hierarchy": {
+                "parentId": "388e47b3-0c2f-495c-8e2a-2bf94a59ee84",
+                "root": false
+            }
+        },
+        "common": {
+            "visible": true,
+            "title": {
+                "values": [
+                    {
+                        "locale": "en-US",
+                        "value": "Website"
+                    },
+                    {
+                        "locale": "fr-FR",
+                        "value": "Site Internet"
+                    }
+                ],
+                "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+                }
+            },
+            "priority": 1
+        },
+        "externalUrl": {
+            "values": [
+                {
+                    "locale": "en-US",
+                    "value": "https://amplience.com"
+                }
+            ],
+            "_meta": {
+                "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+            }
+        }
+    },
+    "version": 6,
+    "label": "Website",
+    "status": "ACTIVE",
+    "createdBy": "fb90fd96-dcaf-4d67-9747-b9676282f661",
+    "createdDate": "2022-08-18T16:12:08.253Z",
+    "lastModifiedBy": "b5b7704b-34ca-4424-a7dc-f6880734c30e",
+    "lastModifiedDate": "2022-08-22T11:07:32.135Z",
+    "lastPublishedVersion": 6,
+    "lastPublishedDate": "2022-08-24T16:19:53.872Z",
+    "hierarchy": {
         "parentId": "388e47b3-0c2f-495c-8e2a-2bf94a59ee84",
         "root": false
-      }
     },
-    "common": {
-      "visible": true,
-      "title": {
-        "values": [
-          {
-            "locale": "en-US",
-            "value": "Website"
-          },
-          {
-            "locale": "fr-FR",
-            "value": "Site Internet"
-          }
-        ],
-        "_meta": {
-          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
-        }
-      },
-      "priority": 1
-    },
-    "externalUrl": {
-      "values": [
-        {
-          "locale": "en-US",
-          "value": "https://amplience.com"
-        }
-      ],
-      "_meta": {
-        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
-      }
-    }
-  },
-  "version": 6,
-  "label": "Website",
-  "status": "ACTIVE",
-  "createdBy": "fb90fd96-dcaf-4d67-9747-b9676282f661",
-  "createdDate": "2022-08-18T16:12:08.253Z",
-  "lastModifiedBy": "b5b7704b-34ca-4424-a7dc-f6880734c30e",
-  "lastModifiedDate": "2022-08-22T11:07:32.135Z",
-  "lastPublishedVersion": 6,
-  "lastPublishedDate": "2022-08-24T16:19:53.872Z",
-  "hierarchy": {
-    "parentId": "388e47b3-0c2f-495c-8e2a-2bf94a59ee84",
-    "root": false
-  },
-  "deliveryId": "bf55e749-7b01-4155-b4a3-600dcd28db1d"
+    "deliveryId": "bf55e749-7b01-4155-b4a3-600dcd28db1d"
 }

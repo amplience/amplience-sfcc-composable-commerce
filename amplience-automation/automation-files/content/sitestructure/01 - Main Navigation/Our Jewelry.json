@@ -1,39 +1,39 @@
 {
-  "id": "73249be6-4dd4-43dc-b4f9-d3ffffe7340c",
-  "body": {
-    "_meta": {
-      "name": "Jewelry 2",
-      "schema": "https://sfcc.com/site/navigation/category",
-      "deliveryKey": "category/womens-jewelry",
-      "hierarchy": {
+    "id": "73249be6-4dd4-43dc-b4f9-d3ffffe7340c",
+    "body": {
+        "_meta": {
+            "name": "Jewelry 2",
+            "schema": "https://sfcc.com/site/navigation/category",
+            "deliveryKey": "category/womens-jewelry",
+            "hierarchy": {
+                "parentId": "25057185-10a6-41c6-8ba2-13abe4363449",
+                "root": false
+            }
+        },
+        "common": {
+            "visible": true,
+            "title": {
+                "values": [],
+                "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+                }
+            },
+            "priority": 12
+        },
+        "includeSFCC": true
+    },
+    "version": 15,
+    "label": "Our Jewelry",
+    "status": "ACTIVE",
+    "createdBy": "fb90fd96-dcaf-4d67-9747-b9676282f661",
+    "createdDate": "2022-08-24T14:49:36.093Z",
+    "lastModifiedBy": "ec8eae46-fcfe-4c9f-8e2c-5a0f8aea334c",
+    "lastModifiedDate": "2022-08-26T05:32:13.071Z",
+    "lastPublishedVersion": 15,
+    "lastPublishedDate": "2022-08-26T08:10:12.084Z",
+    "hierarchy": {
         "parentId": "25057185-10a6-41c6-8ba2-13abe4363449",
         "root": false
-      }
     },
-    "common": {
-      "visible": true,
-      "title": {
-        "values": [],
-        "_meta": {
-          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
-        }
-      },
-      "priority": 12
-    },
-    "includeSFCC": true
-  },
-  "version": 15,
-  "label": "Our Jewelry",
-  "status": "ACTIVE",
-  "createdBy": "fb90fd96-dcaf-4d67-9747-b9676282f661",
-  "createdDate": "2022-08-24T14:49:36.093Z",
-  "lastModifiedBy": "ec8eae46-fcfe-4c9f-8e2c-5a0f8aea334c",
-  "lastModifiedDate": "2022-08-26T05:32:13.071Z",
-  "lastPublishedVersion": 15,
-  "lastPublishedDate": "2022-08-26T08:10:12.084Z",
-  "hierarchy": {
-    "parentId": "25057185-10a6-41c6-8ba2-13abe4363449",
-    "root": false
-  },
-  "deliveryId": "73249be6-4dd4-43dc-b4f9-d3ffffe7340c"
+    "deliveryId": "73249be6-4dd4-43dc-b4f9-d3ffffe7340c"
 }

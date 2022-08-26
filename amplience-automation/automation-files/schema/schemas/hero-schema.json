@@ -1,79 +1,80 @@
 {
-	"$schema": "http://json-schema.org/draft-07/schema#",
-	"$id": "https://sfcc.com/components/hero",
-
-	"title": "Hero",
-	"description": "Hero schema",
-
-	"allOf": [
-		{
-			"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
-		}
-	],
-	
-	"type": "object",
-	"definitions": {
-		"action": {
-			"title": "Action",
-			"type": "object",
-			"properties": {
-				"label": {
-					"title": "Label",
-					"description": "",
-					"allOf": [
-						{ "$ref": "http://bigcontent.io/cms/schema/v1/localization#/definitions/localized-string" }
-					]
-				},
-				"url": {
-					"title": "URL",
-					"description": "",
-					"type": "string"
-				}
-			}
-		}
-	},
-	"properties": {
-		"title": {
-			"title": "Title",
-			"description": "",
-			"allOf": [
-				{ "$ref": "http://bigcontent.io/cms/schema/v1/localization#/definitions/localized-string" }
-			]
-		},
-		"img": {
-			"title": "Image",
-			"type": "object",
-			"properties": {
-				"image": {
-					"title": "Image",
-					"allOf": [
-						{ "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link" }
-					]
-				},
-				"alt": {
-					"title": "Alt",
-					"description": "",
-					"type": "string",
-					"minLength": 0,
-					"maxLength": 32
-				}
-			}
-
-		},
-		"actions": {
-			"type": "array",
-			"minItems": 0,
-			"maxItems": 2,
-			"items": {
-				"type": "object",
-				"allOf": [
-					{
-						"$ref": "#/definitions/action"
-					}
-				]
-			}
-		}
-		
-	},
-	"propertyOrder": []
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://sfcc.com/components/hero",
+    "title": "Hero",
+    "description": "Hero schema",
+    "allOf": [
+        {
+            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+        }
+    ],
+    "type": "object",
+    "definitions": {
+        "action": {
+            "title": "Action",
+            "type": "object",
+            "properties": {
+                "label": {
+                    "title": "Label",
+                    "description": "",
+                    "allOf": [
+                        {
+                            "$ref": "http://bigcontent.io/cms/schema/v1/localization#/definitions/localized-string"
+                        }
+                    ]
+                },
+                "url": {
+                    "title": "URL",
+                    "description": "",
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "properties": {
+        "title": {
+            "title": "Title",
+            "description": "",
+            "allOf": [
+                {
+                    "$ref": "http://bigcontent.io/cms/schema/v1/localization#/definitions/localized-string"
+                }
+            ]
+        },
+        "img": {
+            "title": "Image",
+            "type": "object",
+            "properties": {
+                "image": {
+                    "title": "Image",
+                    "allOf": [
+                        {
+                            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                        }
+                    ]
+                },
+                "alt": {
+                    "title": "Alt",
+                    "description": "",
+                    "type": "string",
+                    "minLength": 0,
+                    "maxLength": 32
+                }
+            }
+        },
+        "actions": {
+            "type": "array",
+            "minItems": 0,
+            "maxItems": 2,
+            "items": {
+                "type": "object",
+                "allOf": [
+                    {
+                        "$ref": "#/definitions/action"
+                    }
+                ]
+            }
+        }
+    },
+    "propertyOrder": []
 }

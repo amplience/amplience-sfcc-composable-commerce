@@ -1,46 +1,46 @@
 {
-  "id": "9c6ea0e1-98df-48a9-8dfb-7de892792b03",
-  "body": {
-    "_meta": {
-      "name": "Customer Support",
-      "schema": "https://sfcc.com/site/navigation/group",
-      "hierarchy": {
+    "id": "9c6ea0e1-98df-48a9-8dfb-7de892792b03",
+    "body": {
+        "_meta": {
+            "name": "Customer Support",
+            "schema": "https://sfcc.com/site/navigation/group",
+            "hierarchy": {
+                "parentId": "9123481a-0979-4d83-811b-c778e3613236",
+                "root": false
+            }
+        },
+        "common": {
+            "visible": true,
+            "title": {
+                "values": [
+                    {
+                        "locale": "en-US",
+                        "value": "Customer Support"
+                    },
+                    {
+                        "locale": "fr-FR",
+                        "value": "Support client"
+                    }
+                ],
+                "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+                }
+            },
+            "priority": 0
+        }
+    },
+    "version": 7,
+    "label": "Customer Support",
+    "status": "ACTIVE",
+    "createdBy": "fb90fd96-dcaf-4d67-9747-b9676282f661",
+    "createdDate": "2022-08-18T14:32:10.312Z",
+    "lastModifiedBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
+    "lastModifiedDate": "2022-08-24T20:55:45.557Z",
+    "lastPublishedVersion": 7,
+    "lastPublishedDate": "2022-08-24T21:05:57.663Z",
+    "hierarchy": {
         "parentId": "9123481a-0979-4d83-811b-c778e3613236",
         "root": false
-      }
     },
-    "common": {
-      "visible": true,
-      "title": {
-        "values": [
-          {
-            "locale": "en-US",
-            "value": "Customer Support"
-          },
-          {
-            "locale": "fr-FR",
-            "value": "Support client"
-          }
-        ],
-        "_meta": {
-          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
-        }
-      },
-      "priority": 0
-    }
-  },
-  "version": 7,
-  "label": "Customer Support",
-  "status": "ACTIVE",
-  "createdBy": "fb90fd96-dcaf-4d67-9747-b9676282f661",
-  "createdDate": "2022-08-18T14:32:10.312Z",
-  "lastModifiedBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
-  "lastModifiedDate": "2022-08-24T20:55:45.557Z",
-  "lastPublishedVersion": 7,
-  "lastPublishedDate": "2022-08-24T21:05:57.663Z",
-  "hierarchy": {
-    "parentId": "9123481a-0979-4d83-811b-c778e3613236",
-    "root": false
-  },
-  "deliveryId": "9c6ea0e1-98df-48a9-8dfb-7de892792b03"
+    "deliveryId": "9c6ea0e1-98df-48a9-8dfb-7de892792b03"
 }

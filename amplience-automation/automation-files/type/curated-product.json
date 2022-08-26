@@ -1,29 +1,29 @@
 {
-  "contentTypeUri": "https://sfcc.com/components/curated-product",
-  "status": "ACTIVE",
-  "settings": {
-    "label": "Curated Product List",
-    "icons": [
-      {
-        "size": 256,
-        "url": "https://sfcccomposable.a.bigcontent.io/v1/static/icon-component-curated-product"
-      }
-    ],
-    "visualizations": [
-      {
-        "label": "Localhost",
-        "templatedUri": "http://localhost:3000/{{locales}}/visualization/{{hub.name}}/{{content.sys.id}}/{{vse.domain}}",
-        "default": true
-      },
-      {
-        "label": "JSON",
-        "templatedUri": "https://delivery-preview.visualizations.content.amplience.net?id={{content.sys.id}}&vse={{vse.domain}}&locale={{locales}}&hub={{cms.hub}}&realtime=true",
-        "default": false
-      }
-    ],
-    "cards": []
-  },
-  "repositories": [
-    "content"
-  ]
+    "contentTypeUri": "https://sfcc.com/components/curated-product",
+    "status": "ACTIVE",
+    "settings": {
+        "label": "Curated Product List",
+        "icons": [
+            {
+                "size": 256,
+                "url": "https://sfcccomposable.a.bigcontent.io/v1/static/icon-component-curated-product"
+            }
+        ],
+        "visualizations": [
+            {
+                "label": "Localhost",
+                "templatedUri": "http://localhost:3000/{{locales}}/visualization/{{hub.name}}/{{content.sys.id}}/{{vse.domain}}",
+                "default": true
+            },
+            {
+                "label": "JSON",
+                "templatedUri": "https://delivery-preview.visualizations.content.amplience.net?id={{content.sys.id}}&vse={{vse.domain}}&locale={{locales}}&hub={{cms.hub}}&realtime=true",
+                "default": false
+            }
+        ],
+        "cards": []
+    },
+    "repositories": [
+        "content"
+    ]
 }

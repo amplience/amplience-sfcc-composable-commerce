@@ -31,76 +31,76 @@ You’ll need to configure access for both Shop & Data endpoints:
 
 ```json
 {
-			"client_id": "{THIS IS YOUR CLIENT ID}",
-			"allowed_origins": [
-				"https://product-selector.extensions.content.amplience.net",
-				"https://ecomm-toolkit.dc-demostore.com"
-			],
-			"resources": [
-				{
-					"resource_id": "/customers/*",
-					"methods": [
-						"get",
-						"patch",
-						"post"
-					],
-					"read_attributes": "(**)",
-					"write_attributes": "(**)"
-				},
-				{
-					"methods": [
-						"get"
-					],
-					"read_attributes": "(**)",
-					"write_attributes": "(**)",
-					"resource_id": "/product_search"
-				},
-				{
-					"methods": [
-						"get"
-					],
-					"read_attributes": "(**)",
-					"write_attributes": "(**)",
-					"resource_id": "/products/{id}"
-				},{
-					"methods": [
-						"get"
-					],
-					"read_attributes": "(**)",
-					"write_attributes": "(**)",
-					"resource_id": "/categories/{id}"
-				}
-			]
-		}
+    "client_id": "{THIS IS YOUR CLIENT ID}",
+    "allowed_origins": [
+        "https://product-selector.extensions.content.amplience.net",
+        "https://ecomm-toolkit.dc-demostore.com"
+    ],
+    "resources": [
+        {
+            "resource_id": "/customers/*",
+            "methods": [
+                "get",
+                "patch",
+                "post"
+            ],
+            "read_attributes": "(**)",
+            "write_attributes": "(**)"
+        },
+        {
+            "methods": [
+                "get"
+            ],
+            "read_attributes": "(**)",
+            "write_attributes": "(**)",
+            "resource_id": "/product_search"
+        },
+        {
+            "methods": [
+                "get"
+            ],
+            "read_attributes": "(**)",
+            "write_attributes": "(**)",
+            "resource_id": "/products/{id}"
+        },{
+            "methods": [
+                "get"
+            ],
+            "read_attributes": "(**)",
+            "write_attributes": "(**)",
+            "resource_id": "/categories/{id}"
+        }
+    ]
+}
 ```
 
 ### Data Settings
 
 ```json
 {
-			"client_id": "{THIS IS YOUR CLIENT ID}",
-			"allowed_origins": [
-				"https://product-selector.extensions.content.amplience.net",
-				"https://ecomm-toolkit.dc-demostore.com"
-			],
-			"resources": [
-				{
-					"methods": [
-						"post"
-					],
-					"read_attributes": "(**)",
-					"write_attributes": "(**)",
-					"resource_id": "/product_search"
-				},
-				{
-					"methods": [
-						"get"
-					],
-					"read_attributes": "(**)",
-					"resource_id": "/sites/{site_id}/customer_groups"
-				}
-			]
-		}
+    "client_id": "{THIS IS YOUR CLIENT ID}",
+    "allowed_origins": [
+        "https://product-selector.extensions.content.amplience.net",
+        "https://ecomm-toolkit.dc-demostore.com"
+    ],
+    "resources": [
+        {
+            "methods": [
+                "post"
+            ],
+            "read_attributes": "(**)",
+            "write_attributes": "(**)",
+            "resource_id": "/product_search"
+        },
+        {
+            "methods": [
+                "get"
+            ],
+            "read_attributes": "(**)",
+            "resource_id": "/sites/{site_id}/customer_groups"
+        }
+    ]
+}
 ```
 > Note: We have included the customer_groups endpoint as that will be used in future releases.
 

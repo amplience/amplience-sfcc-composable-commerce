@@ -1,69 +1,70 @@
 {
-	"$schema": "http://json-schema.org/draft-07/schema#",
-	"$id": "https://sfcc.com/components/section",
-
-	"title": "Section",
-	"description": "Section schema",
-
-	"allOf": [
-		{
-			"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
-		}
-	],
-	
-	"type": "object",
-	"properties": {
-		"title": {
-			"title": "Title",
-			"description": "",
-			"allOf": [
-				{ "$ref": "http://bigcontent.io/cms/schema/v1/localization#/definitions/localized-string" }
-			]
-		},
-		"subtitle": {
-			"title": "Subtitle",
-			"description": "",
-			"allOf": [
-				{ "$ref": "http://bigcontent.io/cms/schema/v1/localization#/definitions/localized-string" }
-			]
-		},
-		"actions": {
-			"type": "array",
-			"minItems": 0,
-			"maxItems": 2,
-			"items": {
-				"type": "object",
-				"allOf": [
-					{
-						"$ref": "https://sfcc.com/components/hero#/definitions/action"
-					}
-				]
-			}
-		},
-		"maxWidth": {
-			"title": "Max width",
-			"description": "",
-			"type": "string",
-			"enum": [
-				"xs",
-				"sm",
-				"md",
-				"lg",
-				"xl",
-				"2xl",
-				"3xl"
-			]
-		},
-		"background": {
-			"title": "Background color",
-			"description": "",
-			"type": "string",
-			"enum": [
-				"gray.50",
-				"yellow.50",
-				"teal.50"
-			]
-		}
-	},
-	"propertyOrder": []
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://sfcc.com/components/section",
+    "title": "Section",
+    "description": "Section schema",
+    "allOf": [
+        {
+            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+        }
+    ],
+    "type": "object",
+    "properties": {
+        "title": {
+            "title": "Title",
+            "description": "",
+            "allOf": [
+                {
+                    "$ref": "http://bigcontent.io/cms/schema/v1/localization#/definitions/localized-string"
+                }
+            ]
+        },
+        "subtitle": {
+            "title": "Subtitle",
+            "description": "",
+            "allOf": [
+                {
+                    "$ref": "http://bigcontent.io/cms/schema/v1/localization#/definitions/localized-string"
+                }
+            ]
+        },
+        "actions": {
+            "type": "array",
+            "minItems": 0,
+            "maxItems": 2,
+            "items": {
+                "type": "object",
+                "allOf": [
+                    {
+                        "$ref": "https://sfcc.com/components/hero#/definitions/action"
+                    }
+                ]
+            }
+        },
+        "maxWidth": {
+            "title": "Max width",
+            "description": "",
+            "type": "string",
+            "enum": [
+                "xs",
+                "sm",
+                "md",
+                "lg",
+                "xl",
+                "2xl",
+                "3xl"
+            ]
+        },
+        "background": {
+            "title": "Background color",
+            "description": "",
+            "type": "string",
+            "enum": [
+                "gray.50",
+                "yellow.50",
+                "teal.50"
+            ]
+        }
+    },
+    "propertyOrder": []
 }

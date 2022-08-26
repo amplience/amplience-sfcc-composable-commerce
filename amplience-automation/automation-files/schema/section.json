@@ -1,5 +1,5 @@
 {
-  "body": "./schemas/section-schema.json",
-  "schemaId": "https://sfcc.com/components/section",
-  "validationLevel": "CONTENT_TYPE"
+    "body": "./schemas/section-schema.json",
+    "schemaId": "https://sfcc.com/components/section",
+    "validationLevel": "CONTENT_TYPE"
 }

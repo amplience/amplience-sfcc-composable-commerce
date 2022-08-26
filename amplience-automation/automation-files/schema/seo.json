@@ -1,5 +1,5 @@
 {
-  "body": "./schemas/seo-schema.json",
-  "schemaId": "https://sfcc.com/libs/seo",
-  "validationLevel": "PARTIAL"
+    "body": "./schemas/seo-schema.json",
+    "schemaId": "https://sfcc.com/libs/seo",
+    "validationLevel": "PARTIAL"
 }

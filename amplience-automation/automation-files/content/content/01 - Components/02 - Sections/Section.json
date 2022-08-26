@@ -1,45 +1,45 @@
 {
-  "id": "164c1306-4c74-49cf-90b8-011872158370",
-  "body": {
-    "_meta": {
-      "name": "Section",
-      "schema": "https://sfcc.com/components/section",
-      "deliveryKey": "section"
+    "id": "164c1306-4c74-49cf-90b8-011872158370",
+    "body": {
+        "_meta": {
+            "name": "Section",
+            "schema": "https://sfcc.com/components/section",
+            "deliveryKey": "section"
+        },
+        "title": {
+            "values": [
+                {
+                    "locale": "en-US",
+                    "value": "Features"
+                }
+            ],
+            "_meta": {
+                "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+            }
+        },
+        "subtitle": {
+            "values": [
+                {
+                    "locale": "en-US",
+                    "value": "Out-of-the-box features so that you focus only on adding enhancements."
+                }
+            ],
+            "_meta": {
+                "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+            }
+        },
+        "maxWidth": "md",
+        "background": "gray.50"
     },
-    "title": {
-      "values": [
-        {
-          "locale": "en-US",
-          "value": "Features"
-        }
-      ],
-      "_meta": {
-        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
-      }
-    },
-    "subtitle": {
-      "values": [
-        {
-          "locale": "en-US",
-          "value": "Out-of-the-box features so that you focus only on adding enhancements."
-        }
-      ],
-      "_meta": {
-        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
-      }
-    },
-    "maxWidth": "md",
-    "background": "gray.50"
-  },
-  "version": 4,
-  "label": "Section",
-  "status": "ACTIVE",
-  "createdBy": "80d6035b-48f7-49d0-b4f4-feed71fe7bf8",
-  "locale": "en-US",
-  "createdDate": "2022-08-04T09:18:17.824Z",
-  "lastModifiedBy": "80d6035b-48f7-49d0-b4f4-feed71fe7bf8",
-  "lastModifiedDate": "2022-08-04T10:37:45.882Z",
-  "lastPublishedVersion": 4,
-  "lastPublishedDate": "2022-08-04T10:38:45.544Z",
-  "deliveryId": "164c1306-4c74-49cf-90b8-011872158370"
+    "version": 4,
+    "label": "Section",
+    "status": "ACTIVE",
+    "createdBy": "80d6035b-48f7-49d0-b4f4-feed71fe7bf8",
+    "locale": "en-US",
+    "createdDate": "2022-08-04T09:18:17.824Z",
+    "lastModifiedBy": "80d6035b-48f7-49d0-b4f4-feed71fe7bf8",
+    "lastModifiedDate": "2022-08-04T10:37:45.882Z",
+    "lastPublishedVersion": 4,
+    "lastPublishedDate": "2022-08-04T10:38:45.544Z",
+    "deliveryId": "164c1306-4c74-49cf-90b8-011872158370"
 }
