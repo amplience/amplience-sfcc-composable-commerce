@@ -34,7 +34,7 @@ const LinksList = ({
                         </Heading>
                     </Link>
                 ) : (
-                    <Heading {...styles.heading}>{heading?.text}</Heading>
+                    <Heading {...styles.heading}>{heading.text ?? heading}</Heading>
                 ))}
 
             {links && (
