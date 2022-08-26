@@ -18,7 +18,9 @@ const Button = ({label, url, ...props}) => {
         >
             {label}
         </Btn>
-    ) : ''
+    ) : (
+        <></>
+    )
 }
 
 Button.displayName = 'Button'
