@@ -82,7 +82,7 @@ const {handler} = runtime.createHandler(options, (app) => {
     app.get('//*', async (req, res, next) => {
         const [path, query] = req.url.split('?');
         // TODO: calculate the default locale instead of hard coding to en-US
-        res.redirect(`${path.replace('//', '/en-US/')}?${query}`)
+        res.redirect(`${path.replace(/^\/\//, '/en-US/')}?${query}`)
     })
 
     // Handle the redirect from SLAS as to avoid error
