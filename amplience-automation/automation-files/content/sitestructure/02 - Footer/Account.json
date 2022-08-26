@@ -3,7 +3,7 @@
   "body": {
     "_meta": {
       "name": "Account",
-      "schema": "https://sfcc.com/site/navigation/internal",
+      "schema": "https://sfcc.com/site/navigation/group",
       "hierarchy": {
         "parentId": "9123481a-0979-4d83-811b-c778e3613236",
         "root": false
@@ -27,8 +27,7 @@
         }
       },
       "priority": 1
-    },
-    "internalUrl": "#"
+    }
   },
   "version": 5,
   "label": "Account",

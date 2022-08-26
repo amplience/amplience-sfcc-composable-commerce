@@ -5,7 +5,7 @@
   "body": {
     "_meta": {
       "name": "Our Company",
-      "schema": "https://sfcc.com/site/navigation/internal",
+      "schema": "https://sfcc.com/site/navigation/group",
       "hierarchy": {
         "parentId": "9123481a-0979-4d83-811b-c778e3613236",
         "root": false
@@ -29,8 +29,7 @@
         }
       },
       "priority": 3
-    },
-    "internalUrl": "#"
+    }
   },
   "version": 3,
   "label": "Our Company",
