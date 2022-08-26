@@ -29,6 +29,10 @@ This is a version of the Retail React app with a starting point for Amplience fu
 * [Amplience Account](docs/amplience/amplience-account.md)
 * [Automation](docs/amplience/automation.md)  
 
+## Known Limitations
+
+### Localisation
+The default box from Salesforce used for their Composable Commerce FE (PWAKit) demo does not support localisation. Therefore you will have to point to your own sandbox with localisation enabled to allow these capabilities to work.
 
 
 # The Retail React App
