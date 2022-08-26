@@ -6,7 +6,7 @@ import {Button as Btn, Link} from '@chakra-ui/react'
  * Button component cound be used anywhere
  */
 const Button = ({label, url, ...props}) => {
-    return (
+    return label && url ? (
         <Btn
             as={Link}
             href={url}
@@ -18,6 +18,8 @@ const Button = ({label, url, ...props}) => {
         >
             {label}
         </Btn>
+    ) : (
+        <></>
     )
 }
 

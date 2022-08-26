@@ -72,6 +72,19 @@ const {handler} = runtime.createHandler(options, (app) => {
         })
     )
 
+    // Convert %2F to '/' in path coming from category node visualisation
+    app.get('*%2F*', async (req, res) => {
+        const [path, query] = req.url.split('?')
+        res.redirect(`${path.replace(/%2F/, '/')}?${query}`)
+    })
+
+    // If you gave something with a // in the first instance, put in the default locale
+    app.get('//*', async (req, res) => {
+        const [path, query] = req.url.split('?')
+        // TODO: calculate the default locale instead of hard coding to en-US
+        res.redirect(`${path.replace(/^\/\//, '/en-US/')}?${query}`)
+    })
+
     // Handle the redirect from SLAS as to avoid error
     app.get('/callback?*', (req, res) => {
         res.send()
@@ -80,6 +93,7 @@ const {handler} = runtime.createHandler(options, (app) => {
     app.get('/favicon.ico', runtime.serveStaticFile('static/ico/favicon.ico'))
 
     app.get('/worker.js(.map)?', runtime.serveServiceWorker)
+
     app.get('*', runtime.render)
 })
 // SSR requires that we export a single handler function called 'get', that

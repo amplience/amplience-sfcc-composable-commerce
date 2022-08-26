@@ -1,0 +1,49 @@
+{
+    "id": "8355b02e-0ff0-4506-bf82-ba6357b51c29",
+    "contentRepositoryId": "62f2da764cedfd0001878250",
+    "folderId": "63036096c9e77c00013e44e5",
+    "body": {
+        "_meta": {
+            "name": "Store Locator",
+            "schema": "https://sfcc.com/site/navigation/internal",
+            "hierarchy": {
+                "parentId": "541cc290-96b5-4f61-9685-e323927efb89",
+                "root": false
+            }
+        },
+        "common": {
+            "visible": true,
+            "title": {
+                "values": [
+                    {
+                        "locale": "en-US",
+                        "value": "Store Locator"
+                    },
+                    {
+                        "locale": "fr-FR",
+                        "value": "Nos boutiques"
+                    }
+                ],
+                "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+                }
+            },
+            "priority": 0
+        },
+        "internalUrl": "/"
+    },
+    "version": 2,
+    "label": "Store Locator",
+    "status": "ACTIVE",
+    "createdBy": "fb90fd96-dcaf-4d67-9747-b9676282f661",
+    "createdDate": "2022-08-18T14:36:32.999Z",
+    "lastModifiedBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
+    "lastModifiedDate": "2022-08-24T21:05:26.901Z",
+    "lastPublishedVersion": 2,
+    "lastPublishedDate": "2022-08-24T21:05:57.663Z",
+    "hierarchy": {
+        "parentId": "541cc290-96b5-4f61-9685-e323927efb89",
+        "root": false
+    },
+    "deliveryId": "8355b02e-0ff0-4506-bf82-ba6357b51c29"
+}

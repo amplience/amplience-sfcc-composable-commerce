@@ -2,28 +2,28 @@
     "contentTypeUri": "https://sfcc.com/site/pages/content-page",
     "status": "ACTIVE",
     "settings": {
-      "label": "Content Page",
-      "icons": [
-        {
-          "size": 256,
-          "url": "https://sfcccomposable.a.bigcontent.io/v1/static/icon-component-content-page"
-        }
-      ],
-      "visualizations": [
-        {
-          "label": "Localhost",
-          "templatedUri": "http://localhost:3000/{{locales}}/page/{{delivery.key}}",
-          "default": true
-        },
-        {
-          "label": "JSON",
-          "templatedUri": "https://delivery-preview.visualizations.content.amplience.net?id={{content.sys.id}}&vse={{vse.domain}}&locale={{locales}}&hub={{cms.hub}}&realtime=true",
-          "default": false
-        }
-      ],
-      "cards": []
+        "label": "Content Page",
+        "icons": [
+            {
+                "size": 256,
+                "url": "https://sfcccomposable.a.bigcontent.io/v1/static/icon-component-content-page"
+            }
+        ],
+        "visualizations": [
+            {
+                "label": "Localhost",
+                "templatedUri": "http://localhost:3000/{{locales}}/page/{{delivery.key}}?pagevse={{vse.domain}}",
+                "default": true
+            },
+            {
+                "label": "JSON",
+                "templatedUri": "https://delivery-preview.visualizations.content.amplience.net?id={{content.sys.id}}&vse={{vse.domain}}&locale={{locales}}&hub={{cms.hub}}&realtime=true",
+                "default": false
+            }
+        ],
+        "cards": []
     },
     "repositories": [
-      "content"
+        "content"
     ]
-  }
+}

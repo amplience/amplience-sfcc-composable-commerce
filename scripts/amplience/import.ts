@@ -94,6 +94,11 @@ export const importArgs = (yargs: Argv) => {
             required: true,
             type: 'string'
         })
+        .option('sitestructureRepoId', {
+            describe: 'site structure repository id',
+            required: true,
+            type: 'string'
+        })
         .option('mapFile', {
             describe: 'mapFile',
             default: null,
@@ -106,6 +111,11 @@ export const importArgs = (yargs: Argv) => {
         })
         .option('sfccVersion', {
             describe: 'sfcc version',
+            default: null,
+            type: 'string'
+        })
+        .option('authUrl', {
+            describe: 'auth url',
             default: null,
             type: 'string'
         })
@@ -139,28 +149,79 @@ export const importHandler = async (context: Arguments<Context>): Promise<any> =
 
     try {
         console.log(`Configuring dc-cli...`)
-        execSync(`./node_modules/.bin/dc-cli configure --clientId ${context.clientId} --clientSecret ${context.clientSecret} --hubId ${context.hubId}`, {stdio: 'inherit'})
+        execSync(
+            `npx dc-cli configure \
+                --clientId ${context.clientId} \
+                --clientSecret ${context.clientSecret} \
+                --hubId ${context.hubId}`, 
+            {stdio: 'inherit'}
+        )
 
         console.log(`Importing settings...`)
-        execSync(`./node_modules/.bin/dc-cli settings import ${context.tempDir}/settings/hub-settings-62e96f2bc9e77c0001d98ec5-sfcccomposable.json --mapFile ${mappingFile}`, {stdio: 'inherit'})
+        execSync(
+            `npx dc-cli settings import ${context.tempDir}/settings/hub-settings.json \
+                --mapFile ${mappingFile}`, 
+            {stdio: 'inherit'}
+        )
 
         console.log(`Importing extensions...`)
-        execSync(`./node_modules/.bin/dc-cli extension import ${context.tempDir}/extensions`, {stdio: 'inherit'})
+        execSync(
+            `npx dc-cli extension import ${context.tempDir}/extensions`, 
+            {stdio: 'inherit'}
+        )
 
         console.log(`Importing content type schemas...`)
-        execSync(`./node_modules/.bin/dc-cli content-type-schema import ${context.tempDir}/schema`, {stdio: 'inherit'})
+        execSync(
+            `npx dc-cli content-type-schema import ${context.tempDir}/schema`, 
+            {stdio: 'inherit'}
+        )
 
         console.log(`Importing content types...`)
-        execSync(`./node_modules/.bin/dc-cli content-type import ${context.tempDir}/type --sync`, {stdio: 'inherit'})
+        execSync(
+            `npx dc-cli content-type import ${context.tempDir}/type \
+                --sync`,
+            {stdio: 'inherit'}
+        )
 
         console.log(`Importing content...`)
-        execSync(`./node_modules/.bin/dc-cli content-item import ${context.tempDir}/content/content --baseRepo ${context.contentRepoId} --media true --publish true --mapFile ${mappingFile}`, {stdio: 'inherit'})
+        execSync(
+            `npx dc-cli content-item import ${context.tempDir}/content/content \
+                --baseRepo ${context.contentRepoId} \
+                --media true \
+                --publish true \
+                --mapFile ${mappingFile}`,
+            {stdio: 'inherit'}
+        )
 
         console.log(`Importing slots...`)
-        execSync(`./node_modules/.bin/dc-cli content-item import ${context.tempDir}/content/slots --baseRepo ${context.slotsRepoId} --mapFile ${mappingFile}`, {stdio: 'inherit'})
+        execSync(
+            `npx dc-cli content-item import ${context.tempDir}/content/slots \
+                --baseRepo ${context.slotsRepoId} \
+                --publish \
+                --mapFile ${mappingFile}`, 
+            {stdio: 'inherit'}
+        )
+
+        console.log(`Importing site components...`)
+        execSync(
+            `npx dc-cli content-item import \
+                ${context.tempDir}/content/sitestructure \
+                --baseRepo ${context.sitestructureRepoId} \
+                --media true \
+                --publish true \
+                --mapFile ${mappingFile}`, 
+            {stdio: 'inherit'}
+        )
 
         console.log(`Importing events...`)
-        execSync(`./node_modules/.bin/dc-cli event import ${context.tempDir}/events --acceptSnapshotLimits true --schedule true --catchup true --mapFile ${mappingFile}`, {stdio: 'inherit'})
+        execSync(
+            `npx dc-cli event import ${context.tempDir}/events \
+                --acceptSnapshotLimits true \
+                --schedule true \
+                --catchup true \
+                --mapFile ${mappingFile}`,
+            {stdio: 'inherit'}
+        )
 
         console.log(`Done!`)
     } finally {

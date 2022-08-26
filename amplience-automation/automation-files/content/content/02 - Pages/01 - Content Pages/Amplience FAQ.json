@@ -1,0 +1,80 @@
+{
+    "id": "01fcc5a1-54bb-407f-ad19-b837dd4d4a09",
+    "body": {
+        "_meta": {
+            "name": "Amplience FAQ",
+            "schema": "https://sfcc.com/site/pages/content-page",
+            "deliveryKey": "faq"
+        },
+        "seo": {
+            "noindex": false,
+            "title": {
+                "values": [
+                    {
+                        "locale": "en-US",
+                        "value": "Amplience FAQ"
+                    }
+                ],
+                "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+                }
+            },
+            "description": {
+                "values": [
+                    {
+                        "locale": "en-US",
+                        "value": "english description"
+                    }
+                ],
+                "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+                }
+            },
+            "keywords": {
+                "values": [
+                    {
+                        "locale": "en-US",
+                        "value": "some, english, keywords"
+                    }
+                ],
+                "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+                }
+            }
+        },
+        "content": [
+            {
+                "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                },
+                "contentType": "https://sfcc.com/components/hero",
+                "id": "f02a8387-fa6e-4875-b263-724db2d41334"
+            },
+            {
+                "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                },
+                "contentType": "https://sfcc.com/components/curated-product",
+                "id": "bf8b5951-a9e5-4e56-a70c-a4d0e369a221"
+            },
+            {
+                "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                },
+                "contentType": "https://sfcc.com/components/section",
+                "id": "164c1306-4c74-49cf-90b8-011872158370"
+            }
+        ]
+    },
+    "version": 5,
+    "label": "Amplience FAQ",
+    "status": "ACTIVE",
+    "createdBy": "5ae42671-d773-424f-84d8-b1b3d5225fe6",
+    "locale": "en-US",
+    "createdDate": "2022-08-08T20:52:08.887Z",
+    "lastModifiedBy": "5ae42671-d773-424f-84d8-b1b3d5225fe6",
+    "lastModifiedDate": "2022-08-11T14:34:01.797Z",
+    "lastPublishedVersion": 5,
+    "lastPublishedDate": "2022-08-11T14:34:12.316Z",
+    "deliveryId": "01fcc5a1-54bb-407f-ad19-b837dd4d4a09"
+}

@@ -7,7 +7,7 @@ import AmplienceWrapper from '../wrapper'
 const flexibleListSlot = ({...props}) => {
     const content = props.content
 
-    if ( content ) {
+    if (content) {
         return (
             <>
                 {content.map((content, index) => {

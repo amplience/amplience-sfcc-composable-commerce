@@ -1,29 +1,29 @@
 {
-  "contentTypeUri": "https://sfcc.com/slots/flexible-list",
-  "status": "ACTIVE",
-  "settings": {
-    "label": "Flexible List Slot",
-    "icons": [
-      {
-        "size": 256,
-        "url": "https://bigcontent.io/cms/icons/experience-management/exp-slot.png"
-      }
-    ],
-    "visualizations": [
-      {
-        "label": "LocalHost",
-        "templatedUri": "http://localhost:3000/visualization/{{hub.name}}/{{content.sys.id}}/{{vse.domain}}/{{locales}}",
-        "default": true
-      },
-      {
-        "label": "JSON",
-        "templatedUri": "https://delivery-preview.visualizations.content.amplience.net?id={{content.sys.id}}&vse={{vse.domain}}&locale={{locales}}&hub={{cms.hub}}&realtime=true",
-        "default": false
-      }
-    ],
-    "cards": []
-  },
-  "repositories": [
-    "slots"
-  ]
+    "contentTypeUri": "https://sfcc.com/slots/flexible-list",
+    "status": "ACTIVE",
+    "settings": {
+        "label": "Flexible List Slot",
+        "icons": [
+            {
+                "size": 256,
+                "url": "https://bigcontent.io/cms/icons/experience-management/exp-slot.png"
+            }
+        ],
+        "visualizations": [
+            {
+                "label": "LocalHost",
+                "templatedUri": "http://localhost:3000/{{locales}}/visualization/{{hub.name}}/{{content.sys.id}}/{{vse.domain}}",
+                "default": true
+            },
+            {
+                "label": "JSON",
+                "templatedUri": "https://delivery-preview.visualizations.content.amplience.net?id={{content.sys.id}}&vse={{vse.domain}}&locale={{locales}}&hub={{cms.hub}}&realtime=true",
+                "default": false
+            }
+        ],
+        "cards": []
+    },
+    "repositories": [
+        "slots"
+    ]
 }

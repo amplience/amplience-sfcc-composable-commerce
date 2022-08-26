@@ -1,5 +1,5 @@
 {
-  "body": "./schemas/all-definitions-schema.json",
-  "schemaId": "https://sfcc.com/libs/all-definitions",
-  "validationLevel": "PARTIAL"
+    "body": "./schemas/all-definitions-schema.json",
+    "schemaId": "https://sfcc.com/libs/all-definitions",
+    "validationLevel": "PARTIAL"
 }

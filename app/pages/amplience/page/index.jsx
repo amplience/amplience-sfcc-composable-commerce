@@ -5,7 +5,7 @@
  * For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
 
-import React, {useEffect, useContext, useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import PropTypes from 'prop-types'
 import {resolveSiteFromUrl} from '../../../utils/site-utils'
 import {getTargetLocale} from '../../../utils/locale'
@@ -18,10 +18,12 @@ import Seo from '../../../components/amplience/seo'
 
 // Amplience Wrapper Component
 import AmplienceWrapper from '../../../components/amplience/wrapper'
-import {RealtimeVisualization} from '../../../contexts/amplience'
 
 // Constants
 import {MAX_CACHE_AGE} from '../../../constants'
+import {useAmpRtv} from '../../../utils/amplience/rtv'
+import {AmplienceContextProvider} from '../../../contexts/amplience'
+import {AmplienceAPI} from '../../../amplience-api'
 
 /**
  * This is an example content page for Retail React App.
@@ -29,35 +31,19 @@ import {MAX_CACHE_AGE} from '../../../constants'
  * The page renders SEO metadata and a few promotion
  * categories and products, data is from local file.
  */
-const ContentPage = ({page}) => {
-    const RTV = useContext(RealtimeVisualization)
-    let removeChangedSubscription
+const ContentPage = ({page, pageVse}) => {
     const [pageModel, setPageModel] = useState(undefined)
 
     useEffect(() => {
         setPageModel(page)
     }, [page])
 
-    useEffect(() => {
-        if (RTV.ampVizSdk !== null) {
-            RTV.ampVizSdk.form.saved(() => {
-                window.location.reload()
-            })
+    useAmpRtv((model) => {
+        // handle form model change
+        setPageModel(model.content)
+    })
 
-            removeChangedSubscription = RTV.ampVizSdk.form.changed((model) => {
-                // handle form model change
-                setPageModel(model.content)
-            })
-        }
-
-        return () => {
-            if (removeChangedSubscription != undefined) {
-                removeChangedSubscription()
-            }
-        }
-    }, [RTV.ampVizSdk])
-
-    return (
+    const pageBody = (
         <Box data-testid="amplience-page" layerStyle="page">
             {pageModel == undefined ? (
                 <Skeleton height="20px" />
@@ -89,6 +75,12 @@ const ContentPage = ({page}) => {
             )}
         </Box>
     )
+
+    if (pageVse) {
+        return <AmplienceContextProvider vse={pageVse}>{pageBody}</AmplienceContextProvider>
+    } else {
+        return pageBody
+    }
 }
 
 ContentPage.getTemplateName = () => 'contentpage'
@@ -96,10 +88,12 @@ ContentPage.getTemplateName = () => 'contentpage'
 ContentPage.shouldGetProps = ({previousLocation, location}) =>
     !previousLocation || previousLocation.pathname !== location.pathname
 
-ContentPage.getProps = async ({res, params, location, api, ampClient}) => {
+ContentPage.getProps = async ({req, res, params, location, api, ampClient}) => {
     const {pageId} = params
 
-    if (res && !ampClient.vse) {
+    const pageVse = req?.query['pagevse']
+
+    if (res && !ampClient.vse && !pageVse) {
         res.set('Cache-Control', `max-age=${MAX_CACHE_AGE}`)
     }
 
@@ -113,14 +107,23 @@ ContentPage.getProps = async ({res, params, location, api, ampClient}) => {
         l10nConfig
     })
 
+    let client
+    if (pageVse) {
+        client = new AmplienceAPI()
+        client.setVse(pageVse)
+    } else {
+        client = ampClient
+    }
+
     let page
 
     if (pageId) {
-        page = await (await ampClient.fetchContent([{key: pageId}], targetLocale)).pop()
+        page = await (await client.fetchContent([{key: pageId}], {locale: targetLocale})).pop()
     }
 
     return {
-        page
+        page,
+        pageVse
     }
 }
 
@@ -130,7 +133,8 @@ ContentPage.propTypes = {
      * `false`. (Provided internally)
      */
     isLoading: PropTypes.bool,
-    page: PropTypes.object
+    page: PropTypes.object,
+    pageVse: PropTypes.string
 }
 
 export default ContentPage

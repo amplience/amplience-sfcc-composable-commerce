@@ -1,118 +1,117 @@
 {
-	"$schema": "http://json-schema.org/draft-07/schema#",
-	"$id": "https://sfcc.com/libs/seo",
-
-	"definitions": {
-		"seo": {
-			"title": "SEO",
-			"description": "",
-			"type": "object",
-			"properties": {
-				"title": {
-					"title": "SEO Title",
-					"description": "A Short SEO Title",
-					"type": "string",
-					"minLength": 0,
-					"maxLength": 20
-				},
-				"description": {
-					"title": "SEO Description",
-					"description": "A Short Description for SEO",
-					"type": "string",
-					"minLength": 0,
-					"maxLength": 50
-				},
-				"keywords": {
-					"title": "SEO Keywords",
-					"description": "A comma separated list of keywords",
-					"type": "string",
-					"minLength": 0,
-					"maxLength": 60
-				},
-				"noindex": {
-					"title": "No Index",
-					"description": "Tell robots, don't index this",
-					"type": "boolean"
-				}
-			}
-		},
-		"localized-seo": {
-			"title": "Localized SEO",
-			"description": "",
-			"type": "object",
-			"properties": {
-				"title": {
-					"allOf": [
-						{
-							"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
-						}
-					],
-					"properties": {
-						"values": {
-							"items": {
-								"properties": {
-									"value": {
-										"title": "SEO Title",
-										"description": "A Short SEO Title",
-										"type": "string",
-										"minLength": 0,
-										"maxLength": 20
-									}
-								}
-							}
-						}
-					}
-				},
-				"description": {
-					"allOf": [
-						{
-							"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
-						}
-					],
-					"properties": {
-						"values": {
-							"items": {
-								"properties": {
-									"value": {
-										"title": "SEO Description",
-										"description": "A Short Description for SEO",
-										"type": "string",
-										"minLength": 0,
-										"maxLength": 50
-									}
-								}
-							}
-						}
-					}
-				},
-				"keywords": {
-					"allOf": [
-						{
-							"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
-						}
-					],
-					"properties": {
-						"values": {
-							"items": {
-								"properties": {
-									"value": {
-										"title": "SEO Keywords",
-										"description": "A comma separated list of SEO keywords",
-										"type": "string",
-										"minLength": 0,
-										"maxLength": 60
-									}
-								}
-							}
-						}
-					}
-				},
-				"noindex": {
-					"title": "No Index",
-					"description": "Tell robots, don't index this",
-					"type": "boolean"
-				}
-			}
-		}
-	}
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://sfcc.com/libs/seo",
+    "definitions": {
+        "seo": {
+            "title": "SEO",
+            "description": "",
+            "type": "object",
+            "properties": {
+                "title": {
+                    "title": "Title",
+                    "description": "A Short SEO Title",
+                    "type": "string",
+                    "minLength": 0,
+                    "maxLength": 150
+                },
+                "description": {
+                    "title": "Description",
+                    "description": "A Short Description for SEO",
+                    "type": "string",
+                    "minLength": 0,
+                    "maxLength": 150
+                },
+                "keywords": {
+                    "title": "Keywords",
+                    "description": "A comma separated list of keywords",
+                    "type": "string",
+                    "minLength": 0,
+                    "maxLength": 150
+                },
+                "noindex": {
+                    "title": "No Index",
+                    "description": "Tell robots, don't index this",
+                    "type": "boolean"
+                }
+            }
+        },
+        "localized-seo": {
+            "title": "Localized SEO",
+            "description": "",
+            "type": "object",
+            "properties": {
+                "title": {
+                    "allOf": [
+                        {
+                            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+                        }
+                    ],
+                    "properties": {
+                        "values": {
+                            "items": {
+                                "properties": {
+                                    "value": {
+                                        "title": "Title",
+                                        "description": "A Short SEO Title",
+                                        "type": "string",
+                                        "minLength": 0,
+                                        "maxLength": 20
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "description": {
+                    "allOf": [
+                        {
+                            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+                        }
+                    ],
+                    "properties": {
+                        "values": {
+                            "items": {
+                                "properties": {
+                                    "value": {
+                                        "title": "Description",
+                                        "description": "A Short Description for SEO",
+                                        "type": "string",
+                                        "minLength": 0,
+                                        "maxLength": 50
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "keywords": {
+                    "allOf": [
+                        {
+                            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+                        }
+                    ],
+                    "properties": {
+                        "values": {
+                            "items": {
+                                "properties": {
+                                    "value": {
+                                        "title": "Keywords",
+                                        "description": "A comma separated list of SEO keywords",
+                                        "type": "string",
+                                        "minLength": 0,
+                                        "maxLength": 60
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "noindex": {
+                    "title": "No Index",
+                    "description": "Tell robots, don't index this",
+                    "type": "boolean"
+                }
+            }
+        }
+    }
 }

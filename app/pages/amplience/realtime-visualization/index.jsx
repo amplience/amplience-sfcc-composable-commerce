@@ -8,13 +8,13 @@
 import React, {useContext, useEffect, useState} from 'react'
 import {useParams} from 'react-router-dom'
 import PropTypes from 'prop-types'
-import {useIntl} from 'react-intl'
 import {Box} from '@chakra-ui/react'
 import Seo from '../../../components/seo'
 
 // Amplience
-import {RealtimeVisualization} from '../../../contexts/amplience'
+import {RealtimeVisualization, AmplienceContextProvider} from '../../../contexts/amplience'
 import AmplienceWrapper from '../../../components/amplience/wrapper'
+import {useIntl} from 'react-intl'
 
 /**
  * This is the home page for Retail React App.
@@ -23,13 +23,12 @@ import AmplienceWrapper from '../../../components/amplience/wrapper'
  * categories and products, data is from local file.
  */
 const AmpRtv = () => {
-    const intl = useIntl()
-
     const {hubname, contentId, vse, locale} = useParams()
+    const intl = useIntl()
 
     const RTV = useContext(RealtimeVisualization)
     let removeChangedSubscription = undefined
-    const [formContent, setFormContent] = useState({})
+    const [formContent, setFormContent] = useState(undefined)
 
     useEffect(() => {
         if (RTV !== null && RTV.ampVizSdk !== null) {
@@ -42,13 +41,13 @@ const AmpRtv = () => {
                 setFormContent(model.content)
             })
 
-            RTV.ampVizSdk.form.saved((value) => {
-                window.location.reload();
-            });
+            RTV.ampVizSdk.form.saved(() => {
+                window.location.reload()
+            })
 
-            RTV.ampVizSdk.locale.changed((value) => {
-                window.location.reload();
-            });
+            RTV.ampVizSdk.locale.changed(() => {
+                window.location.reload()
+            })
 
             removeChangedSubscription = RTV.ampVizSdk.form.changed((model) => {
                 // handle form model change
@@ -63,20 +62,28 @@ const AmpRtv = () => {
         }
     }, [RTV.ampVizSdk])
 
+    // Overwrite the context to perform vis from vse.
+
+    const fetch = formContent ? undefined : {id: contentId}
+
     return (
         <Box data-testid="real-viz" layerStyle="page">
-            <Seo
-                title="Home Page"
-                description="Commerce Cloud Retail React App"
-                keywords="Commerce Cloud, Retail React App, React Storefront"
-            />
+            <AmplienceContextProvider vse={vse}>
+                <Seo
+                    title="Home Page"
+                    description="Commerce Cloud Retail React App"
+                    keywords="Commerce Cloud, Retail React App, React Storefront"
+                />
 
-            <p>Hub: {hubname}</p>
-            <p>VSE: {vse}</p>
-            <p>amp locale: {locale}</p>
-            <p>Content ID: {contentId}</p>
+                <Box style={{padding: 20, marginBottom: 20, backgroundColor: "#fef4fd", border: "1px solid #fba9ed"}}>
+                    <p><b>Hub Name:</b> {hubname}</p>
+                    <p><b>VSE:</b> {vse}</p>
+                    <p><b>Locale:</b> {locale || intl.locale}</p>
+                    <p><b>Content ID:</b> {contentId}</p>
+                </Box>
 
-            <AmplienceWrapper content={formContent} type="SLOT" />
+                <AmplienceWrapper content={formContent} fetch={fetch} type="SLOT" />
+            </AmplienceContextProvider>
         </Box>
     )
 }

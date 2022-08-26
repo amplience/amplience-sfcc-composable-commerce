@@ -1,0 +1,49 @@
+{
+    "id": "b9141465-b63b-42b7-a0d3-e73483d18cf4",
+    "contentRepositoryId": "62f2da764cedfd0001878250",
+    "folderId": "63036096c9e77c00013e44e5",
+    "body": {
+        "_meta": {
+            "name": "Shipping",
+            "schema": "https://sfcc.com/site/navigation/internal",
+            "hierarchy": {
+                "parentId": "9c6ea0e1-98df-48a9-8dfb-7de892792b03",
+                "root": false
+            }
+        },
+        "common": {
+            "visible": true,
+            "title": {
+                "values": [
+                    {
+                        "locale": "en-US",
+                        "value": "Shipping"
+                    },
+                    {
+                        "locale": "fr-FR",
+                        "value": "Expéditions"
+                    }
+                ],
+                "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+                }
+            },
+            "priority": 1
+        },
+        "internalUrl": "/"
+    },
+    "version": 3,
+    "label": "Shipping",
+    "status": "ACTIVE",
+    "createdBy": "fb90fd96-dcaf-4d67-9747-b9676282f661",
+    "createdDate": "2022-08-18T14:34:02.105Z",
+    "lastModifiedBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
+    "lastModifiedDate": "2022-08-24T20:56:28.163Z",
+    "lastPublishedVersion": 3,
+    "lastPublishedDate": "2022-08-24T21:05:57.663Z",
+    "hierarchy": {
+        "parentId": "9c6ea0e1-98df-48a9-8dfb-7de892792b03",
+        "root": false
+    },
+    "deliveryId": "b9141465-b63b-42b7-a0d3-e73483d18cf4"
+}

@@ -1,0 +1,43 @@
+{
+    "contentTypeUri": "https://sfcc.com/site/navigation/root",
+    "status": "ACTIVE",
+    "settings": {
+        "label": "Root",
+        "icons": [
+            {
+                "size": 256,
+                "url": "https://bigcontent.io/cms/icons/experience-management/exp-hierarchy2root.png"
+            }
+        ],
+        "visualizations": [
+            {
+                "label": "Default - Localhost",
+                "templatedUri": "http://localhost:3000?vse={{vse.domain}}",
+                "default": true
+            },
+            {
+                "label": "Header - Localhost",
+                "templatedUri": "http://localhost:3000/{{locales}}/visualization/{{hub.name}}/{{content.sys.id}}/{{vse.domain}}?navvis=header&navroot={{delivery.key}}&vse={{vse.domain}}",
+                "default": false
+            },
+            {
+                "label": "Footer - Localhost",
+                "templatedUri": "http://localhost:3000/{{locales}}/visualization/{{hub.name}}/{{content.sys.id}}/{{vse.domain}}?navvis=footer&navroot={{delivery.key}}&vse={{vse.domain}}",
+                "default": false
+            },
+            {
+                "label": "JSON",
+                "templatedUri": "https://delivery-preview.visualizations.content.amplience.net?id={{content.sys.id}}&vse={{vse.domain}}&locale={{locales}}&hub={{cms.hub}}&realtime=true",
+                "default": false
+            }
+        ],
+        "cards": [
+            {
+                "templatedUri": "https://bigcontent.io/cms/cards/summary-photo/index.html?headline=/description&image=/icon&imageAlt=undefined&src=%2F%2F{{vse.domain}}%2Fcms%2Fcontent%2Fquery%3FfullBodyObject%3Dtrue%26query%3D%257B%2522sys.iri%2522%253A%2522http%253A%252F%252Fcontent.cms.amplience.com%252F{{content.sys.id}}%2522%257D%26scope%3Dtree%26store%3Dstaging"
+            }
+        ]
+    },
+    "repositories": [
+        "sitestructure"
+    ]
+}

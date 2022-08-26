@@ -96,6 +96,7 @@ export const configureRoutes = (routes = [], config, {ignoredRoutes = []}) => {
                     })
                 }
             })
+
             // origin route will be at the bottom
             outputRoutes.push(routes[i])
         }
@@ -107,5 +108,6 @@ export const configureRoutes = (routes = [], config, {ignoredRoutes = []}) => {
         }
         return res
     }, [])
+
     return outputRoutes
 }

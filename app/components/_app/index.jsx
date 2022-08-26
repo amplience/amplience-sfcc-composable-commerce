@@ -24,15 +24,15 @@ import {
 } from '../../contexts/amplience'
 
 // Local Project Components
-import Header from '../../components/header'
+import Header from '../../components/amplience/header'
 import OfflineBanner from '../../components/offline-banner'
 import OfflineBoundary from '../../components/offline-boundary'
 import ScrollToTop from '../../components/scroll-to-top'
 import Footer from '../../components/amplience/footer'
 import CheckoutHeader from '../../pages/checkout/partials/checkout-header'
 import CheckoutFooter from '../../pages/checkout/partials/checkout-footer'
-import DrawerMenu from '../drawer-menu'
-import ListMenu from '../list-menu'
+import DrawerMenu from '../amplience/drawer-menu'
+import AmplienceListMenu from '../amplience/list-menu'
 import {HideOnDesktop, HideOnMobile} from '../responsive'
 
 // Hooks
@@ -52,6 +52,7 @@ import {watchOnlineStatus, flatten} from '../../utils/utils'
 import {homeUrlBuilder, getPathWithLocale, buildPathWithUrlConfig} from '../../utils/url'
 import {getTargetLocale, fetchTranslations} from '../../utils/locale'
 import {DEFAULT_SITE_TITLE, HOME_HREF, THEME_COLOR} from '../../constants'
+import {applyRtvToNav, enrichNavigation} from '../../utils/amplience/link'
 
 import Seo from '../seo'
 import {resolveSiteFromUrl} from '../../utils/site-utils'
@@ -59,6 +60,7 @@ import {resolveSiteFromUrl} from '../../utils/site-utils'
 import {init} from 'dc-visualization-sdk'
 import PreviewHeader from '../amplience/preview-header'
 import {defaultAmpClient} from '../../amplience-api'
+import {useAmpRtvNav} from '../../utils/amplience/rtv'
 
 const DEFAULT_NAV_DEPTH = 3
 const DEFAULT_ROOT_CATEGORY = 'root'
@@ -78,6 +80,9 @@ const App = (props) => {
 
     const [isOnline, setIsOnline] = useState(true)
     const styles = useStyleConfig('App')
+
+    const [headerNav, setHeaderNav] = useState(props.headerNav)
+    const [footerNav, setFooterNav] = useState(props.footerNav)
 
     const configValues = {
         locale: locale.alias || locale.id,
@@ -103,6 +108,18 @@ const App = (props) => {
         setAmpVizSdk(sdk)
         setStatus('connected')
     }
+
+    useAmpRtvNav(
+        (model) => {
+            // handle form model change
+            applyRtvToNav(headerNav, model, setHeaderNav, allCategories, targetLocale)
+            applyRtvToNav(footerNav, model, setFooterNav, allCategories, targetLocale)
+        },
+        ampVizSdk,
+        defaultAmpClient,
+        allCategories,
+        targetLocale
+    )
 
     // Set up customer and basket
     useShopper({currency})
@@ -178,7 +195,9 @@ const App = (props) => {
 
     const headerStyles = {...styles.headerWrapper}
 
-    if (vseProps.vse) {
+    const showVse = vseProps.vse && !isNaN(vseProps.vseTimestamp) && vseProps.vseTimestamp != null
+
+    if (showVse) {
         Object.assign(headerStyles, styles.headerAmpPreview)
     }
 
@@ -205,7 +224,7 @@ const App = (props) => {
                 <CategoriesProvider categories={allCategories}>
                     <CurrencyProvider currency={currency}>
                         <AmplienceContextProvider {...vseProps}>
-                            {vseProps.vse && <PreviewHeader {...vseProps} />}
+                            {showVse && <PreviewHeader {...vseProps} />}
                             <RealtimeVisualization.Provider value={{ampVizSdk, status}}>
                                 <Seo>
                                     <meta name="theme-color" content={THEME_COLOR} />
@@ -266,20 +285,20 @@ const App = (props) => {
                                                 onMyCartClick={onCartClick}
                                                 onMyAccountClick={onAccountClick}
                                                 onWishlistClick={onWishlistClick}
+                                                logo={headerNav.icon}
                                             >
                                                 <HideOnDesktop>
                                                     <DrawerMenu
                                                         isOpen={isOpen}
                                                         onClose={onClose}
                                                         onLogoClick={onLogoClick}
-                                                        root={allCategories[DEFAULT_ROOT_CATEGORY]}
+                                                        root={headerNav}
+                                                        footer={footerNav}
                                                     />
                                                 </HideOnDesktop>
 
                                                 <HideOnMobile>
-                                                    <ListMenu
-                                                        root={allCategories[DEFAULT_ROOT_CATEGORY]}
-                                                    />
+                                                    <AmplienceListMenu root={headerNav} />
                                                 </HideOnMobile>
                                             </Header>
                                         ) : (
@@ -311,7 +330,11 @@ const App = (props) => {
                                             </Box>
                                         </SkipNavContent>
 
-                                        {!isCheckout ? <Footer /> : <CheckoutFooter />}
+                                        {!isCheckout ? (
+                                            <Footer root={footerNav} />
+                                        ) : (
+                                            <CheckoutFooter />
+                                        )}
 
                                         <AuthModal {...authModal} />
                                     </AddToCartModalProvider>
@@ -333,6 +356,7 @@ App.shouldGetProps = () => {
 App.getProps = async ({api, res, req, ampClient}) => {
     const site = resolveSiteFromUrl(res.locals.originalUrl)
     const l10nConfig = site.l10n
+    const defaultLocale = l10nConfig.defaultLocale
     const targetLocale = getTargetLocale({
         getUserPreferredLocales: () => {
             // CONFIG: This function should return an array of preferred locales. They can be
@@ -363,22 +387,22 @@ App.getProps = async ({api, res, req, ampClient}) => {
     await api.auth.login()
 
     // Get the root category, this will be used for things like the navigation.
-    const rootCategory = await api.shopperProducts.getCategory({
+    let rootCategory = await api.shopperProducts.getCategory({
         parameters: {
             id: DEFAULT_ROOT_CATEGORY,
-            levels: DEFAULT_NAV_DEPTH
+            levels: DEFAULT_NAV_DEPTH,
+            locale: targetLocale
         }
     })
 
     if (rootCategory.isError) {
-        const message =
-            rootCategory.title === 'Unsupported Locale'
-                ? `
-It looks like the locale “${rootCategory.locale}” isn’t set up, yet. The locale settings in your package.json must match what is enabled in your Business Manager instance.
-Learn more with our localization guide. https://sfdc.co/localization-guide
-`
-                : rootCategory.detail
-        throw new Error(message)
+        rootCategory = await api.shopperProducts.getCategory({
+            parameters: {
+                id: DEFAULT_ROOT_CATEGORY,
+                levels: DEFAULT_NAV_DEPTH,
+                locale: defaultLocale
+            }
+        })
     }
 
     // Flatten the root so we can easily access all the categories throughout
@@ -389,12 +413,50 @@ Learn more with our localization guide. https://sfdc.co/localization-guide
     const vseProps = generateVseProps({req, res, query: req.query})
     ampClient.setVse(vseProps.vse)
 
+    let headerKey = 'main-nav'
+    let footerKey = 'footer-nav'
+
+    if (req.query['navvis'] != null) {
+        let navName
+        if (req.query['navroot'] != null) {
+            navName = req.query['navroot']
+        } else if (req.query['navchild']) {
+            // Attempt to find the root nav item from the hierarchy child.
+            const root = await ampClient.fetchHierarchyRootFromChild(req.query['navchild'])
+
+            navName = root?._meta?.deliveryKey
+        }
+
+        if (navName != null) {
+            switch (req.query['navvis']) {
+                case 'header':
+                    headerKey = navName
+                    break
+                case 'footer':
+                    footerKey = navName
+                    break
+            }
+        }
+    }
+
+    const [headerNav, footerNav] = await Promise.all(
+        [headerKey, footerKey].map(async (key) =>
+            enrichNavigation(
+                await ampClient.fetchHierarchy({key},  undefined, targetLocale),
+                categories,
+                targetLocale
+            )
+        )
+    )
+
     return {
         targetLocale,
         messages,
         categories,
         config: res?.locals?.config,
-        vseProps
+        vseProps,
+        headerNav,
+        footerNav
     }
 }
 
@@ -404,7 +466,9 @@ App.propTypes = {
     messages: PropTypes.object,
     categories: PropTypes.object,
     config: PropTypes.object,
-    vseProps: PropTypes.object
+    vseProps: PropTypes.object,
+    headerNav: PropTypes.object,
+    footerNav: PropTypes.object
 }
 
 export default App

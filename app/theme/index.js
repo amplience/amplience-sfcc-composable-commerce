@@ -53,6 +53,7 @@ import ImageGallery from './components/project/image-gallery'
 
 // Amplience Components
 import PreviewHeader from './components/amplience/preview-header'
+import AmplienceHeader from './components/amplience/header'
 
 // Please refer to the Chakra-Ui theme customization docs found
 // here https://chakra-ui.com/docs/theming/customize-theme to learn
@@ -103,7 +104,9 @@ const overrides = {
         ImageGallery,
 
         // amplience components
-        PreviewHeader
+        PreviewHeader,
+        AmplienceHeader,
+        AmplienceListMenu: ListMenu
     }
 }
 

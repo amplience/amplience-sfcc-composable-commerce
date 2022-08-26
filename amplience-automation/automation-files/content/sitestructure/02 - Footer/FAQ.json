@@ -1,0 +1,53 @@
+{
+    "id": "df781b31-bf68-4ee7-9775-220fcbc94536",
+    "body": {
+        "_meta": {
+            "name": "Amplience FAQ",
+            "schema": "https://sfcc.com/site/navigation/content-page",
+            "hierarchy": {
+                "parentId": "9c6ea0e1-98df-48a9-8dfb-7de892792b03",
+                "root": false
+            }
+        },
+        "common": {
+            "visible": true,
+            "title": {
+                "values": [
+                    {
+                        "locale": "en-US",
+                        "value": "FAQ"
+                    },
+                    {
+                        "locale": "fr-FR",
+                        "value": "Foire aux questions"
+                    }
+                ],
+                "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+                }
+            },
+            "priority": 2
+        },
+        "contentpage": {
+            "_meta": {
+                "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference"
+            },
+            "contentType": "https://sfcc.com/site/pages/content-page",
+            "id": "01fcc5a1-54bb-407f-ad19-b837dd4d4a09"
+        }
+    },
+    "version": 2,
+    "label": "FAQ",
+    "status": "ACTIVE",
+    "createdBy": "fb90fd96-dcaf-4d67-9747-b9676282f661",
+    "createdDate": "2022-08-18T14:34:43.028Z",
+    "lastModifiedBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
+    "lastModifiedDate": "2022-08-24T21:04:42.724Z",
+    "lastPublishedVersion": 2,
+    "lastPublishedDate": "2022-08-24T21:05:57.663Z",
+    "hierarchy": {
+        "parentId": "9c6ea0e1-98df-48a9-8dfb-7de892792b03",
+        "root": false
+    },
+    "deliveryId": "df781b31-bf68-4ee7-9775-220fcbc94536"
+}

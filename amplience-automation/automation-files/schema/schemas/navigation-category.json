@@ -1,0 +1,90 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://sfcc.com/site/navigation/category",
+    "title": "Navigation Content Page",
+    "description": "Navigation item for SFCC categories",
+    "allOf": [
+        {
+            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+        }
+    ],
+    "trait:hierarchy": {
+        "childContentTypes": [
+            "https://sfcc.com/site/navigation/external",
+            "https://sfcc.com/site/navigation/internal",
+            "https://sfcc.com/site/navigation/content-page",
+            "https://sfcc.com/site/navigation/category",
+            "https://sfcc.com/site/navigation/group"
+        ]
+    },
+    "trait:sortable": {
+        "sortBy": [
+            {
+                "key": "default",
+                "paths": [
+                    "/common/priority"
+                ]
+            }
+        ]
+    },
+    "trait:filterable": {
+        "filterBy": [
+            {
+                "paths": [
+                    "/common/active"
+                ]
+            },
+            {
+                "paths": [
+                    "/common/active",
+                    "/common/visible"
+                ]
+            }
+        ]
+    },
+    "type": "object",
+    "properties": {
+        "common": {
+            "allOf": [
+                {
+                    "$ref": "https://sfcc.com/site/navigation/partial#/definitions/common"
+                }
+            ]
+        },
+        "_meta": {
+            "title": "Navigation Key",
+            "properties": {
+                "deliveryKey": {
+                    "title": "Category",
+                    "description": "Single-select Category and store ID as string",
+                    "type": "string",
+                    "pattern": "category\/.*",
+                    "ui:extension": {
+                        "name": "ecomm-toolkit",
+                        "params": {
+                            "label": "Linked Category",
+                            "view": "single",
+                            "data": "category",
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "includeSFCC": {
+            "title": "Include SFCC Subcategories",
+            "description": "Append the subcategories from SFCC into this node's children when rendering navigation.",
+            "type": "boolean",
+            "default": false
+        }
+    },
+    "required": [
+        "common",
+        "_meta"
+    ],
+    "propertyOrder": [
+        "common",
+        "_meta",
+        "includeSFCC"
+    ]
+}

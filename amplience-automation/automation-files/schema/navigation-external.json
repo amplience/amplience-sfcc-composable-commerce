@@ -1,0 +1,5 @@
+{
+    "body": "./schemas/navigation-external.json",
+    "schemaId": "https://sfcc.com/site/navigation/external",
+    "validationLevel": "CONTENT_TYPE"
+}

@@ -1,3 +1,6 @@
 export const getImageUrl = ({defaultHost, endpoint, name} = {}) => {
-    return `https://${defaultHost}/i/${endpoint}/${name}`
+    if (defaultHost && endpoint && name) {
+        return `https://${defaultHost}/i/${endpoint}/${name}`
+    }
+    return ''
 }

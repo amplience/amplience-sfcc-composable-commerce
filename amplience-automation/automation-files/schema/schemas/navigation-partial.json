@@ -1,0 +1,59 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://sfcc.com/site/navigation/partial",
+    "definitions": {
+        "common": {
+            "title": "Common Item Properties",
+            "type": "object",
+            "properties": {
+                "visible": {
+                    "title": "Visible",
+                    "description": "Whether this navigation item should be visible.",
+                    "type": "boolean",
+                    "default": true
+                },
+                "title": {
+                    "title": "Item Title",
+                    "description": "Title to display for the navigation item",
+                    "allOf": [
+                        {
+                            "$ref": "http://bigcontent.io/cms/schema/v1/localization#/definitions/localized-string"
+                        }
+                    ]
+                },
+                "priority": {
+                    "title": "Priority",
+                    "description": "Determines the order navigation items at the same level appear in, lowest number first.",
+                    "type": "number",
+                    "default": 0
+                },
+                "navcontent": {
+                    "title": "Navigation Content",
+                    "allOf": [
+                        {
+                            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                        },
+                        {
+                            "properties": {
+                                "contentType": {
+                                    "enum": [
+                                        "https://sfcc.com/components/hero"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            "required": [
+                "visible",
+                "title",
+                "priority"
+            ],
+            "propertyOrder": [
+                "visible",
+                "title"
+            ]
+        }
+    }
+}

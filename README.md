@@ -1,3 +1,16 @@
+
+<div align="center">
+<h1>The Progressive Web App (PWA) Kit with Amplience</h1>
+</div>
+
+[🏖️ View Amplience Demo](https://ascc-production.mobify-storefront.com/)
+
+The Amplience PWA Kit is a storefront technology for headless commerce using [Amplience APIs](https://amplience.com/docs/integration/reference.html), Salesforce Commerce APIs and React. It provides front-end developers with a more flexible and agile approach to build and maintain modern eCommerce experiences with the use of [Amplience](https://amplience.com/)
+
+![Amplience pwa-kit banner)](./amplience-automation/media/hero.png)
+
+___
+
 # Amplience specifics
 This is a version of the Retail React app with a starting point for Amplience fundamentals. The documentation below is 'as-is' from Salesforce. For Amplience specifics please see the following.
 
@@ -5,13 +18,21 @@ This is a version of the Retail React app with a starting point for Amplience fu
 
 ## Amplience Contents
 * [Overview](./docs/amplience/overview.md)
+* [Salesforce Commerce Cloud Setup](./docs/amplience/sfcc-setup.md)
 * [Security Updates](./docs/amplience/security-updates.md) 
 * [Amplience API](./docs/amplience/amplience-api.md)
+* [Amplience Components List](./docs/amplience/amplience-components-list.md)
+* [Navigation](./docs/amplience/navigation.md)
 * [AmplienceWrapper Component](./docs/amplience/ampliencewrapper-component.md)
 * [Visualization](docs/amplience/visualization.md)
 * [Preview](docs/amplience/preview.md)
 * [Amplience Account](docs/amplience/amplience-account.md)
 * [Automation](docs/amplience/automation.md)  
+
+## Known Limitations
+
+### Localisation
+The default box from Salesforce used for their Composable Commerce FE (PWAKit) demo does not support localisation. Therefore you will have to point to your own sandbox with localisation enabled to allow these capabilities to work.
 
 
 # The Retail React App
