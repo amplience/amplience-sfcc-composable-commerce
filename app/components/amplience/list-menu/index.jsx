@@ -80,6 +80,7 @@ const AmplienceListMenuTrigger = ({item, name, isOpen, onOpen, onClose, hasItems
             ) : (
                 <Heading
                     onMouseOver={onOpen}
+                    style={{cursor: 'pointer'}}
                     {...baseStyle.listMenuTriggerLink}
                     {...(hasItems ? {name: name + ' __'} : {name: name})}
                     {...(!hasItems ? baseStyle.listMenuTriggerLinkWithIcon : {})}

@@ -13,7 +13,6 @@
       }
     },
     "common": {
-      "active": true,
       "visible": true,
       "title": {
         "values": [

@@ -442,7 +442,7 @@ App.getProps = async ({api, res, req, ampClient}) => {
     const [headerNav, footerNav] = await Promise.all(
         [headerKey, footerKey].map(async (key) =>
             enrichNavigation(
-                await ampClient.fetchHierarchy({key},  (item) => item.common.active, targetLocale),
+                await ampClient.fetchHierarchy({key},  undefined, targetLocale),
                 categories,
                 targetLocale
             )
