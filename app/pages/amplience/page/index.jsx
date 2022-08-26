@@ -5,7 +5,7 @@
  * For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
 
-import React, {useEffect, useContext, useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import PropTypes from 'prop-types'
 import {resolveSiteFromUrl} from '../../../utils/site-utils'
 import {getTargetLocale} from '../../../utils/locale'
@@ -22,8 +22,8 @@ import AmplienceWrapper from '../../../components/amplience/wrapper'
 // Constants
 import {MAX_CACHE_AGE} from '../../../constants'
 import {useAmpRtv} from '../../../utils/amplience/rtv'
-import { AmplienceContextProvider } from '../../../contexts/amplience'
-import { AmplienceAPI } from '../../../amplience-api'
+import {AmplienceContextProvider} from '../../../contexts/amplience'
+import {AmplienceAPI} from '../../../amplience-api'
 
 /**
  * This is an example content page for Retail React App.

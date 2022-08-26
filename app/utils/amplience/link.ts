@@ -79,7 +79,10 @@ const unpackLocale = (obj, targetLocale, noDefault = false) => {
 const enrichChildrenWithTitle = (children, category) => {
     return children.map((node) => {
         if (!node.common.title) {
-            const sfccItem = category && category.categories && category.categories.find(({id}) => node._meta.deliveryKey === 'category/' + id)
+            const sfccItem =
+                category &&
+                category.categories &&
+                category.categories.find(({id}) => node._meta.deliveryKey === 'category/' + id)
             node.common.title = sfccItem?.name || ''
         }
         return node
@@ -173,7 +176,13 @@ export const enrichCategory = (categories, targetLocale) => {
             if (category && node.includeSFCC) {
                 const newChildren = sfccToNav(category, node.children, 0, visibleFunc)
                 if (newChildren.children) {
-                    node.children = sortBy([...enrichChildrenWithTitle(node.children ?? [], category), ...newChildren.children], 'common.priority')
+                    node.children = sortBy(
+                        [
+                            ...enrichChildrenWithTitle(node.children ?? [], category),
+                            ...newChildren.children
+                        ],
+                        'common.priority'
+                    )
                 }
             }
 
@@ -181,7 +190,9 @@ export const enrichCategory = (categories, targetLocale) => {
         } else {
             enrichTitle(targetLocale)(node)
         }
-        node.children = node.children ? node.children.filter((content) => visibleFunc ? visibleFunc(content) : true) : undefined
+        node.children = node.children
+            ? node.children.filter((content) => (visibleFunc ? visibleFunc(content) : true))
+            : undefined
     }
 }
 

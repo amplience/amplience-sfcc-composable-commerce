@@ -1,7 +1,7 @@
 import {useContext, useEffect} from 'react'
 import {RealtimeVisualization} from '../../contexts/amplience'
 import {EnrichConfigMap} from './enrich'
-import { enrichNavigation } from './link'
+import {enrichNavigation} from './link'
 
 const processHierarchy = (node, preAction, action) => {
     preAction(node)
