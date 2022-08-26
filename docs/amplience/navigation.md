@@ -28,6 +28,45 @@ For the desktop we use the `AmplienceListMenu` component passing in the properti
 
 > Note: Where we have changed the default SFCC Composable Commerce FE components to render from data, you will find them in `app/components/amplience`. We have also kept the originals in `app/components` if it is useful to refer to them or use them in other areas of the application.
 
+## Removing nodes from navigation
+
+### Content nodes
+Content nodes are:
+* Content Page
+* Internal
+* External
+* Group
+
+For each of these, you need to follow the steps from [here](https://amplience.com/docs/development/hierarchies/usinghierarchies.html#removingnode)
+
+### Category nodes
+Each Category node has a delivery key `Navigation Key`. This needs to be removed and saved before following the process [here](https://amplience.com/docs/development/hierarchies/usinghierarchies.html#removingnode)
+
+
+
+## Limitations
+
+### Maximum items per level
+You can currently only put a maximum of 12 items at any hierachy level. For example, 12 Level 1 menu items.
+[Docs](https://amplience.com/docs/development/limits.html#filterapi)
+> Note: This limit will be resolved in a future release.
+
+### Time based preview
+All content can be previewed in time. However all hierarchy content is not currently supported by the filter API in a time based context.
+[Docs](https://amplience.com/docs/development/contentdelivery/filterandsort.html#virtualstaging)
+Therefore, the application will always render the 'latest saved version' of any hierarchy content when previewing through time. (ie, the [scheduling](https://amplience.com/docs/planning/readme.html) tab.
+
+
+### Scheduling: Visualisation
+When scheduling nodes in an Event, you can visualise your nodes by selecting the individual content items.
+Currently, this visualisation will not render the full Category pages. Just the latest version of the navigation.
+
+The JSON Visualisor will also not return any content
+
+### Scheduling: Visualisation of localised nodes
+As per above, you cannot currently visualise locale changes in the production tab
+
+
 
 
 
