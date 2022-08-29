@@ -1,0 +1,21 @@
+{
+  "name": "rich-text",
+  "label": "Rich Text",
+  "description": "Rich Text Editor",
+  "url": "https://rich-text.extensions.content.amplience.net",
+  "height": 500,
+  "category": "CONTENT_FIELD",
+  "parameters" : "{\"language\":\"json\",\"styles\":\"\",\"tools\":{\"blacklist\":[],\"dc-content-link\":{\"contentTypes\":[]},\"inline_styles\":{\"classNames\":[]}},\"toolbar\":{\"layout\":[{\"type\":\"group\",\"children\":[{\"type\":\"button\",\"toolName\":\"undo\"},{\"type\":\"button\",\"toolName\":\"redo\"}]},{\"type\":\"dropdown\",\"label\":\"Styles\",\"toolNames\":[\"inline_styles_className_was-price\"]},{\"type\":\"group\",\"children\":[{\"type\":\"button\",\"toolName\":\"strong\"},{\"type\":\"button\",\"toolName\":\"em\"},{\"type\":\"button\",\"toolName\":\"link\"}]},{\"type\":\"group\",\"children\":[{\"type\":\"button\",\"toolName\":\"bullet_list\"},{\"type\":\"button\",\"toolName\":\"ordered_list\"}]},{\"type\":\"group\",\"children\":[{\"type\":\"button\",\"toolName\":\"dc-image-link\"},{\"type\":\"button\",\"toolName\":\"image\"},{\"type\":\"button\",\"toolName\":\"dc-content-link\"},{\"type\":\"button\",\"toolName\":\"blockquote\"},{\"type\":\"button\",\"toolName\":\"code_block\"},{\"type\":\"button\",\"toolName\":\"horizontal_rule\"}]},{\"type\":\"group\",\"children\":[{\"type\":\"button\",\"toolName\":\"clear_formatting\"}]}]}}",
+  "snippets": [
+    {
+      "label": "Rich Text",
+      "body": "{\n  \"type\": \"array\",\n  \"ui:extension\": {\n    \"name\": \"rich-text\"\n  }\n}"
+    }
+  ],
+  "settings": "{\"API\":{\"READ\":false,\"EDIT\":false},\"SANDBOX\":{\"SAME_ORIGIN\":true,\"MODALS\":false,\"NAVIGATION\":false,\"POPUPS\":false,\"POPUP_ESCAPE_SANDBOX\":false,\"DOWNLOADS\":false,\"FORMS\":false}}",
+  "status": "ACTIVE",
+  "createdBy": "d25504bc-f83f-4826-bf57-89fe3850ffef",
+  "createdDate": "2022-08-09T10:23:27.127Z",
+  "lastModifiedBy": "d25504bc-f83f-4826-bf57-89fe3850ffef",
+  "lastModifiedDate": "2022-08-09T10:38:55.883Z"
+}

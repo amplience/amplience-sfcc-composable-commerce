@@ -1,0 +1,120 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://sfcc.com/site/pages/blog",
+
+  "title": "Blog page",
+  "description": "",
+
+  "allOf": [
+    {
+      "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+    }
+  ],
+
+  "type": "object",
+  "properties": {
+    "_meta": {
+      "title": "Page slug",
+      "properties": {
+        "deliveryKey": {
+          "title": "Key",
+          "type": "string"
+        }
+      }
+    },
+    "seo": {
+      "allOf": [{"$ref": "https://sfcc.com/libs/seo#/definitions/localized-seo"}]
+    },
+    "image": {
+      "type": "object",
+      "title": "Image",
+      "description": "Image to show in the snippet",
+      "allOf": [
+        {
+          "$ref": "https://sfcc.com/libs/all-definitions#/definitions/image"
+        }
+      ]
+    },
+    "title": {
+      "type": "string",
+      "title": "Title",
+      "description": "Blog post title",
+      "validation": "Please enter less than 255 characters",
+      "minLength": 0,
+      "maxLength": 255
+    },
+    "description": {
+      "type": "string",
+      "title": "Snippet Description",
+      "description": "Blog post description",
+      "validation": "Please enter less than 500 characters",
+      "minLength": 0,
+      "maxLength": 500
+    },
+    "category": {
+      "type": "array",
+      "title": "Category",
+      "description": "The name of the category this relates too",
+      "items": {
+        "type": "string",
+        "enum": [
+          "women",
+          "men",
+          "beauty",
+          "lighting",
+          "furniture",
+          "electricals",
+          "inspiration"
+        ]
+      }
+    },
+    "keywords": {
+      "type": "array",
+      "title": "Keywords",
+      "description": "Keywords",
+      "validation": "",
+      "items": {
+        "type": "string",
+        "title": "label",
+        "description": "keyword",
+        "validation": "keyword",
+        "minLength": 0,
+        "maxLength": 500
+      },
+      "minItems": 0,
+      "maxItems": 50
+    },
+    "author": {
+      "type": "string",
+      "title": "Author",
+      "description": "The author of the post",
+      "enum": [
+        "Hazel Nutkins",
+        "Macadamia Smith",
+        "Sally Almond",
+        "Desmond Cobnut",
+        "Jose Pistachio"
+      ]
+    },
+    "date": {
+      "type": "string",
+      "title": "Creation Date",
+      "description": "Enter date (yyyy/mm/dd) that blog is created",
+      "validation": "YYYY/MM/DD",
+      "format": "text",
+      "minLength": 0,
+      "maxLength": 10
+    },
+    "content": {
+      "type": "object",
+      "title": "Blog Content",
+      "description": "The main content for the blog",
+      "allOf": [
+        {
+          "$ref": "https://sfcc.com/libs/all-definitions#/definitions/richText"
+        }
+      ]
+    }
+  },
+  "propertyOrder": []
+}

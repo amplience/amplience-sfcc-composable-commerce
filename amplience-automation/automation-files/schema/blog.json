@@ -1,0 +1,5 @@
+{
+  "body": "./schemas/blog-page-schema.json",
+  "schemaId": "https://sfcc.com/site/pages/blog",
+  "validationLevel": "CONTENT_TYPE"
+}
