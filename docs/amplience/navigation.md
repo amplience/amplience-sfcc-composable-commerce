@@ -82,6 +82,27 @@ The default visualisations are different per node:
 
 > Note: For a Content page, to see the content simply select select the menu item in the visualisation. Alternatively open the content type
 
+## Building a custom navigation hierarchy
+
+Besides `main-nav` and `footer-nav`, you can create your own custom hierarchies.
+
+### Create the hierarchy in Amplience
+
+In `Site Components`, select 'Create Content'.
+
+![](media/nav-create-hierarchy1.png)
+
+Create a Navigation Root.
+
+![](media/nav-create-hierarchy2.png)
+
+Give it a name (`Side Navigation`) and a unique Delivery Key (`side-nav`).
+
+![](media/nav-create-hierarchy3.png)
+
+Build your hierarchy by creating nodes. Refer [here](https://github.com/amplience/amplience-sfcc-composable-commerce/blob/main/docs/amplience/navigation.md#navigation-content-types) for navigation content types.
+
+### Wire the hierarchy into the app
 
 ## Removing nodes from navigation
 
