@@ -1,8 +1,8 @@
 {
-    "id" : "48ab9f76-3a81-4de1-8f7f-13bf1ca06d17",
+    "id" : "48ab9f76-3a81-4de1-8f7f-13bf1ca06d14",
     "body" : {
       "_meta" : {
-        "name" : "Bala Neha - Author",
+        "name" : "Maja Vendulka - Author",
         "schema" : "https://sfcc.com/components/author"
       },
       "image" : {
@@ -10,14 +10,14 @@
           "schema" : "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
         },
         "id" : "cd2b2cdf-1d0e-40c7-a754-57a45df77dee",
-        "name" : "author_bala-neha_unsplash",
+        "name" : "author_maja-vendulka_unsplash",
         "endpoint" : "sfcccomposable",
         "defaultHost" : "cdn.media.amplience.net"
       },
       "role" : {
         "values" : [ {
           "locale" : "en-US",
-          "value" : "Digital Content Assistant"
+          "value" : "Digital Content Creator / Copywriter"
         } ],
         "_meta" : {
           "schema" : "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
@@ -26,16 +26,16 @@
       "about" : {
         "values" : [ {
           "locale" : "en-US",
-          "value" : "You can find her browsing the active section or picking up new PJs.\n\nCheck out Bella's features for trending men’s style and inspo for fun looks for the littles.\n\nA fan of live art, Bella also reviews theatre productions for Words Of Colour, a platform devoted to inspiring and facilitating writers.\n\nWhen she’s not typing away, she spends her free time exploring and practicing photography."
+          "value" : "A Fashion Blogger and content creator on YouTube. Fashion and Social Media are Maja’s true passions. Being that she is a millennial, sharing is just part of her nature. Maja am able to share what I love with the world through her YouTube channel and my Blog. She can be as creative and real as she wants without getting the bosses’ approval. “I can talk about the beauty and fashion industry along with developing creative content for products, looks, travel, etc. Being on YouTube forces me to know all about social media and how to connect with my viewers on current trends.”"
         } ],
         "_meta" : {
           "schema" : "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
         }
       },
-      "name" : "Bala Neha"
+      "name" : "Maja Vendulka"
     },
     "version" : 1,
-    "label" : "Bala Neha - Author",
+    "label" : "Maja Vendulka - Author",
     "status" : "ACTIVE",
     "createdBy" : "df984790-5cf9-4b6e-96a0-3a0ea9475b64",
     "createdDate" : "2022-08-30T13:45:52.957Z",
@@ -43,5 +43,5 @@
     "lastModifiedDate" : "2022-08-30T13:45:52.957Z",
     "lastPublishedVersion" : 1,
     "lastPublishedDate" : "2022-08-30T15:28:30.698Z",
-    "deliveryId" : "48ab9f76-3a81-4de1-8f7f-13bf1ca06d17"
+    "deliveryId" : "48ab9f76-3a81-4de1-8f7f-13bf1ca06d14"
   }
