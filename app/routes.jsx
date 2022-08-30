@@ -40,6 +40,7 @@ const PageNotFound = loadable(() => import('./pages/page-not-found'))
 //Amplience Pages
 const RealtimeVisualization = loadable(() => import('./pages/amplience/realtime-visualization'))
 const ContentPage = loadable(() => import('./pages/amplience/page'))
+const BlogPage = loadable(() => import('./pages/amplience/blog'))
 
 const routes = [
     {
@@ -110,6 +111,10 @@ const routes = [
     {
         path: '/page/:pageId',
         component: ContentPage
+    },
+    {
+        path: '/blog/:blogId',
+        component: BlogPage
     },
     {
         path: '*',
