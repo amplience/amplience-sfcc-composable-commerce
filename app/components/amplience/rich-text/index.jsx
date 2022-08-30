@@ -25,7 +25,7 @@ const AmplienceRichText = ({content}) => {
                     alt = item.data.alt
                 }
 
-                return <img src={src} alt={alt}></img>
+                return <img src={src} alt={alt} key={index}></img>
             }
         }
     })
@@ -37,7 +37,7 @@ AmplienceRichText.propTypes = {
     /**
      * Rich Text Content
      */
-    content: PropTypes.object
+    content: PropTypes.array
 }
 
 export default AmplienceRichText
