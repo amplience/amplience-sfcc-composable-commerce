@@ -18,7 +18,8 @@
       "properties": {
         "deliveryKey": {
           "title": "Key",
-          "type": "string"
+          "type": "string",
+          "pattern": "blog\/.*"
         }
       }
     },
@@ -31,89 +32,98 @@
       "description": "Image to show in the snippet",
       "allOf": [
         {
-          "$ref": "https://sfcc.com/libs/all-definitions#/definitions/image"
+          "$ref": "https://sfcc.com/libs/all-definitions#/definitions/diImage"
         }
       ]
     },
-    "title": {
-      "type": "string",
-      "title": "Title",
-      "description": "Blog post title",
-      "validation": "Please enter less than 255 characters",
-      "minLength": 0,
-      "maxLength": 255
-    },
     "description": {
-      "type": "string",
-      "title": "Snippet Description",
-      "description": "Blog post description",
-      "validation": "Please enter less than 500 characters",
-      "minLength": 0,
-      "maxLength": 500
+      "title": "Snippet Description (optional)",
+      "description": "Blog post description (optional, SEO used otherwise)",
+      "allOf": [
+        { "$ref": "http://bigcontent.io/cms/schema/v1/localization#/definitions/localized-string" }
+      ]
     },
-    "category": {
+    "tags": {
       "type": "array",
-      "title": "Category",
-      "description": "The name of the category this relates too",
+      "title": "Tags",
+      "description": "Tags which the blog post relates to.",
       "items": {
         "type": "string",
         "enum": [
-          "women",
-          "men",
-          "beauty",
-          "lighting",
-          "furniture",
-          "electricals",
-          "inspiration"
+          "What to wear",
+          "Trends",
+          "Events",
+          "Interviews",
+          "Sustainability",
+          "Guides"
         ]
       }
     },
-    "keywords": {
+    "categories": {
       "type": "array",
-      "title": "Keywords",
-      "description": "Keywords",
-      "validation": "",
-      "items": {
-        "type": "string",
-        "title": "label",
-        "description": "keyword",
-        "validation": "keyword",
-        "minLength": 0,
-        "maxLength": 500
-      },
-      "minItems": 0,
-      "maxItems": 50
+      "title": "Product Categories",
+      "description": "The name of product categories the blog post relates to.",
+        "ui:extension": {
+          "name": "ecomm-toolkit",
+          "params": {
+            "label": "Category",
+            "view": "multi",
+            "data": "category",
+            "type": "array"
+          }
+        }
     },
     "author": {
-      "type": "string",
       "title": "Author",
-      "description": "The author of the post",
-      "enum": [
-        "Hazel Nutkins",
-        "Macadamia Smith",
-        "Sally Almond",
-        "Desmond Cobnut",
-        "Jose Pistachio"
+      "allOf": [
+        { "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link" },
+        {
+          "properties": {
+            "contentType": {
+              "enum": [
+                "https://sfcc.com/components/author"
+              ]
+            }
+          }
+        }
       ]
     },
     "date": {
-      "type": "string",
-      "title": "Creation Date",
-      "description": "Enter date (yyyy/mm/dd) that blog is created",
-      "validation": "YYYY/MM/DD",
-      "format": "text",
-      "minLength": 0,
-      "maxLength": 10
+      "title": "Created Date",
+      "type": "number",
+      "format": "date",
+      "ui:extension": {
+        "name": "date-time-picker"
+      }
     },
     "content": {
-      "type": "object",
-      "title": "Blog Content",
-      "description": "The main content for the blog",
       "allOf": [
         {
-          "$ref": "https://sfcc.com/libs/all-definitions#/definitions/richText"
+          "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
         }
-      ]
+      ],
+      "properties": {
+        "values": {
+          "items": {
+            "properties": {
+              "value": {
+                "type": "object",
+                "title": "Blog Content",
+                "description": "The main content for the blog",
+                "properties": {
+                  "richText": {
+                    "allOf": [
+                      {
+                        "$ref": "https://sfcc.com/libs/all-definitions#/definitions/richText"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "propertyOrder": []

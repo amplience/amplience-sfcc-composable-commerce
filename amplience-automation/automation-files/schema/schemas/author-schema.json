@@ -1,0 +1,59 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://sfcc.com/components/author",
+
+    "title": "An Author",
+    "description": "An author, typically used in a blog post",
+
+    "allOf": [
+        {
+            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+        }
+    ],
+    
+    "type": "object",
+    "properties": {
+        "name": {
+            "title": "Name",
+            "description": "The name of the author.",
+            "type": "string"
+        },
+        "image": {
+            "title": "Image",
+            "allOf": [
+                { "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link" }
+            ]
+        },
+        "role": {
+            "title": "Role",
+            "description": "Role to display for the author.",
+            "allOf": [
+                { "$ref": "http://bigcontent.io/cms/schema/v1/localization#/definitions/localized-string" }
+            ]
+        },
+        "about": {
+            "allOf": [
+                {
+                    "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+                }
+            ],
+            "properties": {
+                "values": {
+                    "items": {
+                        "properties": {
+                            "value": {
+                                "title": "About Me",
+                                "description": "Short description of the author.",
+                                "type": "string",
+                                "format": "markdown",
+                                "minLength": 0,
+                                "maxLength": 1000
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "propertyOrder": ["name", "image", "role", "about"]
+}

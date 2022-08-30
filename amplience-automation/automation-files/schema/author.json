@@ -1,0 +1,5 @@
+{
+    "body": "./schemas/author-schema.json",
+    "schemaId": "https://sfcc.com/components/author",
+    "validationLevel": "CONTENT_TYPE"
+  }

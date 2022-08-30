@@ -1,0 +1,20 @@
+{
+    "name": "date-time-picker",
+    "label": "Date/Time Picker",
+    "description": "Date/Time picker extension.",
+    "url": "https://date-time-picker.extensions.content.amplience.net/",
+    "height": 32,
+    "enabledForAllContentTypes" : false,
+    "category": "CONTENT_FIELD",
+    "parameters": "{}",
+    "snippets" : [ {
+        "label" : "Date Picker (timestamp)",
+        "body" : "{\n  \"date-timestamp\": {\n    \"title\": \"Date\",\n    \"type\": \"number\",\n    \"format\": \"date\",\n    \"ui:extension\": {\n      \"name\": \"date-time-picker\"\n    }\n  }\n}"
+      } ],
+    "settings" : "{\"API\":{\"READ\":false,\"EDIT\":false},\"SANDBOX\":{\"SAME_ORIGIN\":false,\"MODALS\":false,\"NAVIGATION\":false,\"POPUPS\":false,\"POPUP_ESCAPE_SANDBOX\":false,\"DOWNLOADS\":false,\"FORMS\":false}}",
+    "status": "ACTIVE",
+    "createdBy": "d25504bc-f83f-4826-bf57-89fe3850ffef",
+    "createdDate": "2022-08-09T09:53:05.791Z",
+    "lastModifiedBy": "d25504bc-f83f-4826-bf57-89fe3850ffef",
+    "lastModifiedDate": "2022-08-09T09:53:05.791Z"
+}

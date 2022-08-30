@@ -55,6 +55,114 @@
                 }
             }
         },
+        "diImage": {
+            "properties": {
+                "image": {
+                    "title": "Transformed Image",
+                    "description": "An image with DI transformations included.",
+                    "type": "object",
+                    "properties": {
+                        "image": {
+                            "title": "Base Image",
+                            "description": "The base image to apply DI transformations to.",
+                            "allOf": [
+                                {
+                                "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                                }
+                            ]
+                        },
+                        "crop": {
+                            "title": "Crop",
+                            "description": "The crop rectangle to apply, in % scale.",
+                            "type": "array",
+                            "minItems": 4,
+                            "maxItems": 4,
+                            "items": {
+                                "type": "number",
+                                "default": 0
+                            }
+                        },
+                        "poi": {
+                            "title": "Point of Interest",
+                            "description": "The point of interest, in % scale.",
+                            "type": "object",
+                            "properties": {
+                                "x": {
+                                    "title": "X",
+                                    "description": "The x coordinate",
+                                    "type": "number"
+                                },
+                                "y": {
+                                    "title": "Y",
+                                    "description": "The y coordinate",
+                                    "type": "number"
+                                }
+                            }
+                        },
+                        "rot": {
+                            "title": "Rotate",
+                            "description": "The rotation modifier (in degrees)",
+                            "type": "number"
+                        },
+                        "hue": {
+                            "title": "Hue",
+                            "description": "The hue modifier",
+                            "type": "number"
+                        },
+                        "sat": {
+                            "title": "Saturation",
+                            "description": "The saturation modifier",
+                            "type": "number"
+                        },
+                        "bri": {
+                            "title": "Brightness",
+                            "description": "The brightness modifier",
+                            "type": "number"
+                        },
+                        "fliph": {
+                            "title": "Horizontal Flip",
+                            "description": "Whether the image should be horizontally flipped",
+                            "type": "boolean"
+                        },
+                        "flipv": {
+                            "title": "Vertical Flip",
+                            "description": "Whether the image should be vertically flipped",
+                            "type": "boolean"
+                        },
+
+                        "aspectLock": {
+                            "title": "Crop Aspect Ratio",
+                            "description": "The aspect ratio to use when resizing the crop rectangle, eg: 4:3. Use 'none' to unlock aspect.",
+                            "type": "string"
+                        },
+                        "query": {
+                            "title": "DI Query String",
+                            "description": "A query string baked with all the above parameters.",
+                            "type": "string"
+                        }
+                    },
+
+                    "ui:extension": {
+                        "name": "di-image-transformation",
+                        "height": 500
+                    }
+                },
+                "imageAltText": {
+                    "type": "string",
+                    "title": "Image alt text",
+                    "description": "Alternative text for image for SEO",
+                    "minLength": 0,
+                    "maxLength": 50
+                },
+                "seoText": {
+                    "type": "string",
+                    "title": "SEO Text",
+                    "description": "e.g. ladies-sunglasses",
+                    "minLength": 0,
+                    "maxLength": 100
+                }
+            }
+        },
         "richText": {
             "type": "array",
             "ui:extension": {
@@ -66,9 +174,25 @@
                         "blacklist": [],
                         "dc-content-link": {
                             "contentTypes": [
+                                "https://sfcc.com/components/section",
+                                "https://sfcc.com/components/hero",
+                                "https://sfcc.com/components/curated-product"
                             ],
-                            "contentTypeSettings": {
-                            }
+                            "contentTypeSettings": [
+                                {
+                                    "id": "https://sfcc.com/components/section",
+                                    "icon": "https://sfcccomposable.a.bigcontent.io/v1/static/icon-component-section"
+                                },
+                                {
+                                    "id": "https://sfcc.com/components/hero",
+                                    "icon": "https://sfcccomposable.a.bigcontent.io/v1/static/icon-component-hero",
+                                    "card": "https://bigcontent.io/cms/cards/summary-photo/index.html?headline=/title&image=/img/image&imageAlt=/img/alt&src=%2F%2F{{vse.domain}}%2Fcms%2Fcontent%2Fquery%3FfullBodyObject%3Dtrue%26query%3D%257B%2522sys.iri%2522%253A%2522http%253A%252F%252Fcontent.cms.amplience.com%252F{{content.sys.id}}%2522%257D%26scope%3Dtree%26store%3Dstaging"
+                                },
+                                {
+                                    "id": "https://sfcc.com/components/curated-product",
+                                    "icon": "https://sfcccomposable.a.bigcontent.io/v1/static/icon-component-curated-product"
+                                }
+                            ]
                         },
                         "inline_styles": {
                             "classNames": [
