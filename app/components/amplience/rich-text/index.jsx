@@ -16,7 +16,7 @@ const AmplienceRichText = ({content}) => {
             case 'markdown':
                 return <AmplienceMarkdown content={item.data} key={index} />
             case 'dc-content-link':
-                return <AmplienceWrapper fetch={{id: item.data.id}} key={index} />
+                return <AmplienceWrapper content={item.data} key={index} />
             case 'dc-image-link': {
                 let src = ''
                 let alt = ''
