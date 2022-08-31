@@ -2,9 +2,10 @@ import React, {useEffect, useState} from 'react'
 import PropTypes from 'prop-types'
 import {resolveSiteFromUrl} from '../../../utils/site-utils'
 import {getTargetLocale} from '../../../utils/locale'
+import {useMultiStyleConfig} from '@chakra-ui/react'
 
 // Components
-import {Box, Heading, Skeleton} from '@chakra-ui/react'
+import {Avatar, Box, Heading, Skeleton} from '@chakra-ui/react'
 
 // Project Components
 import Seo from '../../../components/amplience/seo'
@@ -17,6 +18,9 @@ import {MAX_CACHE_AGE} from '../../../constants'
 import {useAmpRtv} from '../../../utils/amplience/rtv'
 import {AmplienceContextProvider} from '../../../contexts/amplience'
 import {AmplienceAPI} from '../../../amplience-api'
+
+import {getImageUrl} from '../../../utils/amplience/image'
+import AmpliencePOIBackgroundImage from '../../../components/amplience/poi-background-image'
 
 /**
  * This is an example blog page for Retail React App.
@@ -36,7 +40,7 @@ const BlogPage = ({page, pageVse}) => {
         setPageModel(model.content)
     })
 
-    // TODO: render author, image
+    const styles = useMultiStyleConfig('BlogPage')
 
     const pageBody = (
         <Box data-testid="amplience-page" layerStyle="page">
@@ -50,19 +54,55 @@ const BlogPage = ({page, pageVse}) => {
                         keywords={pageModel.seo?.keywords}
                         noIndex={pageModel.seo?.noindex}
                     />
-                    <Heading
-                        as="h1"
-                        fontSize={{base: '4xl', md: '5xl', lg: '6xl'}}
-                        maxWidth={{base: '75%', md: '50%', lg: 'md'}}
-                    >
-                        {pageModel.seo?.title}
-                    </Heading>
+                    <AmpliencePOIBackgroundImage image={pageModel.image.image} {...styles.header}>
+                        <Box {...styles.topInfo}>
+                            {new Date(pageModel.date).toDateString()} | {pageModel.readtime} Min
+                        </Box>
+                        <Heading
+                            as="h1"
+                            fontSize={{base: '4xl', md: '5xl', lg: '6xl'}}
+                            maxWidth={{base: '75%', md: '50%', lg: 'md'}}
+                            {...styles.title}
+                        >
+                            {pageModel.seo?.title}
+                        </Heading>
+
+                        <Box {...styles.infoBlock}>
+                            <Box {...styles.author}>
+                                <Avatar
+                                    name={pageModel.author.name}
+                                    src={getImageUrl(pageModel.author.image)}
+                                    size="md"
+                                    {...styles.authorImage}
+                                ></Avatar>
+                                <Box {...styles.authorInfo}>
+                                    <Box {...styles.authorName}>{pageModel.author.name}</Box>
+                                    <Box {...styles.authorRole}>{pageModel.author.role}</Box>
+                                </Box>
+                            </Box>
+                            <Box {...styles.tags}>
+                                {pageModel.tags.map((tag, index) => (
+                                    <Box key={index} {...styles.tag}>
+                                        {tag}
+                                    </Box>
+                                ))}
+
+                                {pageModel.categories.map((category, index) => (
+                                    <Box key={index} {...styles.category}>
+                                        {category.name}
+                                    </Box>
+                                ))}
+                            </Box>
+                        </Box>
+                    </AmpliencePOIBackgroundImage>
                 </>
             )}
             {pageModel == undefined ? (
                 <Skeleton height="200px" />
             ) : (
-                <AmplienceRichText content={pageModel.content.richText}></AmplienceRichText>
+                <Box {...styles.content}>
+                    <AmplienceRichText content={pageModel.content.richText}></AmplienceRichText>
+                </Box>
             )}
         </Box>
     )

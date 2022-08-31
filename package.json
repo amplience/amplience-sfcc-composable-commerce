@@ -105,6 +105,7 @@
     "last 4 ChromeAndroid versions"
   ],
   "dependencies": {
+    "@react-hook/resize-observer": "^1.2.6",
     "child_process": "^1.0.2",
     "cookie": "^0.5.0",
     "dc-management-sdk-js": "^1.17.1",
