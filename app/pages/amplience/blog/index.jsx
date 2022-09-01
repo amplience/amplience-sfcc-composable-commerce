@@ -62,7 +62,11 @@ const BlogPage = ({page, pageVse}) => {
                         keywords={pageModel.seo?.keywords}
                         noIndex={pageModel.seo?.noindex}
                     />
-                    <AmpliencePOIBackgroundImage image={pageModel.image?.image} {...styles.header}>
+                    <AmpliencePOIBackgroundImage
+                        image={pageModel.image?.image}
+                        alt={pageModel.image?.alt}
+                        {...styles.header}
+                    >
                         <Box {...styles.headerContainer}>
                             <Box {...styles.topInfo}>
                                 {new Date(pageModel.date).toDateString()} | {pageModel.readtime} Min
