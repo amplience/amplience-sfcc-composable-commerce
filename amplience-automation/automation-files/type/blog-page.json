@@ -12,7 +12,7 @@
         "visualizations": [
             {
                 "label": "Localhost",
-                "templatedUri": "http://localhost:3000/{{locales}}/page/{{delivery.key}}?pagevse={{vse.domain}}",
+                "templatedUri": "http://localhost:3000/{{locales}}/{{delivery.key}}?pagevse={{vse.domain}}",
                 "default": true
             },
             {
