@@ -9,6 +9,7 @@ import {Avatar, Box, Heading, Skeleton} from '@chakra-ui/react'
 
 // Project Components
 import Seo from '../../../components/amplience/seo'
+import Link from '../../../components/link'
 
 // Amplience Rich Text Component
 import AmplienceRichText from '../../../components/amplience/rich-text'
@@ -16,6 +17,7 @@ import AmplienceRichText from '../../../components/amplience/rich-text'
 // Constants
 import {MAX_CACHE_AGE} from '../../../constants'
 import {useAmpRtv} from '../../../utils/amplience/rtv'
+import {useCategories} from '../../../hooks/use-categories'
 import {AmplienceContextProvider} from '../../../contexts/amplience'
 import {AmplienceAPI} from '../../../amplience-api'
 
@@ -31,6 +33,8 @@ import AmpliencePOIBackgroundImage from '../../../components/amplience/poi-backg
 const BlogPage = ({page, pageVse}) => {
     const [pageModel, setPageModel] = useState(undefined)
 
+    const {categories} = useCategories()
+
     useEffect(() => {
         setPageModel(page)
     }, [page])
@@ -41,6 +45,8 @@ const BlogPage = ({page, pageVse}) => {
     })
 
     const styles = useMultiStyleConfig('BlogPage')
+
+    const authorUrl = `/blog?author=${encodeURIComponent(pageModel.author.name)}`
 
     const pageBody = (
         <Box data-testid="amplience-page" layerStyle="page" {...styles.container}>
@@ -70,28 +76,40 @@ const BlogPage = ({page, pageVse}) => {
 
                             <Box {...styles.infoBlock}>
                                 <Box {...styles.author}>
-                                    <Avatar
-                                        name={pageModel.author.name}
-                                        src={getImageUrl(pageModel.author.image)}
-                                        size="md"
-                                        {...styles.authorImage}
-                                    ></Avatar>
+                                    <Link to={authorUrl}>
+                                        <Avatar
+                                            name={pageModel.author.name}
+                                            src={getImageUrl(pageModel.author.image)}
+                                            size="md"
+                                            {...styles.authorImage}
+                                        ></Avatar>
+                                    </Link>
                                     <Box {...styles.authorInfo}>
-                                        <Box {...styles.authorName}>{pageModel.author.name}</Box>
+                                        <Link to={authorUrl} {...styles.authorName}>
+                                            {pageModel.author.name}
+                                        </Link>
                                         <Box {...styles.authorRole}>{pageModel.author.role}</Box>
                                     </Box>
                                 </Box>
                                 <Box {...styles.tags}>
                                     {pageModel.tags.map((tag, index) => (
-                                        <Box key={index} {...styles.tag}>
+                                        <Link
+                                            key={index}
+                                            to={`/blog?tag=${encodeURIComponent(tag)}`}
+                                            {...styles.tag}
+                                        >
                                             {tag}
-                                        </Box>
+                                        </Link>
                                     ))}
 
                                     {pageModel.categories.map((category, index) => (
-                                        <Box key={index} {...styles.category}>
-                                            {category.name}
-                                        </Box>
+                                        <Link
+                                            key={index}
+                                            to={`/blog?category=${encodeURIComponent(category.id)}`}
+                                            {...styles.category}
+                                        >
+                                            {categories[category.id]?.name ?? 'Unknown Category'}
+                                        </Link>
                                     ))}
                                 </Box>
                             </Box>

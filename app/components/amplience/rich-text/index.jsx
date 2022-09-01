@@ -35,7 +35,18 @@ const AmplienceRichText = ({content}) => {
                                 alt = item.data.alt
                             }
 
-                            return <img src={src} alt={alt} key={index}></img>
+                            return (
+                                <img
+                                    src={src}
+                                    alt={alt}
+                                    key={index}
+                                    style={{
+                                        maxHeight: '50vh',
+                                        margin: '0 auto',
+                                        marginBlockEnd: '1em'
+                                    }}
+                                ></img>
+                            )
                         }
                     }
                 })}
