@@ -6,6 +6,8 @@ import { useIntl } from 'react-intl'
 
 import amplience from '/config/amplience/default.js'
 import {AmplienceContext} from '../../../contexts/amplience'
+// Amplience Wrapper Component
+import AmplienceWrapper from '/app/components/amplience/wrapper'
 import {useCategories} from '../../../hooks/use-categories'
 
 // Components
@@ -216,7 +218,8 @@ const BlogLanding = (props) => {
 
     return (
         <Box data-testid="amplience-page" layerStyle="page">
-            <VStack>
+            <AmplienceWrapper fetch={{key: 'blog/slot/top'}}></AmplienceWrapper>
+            <VStack paddingTop='10px'>
                 <InputGroup>
                     <InputLeftElement pointerEvents="none">
                         <SearchIcon />
@@ -227,9 +230,10 @@ const BlogLanding = (props) => {
                         onChange={(e) => onSearchInputChange(e)}
                         type="search"
                         variant="filled"
+                        placeholder='Search Blogs...'
                     />
                 </InputGroup>
-                <SimpleGrid columns={[1, 1, 3]} spacing='40px'>
+                <SimpleGrid columns={[1, 1, 3]} spacingX='40px' spacingY='10px' width='100%'>
                     <Select placeholder='Select Tags' onChange={(e) => onTagDropDownChanged(e)}>
                         {
                             tags.map((item, index) => {
