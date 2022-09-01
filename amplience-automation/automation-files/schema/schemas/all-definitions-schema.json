@@ -144,7 +144,10 @@
 
                     "ui:extension": {
                         "name": "di-image-transformation",
-                        "height": 500
+                        "height": 500,
+                        "params":{
+                            "useVSE":true
+                        }
                     }
                 },
                 "imageAltText": {
