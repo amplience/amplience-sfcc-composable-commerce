@@ -59,8 +59,8 @@ const BlogLanding = (props) => {
     const algoliaKey = 'fa9be8756d95a97f0021f0aba6f02bc4'
     let indexType = vse ? 'staging' : 'production';
     // TODO: Put back once data is there
-    // const algoliaIndexName = amplience.hub+'.blog-'+indexType+'-'+siteLocale;
-    const algoliaIndexName = 'sfcccompdev.blog-staging'
+    const algoliaIndexName = amplience.hub+'.blog-'+indexType+'-'+siteLocale;
+    //const algoliaIndexName = 'sfcccompdev.blog-staging'
     const numItems = 8;
 
     const searchClient = algoliasearch(algoliaID, algoliaKey);
