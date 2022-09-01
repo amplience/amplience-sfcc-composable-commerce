@@ -1,121 +1,388 @@
 {
-    "id" : "66b35f02-3077-4974-8772-32e8695deedb",
-    "body" : {
-      "_meta" : {
-        "name" : "Test - Blog Page",
-        "schema" : "https://sfcc.com/site/pages/blog",
-        "deliveryKey" : "blog/test"
-      },
-      "seo" : {
-        "title" : {
-          "values" : [ {
-            "locale" : "en-US",
-            "value" : "Test Blog"
-          } ],
-          "_meta" : {
-            "schema" : "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
-          }
-        },
-        "noindex" : false
-      },
-      "image" : {
-        "image" : {
-          "crop" : [ 0, 0, 0, 0 ],
-          "rot" : 0,
-          "hue" : 0,
-          "sat" : 0,
-          "bri" : 0,
-          "fliph" : false,
-          "flipv" : false,
-          "poi" : {
-            "x" : -1,
-            "y" : -1
-          },
-          "aspectLock" : "clear",
-          "image" : {
-            "_meta" : {
-              "schema" : "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
-            },
-            "id" : "c35d9335-c420-427a-9a04-8ed942ce84c4",
-            "name" : "hero",
-            "endpoint" : "sfcccomposable",
-            "defaultHost" : "cdn.media.amplience.net"
-          }
-        },
-        "imageAltText" : "alt",
-        "seoText" : "seo"
-      },
-      "description" : {
-        "values" : [ {
-          "locale" : "en-US",
-          "value" : "This is optional here"
-        } ],
-        "_meta" : {
-          "schema" : "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
-        }
-      },
-      "tags" : [ "What to wear" ],
-      "categories" : [ {
-        "name" : "(newarrivals-womens) Womens",
-        "id" : "newarrivals-womens"
-      } ],
-      "author" : {
-        "_meta" : {
-          "schema" : "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
-        },
-        "contentType" : "https://sfcc.com/components/author",
-        "id" : "48ab9f76-3a81-4de1-8f7f-13bf1ca06d17"
-      },
-      "content" : {
-        "values" : [ {
-          "locale" : "en-US",
-          "value" : {
-            "richText" : [ {
-              "type" : "markdown",
-              "data" : "<span class=\"was-price\">This is some example content header</span>\n\nSome text in here:\n\n* Bullet 1\n\n* Bullet 2\n\nOrdered list\n\n1. Item 1\n\n2. Item 2\n\nImage is below:\n\n![origins alt](https://cdn.media.amplience.net/i/sfcccompdev/shot_02_origins_masking_011_2102 \"origins title\")\n\nAn Image from CH:"
-            }, {
-              "type" : "dc-image-link",
-              "data" : {
-                "_meta" : {
-                  "schema" : "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
-                },
-                "id" : "c35d9335-c420-427a-9a04-8ed942ce84c4",
-                "name" : "hero",
-                "endpoint" : "sfcccomposable",
-                "defaultHost" : "cdn.media.amplience.net"
-              }
-            }, {
-              "type" : "markdown",
-              "data" : "**Bold**\n\n*Italic*\n\nlink to [Amplience.com](https://amplience.com \"Amplience.com\")"
-            }, {
-              "type" : "dc-content-link",
-              "data" : {
-                "id" : "bf8b5951-a9e5-4e56-a70c-a4d0e369a221",
-                "contentType" : "https://sfcc.com/components/curated-product",
-                "_meta" : {
-                  "schema" : "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
-                }
-              }
-            }, {
-              "type" : "markdown"
-            } ]
-          }
-        } ],
-        "_meta" : {
-          "schema" : "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
-        }
-      },
-      "date" : 1661817600000,
-      "readtime": 4
+  "id": "66b35f02-3077-4974-8772-32e8695deedb",
+  "body": {
+    "_meta": {
+      "name": "Test - Blog Page",
+      "schema": "https://sfcc.com/site/pages/blog",
+      "deliveryKey": "blog/test"
     },
-    "version" : 1,
-    "label" : "Test - Blog Page",
-    "status" : "ACTIVE",
-    "createdBy" : "df984790-5cf9-4b6e-96a0-3a0ea9475b64",
-    "createdDate" : "2022-08-30T15:05:37.414Z",
-    "lastModifiedBy" : "df984790-5cf9-4b6e-96a0-3a0ea9475b64",
-    "lastModifiedDate" : "2022-08-30T15:05:37.414Z",
-    "lastPublishedVersion" : 1,
-    "lastPublishedDate" : "2022-08-30T15:28:30.698Z",
-    "deliveryId" : "66b35f02-3077-4974-8772-32e8695deedb"
-  }
+    "seo": {
+      "title": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "Test Blog Page"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "Tester la page du blog"
+          },
+          {
+            "locale": "de-DE",
+            "value": "Blog-Seite testen"
+          },
+          {
+            "locale": "es-ES",
+            "value": "Página de blog de prueba"
+          },
+          {
+            "locale": "it-IT",
+            "value": "Pagina del blog di prova"
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      },
+      "noindex": false,
+      "description": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "Test Blog Description"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "Description du blog de test"
+          },
+          {
+            "locale": "de-DE",
+            "value": "Test-Blog-Beschreibung"
+          },
+          {
+            "locale": "es-ES",
+            "value": "Blog de prueba Descripción"
+          },
+          {
+            "locale": "it-IT",
+            "value": "Descrizione del blog di prova"
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      },
+      "keywords": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "test,blog"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "test,blog"
+          },
+          {
+            "locale": "de-DE",
+            "value": "test,blog"
+          },
+          {
+            "locale": "es-ES",
+            "value": "test,blog"
+          },
+          {
+            "locale": "it-IT",
+            "value": "test,blog"
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      }
+    },
+    "image": {
+      "image": {
+        "crop": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "rot": 0,
+        "hue": 0,
+        "sat": 0,
+        "bri": 0,
+        "fliph": false,
+        "flipv": false,
+        "poi": {
+          "x": -1,
+          "y": -1
+        },
+        "aspectLock": "clear",
+        "image": {
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+          },
+          "id": "c35d9335-c420-427a-9a04-8ed942ce84c4",
+          "name": "hero",
+          "endpoint": "sfcccomposable",
+          "defaultHost": "cdn.media.amplience.net"
+        }
+      },
+      "imageAltText": "alt",
+      "seoText": "seo"
+    },
+    "description": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "This is an optional long description"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Ceci est une description longue facultative"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Dies ist eine optionale lange Beschreibung"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Esta es una descripción larga opcional"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Questa è una descrizione lunga opzionale"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "tags": [
+      "What to wear"
+    ],
+    "categories": [
+      {
+        "name": "(newarrivals-womens) Womens",
+        "id": "newarrivals-womens"
+      }
+    ],
+    "author": {
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+      },
+      "contentType": "https://sfcc.com/components/author",
+      "id": "48ab9f76-3a81-4de1-8f7f-13bf1ca06d17"
+    },
+    "content": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "# <span class=\"was-price\">This is some example content header</span>\n\n## Header 2\n\n### Header 3\n\n#### Header 4\n\n##### Header 5\n\n###### Header 6\n\nSome text in here:\n\n* Bullet 1\n\n* Bullet 2\n\nOrdered list\n\n1. Item 1\n\n2. Item 2\n\nImage is below:\n\n![origins alt](https://cdn.media.amplience.net/i/sfcccompdev/shot_02_origins_masking_011_2102 \"origins title\")\n\nAn Image from CH:"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "fcac61c1-90d3-4168-a08b-a6547301c795",
+                  "name": "hero",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "**Bold**\n\n*Italic*\n\n> This is a quote. I really said that? Did I?\n\n```javascript\n//this is code\n```\n\n---\n\nlink to [Amplience.com](https://amplience.com \"Amplience.com\")"
+              },
+              {
+                "type": "dc-content-link",
+                "data": {
+                  "id": "bf8b5951-a9e5-4e56-a70c-a4d0e369a221",
+                  "contentType": "https://sfcc.com/components/curated-product",
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                  }
+                }
+              },
+              {
+                "type": "markdown"
+              }
+            ]
+          }
+        },
+        {
+          "locale": "fr-FR",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "# <span class=\"was-price\">This is some example content header</span>\n\n## Header 2\n\n### Header 3\n\n#### Header 4\n\n##### Header 5\n\n###### Header 6\n\nSome text in here:\n\n* Bullet 1\n\n* Bullet 2\n\nOrdered list\n\n1. Item 1\n\n2. Item 2\n\nImage is below:\n\n![origins alt](https://cdn.media.amplience.net/i/sfcccompdev/shot_02_origins_masking_011_2102 \"origins title\")\n\nAn Image from CH:"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "fcac61c1-90d3-4168-a08b-a6547301c795",
+                  "name": "hero",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "**Bold**\n\n*Italic*\n\n> This is a quote. I really said that? Did I?\n\n```javascript\n//this is code\n```\n\n---\n\nlink to [Amplience.com](https://amplience.com \"Amplience.com\")"
+              },
+              {
+                "type": "dc-content-link",
+                "data": {
+                  "id": "bf8b5951-a9e5-4e56-a70c-a4d0e369a221",
+                  "contentType": "https://sfcc.com/components/curated-product",
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                  }
+                }
+              },
+              {
+                "type": "markdown"
+              }
+            ]
+          }
+        },
+        {
+          "locale": "de-DE",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "# <span class=\"was-price\">This is some example content header</span>\n\n## Header 2\n\n### Header 3\n\n#### Header 4\n\n##### Header 5\n\n###### Header 6\n\nSome text in here:\n\n* Bullet 1\n\n* Bullet 2\n\nOrdered list\n\n1. Item 1\n\n2. Item 2\n\nImage is below:\n\n![origins alt](https://cdn.media.amplience.net/i/sfcccompdev/shot_02_origins_masking_011_2102 \"origins title\")\n\nAn Image from CH:"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "fcac61c1-90d3-4168-a08b-a6547301c795",
+                  "name": "hero",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "**Bold**\n\n*Italic*\n\n> This is a quote. I really said that? Did I?\n\n```javascript\n//this is code\n```\n\n---\n\nlink to [Amplience.com](https://amplience.com \"Amplience.com\")"
+              },
+              {
+                "type": "dc-content-link",
+                "data": {
+                  "id": "bf8b5951-a9e5-4e56-a70c-a4d0e369a221",
+                  "contentType": "https://sfcc.com/components/curated-product",
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                  }
+                }
+              },
+              {
+                "type": "markdown"
+              }
+            ]
+          }
+        },
+        {
+          "locale": "es-ES",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "# <span class=\"was-price\">This is some example content header</span>\n\n## Header 2\n\n### Header 3\n\n#### Header 4\n\n##### Header 5\n\n###### Header 6\n\nSome text in here:\n\n* Bullet 1\n\n* Bullet 2\n\nOrdered list\n\n1. Item 1\n\n2. Item 2\n\nImage is below:\n\n![origins alt](https://cdn.media.amplience.net/i/sfcccompdev/shot_02_origins_masking_011_2102 \"origins title\")\n\nAn Image from CH:"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "fcac61c1-90d3-4168-a08b-a6547301c795",
+                  "name": "hero",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "**Bold**\n\n*Italic*\n\n> This is a quote. I really said that? Did I?\n\n```javascript\n//this is code\n```\n\n---\n\nlink to [Amplience.com](https://amplience.com \"Amplience.com\")"
+              },
+              {
+                "type": "dc-content-link",
+                "data": {
+                  "id": "bf8b5951-a9e5-4e56-a70c-a4d0e369a221",
+                  "contentType": "https://sfcc.com/components/curated-product",
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                  }
+                }
+              },
+              {
+                "type": "markdown"
+              }
+            ]
+          }
+        },
+        {
+          "locale": "it-IT",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "# <span class=\"was-price\">This is some example content header</span>\n\n## Header 2\n\n### Header 3\n\n#### Header 4\n\n##### Header 5\n\n###### Header 6\n\nSome text in here:\n\n* Bullet 1\n\n* Bullet 2\n\nOrdered list\n\n1. Item 1\n\n2. Item 2\n\nImage is below:\n\n![origins alt](https://cdn.media.amplience.net/i/sfcccompdev/shot_02_origins_masking_011_2102 \"origins title\")\n\nAn Image from CH:"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "fcac61c1-90d3-4168-a08b-a6547301c795",
+                  "name": "hero",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "**Bold**\n\n*Italic*\n\n> This is a quote. I really said that? Did I?\n\n```javascript\n//this is code\n```\n\n---\n\nlink to [Amplience.com](https://amplience.com \"Amplience.com\")"
+              },
+              {
+                "type": "dc-content-link",
+                "data": {
+                  "id": "bf8b5951-a9e5-4e56-a70c-a4d0e369a221",
+                  "contentType": "https://sfcc.com/components/curated-product",
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                  }
+                }
+              },
+              {
+                "type": "markdown"
+              }
+            ]
+          }
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "date": 1661817600000,
+    "readtime": 4
+  },
+  "version": 1,
+  "label": "Test - Blog Page",
+  "status": "ACTIVE",
+  "createdBy": "df984790-5cf9-4b6e-96a0-3a0ea9475b64",
+  "createdDate": "2022-08-30T15:05:37.414Z",
+  "lastModifiedBy": "df984790-5cf9-4b6e-96a0-3a0ea9475b64",
+  "lastModifiedDate": "2022-08-30T15:05:37.414Z",
+  "lastPublishedVersion": 1,
+  "lastPublishedDate": "2022-08-30T15:28:30.698Z",
+  "deliveryId": "66b35f02-3077-4974-8772-32e8695deedb"
+}
