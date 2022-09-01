@@ -98,7 +98,8 @@ const routes = [
     },
     {
         path: '/blog',
-        component: BlogLanding
+        component: BlogLanding,
+        exact: true
     },
     {
         path: '/category/:categoryId',
