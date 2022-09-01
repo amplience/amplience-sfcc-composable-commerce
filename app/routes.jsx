@@ -41,6 +41,7 @@ const PageNotFound = loadable(() => import('./pages/page-not-found'))
 const RealtimeVisualization = loadable(() => import('./pages/amplience/realtime-visualization'))
 const ContentPage = loadable(() => import('./pages/amplience/page'))
 const BlogPage = loadable(() => import('./pages/amplience/blog'))
+const BlogLanding = loadable(() => import('./pages/amplience/blog-landing'))
 
 const routes = [
     {
@@ -94,6 +95,10 @@ const routes = [
     {
         path: '/search',
         component: ProductList
+    },
+    {
+        path: '/blog',
+        component: BlogLanding
     },
     {
         path: '/category/:categoryId',

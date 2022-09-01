@@ -1,23 +1,23 @@
 {
-    "id" : "48ab9f76-3a81-4de1-8f7f-13bf1ca06d17",
+    "id" : "48ab9f76-3a81-4de1-8f7f-13bf1ca06d15",
     "body" : {
       "_meta" : {
-        "name" : "Bala Neha - Author",
+        "name" : "Mathis Wynnstan - Author",
         "schema" : "https://sfcc.com/components/author"
       },
       "image" : {
         "_meta" : {
           "schema" : "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
         },
-        "id" : "cd2b2cdf-1d0e-40c7-a754-57a45df77dee",
-        "name" : "author_bala-neha_unsplash",
+        "id" : "cd2b2cdf-1d0e-40c7-a754-57a45df77de1",
+        "name" : "author_mathis-wynnstan_unsplash",
         "endpoint" : "sfcccomposable",
         "defaultHost" : "cdn.media.amplience.net"
       },
       "role" : {
         "values" : [ {
           "locale" : "en-US",
-          "value" : "Digital Content Assistant"
+          "value" : "Digital Content Creator / Copywriter"
         } ],
         "_meta" : {
           "schema" : "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
@@ -26,16 +26,16 @@
       "about" : {
         "values" : [ {
           "locale" : "en-US",
-          "value" : "You can find her browsing the active section or picking up new PJs.\n\nCheck out Bella's features for trending men’s style and inspo for fun looks for the littles.\n\nA fan of live art, Bella also reviews theatre productions for Words Of Colour, a platform devoted to inspiring and facilitating writers.\n\nWhen she’s not typing away, she spends her free time exploring and practicing photography."
+          "value" : "Mathis is is a British fashion and lifestyle blogger. His approach to fashion is simple and to the point. Nothing is ever over-done and each of his pieces seem to be a male wardrobe staple. As a style blogger he can show you how to make one staple piece work for you in terms of creating more than one look. His outfits are quite tasteful and tailored to fit a particular kind of man.He focuses on fashion, travel, cars and luxury brands for the man who loves to take care of himself."
         } ],
         "_meta" : {
           "schema" : "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
         }
       },
-      "name" : "Bala Neha"
+      "name" : "Mathis Wynnstan"
     },
     "version" : 1,
-    "label" : "Bala Neha - Author",
+    "label" : "Mathis Wynnstan - Author",
     "status" : "ACTIVE",
     "createdBy" : "df984790-5cf9-4b6e-96a0-3a0ea9475b64",
     "createdDate" : "2022-08-30T13:45:52.957Z",
@@ -43,5 +43,5 @@
     "lastModifiedDate" : "2022-08-30T13:45:52.957Z",
     "lastPublishedVersion" : 1,
     "lastPublishedDate" : "2022-08-30T15:28:30.698Z",
-    "deliveryId" : "48ab9f76-3a81-4de1-8f7f-13bf1ca06d17"
+    "deliveryId" : "48ab9f76-3a81-4de1-8f7f-13bf1ca06d15"
   }

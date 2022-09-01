@@ -96,6 +96,13 @@
         "name": "date-time-picker"
       }
     },
+    "readtime": {
+      "title": "Read Time (Minutes)",
+      "description": "How long the blog post takes to read in minutes",
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 20
+    },
     "content": {
       "allOf": [
         {

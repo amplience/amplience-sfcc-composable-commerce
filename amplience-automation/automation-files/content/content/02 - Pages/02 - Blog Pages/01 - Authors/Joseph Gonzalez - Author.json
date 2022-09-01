@@ -1,23 +1,23 @@
 {
-    "id" : "48ab9f76-3a81-4de1-8f7f-13bf1ca06d17",
+    "id" : "48ab9f76-3a81-4de1-8f7f-13bf1ca06d12",
     "body" : {
       "_meta" : {
-        "name" : "Bala Neha - Author",
+        "name" : "Joseph Gonzalez - Author",
         "schema" : "https://sfcc.com/components/author"
       },
       "image" : {
         "_meta" : {
           "schema" : "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
         },
-        "id" : "cd2b2cdf-1d0e-40c7-a754-57a45df77dee",
-        "name" : "author_bala-neha_unsplash",
+        "id" : "cd2b2cdf-1d0e-40c7-a754-57a45df77dec",
+        "name" : "author_joseph-gonzalez_unsplash",
         "endpoint" : "sfcccomposable",
         "defaultHost" : "cdn.media.amplience.net"
       },
       "role" : {
         "values" : [ {
           "locale" : "en-US",
-          "value" : "Digital Content Assistant"
+          "value" : "Digital Content Manager"
         } ],
         "_meta" : {
           "schema" : "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
@@ -26,16 +26,16 @@
       "about" : {
         "values" : [ {
           "locale" : "en-US",
-          "value" : "You can find her browsing the active section or picking up new PJs.\n\nCheck out Bella's features for trending men’s style and inspo for fun looks for the littles.\n\nA fan of live art, Bella also reviews theatre productions for Words Of Colour, a platform devoted to inspiring and facilitating writers.\n\nWhen she’s not typing away, she spends her free time exploring and practicing photography."
+          "value" : "Has over 14 years’ experience in fashion journalism.\n\n Joseph oversees all editorial content and strategic updates for the website.\n\n With a love of face-to-face interviews, reactive trend stories and all things homeware, you’ll find up-to-the-minute content from Joseph you won’t want to miss.\n\n In a previous careers, Joseph was Deputy Catwalk Editor at WGSN.\n\n Follow him for travel inspo and the best places to eat in London."
         } ],
         "_meta" : {
           "schema" : "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
         }
       },
-      "name" : "Bala Neha"
+      "name" : "Joseph Gonzalez"
     },
     "version" : 1,
-    "label" : "Bala Neha - Author",
+    "label" : "Joseph Gonzalez - Author",
     "status" : "ACTIVE",
     "createdBy" : "df984790-5cf9-4b6e-96a0-3a0ea9475b64",
     "createdDate" : "2022-08-30T13:45:52.957Z",
@@ -43,5 +43,5 @@
     "lastModifiedDate" : "2022-08-30T13:45:52.957Z",
     "lastPublishedVersion" : 1,
     "lastPublishedDate" : "2022-08-30T15:28:30.698Z",
-    "deliveryId" : "48ab9f76-3a81-4de1-8f7f-13bf1ca06d17"
+    "deliveryId" : "48ab9f76-3a81-4de1-8f7f-13bf1ca06d12"
   }

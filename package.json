@@ -105,6 +105,7 @@
     "last 4 ChromeAndroid versions"
   ],
   "dependencies": {
+    "algoliasearch": "^4.14.2",
     "@react-hook/resize-observer": "^1.2.6",
     "child_process": "^1.0.2",
     "cookie": "^0.5.0",
@@ -113,6 +114,8 @@
     "express-urlrewrite": "^2.0.0",
     "lodash": "^4.17.21",
     "markdown-it": "^13.0.1",
+    "react-instantsearch-dom": "^6.32.1",
+    "react-instantsearch-hooks-web": "^6.32.1",
     "react-json-tree": "^0.17.0",
     "yargs": "^17.5.1"
   }
