@@ -31,13 +31,9 @@ import AmpliencePOIBackgroundImage from '../../../components/amplience/poi-backg
  * categories and products, data is from local file.
  */
 const BlogPage = ({page, pageVse}) => {
-    const [pageModel, setPageModel] = useState(undefined)
+    const [pageModel, setPageModel] = useState(page)
 
     const {categories} = useCategories()
-
-    useEffect(() => {
-        setPageModel(page)
-    }, [page])
 
     useAmpRtv((model) => {
         // handle form model change
@@ -46,7 +42,7 @@ const BlogPage = ({page, pageVse}) => {
 
     const styles = useMultiStyleConfig('BlogPage')
 
-    const authorUrl = `/blog?author=${encodeURIComponent(pageModel.author.name)}`
+    const authorUrl = pageModel ? `/blog?author=${encodeURIComponent(pageModel.author.name)}` : ''
 
     const pageBody = (
         <Box data-testid="amplience-page" layerStyle="page" {...styles.container}>
