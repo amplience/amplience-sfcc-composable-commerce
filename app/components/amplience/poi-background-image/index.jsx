@@ -9,7 +9,7 @@ import useResizeObserver from '@react-hook/resize-observer'
  * Amplience Point of Interest Background Image
  * A container that automatically fits a background image based on a point of interest.
  */
-const AmpliencePOIBackgroundImage = ({image, children, ...otherProps}) => {
+const AmpliencePOIBackgroundImage = ({image, alt, children, ...otherProps}) => {
     const target = useRef(null)
     const [size, setSize] = useState()
     const [imageSize, setImageSize] = useState()
@@ -91,7 +91,7 @@ const AmpliencePOIBackgroundImage = ({image, children, ...otherProps}) => {
     }
 
     return (
-        <Box style={style} ref={target} {...otherProps}>
+        <Box role="img" aria-label={alt} style={style} ref={target} {...otherProps}>
             {children}
         </Box>
     )
@@ -104,6 +104,10 @@ AmpliencePOIBackgroundImage.propTypes = {
      * Amplience image
      */
     image: PropTypes.object,
+    /**
+     * Alt Text
+     */
+    alt: PropTypes.string,
     /**
      * Child content
      */
