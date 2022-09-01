@@ -151,12 +151,9 @@ BlogPage.getProps = async ({req, res, params, location, api, ampClient}) => {
     let page
 
     if (blogId) {
-        const blogKey = 'blog/' + blogId + (blogId2 != null ? '/' + blogId2 : '');
+        const blogKey = 'blog/' + blogId + (blogId2 != null ? '/' + blogId2 : '')
 
-        page = await (
-            await client.fetchContent([{key: blogKey}], {locale: targetLocale})
-        ).pop()
-        console.log(page)
+        page = await (await client.fetchContent([{key: blogKey}], {locale: targetLocale})).pop()
     }
 
     return {
