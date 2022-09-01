@@ -1,16 +1,29 @@
 export default {
     baseStyle: {
+        container: {
+            display: 'flex',
+            flexDirection: 'column'
+        },
         header: {
             display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'center',
+            marginX: ['-1rem', '-1rem', '0']
+        },
+        headerContainer: {
+            display: 'flex',
             flexDirection: 'column',
-            padding: '48px'
+            flex: '1024px',
+            maxWidth: '1024px',
+            padding: ['48px 20px', '48px 20px', '48px']
         },
         topInfo: {
             alignSelf: 'baseline',
             color: 'white',
             padding: '5px 10px',
             margin: '64px 0px 5px 0px',
-            background: 'linear-gradient(90deg, rgba(9,9,121,0.88) 0%, rgba(6,85,171,0.88) 100%)'
+            background: 'linear-gradient(90deg, rgba(9,9,121,0.88) 0%, rgba(6,85,171,0.88) 100%)',
+            fontSize: ['sm', 'sm', 'md']
         },
         title: {
             alignSelf: 'baseline',
@@ -30,12 +43,13 @@ export default {
         },
         author: {
             display: 'flex',
-            marginRight: '20px',
-            alignItems: 'center'
+            marginRight: ['10px', '20px'],
+            alignItems: 'center',
+            flexShrink: 2
         },
         authorImage: {
             borderWidth: '2px',
-            marginRight: '20px'
+            marginRight: ['10px', '20px']
         },
         authorInfo: {
             display: 'flex',
@@ -53,29 +67,43 @@ export default {
         tags: {
             display: 'flex',
             gap: '8px 16px',
-            flexWrap: 'wrap'
+            flexWrap: 'wrap',
+            flex: 1
         },
         tag: {
             display: 'inline-block',
             padding: '4px 8px',
             backgroundColor: 'blue.600',
             color: 'white',
-            fontWeight: '600'
+            fontWeight: '600',
+            fontSize: ['sm', 'sm', 'md']
         },
         category: {
             display: 'inline-block',
             padding: '4px 8px',
             backgroundColor: 'purple.600',
             fontWeight: '600',
-            color: 'white'
+            color: 'white',
+            fontSize: ['sm', 'sm', 'md']
         },
         content: {
             display: 'flex',
+            alignSelf: 'center',
             flexDirection: 'column',
             padding: '30px 20px 20px 20px',
-            margin: '-30px 20px 0 20px',
+            margin: ['-30px 0 0 0', '-30px 0 0 0', '-30px 20px 0 20px'],
             backgroundColor: 'white',
-            gap: '6px'
+            gap: '6px',
+            maxWidth: '1024px'
+        }
+    },
+    sizes: {
+        sm: {
+            header: {
+                marginLeft: '-1rem',
+                marginRight: '-1rem',
+                padding: '0'
+            }
         }
     },
     parts: [

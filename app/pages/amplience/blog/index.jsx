@@ -43,7 +43,7 @@ const BlogPage = ({page, pageVse}) => {
     const styles = useMultiStyleConfig('BlogPage')
 
     const pageBody = (
-        <Box data-testid="amplience-page" layerStyle="page">
+        <Box data-testid="amplience-page" layerStyle="page" {...styles.container}>
             {pageModel == undefined ? (
                 <Skeleton height="20px" />
             ) : (
@@ -54,44 +54,46 @@ const BlogPage = ({page, pageVse}) => {
                         keywords={pageModel.seo?.keywords}
                         noIndex={pageModel.seo?.noindex}
                     />
-                    <AmpliencePOIBackgroundImage image={pageModel.image.image} {...styles.header}>
-                        <Box {...styles.topInfo}>
-                            {new Date(pageModel.date).toDateString()} | {pageModel.readtime} Min
-                        </Box>
-                        <Heading
-                            as="h1"
-                            fontSize={{base: '4xl', md: '5xl', lg: '6xl'}}
-                            maxWidth={{base: '75%', md: '50%', lg: 'md'}}
-                            {...styles.title}
-                        >
-                            {pageModel.seo?.title}
-                        </Heading>
-
-                        <Box {...styles.infoBlock}>
-                            <Box {...styles.author}>
-                                <Avatar
-                                    name={pageModel.author.name}
-                                    src={getImageUrl(pageModel.author.image)}
-                                    size="md"
-                                    {...styles.authorImage}
-                                ></Avatar>
-                                <Box {...styles.authorInfo}>
-                                    <Box {...styles.authorName}>{pageModel.author.name}</Box>
-                                    <Box {...styles.authorRole}>{pageModel.author.role}</Box>
-                                </Box>
+                    <AmpliencePOIBackgroundImage image={pageModel.image.image} {...styles.header} variant={{ sm: 'sm' }}>
+                        <Box {...styles.headerContainer}>
+                            <Box {...styles.topInfo}>
+                                {new Date(pageModel.date).toDateString()} | {pageModel.readtime} Min
                             </Box>
-                            <Box {...styles.tags}>
-                                {pageModel.tags.map((tag, index) => (
-                                    <Box key={index} {...styles.tag}>
-                                        {tag}
-                                    </Box>
-                                ))}
+                            <Heading
+                                as="h1"
+                                fontSize={{base: '4xl', md: '5xl', lg: '6xl'}}
+                                maxWidth={{base: '75%', md: '50%', lg: 'md'}}
+                                {...styles.title}
+                            >
+                                {pageModel.seo?.title}
+                            </Heading>
 
-                                {pageModel.categories.map((category, index) => (
-                                    <Box key={index} {...styles.category}>
-                                        {category.name}
+                            <Box {...styles.infoBlock}>
+                                <Box {...styles.author}>
+                                    <Avatar
+                                        name={pageModel.author.name}
+                                        src={getImageUrl(pageModel.author.image)}
+                                        size="md"
+                                        {...styles.authorImage}
+                                    ></Avatar>
+                                    <Box {...styles.authorInfo}>
+                                        <Box {...styles.authorName}>{pageModel.author.name}</Box>
+                                        <Box {...styles.authorRole}>{pageModel.author.role}</Box>
                                     </Box>
-                                ))}
+                                </Box>
+                                <Box {...styles.tags}>
+                                    {pageModel.tags.map((tag, index) => (
+                                        <Box key={index} {...styles.tag}>
+                                            {tag}
+                                        </Box>
+                                    ))}
+
+                                    {pageModel.categories.map((category, index) => (
+                                        <Box key={index} {...styles.category}>
+                                            {category.name}
+                                        </Box>
+                                    ))}
+                                </Box>
                             </Box>
                         </Box>
                     </AmpliencePOIBackgroundImage>
