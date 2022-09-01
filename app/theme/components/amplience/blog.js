@@ -14,7 +14,7 @@ export default {
             display: 'flex',
             flexDirection: 'column',
             flex: '1024px',
-            maxWidth: '1024px',
+            maxWidth: 'min(100%, 1024px)',
             padding: ['48px 20px', '48px 20px', '48px']
         },
         topInfo: {
@@ -94,7 +94,7 @@ export default {
             margin: ['-30px 0 0 0', '-30px 0 0 0', '-30px 20px 0 20px'],
             backgroundColor: 'white',
             gap: '6px',
-            maxWidth: '1024px'
+            maxWidth: 'min(100%, 1024px)'
         }
     },
     sizes: {

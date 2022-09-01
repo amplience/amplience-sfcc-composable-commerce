@@ -120,7 +120,13 @@ const routes = [
     },
     {
         path: '/blog/:blogId',
-        component: BlogPage
+        component: BlogPage,
+        exact: true
+    },
+    {
+        path: '/blog/:blogId/:blogId2',
+        component: BlogPage,
+        exact: true
     },
     {
         path: '*',

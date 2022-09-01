@@ -104,6 +104,11 @@ export const useAmpRtv = (method, ampVizSdk) => {
         ampVizSdk = useContext(RealtimeVisualization).ampVizSdk
     }
 
+    const options = {
+        format: 'inline',
+        depth: 'all'
+    }
+
     useEffect(() => {
         let removeChangedSubscription
 
@@ -114,7 +119,7 @@ export const useAmpRtv = (method, ampVizSdk) => {
 
             removeChangedSubscription = ampVizSdk.form.changed((model) => {
                 method(model)
-            })
+            }, options)
         }
 
         return () => {

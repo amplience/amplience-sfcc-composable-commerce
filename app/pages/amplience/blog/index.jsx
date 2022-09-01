@@ -54,7 +54,7 @@ const BlogPage = ({page, pageVse}) => {
                         keywords={pageModel.seo?.keywords}
                         noIndex={pageModel.seo?.noindex}
                     />
-                    <AmpliencePOIBackgroundImage image={pageModel.image.image} {...styles.header} variant={{ sm: 'sm' }}>
+                    <AmpliencePOIBackgroundImage image={pageModel.image?.image} {...styles.header}>
                         <Box {...styles.headerContainer}>
                             <Box {...styles.topInfo}>
                                 {new Date(pageModel.date).toDateString()} | {pageModel.readtime} Min
@@ -122,7 +122,7 @@ BlogPage.shouldGetProps = ({previousLocation, location}) =>
     !previousLocation || previousLocation.pathname !== location.pathname
 
 BlogPage.getProps = async ({req, res, params, location, api, ampClient}) => {
-    const {blogId} = params
+    const {blogId, blogId2} = params
 
     const pageVse = req?.query['pagevse']
 
@@ -151,9 +151,12 @@ BlogPage.getProps = async ({req, res, params, location, api, ampClient}) => {
     let page
 
     if (blogId) {
+        const blogKey = 'blog/' + blogId + (blogId2 != null ? '/' + blogId2 : '');
+
         page = await (
-            await client.fetchContent([{key: 'blog/' + blogId}], {locale: targetLocale})
+            await client.fetchContent([{key: blogKey}], {locale: targetLocale})
         ).pop()
+        console.log(page)
     }
 
     return {
