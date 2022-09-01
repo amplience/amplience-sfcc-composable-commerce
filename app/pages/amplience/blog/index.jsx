@@ -35,6 +35,12 @@ const BlogPage = ({page, pageVse}) => {
 
     const {categories} = useCategories()
 
+    useEffect(() => {
+        if (pageModel != page) {
+            setPageModel(page)
+        }
+    }, [page])
+
     useAmpRtv((model) => {
         // handle form model change
         setPageModel(model.content)
