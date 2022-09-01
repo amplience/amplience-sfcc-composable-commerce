@@ -2,12 +2,15 @@ import React, { useState, useEffect } from 'react'
 // Algolia
 import algoliasearch from 'algoliasearch/lite';
 
+import { useIntl } from 'react-intl'
+
 // Components
 import Button from '../../../components/amplience/button';
-import { SearchIcon } from '../../../components/icons';
+import { SearchIcon, ChevronLeftIcon, ChevronRightIcon } from '../../../components/icons';
 import {
     Box,
     Heading,
+    Flex,
     SimpleGrid,
     Input,
     InputGroup,
@@ -16,7 +19,8 @@ import {
     Text,
     Image,
     useMultiStyleConfig,
-    Select
+    Select,
+    HStack
 } from '@chakra-ui/react'
 
 
@@ -28,6 +32,8 @@ import {
  * categories and products, data is from local file.
  */
 const BlogLanding = (props) => {
+    const paginationstyles = useMultiStyleConfig('Pagination')
+    const intl = useIntl()
 
     const [results, setResults] = useState([]);
     const [query, setQuery] = useState('');
@@ -37,6 +43,10 @@ const BlogLanding = (props) => {
     const [tag, setTag] = useState('');
     const [categories, setCategories] = useState([]);
     const [category, setCategory] = useState('');
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [maxIndex, setMaxIndex] = useState(0);
+    const [numBlogs, setNumBlogs] = useState(0);
+    const [pages, setPages] = useState([]);
 
     const algoliaID = '4BS5I6EVVD'
     const algoliaKey = 'fa9be8756d95a97f0021f0aba6f02bc4'
@@ -72,19 +82,32 @@ const BlogLanding = (props) => {
         index.search(query, {
             facets: ['tags', 'author.name', 'categories.name'],
             facetFilters: filtersArray,
-            hitsPerPage: numItems
+            hitsPerPage: numItems,
+            page: currentIndex
         }).then((results) => {
+
+            setMaxIndex(results.nbPages)
+            setNumBlogs(results.nbHits)
+            // Need to convert pages into an Array
+            console.log("maxIndex", maxIndex)
+            let pagesArray = []
+            for (var i = 0; i < maxIndex; i++) {
+                pagesArray.push(i + 1);
+                console.log("pushing i - ", i + 1)
+            }
+            console.log("pagesArray", pagesArray)
+            setPages(pagesArray)
+            console.log("pages", pages)
             setTags(facetHitsToArray(results.facets.tags))
             setCategories(facetHitsToArray(results.facets['categories.name']))
             setAuthors(facetHitsToArray(results.facets['author.name']))
-            // Need to set the results of the renders
             setResults(results.hits)
 
             console.log("Combined results:", results);
         });
     }
 
-    useEffect(fetchResults, [query, tag, author, category]);
+    useEffect(fetchResults, [query, tag, author, category, currentIndex, maxIndex]);
 
     const onSearchInputChange = (e) => {
         const input = e.target.value;
@@ -104,6 +127,11 @@ const BlogLanding = (props) => {
         setCategory(input)
     }
 
+    const onPaginationChanged = (e) => {
+        const input = e.target.value;
+        setCurrentIndex(input - 1)
+    }
+
 
 
     function BlogCard(props) {
@@ -115,25 +143,26 @@ const BlogLanding = (props) => {
         const content = props.item
         const styles = useMultiStyleConfig('ProductTile')
 
+
         /// the URL should be the delivery key
         const linkurl = `/${content.deliveryKey}`;
-        const imageurl = `${content.image}&aspect-1:1&w=400`
+        const imageurl = `${content.image}&sm=aspect&aspect=350:233&w=688`
         return (
             <Box {...styles.container}>
-
-
-                {content.name && (
-                    <Heading as="h1">{content.name}</Heading>
-                )}
                 {content.image && (
                     <Image
                         fit={'cover'}
-                        align={'center'}
+                        //align={'center'}
                         width={'100%'}
-                        height={'100%'}
+                        height={'233'}
                         src={imageurl}
                         alt={content.name}
                     />
+                )}
+                {content.name && (
+                     <Heading as="h2" fontSize="xl" textAlign="left">
+                     {content.name}
+                 </Heading>
                 )}
                 {content.description && (
                     <Text color={'gray.700'} fontWeight={600}>
@@ -192,6 +221,9 @@ const BlogLanding = (props) => {
                         }
                     </Select>
                 </SimpleGrid>
+                <Text>{numBlogs} Blog Posts</Text>
+
+
             </VStack>
             <SimpleGrid
                 columns={[1, 2, 3, 4]}
@@ -204,6 +236,14 @@ const BlogLanding = (props) => {
                     })
                 }
             </SimpleGrid>
+            <Text>Page {currentIndex + 1} of {maxIndex}</Text>
+            <Select placeholder='Select Page' onChange={(e) => onPaginationChanged(e)}>
+                {
+                    pages.map((item, index) => {
+                        return <option value={item}>{item}</option>
+                    })
+                }
+            </Select>
         </Box>
     )
 }
