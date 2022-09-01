@@ -1,12 +1,16 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 // Algolia
-import algoliasearch from 'algoliasearch/lite';
+import algoliasearch from 'algoliasearch/lite'
 
 import { useIntl } from 'react-intl'
 
+import amplience from '/config/amplience/default.js'
+import {AmplienceContext} from '../../../contexts/amplience'
+
 // Components
-import Button from '../../../components/amplience/button';
-import { SearchIcon, ChevronLeftIcon, ChevronRightIcon } from '../../../components/icons';
+import Button from '../../../components/amplience/button'
+import { SearchIcon, ChevronLeftIcon, ChevronRightIcon } from '../../../components/icons'
+import useLocale from '../../../hooks/use-locale'
 import {
     Box,
     Heading,
@@ -35,6 +39,14 @@ const BlogLanding = (props) => {
     const paginationstyles = useMultiStyleConfig('Pagination')
     const intl = useIntl()
 
+    const locale = useLocale()
+    const siteLocale = locale.id.toLowerCase()
+
+    const {vse} = useContext(AmplienceContext)
+
+    
+
+
     const [results, setResults] = useState([]);
     const [query, setQuery] = useState('');
     const [authors, setAuthors] = useState([]);
@@ -50,8 +62,16 @@ const BlogLanding = (props) => {
 
     const algoliaID = '4BS5I6EVVD'
     const algoliaKey = 'fa9be8756d95a97f0021f0aba6f02bc4'
+    let indexType = vse ? 'staging' : 'production';
+    // const algoliaIndexName = amplience.hub+'.blog-'+indexType+'-'+siteLocale;
     const algoliaIndexName = 'sfcccompdev.blog-staging'
     const numItems = 8;
+
+    /*
+    const url = new URL(window.location);
+    url.searchParams.set('newParam', 'value');
+    window.history.pushState(null, '', url.toString());
+    */
 
     const searchClient = algoliasearch(algoliaID, algoliaKey);
     const index = searchClient.initIndex(algoliaIndexName);
@@ -65,9 +85,24 @@ const BlogLanding = (props) => {
 
     }
 
+    useEffect(function mount() {
+        const url = new URL(window.location);
+        const queryParam = url.searchParams.get('query')
+        const pageParam = url.searchParams.get('page')
+        const authorParam = url.searchParams.get('author')
+        const categoryParam = url.searchParams.get('category')
+        const tagParam = url.searchParams.get('tag')
+
+        setCurrentIndex(pageParam || 0)
+        setAuthor(authorParam || '')
+        setCategory(categoryParam || '')
+        setTag(tagParam || '')
+        setQuery(queryParam || '')
+
+    }, []);
+
     const fetchResults = () => {
         // Lets get the facets
-        console.log("What is the query, ", query)
         let filtersArray = []
         if (tag) {
             filtersArray.push('tags:' + tag)
@@ -78,7 +113,6 @@ const BlogLanding = (props) => {
         if (category) {
             filtersArray.push('categories.name:' + category)
         }
-        console.log(filtersArray)
         index.search(query, {
             facets: ['tags', 'author.name', 'categories.name'],
             facetFilters: filtersArray,
@@ -88,16 +122,11 @@ const BlogLanding = (props) => {
 
             setMaxIndex(results.nbPages)
             setNumBlogs(results.nbHits)
-            // Need to convert pages into an Array
-            console.log("maxIndex", maxIndex)
             let pagesArray = []
             for (var i = 0; i < maxIndex; i++) {
                 pagesArray.push(i + 1);
-                console.log("pushing i - ", i + 1)
             }
-            console.log("pagesArray", pagesArray)
             setPages(pagesArray)
-            console.log("pages", pages)
             setTags(facetHitsToArray(results.facets.tags))
             setCategories(facetHitsToArray(results.facets['categories.name']))
             setAuthors(facetHitsToArray(results.facets['author.name']))
@@ -109,26 +138,38 @@ const BlogLanding = (props) => {
 
     useEffect(fetchResults, [query, tag, author, category, currentIndex, maxIndex]);
 
+    const setUrlParams = (paramname, paramvalue) =>{
+        const url = new URL(window.location);
+        url.searchParams.set(paramname, paramvalue);
+        window.history.pushState(null, '', url.toString());
+    }
+
     const onSearchInputChange = (e) => {
         const input = e.target.value;
+        setUrlParams('query', input)
+        // Should set the query
         setQuery(input)
     }
 
     const onTagDropDownChanged = (e) => {
         const input = e.target.value;
+        setUrlParams('tag', input)
         setTag(input)
     }
     const onAuthorDropDownChanged = (e) => {
         const input = e.target.value;
+        setUrlParams('author', input)
         setAuthor(input)
     }
     const onCategoryDropDownChanged = (e) => {
         const input = e.target.value;
+        setUrlParams('category', input)
         setCategory(input)
     }
 
     const onPaginationChanged = (e) => {
         const input = e.target.value;
+        setUrlParams('page', input)
         setCurrentIndex(input - 1)
     }
 
