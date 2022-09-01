@@ -7,10 +7,10 @@ const md = require('markdown-it')('commonmark', {html: true, breaks: true})
  * Amplience Markdown Component
  * Renders markdown as HTML.
  */
-const AmplienceMarkdown = ({content}) => {
+const AmplienceMarkdown = ({content, ...otherProps}) => {
     const html = md.render(content ?? '')
 
-    return <div dangerouslySetInnerHTML={{__html: html}}></div>
+    return <div dangerouslySetInnerHTML={{__html: html}} {...otherProps}></div>
 }
 
 AmplienceMarkdown.displayName = 'AmplienceMarkdown'
