@@ -3,7 +3,8 @@
     "body" : {
       "_meta" : {
         "name" : "Eva Emery - Author",
-        "schema" : "https://sfcc.com/components/author"
+        "schema" : "https://sfcc.com/components/author",
+        "deliveryKey": "author/eva-emery"
       },
       "image" : {
         "_meta" : {

@@ -3,7 +3,8 @@
     "body" : {
       "_meta" : {
         "name" : "Maja Vendulka - Author",
-        "schema" : "https://sfcc.com/components/author"
+        "schema" : "https://sfcc.com/components/author",
+        "deliveryKey": "author/maja-vendulka"
       },
       "image" : {
         "_meta" : {

@@ -13,6 +13,16 @@
     
     "type": "object",
     "properties": {
+        "_meta": {
+            "title": "Author slug",
+            "properties": {
+                "deliveryKey": {
+                    "title": "Key",
+                    "type": "string",
+                    "pattern": "author\/.*"
+                }
+            }
+        },
         "name": {
             "title": "Name",
             "description": "The name of the author.",
@@ -55,5 +65,5 @@
             }
         }
     },
-    "propertyOrder": ["name", "image", "role", "about"]
+    "propertyOrder": ["_meta","name", "image", "role", "about"]
 }

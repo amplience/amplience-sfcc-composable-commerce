@@ -3,7 +3,8 @@
     "body" : {
       "_meta" : {
         "name" : "Mathis Wynnstan - Author",
-        "schema" : "https://sfcc.com/components/author"
+        "schema" : "https://sfcc.com/components/author",
+        "deliveryKey": "author/mathis-wynnstan"
       },
       "image" : {
         "_meta" : {

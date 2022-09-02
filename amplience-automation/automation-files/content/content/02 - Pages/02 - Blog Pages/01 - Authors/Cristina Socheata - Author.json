@@ -3,7 +3,8 @@
     "body" : {
       "_meta" : {
         "name" : "Cristina Socheata - Author",
-        "schema" : "https://sfcc.com/components/author"
+        "schema" : "https://sfcc.com/components/author",
+        "deliveryKey": "author/cristina-socheata"
       },
       "image" : {
         "_meta" : {

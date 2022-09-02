@@ -3,7 +3,8 @@
     "body" : {
       "_meta" : {
         "name" : "Bala Neha - Author",
-        "schema" : "https://sfcc.com/components/author"
+        "schema" : "https://sfcc.com/components/author",
+        "deliveryKey": "author/bala-neha"
       },
       "image" : {
         "_meta" : {

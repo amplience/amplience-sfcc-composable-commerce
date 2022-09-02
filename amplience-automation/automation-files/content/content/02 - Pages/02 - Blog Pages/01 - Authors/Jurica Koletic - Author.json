@@ -3,7 +3,8 @@
     "body" : {
       "_meta" : {
         "name" : "Jurica Koletic - Author",
-        "schema" : "https://sfcc.com/components/author"
+        "schema" : "https://sfcc.com/components/author",
+        "deliveryKey": "author/jurica-koletic"
       },
       "image" : {
         "_meta" : {
