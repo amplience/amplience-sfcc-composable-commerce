@@ -5,7 +5,7 @@ import {getTargetLocale} from '../../../utils/locale'
 import {useMultiStyleConfig} from '@chakra-ui/react'
 
 // Components
-import {Avatar, Box, Heading, Skeleton} from '@chakra-ui/react'
+import {Box, Heading, Skeleton} from '@chakra-ui/react'
 
 // Project Components
 import Seo from '../../../components/amplience/seo'
@@ -13,6 +13,7 @@ import Link from '../../../components/link'
 
 // Amplience Rich Text Component
 import AmplienceRichText from '../../../components/amplience/rich-text'
+import Author from '../../../components/amplience/author'
 
 // Constants
 import {MAX_CACHE_AGE} from '../../../constants'
@@ -21,7 +22,6 @@ import {useCategories} from '../../../hooks/use-categories'
 import {AmplienceContextProvider} from '../../../contexts/amplience'
 import {AmplienceAPI} from '../../../amplience-api'
 
-import {getImageUrl} from '../../../utils/amplience/image'
 import AmpliencePOIBackgroundImage from '../../../components/amplience/poi-background-image'
 
 /**
@@ -81,22 +81,7 @@ const BlogPage = ({page, pageVse}) => {
                             </Heading>
 
                             <Box {...styles.infoBlock}>
-                                <Box {...styles.author}>
-                                    <Link to={authorUrl}>
-                                        <Avatar
-                                            name={pageModel.author.name}
-                                            src={getImageUrl(pageModel.author.image)}
-                                            size="md"
-                                            {...styles.authorImage}
-                                        ></Avatar>
-                                    </Link>
-                                    <Box {...styles.authorInfo}>
-                                        <Link to={authorUrl} {...styles.authorName}>
-                                            {pageModel.author.name}
-                                        </Link>
-                                        <Box {...styles.authorRole}>{pageModel.author.role}</Box>
-                                    </Box>
-                                </Box>
+                                <Author content={pageModel.author} />
                                 <Box {...styles.tags}>
                                     {pageModel.tags.map((tag, index) => (
                                         <Link

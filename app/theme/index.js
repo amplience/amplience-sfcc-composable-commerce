@@ -55,6 +55,9 @@ import ImageGallery from './components/project/image-gallery'
 import PreviewHeader from './components/amplience/preview-header'
 import AmplienceHeader from './components/amplience/header'
 import BlogPage from './components/amplience/blog'
+import BlogLanding from './components/amplience/blog-landing'
+import BlogCard from './components/amplience/blog-card'
+import Author from './components/amplience/author'
 
 // Please refer to the Chakra-Ui theme customization docs found
 // here https://chakra-ui.com/docs/theming/customize-theme to learn
@@ -108,7 +111,10 @@ const overrides = {
         PreviewHeader,
         AmplienceHeader,
         AmplienceListMenu: ListMenu,
-        BlogPage
+        BlogPage,
+        BlogLanding,
+        BlogCard,
+        Author
     }
 }
 
