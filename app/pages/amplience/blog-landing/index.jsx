@@ -49,6 +49,7 @@ const BlogLanding = () => {
     const [maxIndex, setMaxIndex] = useState(0)
     const [numBlogs, setNumBlogs] = useState(0)
     const [pages, setPages] = useState([])
+    const [userSearch, setUserSearch] = useState(false)
 
     const algoliaID = amplience.searchAppID
     const algoliaKey = amplience.searchAPIKey
@@ -81,7 +82,7 @@ const BlogLanding = () => {
         const categoryParam = url.searchParams.get('category')
         const tagParam = url.searchParams.get('tag')
 
-        setCurrentIndex(pageParam || 0)
+        setCurrentIndex(Number(pageParam) - 1 || 0)
         setAuthor(authorParam || '')
         setCategory(categoryParam || '')
         setTag(tagParam || '')
@@ -125,7 +126,8 @@ const BlogLanding = () => {
     }
 
     const fetchResultsFirstPage = () => {
-        if (currentIndex !== 0) {
+        if (currentIndex !== 0 && userSearch) {
+            setUrlParams('page', 1)
             setCurrentIndex(0)
         } else {
             fetchResults()
@@ -139,6 +141,8 @@ const BlogLanding = () => {
         const url = new URL(window.location)
         url.searchParams.set(paramname, paramvalue)
         window.history.pushState(null, '', url.toString())
+
+        setUserSearch(true)
     }
 
     const onSearchInputChange = (e) => {
