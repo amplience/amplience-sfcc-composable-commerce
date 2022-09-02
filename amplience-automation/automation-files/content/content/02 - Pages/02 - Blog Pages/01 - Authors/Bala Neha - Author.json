@@ -15,19 +15,55 @@
         "defaultHost" : "cdn.media.amplience.net"
       },
       "role" : {
-        "values" : [ {
-          "locale" : "en-US",
-          "value" : "Digital Content Assistant"
-        } ],
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "Digital Content Assistant"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "Assistant de contenu numérique"
+          },
+          {
+            "locale": "de-DE",
+            "value": "Assistent für digitale Inhalte"
+          },
+          {
+            "locale": "es-ES",
+            "value": "Asistente de Contenidos Digitales"
+          },
+          {
+            "locale": "it-IT",
+            "value": "Assistente ai contenuti digitali"
+          }
+        ],
         "_meta" : {
           "schema" : "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
         }
       },
       "about" : {
-        "values" : [ {
-          "locale" : "en-US",
-          "value" : "You can find her browsing the active section or picking up new PJs.\n\nCheck out Bella's features for trending men’s style and inspo for fun looks for the littles.\n\nA fan of live art, Bella also reviews theatre productions for Words Of Colour, a platform devoted to inspiring and facilitating writers.\n\nWhen she’s not typing away, she spends her free time exploring and practicing photography."
-        } ],
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "You can find her browsing the active section or picking up new PJs. Check out Bella's features for trending men’s style and inspo for fun looks for the littles. A fan of live art, Bella also reviews theatre productions for Words Of Colour, a platform devoted to inspiring and facilitating writers. When she’s not typing away, she spends her free time exploring and practicing photography."
+          },
+          {
+            "locale": "fr-FR",
+            "value": "Vous pouvez la trouver en parcourant la section active ou en choisissant de nouveaux pyjamas. Découvrez les caractéristiques de Bella pour le style masculin tendance et l'inspiration pour des looks amusants pour les tout-petits. Adepte de l'art vivant, Bella passe également en revue des productions théâtrales pour Words Of Colour, une plateforme consacrée à inspirer et à faciliter les écrivains. Lorsqu'elle n'est pas en train de taper, elle passe son temps libre à explorer et à pratiquer la photographie."
+          },
+          {
+            "locale": "de-DE",
+            "value": "Sie können sie beim Stöbern im aktiven Bereich oder beim Abholen neuer PJs finden. Schauen Sie sich Bellas Features für trendigen Herrenstil und Inspiration für lustige Looks für die Kleinen an. Als Fan von Live-Kunst rezensiert Bella auch Theaterproduktionen für Words Of Colour, eine Plattform, die sich der Inspiration und Förderung von Schriftstellern widmet. Wenn sie nicht gerade tippt, verbringt sie ihre Freizeit damit, Fotografie zu erforschen und zu üben."
+          },
+          {
+            "locale": "es-ES",
+            "value": "Puedes encontrarla navegando en la sección activa o comprando pijamas nuevos. Echa un vistazo a las características de Bella para ver el estilo masculino de moda y la inspiración para looks divertidos para los más pequeños. Fanática del arte en vivo, Bella también reseña producciones teatrales para Words Of Colour, una plataforma dedicada a inspirar y facilitar a los escritores. Cuando no está escribiendo, pasa su tiempo libre explorando y practicando fotografía."
+          },
+          {
+            "locale": "it-IT",
+            "value": "Puoi trovarla sfogliando la sezione attiva o raccogliendo nuovi pigiami. Dai un'occhiata alle caratteristiche di Bella per lo stile maschile di tendenza e inspo per i look divertenti per i più piccoli. Appassionata di live art, Bella recensisce anche produzioni teatrali per Words Of Colour, una piattaforma dedicata a ispirare e facilitare gli scrittori. Quando non scrive, trascorre il suo tempo libero esplorando e praticando la fotografia."
+          }
+        ],
         "_meta" : {
           "schema" : "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
         }

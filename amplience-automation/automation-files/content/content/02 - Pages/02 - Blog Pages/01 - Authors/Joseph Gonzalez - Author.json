@@ -15,19 +15,55 @@
         "defaultHost" : "cdn.media.amplience.net"
       },
       "role" : {
-        "values" : [ {
-          "locale" : "en-US",
-          "value" : "Digital Content Manager"
-        } ],
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "Digital Content Manager"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "Gestionnaire de contenu numérique"
+          },
+          {
+            "locale": "de-DE",
+            "value": "Manager für digitale Inhalte"
+          },
+          {
+            "locale": "es-ES",
+            "value": "Gestor de contenidos digitales"
+          },
+          {
+            "locale": "it-IT",
+            "value": "Gestore di contenuti digitali"
+          }
+        ],
         "_meta" : {
           "schema" : "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
         }
       },
       "about" : {
-        "values" : [ {
-          "locale" : "en-US",
-          "value" : "Has over 14 years’ experience in fashion journalism.\n\n Joseph oversees all editorial content and strategic updates for the website.\n\n With a love of face-to-face interviews, reactive trend stories and all things homeware, you’ll find up-to-the-minute content from Joseph you won’t want to miss.\n\n In a previous careers, Joseph was Deputy Catwalk Editor at WGSN.\n\n Follow him for travel inspo and the best places to eat in London."
-        } ],
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "Has over 14 years’ experience in fashion journalism. Joseph oversees all editorial content and strategic updates for the website. With a love of face-to-face interviews, reactive trend stories and all things homeware, you’ll find up-to-the-minute content from Joseph you won’t want to miss. In a previous careers, Joseph was Deputy Catwalk Editor at WGSN. Follow him for travel inspo and the best places to eat in London."
+          },
+          {
+            "locale": "fr-FR",
+            "value": "A plus de 14 ans d'expérience dans le journalisme de mode. Joseph supervise tout le contenu éditorial et les mises à jour stratégiques du site Web. Avec un amour des interviews en face à face, des histoires de tendances réactives et de tout ce qui concerne les articles pour la maison, vous trouverez du contenu à la minute près de Joseph que vous ne voudrez pas manquer. Dans une carrière précédente, Joseph était rédacteur en chef adjoint des défilés chez WGSN. Suivez-le pour des inspirations de voyage et les meilleurs endroits où manger à Londres."
+          },
+          {
+            "locale": "de-DE",
+            "value": "Hat über 14 Jahre Erfahrung im Modejournalismus. Joseph überwacht alle redaktionellen Inhalte und strategischen Updates für die Website. Mit einer Vorliebe für persönliche Interviews, reaktive Trendgeschichten und alles rund um Haushaltswaren finden Sie topaktuelle Inhalte von Joseph, die Sie nicht missen möchten. In einer früheren Karriere war Joseph Deputy Catwalk Editor bei WGSN. Folgen Sie ihm für Reiseinspirationen und die besten Restaurants in London."
+          },
+          {
+            "locale": "es-ES",
+            "value": "Tiene más de 14 años de experiencia en periodismo de moda. Joseph supervisa todo el contenido editorial y las actualizaciones estratégicas del sitio web. Con un amor por las entrevistas cara a cara, las historias de tendencias reactivas y todo lo relacionado con artículos para el hogar, encontrará contenido actualizado de Joseph que no querrá perderse. En carreras anteriores, Joseph fue editor adjunto de pasarelas en WGSN. Síguelo para obtener información sobre viajes y los mejores lugares para comer en Londres."
+          },
+          {
+            "locale": "it-IT",
+            "value": "Ha oltre 14 anni di esperienza nel giornalismo di moda. Joseph supervisiona tutti i contenuti editoriali e gli aggiornamenti strategici per il sito web. Con la passione per le interviste faccia a faccia, le storie di tendenza reattive e tutto ciò che riguarda gli articoli per la casa, troverai contenuti aggiornati di Joseph che non vorrai perderti. In una precedente carriera, Joseph è stato vicedirettore di Catwalk presso WGSN. Seguilo per informazioni sui viaggi e sui migliori posti dove mangiare a Londra."
+          }
+        ],
         "_meta" : {
           "schema" : "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
         }

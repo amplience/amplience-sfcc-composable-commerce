@@ -15,19 +15,55 @@
         "defaultHost" : "cdn.media.amplience.net"
       },
       "role" : {
-        "values" : [ {
-          "locale" : "en-US",
-          "value" : "Digital Content Creator / Copywriter"
-        } ],
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "Digital Content Creator / Copywriter"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "Créateur de contenu numérique / Rédacteur"
+          },
+          {
+            "locale": "de-DE",
+            "value": "Ersteller digitaler Inhalte / Texter"
+          },
+          {
+            "locale": "es-ES",
+            "value": "Creador de contenido digital / redactor"
+          },
+          {
+            "locale": "it-IT",
+            "value": "Creatore di contenuti digitali / Copywriter"
+          }
+        ],
         "_meta" : {
           "schema" : "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
         }
       },
       "about" : {
-        "values" : [ {
-          "locale" : "en-US",
-          "value" : "A Fashion Blogger and content creator on YouTube. Fashion and Social Media are Maja’s true passions. Being that she is a millennial, sharing is just part of her nature. Maja am able to share what I love with the world through her YouTube channel and my Blog. She can be as creative and real as she wants without getting the bosses’ approval. “I can talk about the beauty and fashion industry along with developing creative content for products, looks, travel, etc. Being on YouTube forces me to know all about social media and how to connect with my viewers on current trends.”"
-        } ],
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "A Fashion Blogger and content creator on YouTube. Fashion and Social Media are Maja’s true passions. Being that she is a millennial, sharing is just part of her nature. Maja am able to share what I love with the world through her YouTube channel and my Blog. She can be as creative and real as she wants without getting the bosses’ approval. “I can talk about the beauty and fashion industry along with developing creative content for products, looks, travel, etc. Being on YouTube forces me to know all about social media and how to connect with my viewers on current trends.”"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "Blogueuse mode et créatrice de contenu sur YouTube. La mode et les médias sociaux sont les véritables passions de Maja. Étant une millénaire, le partage fait partie de sa nature. Maja est capable de partager ce que j'aime avec le monde via sa chaîne YouTube et mon blog. Elle peut être aussi créative et réelle qu'elle le souhaite sans obtenir l'approbation des patrons. \"Je peux parler de l'industrie de la beauté et de la mode tout en développant du contenu créatif pour les produits, les looks, les voyages, etc. Être sur YouTube m'oblige à tout savoir sur les médias sociaux et comment communiquer avec mes téléspectateurs sur les tendances actuelles.\""
+          },
+          {
+            "locale": "de-DE",
+            "value": "Ein Modeblogger und Content Creator auf YouTube. Mode und Social Media sind Majas wahre Leidenschaften. Da sie ein Millennial ist, ist das Teilen nur ein Teil ihrer Natur. Maja kann das, was ich liebe, über ihren YouTube-Kanal und meinen Blog mit der Welt teilen. Sie kann so kreativ und echt sein, wie sie will, ohne die Zustimmung der Chefs zu bekommen. „Ich kann über die Schönheits- und Modebranche sprechen und kreative Inhalte für Produkte, Looks, Reisen usw. entwickeln. Auf YouTube zu sein, zwingt mich dazu, alles über soziale Medien zu wissen und wie ich mit meinen Zuschauern über aktuelle Trends in Kontakt treten kann.“"
+          },
+          {
+            "locale": "es-ES",
+            "value": "Blogger de moda y creadora de contenido en YouTube. La moda y las redes sociales son las verdaderas pasiones de Maja. Siendo que ella es una millennial, compartir es solo parte de su naturaleza. Maja puede compartir lo que amo con el mundo a través de su canal de YouTube y mi Blog. Puede ser tan creativa y real como quiera sin obtener la aprobación de los jefes. “Puedo hablar sobre la industria de la belleza y la moda junto con el desarrollo de contenido creativo para productos, looks, viajes, etc. Estar en YouTube me obliga a saber todo sobre las redes sociales y cómo conectarme con mis espectadores sobre las tendencias actuales”."
+          },
+          {
+            "locale": "it-IT",
+            "value": "Un fashion blogger e creatore di contenuti su YouTube. La moda e i social media sono le vere passioni di Maja. Essendo che è una millenaria, la condivisione è solo parte della sua natura. Maja è in grado di condividere ciò che amo con il mondo attraverso il suo canale YouTube e il mio blog. Può essere creativa e reale quanto vuole senza ottenere l'approvazione dei capi. \"Posso parlare dell'industria della bellezza e della moda insieme allo sviluppo di contenuti creativi per prodotti, look, viaggi, ecc. Essere su YouTube mi costringe a sapere tutto sui social media e su come entrare in contatto con i miei spettatori sulle tendenze attuali\"."
+          }
+        ],
         "_meta" : {
           "schema" : "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
         }

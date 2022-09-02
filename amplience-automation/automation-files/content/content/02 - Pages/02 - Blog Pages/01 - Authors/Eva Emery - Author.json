@@ -15,19 +15,55 @@
         "defaultHost" : "cdn.media.amplience.net"
       },
       "role" : {
-        "values" : [ {
-          "locale" : "en-US",
-          "value" : "Digital Content Assistant"
-        } ],
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "Digital Content Assistant"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "Assistant de contenu numérique"
+          },
+          {
+            "locale": "de-DE",
+            "value": "Assistent für digitale Inhalte"
+          },
+          {
+            "locale": "es-ES",
+            "value": "Asistente de Contenidos Digitales"
+          },
+          {
+            "locale": "it-IT",
+            "value": "Assistente ai contenuti digitali"
+          }
+        ],
         "_meta" : {
           "schema" : "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
         }
       },
       "about" : {
-        "values" : [ {
-          "locale" : "en-US",
-          "value" : "Previously a visual merchandiser, Eva is obsessed with styling and creating new looks, getting inspo from street style and social media to find key pieces for her wardrobe.\n\n Her must-have’s include oversized men’s loungewear, makeup brushes and of course, numerous pairs of fluffy socks.\n\n Check out Eva’s features for the lowdown on our latest menswear collections plus styling hacks for the little ones in your life."
-        } ],
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "Previously a visual merchandiser, Eva is obsessed with styling and creating new looks, getting inspo from street style and social media to find key pieces for her wardrobe. Her must-have’s include oversized men’s loungewear, makeup brushes and of course, numerous pairs of fluffy socks. Check out Eva’s features for the lowdown on our latest menswear collections plus styling hacks for the little ones in your life."
+          },
+          {
+            "locale": "fr-FR",
+            "value": "Auparavant marchandiseuse visuelle, Eva est obsédée par le style et la création de nouveaux looks, s'inspirant du street style et des médias sociaux pour trouver des pièces clés pour sa garde-robe. Ses incontournables incluent des vêtements de détente pour hommes surdimensionnés, des pinceaux de maquillage et bien sûr, de nombreuses paires de chaussettes moelleuses. Découvrez les caractéristiques d'Eva pour découvrir nos dernières collections de vêtements pour hommes ainsi que des astuces de style pour les plus petits de votre vie."
+          },
+          {
+            "locale": "de-DE",
+            "value": "Eva, früher Visual Merchandiserin, ist besessen vom Styling und der Kreation neuer Looks, wobei sie sich von Streetstyle und sozialen Medien inspirieren lässt, um Schlüsselstücke für ihre Garderobe zu finden. Zu ihren Must-haves gehören übergroße Herren-Loungewear, Make-up-Pinsel und natürlich zahlreiche Paar flauschige Socken. Schauen Sie sich Evas Features an, um mehr über unsere neuesten Herrenkollektionen und Styling-Hacks für die Kleinen in Ihrem Leben zu erfahren."
+          },
+          {
+            "locale": "es-ES",
+            "value": "Eva, que anteriormente se dedicó a la comercialización visual, está obsesionada con el estilo y la creación de nuevos estilos, inspirándose en el estilo callejero y las redes sociales para encontrar piezas clave para su guardarropa. Sus artículos imprescindibles incluyen ropa de casa extragrande para hombre, brochas de maquillaje y, por supuesto, numerosos pares de calcetines esponjosos. Echa un vistazo a las características de Eva para conocer los detalles de nuestras últimas colecciones de ropa masculina, además de trucos de estilo para los más pequeños de tu vida."
+          },
+          {
+            "locale": "it-IT",
+            "value": "In precedenza una visual merchandiser, Eva è ossessionata dallo styling e dalla creazione di nuovi look, ricevendo informazioni dallo street style e dai social media per trovare pezzi chiave per il suo guardaroba. I suoi must-have includono abbigliamento da uomo oversize, pennelli per il trucco e, naturalmente, numerose paia di morbidi calzini. Dai un'occhiata alle caratteristiche di Eva per scoprire le nostre ultime collezioni di abbigliamento maschile e i trucchi per lo styling per i più piccoli della tua vita."
+          }
+        ],
         "_meta" : {
           "schema" : "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
         }

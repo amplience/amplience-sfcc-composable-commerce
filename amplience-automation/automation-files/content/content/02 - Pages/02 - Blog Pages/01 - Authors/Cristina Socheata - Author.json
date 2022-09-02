@@ -15,19 +15,55 @@
         "defaultHost" : "cdn.media.amplience.net"
       },
       "role" : {
-        "values" : [ {
-          "locale" : "en-US",
-          "value" : "Digital Content Editor"
-        } ],
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "Digital Content Editor"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "Éditeur de contenu numérique"
+          },
+          {
+            "locale": "de-DE",
+            "value": "Editor für digitale Inhalte"
+          },
+          {
+            "locale": "es-ES",
+            "value": "Editor de contenido digital"
+          },
+          {
+            "locale": "it-IT",
+            "value": "Editor di contenuti digitali"
+          }
+        ],
         "_meta" : {
           "schema" : "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
         }
       },
       "about" : {
-        "values" : [ {
-          "locale" : "en-US",
-          "value" : "A former fashion and beauty journalist, Christina's totally fashion obsessed and spends her free time combing the internet for new destinations to satisfy her wanderlust.\n\n Her shopping basket is forever full of hand luggage-friendly accessories and tons of sports socks.\n\n Check out Christina’s stories for the latest womenswear must-haves, plus style hacks and accessories for days."
-        } ],
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "A former fashion and beauty journalist, Christina's totally fashion obsessed and spends her free time combing the internet for new destinations to satisfy her wanderlust. Her shopping basket is forever full of hand luggage-friendly accessories and tons of sports socks. Check out Christina’s stories for the latest womenswear must-haves, plus style hacks and accessories for days."
+          },
+          {
+            "locale": "fr-FR",
+            "value": "Ancienne journaliste de mode et de beauté, Christina est totalement obsédée par la mode et passe son temps libre à parcourir Internet à la recherche de nouvelles destinations pour satisfaire son envie de voyager. Son panier est toujours plein d'accessoires adaptés aux bagages à main et de tonnes de chaussettes de sport. Découvrez les histoires de Christina pour les derniers incontournables de la mode féminine, ainsi que des astuces de style et des accessoires pour des jours."
+          },
+          {
+            "locale": "de-DE",
+            "value": "Als ehemalige Mode- und Schönheitsjournalistin ist Christina völlig modebesessen und verbringt ihre Freizeit damit, das Internet nach neuen Reisezielen zu durchkämmen, um ihr Fernweh zu stillen. Ihr Einkaufskorb ist immer voll mit handgepäckfreundlichen Accessoires und haufenweise Sportsocken. In Christinas Stories findest du die neusten Must-haves für Damenmode sowie tagelange Style-Hacks und Accessoires."
+          },
+          {
+            "locale": "es-ES",
+            "value": "Ex periodista de moda y belleza, Christina está totalmente obsesionada con la moda y pasa su tiempo libre buscando en Internet nuevos destinos para satisfacer su pasión por los viajes. Su cesta de la compra siempre está llena de accesorios aptos para el equipaje de mano y toneladas de calcetines deportivos. Echa un vistazo a las historias de Christina para conocer los últimos imprescindibles de moda femenina, además de trucos de estilo y accesorios para días."
+          },
+          {
+            "locale": "it-IT",
+            "value": "Ex giornalista di moda e bellezza, Christina è totalmente ossessionata dalla moda e trascorre il suo tempo libero setacciando Internet alla ricerca di nuove destinazioni per soddisfare la sua voglia di viaggiare. Il suo carrello è sempre pieno di accessori adatti al bagaglio a mano e tonnellate di calzini sportivi. Dai un'occhiata alle storie di Christina per gli ultimi must-have dell'abbigliamento femminile, oltre a trucchi di stile e accessori per giorni."
+          }
+        ],
         "_meta" : {
           "schema" : "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
         }

@@ -15,19 +15,55 @@
         "defaultHost" : "cdn.media.amplience.net"
       },
       "role" : {
-        "values" : [ {
-          "locale" : "en-US",
-          "value" : "Journalist"
-        } ],
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "Journalist"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "Journaliste"
+          },
+          {
+            "locale": "de-DE",
+            "value": "Journalist"
+          },
+          {
+            "locale": "es-ES",
+            "value": "Periodista"
+          },
+          {
+            "locale": "it-IT",
+            "value": "Giornalista"
+          }
+        ],
         "_meta" : {
           "schema" : "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
         }
       },
       "about" : {
-        "values" : [ {
-          "locale" : "en-US",
-          "value" : "Qualified and multi-faceted journalist, with over seven years experience in print and digital publishing.\n\n Extensive portfolio comprising fashion, health & beauty, interiors, food, culture, lifestyle, science, and travel writing.\n\n Key skills include writing and editing; copywriting, email marketing, content marketing, interviewing, reviewing, conceptual copywriting, trend forecasting, and social media marketing. \n\n Added benefit of experience in photography production for huge fashion brands, which includes experience in art direction, styling, production, concept creation and execution. \n\n Enjoys to write about things that make a difference."
-        } ],
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "Qualified and multi-faceted journalist, with over seven years experience in print and digital publishing. Extensive portfolio comprising fashion, health & beauty, interiors, food, culture, lifestyle, science, and travel writing. Key skills include writing and editing; copywriting, email marketing, content marketing, interviewing, reviewing, conceptual copywriting, trend forecasting, and social media marketing. Added benefit of experience in photography production for huge fashion brands, which includes experience in art direction, styling, production, concept creation and execution. Enjoys to write about things that make a difference."
+          },
+          {
+            "locale": "fr-FR",
+            "value": "Journaliste qualifiée et polyvalente, avec plus de sept ans d'expérience dans l'édition imprimée et numérique. Vaste portefeuille comprenant la mode, la santé et la beauté, les intérieurs, la nourriture, la culture, le style de vie, la science et l'écriture de voyage. Les compétences clés comprennent l'écriture et l'édition; rédaction, marketing par e-mail, marketing de contenu, entretiens, révision, rédaction conceptuelle, prévision des tendances et marketing des médias sociaux. Bénéfice supplémentaire de l'expérience dans la production photographique pour de grandes marques de mode, qui comprend une expérience dans la direction artistique, le stylisme, la production, la création de concepts et l'exécution. Aime écrire sur des choses qui font une différence."
+          },
+          {
+            "locale": "de-DE",
+            "value": "Qualifizierter und vielseitiger Journalist mit über sieben Jahren Erfahrung im Print- und Digitalpublishing. Umfangreiches Portfolio aus Fashion, Health & Beauty, Interiors, Food, Culture, Lifestyle, Science und Travel Writing. Zu den Schlüsselkompetenzen gehören Schreiben und Bearbeiten; Texterstellung, E-Mail-Marketing, Content-Marketing, Interviews, Überprüfung, konzeptionelle Texterstellung, Trendprognosen und Social-Media-Marketing. Zusätzlicher Vorteil der Erfahrung in der Fotoproduktion für große Modemarken, die Erfahrung in Art Direction, Styling, Produktion, Konzepterstellung und Ausführung umfasst. Schreibt gerne über Dinge, die einen Unterschied machen."
+          },
+          {
+            "locale": "es-ES",
+            "value": "Periodista calificada y polifacética, con más de siete años de experiencia en publicaciones impresas y digitales. Amplia cartera que incluye moda, salud y belleza, interiores, comida, cultura, estilo de vida, ciencia y literatura de viajes. Las habilidades clave incluyen escritura y edición; redacción publicitaria, marketing por correo electrónico, marketing de contenidos, entrevistas, reseñas, redacción conceptual, previsión de tendencias y marketing en redes sociales. Beneficio adicional de experiencia en producción de fotografía para grandes marcas de moda, que incluye experiencia en dirección de arte, estilismo, producción, creación de conceptos y ejecución. Le gusta escribir sobre cosas que marcan la diferencia."
+          },
+          {
+            "locale": "it-IT",
+            "value": "Giornalista qualificato e poliedrico, con oltre sette anni di esperienza nell'editoria cartacea e digitale. Ampio portfolio che comprende moda, salute e bellezza, interni, cibo, cultura, stile di vita, scienza e scrittura di viaggio. Le abilità chiave includono la scrittura e l'editing; copywriting, email marketing, content marketing, interviste, revisioni, copywriting concettuale, previsione delle tendenze e social media marketing. Ulteriore vantaggio dell'esperienza nella produzione fotografica per grandi marchi di moda, che include esperienza in direzione artistica, styling, produzione, creazione ed esecuzione di concept. Ama scrivere di cose che fanno la differenza."
+          }
+        ],
         "_meta" : {
           "schema" : "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
         }

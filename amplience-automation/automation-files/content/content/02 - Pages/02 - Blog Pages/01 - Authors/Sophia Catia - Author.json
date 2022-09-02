@@ -15,18 +15,55 @@
         "defaultHost" : "cdn.media.amplience.net"
       },
       "role" : {
-        "values" : [ {
-          "locale" : "en-US",
-          "value" : "Digital Content Creator / Copywriter"
-        } ],
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "Digital Content Creator / Copywriter"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "Créateur de contenu numérique / Rédacteur"
+          },
+          {
+            "locale": "de-DE",
+            "value": "Ersteller digitaler Inhalte / Texter"
+          },
+          {
+            "locale": "es-ES",
+            "value": "Creador de contenido digital / redactor"
+          },
+          {
+            "locale": "it-IT",
+            "value": "Creatore di contenuti digitali / Copywriter"
+          }
+        ],
         "_meta" : {
           "schema" : "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
         }
       },
       "about" : {
-        "values" : [ {
-          "locale" : "en-US",
-          "value" : "With over 10 years experience in luxury retail with an emphasis on visual merchandising, Sophia understands how to communicate the best luxury looks and items for you.\n\n From events, digital showrooms, concepts and product sourcing, Sophia can showcase the right products for you however you choose to view. \n\n Follow her to learn more"} ],
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "With over 10 years experience in luxury retail with an emphasis on visual merchandising, Sophia understands how to communicate the best luxury looks and items for you.From events, digital showrooms, concepts and product sourcing, Sophia can showcase the right products for you however you choose to view. Follow her to learn more"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "Avec plus de 10 ans d'expérience dans le commerce de détail de luxe avec un accent sur le merchandising visuel, Sophia comprend comment communiquer les meilleurs looks et articles de luxe pour vous. Des événements, des showrooms numériques, des concepts et de l'approvisionnement en produits, Sophia peut présenter les bons produits pour vous choisissez de voir. Suivez-la pour en savoir plus"
+          },
+          {
+            "locale": "de-DE",
+            "value": "Mit über 10 Jahren Erfahrung im Luxuseinzelhandel mit Schwerpunkt auf Visual Merchandising versteht Sophia, wie man die besten Luxus-Looks und -Artikel für Sie kommuniziert. Von Veranstaltungen, digitalen Showrooms, Konzepten und Produktbeschaffung kann Sophia die richtigen Produkte für Sie präsentieren auswählen, um anzuzeigen. Folgen Sie ihr, um mehr zu erfahren"
+          },
+          {
+            "locale": "es-ES",
+            "value": "Con más de 10 años de experiencia en el comercio minorista de lujo con énfasis en la comercialización visual, Sophia sabe cómo comunicar los mejores looks y artículos de lujo para usted. Desde eventos, salas de exhibición digitales, conceptos y abastecimiento de productos, Sophia puede exhibir los productos adecuados para usted como quiera que usted elija ver. Síguela para saber más"
+          },
+          {
+            "locale": "it-IT",
+            "value": "Con oltre 10 anni di esperienza nella vendita al dettaglio di lusso con un'enfasi sul visual merchandising, Sophia sa come comunicare i migliori look e articoli di lusso per te. Da eventi, showroom digitali, concetti e approvvigionamento di prodotti, Sophia può mostrare i prodotti giusti per te, comunque tu scegli di visualizzare. Seguila per saperne di più"
+          }
+        ],
         "_meta" : {
           "schema" : "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
         }
