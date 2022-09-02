@@ -57,8 +57,8 @@ const BlogLanding = (props) => {
     const [numBlogs, setNumBlogs] = useState(0);
     const [pages, setPages] = useState([]);
 
-    const algoliaID = '4BS5I6EVVD'
-    const algoliaKey = 'fa9be8756d95a97f0021f0aba6f02bc4'
+    const algoliaID = amplience.searchAppID;
+    const algoliaKey = amplience.searchAPIKey;
     let indexType = vse ? 'staging' : 'production';
     // TODO: Put back once data is there
     const algoliaIndexName = amplience.hub+'.blog-'+indexType+'-'+siteLocale;
