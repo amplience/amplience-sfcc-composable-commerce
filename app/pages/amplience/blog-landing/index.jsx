@@ -124,7 +124,16 @@ const BlogLanding = () => {
             })
     }
 
-    useEffect(fetchResults, [query, tag, author, category, currentIndex, maxIndex])
+    const fetchResultsFirstPage = () => {
+        if (currentIndex !== 0) {
+            setCurrentIndex(0)
+        } else {
+            fetchResults()
+        }
+    }
+
+    useEffect(fetchResults, [currentIndex])
+    useEffect(fetchResultsFirstPage, [query, tag, author, category, maxIndex])
 
     const setUrlParams = (paramname, paramvalue) => {
         const url = new URL(window.location)
@@ -230,6 +239,7 @@ const BlogLanding = () => {
                 </Text>
                 <Select
                     placeholder="Select Page"
+                    value={currentIndex + 1}
                     onChange={(e) => onPaginationChanged(e)}
                     {...styles.pageSelect}
                 >
