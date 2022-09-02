@@ -6,14 +6,19 @@
         "icons": [
             {
                 "size": 256,
-                "url": "https://bigcontent.io/cms/icons/ca-types-article-image.png"
+                "url": "https://sfcccomposable.a.bigcontent.io/v1/static/icon-component-blog"
             }
         ],
         "visualizations": [
             {
-                "label": "Localhost",
+                "label": "Blog Post - Localhost",
                 "templatedUri": "http://localhost:3000/{{locales}}/{{delivery.key}}?pagevse={{vse.domain}}",
                 "default": true
+            },
+            {
+                "label": "Blog Landing - Localhost",
+                "templatedUri": "http://localhost:3000/{{locales}}/blog?vse={{vse.domain}}",
+                "default": false
             },
             {
                 "label": "JSON",
