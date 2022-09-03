@@ -43,7 +43,7 @@ const NavigationHero = ({title, img, actions, ...props}) => {
                                 align={'center'}
                                 width={'100%'}
                                 height={'100%'}
-                                src={src}
+                                src={`${src}?w=600&fmt=auto`}
                                 alt={alt}
                             />
                         </Box>
