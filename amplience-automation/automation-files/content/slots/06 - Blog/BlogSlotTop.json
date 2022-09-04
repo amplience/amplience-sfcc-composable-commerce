@@ -1,0 +1,29 @@
+{
+    "id": "95faefdf-e40e-4694-94bb-b845e4d322b4",
+    "body": {
+        "_meta": {
+            "name": "Blog / Slot / Top",
+            "schema": "https://sfcc.com/slots/flexible-list",
+            "deliveryKey": "blog/slot/top"
+        },
+        "content": [
+            {
+              "_meta": {
+                "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+              },
+              "contentType": "https://sfcc.com/components/section",
+              "id": "68c71bdc-d843-4fd8-be23-c1a0cff18402"
+            }
+          ]
+    },
+    "version": 1,
+    "label": "Blog / Slot / Top",
+    "status": "ACTIVE",
+    "createdBy": "9afdef5b-e35e-472a-8265-f37d29ff1154",
+    "createdDate": "2022-08-04T09:25:08.509Z",
+    "lastModifiedBy": "9afdef5b-e35e-472a-8265-f37d29ff1154",
+    "lastModifiedDate": "2022-08-04T09:38:23.005Z",
+    "lastPublishedVersion": 1,
+    "lastPublishedDate": "2022-08-04T10:00:09.491Z",
+    "deliveryId": "95faefdf-e40e-4694-94bb-b845e4d322b4"
+}

@@ -65,7 +65,7 @@ const Hero = ({title, img, actions, ...props}) => {
                                 align={'center'}
                                 width={'100%'}
                                 height={'100%'}
-                                src={src}
+                                src={`${src}?w=1200&fmt=auto`}
                                 alt={alt}
                             />
                         </Box>
