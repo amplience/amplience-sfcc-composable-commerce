@@ -86,10 +86,10 @@ const BlogPage = ({page, pageVse}) => {
                                     {pageModel.tags.map((tag, index) => (
                                         <Link
                                             key={index}
-                                            to={`/blog?tag=${encodeURIComponent(tag)}`}
+                                            to={`/blog?tag=${encodeURIComponent(tag.name)}`}
                                             {...styles.tag}
                                         >
-                                            {tag}
+                                            {tag.name}
                                         </Link>
                                     ))}
 
