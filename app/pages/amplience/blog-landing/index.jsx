@@ -21,6 +21,8 @@ import {
     VStack,
     Text,
     Select,
+    CloseButton,
+    Flex,
     useMultiStyleConfig
 } from '@chakra-ui/react'
 
@@ -77,7 +79,7 @@ const BlogLanding = () => {
     useEffect(function mount() {
         const url = new URL(window.location)
         const queryParam = url.searchParams.get('query')
-        const pageParam = url.searchParams.get('page') || 1;
+        const pageParam = url.searchParams.get('page') || 1
         const authorParam = url.searchParams.get('author')
         const categoryParam = url.searchParams.get('category')
         const tagParam = url.searchParams.get('tag')
@@ -166,6 +168,22 @@ const BlogLanding = () => {
         setUrlParams('category', input)
         setCategory(input)
     }
+    const clearFilter = () => {
+        const url = new URL(window.location)
+
+        url.searchParams.delete('query')
+        url.searchParams.delete('tag')
+        url.searchParams.delete('author')
+        url.searchParams.delete('category')
+
+        window.history.pushState(null, '', url.toString())
+
+        setQuery('')
+        setTag('')
+        setAuthor('')
+        setCategory('')
+        setUserSearch(true)
+    }
 
     const onPaginationChanged = (e) => {
         const input = e.target.value
@@ -192,50 +210,59 @@ const BlogLanding = () => {
                         placeholder="Search Blogs..."
                     />
                 </InputGroup>
-                <SimpleGrid {...styles.filters}>
-                    <Select
-                        value={tag}
-                        placeholder="All Tags"
-                        onChange={(e) => onTagDropDownChanged(e)}
-                    >
-                        {tags.map((item, index) => {
-                            var text = item.label + ` (${item.count})`
-                            return (
-                                <option value={item.value} key={index}>
-                                    {text}
-                                </option>
-                            )
-                        })}
-                    </Select>
-                    <Select
-                        value={category}
-                        placeholder="All Categories"
-                        onChange={(e) => onCategoryDropDownChanged(e)}
-                    >
-                        {thecategories.map((item, index) => {
-                            var text = item.label + ` (${item.count})`
-                            return (
-                                <option value={item.value} key={index}>
-                                    {text}
-                                </option>
-                            )
-                        })}
-                    </Select>
-                    <Select
-                        value={author}
-                        placeholder="All Authors"
-                        onChange={(e) => onAuthorDropDownChanged(e)}
-                    >
-                        {authors.map((item, index) => {
-                            var text = item.label + ` (${item.count})`
-                            return (
-                                <option value={item.value} key={index}>
-                                    {text}
-                                </option>
-                            )
-                        })}
-                    </Select>
-                </SimpleGrid>
+                <Flex width={'100%'}>
+                    <SimpleGrid {...styles.filters}>
+                        <Select
+                            value={tag}
+                            placeholder="All Tags"
+                            onChange={(e) => onTagDropDownChanged(e)}
+                        >
+                            {tags.map((item, index) => {
+                                var text = item.label + ` (${item.count})`
+                                return (
+                                    <option value={item.value} key={index}>
+                                        {text}
+                                    </option>
+                                )
+                            })}
+                        </Select>
+                        <Select
+                            value={category}
+                            placeholder="All Categories"
+                            onChange={(e) => onCategoryDropDownChanged(e)}
+                        >
+                            {thecategories.map((item, index) => {
+                                var text = item.label + ` (${item.count})`
+                                return (
+                                    <option value={item.value} key={index}>
+                                        {text}
+                                    </option>
+                                )
+                            })}
+                        </Select>
+                        <Select
+                            value={author}
+                            placeholder="All Authors"
+                            onChange={(e) => onAuthorDropDownChanged(e)}
+                        >
+                            {authors.map((item, index) => {
+                                var text = item.label + ` (${item.count})`
+                                return (
+                                    <option value={item.value} key={index}>
+                                        {text}
+                                    </option>
+                                )
+                            })}
+                        </Select>
+
+                    </SimpleGrid>
+                    <CloseButton
+                        title={"Clear filter"}
+                        height={'44px'}
+                        onClick={clearFilter}
+                        variant="unstyled"
+                    />
+                </Flex>
                 <Text>{numBlogs} Blog Posts</Text>
             </VStack>
             <SimpleGrid {...styles.resultsGrid}>
