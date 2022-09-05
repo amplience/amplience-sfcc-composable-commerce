@@ -77,7 +77,7 @@ const BlogLanding = () => {
     useEffect(function mount() {
         const url = new URL(window.location)
         const queryParam = url.searchParams.get('query')
-        const pageParam = url.searchParams.get('page')
+        const pageParam = url.searchParams.get('page') || 1;
         const authorParam = url.searchParams.get('author')
         const categoryParam = url.searchParams.get('category')
         const tagParam = url.searchParams.get('tag')
@@ -248,7 +248,6 @@ const BlogLanding = () => {
                     Page {currentIndex + 1} of {maxIndex}
                 </Text>
                 <Select
-                    placeholder="Select Page"
                     value={currentIndex + 1}
                     onChange={(e) => onPaginationChanged(e)}
                     {...styles.pageSelect}
