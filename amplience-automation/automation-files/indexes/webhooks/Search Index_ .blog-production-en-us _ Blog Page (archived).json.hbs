@@ -1,0 +1,56 @@
+{
+  "id": "6310e64c1c8793f4cccc11c6",
+  "label": "Search Index: {{hubName}}.blog-production-en-us / Blog Page (archived)",
+  "events": [
+    "dynamic-content.content-item.updated"
+  ],
+  "active": true,
+  "handlers": [
+    "https://4BS5I6EVVD.algolia.net/1/indexes/{{hubName}}.blog-production-en-us/\{{payload.id}}"
+  ],
+  "notifications": [],
+  "secret": "79ef60850a45e2064867c667634041ff609ec3758044eeca0af2afec2cd45141913585a2bb920e65eb01bf21d7ebe3a6e9fa7920a18ba36c73496b2fd7e0b590",
+  "createdDate": "2022-09-01T14:08:52.76Z",
+  "lastModifiedDate": "2022-09-01T14:08:52.76Z",
+  "headers": [
+    {
+      "key": "X-Algolia-Application-Id",
+      "value": "4BS5I6EVVD",
+      "secret": false
+    },
+    {
+      "key": "X-Algolia-API-Key",
+      "value": null,
+      "secret": true
+    }
+  ],
+  "filters": [
+    {
+      "type": "equal",
+      "arguments": [
+        {
+          "jsonPath": "$.payload.body._meta.schema"
+        },
+        {
+          "value": "https://sfcc.com/site/pages/blog"
+        }
+      ]
+    },
+    {
+      "type": "equal",
+      "arguments": [
+        {
+          "jsonPath": "$.payload.status"
+        },
+        {
+          "value": "ARCHIVED"
+        }
+      ]
+    }
+  ],
+  "customPayload": {
+    "type": "text/x-handlebars-template",
+    "value": ""
+  },
+  "method": "DELETE"
+}

@@ -1,4 +1,4 @@
-import { ContentRepository, DynamicContent, Extension, Folder, HalResource, Page, Pageable, Settings, Sortable } from 'dc-management-sdk-js'
+import { ContentRepository, DynamicContent, Extension, Folder, HalResource, Hub, Page, SearchIndex,Pageable, Settings, Sortable } from 'dc-management-sdk-js'
 import { Arguments, Argv } from 'yargs'
 import { join } from 'path'
 import { execSync } from 'child_process'
@@ -6,12 +6,14 @@ import { rmSync } from 'fs'
 import { Context } from './cli'
 import { AmplienceRestClient } from './amplience-rest-client'
 
+
 export const connectSDK = (context: Context) => {
     return new DynamicContent({
         client_id: context.clientId,
         client_secret: context.clientSecret
     })
 }
+
 
 export const paginator = async <T extends HalResource>(
     pagableFn: (options?: Pageable & Sortable) => Promise<Page<T>>,
@@ -31,6 +33,11 @@ export const paginator = async <T extends HalResource>(
     }
     return currentPage.getItems()
 }
+
+export const searchIndexPaginator = (hub: Hub) => (options: any): Promise<Page<SearchIndex>> => hub.related.searchIndexes.list(undefined, undefined, options)
+
+export const sleep = (delay: number) => new Promise((resolve) => setTimeout(resolve, delay))
+
 
 export const cleanArgs = (yargs: Argv) => {
     return yargs
@@ -96,12 +103,30 @@ export const cleanHandler = async (context: Arguments<Context>): Promise<any> =>
         }))
         await extensions[i].related.delete()
     }
+    
+
+    console.log(`Deleting Search Indexes...`)
+    const searchIndexes = await paginator(searchIndexPaginator(hub))
+    for (let i = searchIndexes.length - 1; i >= 0; i--) {
+        try{
+            console.log("Deleting index: ", searchIndexes[i].name)
+            await searchIndexes[i].related.delete()
+            console.log(searchIndexes[i].name + ': DELETED')
+            if( i > 0) sleep(10000)
+        }catch(e){
+            console.log("Eror deleting Search Index:", searchIndexes[i].name)
+            console.log(e)
+            // Possible Retry?
+        }
+    }
+    
 
     console.log(`Deleting webhooks...`)
     const webhooks = await paginator(hub.related.webhooks.list)
     for (let i = webhooks.length - 1; i >= 0; i--) {
         await webhooks[i].related.delete()
     }
+    
 
     console.log(`Updating settings...`)
     const masterLocale = hub.settings?.localization?.locales[0]
@@ -112,10 +137,10 @@ export const cleanHandler = async (context: Arguments<Context>): Promise<any> =>
             locales: [masterLocale]
         }
     }))
-
+    
     console.log('Deleting mapFile...')
     rmSync(mappingFile, { force: true })
-
+    
     // Cleanup removes all folders from repositories
     const restClient = AmplienceRestClient(context)
     const repositories = await paginator(hub.related.contentRepositories.list)

@@ -17,7 +17,10 @@ export type Context = {
     sfccVersion: string | null,
     authSecret: string | null,
     authClientId: string | null,
-    siteId: string | null
+    siteId: string | null,
+
+    vse: string | null,
+    hubName: string | null
 }
 
 const configureYargs = (yargInstance: Argv): Promise<Arguments> => {
