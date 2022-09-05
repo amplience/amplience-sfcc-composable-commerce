@@ -1,0 +1,46 @@
+{
+  "id": "876c73af-6481-466d-b31e-a88dab9aea68",
+  "body": {
+    "_meta": {
+      "name": "What to wear",
+      "schema": "https://sfcc.com/components/tag"
+    },
+    "name": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "what to wear"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "quoi porter"
+        },
+        {
+          "locale": "de-DE",
+          "value": "was anziehen"
+        },
+        {
+          "locale": "es-ES",
+          "value": "qué ponerse"
+        },
+        {
+          "locale": "it-IT",
+          "value": "cosa vestire"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    }
+  },
+  "version": 1,
+  "label": "What to wear",
+  "status": "ACTIVE",
+  "createdBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
+  "createdDate": "2022-09-05T10:25:47.866Z",
+  "lastModifiedBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
+  "lastModifiedDate": "2022-09-05T10:37:19.489Z",
+  "lastPublishedVersion": 1,
+  "lastPublishedDate": "2022-09-05T10:38:34.642Z",
+  "deliveryId": "876c73af-6481-466d-b31e-a88dab9aea68"
+}

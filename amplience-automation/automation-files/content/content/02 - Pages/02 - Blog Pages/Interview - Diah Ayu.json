@@ -1,0 +1,364 @@
+{
+  "id": "c0f0fa96-59cb-478c-a103-3ea9986bc6fa",
+  "body": {
+    "_meta": {
+      "name": "Interview - Diah Ayu",
+      "schema": "https://sfcc.com/site/pages/blog",
+      "deliveryKey": "blog/interview/diah-ayu"
+    },
+    "seo": {
+      "title": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "Diah Ayu"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "Diah Ayu"
+          },
+          {
+            "locale": "de-DE",
+            "value": "Diah Ayu"
+          },
+          {
+            "locale": "es-ES",
+            "value": "Diah Ayu"
+          },
+          {
+            "locale": "it-IT",
+            "value": "Diah Ayu"
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      },
+      "description": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "Interview with Diah Ayu on top dresses"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "Entretien avec Diah Ayu sur les meilleures robes"
+          },
+          {
+            "locale": "de-DE",
+            "value": "Interview mit Diah Ayu über Top-Kleider"
+          },
+          {
+            "locale": "es-ES",
+            "value": "Entrevista con Diah Ayu sobre vestidos top"
+          },
+          {
+            "locale": "it-IT",
+            "value": "Intervista a Diah Ayu sui top dress"
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      },
+      "noindex": false
+    },
+    "image": {
+      "image": {
+        "crop": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "rot": 0,
+        "hue": 0,
+        "sat": 0,
+        "bri": 0,
+        "fliph": false,
+        "flipv": false,
+        "poi": {
+          "x": 0.48325722983257224,
+          "y": 0.4315068493150685
+        },
+        "aspectLock": "poi",
+        "query": "poi=0.4833,0.4315,0,0&scaleFit=poi",
+        "image": {
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+          },
+          "id": "a63fc5ec-0b51-4dce-8acc-83009169c405",
+          "name": "amanda-canas-WlDjrxUGLUE-unsplash",
+          "endpoint": "sfcccompdev",
+          "defaultHost": "cdn.media.amplience.net"
+        }
+      },
+      "imageAltText": "Diah Ayu dresses",
+      "seoText": "Interview with Diah Ayu on top dresses"
+    },
+    "tags": [
+      {
+        "_meta": {
+          "name": "Interviews",
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+        },
+        "id": "47034f2f-fbfe-46f2-beda-fe4cdef47d4d",
+        "contentType": "https://sfcc.com/components/tag"
+      },
+      {
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+        },
+        "contentType": "https://sfcc.com/components/tag",
+        "id": "876c73af-6481-466d-b31e-a88dab9aea68"
+      }
+    ],
+    "categories": [
+      {
+        "name": "(newarrivals-womens) Womens",
+        "id": "newarrivals-womens"
+      }
+    ],
+    "author": {
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+      },
+      "contentType": "https://sfcc.com/components/author",
+      "id": "b52d8f1a-6eb5-4ef9-b451-51538731dc2f"
+    },
+    "content": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum odio erat, vulputate non ultricies non, fermentum ac leo. Sed aliquet augue nec orci commodo fringilla. Aliquam tempor accumsan ex sit amet bibendum. Proin vestibulum ut libero non tristique. Aenean in maximus risus. Pellentesque et elit id mi commodo congue. Morbi viverra consequat hendrerit. Aliquam ut consectetur mauris. Vestibulum finibus mauris sed sapien ullamcorper finibus vel eu est. Nunc molestie augue et odio molestie, eu vestibulum diam pharetra. Sed mollis dolor lectus, at tincidunt felis rhoncus sed. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut blandit, urna sit amet sagittis finibus, justo enim feugiat sapien, sit amet euismod lacus dolor vel velit."
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "ea267267-2a9d-407f-aad2-9b278b6ec413",
+                  "name": "diah-ayu-mTw2fL9Pwh8-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Vivamus eget feugiat massa. Donec euismod quam nec diam elementum vulputate. Proin eget ornare dui. Suspendisse magna libero, vulputate vitae eros sed, tempus bibendum ligula. Pellentesque commodo turpis sed elit mattis gravida. Duis diam orci, lacinia at lorem sed, laoreet semper sapien. Etiam tortor dui, consequat ac turpis eu, viverra varius velit. In sed eleifend sapien. Suspendisse pellentesque dolor non sapien posuere, consequat commodo ante feugiat.</p>\n\n<p style=\"text-align: justify\">Nunc ultricies pellentesque mi quis sodales. Mauris tellus enim, auctor semper dapibus quis, sollicitudin nec ante. Etiam a fermentum nisl. Aenean dapibus, mauris quis iaculis aliquam, enim tortor pretium felis, posuere finibus nibh risus at enim. Nulla id faucibus orci. Sed consectetur tincidunt nulla quis vestibulum. Proin ut maximus nulla, vitae feugiat lacus. Pellentesque aliquet augue id lacus efficitur bibendum at eu dui. Duis dapibus mollis nibh vitae fringilla. In dapibus dolor aliquet tellus luctus, non malesuada lorem rhoncus. Quisque et rhoncus lacus.</p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "f363d7c0-99f2-47cb-8e16-3ae708647c34",
+                  "name": "diah-ayu-yAVyaJboNeY-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Proin laoreet semper est. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean nunc tellus, semper non tempus auctor, egestas ut leo. Sed pharetra efficitur est, at condimentum massa efficitur nec. Integer sit amet sapien vulputate, vulputate diam sed, commodo sapien. Integer nec tempor purus. Sed eget mauris eu nibh tristique efficitur ut a urna.</p>\n\n<p style=\"text-align: justify\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam urna felis, fringilla in scelerisque eu, maximus ut justo. Proin vulputate augue non leo imperdiet scelerisque. Donec bibendum gravida enim nec tempor. Nullam mattis ut orci placerat scelerisque. Etiam at justo semper, consectetur leo sed, vestibulum libero. Curabitur et velit suscipit, vulputate odio nec, tempor enim.</p>"
+              }
+            ]
+          }
+        },
+        {
+          "locale": "fr-FR",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum odio erat, vulputate non ultricies non, fermentum ac leo. Sed aliquet augue nec orci commodo fringilla. Aliquam tempor accumsan ex sit amet bibendum. Proin vestibulum ut libero non tristique. Aenean in maximus risus. Pellentesque et elit id mi commodo congue. Morbi viverra consequat hendrerit. Aliquam ut consectetur mauris. Vestibulum finibus mauris sed sapien ullamcorper finibus vel eu est. Nunc molestie augue et odio molestie, eu vestibulum diam pharetra. Sed mollis dolor lectus, at tincidunt felis rhoncus sed. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut blandit, urna sit amet sagittis finibus, justo enim feugiat sapien, sit amet euismod lacus dolor vel velit."
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "ea267267-2a9d-407f-aad2-9b278b6ec413",
+                  "name": "diah-ayu-mTw2fL9Pwh8-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Vivamus eget feugiat massa. Donec euismod quam nec diam elementum vulputate. Proin eget ornare dui. Suspendisse magna libero, vulputate vitae eros sed, tempus bibendum ligula. Pellentesque commodo turpis sed elit mattis gravida. Duis diam orci, lacinia at lorem sed, laoreet semper sapien. Etiam tortor dui, consequat ac turpis eu, viverra varius velit. In sed eleifend sapien. Suspendisse pellentesque dolor non sapien posuere, consequat commodo ante feugiat.</p>\n\n<p style=\"text-align: justify\">Nunc ultricies pellentesque mi quis sodales. Mauris tellus enim, auctor semper dapibus quis, sollicitudin nec ante. Etiam a fermentum nisl. Aenean dapibus, mauris quis iaculis aliquam, enim tortor pretium felis, posuere finibus nibh risus at enim. Nulla id faucibus orci. Sed consectetur tincidunt nulla quis vestibulum. Proin ut maximus nulla, vitae feugiat lacus. Pellentesque aliquet augue id lacus efficitur bibendum at eu dui. Duis dapibus mollis nibh vitae fringilla. In dapibus dolor aliquet tellus luctus, non malesuada lorem rhoncus. Quisque et rhoncus lacus.</p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "f363d7c0-99f2-47cb-8e16-3ae708647c34",
+                  "name": "diah-ayu-yAVyaJboNeY-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Proin laoreet semper est. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean nunc tellus, semper non tempus auctor, egestas ut leo. Sed pharetra efficitur est, at condimentum massa efficitur nec. Integer sit amet sapien vulputate, vulputate diam sed, commodo sapien. Integer nec tempor purus. Sed eget mauris eu nibh tristique efficitur ut a urna.</p>\n\n<p style=\"text-align: justify\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam urna felis, fringilla in scelerisque eu, maximus ut justo. Proin vulputate augue non leo imperdiet scelerisque. Donec bibendum gravida enim nec tempor. Nullam mattis ut orci placerat scelerisque. Etiam at justo semper, consectetur leo sed, vestibulum libero. Curabitur et velit suscipit, vulputate odio nec, tempor enim.</p>"
+              }
+            ]
+          }
+        },
+        {
+          "locale": "de-DE",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum odio erat, vulputate non ultricies non, fermentum ac leo. Sed aliquet augue nec orci commodo fringilla. Aliquam tempor accumsan ex sit amet bibendum. Proin vestibulum ut libero non tristique. Aenean in maximus risus. Pellentesque et elit id mi commodo congue. Morbi viverra consequat hendrerit. Aliquam ut consectetur mauris. Vestibulum finibus mauris sed sapien ullamcorper finibus vel eu est. Nunc molestie augue et odio molestie, eu vestibulum diam pharetra. Sed mollis dolor lectus, at tincidunt felis rhoncus sed. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut blandit, urna sit amet sagittis finibus, justo enim feugiat sapien, sit amet euismod lacus dolor vel velit."
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "ea267267-2a9d-407f-aad2-9b278b6ec413",
+                  "name": "diah-ayu-mTw2fL9Pwh8-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Vivamus eget feugiat massa. Donec euismod quam nec diam elementum vulputate. Proin eget ornare dui. Suspendisse magna libero, vulputate vitae eros sed, tempus bibendum ligula. Pellentesque commodo turpis sed elit mattis gravida. Duis diam orci, lacinia at lorem sed, laoreet semper sapien. Etiam tortor dui, consequat ac turpis eu, viverra varius velit. In sed eleifend sapien. Suspendisse pellentesque dolor non sapien posuere, consequat commodo ante feugiat.</p>\n\n<p style=\"text-align: justify\">Nunc ultricies pellentesque mi quis sodales. Mauris tellus enim, auctor semper dapibus quis, sollicitudin nec ante. Etiam a fermentum nisl. Aenean dapibus, mauris quis iaculis aliquam, enim tortor pretium felis, posuere finibus nibh risus at enim. Nulla id faucibus orci. Sed consectetur tincidunt nulla quis vestibulum. Proin ut maximus nulla, vitae feugiat lacus. Pellentesque aliquet augue id lacus efficitur bibendum at eu dui. Duis dapibus mollis nibh vitae fringilla. In dapibus dolor aliquet tellus luctus, non malesuada lorem rhoncus. Quisque et rhoncus lacus.</p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "f363d7c0-99f2-47cb-8e16-3ae708647c34",
+                  "name": "diah-ayu-yAVyaJboNeY-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Proin laoreet semper est. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean nunc tellus, semper non tempus auctor, egestas ut leo. Sed pharetra efficitur est, at condimentum massa efficitur nec. Integer sit amet sapien vulputate, vulputate diam sed, commodo sapien. Integer nec tempor purus. Sed eget mauris eu nibh tristique efficitur ut a urna.</p>\n\n<p style=\"text-align: justify\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam urna felis, fringilla in scelerisque eu, maximus ut justo. Proin vulputate augue non leo imperdiet scelerisque. Donec bibendum gravida enim nec tempor. Nullam mattis ut orci placerat scelerisque. Etiam at justo semper, consectetur leo sed, vestibulum libero. Curabitur et velit suscipit, vulputate odio nec, tempor enim.</p>"
+              }
+            ]
+          }
+        },
+        {
+          "locale": "es-ES",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum odio erat, vulputate non ultricies non, fermentum ac leo. Sed aliquet augue nec orci commodo fringilla. Aliquam tempor accumsan ex sit amet bibendum. Proin vestibulum ut libero non tristique. Aenean in maximus risus. Pellentesque et elit id mi commodo congue. Morbi viverra consequat hendrerit. Aliquam ut consectetur mauris. Vestibulum finibus mauris sed sapien ullamcorper finibus vel eu est. Nunc molestie augue et odio molestie, eu vestibulum diam pharetra. Sed mollis dolor lectus, at tincidunt felis rhoncus sed. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut blandit, urna sit amet sagittis finibus, justo enim feugiat sapien, sit amet euismod lacus dolor vel velit."
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "ea267267-2a9d-407f-aad2-9b278b6ec413",
+                  "name": "diah-ayu-mTw2fL9Pwh8-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Vivamus eget feugiat massa. Donec euismod quam nec diam elementum vulputate. Proin eget ornare dui. Suspendisse magna libero, vulputate vitae eros sed, tempus bibendum ligula. Pellentesque commodo turpis sed elit mattis gravida. Duis diam orci, lacinia at lorem sed, laoreet semper sapien. Etiam tortor dui, consequat ac turpis eu, viverra varius velit. In sed eleifend sapien. Suspendisse pellentesque dolor non sapien posuere, consequat commodo ante feugiat.</p>\n\n<p style=\"text-align: justify\">Nunc ultricies pellentesque mi quis sodales. Mauris tellus enim, auctor semper dapibus quis, sollicitudin nec ante. Etiam a fermentum nisl. Aenean dapibus, mauris quis iaculis aliquam, enim tortor pretium felis, posuere finibus nibh risus at enim. Nulla id faucibus orci. Sed consectetur tincidunt nulla quis vestibulum. Proin ut maximus nulla, vitae feugiat lacus. Pellentesque aliquet augue id lacus efficitur bibendum at eu dui. Duis dapibus mollis nibh vitae fringilla. In dapibus dolor aliquet tellus luctus, non malesuada lorem rhoncus. Quisque et rhoncus lacus.</p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "f363d7c0-99f2-47cb-8e16-3ae708647c34",
+                  "name": "diah-ayu-yAVyaJboNeY-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Proin laoreet semper est. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean nunc tellus, semper non tempus auctor, egestas ut leo. Sed pharetra efficitur est, at condimentum massa efficitur nec. Integer sit amet sapien vulputate, vulputate diam sed, commodo sapien. Integer nec tempor purus. Sed eget mauris eu nibh tristique efficitur ut a urna.</p>\n\n<p style=\"text-align: justify\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam urna felis, fringilla in scelerisque eu, maximus ut justo. Proin vulputate augue non leo imperdiet scelerisque. Donec bibendum gravida enim nec tempor. Nullam mattis ut orci placerat scelerisque. Etiam at justo semper, consectetur leo sed, vestibulum libero. Curabitur et velit suscipit, vulputate odio nec, tempor enim.</p>"
+              }
+            ]
+          }
+        },
+        {
+          "locale": "it-IT",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum odio erat, vulputate non ultricies non, fermentum ac leo. Sed aliquet augue nec orci commodo fringilla. Aliquam tempor accumsan ex sit amet bibendum. Proin vestibulum ut libero non tristique. Aenean in maximus risus. Pellentesque et elit id mi commodo congue. Morbi viverra consequat hendrerit. Aliquam ut consectetur mauris. Vestibulum finibus mauris sed sapien ullamcorper finibus vel eu est. Nunc molestie augue et odio molestie, eu vestibulum diam pharetra. Sed mollis dolor lectus, at tincidunt felis rhoncus sed. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut blandit, urna sit amet sagittis finibus, justo enim feugiat sapien, sit amet euismod lacus dolor vel velit."
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "ea267267-2a9d-407f-aad2-9b278b6ec413",
+                  "name": "diah-ayu-mTw2fL9Pwh8-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Vivamus eget feugiat massa. Donec euismod quam nec diam elementum vulputate. Proin eget ornare dui. Suspendisse magna libero, vulputate vitae eros sed, tempus bibendum ligula. Pellentesque commodo turpis sed elit mattis gravida. Duis diam orci, lacinia at lorem sed, laoreet semper sapien. Etiam tortor dui, consequat ac turpis eu, viverra varius velit. In sed eleifend sapien. Suspendisse pellentesque dolor non sapien posuere, consequat commodo ante feugiat.</p>\n\n<p style=\"text-align: justify\">Nunc ultricies pellentesque mi quis sodales. Mauris tellus enim, auctor semper dapibus quis, sollicitudin nec ante. Etiam a fermentum nisl. Aenean dapibus, mauris quis iaculis aliquam, enim tortor pretium felis, posuere finibus nibh risus at enim. Nulla id faucibus orci. Sed consectetur tincidunt nulla quis vestibulum. Proin ut maximus nulla, vitae feugiat lacus. Pellentesque aliquet augue id lacus efficitur bibendum at eu dui. Duis dapibus mollis nibh vitae fringilla. In dapibus dolor aliquet tellus luctus, non malesuada lorem rhoncus. Quisque et rhoncus lacus.</p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "f363d7c0-99f2-47cb-8e16-3ae708647c34",
+                  "name": "diah-ayu-yAVyaJboNeY-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Proin laoreet semper est. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean nunc tellus, semper non tempus auctor, egestas ut leo. Sed pharetra efficitur est, at condimentum massa efficitur nec. Integer sit amet sapien vulputate, vulputate diam sed, commodo sapien. Integer nec tempor purus. Sed eget mauris eu nibh tristique efficitur ut a urna.</p>\n\n<p style=\"text-align: justify\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam urna felis, fringilla in scelerisque eu, maximus ut justo. Proin vulputate augue non leo imperdiet scelerisque. Donec bibendum gravida enim nec tempor. Nullam mattis ut orci placerat scelerisque. Etiam at justo semper, consectetur leo sed, vestibulum libero. Curabitur et velit suscipit, vulputate odio nec, tempor enim.</p>"
+              }
+            ]
+          }
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "date": 1661990400000,
+    "readtime": 3
+  },
+  "version": 8,
+  "label": "Interview - Diah Ayu",
+  "status": "ACTIVE",
+  "createdBy": "b5b7704b-34ca-4424-a7dc-f6880734c30e",
+  "createdDate": "2022-09-01T08:33:43.874Z",
+  "lastModifiedBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
+  "lastModifiedDate": "2022-09-05T10:33:01.709Z",
+  "lastPublishedVersion": 8,
+  "lastPublishedDate": "2022-09-05T10:38:32.856Z",
+  "deliveryId": "c0f0fa96-59cb-478c-a103-3ea9986bc6fa"
+}

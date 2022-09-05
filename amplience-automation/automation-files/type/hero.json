@@ -28,6 +28,10 @@
         ]
     },
     "repositories": [
-        "content"
+        "content",
+        "contentfr",
+        "contentde",
+        "contentit",
+        "contentes"
     ]
 }

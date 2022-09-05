@@ -1,0 +1,475 @@
+{
+  "id": "97d0fb16-9872-4578-af1b-95bc8033ef19",
+  "body": {
+    "_meta": {
+      "name": "Eco Friendly Clothes are Here!",
+      "schema": "https://sfcc.com/site/pages/blog",
+      "deliveryKey": "blog/sustainability/eco-friendly-clothes"
+    },
+    "seo": {
+      "title": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "Less co2"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "Moins de co2"
+          },
+          {
+            "locale": "de-DE",
+            "value": "Weniger co2"
+          },
+          {
+            "locale": "es-ES",
+            "value": "Menos co2"
+          },
+          {
+            "locale": "it-IT",
+            "value": "Meno co2"
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      },
+      "description": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "Help to World with co2 clothes"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "Aidez le monde avec des vêtements co2"
+          },
+          {
+            "locale": "de-DE",
+            "value": "Helfen Sie der Welt mit CO2-Kleidung"
+          },
+          {
+            "locale": "es-ES",
+            "value": "Ayuda al mundo con ropa de co2"
+          },
+          {
+            "locale": "it-IT",
+            "value": "Aiuta il mondo con i vestiti di co2"
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      },
+      "keywords": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "health, world, reusable"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "santé, monde, réutilisable"
+          },
+          {
+            "locale": "de-DE",
+            "value": "Gesundheit, Welt, wiederverwendbar"
+          },
+          {
+            "locale": "es-ES",
+            "value": "salud, mundo, reutilizable"
+          },
+          {
+            "locale": "it-IT",
+            "value": "salute, mondo, riutilizzabile"
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      },
+      "noindex": false
+    },
+    "image": {
+      "image": {
+        "crop": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "rot": 0,
+        "hue": 0,
+        "sat": 0,
+        "bri": 0,
+        "fliph": false,
+        "flipv": false,
+        "poi": {
+          "x": 0.47562040897359537,
+          "y": 0.4429223744292237
+        },
+        "aspectLock": "poi",
+        "query": "poi=0.4756,0.4429,0,0&scaleFit=poi",
+        "image": {
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+          },
+          "id": "970801b1-2b7e-499b-9ec1-7fddf523dd2c",
+          "name": "clark-street-mercantile-qnKhZJPKFD8-unsplash",
+          "endpoint": "sfcccompdev",
+          "defaultHost": "cdn.media.amplience.net"
+        }
+      },
+      "imageAltText": "eCo friendly clothes",
+      "seoText": "Help to World with co2 clothes"
+    },
+    "tags": [
+      {
+        "_meta": {
+          "name": "Sustainability",
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+        },
+        "id": "b5b89392-4e9c-4bd0-add2-98a64773eab3",
+        "contentType": "https://sfcc.com/components/tag"
+      },
+      {
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+        },
+        "contentType": "https://sfcc.com/components/tag",
+        "id": "876c73af-6481-466d-b31e-a88dab9aea68"
+      }
+    ],
+    "categories": [
+      {
+        "name": "(newarrivals-mens) Mens",
+        "id": "newarrivals-mens"
+      },
+      {
+        "name": "(mens-clothing) Clothing",
+        "id": "mens-clothing"
+      }
+    ],
+    "author": {
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+      },
+      "contentType": "https://sfcc.com/components/author",
+      "id": "bca8395f-4864-4a3e-afef-38ab18c1076b"
+    },
+    "content": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum dui est, tempor vitae nulla et, tempus sollicitudin eros. Vivamus volutpat, ipsum quis commodo imperdiet, lectus diam euismod magna, sit amet lacinia eros justo at elit. Praesent justo lectus, ullamcorper eu orci eu, auctor pretium quam. Maecenas eget ex ut nibh pharetra venenatis. Curabitur bibendum, nisi in laoreet posuere, nisi arcu fringilla nibh, et dignissim ex felis id metus. Etiam quis urna sodales, venenatis urna sed, efficitur mi. Nulla facilisi.\n\n<p style=\"text-align: justify\">Proin vestibulum eros quis efficitur elementum. Nunc rhoncus vel dolor vitae posuere. Ut tempus, nisi et laoreet ullamcorper, ipsum dolor scelerisque libero, et ullamcorper risus elit et quam. Quisque vestibulum velit a odio volutpat, eget dignissim urna auctor. Curabitur efficitur maximus nisl cursus ornare. Vestibulum eget iaculis dui. Suspendisse justo urna, gravida quis tristique ac, ullamcorper non nisl. Praesent ut turpis ligula. Curabitur quis fringilla elit. Nulla bibendum felis sapien, eu finibus felis maximus in. Aliquam scelerisque erat non nisi gravida, quis condimentum dui tincidunt. Nullam vel leo quis dolor congue pretium. Donec lobortis ex non ligula convallis, id fermentum sapien mollis. Donec accumsan, lectus in tincidunt ultrices, libero quam rhoncus mauris, et venenatis tortor nunc ac ipsum. Nulla sollicitudin tellus eu dapibus maximus.</p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "f5dc0ee5-d116-4ecb-a8eb-ea94669ce38d",
+                  "name": "cherie-birkner-J6MJPuJiDPo-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Nullam vestibulum eleifend lacus at elementum. Suspendisse lacinia tempor erat aliquam molestie. Fusce non velit tristique, fermentum tellus ut, rhoncus nunc. Morbi ipsum massa, malesuada eu laoreet sit amet, vehicula vel libero. Morbi laoreet orci non convallis condimentum. Proin id risus leo. Mauris tempor molestie ipsum sed vulputate. Praesent et nisl nisi.</p>\n\n<p style=\"text-align: justify\">Donec dui nisi, commodo non dolor id, condimentum imperdiet lorem. Quisque quis magna rutrum nunc interdum fermentum a luctus risus. Nunc euismod turpis sit amet sem egestas dapibus. In dapibus malesuada sagittis. In tincidunt enim venenatis, rutrum orci semper, ullamcorper tellus. Cras viverra diam ornare, posuere nisi vel, venenatis ligula. Duis maximus massa in porttitor dictum. Proin pulvinar sed ipsum at vehicula. Nunc nec lacus a sapien tincidunt aliquet vel ut urna. Donec blandit metus a diam iaculis laoreet. Nullam malesuada facilisis elit sit amet ullamcorper. Duis consectetur neque id pretium sodales. In ac est nunc.</p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "6793cd8f-4673-41f6-9f8a-88e8d5d89550",
+                  "name": "kinn-living-h8cVn_Gx45k-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Nullam scelerisque dapibus est, id tristique dui. Pellentesque condimentum libero nibh, quis pharetra nibh maximus convallis. Proin non neque in quam ultrices molestie id ac diam. Pellentesque ultricies, augue et placerat placerat, nisl nisi viverra lacus, ut ullamcorper est tellus ut massa. Mauris varius ligula dolor, a efficitur libero pretium id. Nulla sagittis in ligula non elementum. Donec eget tellus sed tortor accumsan varius et ut magna. Vivamus in ante quis ante pretium maximus id id eros. Nulla facilisi. Vivamus semper faucibus accumsan. Aliquam id mi placerat, ultricies neque ut, fringilla lorem. Nulla eu purus et purus tristique imperdiet. Donec ornare posuere magna et aliquam. Donec euismod massa et sagittis accumsan. Pellentesque aliquam pulvinar felis, in tempor diam imperdiet nec.</p>\n\n<p style=\"text-align: justify\">Maecenas eget neque tincidunt, rutrum ipsum suscipit, aliquet leo. Vivamus at justo ultrices, imperdiet velit non, vulputate nulla. Mauris lacinia fringilla vehicula. Donec pellentesque neque a dolor aliquam auctor. Proin tincidunt, mauris vel vulputate pellentesque, diam odio laoreet orci, quis fringilla augue erat at tellus. Proin gravida eu magna ut luctus. Aenean rhoncus leo sed euismod pellentesque. Phasellus varius placerat venenatis. Nam eget facilisis est. Fusce tincidunt enim quis imperdiet lacinia. Cras sed sapien augue. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum sit amet diam arcu. Cras id luctus turpis, ac eleifend leo. Vivamus tincidunt lectus a dolor laoreet porttitor. Morbi a risus at lectus bibendum tempor eu id leo.</p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "04d225d7-4f2b-404a-a477-8cfc3c4e1d96",
+                  "name": "marcus-loke-xXJ6utyoSw0-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Mauris rhoncus mi in massa posuere, ac sagittis mi semper. Maecenas quam mauris, rutrum quis consequat ac, facilisis quis orci. Curabitur eu nunc et dui mattis ultrices. Mauris congue est eu bibendum dictum. Nam id leo lacinia, pulvinar massa eu, posuere nibh. Nulla suscipit, velit sed maximus bibendum, mi justo bibendum sem, eu iaculis justo ligula in urna. Mauris maximus, lectus eu luctus aliquam, ipsum nulla posuere mauris, eu semper quam nisl ut odio.</p>"
+              }
+            ]
+          }
+        },
+        {
+          "locale": "fr-FR",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum dui est, tempor vitae nulla et, tempus sollicitudin eros. Vivamus volutpat, ipsum quis commodo imperdiet, lectus diam euismod magna, sit amet lacinia eros justo at elit. Praesent justo lectus, ullamcorper eu orci eu, auctor pretium quam. Maecenas eget ex ut nibh pharetra venenatis. Curabitur bibendum, nisi in laoreet posuere, nisi arcu fringilla nibh, et dignissim ex felis id metus. Etiam quis urna sodales, venenatis urna sed, efficitur mi. Nulla facilisi.\n\n<p style=\"text-align: justify\">Proin vestibulum eros quis efficitur elementum. Nunc rhoncus vel dolor vitae posuere. Ut tempus, nisi et laoreet ullamcorper, ipsum dolor scelerisque libero, et ullamcorper risus elit et quam. Quisque vestibulum velit a odio volutpat, eget dignissim urna auctor. Curabitur efficitur maximus nisl cursus ornare. Vestibulum eget iaculis dui. Suspendisse justo urna, gravida quis tristique ac, ullamcorper non nisl. Praesent ut turpis ligula. Curabitur quis fringilla elit. Nulla bibendum felis sapien, eu finibus felis maximus in. Aliquam scelerisque erat non nisi gravida, quis condimentum dui tincidunt. Nullam vel leo quis dolor congue pretium. Donec lobortis ex non ligula convallis, id fermentum sapien mollis. Donec accumsan, lectus in tincidunt ultrices, libero quam rhoncus mauris, et venenatis tortor nunc ac ipsum. Nulla sollicitudin tellus eu dapibus maximus.</p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "f5dc0ee5-d116-4ecb-a8eb-ea94669ce38d",
+                  "name": "cherie-birkner-J6MJPuJiDPo-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Nullam vestibulum eleifend lacus at elementum. Suspendisse lacinia tempor erat aliquam molestie. Fusce non velit tristique, fermentum tellus ut, rhoncus nunc. Morbi ipsum massa, malesuada eu laoreet sit amet, vehicula vel libero. Morbi laoreet orci non convallis condimentum. Proin id risus leo. Mauris tempor molestie ipsum sed vulputate. Praesent et nisl nisi.</p>\n\n<p style=\"text-align: justify\">Donec dui nisi, commodo non dolor id, condimentum imperdiet lorem. Quisque quis magna rutrum nunc interdum fermentum a luctus risus. Nunc euismod turpis sit amet sem egestas dapibus. In dapibus malesuada sagittis. In tincidunt enim venenatis, rutrum orci semper, ullamcorper tellus. Cras viverra diam ornare, posuere nisi vel, venenatis ligula. Duis maximus massa in porttitor dictum. Proin pulvinar sed ipsum at vehicula. Nunc nec lacus a sapien tincidunt aliquet vel ut urna. Donec blandit metus a diam iaculis laoreet. Nullam malesuada facilisis elit sit amet ullamcorper. Duis consectetur neque id pretium sodales. In ac est nunc.</p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "6793cd8f-4673-41f6-9f8a-88e8d5d89550",
+                  "name": "kinn-living-h8cVn_Gx45k-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Nullam scelerisque dapibus est, id tristique dui. Pellentesque condimentum libero nibh, quis pharetra nibh maximus convallis. Proin non neque in quam ultrices molestie id ac diam. Pellentesque ultricies, augue et placerat placerat, nisl nisi viverra lacus, ut ullamcorper est tellus ut massa. Mauris varius ligula dolor, a efficitur libero pretium id. Nulla sagittis in ligula non elementum. Donec eget tellus sed tortor accumsan varius et ut magna. Vivamus in ante quis ante pretium maximus id id eros. Nulla facilisi. Vivamus semper faucibus accumsan. Aliquam id mi placerat, ultricies neque ut, fringilla lorem. Nulla eu purus et purus tristique imperdiet. Donec ornare posuere magna et aliquam. Donec euismod massa et sagittis accumsan. Pellentesque aliquam pulvinar felis, in tempor diam imperdiet nec.</p>\n\n<p style=\"text-align: justify\">Maecenas eget neque tincidunt, rutrum ipsum suscipit, aliquet leo. Vivamus at justo ultrices, imperdiet velit non, vulputate nulla. Mauris lacinia fringilla vehicula. Donec pellentesque neque a dolor aliquam auctor. Proin tincidunt, mauris vel vulputate pellentesque, diam odio laoreet orci, quis fringilla augue erat at tellus. Proin gravida eu magna ut luctus. Aenean rhoncus leo sed euismod pellentesque. Phasellus varius placerat venenatis. Nam eget facilisis est. Fusce tincidunt enim quis imperdiet lacinia. Cras sed sapien augue. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum sit amet diam arcu. Cras id luctus turpis, ac eleifend leo. Vivamus tincidunt lectus a dolor laoreet porttitor. Morbi a risus at lectus bibendum tempor eu id leo.</p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "04d225d7-4f2b-404a-a477-8cfc3c4e1d96",
+                  "name": "marcus-loke-xXJ6utyoSw0-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Mauris rhoncus mi in massa posuere, ac sagittis mi semper. Maecenas quam mauris, rutrum quis consequat ac, facilisis quis orci. Curabitur eu nunc et dui mattis ultrices. Mauris congue est eu bibendum dictum. Nam id leo lacinia, pulvinar massa eu, posuere nibh. Nulla suscipit, velit sed maximus bibendum, mi justo bibendum sem, eu iaculis justo ligula in urna. Mauris maximus, lectus eu luctus aliquam, ipsum nulla posuere mauris, eu semper quam nisl ut odio.</p>"
+              }
+            ]
+          }
+        },
+        {
+          "locale": "de-DE",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum dui est, tempor vitae nulla et, tempus sollicitudin eros. Vivamus volutpat, ipsum quis commodo imperdiet, lectus diam euismod magna, sit amet lacinia eros justo at elit. Praesent justo lectus, ullamcorper eu orci eu, auctor pretium quam. Maecenas eget ex ut nibh pharetra venenatis. Curabitur bibendum, nisi in laoreet posuere, nisi arcu fringilla nibh, et dignissim ex felis id metus. Etiam quis urna sodales, venenatis urna sed, efficitur mi. Nulla facilisi.\n\n<p style=\"text-align: justify\">Proin vestibulum eros quis efficitur elementum. Nunc rhoncus vel dolor vitae posuere. Ut tempus, nisi et laoreet ullamcorper, ipsum dolor scelerisque libero, et ullamcorper risus elit et quam. Quisque vestibulum velit a odio volutpat, eget dignissim urna auctor. Curabitur efficitur maximus nisl cursus ornare. Vestibulum eget iaculis dui. Suspendisse justo urna, gravida quis tristique ac, ullamcorper non nisl. Praesent ut turpis ligula. Curabitur quis fringilla elit. Nulla bibendum felis sapien, eu finibus felis maximus in. Aliquam scelerisque erat non nisi gravida, quis condimentum dui tincidunt. Nullam vel leo quis dolor congue pretium. Donec lobortis ex non ligula convallis, id fermentum sapien mollis. Donec accumsan, lectus in tincidunt ultrices, libero quam rhoncus mauris, et venenatis tortor nunc ac ipsum. Nulla sollicitudin tellus eu dapibus maximus.</p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "f5dc0ee5-d116-4ecb-a8eb-ea94669ce38d",
+                  "name": "cherie-birkner-J6MJPuJiDPo-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Nullam vestibulum eleifend lacus at elementum. Suspendisse lacinia tempor erat aliquam molestie. Fusce non velit tristique, fermentum tellus ut, rhoncus nunc. Morbi ipsum massa, malesuada eu laoreet sit amet, vehicula vel libero. Morbi laoreet orci non convallis condimentum. Proin id risus leo. Mauris tempor molestie ipsum sed vulputate. Praesent et nisl nisi.</p>\n\n<p style=\"text-align: justify\">Donec dui nisi, commodo non dolor id, condimentum imperdiet lorem. Quisque quis magna rutrum nunc interdum fermentum a luctus risus. Nunc euismod turpis sit amet sem egestas dapibus. In dapibus malesuada sagittis. In tincidunt enim venenatis, rutrum orci semper, ullamcorper tellus. Cras viverra diam ornare, posuere nisi vel, venenatis ligula. Duis maximus massa in porttitor dictum. Proin pulvinar sed ipsum at vehicula. Nunc nec lacus a sapien tincidunt aliquet vel ut urna. Donec blandit metus a diam iaculis laoreet. Nullam malesuada facilisis elit sit amet ullamcorper. Duis consectetur neque id pretium sodales. In ac est nunc.</p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "6793cd8f-4673-41f6-9f8a-88e8d5d89550",
+                  "name": "kinn-living-h8cVn_Gx45k-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Nullam scelerisque dapibus est, id tristique dui. Pellentesque condimentum libero nibh, quis pharetra nibh maximus convallis. Proin non neque in quam ultrices molestie id ac diam. Pellentesque ultricies, augue et placerat placerat, nisl nisi viverra lacus, ut ullamcorper est tellus ut massa. Mauris varius ligula dolor, a efficitur libero pretium id. Nulla sagittis in ligula non elementum. Donec eget tellus sed tortor accumsan varius et ut magna. Vivamus in ante quis ante pretium maximus id id eros. Nulla facilisi. Vivamus semper faucibus accumsan. Aliquam id mi placerat, ultricies neque ut, fringilla lorem. Nulla eu purus et purus tristique imperdiet. Donec ornare posuere magna et aliquam. Donec euismod massa et sagittis accumsan. Pellentesque aliquam pulvinar felis, in tempor diam imperdiet nec.</p>\n\n<p style=\"text-align: justify\">Maecenas eget neque tincidunt, rutrum ipsum suscipit, aliquet leo. Vivamus at justo ultrices, imperdiet velit non, vulputate nulla. Mauris lacinia fringilla vehicula. Donec pellentesque neque a dolor aliquam auctor. Proin tincidunt, mauris vel vulputate pellentesque, diam odio laoreet orci, quis fringilla augue erat at tellus. Proin gravida eu magna ut luctus. Aenean rhoncus leo sed euismod pellentesque. Phasellus varius placerat venenatis. Nam eget facilisis est. Fusce tincidunt enim quis imperdiet lacinia. Cras sed sapien augue. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum sit amet diam arcu. Cras id luctus turpis, ac eleifend leo. Vivamus tincidunt lectus a dolor laoreet porttitor. Morbi a risus at lectus bibendum tempor eu id leo.</p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "04d225d7-4f2b-404a-a477-8cfc3c4e1d96",
+                  "name": "marcus-loke-xXJ6utyoSw0-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Mauris rhoncus mi in massa posuere, ac sagittis mi semper. Maecenas quam mauris, rutrum quis consequat ac, facilisis quis orci. Curabitur eu nunc et dui mattis ultrices. Mauris congue est eu bibendum dictum. Nam id leo lacinia, pulvinar massa eu, posuere nibh. Nulla suscipit, velit sed maximus bibendum, mi justo bibendum sem, eu iaculis justo ligula in urna. Mauris maximus, lectus eu luctus aliquam, ipsum nulla posuere mauris, eu semper quam nisl ut odio.</p>"
+              }
+            ]
+          }
+        },
+        {
+          "locale": "es-ES",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum dui est, tempor vitae nulla et, tempus sollicitudin eros. Vivamus volutpat, ipsum quis commodo imperdiet, lectus diam euismod magna, sit amet lacinia eros justo at elit. Praesent justo lectus, ullamcorper eu orci eu, auctor pretium quam. Maecenas eget ex ut nibh pharetra venenatis. Curabitur bibendum, nisi in laoreet posuere, nisi arcu fringilla nibh, et dignissim ex felis id metus. Etiam quis urna sodales, venenatis urna sed, efficitur mi. Nulla facilisi.\n\n<p style=\"text-align: justify\">Proin vestibulum eros quis efficitur elementum. Nunc rhoncus vel dolor vitae posuere. Ut tempus, nisi et laoreet ullamcorper, ipsum dolor scelerisque libero, et ullamcorper risus elit et quam. Quisque vestibulum velit a odio volutpat, eget dignissim urna auctor. Curabitur efficitur maximus nisl cursus ornare. Vestibulum eget iaculis dui. Suspendisse justo urna, gravida quis tristique ac, ullamcorper non nisl. Praesent ut turpis ligula. Curabitur quis fringilla elit. Nulla bibendum felis sapien, eu finibus felis maximus in. Aliquam scelerisque erat non nisi gravida, quis condimentum dui tincidunt. Nullam vel leo quis dolor congue pretium. Donec lobortis ex non ligula convallis, id fermentum sapien mollis. Donec accumsan, lectus in tincidunt ultrices, libero quam rhoncus mauris, et venenatis tortor nunc ac ipsum. Nulla sollicitudin tellus eu dapibus maximus.</p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "f5dc0ee5-d116-4ecb-a8eb-ea94669ce38d",
+                  "name": "cherie-birkner-J6MJPuJiDPo-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Nullam vestibulum eleifend lacus at elementum. Suspendisse lacinia tempor erat aliquam molestie. Fusce non velit tristique, fermentum tellus ut, rhoncus nunc. Morbi ipsum massa, malesuada eu laoreet sit amet, vehicula vel libero. Morbi laoreet orci non convallis condimentum. Proin id risus leo. Mauris tempor molestie ipsum sed vulputate. Praesent et nisl nisi.</p>\n\n<p style=\"text-align: justify\">Donec dui nisi, commodo non dolor id, condimentum imperdiet lorem. Quisque quis magna rutrum nunc interdum fermentum a luctus risus. Nunc euismod turpis sit amet sem egestas dapibus. In dapibus malesuada sagittis. In tincidunt enim venenatis, rutrum orci semper, ullamcorper tellus. Cras viverra diam ornare, posuere nisi vel, venenatis ligula. Duis maximus massa in porttitor dictum. Proin pulvinar sed ipsum at vehicula. Nunc nec lacus a sapien tincidunt aliquet vel ut urna. Donec blandit metus a diam iaculis laoreet. Nullam malesuada facilisis elit sit amet ullamcorper. Duis consectetur neque id pretium sodales. In ac est nunc.</p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "6793cd8f-4673-41f6-9f8a-88e8d5d89550",
+                  "name": "kinn-living-h8cVn_Gx45k-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Nullam scelerisque dapibus est, id tristique dui. Pellentesque condimentum libero nibh, quis pharetra nibh maximus convallis. Proin non neque in quam ultrices molestie id ac diam. Pellentesque ultricies, augue et placerat placerat, nisl nisi viverra lacus, ut ullamcorper est tellus ut massa. Mauris varius ligula dolor, a efficitur libero pretium id. Nulla sagittis in ligula non elementum. Donec eget tellus sed tortor accumsan varius et ut magna. Vivamus in ante quis ante pretium maximus id id eros. Nulla facilisi. Vivamus semper faucibus accumsan. Aliquam id mi placerat, ultricies neque ut, fringilla lorem. Nulla eu purus et purus tristique imperdiet. Donec ornare posuere magna et aliquam. Donec euismod massa et sagittis accumsan. Pellentesque aliquam pulvinar felis, in tempor diam imperdiet nec.</p>\n\n<p style=\"text-align: justify\">Maecenas eget neque tincidunt, rutrum ipsum suscipit, aliquet leo. Vivamus at justo ultrices, imperdiet velit non, vulputate nulla. Mauris lacinia fringilla vehicula. Donec pellentesque neque a dolor aliquam auctor. Proin tincidunt, mauris vel vulputate pellentesque, diam odio laoreet orci, quis fringilla augue erat at tellus. Proin gravida eu magna ut luctus. Aenean rhoncus leo sed euismod pellentesque. Phasellus varius placerat venenatis. Nam eget facilisis est. Fusce tincidunt enim quis imperdiet lacinia. Cras sed sapien augue. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum sit amet diam arcu. Cras id luctus turpis, ac eleifend leo. Vivamus tincidunt lectus a dolor laoreet porttitor. Morbi a risus at lectus bibendum tempor eu id leo.</p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "04d225d7-4f2b-404a-a477-8cfc3c4e1d96",
+                  "name": "marcus-loke-xXJ6utyoSw0-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Mauris rhoncus mi in massa posuere, ac sagittis mi semper. Maecenas quam mauris, rutrum quis consequat ac, facilisis quis orci. Curabitur eu nunc et dui mattis ultrices. Mauris congue est eu bibendum dictum. Nam id leo lacinia, pulvinar massa eu, posuere nibh. Nulla suscipit, velit sed maximus bibendum, mi justo bibendum sem, eu iaculis justo ligula in urna. Mauris maximus, lectus eu luctus aliquam, ipsum nulla posuere mauris, eu semper quam nisl ut odio.</p>"
+              }
+            ]
+          }
+        },
+        {
+          "locale": "it-IT",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum dui est, tempor vitae nulla et, tempus sollicitudin eros. Vivamus volutpat, ipsum quis commodo imperdiet, lectus diam euismod magna, sit amet lacinia eros justo at elit. Praesent justo lectus, ullamcorper eu orci eu, auctor pretium quam. Maecenas eget ex ut nibh pharetra venenatis. Curabitur bibendum, nisi in laoreet posuere, nisi arcu fringilla nibh, et dignissim ex felis id metus. Etiam quis urna sodales, venenatis urna sed, efficitur mi. Nulla facilisi.\n\n<p style=\"text-align: justify\">Proin vestibulum eros quis efficitur elementum. Nunc rhoncus vel dolor vitae posuere. Ut tempus, nisi et laoreet ullamcorper, ipsum dolor scelerisque libero, et ullamcorper risus elit et quam. Quisque vestibulum velit a odio volutpat, eget dignissim urna auctor. Curabitur efficitur maximus nisl cursus ornare. Vestibulum eget iaculis dui. Suspendisse justo urna, gravida quis tristique ac, ullamcorper non nisl. Praesent ut turpis ligula. Curabitur quis fringilla elit. Nulla bibendum felis sapien, eu finibus felis maximus in. Aliquam scelerisque erat non nisi gravida, quis condimentum dui tincidunt. Nullam vel leo quis dolor congue pretium. Donec lobortis ex non ligula convallis, id fermentum sapien mollis. Donec accumsan, lectus in tincidunt ultrices, libero quam rhoncus mauris, et venenatis tortor nunc ac ipsum. Nulla sollicitudin tellus eu dapibus maximus.</p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "f5dc0ee5-d116-4ecb-a8eb-ea94669ce38d",
+                  "name": "cherie-birkner-J6MJPuJiDPo-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Nullam vestibulum eleifend lacus at elementum. Suspendisse lacinia tempor erat aliquam molestie. Fusce non velit tristique, fermentum tellus ut, rhoncus nunc. Morbi ipsum massa, malesuada eu laoreet sit amet, vehicula vel libero. Morbi laoreet orci non convallis condimentum. Proin id risus leo. Mauris tempor molestie ipsum sed vulputate. Praesent et nisl nisi.</p>\n\n<p style=\"text-align: justify\">Donec dui nisi, commodo non dolor id, condimentum imperdiet lorem. Quisque quis magna rutrum nunc interdum fermentum a luctus risus. Nunc euismod turpis sit amet sem egestas dapibus. In dapibus malesuada sagittis. In tincidunt enim venenatis, rutrum orci semper, ullamcorper tellus. Cras viverra diam ornare, posuere nisi vel, venenatis ligula. Duis maximus massa in porttitor dictum. Proin pulvinar sed ipsum at vehicula. Nunc nec lacus a sapien tincidunt aliquet vel ut urna. Donec blandit metus a diam iaculis laoreet. Nullam malesuada facilisis elit sit amet ullamcorper. Duis consectetur neque id pretium sodales. In ac est nunc.</p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "6793cd8f-4673-41f6-9f8a-88e8d5d89550",
+                  "name": "kinn-living-h8cVn_Gx45k-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Nullam scelerisque dapibus est, id tristique dui. Pellentesque condimentum libero nibh, quis pharetra nibh maximus convallis. Proin non neque in quam ultrices molestie id ac diam. Pellentesque ultricies, augue et placerat placerat, nisl nisi viverra lacus, ut ullamcorper est tellus ut massa. Mauris varius ligula dolor, a efficitur libero pretium id. Nulla sagittis in ligula non elementum. Donec eget tellus sed tortor accumsan varius et ut magna. Vivamus in ante quis ante pretium maximus id id eros. Nulla facilisi. Vivamus semper faucibus accumsan. Aliquam id mi placerat, ultricies neque ut, fringilla lorem. Nulla eu purus et purus tristique imperdiet. Donec ornare posuere magna et aliquam. Donec euismod massa et sagittis accumsan. Pellentesque aliquam pulvinar felis, in tempor diam imperdiet nec.</p>\n\n<p style=\"text-align: justify\">Maecenas eget neque tincidunt, rutrum ipsum suscipit, aliquet leo. Vivamus at justo ultrices, imperdiet velit non, vulputate nulla. Mauris lacinia fringilla vehicula. Donec pellentesque neque a dolor aliquam auctor. Proin tincidunt, mauris vel vulputate pellentesque, diam odio laoreet orci, quis fringilla augue erat at tellus. Proin gravida eu magna ut luctus. Aenean rhoncus leo sed euismod pellentesque. Phasellus varius placerat venenatis. Nam eget facilisis est. Fusce tincidunt enim quis imperdiet lacinia. Cras sed sapien augue. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum sit amet diam arcu. Cras id luctus turpis, ac eleifend leo. Vivamus tincidunt lectus a dolor laoreet porttitor. Morbi a risus at lectus bibendum tempor eu id leo.</p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "04d225d7-4f2b-404a-a477-8cfc3c4e1d96",
+                  "name": "marcus-loke-xXJ6utyoSw0-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Mauris rhoncus mi in massa posuere, ac sagittis mi semper. Maecenas quam mauris, rutrum quis consequat ac, facilisis quis orci. Curabitur eu nunc et dui mattis ultrices. Mauris congue est eu bibendum dictum. Nam id leo lacinia, pulvinar massa eu, posuere nibh. Nulla suscipit, velit sed maximus bibendum, mi justo bibendum sem, eu iaculis justo ligula in urna. Mauris maximus, lectus eu luctus aliquam, ipsum nulla posuere mauris, eu semper quam nisl ut odio.</p>"
+              }
+            ]
+          }
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "date": 1662076800000,
+    "readtime": 7
+  },
+  "version": 6,
+  "label": "Eco Friendly Clothes are Here!",
+  "status": "ACTIVE",
+  "createdBy": "4f03be08-c84d-4baf-b0ac-24406cc2d618",
+  "createdDate": "2022-09-01T09:19:50.026Z",
+  "lastModifiedBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
+  "lastModifiedDate": "2022-09-05T10:29:34.261Z",
+  "lastPublishedVersion": 6,
+  "lastPublishedDate": "2022-09-05T10:38:34.642Z",
+  "deliveryId": "97d0fb16-9872-4578-af1b-95bc8033ef19"
+}

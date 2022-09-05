@@ -1,0 +1,409 @@
+{
+  "id": "c3fcb8ec-1eb6-4040-b696-2f60dcfaa3cf",
+  "body": {
+    "_meta": {
+      "name": "Up to date tips from Sam",
+      "schema": "https://sfcc.com/site/pages/blog",
+      "deliveryKey": "blog/interviews/sam-mchgee"
+    },
+    "seo": {
+      "title": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "Precious chat with Sam"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "Précieuse conversation avec Sam"
+          },
+          {
+            "locale": "de-DE",
+            "value": "Kostbares Gespräch mit Sam"
+          },
+          {
+            "locale": "es-ES",
+            "value": "Preciosa charla con Sam"
+          },
+          {
+            "locale": "it-IT",
+            "value": "Chiacchierata preziosa con Sam"
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      },
+      "description": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "Life saving tips interview with Sam"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "Entretien avec Sam sur les conseils pour sauver des vies"
+          },
+          {
+            "locale": "de-DE",
+            "value": "Lebensrettende Tipps Interview mit Sam"
+          },
+          {
+            "locale": "es-ES",
+            "value": "Consejos para salvar vidas entrevista con Sam"
+          },
+          {
+            "locale": "it-IT",
+            "value": "Intervista sui consigli salvavita con Sam"
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      },
+      "noindex": false,
+      "keywords": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "tips, chat, knowledge"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "conseils, chat, connaissances"
+          },
+          {
+            "locale": "de-DE",
+            "value": "Tipps, Chat, Wissen"
+          },
+          {
+            "locale": "es-ES",
+            "value": "consejos, chat, conocimiento"
+          },
+          {
+            "locale": "it-IT",
+            "value": "consigli, chat, conoscenza"
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      }
+    },
+    "image": {
+      "image": {
+        "crop": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "rot": 0,
+        "hue": 0,
+        "sat": 0,
+        "bri": 0,
+        "fliph": false,
+        "flipv": false,
+        "poi": {
+          "x": 0.5430197261242244,
+          "y": 0.5445205479452054
+        },
+        "aspectLock": "poi",
+        "query": "poi=0.543,0.5445,0,0&scaleFit=poi",
+        "image": {
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+          },
+          "id": "4ba5d12e-c75a-443f-a7da-c2eb4175f6c8",
+          "name": "sam-mcghee-4siwRamtFAk-unsplash",
+          "endpoint": "sfcccompdev",
+          "defaultHost": "cdn.media.amplience.net"
+        }
+      },
+      "imageAltText": "Interview with Sam",
+      "seoText": "Life saving tips interview with Sam"
+    },
+    "tags": [
+      {
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+        },
+        "contentType": "https://sfcc.com/components/tag",
+        "id": "47034f2f-fbfe-46f2-beda-fe4cdef47d4d"
+      },
+      {
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+        },
+        "contentType": "https://sfcc.com/components/tag",
+        "id": "a5cf0229-e73d-4ea8-9685-3ea9174c7d37"
+      },
+      {
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+        },
+        "contentType": "https://sfcc.com/components/tag",
+        "id": "876c73af-6481-466d-b31e-a88dab9aea68"
+      }
+    ],
+    "categories": [
+      {
+        "name": "(newarrivals-womens) Womens",
+        "id": "newarrivals-womens"
+      },
+      {
+        "name": "(womens-outfits) Outfits",
+        "id": "womens-outfits"
+      },
+      {
+        "name": "(womens-accessories) Accessories",
+        "id": "womens-accessories"
+      },
+      {
+        "name": "(womens-clothing-dresses) Dresses",
+        "id": "womens-clothing-dresses"
+      }
+    ],
+    "author": {
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+      },
+      "contentType": "https://sfcc.com/components/author",
+      "id": "dd60b0fd-8f87-447b-b36b-9d713c4ad83f"
+    },
+    "content": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis efficitur dolor eu quam semper, non vestibulum metus viverra. Sed fringilla purus quam. Integer dapibus vestibulum mauris, non mollis neque pretium et. Nulla posuere faucibus dui, sed tristique nisl luctus vel. Aliquam vitae quam massa. Donec non viverra ex. Fusce ut ex sit amet ex egestas varius ac et nulla. Proin pretium dignissim gravida. Curabitur bibendum turpis id egestas imperdiet. In vel mattis neque. Morbi feugiat id arcu at placerat. Curabitur velit augue, eleifend in sagittis ac, vestibulum quis mauris. Vivamus accumsan, ante at mollis interdum, sem lorem pharetra dui, ac sollicitudin odio lectus eu tellus. Etiam viverra urna eu sapien mollis, nec maximus sapien dapibus. Etiam id nulla mattis, tincidunt ante eu, dignissim ex. Aliquam purus elit, dignissim ut nunc ut, pulvinar suscipit urna."
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "0819168a-714c-47f4-8f2b-ff59e3e87310",
+                  "name": "david-emrich-TdeCF3XmDWg-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">In pellentesque massa ut porttitor consectetur. Donec consequat nisl arcu, ac congue nibh auctor porta. Quisque vehicula interdum enim, vitae faucibus odio aliquet at. Vivamus nec odio lorem. Quisque vulputate, metus id pulvinar lacinia, velit libero aliquam tortor, et mollis tellus neque a purus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed nec lectus purus. Duis risus nisl, aliquet vel volutpat vel, condimentum a nunc. Sed et leo at magna molestie blandit id id magna. Integer facilisis at ligula at fermentum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus at sapien libero. Proin non turpis eu purus bibendum maximus. Integer eu mattis urna, sit amet suscipit leo. Donec molestie tortor in vehicula pulvinar.</p>\n\n<p style=\"text-align: justify\">Vestibulum sit amet feugiat metus, at pellentesque nisi. Integer non sagittis augue. Ut vel tempus arcu. Pellentesque accumsan vehicula facilisis. Integer egestas, erat et interdum venenatis, odio ligula molestie quam, id semper arcu orci eget nulla. Pellentesque nec diam nec velit volutpat ultricies in at dolor. Etiam volutpat neque ligula, at mollis risus posuere accumsan. Nunc faucibus nisi in lectus interdum, ultricies fringilla dui elementum. Suspendisse porttitor ligula a sapien luctus sagittis. Vestibulum non purus tristique, sollicitudin lorem vitae, dictum neque. Duis id erat lorem. Nunc ornare, felis id eleifend imperdiet, justo nulla commodo enim, ut gravida lorem velit aliquam erat.</p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "25d5a11e-fbf3-43b5-88bf-5a0c19361935",
+                  "name": "markus-winkler-EKdM6EZ6HDY-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Sed non dolor nulla. Fusce non porttitor augue. Curabitur et risus at augue dignissim facilisis. Maecenas sapien enim, rutrum et consequat sit amet, mattis vel arcu. Nunc eget egestas nisl. Aliquam sed lorem nec mauris ultrices aliquam. Vestibulum vitae blandit metus, quis facilisis odio.</p>\n\n<p style=\"text-align: justify\">Nullam et nulla id leo congue maximus. Pellentesque nunc sapien, pellentesque id commodo eget, molestie at neque. Curabitur auctor efficitur pretium. Aliquam et purus nunc. Etiam vitae ornare sapien. Integer semper id neque volutpat maximus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam congue lectus sit amet lectus vehicula luctus. Cras ac maximus est. Mauris dignissim mollis magna in ornare.</p>"
+              }
+            ]
+          }
+        },
+        {
+          "locale": "fr-FR",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis efficitur dolor eu quam semper, non vestibulum metus viverra. Sed fringilla purus quam. Integer dapibus vestibulum mauris, non mollis neque pretium et. Nulla posuere faucibus dui, sed tristique nisl luctus vel. Aliquam vitae quam massa. Donec non viverra ex. Fusce ut ex sit amet ex egestas varius ac et nulla. Proin pretium dignissim gravida. Curabitur bibendum turpis id egestas imperdiet. In vel mattis neque. Morbi feugiat id arcu at placerat. Curabitur velit augue, eleifend in sagittis ac, vestibulum quis mauris. Vivamus accumsan, ante at mollis interdum, sem lorem pharetra dui, ac sollicitudin odio lectus eu tellus. Etiam viverra urna eu sapien mollis, nec maximus sapien dapibus. Etiam id nulla mattis, tincidunt ante eu, dignissim ex. Aliquam purus elit, dignissim ut nunc ut, pulvinar suscipit urna."
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "0819168a-714c-47f4-8f2b-ff59e3e87310",
+                  "name": "david-emrich-TdeCF3XmDWg-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">In pellentesque massa ut porttitor consectetur. Donec consequat nisl arcu, ac congue nibh auctor porta. Quisque vehicula interdum enim, vitae faucibus odio aliquet at. Vivamus nec odio lorem. Quisque vulputate, metus id pulvinar lacinia, velit libero aliquam tortor, et mollis tellus neque a purus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed nec lectus purus. Duis risus nisl, aliquet vel volutpat vel, condimentum a nunc. Sed et leo at magna molestie blandit id id magna. Integer facilisis at ligula at fermentum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus at sapien libero. Proin non turpis eu purus bibendum maximus. Integer eu mattis urna, sit amet suscipit leo. Donec molestie tortor in vehicula pulvinar.</p>\n\n<p style=\"text-align: justify\">Vestibulum sit amet feugiat metus, at pellentesque nisi. Integer non sagittis augue. Ut vel tempus arcu. Pellentesque accumsan vehicula facilisis. Integer egestas, erat et interdum venenatis, odio ligula molestie quam, id semper arcu orci eget nulla. Pellentesque nec diam nec velit volutpat ultricies in at dolor. Etiam volutpat neque ligula, at mollis risus posuere accumsan. Nunc faucibus nisi in lectus interdum, ultricies fringilla dui elementum. Suspendisse porttitor ligula a sapien luctus sagittis. Vestibulum non purus tristique, sollicitudin lorem vitae, dictum neque. Duis id erat lorem. Nunc ornare, felis id eleifend imperdiet, justo nulla commodo enim, ut gravida lorem velit aliquam erat.</p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "25d5a11e-fbf3-43b5-88bf-5a0c19361935",
+                  "name": "markus-winkler-EKdM6EZ6HDY-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Sed non dolor nulla. Fusce non porttitor augue. Curabitur et risus at augue dignissim facilisis. Maecenas sapien enim, rutrum et consequat sit amet, mattis vel arcu. Nunc eget egestas nisl. Aliquam sed lorem nec mauris ultrices aliquam. Vestibulum vitae blandit metus, quis facilisis odio.</p>\n\n<p style=\"text-align: justify\">Nullam et nulla id leo congue maximus. Pellentesque nunc sapien, pellentesque id commodo eget, molestie at neque. Curabitur auctor efficitur pretium. Aliquam et purus nunc. Etiam vitae ornare sapien. Integer semper id neque volutpat maximus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam congue lectus sit amet lectus vehicula luctus. Cras ac maximus est. Mauris dignissim mollis magna in ornare.</p>"
+              }
+            ]
+          }
+        },
+        {
+          "locale": "de-DE",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis efficitur dolor eu quam semper, non vestibulum metus viverra. Sed fringilla purus quam. Integer dapibus vestibulum mauris, non mollis neque pretium et. Nulla posuere faucibus dui, sed tristique nisl luctus vel. Aliquam vitae quam massa. Donec non viverra ex. Fusce ut ex sit amet ex egestas varius ac et nulla. Proin pretium dignissim gravida. Curabitur bibendum turpis id egestas imperdiet. In vel mattis neque. Morbi feugiat id arcu at placerat. Curabitur velit augue, eleifend in sagittis ac, vestibulum quis mauris. Vivamus accumsan, ante at mollis interdum, sem lorem pharetra dui, ac sollicitudin odio lectus eu tellus. Etiam viverra urna eu sapien mollis, nec maximus sapien dapibus. Etiam id nulla mattis, tincidunt ante eu, dignissim ex. Aliquam purus elit, dignissim ut nunc ut, pulvinar suscipit urna."
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "0819168a-714c-47f4-8f2b-ff59e3e87310",
+                  "name": "david-emrich-TdeCF3XmDWg-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">In pellentesque massa ut porttitor consectetur. Donec consequat nisl arcu, ac congue nibh auctor porta. Quisque vehicula interdum enim, vitae faucibus odio aliquet at. Vivamus nec odio lorem. Quisque vulputate, metus id pulvinar lacinia, velit libero aliquam tortor, et mollis tellus neque a purus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed nec lectus purus. Duis risus nisl, aliquet vel volutpat vel, condimentum a nunc. Sed et leo at magna molestie blandit id id magna. Integer facilisis at ligula at fermentum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus at sapien libero. Proin non turpis eu purus bibendum maximus. Integer eu mattis urna, sit amet suscipit leo. Donec molestie tortor in vehicula pulvinar.</p>\n\n<p style=\"text-align: justify\">Vestibulum sit amet feugiat metus, at pellentesque nisi. Integer non sagittis augue. Ut vel tempus arcu. Pellentesque accumsan vehicula facilisis. Integer egestas, erat et interdum venenatis, odio ligula molestie quam, id semper arcu orci eget nulla. Pellentesque nec diam nec velit volutpat ultricies in at dolor. Etiam volutpat neque ligula, at mollis risus posuere accumsan. Nunc faucibus nisi in lectus interdum, ultricies fringilla dui elementum. Suspendisse porttitor ligula a sapien luctus sagittis. Vestibulum non purus tristique, sollicitudin lorem vitae, dictum neque. Duis id erat lorem. Nunc ornare, felis id eleifend imperdiet, justo nulla commodo enim, ut gravida lorem velit aliquam erat.</p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "25d5a11e-fbf3-43b5-88bf-5a0c19361935",
+                  "name": "markus-winkler-EKdM6EZ6HDY-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Sed non dolor nulla. Fusce non porttitor augue. Curabitur et risus at augue dignissim facilisis. Maecenas sapien enim, rutrum et consequat sit amet, mattis vel arcu. Nunc eget egestas nisl. Aliquam sed lorem nec mauris ultrices aliquam. Vestibulum vitae blandit metus, quis facilisis odio.</p>\n\n<p style=\"text-align: justify\">Nullam et nulla id leo congue maximus. Pellentesque nunc sapien, pellentesque id commodo eget, molestie at neque. Curabitur auctor efficitur pretium. Aliquam et purus nunc. Etiam vitae ornare sapien. Integer semper id neque volutpat maximus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam congue lectus sit amet lectus vehicula luctus. Cras ac maximus est. Mauris dignissim mollis magna in ornare.</p>"
+              }
+            ]
+          }
+        },
+        {
+          "locale": "es-ES",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis efficitur dolor eu quam semper, non vestibulum metus viverra. Sed fringilla purus quam. Integer dapibus vestibulum mauris, non mollis neque pretium et. Nulla posuere faucibus dui, sed tristique nisl luctus vel. Aliquam vitae quam massa. Donec non viverra ex. Fusce ut ex sit amet ex egestas varius ac et nulla. Proin pretium dignissim gravida. Curabitur bibendum turpis id egestas imperdiet. In vel mattis neque. Morbi feugiat id arcu at placerat. Curabitur velit augue, eleifend in sagittis ac, vestibulum quis mauris. Vivamus accumsan, ante at mollis interdum, sem lorem pharetra dui, ac sollicitudin odio lectus eu tellus. Etiam viverra urna eu sapien mollis, nec maximus sapien dapibus. Etiam id nulla mattis, tincidunt ante eu, dignissim ex. Aliquam purus elit, dignissim ut nunc ut, pulvinar suscipit urna."
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "0819168a-714c-47f4-8f2b-ff59e3e87310",
+                  "name": "david-emrich-TdeCF3XmDWg-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">In pellentesque massa ut porttitor consectetur. Donec consequat nisl arcu, ac congue nibh auctor porta. Quisque vehicula interdum enim, vitae faucibus odio aliquet at. Vivamus nec odio lorem. Quisque vulputate, metus id pulvinar lacinia, velit libero aliquam tortor, et mollis tellus neque a purus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed nec lectus purus. Duis risus nisl, aliquet vel volutpat vel, condimentum a nunc. Sed et leo at magna molestie blandit id id magna. Integer facilisis at ligula at fermentum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus at sapien libero. Proin non turpis eu purus bibendum maximus. Integer eu mattis urna, sit amet suscipit leo. Donec molestie tortor in vehicula pulvinar.</p>\n\n<p style=\"text-align: justify\">Vestibulum sit amet feugiat metus, at pellentesque nisi. Integer non sagittis augue. Ut vel tempus arcu. Pellentesque accumsan vehicula facilisis. Integer egestas, erat et interdum venenatis, odio ligula molestie quam, id semper arcu orci eget nulla. Pellentesque nec diam nec velit volutpat ultricies in at dolor. Etiam volutpat neque ligula, at mollis risus posuere accumsan. Nunc faucibus nisi in lectus interdum, ultricies fringilla dui elementum. Suspendisse porttitor ligula a sapien luctus sagittis. Vestibulum non purus tristique, sollicitudin lorem vitae, dictum neque. Duis id erat lorem. Nunc ornare, felis id eleifend imperdiet, justo nulla commodo enim, ut gravida lorem velit aliquam erat.</p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "25d5a11e-fbf3-43b5-88bf-5a0c19361935",
+                  "name": "markus-winkler-EKdM6EZ6HDY-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Sed non dolor nulla. Fusce non porttitor augue. Curabitur et risus at augue dignissim facilisis. Maecenas sapien enim, rutrum et consequat sit amet, mattis vel arcu. Nunc eget egestas nisl. Aliquam sed lorem nec mauris ultrices aliquam. Vestibulum vitae blandit metus, quis facilisis odio.</p>\n\n<p style=\"text-align: justify\">Nullam et nulla id leo congue maximus. Pellentesque nunc sapien, pellentesque id commodo eget, molestie at neque. Curabitur auctor efficitur pretium. Aliquam et purus nunc. Etiam vitae ornare sapien. Integer semper id neque volutpat maximus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam congue lectus sit amet lectus vehicula luctus. Cras ac maximus est. Mauris dignissim mollis magna in ornare.</p>"
+              }
+            ]
+          }
+        },
+        {
+          "locale": "it-IT",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis efficitur dolor eu quam semper, non vestibulum metus viverra. Sed fringilla purus quam. Integer dapibus vestibulum mauris, non mollis neque pretium et. Nulla posuere faucibus dui, sed tristique nisl luctus vel. Aliquam vitae quam massa. Donec non viverra ex. Fusce ut ex sit amet ex egestas varius ac et nulla. Proin pretium dignissim gravida. Curabitur bibendum turpis id egestas imperdiet. In vel mattis neque. Morbi feugiat id arcu at placerat. Curabitur velit augue, eleifend in sagittis ac, vestibulum quis mauris. Vivamus accumsan, ante at mollis interdum, sem lorem pharetra dui, ac sollicitudin odio lectus eu tellus. Etiam viverra urna eu sapien mollis, nec maximus sapien dapibus. Etiam id nulla mattis, tincidunt ante eu, dignissim ex. Aliquam purus elit, dignissim ut nunc ut, pulvinar suscipit urna."
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "0819168a-714c-47f4-8f2b-ff59e3e87310",
+                  "name": "david-emrich-TdeCF3XmDWg-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">In pellentesque massa ut porttitor consectetur. Donec consequat nisl arcu, ac congue nibh auctor porta. Quisque vehicula interdum enim, vitae faucibus odio aliquet at. Vivamus nec odio lorem. Quisque vulputate, metus id pulvinar lacinia, velit libero aliquam tortor, et mollis tellus neque a purus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed nec lectus purus. Duis risus nisl, aliquet vel volutpat vel, condimentum a nunc. Sed et leo at magna molestie blandit id id magna. Integer facilisis at ligula at fermentum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus at sapien libero. Proin non turpis eu purus bibendum maximus. Integer eu mattis urna, sit amet suscipit leo. Donec molestie tortor in vehicula pulvinar.</p>\n\n<p style=\"text-align: justify\">Vestibulum sit amet feugiat metus, at pellentesque nisi. Integer non sagittis augue. Ut vel tempus arcu. Pellentesque accumsan vehicula facilisis. Integer egestas, erat et interdum venenatis, odio ligula molestie quam, id semper arcu orci eget nulla. Pellentesque nec diam nec velit volutpat ultricies in at dolor. Etiam volutpat neque ligula, at mollis risus posuere accumsan. Nunc faucibus nisi in lectus interdum, ultricies fringilla dui elementum. Suspendisse porttitor ligula a sapien luctus sagittis. Vestibulum non purus tristique, sollicitudin lorem vitae, dictum neque. Duis id erat lorem. Nunc ornare, felis id eleifend imperdiet, justo nulla commodo enim, ut gravida lorem velit aliquam erat.</p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "25d5a11e-fbf3-43b5-88bf-5a0c19361935",
+                  "name": "markus-winkler-EKdM6EZ6HDY-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Sed non dolor nulla. Fusce non porttitor augue. Curabitur et risus at augue dignissim facilisis. Maecenas sapien enim, rutrum et consequat sit amet, mattis vel arcu. Nunc eget egestas nisl. Aliquam sed lorem nec mauris ultrices aliquam. Vestibulum vitae blandit metus, quis facilisis odio.</p>\n\n<p style=\"text-align: justify\">Nullam et nulla id leo congue maximus. Pellentesque nunc sapien, pellentesque id commodo eget, molestie at neque. Curabitur auctor efficitur pretium. Aliquam et purus nunc. Etiam vitae ornare sapien. Integer semper id neque volutpat maximus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam congue lectus sit amet lectus vehicula luctus. Cras ac maximus est. Mauris dignissim mollis magna in ornare.</p>"
+              }
+            ]
+          }
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "date": 1662249600000,
+    "readtime": 5
+  },
+  "version": 7,
+  "label": "Up to date tips from Sam",
+  "status": "ACTIVE",
+  "createdBy": "4f03be08-c84d-4baf-b0ac-24406cc2d618",
+  "createdDate": "2022-09-01T09:30:15.723Z",
+  "lastModifiedBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
+  "lastModifiedDate": "2022-09-05T10:36:54.948Z",
+  "lastPublishedVersion": 6,
+  "lastPublishedDate": "2022-09-02T12:01:00.111Z",
+  "deliveryId": "c3fcb8ec-1eb6-4040-b696-2f60dcfaa3cf"
+}

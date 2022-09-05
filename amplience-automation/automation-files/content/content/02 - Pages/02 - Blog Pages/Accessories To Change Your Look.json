@@ -1,0 +1,459 @@
+{
+  "id": "914b2225-9315-414c-82e7-8dce0e5bad84",
+  "body": {
+    "_meta": {
+      "name": "Accessories To Change Your Look",
+      "schema": "https://sfcc.com/site/pages/blog",
+      "deliveryKey": "blog/what-to-wear/accessories"
+    },
+    "seo": {
+      "title": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "Ladies Accessories"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "Accessoires pour dames"
+          },
+          {
+            "locale": "de-DE",
+            "value": "Damen-Accessoires"
+          },
+          {
+            "locale": "es-ES",
+            "value": "Accesorios para damas"
+          },
+          {
+            "locale": "it-IT",
+            "value": "Accessori da donna"
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      },
+      "noindex": false,
+      "description": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "little touches that will make you fancy"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "des petites attentions qui vous feront envie"
+          },
+          {
+            "locale": "de-DE",
+            "value": "kleine Aufmerksamkeiten, die Sie schick machen werden"
+          },
+          {
+            "locale": "es-ES",
+            "value": "pequeños toques que te harán apetece"
+          },
+          {
+            "locale": "it-IT",
+            "value": "piccoli tocchi che ti faranno venire voglia"
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      }
+    },
+    "image": {
+      "image": {
+        "crop": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "rot": 0,
+        "hue": 0,
+        "sat": 0,
+        "bri": 0,
+        "fliph": false,
+        "flipv": false,
+        "poi": {
+          "x": 0.27625570776255703,
+          "y": 0.5639269406392694
+        },
+        "aspectLock": "poi",
+        "query": "poi=0.2763,0.5639,0,0&scaleFit=poi",
+        "image": {
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+          },
+          "id": "1b6dbfcc-e157-434b-a677-2683f99f2871",
+          "name": "laura-chouette-b7kMR1VYAJc-unsplash",
+          "endpoint": "sfcccompdev",
+          "defaultHost": "cdn.media.amplience.net"
+        }
+      },
+      "imageAltText": "Accessories on table",
+      "seoText": "Ladies Accessories"
+    },
+    "tags": [
+      {
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+        },
+        "contentType": "https://sfcc.com/components/tag",
+        "id": "876c73af-6481-466d-b31e-a88dab9aea68"
+      },
+      {
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+        },
+        "contentType": "https://sfcc.com/components/tag",
+        "id": "4658b33c-9e58-4647-8621-1b66a61f55a2"
+      }
+    ],
+    "categories": [
+      {
+        "name": "(newarrivals-womens) Womens",
+        "id": "newarrivals-womens"
+      },
+      {
+        "name": "(womens-jewelry) Jewelry",
+        "id": "womens-jewelry"
+      },
+      {
+        "name": "(womens-accessories) Accessories",
+        "id": "womens-accessories"
+      },
+      {
+        "name": "(womens-accessories-scarves) Scarves",
+        "id": "womens-accessories-scarves"
+      },
+      {
+        "name": "(womens-jewelry-earrings) Earrings",
+        "id": "womens-jewelry-earrings"
+      }
+    ],
+    "author": {
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+      },
+      "contentType": "https://sfcc.com/components/author",
+      "id": "abd73087-7493-409e-a9c1-6d5bebff8281"
+    },
+    "content": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean neque dolor, blandit auctor dolor sit amet, blandit maximus turpis. Aenean aliquam lacus nec sapien laoreet, ut pulvinar lacus convallis. Aliquam et sem condimentum, lacinia ante quis, commodo nibh. Praesent vel aliquet velit. Etiam sit amet vestibulum leo. Nunc a nibh id ex tempor egestas at ut nunc. Quisque iaculis ultricies dui nec vehicula. Praesent eleifend enim et nunc auctor, et vehicula dui blandit. Proin commodo lacus arcu, ut laoreet purus vestibulum venenatis.\n\n<p style=\"text-align: justify\">Maecenas porttitor consectetur mi, ut consequat lectus cursus volutpat. Suspendisse ut dui sed est malesuada imperdiet a ut odio. Curabitur ac ante vitae felis aliquet tempus ut ut purus. Nunc in aliquam turpis. Duis eu hendrerit neque, eget tincidunt orci. Phasellus placerat felis in leo dictum posuere. Ut tempus molestie sapien ac iaculis. Nullam tincidunt scelerisque volutpat. Suspendisse potenti. Maecenas molestie blandit massa a scelerisque. Donec pretium massa est, ut rhoncus dui convallis ut. Cras aliquet volutpat sem ut volutpat. Nullam vel porta odio, eget iaculis erat. Nullam ac massa id diam fermentum aliquam. Fusce scelerisque tellus nibh.</p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "b880f68c-452d-49b0-9491-05fbbf8b3977",
+                  "name": "malvestida-u79wy47kvVs-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Donec sit amet mollis metus, quis maximus felis. Proin pulvinar nec justo sit amet imperdiet. Vivamus id odio nec lacus facilisis ultrices. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi ornare neque non lacus semper, vel convallis ipsum posuere. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque maximus in quam vel convallis. Donec sit amet luctus magna. Proin at sapien eget urna posuere ullamcorper. Praesent felis dui, viverra sed malesuada sit amet, tincidunt vel lacus. Fusce varius quis quam in rutrum.</p>\n\n<p style=\"text-align: justify\"></p>\n\n<p style=\"text-align: justify\"></p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "7413cb03-ad8f-4e28-94d2-4e6b8d03ac71",
+                  "name": "matthew-reyes-eZj5QVf_dZo-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Aliquam erat volutpat. Quisque ac odio fermentum, dapibus ligula eu, congue tortor. Nunc volutpat augue neque, ac sagittis sem auctor sit amet. Proin commodo nibh eget dignissim convallis. Aenean nunc ipsum, consectetur a porta at, fermentum ac quam. Vivamus eget rutrum est. Maecenas id tortor at nisl blandit iaculis cursus quis odio. Aenean volutpat magna metus, at fermentum erat auctor at. In hac habitasse platea dictumst.</p>\n\n<p style=\"text-align: justify\">Maecenas aliquet eu odio non cursus. Vestibulum nunc sapien, congue eget magna quis, auctor vulputate lorem. In aliquam hendrerit risus ut pellentesque. Nullam vulputate, nisl ut commodo facilisis, magna metus sagittis tortor, a finibus eros justo ut ex. Sed imperdiet risus nec dolor euismod efficitur. Maecenas lacus sapien, viverra vitae consequat vitae, molestie sit amet sem. Cras in egestas turpis. Suspendisse eget velit at lorem ultricies pellentesque quis id lacus. Aenean volutpat imperdiet mauris, a suscipit risus interdum non. Vivamus tristique vitae ipsum eu tempor. Curabitur in porta ipsum. Sed egestas tempus magna non tristique. Cras tincidunt, massa imperdiet dignissim tincidunt, leo mi tempus quam, id eleifend lacus ex quis velit. Sed nec metus tellus. Curabitur pulvinar ligula quis orci molestie varius. Integer at arcu turpis.</p>\n\n<p style=\"text-align: justify\">Proin urna metus, volutpat ac lorem sit amet, lacinia malesuada augue. Nam ut justo nibh. Mauris sed velit non arcu sodales blandit. Nullam venenatis purus ut quam faucibus ornare. Curabitur vel felis velit. Cras consectetur quam lectus, sed ultricies sem semper vel. Praesent laoreet lectus et tincidunt facilisis. Fusce sit amet laoreet velit, in venenatis est.</p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "1a1e65a1-d21a-426c-954b-8f21a1e68162",
+                  "name": "martin-de-arriba-uf_IDewI6iQ-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Vestibulum ullamcorper bibendum ipsum sit amet pretium. Maecenas eros ante, rutrum quis pulvinar nec, lacinia dapibus mauris. In consectetur elit et suscipit sollicitudin. Pellentesque fringilla, velit nec rutrum euismod, diam urna ornare ante, ac varius metus turpis at nunc. Sed pharetra in mi et cursus. Donec non varius ex. Aliquam sit amet eros arcu. Aenean nisi sapien, convallis nec lorem facilisis, dignissim ultrices eros. Phasellus venenatis aliquam consequat. Aliquam imperdiet neque eu nulla pulvinar, vel congue velit accumsan. In lacinia varius feugiat. Nulla facilisi.</p>"
+              }
+            ]
+          }
+        },
+        {
+          "locale": "fr-FR",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean neque dolor, blandit auctor dolor sit amet, blandit maximus turpis. Aenean aliquam lacus nec sapien laoreet, ut pulvinar lacus convallis. Aliquam et sem condimentum, lacinia ante quis, commodo nibh. Praesent vel aliquet velit. Etiam sit amet vestibulum leo. Nunc a nibh id ex tempor egestas at ut nunc. Quisque iaculis ultricies dui nec vehicula. Praesent eleifend enim et nunc auctor, et vehicula dui blandit. Proin commodo lacus arcu, ut laoreet purus vestibulum venenatis.\n\n<p style=\"text-align: justify\">Maecenas porttitor consectetur mi, ut consequat lectus cursus volutpat. Suspendisse ut dui sed est malesuada imperdiet a ut odio. Curabitur ac ante vitae felis aliquet tempus ut ut purus. Nunc in aliquam turpis. Duis eu hendrerit neque, eget tincidunt orci. Phasellus placerat felis in leo dictum posuere. Ut tempus molestie sapien ac iaculis. Nullam tincidunt scelerisque volutpat. Suspendisse potenti. Maecenas molestie blandit massa a scelerisque. Donec pretium massa est, ut rhoncus dui convallis ut. Cras aliquet volutpat sem ut volutpat. Nullam vel porta odio, eget iaculis erat. Nullam ac massa id diam fermentum aliquam. Fusce scelerisque tellus nibh.</p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "b880f68c-452d-49b0-9491-05fbbf8b3977",
+                  "name": "malvestida-u79wy47kvVs-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Donec sit amet mollis metus, quis maximus felis. Proin pulvinar nec justo sit amet imperdiet. Vivamus id odio nec lacus facilisis ultrices. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi ornare neque non lacus semper, vel convallis ipsum posuere. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque maximus in quam vel convallis. Donec sit amet luctus magna. Proin at sapien eget urna posuere ullamcorper. Praesent felis dui, viverra sed malesuada sit amet, tincidunt vel lacus. Fusce varius quis quam in rutrum.</p>\n\n<p style=\"text-align: justify\"></p>\n\n<p style=\"text-align: justify\"></p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "7413cb03-ad8f-4e28-94d2-4e6b8d03ac71",
+                  "name": "matthew-reyes-eZj5QVf_dZo-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Aliquam erat volutpat. Quisque ac odio fermentum, dapibus ligula eu, congue tortor. Nunc volutpat augue neque, ac sagittis sem auctor sit amet. Proin commodo nibh eget dignissim convallis. Aenean nunc ipsum, consectetur a porta at, fermentum ac quam. Vivamus eget rutrum est. Maecenas id tortor at nisl blandit iaculis cursus quis odio. Aenean volutpat magna metus, at fermentum erat auctor at. In hac habitasse platea dictumst.</p>\n\n<p style=\"text-align: justify\">Maecenas aliquet eu odio non cursus. Vestibulum nunc sapien, congue eget magna quis, auctor vulputate lorem. In aliquam hendrerit risus ut pellentesque. Nullam vulputate, nisl ut commodo facilisis, magna metus sagittis tortor, a finibus eros justo ut ex. Sed imperdiet risus nec dolor euismod efficitur. Maecenas lacus sapien, viverra vitae consequat vitae, molestie sit amet sem. Cras in egestas turpis. Suspendisse eget velit at lorem ultricies pellentesque quis id lacus. Aenean volutpat imperdiet mauris, a suscipit risus interdum non. Vivamus tristique vitae ipsum eu tempor. Curabitur in porta ipsum. Sed egestas tempus magna non tristique. Cras tincidunt, massa imperdiet dignissim tincidunt, leo mi tempus quam, id eleifend lacus ex quis velit. Sed nec metus tellus. Curabitur pulvinar ligula quis orci molestie varius. Integer at arcu turpis.</p>\n\n<p style=\"text-align: justify\">Proin urna metus, volutpat ac lorem sit amet, lacinia malesuada augue. Nam ut justo nibh. Mauris sed velit non arcu sodales blandit. Nullam venenatis purus ut quam faucibus ornare. Curabitur vel felis velit. Cras consectetur quam lectus, sed ultricies sem semper vel. Praesent laoreet lectus et tincidunt facilisis. Fusce sit amet laoreet velit, in venenatis est.</p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "1a1e65a1-d21a-426c-954b-8f21a1e68162",
+                  "name": "martin-de-arriba-uf_IDewI6iQ-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Vestibulum ullamcorper bibendum ipsum sit amet pretium. Maecenas eros ante, rutrum quis pulvinar nec, lacinia dapibus mauris. In consectetur elit et suscipit sollicitudin. Pellentesque fringilla, velit nec rutrum euismod, diam urna ornare ante, ac varius metus turpis at nunc. Sed pharetra in mi et cursus. Donec non varius ex. Aliquam sit amet eros arcu. Aenean nisi sapien, convallis nec lorem facilisis, dignissim ultrices eros. Phasellus venenatis aliquam consequat. Aliquam imperdiet neque eu nulla pulvinar, vel congue velit accumsan. In lacinia varius feugiat. Nulla facilisi.</p>"
+              }
+            ]
+          }
+        },
+        {
+          "locale": "de-DE",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean neque dolor, blandit auctor dolor sit amet, blandit maximus turpis. Aenean aliquam lacus nec sapien laoreet, ut pulvinar lacus convallis. Aliquam et sem condimentum, lacinia ante quis, commodo nibh. Praesent vel aliquet velit. Etiam sit amet vestibulum leo. Nunc a nibh id ex tempor egestas at ut nunc. Quisque iaculis ultricies dui nec vehicula. Praesent eleifend enim et nunc auctor, et vehicula dui blandit. Proin commodo lacus arcu, ut laoreet purus vestibulum venenatis.\n\n<p style=\"text-align: justify\">Maecenas porttitor consectetur mi, ut consequat lectus cursus volutpat. Suspendisse ut dui sed est malesuada imperdiet a ut odio. Curabitur ac ante vitae felis aliquet tempus ut ut purus. Nunc in aliquam turpis. Duis eu hendrerit neque, eget tincidunt orci. Phasellus placerat felis in leo dictum posuere. Ut tempus molestie sapien ac iaculis. Nullam tincidunt scelerisque volutpat. Suspendisse potenti. Maecenas molestie blandit massa a scelerisque. Donec pretium massa est, ut rhoncus dui convallis ut. Cras aliquet volutpat sem ut volutpat. Nullam vel porta odio, eget iaculis erat. Nullam ac massa id diam fermentum aliquam. Fusce scelerisque tellus nibh.</p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "b880f68c-452d-49b0-9491-05fbbf8b3977",
+                  "name": "malvestida-u79wy47kvVs-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Donec sit amet mollis metus, quis maximus felis. Proin pulvinar nec justo sit amet imperdiet. Vivamus id odio nec lacus facilisis ultrices. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi ornare neque non lacus semper, vel convallis ipsum posuere. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque maximus in quam vel convallis. Donec sit amet luctus magna. Proin at sapien eget urna posuere ullamcorper. Praesent felis dui, viverra sed malesuada sit amet, tincidunt vel lacus. Fusce varius quis quam in rutrum.</p>\n\n<p style=\"text-align: justify\"></p>\n\n<p style=\"text-align: justify\"></p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "7413cb03-ad8f-4e28-94d2-4e6b8d03ac71",
+                  "name": "matthew-reyes-eZj5QVf_dZo-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Aliquam erat volutpat. Quisque ac odio fermentum, dapibus ligula eu, congue tortor. Nunc volutpat augue neque, ac sagittis sem auctor sit amet. Proin commodo nibh eget dignissim convallis. Aenean nunc ipsum, consectetur a porta at, fermentum ac quam. Vivamus eget rutrum est. Maecenas id tortor at nisl blandit iaculis cursus quis odio. Aenean volutpat magna metus, at fermentum erat auctor at. In hac habitasse platea dictumst.</p>\n\n<p style=\"text-align: justify\">Maecenas aliquet eu odio non cursus. Vestibulum nunc sapien, congue eget magna quis, auctor vulputate lorem. In aliquam hendrerit risus ut pellentesque. Nullam vulputate, nisl ut commodo facilisis, magna metus sagittis tortor, a finibus eros justo ut ex. Sed imperdiet risus nec dolor euismod efficitur. Maecenas lacus sapien, viverra vitae consequat vitae, molestie sit amet sem. Cras in egestas turpis. Suspendisse eget velit at lorem ultricies pellentesque quis id lacus. Aenean volutpat imperdiet mauris, a suscipit risus interdum non. Vivamus tristique vitae ipsum eu tempor. Curabitur in porta ipsum. Sed egestas tempus magna non tristique. Cras tincidunt, massa imperdiet dignissim tincidunt, leo mi tempus quam, id eleifend lacus ex quis velit. Sed nec metus tellus. Curabitur pulvinar ligula quis orci molestie varius. Integer at arcu turpis.</p>\n\n<p style=\"text-align: justify\">Proin urna metus, volutpat ac lorem sit amet, lacinia malesuada augue. Nam ut justo nibh. Mauris sed velit non arcu sodales blandit. Nullam venenatis purus ut quam faucibus ornare. Curabitur vel felis velit. Cras consectetur quam lectus, sed ultricies sem semper vel. Praesent laoreet lectus et tincidunt facilisis. Fusce sit amet laoreet velit, in venenatis est.</p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "1a1e65a1-d21a-426c-954b-8f21a1e68162",
+                  "name": "martin-de-arriba-uf_IDewI6iQ-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Vestibulum ullamcorper bibendum ipsum sit amet pretium. Maecenas eros ante, rutrum quis pulvinar nec, lacinia dapibus mauris. In consectetur elit et suscipit sollicitudin. Pellentesque fringilla, velit nec rutrum euismod, diam urna ornare ante, ac varius metus turpis at nunc. Sed pharetra in mi et cursus. Donec non varius ex. Aliquam sit amet eros arcu. Aenean nisi sapien, convallis nec lorem facilisis, dignissim ultrices eros. Phasellus venenatis aliquam consequat. Aliquam imperdiet neque eu nulla pulvinar, vel congue velit accumsan. In lacinia varius feugiat. Nulla facilisi.</p>"
+              }
+            ]
+          }
+        },
+        {
+          "locale": "es-ES",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean neque dolor, blandit auctor dolor sit amet, blandit maximus turpis. Aenean aliquam lacus nec sapien laoreet, ut pulvinar lacus convallis. Aliquam et sem condimentum, lacinia ante quis, commodo nibh. Praesent vel aliquet velit. Etiam sit amet vestibulum leo. Nunc a nibh id ex tempor egestas at ut nunc. Quisque iaculis ultricies dui nec vehicula. Praesent eleifend enim et nunc auctor, et vehicula dui blandit. Proin commodo lacus arcu, ut laoreet purus vestibulum venenatis.\n\n<p style=\"text-align: justify\">Maecenas porttitor consectetur mi, ut consequat lectus cursus volutpat. Suspendisse ut dui sed est malesuada imperdiet a ut odio. Curabitur ac ante vitae felis aliquet tempus ut ut purus. Nunc in aliquam turpis. Duis eu hendrerit neque, eget tincidunt orci. Phasellus placerat felis in leo dictum posuere. Ut tempus molestie sapien ac iaculis. Nullam tincidunt scelerisque volutpat. Suspendisse potenti. Maecenas molestie blandit massa a scelerisque. Donec pretium massa est, ut rhoncus dui convallis ut. Cras aliquet volutpat sem ut volutpat. Nullam vel porta odio, eget iaculis erat. Nullam ac massa id diam fermentum aliquam. Fusce scelerisque tellus nibh.</p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "b880f68c-452d-49b0-9491-05fbbf8b3977",
+                  "name": "malvestida-u79wy47kvVs-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Donec sit amet mollis metus, quis maximus felis. Proin pulvinar nec justo sit amet imperdiet. Vivamus id odio nec lacus facilisis ultrices. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi ornare neque non lacus semper, vel convallis ipsum posuere. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque maximus in quam vel convallis. Donec sit amet luctus magna. Proin at sapien eget urna posuere ullamcorper. Praesent felis dui, viverra sed malesuada sit amet, tincidunt vel lacus. Fusce varius quis quam in rutrum.</p>\n\n<p style=\"text-align: justify\"></p>\n\n<p style=\"text-align: justify\"></p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "7413cb03-ad8f-4e28-94d2-4e6b8d03ac71",
+                  "name": "matthew-reyes-eZj5QVf_dZo-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Aliquam erat volutpat. Quisque ac odio fermentum, dapibus ligula eu, congue tortor. Nunc volutpat augue neque, ac sagittis sem auctor sit amet. Proin commodo nibh eget dignissim convallis. Aenean nunc ipsum, consectetur a porta at, fermentum ac quam. Vivamus eget rutrum est. Maecenas id tortor at nisl blandit iaculis cursus quis odio. Aenean volutpat magna metus, at fermentum erat auctor at. In hac habitasse platea dictumst.</p>\n\n<p style=\"text-align: justify\">Maecenas aliquet eu odio non cursus. Vestibulum nunc sapien, congue eget magna quis, auctor vulputate lorem. In aliquam hendrerit risus ut pellentesque. Nullam vulputate, nisl ut commodo facilisis, magna metus sagittis tortor, a finibus eros justo ut ex. Sed imperdiet risus nec dolor euismod efficitur. Maecenas lacus sapien, viverra vitae consequat vitae, molestie sit amet sem. Cras in egestas turpis. Suspendisse eget velit at lorem ultricies pellentesque quis id lacus. Aenean volutpat imperdiet mauris, a suscipit risus interdum non. Vivamus tristique vitae ipsum eu tempor. Curabitur in porta ipsum. Sed egestas tempus magna non tristique. Cras tincidunt, massa imperdiet dignissim tincidunt, leo mi tempus quam, id eleifend lacus ex quis velit. Sed nec metus tellus. Curabitur pulvinar ligula quis orci molestie varius. Integer at arcu turpis.</p>\n\n<p style=\"text-align: justify\">Proin urna metus, volutpat ac lorem sit amet, lacinia malesuada augue. Nam ut justo nibh. Mauris sed velit non arcu sodales blandit. Nullam venenatis purus ut quam faucibus ornare. Curabitur vel felis velit. Cras consectetur quam lectus, sed ultricies sem semper vel. Praesent laoreet lectus et tincidunt facilisis. Fusce sit amet laoreet velit, in venenatis est.</p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "1a1e65a1-d21a-426c-954b-8f21a1e68162",
+                  "name": "martin-de-arriba-uf_IDewI6iQ-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Vestibulum ullamcorper bibendum ipsum sit amet pretium. Maecenas eros ante, rutrum quis pulvinar nec, lacinia dapibus mauris. In consectetur elit et suscipit sollicitudin. Pellentesque fringilla, velit nec rutrum euismod, diam urna ornare ante, ac varius metus turpis at nunc. Sed pharetra in mi et cursus. Donec non varius ex. Aliquam sit amet eros arcu. Aenean nisi sapien, convallis nec lorem facilisis, dignissim ultrices eros. Phasellus venenatis aliquam consequat. Aliquam imperdiet neque eu nulla pulvinar, vel congue velit accumsan. In lacinia varius feugiat. Nulla facilisi.</p>"
+              }
+            ]
+          }
+        },
+        {
+          "locale": "it-IT",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean neque dolor, blandit auctor dolor sit amet, blandit maximus turpis. Aenean aliquam lacus nec sapien laoreet, ut pulvinar lacus convallis. Aliquam et sem condimentum, lacinia ante quis, commodo nibh. Praesent vel aliquet velit. Etiam sit amet vestibulum leo. Nunc a nibh id ex tempor egestas at ut nunc. Quisque iaculis ultricies dui nec vehicula. Praesent eleifend enim et nunc auctor, et vehicula dui blandit. Proin commodo lacus arcu, ut laoreet purus vestibulum venenatis.\n\n<p style=\"text-align: justify\">Maecenas porttitor consectetur mi, ut consequat lectus cursus volutpat. Suspendisse ut dui sed est malesuada imperdiet a ut odio. Curabitur ac ante vitae felis aliquet tempus ut ut purus. Nunc in aliquam turpis. Duis eu hendrerit neque, eget tincidunt orci. Phasellus placerat felis in leo dictum posuere. Ut tempus molestie sapien ac iaculis. Nullam tincidunt scelerisque volutpat. Suspendisse potenti. Maecenas molestie blandit massa a scelerisque. Donec pretium massa est, ut rhoncus dui convallis ut. Cras aliquet volutpat sem ut volutpat. Nullam vel porta odio, eget iaculis erat. Nullam ac massa id diam fermentum aliquam. Fusce scelerisque tellus nibh.</p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "b880f68c-452d-49b0-9491-05fbbf8b3977",
+                  "name": "malvestida-u79wy47kvVs-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Donec sit amet mollis metus, quis maximus felis. Proin pulvinar nec justo sit amet imperdiet. Vivamus id odio nec lacus facilisis ultrices. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi ornare neque non lacus semper, vel convallis ipsum posuere. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque maximus in quam vel convallis. Donec sit amet luctus magna. Proin at sapien eget urna posuere ullamcorper. Praesent felis dui, viverra sed malesuada sit amet, tincidunt vel lacus. Fusce varius quis quam in rutrum.</p>\n\n<p style=\"text-align: justify\"></p>\n\n<p style=\"text-align: justify\"></p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "7413cb03-ad8f-4e28-94d2-4e6b8d03ac71",
+                  "name": "matthew-reyes-eZj5QVf_dZo-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Aliquam erat volutpat. Quisque ac odio fermentum, dapibus ligula eu, congue tortor. Nunc volutpat augue neque, ac sagittis sem auctor sit amet. Proin commodo nibh eget dignissim convallis. Aenean nunc ipsum, consectetur a porta at, fermentum ac quam. Vivamus eget rutrum est. Maecenas id tortor at nisl blandit iaculis cursus quis odio. Aenean volutpat magna metus, at fermentum erat auctor at. In hac habitasse platea dictumst.</p>\n\n<p style=\"text-align: justify\">Maecenas aliquet eu odio non cursus. Vestibulum nunc sapien, congue eget magna quis, auctor vulputate lorem. In aliquam hendrerit risus ut pellentesque. Nullam vulputate, nisl ut commodo facilisis, magna metus sagittis tortor, a finibus eros justo ut ex. Sed imperdiet risus nec dolor euismod efficitur. Maecenas lacus sapien, viverra vitae consequat vitae, molestie sit amet sem. Cras in egestas turpis. Suspendisse eget velit at lorem ultricies pellentesque quis id lacus. Aenean volutpat imperdiet mauris, a suscipit risus interdum non. Vivamus tristique vitae ipsum eu tempor. Curabitur in porta ipsum. Sed egestas tempus magna non tristique. Cras tincidunt, massa imperdiet dignissim tincidunt, leo mi tempus quam, id eleifend lacus ex quis velit. Sed nec metus tellus. Curabitur pulvinar ligula quis orci molestie varius. Integer at arcu turpis.</p>\n\n<p style=\"text-align: justify\">Proin urna metus, volutpat ac lorem sit amet, lacinia malesuada augue. Nam ut justo nibh. Mauris sed velit non arcu sodales blandit. Nullam venenatis purus ut quam faucibus ornare. Curabitur vel felis velit. Cras consectetur quam lectus, sed ultricies sem semper vel. Praesent laoreet lectus et tincidunt facilisis. Fusce sit amet laoreet velit, in venenatis est.</p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "1a1e65a1-d21a-426c-954b-8f21a1e68162",
+                  "name": "martin-de-arriba-uf_IDewI6iQ-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Vestibulum ullamcorper bibendum ipsum sit amet pretium. Maecenas eros ante, rutrum quis pulvinar nec, lacinia dapibus mauris. In consectetur elit et suscipit sollicitudin. Pellentesque fringilla, velit nec rutrum euismod, diam urna ornare ante, ac varius metus turpis at nunc. Sed pharetra in mi et cursus. Donec non varius ex. Aliquam sit amet eros arcu. Aenean nisi sapien, convallis nec lorem facilisis, dignissim ultrices eros. Phasellus venenatis aliquam consequat. Aliquam imperdiet neque eu nulla pulvinar, vel congue velit accumsan. In lacinia varius feugiat. Nulla facilisi.</p>"
+              }
+            ]
+          }
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "date": 1662249600000,
+    "readtime": 6
+  },
+  "version": 7,
+  "label": "Accessories To Change Your Look",
+  "status": "ACTIVE",
+  "createdBy": "4f03be08-c84d-4baf-b0ac-24406cc2d618",
+  "createdDate": "2022-09-01T10:18:38.283Z",
+  "lastModifiedBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
+  "lastModifiedDate": "2022-09-05T10:26:47.376Z",
+  "lastPublishedVersion": 7,
+  "lastPublishedDate": "2022-09-05T10:38:10.440Z",
+  "deliveryId": "914b2225-9315-414c-82e7-8dce0e5bad84"
+}

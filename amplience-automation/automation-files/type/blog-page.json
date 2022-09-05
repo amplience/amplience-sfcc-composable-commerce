@@ -26,9 +26,17 @@
                 "default": false
             }
         ],
-        "cards": []
+        "cards": [
+            {
+                "templatedUri": "https://amp-rsa-cards.vercel.app/?#vse={{vse.domain}}&content={{content.sys.id}}"
+            }
+        ]
     },
     "repositories": [
-        "content"
+        "content",
+        "contentfr",
+        "contentde",
+        "contentit",
+        "contentes"
     ]
 }

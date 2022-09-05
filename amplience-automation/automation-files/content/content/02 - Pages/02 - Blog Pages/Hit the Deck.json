@@ -1,0 +1,250 @@
+{
+  "id": "274447ba-77f3-40c0-b23f-02c910cdd1a6",
+  "body": {
+    "_meta": {
+      "name": "Hit the Deck",
+      "schema": "https://sfcc.com/site/pages/blog",
+      "deliveryKey": "blog/the-deck"
+    },
+    "seo": {
+      "title": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "Hit the Deck"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "Frapper le pont"
+          },
+          {
+            "locale": "de-DE",
+            "value": "Schlagen Sie das Deck"
+          },
+          {
+            "locale": "es-ES",
+            "value": "Golpear la cubierta"
+          },
+          {
+            "locale": "it-IT",
+            "value": "Colpisci il mazzo"
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      },
+      "description": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "choosing the right deck"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "choisir le bon pont"
+          },
+          {
+            "locale": "de-DE",
+            "value": "Auswahl des richtigen Decks"
+          },
+          {
+            "locale": "es-ES",
+            "value": "elegir el mazo adecuado"
+          },
+          {
+            "locale": "it-IT",
+            "value": "scegliendo il mazzo giusto"
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      },
+      "keywords": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "skater, L.A. Decks"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "patineur, L.A. Decks"
+          },
+          {
+            "locale": "de-DE",
+            "value": "Skater, LA Decks"
+          },
+          {
+            "locale": "es-ES",
+            "value": "Patinador, cubiertas de L.A."
+          },
+          {
+            "locale": "it-IT",
+            "value": "skater, L.A. Decks"
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      },
+      "noindex": false
+    },
+    "image": {
+      "image": {
+        "crop": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "rot": 0,
+        "hue": 0,
+        "sat": 0,
+        "bri": 0,
+        "fliph": false,
+        "flipv": false,
+        "poi": {
+          "x": 0.5358695652173913,
+          "y": 0.4315217391304348
+        },
+        "aspectLock": "poi",
+        "query": "poi=0.5359,0.4315,0,0&scaleFit=poi",
+        "image": {
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+          },
+          "id": "70c3e906-b82f-41fd-ae3f-16a5df881219",
+          "name": "jayy-torres-CxUGv5DSJBg-unsplash",
+          "endpoint": "sfcccompdev",
+          "defaultHost": "cdn.media.amplience.net"
+        }
+      },
+      "imageAltText": "image of a person looking at skate decks",
+      "seoText": "so many skate decks!"
+    },
+    "description": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "How to Choose a Skateboard Deck"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Comment choisir une planche de skateboard ?"
+        },
+        {
+          "locale": "de-DE",
+          "value": "So wählen Sie ein Skateboard-Deck aus"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Cómo elegir una tabla de skate"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Come scegliere una tavola da skateboard"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "tags": [
+      {
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+        },
+        "contentType": "https://sfcc.com/components/tag",
+        "id": "4658b33c-9e58-4647-8621-1b66a61f55a2"
+      }
+    ],
+    "categories": [
+      {
+        "name": "(womens-outfits) Outfits",
+        "id": "womens-outfits"
+      }
+    ],
+    "author": {
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+      },
+      "contentType": "https://sfcc.com/components/author",
+      "id": "ecb91ac8-6772-41d1-a418-519b48f20eee"
+    },
+    "content": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "The skateboard deck refers to the actual board platform you'll be riding. Skateboard decks are traditionally made of multiple plies of laminated maple wood (7 is the average) for durability and strength. When beginning the search for a suitable skateboard deck, the width is an important overall characteristic. Different shapes and widths of decks are conducive to varying styles of skateboarding, but in the beginning choosing a deck width slightly narrower than the length of your foot is the best bet.\n\n![Deck Width Length](https://cdn.media.amplience.net/i/sfcccompdev/deck-width-length \"Deck Width Length\")\n\n<h3 style=\"text-align: center\">Skateboard Deck Width &amp; Shape</h3>\n\nSkateboard widths (barring longboards, cruisers, or miniature boards) range from 7.7” to 9” or more. The most common deck shape is the symmetrical \"popsicle\" shape, but directional retro and fun shaped boards that trend wider are increasing in popularity. How do you know what is right for you? There is no right or wrong deck, it's all a matter of personal preference, so trying different sizes and shapes is best. In general, wider boards tend to be more stable while narrower boards are usually more responsive and easier for tricks. Remember everyone, safety first, and second… and probably third. One of the most important parts of your skateboarding set up will be top-notch safety equipment including Helmets, Knee Pads, Elbow Pads, and Wrist Guards. Properly utilizing safety equipment and knowing how to fall correctly ensures a pain-free and prolonged skateboarding career.\n\ntext sourced from : [How to Choose a Skateboard &amp; Skateboard Size Chart | evo](https://www.evo.com/guides/skateboard-guide-and-size-chart?gclid=CjwKCAjw6raYBhB7EiwABge5KidXA0MUDJAYc9jxkrp2Idj_zEb-RbFiHOFoA3EqiKEl5McN04B-DBoCt2EQAvD_BwE)"
+              }
+            ]
+          }
+        },
+        {
+          "locale": "fr-FR",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "La planche de skateboard fait référence à la plate-forme de planche réelle sur laquelle vous roulerez. Les planches de skateboard sont traditionnellement constituées de plusieurs plis de bois d'érable laminé (7 est la moyenne) pour plus de durabilité et de résistance. Au début de la recherche d'une planche de skateboard appropriée, la largeur est une caractéristique globale importante. Différentes formes et largeurs de planches sont propices à différents styles de skateboard, mais au début, choisir une largeur de planche légèrement plus étroite que la longueur de votre pied est le meilleur pari.\\\n\\\n![Deck Width Length](https://cdn.media.amplience.net/i/sfcccompdev/deck-width-length \"Deck Width Length\")\n\nLargeur et forme de la planche de skateboard\n\nLa largeur des planches à roulettes (à l'exception des longboards, des croiseurs ou des planches miniatures) va de 7,7 pouces à 9 pouces ou plus. La forme de pont la plus courante est la forme symétrique \"popsicle\", mais les planches directionnelles rétro et amusantes qui ont tendance à être plus larges gagnent en popularité. Comment savoir ce qui vous convient ? Il n'y a pas de bon ou de mauvais deck, tout est une question de préférence personnelle, il est donc préférable d'essayer différentes tailles et formes. En général, les planches plus larges ont tendance à être plus stables, tandis que les planches plus étroites sont généralement plus réactives et plus faciles pour les figures. Rappelez-vous tout le monde, la sécurité d'abord, et ensuite… et probablement la troisième. L'une des parties les plus importantes de votre configuration de planche à roulettes sera un équipement de sécurité de premier ordre, notamment des casques, des genouillères, des coudières et des protège-poignets. Utiliser correctement l'équipement de sécurité et savoir tomber correctement garantit une carrière de skateboard prolongée et sans douleur.\n\ntexte provenant de : Comment choisir un skateboard et un tableau des tailles de skateboard | évolution\n\n<h3 style=\"text-align: center\"></h3>"
+              }
+            ]
+          }
+        },
+        {
+          "locale": "de-DE",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Das Skateboard-Deck bezieht sich auf die tatsächliche Board-Plattform, auf der Sie fahren werden. Skateboard-Decks werden traditionell aus mehreren Lagen laminiertem Ahornholz (7 ist der Durchschnitt) für Haltbarkeit und Festigkeit hergestellt. Zu Beginn der Suche nach einem geeigneten Skateboard-Deck ist die Breite ein wichtiges Gesamtmerkmal. Unterschiedliche Formen und Breiten von Decks sind für unterschiedliche Skateboarding-Stile förderlich, aber am Anfang ist es am besten, ein Deck zu wählen, das etwas schmaler ist als die Länge deines Fußes.\\\n\\\n![Deck Width Length](https://cdn.media.amplience.net/i/sfcccompdev/deck-width-length \"Deck Width Length\")\n\nBreite und Form des Skateboard-Decks\n\nSkateboard-Breiten (mit Ausnahme von Longboards, Cruisern oder Miniaturboards) reichen von 7,7 Zoll bis 9 Zoll oder mehr. Die gebräuchlichste Deckform ist die symmetrische „Popsicle“-Form, aber richtungsweisende Retro- und Fun-Shaped-Boards, die breiter im Trend liegen, erfreuen sich zunehmender Beliebtheit. Woher wissen Sie, was für Sie richtig ist? Es gibt kein richtiges oder falsches Deck, es ist alles eine Frage der persönlichen Vorlieben, daher ist es am besten, verschiedene Größen und Formen auszuprobieren. Im Allgemeinen neigen breitere Bretter dazu, stabiler zu sein, während schmalere Bretter normalerweise reaktionsschneller und einfacher für Tricks sind. Denken Sie an alle, Sicherheit an erster und zweiter Stelle … und wahrscheinlich an dritter Stelle. Einer der wichtigsten Teile deines Skateboard-Setups wird erstklassige Sicherheitsausrüstung sein, darunter Helme, Knieschützer, Ellbogenschützer und Handgelenkschützer. Die richtige Verwendung der Sicherheitsausrüstung und das Wissen, wie man richtig fällt, gewährleistet eine schmerzfreie und verlängerte Skateboard-Karriere.\n\nTextquelle: So wählen Sie ein Skateboard &amp; Skateboard-Größentabelle aus | Evo"
+              }
+            ]
+          }
+        },
+        {
+          "locale": "es-ES",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "La tabla de skate se refiere a la plataforma de tabla real en la que montarás. Las tablas de skate se fabrican tradicionalmente con múltiples capas de madera de arce laminada (7 es el promedio) para mayor durabilidad y resistencia. Al comenzar la búsqueda de una tabla de skate adecuada, el ancho es una característica general importante. Las diferentes formas y anchos de las tablas son propicios para diferentes estilos de skateboarding, pero al principio, la mejor opción es elegir un ancho de tabla ligeramente más estrecho que la longitud de tu pie.\\\n\\\n![Deck Width Length](https://cdn.media.amplience.net/i/sfcccompdev/deck-width-length \"Deck Width Length\")\n\nAncho y forma de la tabla de skate\n\nLos anchos de las patinetas (salvo longboards, cruisers o tablas en miniatura) varían de 7,7\" a 9\" o más. La forma más común de la plataforma es la forma simétrica de \"paleta\", pero las tablas direccionales retro y con formas divertidas que tienden a ser más anchas son cada vez más populares. ¿Cómo sabes lo que es correcto para ti? No hay mazos correctos o incorrectos, todo es una cuestión de preferencia personal, por lo que es mejor probar diferentes tamaños y formas. En general, las tablas más anchas tienden a ser más estables, mientras que las tablas más estrechas suelen responder mejor y son más fáciles para los trucos. Recuerde a todos, la seguridad primero, y segundo... y probablemente tercero. Una de las partes más importantes de tu equipo de skate será el equipo de seguridad de primer nivel, incluidos cascos, rodilleras, coderas y muñequeras. Utilizar adecuadamente el equipo de seguridad y saber cómo caerse correctamente asegura una carrera de skate prolongada y sin dolor.\n\ntexto procedente de: Cómo elegir un monopatín y tabla de tallas de monopatín | evolución"
+              }
+            ]
+          }
+        },
+        {
+          "locale": "it-IT",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "La tavola da skateboard si riferisce alla piattaforma effettiva della tavola che guiderai. Le tavole da skateboard sono tradizionalmente realizzate con più strati di legno d'acero laminato (7 è la media) per durata e resistenza. Quando si inizia la ricerca di una tavola da skateboard adatta, la larghezza è una caratteristica generale importante. Diverse forme e larghezze delle tavole sono favorevoli a diversi stili di skateboard, ma all'inizio scegliere una larghezza della tavola leggermente più stretta della lunghezza del tuo piede è la soluzione migliore.\\\n\\\n![Deck Width Length](https://cdn.media.amplience.net/i/sfcccompdev/deck-width-length \"Deck Width Length\")\n\nLarghezza e forma della tavola da skateboard\n\nLe larghezze dello skateboard (tranne longboard, cruiser o miniboard) vanno da 7,7\" a 9\" o più. La forma del mazzo più comune è la forma simmetrica a \"ghiacciolo\", ma le tavole direzionali retrò e a forma di divertimento che tendono ad allargarsi stanno aumentando di popolarità. Come fai a sapere cosa è giusto per te? Non esiste un mazzo giusto o sbagliato, è tutta una questione di preferenze personali, quindi è meglio provare dimensioni e forme diverse. In generale, le tavole più larghe tendono ad essere più stabili mentre le tavole più strette sono generalmente più reattive e più facili per i trucchi. Ricorda tutti, la sicurezza prima e seconda... e probabilmente terza. Una delle parti più importanti del tuo set da skateboard sarà l'equipaggiamento di sicurezza di prim'ordine tra cui caschi, ginocchiere, cuscinetti per gomiti e protezioni per i polsi. Utilizzare correttamente le attrezzature di sicurezza e saper cadere correttamente garantisce una carriera di skateboard indolore e prolungata.\n\ntesto tratto da: Come scegliere una tabella delle taglie di skateboard e skateboard | evo"
+              }
+            ]
+          }
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "date": 1661817600000,
+    "readtime": 2
+  },
+  "version": 25,
+  "label": "Hit the Deck",
+  "status": "ACTIVE",
+  "createdBy": "58d9b393-97b6-4e55-bbe3-31a27dd1fc37",
+  "createdDate": "2022-08-30T19:10:55.795Z",
+  "lastModifiedBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
+  "lastModifiedDate": "2022-09-05T10:23:32.965Z",
+  "lastPublishedVersion": 25,
+  "lastPublishedDate": "2022-09-05T10:38:26.090Z",
+  "deliveryId": "274447ba-77f3-40c0-b23f-02c910cdd1a6"
+}

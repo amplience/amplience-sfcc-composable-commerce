@@ -1,0 +1,363 @@
+{
+  "id": "3776875a-861f-490c-bc54-73fbb1726bfb",
+  "body": {
+    "_meta": {
+      "name": "Renew Yourself With Small Touches",
+      "schema": "https://sfcc.com/site/pages/blog",
+      "deliveryKey": "blog/guides/amy-shamblen"
+    },
+    "seo": {
+      "title": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "Confidence that comes with makeup"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "La confiance qui vient avec le maquillage"
+          },
+          {
+            "locale": "de-DE",
+            "value": "Selbstvertrauen, das mit Make-up einhergeht"
+          },
+          {
+            "locale": "es-ES",
+            "value": "La confianza que viene con el maquillaje."
+          },
+          {
+            "locale": "it-IT",
+            "value": "Fiducia che deriva dal trucco"
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      },
+      "description": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "Make up tips from Amy"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "Conseils de maquillage d'Amy"
+          },
+          {
+            "locale": "de-DE",
+            "value": "Schminktipps von Amy"
+          },
+          {
+            "locale": "es-ES",
+            "value": "Consejos de maquillaje de Amy"
+          },
+          {
+            "locale": "it-IT",
+            "value": "Consigli per il trucco di Amy"
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      },
+      "noindex": false
+    },
+    "image": {
+      "image": {
+        "crop": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "rot": 0,
+        "hue": 0,
+        "sat": 0,
+        "bri": 0,
+        "fliph": false,
+        "flipv": false,
+        "poi": {
+          "x": 0.47355479452054794,
+          "y": 0.4885844748858447
+        },
+        "aspectLock": "poi",
+        "query": "poi=0.4736,0.4886,0,0&scaleFit=poi",
+        "image": {
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+          },
+          "id": "007b1548-7b3d-4b95-8a72-4922e0c3c8cc",
+          "name": "michael-mcauliffe-IsDZYwlgrPQ-unsplash",
+          "endpoint": "sfcccompdev",
+          "defaultHost": "cdn.media.amplience.net"
+        }
+      },
+      "seoText": "Make up tips from Amy",
+      "imageAltText": "Amy with makeup"
+    },
+    "tags": [
+      {
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+        },
+        "contentType": "https://sfcc.com/components/tag",
+        "id": "a5cf0229-e73d-4ea8-9685-3ea9174c7d37"
+      },
+      {
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+        },
+        "contentType": "https://sfcc.com/components/tag",
+        "id": "4658b33c-9e58-4647-8621-1b66a61f55a2"
+      }
+    ],
+    "categories": [
+      {
+        "name": "(womens-outfits) Outfits",
+        "id": "womens-outfits"
+      }
+    ],
+    "author": {
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+      },
+      "contentType": "https://sfcc.com/components/author",
+      "id": "ecb91ac8-6772-41d1-a418-519b48f20eee"
+    },
+    "content": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique et massa sed pharetra. Sed eget ex vel felis dictum viverra. Fusce ut suscipit massa, non pharetra velit. Donec quis euismod erat, placerat porta neque. Nulla facilisi. Duis quis odio ac erat ultricies mollis vitae quis est. Proin nibh arcu, sodales non tellus eget, accumsan sagittis urna. Nullam sed dignissim erat. Ut efficitur tincidunt velit vitae porta. Aenean ultrices, leo imperdiet gravida vulputate, enim tellus egestas ligula, sed lobortis turpis arcu eget orci. Integer vitae scelerisque sapien. Ut in massa laoreet, fringilla ligula non, auctor ipsum. Morbi condimentum libero et erat cursus, eu placerat felis placerat. Pellentesque egestas iaculis tristique."
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "1bd7a54e-a608-4184-8ea6-fd4cadafb18d",
+                  "name": "ajie-wp-C3cBQken4js-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Donec id gravida lectus, et malesuada lectus. Proin egestas lacus sit amet nisl tincidunt semper elementum interdum diam. Integer imperdiet nec nisl quis tempor. Donec posuere hendrerit lacus. Morbi sollicitudin posuere erat, at tempor tortor sagittis ac. Donec eu augue lobortis, blandit urna nec, dignissim purus. Nunc tincidunt id nisi et sollicitudin. Curabitur vitae nisi vel libero dictum placerat. Nulla in vestibulum ante, ut euismod ipsum.</p>\n\n<p style=\"text-align: justify\">In congue facilisis lorem, eu molestie augue iaculis at. Maecenas non bibendum orci, non malesuada erat. Nulla sollicitudin quam et vestibulum placerat. Fusce a ornare arcu, non laoreet quam. Nulla ullamcorper finibus faucibus. Ut aliquet orci in risus fringilla, id facilisis ex congue. Nullam mauris mauris, sagittis eget bibendum porttitor, convallis vel leo.</p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "76d5b28e-8c5a-4ff6-9901-fedfde1ceb18",
+                  "name": "amy-shamblen-xwM61TPMlYk-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Vestibulum malesuada, augue ac mattis aliquet, metus risus blandit nibh, in tristique ligula quam maximus quam. Suspendisse et dolor orci. In eu risus dui. Integer lobortis nisl tincidunt, tincidunt ex vel, auctor enim. Etiam volutpat augue ac faucibus molestie. Nunc sed auctor felis, id mattis enim. Etiam condimentum, felis id luctus finibus, velit orci ullamcorper orci, sit amet elementum lectus metus ac urna. Nunc bibendum orci accumsan metus efficitur, nec dapibus enim blandit. Nunc id lectus dui.</p>"
+              }
+            ]
+          }
+        },
+        {
+          "locale": "fr-FR",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique et massa sed pharetra. Sed eget ex vel felis dictum viverra. Fusce ut suscipit massa, non pharetra velit. Donec quis euismod erat, placerat porta neque. Nulla facilisi. Duis quis odio ac erat ultricies mollis vitae quis est. Proin nibh arcu, sodales non tellus eget, accumsan sagittis urna. Nullam sed dignissim erat. Ut efficitur tincidunt velit vitae porta. Aenean ultrices, leo imperdiet gravida vulputate, enim tellus egestas ligula, sed lobortis turpis arcu eget orci. Integer vitae scelerisque sapien. Ut in massa laoreet, fringilla ligula non, auctor ipsum. Morbi condimentum libero et erat cursus, eu placerat felis placerat. Pellentesque egestas iaculis tristique."
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "1bd7a54e-a608-4184-8ea6-fd4cadafb18d",
+                  "name": "ajie-wp-C3cBQken4js-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Donec id gravida lectus, et malesuada lectus. Proin egestas lacus sit amet nisl tincidunt semper elementum interdum diam. Integer imperdiet nec nisl quis tempor. Donec posuere hendrerit lacus. Morbi sollicitudin posuere erat, at tempor tortor sagittis ac. Donec eu augue lobortis, blandit urna nec, dignissim purus. Nunc tincidunt id nisi et sollicitudin. Curabitur vitae nisi vel libero dictum placerat. Nulla in vestibulum ante, ut euismod ipsum.</p>\n\n<p style=\"text-align: justify\">In congue facilisis lorem, eu molestie augue iaculis at. Maecenas non bibendum orci, non malesuada erat. Nulla sollicitudin quam et vestibulum placerat. Fusce a ornare arcu, non laoreet quam. Nulla ullamcorper finibus faucibus. Ut aliquet orci in risus fringilla, id facilisis ex congue. Nullam mauris mauris, sagittis eget bibendum porttitor, convallis vel leo.</p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "76d5b28e-8c5a-4ff6-9901-fedfde1ceb18",
+                  "name": "amy-shamblen-xwM61TPMlYk-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Vestibulum malesuada, augue ac mattis aliquet, metus risus blandit nibh, in tristique ligula quam maximus quam. Suspendisse et dolor orci. In eu risus dui. Integer lobortis nisl tincidunt, tincidunt ex vel, auctor enim. Etiam volutpat augue ac faucibus molestie. Nunc sed auctor felis, id mattis enim. Etiam condimentum, felis id luctus finibus, velit orci ullamcorper orci, sit amet elementum lectus metus ac urna. Nunc bibendum orci accumsan metus efficitur, nec dapibus enim blandit. Nunc id lectus dui.</p>"
+              }
+            ]
+          }
+        },
+        {
+          "locale": "de-DE",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique et massa sed pharetra. Sed eget ex vel felis dictum viverra. Fusce ut suscipit massa, non pharetra velit. Donec quis euismod erat, placerat porta neque. Nulla facilisi. Duis quis odio ac erat ultricies mollis vitae quis est. Proin nibh arcu, sodales non tellus eget, accumsan sagittis urna. Nullam sed dignissim erat. Ut efficitur tincidunt velit vitae porta. Aenean ultrices, leo imperdiet gravida vulputate, enim tellus egestas ligula, sed lobortis turpis arcu eget orci. Integer vitae scelerisque sapien. Ut in massa laoreet, fringilla ligula non, auctor ipsum. Morbi condimentum libero et erat cursus, eu placerat felis placerat. Pellentesque egestas iaculis tristique."
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "1bd7a54e-a608-4184-8ea6-fd4cadafb18d",
+                  "name": "ajie-wp-C3cBQken4js-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Donec id gravida lectus, et malesuada lectus. Proin egestas lacus sit amet nisl tincidunt semper elementum interdum diam. Integer imperdiet nec nisl quis tempor. Donec posuere hendrerit lacus. Morbi sollicitudin posuere erat, at tempor tortor sagittis ac. Donec eu augue lobortis, blandit urna nec, dignissim purus. Nunc tincidunt id nisi et sollicitudin. Curabitur vitae nisi vel libero dictum placerat. Nulla in vestibulum ante, ut euismod ipsum.</p>\n\n<p style=\"text-align: justify\">In congue facilisis lorem, eu molestie augue iaculis at. Maecenas non bibendum orci, non malesuada erat. Nulla sollicitudin quam et vestibulum placerat. Fusce a ornare arcu, non laoreet quam. Nulla ullamcorper finibus faucibus. Ut aliquet orci in risus fringilla, id facilisis ex congue. Nullam mauris mauris, sagittis eget bibendum porttitor, convallis vel leo.</p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "76d5b28e-8c5a-4ff6-9901-fedfde1ceb18",
+                  "name": "amy-shamblen-xwM61TPMlYk-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Vestibulum malesuada, augue ac mattis aliquet, metus risus blandit nibh, in tristique ligula quam maximus quam. Suspendisse et dolor orci. In eu risus dui. Integer lobortis nisl tincidunt, tincidunt ex vel, auctor enim. Etiam volutpat augue ac faucibus molestie. Nunc sed auctor felis, id mattis enim. Etiam condimentum, felis id luctus finibus, velit orci ullamcorper orci, sit amet elementum lectus metus ac urna. Nunc bibendum orci accumsan metus efficitur, nec dapibus enim blandit. Nunc id lectus dui.</p>"
+              }
+            ]
+          }
+        },
+        {
+          "locale": "es-ES",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique et massa sed pharetra. Sed eget ex vel felis dictum viverra. Fusce ut suscipit massa, non pharetra velit. Donec quis euismod erat, placerat porta neque. Nulla facilisi. Duis quis odio ac erat ultricies mollis vitae quis est. Proin nibh arcu, sodales non tellus eget, accumsan sagittis urna. Nullam sed dignissim erat. Ut efficitur tincidunt velit vitae porta. Aenean ultrices, leo imperdiet gravida vulputate, enim tellus egestas ligula, sed lobortis turpis arcu eget orci. Integer vitae scelerisque sapien. Ut in massa laoreet, fringilla ligula non, auctor ipsum. Morbi condimentum libero et erat cursus, eu placerat felis placerat. Pellentesque egestas iaculis tristique."
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "1bd7a54e-a608-4184-8ea6-fd4cadafb18d",
+                  "name": "ajie-wp-C3cBQken4js-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Donec id gravida lectus, et malesuada lectus. Proin egestas lacus sit amet nisl tincidunt semper elementum interdum diam. Integer imperdiet nec nisl quis tempor. Donec posuere hendrerit lacus. Morbi sollicitudin posuere erat, at tempor tortor sagittis ac. Donec eu augue lobortis, blandit urna nec, dignissim purus. Nunc tincidunt id nisi et sollicitudin. Curabitur vitae nisi vel libero dictum placerat. Nulla in vestibulum ante, ut euismod ipsum.</p>\n\n<p style=\"text-align: justify\">In congue facilisis lorem, eu molestie augue iaculis at. Maecenas non bibendum orci, non malesuada erat. Nulla sollicitudin quam et vestibulum placerat. Fusce a ornare arcu, non laoreet quam. Nulla ullamcorper finibus faucibus. Ut aliquet orci in risus fringilla, id facilisis ex congue. Nullam mauris mauris, sagittis eget bibendum porttitor, convallis vel leo.</p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "76d5b28e-8c5a-4ff6-9901-fedfde1ceb18",
+                  "name": "amy-shamblen-xwM61TPMlYk-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Vestibulum malesuada, augue ac mattis aliquet, metus risus blandit nibh, in tristique ligula quam maximus quam. Suspendisse et dolor orci. In eu risus dui. Integer lobortis nisl tincidunt, tincidunt ex vel, auctor enim. Etiam volutpat augue ac faucibus molestie. Nunc sed auctor felis, id mattis enim. Etiam condimentum, felis id luctus finibus, velit orci ullamcorper orci, sit amet elementum lectus metus ac urna. Nunc bibendum orci accumsan metus efficitur, nec dapibus enim blandit. Nunc id lectus dui.</p>"
+              }
+            ]
+          }
+        },
+        {
+          "locale": "it-IT",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique et massa sed pharetra. Sed eget ex vel felis dictum viverra. Fusce ut suscipit massa, non pharetra velit. Donec quis euismod erat, placerat porta neque. Nulla facilisi. Duis quis odio ac erat ultricies mollis vitae quis est. Proin nibh arcu, sodales non tellus eget, accumsan sagittis urna. Nullam sed dignissim erat. Ut efficitur tincidunt velit vitae porta. Aenean ultrices, leo imperdiet gravida vulputate, enim tellus egestas ligula, sed lobortis turpis arcu eget orci. Integer vitae scelerisque sapien. Ut in massa laoreet, fringilla ligula non, auctor ipsum. Morbi condimentum libero et erat cursus, eu placerat felis placerat. Pellentesque egestas iaculis tristique."
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "1bd7a54e-a608-4184-8ea6-fd4cadafb18d",
+                  "name": "ajie-wp-C3cBQken4js-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Donec id gravida lectus, et malesuada lectus. Proin egestas lacus sit amet nisl tincidunt semper elementum interdum diam. Integer imperdiet nec nisl quis tempor. Donec posuere hendrerit lacus. Morbi sollicitudin posuere erat, at tempor tortor sagittis ac. Donec eu augue lobortis, blandit urna nec, dignissim purus. Nunc tincidunt id nisi et sollicitudin. Curabitur vitae nisi vel libero dictum placerat. Nulla in vestibulum ante, ut euismod ipsum.</p>\n\n<p style=\"text-align: justify\">In congue facilisis lorem, eu molestie augue iaculis at. Maecenas non bibendum orci, non malesuada erat. Nulla sollicitudin quam et vestibulum placerat. Fusce a ornare arcu, non laoreet quam. Nulla ullamcorper finibus faucibus. Ut aliquet orci in risus fringilla, id facilisis ex congue. Nullam mauris mauris, sagittis eget bibendum porttitor, convallis vel leo.</p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "76d5b28e-8c5a-4ff6-9901-fedfde1ceb18",
+                  "name": "amy-shamblen-xwM61TPMlYk-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Vestibulum malesuada, augue ac mattis aliquet, metus risus blandit nibh, in tristique ligula quam maximus quam. Suspendisse et dolor orci. In eu risus dui. Integer lobortis nisl tincidunt, tincidunt ex vel, auctor enim. Etiam volutpat augue ac faucibus molestie. Nunc sed auctor felis, id mattis enim. Etiam condimentum, felis id luctus finibus, velit orci ullamcorper orci, sit amet elementum lectus metus ac urna. Nunc bibendum orci accumsan metus efficitur, nec dapibus enim blandit. Nunc id lectus dui.</p>"
+              }
+            ]
+          }
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "date": 1662163200000,
+    "readtime": 4
+  },
+  "version": 6,
+  "label": "Renew Yourself With Small Touches",
+  "status": "ACTIVE",
+  "createdBy": "4f03be08-c84d-4baf-b0ac-24406cc2d618",
+  "createdDate": "2022-09-01T10:27:56.066Z",
+  "lastModifiedBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
+  "lastModifiedDate": "2022-09-05T10:35:38.972Z",
+  "lastPublishedVersion": 5,
+  "lastPublishedDate": "2022-09-02T12:01:42.932Z",
+  "deliveryId": "3776875a-861f-490c-bc54-73fbb1726bfb"
+}

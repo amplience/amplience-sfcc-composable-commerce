@@ -1,0 +1,46 @@
+{
+  "id": "a1286590-5eec-4798-bc72-3523772cf7e6",
+  "body": {
+    "_meta": {
+      "name": "Events",
+      "schema": "https://sfcc.com/components/tag"
+    },
+    "name": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "events"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "événements"
+        },
+        {
+          "locale": "de-DE",
+          "value": "veranstaltungen"
+        },
+        {
+          "locale": "es-ES",
+          "value": "eventos"
+        },
+        {
+          "locale": "it-IT",
+          "value": "eventi"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    }
+  },
+  "version": 1,
+  "label": "Events",
+  "status": "ACTIVE",
+  "createdBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
+  "createdDate": "2022-09-05T10:27:40.211Z",
+  "lastModifiedBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
+  "lastModifiedDate": "2022-09-05T10:37:10.188Z",
+  "lastPublishedVersion": 1,
+  "lastPublishedDate": "2022-09-05T10:38:16.170Z",
+  "deliveryId": "a1286590-5eec-4798-bc72-3523772cf7e6"
+}
