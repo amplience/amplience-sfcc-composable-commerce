@@ -1,137 +1,147 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://sfcc.com/site/pages/blog",
-
-  "title": "Blog page",
-  "description": "",
-
-  "allOf": [
-    {
-      "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
-    }
-  ],
-
-  "type": "object",
-  "properties": {
-    "_meta": {
-      "title": "Page slug",
-      "properties": {
-        "deliveryKey": {
-          "title": "Key",
-          "type": "string",
-          "pattern": "blog\/.*"
-        }
-      }
-    },
-    "seo": {
-      "allOf": [{"$ref": "https://sfcc.com/libs/seo#/definitions/localized-seo"}]
-    },
-    "image": {
-      "type": "object",
-      "title": "Image",
-      "description": "Image to show in the snippet",
-      "allOf": [
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://sfcc.com/site/pages/blog",
+    "title": "Blog page",
+    "description": "",
+    "allOf": [
         {
-          "$ref": "https://sfcc.com/libs/all-definitions#/definitions/diImage"
+            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
         }
-      ]
-    },
-    "description": {
-      "title": "Snippet Description (optional)",
-      "description": "Blog post description (optional, SEO used otherwise)",
-      "allOf": [
-        { "$ref": "http://bigcontent.io/cms/schema/v1/localization#/definitions/localized-string" }
-      ]
-    },
-    "tags": {
-      "type": "array",
-      "title": "Tags",
-      "description": "Tags which the blog post relates to.",
-      "items": {
-        "type": "string",
-        "enum": [
-          "What to wear",
-          "Trends",
-          "Events",
-          "Interviews",
-          "Sustainability",
-          "Guides"
-        ]
-      }
-    },
-    "categories": {
-      "type": "array",
-      "title": "Product Categories",
-      "description": "The name of product categories the blog post relates to.",
-        "ui:extension": {
-          "name": "ecomm-toolkit",
-          "params": {
-            "label": "Category",
-            "view": "multi",
-            "data": "category",
-            "type": "array"
-          }
-        }
-    },
-    "author": {
-      "title": "Author",
-      "allOf": [
-        { "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link" },
-        {
-          "properties": {
-            "contentType": {
-              "enum": [
-                "https://sfcc.com/components/author"
-              ]
-            }
-          }
-        }
-      ]
-    },
-    "date": {
-      "title": "Created Date",
-      "type": "number",
-      "format": "date",
-      "ui:extension": {
-        "name": "date-time-picker"
-      }
-    },
-    "readtime": {
-      "title": "Read Time (Minutes)",
-      "description": "How long the blog post takes to read in minutes",
-      "type": "integer",
-      "minimum": 1,
-      "maximum": 20
-    },
-    "content": {
-      "allOf": [
-        {
-          "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
-        }
-      ],
-      "properties": {
-        "values": {
-          "items": {
+    ],
+    "type": "object",
+    "properties": {
+        "_meta": {
+            "title": "Page slug",
             "properties": {
-              "value": {
-                "type": "object",
-                "title": "Blog Content",
-                "description": "The main content for the blog",
-                "properties": {
-                  "richText": {
-                    "allOf": [
-                      {
-                        "$ref": "https://sfcc.com/libs/all-definitions#/definitions/richText"
-                      }
-                    ]
-                  }
+                "deliveryKey": {
+                    "title": "Key",
+                    "type": "string",
+                    "pattern": "blog\/.*"
                 }
-              }
             }
-          }
+        },
+        "seo": {
+            "allOf": [
+                {
+                    "$ref": "https://sfcc.com/libs/seo#/definitions/localized-seo"
+                }
+            ]
+        },
+        "image": {
+            "type": "object",
+            "title": "Image",
+            "description": "Image to show in the snippet",
+            "allOf": [
+                {
+                    "$ref": "https://sfcc.com/libs/all-definitions#/definitions/diImage"
+                }
+            ]
+        },
+        "description": {
+            "title": "Snippet Description (optional)",
+            "description": "Blog post description (optional, SEO used otherwise)",
+            "allOf": [
+                {
+                    "$ref": "http://bigcontent.io/cms/schema/v1/localization#/definitions/localized-string"
+                }
+            ]
+        },
+        "tags": {
+            "title": "Tags",
+            "type": "array",
+            "minItems": 0,
+            "maxItems": 10,
+            "items": {
+                "allOf": [
+                    {
+                        "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                    },
+                    {
+                        "properties": {
+                            "contentType": {
+                                "enum": [
+                                    "https://sfcc.com/components/tag"
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "categories": {
+            "type": "array",
+            "title": "Product Categories",
+            "description": "The name of product categories the blog post relates to.",
+            "ui:extension": {
+                "name": "ecomm-toolkit",
+                "params": {
+                    "label": "Category",
+                    "view": "multi",
+                    "data": "category",
+                    "type": "array"
+                }
+            }
+        },
+        "author": {
+            "title": "Author",
+            "allOf": [
+                {
+                    "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                },
+                {
+                    "properties": {
+                        "contentType": {
+                            "enum": [
+                                "https://sfcc.com/components/author"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "date": {
+            "title": "Created Date",
+            "type": "number",
+            "ui:extension": {
+                "name": "date-time-picker"
+            }
+        },
+        "readtime": {
+            "title": "Read Time (minutes)",
+            "description": "How long the blog post takes to read in minutes",
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 20
+        },
+        "content": {
+            "allOf": [
+                {
+                    "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+                }
+            ],
+            "properties": {
+                "values": {
+                    "items": {
+                        "properties": {
+                            "value": {
+                                "type": "object",
+                                "title": "Blog Content",
+                                "description": "The main content for the blog",
+                                "properties": {
+                                    "richText": {
+                                        "allOf": [
+                                            {
+                                                "$ref": "https://sfcc.com/libs/all-definitions#/definitions/richText"
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
-      }
-    }
-  },
-  "propertyOrder": []
+    },
+    "propertyOrder": []
 }

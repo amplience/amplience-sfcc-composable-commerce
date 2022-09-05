@@ -1,0 +1,156 @@
+{
+  "id": "72532e46-c570-4791-bec7-9563439ded8c",
+  "body": {
+    "_meta": {
+      "name": "Men Jackets",
+      "schema": "https://sfcc.com/site/pages/blog",
+      "deliveryKey": "blog/trends/rene-ranisch"
+    },
+    "seo": {
+      "title": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "Rene Ranisch."
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      },
+      "description": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "Jackets for Men"
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      },
+      "noindex": false
+    },
+    "image": {
+      "image": {
+        "crop": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "rot": 0,
+        "hue": 0,
+        "sat": 0,
+        "bri": 0,
+        "fliph": false,
+        "flipv": false,
+        "poi": {
+          "x": 0.45461712151926537,
+          "y": 0.34474885844748865
+        },
+        "aspectLock": "poi",
+        "query": "poi=0.4546,0.3447,0,0&scaleFit=poi",
+        "image": {
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+          },
+          "id": "5819cc2d-0ce7-44ad-93d1-049f391da417",
+          "name": "rene-ranisch-f5nYyu7rmkI-unsplash",
+          "endpoint": "sfcccompdev",
+          "defaultHost": "cdn.media.amplience.net"
+        }
+      },
+      "imageAltText": "Rene Ranisch wearing jacket",
+      "seoText": "Jackets for Men"
+    },
+    "tags": [
+      {
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+        },
+        "contentType": "https://sfcc.com/components/tag",
+        "id": "876c73af-6481-466d-b31e-a88dab9aea68"
+      }
+    ],
+    "categories": [
+      {
+        "name": "(newarrivals-mens) Mens",
+        "id": "newarrivals-mens"
+      },
+      {
+        "name": "(mens-clothing-jackets) Jackets & Coats",
+        "id": "mens-clothing-jackets"
+      },
+      {
+        "name": "(mens-accessories) Accessories",
+        "id": "mens-accessories"
+      }
+    ],
+    "author": {
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+      },
+      "contentType": "https://sfcc.com/components/author",
+      "id": "282219ef-9218-40b8-8985-653caf7c9196"
+    },
+    "content": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Donec cursus, tellus eu aliquet imperdiet, diam odio venenatis felis, sit amet porta velit magna in risus. Maecenas ultrices tellus ut nisl finibus mollis. Ut pellentesque et arcu vitae tempor. Mauris massa felis, rutrum et tortor ut, vestibulum ullamcorper lacus. In mi tellus, suscipit non ante id, tempor auctor odio. Sed quam libero, bibendum nec varius sed, pellentesque ac risus. Suspendisse semper velit sed libero scelerisque vulputate. Maecenas diam orci, pharetra a justo sed, aliquet pharetra tortor. Nullam dignissim fermentum sem a tempus. Nunc interdum lectus tellus, eget maximus dolor rutrum ac. Vivamus et dictum nunc.\n\n<p style=\"text-align: justify\"></p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "1f2c9f19-a509-4252-b9b4-b7679ed8f1c3",
+                  "name": "angelo-abear-rp0Gm8PhueM-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Cras eu aliquet nibh, eget auctor sem. Etiam eu risus quis tortor cursus iaculis. Cras aliquam dictum magna, eget porta massa aliquam id. Vivamus nec sagittis ipsum. Morbi tristique ultrices nulla et facilisis. Sed elementum augue vitae dapibus imperdiet. Morbi non purus neque. Mauris placerat arcu arcu, rutrum elementum ligula porttitor ultricies. Pellentesque egestas condimentum velit ac rutrum.</p>\n\n<p style=\"text-align: justify\">Morbi at tempus velit. Nulla mauris lorem, facilisis sed neque ac, mollis commodo velit. Ut vitae nulla diam. Integer hendrerit libero malesuada velit malesuada, vitae luctus justo condimentum. Quisque sit amet iaculis sapien. Aenean blandit sapien posuere scelerisque iaculis. Suspendisse quis leo sapien. Donec accumsan porttitor nunc, non efficitur arcu congue vel. Suspendisse gravida odio dolor, maximus tempus massa luctus non.</p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "ed78dda2-3636-4f49-bbfa-8ff8d8424b40",
+                  "name": "ryoji-iwata-wUZjnOv7t0g-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "date": 1662422400000,
+    "readtime": 3
+  },
+  "version": 6,
+  "label": "Men Jackets",
+  "status": "ACTIVE",
+  "createdBy": "4f03be08-c84d-4baf-b0ac-24406cc2d618",
+  "createdDate": "2022-09-01T10:10:37.403Z",
+  "lastModifiedBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
+  "lastModifiedDate": "2022-09-05T10:35:15.953Z",
+  "lastPublishedVersion": 5,
+  "lastPublishedDate": "2022-09-02T11:58:25.151Z",
+  "deliveryId": "72532e46-c570-4791-bec7-9563439ded8c"
+}

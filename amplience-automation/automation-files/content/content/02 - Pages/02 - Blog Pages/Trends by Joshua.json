@@ -1,0 +1,367 @@
+{
+  "id": "d6619d4e-1944-44dd-a430-b1255535428d",
+  "body": {
+    "_meta": {
+      "name": "Trends by Joshua",
+      "schema": "https://sfcc.com/site/pages/blog",
+      "deliveryKey": "blog/trends/joshua"
+    },
+    "seo": {
+      "title": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "Joshua's Fashion."
+          },
+          {
+            "locale": "fr-FR",
+            "value": "La mode de Joshua."
+          },
+          {
+            "locale": "de-DE",
+            "value": "Joshuas Mode."
+          },
+          {
+            "locale": "es-ES",
+            "value": "Moda de Josué."
+          },
+          {
+            "locale": "it-IT",
+            "value": "La moda di Giosuè."
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      },
+      "description": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "How to become the most fashionable"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "Comment devenir le plus à la mode"
+          },
+          {
+            "locale": "de-DE",
+            "value": "Wie man der Modischste wird"
+          },
+          {
+            "locale": "es-ES",
+            "value": "Cómo convertirse en la más de moda."
+          },
+          {
+            "locale": "it-IT",
+            "value": "Come diventare il più alla moda"
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      },
+      "noindex": false
+    },
+    "image": {
+      "image": {
+        "crop": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "rot": 0,
+        "hue": 0,
+        "sat": 0,
+        "bri": 0,
+        "fliph": false,
+        "flipv": false,
+        "poi": {
+          "x": 0.4969558599695586,
+          "y": 0.2945205479452055
+        },
+        "aspectLock": "poi",
+        "query": "poi=0.497,0.2945,0,0&scaleFit=poi",
+        "image": {
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+          },
+          "id": "a5331504-e4ec-477d-ab16-a87f44c7adc8",
+          "name": "joshua-chun-y_gFnFzr0HY-unsplash",
+          "endpoint": "sfcccompdev",
+          "defaultHost": "cdn.media.amplience.net"
+        }
+      },
+      "imageAltText": "Joshua fashion in the street",
+      "seoText": "How to become the most fashionable"
+    },
+    "tags": [
+      {
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+        },
+        "contentType": "https://sfcc.com/components/tag",
+        "id": "4658b33c-9e58-4647-8621-1b66a61f55a2"
+      },
+      {
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+        },
+        "contentType": "https://sfcc.com/components/tag",
+        "id": "876c73af-6481-466d-b31e-a88dab9aea68"
+      }
+    ],
+    "categories": [
+      {
+        "name": "(newarrivals-womens) Womens",
+        "id": "newarrivals-womens"
+      },
+      {
+        "name": "(womens-outfits) Outfits",
+        "id": "womens-outfits"
+      }
+    ],
+    "author": {
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+      },
+      "contentType": "https://sfcc.com/components/author",
+      "id": "ecb91ac8-6772-41d1-a418-519b48f20eee"
+    },
+    "content": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Suspendisse potenti. Sed rhoncus blandit tortor, non accumsan turpis placerat a. Mauris sit amet ante a mi aliquet dictum vel viverra neque. Quisque sagittis rhoncus aliquam. In porttitor dui at tempor efficitur. Suspendisse condimentum auctor porta. In molestie lacus ligula, a tempor est bibendum et. Nam et quam sit amet lacus tempor finibus.\n\n<p style=\"text-align: justify\">Aenean ut tristique nunc. Vestibulum non metus eget velit semper porta vitae ac urna. Ut nisi magna, consectetur et neque vitae, rhoncus blandit nibh. Quisque tincidunt gravida neque, eget efficitur odio tristique sit amet. In tempor ornare scelerisque. Nam luctus dictum velit, aliquet laoreet eros blandit ac. Duis interdum tincidunt porttitor. Etiam sit amet faucibus justo, eu varius massa. Morbi nec ultrices dolor, vel ornare urna.</p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "be795e19-e6c4-4c3b-a5f7-5ab2b95b7756",
+                  "name": "md-salman-tWOz2_EK5EQ-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Aliquam ut augue tristique, venenatis mauris ut, tempor libero. Pellentesque consectetur lacus molestie, imperdiet neque sed, congue mi. Etiam dapibus nisi vitae dui consequat luctus. Quisque porttitor malesuada felis, non finibus massa viverra ac. Cras quis risus eu velit vestibulum vestibulum eu ac nibh. Donec sed fermentum mauris. In hac habitasse platea dictumst. Cras lacinia suscipit ligula, at accumsan turpis hendrerit ac. Quisque rutrum quam vitae justo malesuada tristique. Aenean quis finibus nulla. Donec sit amet nibh placerat, luctus lacus et, tincidunt augue. Suspendisse ac nisi augue.</p>\n\n<p style=\"text-align: justify\">Sed non nisi pretium, aliquet nibh et, sodales est. Maecenas ipsum ante, sagittis ac malesuada at, vestibulum a mi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse et scelerisque felis, ut scelerisque justo. Aenean volutpat luctus dui ac elementum. Praesent ut diam semper, mollis velit vitae, varius est. Maecenas fermentum pulvinar tempus. Cras tincidunt, quam id tristique pulvinar, dui quam scelerisque ex, vitae facilisis nunc sem nec nunc. Maecenas id tempus ipsum. Maecenas pulvinar erat ac convallis finibus. Sed maximus libero id mauris efficitur volutpat. Cras sollicitudin bibendum lectus et convallis.</p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "d6830ac9-b3e6-433b-9cc2-c5f134a8b825",
+                  "name": "mobile-5-coatsblog",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Donec semper placerat turpis, et pellentesque justo pharetra sed. Phasellus tempor, ligula sit amet iaculis volutpat, massa est vestibulum eros, vel imperdiet magna turpis ullamcorper tellus. In feugiat enim mattis, ultricies lacus vel, porttitor nunc. Fusce quis elementum nisl. Aenean sed mi at tellus varius viverra. Pellentesque dapibus arcu vel tincidunt gravida. In nec turpis a mi ultrices rhoncus nec quis neque. Fusce non pellentesque elit, ac condimentum massa.</p>"
+              }
+            ]
+          }
+        },
+        {
+          "locale": "fr-FR",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Suspendisse potenti. Sed rhoncus blandit tortor, non accumsan turpis placerat a. Mauris sit amet ante a mi aliquet dictum vel viverra neque. Quisque sagittis rhoncus aliquam. In porttitor dui at tempor efficitur. Suspendisse condimentum auctor porta. In molestie lacus ligula, a tempor est bibendum et. Nam et quam sit amet lacus tempor finibus.\n\n<p style=\"text-align: justify\">Aenean ut tristique nunc. Vestibulum non metus eget velit semper porta vitae ac urna. Ut nisi magna, consectetur et neque vitae, rhoncus blandit nibh. Quisque tincidunt gravida neque, eget efficitur odio tristique sit amet. In tempor ornare scelerisque. Nam luctus dictum velit, aliquet laoreet eros blandit ac. Duis interdum tincidunt porttitor. Etiam sit amet faucibus justo, eu varius massa. Morbi nec ultrices dolor, vel ornare urna.</p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "be795e19-e6c4-4c3b-a5f7-5ab2b95b7756",
+                  "name": "md-salman-tWOz2_EK5EQ-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Aliquam ut augue tristique, venenatis mauris ut, tempor libero. Pellentesque consectetur lacus molestie, imperdiet neque sed, congue mi. Etiam dapibus nisi vitae dui consequat luctus. Quisque porttitor malesuada felis, non finibus massa viverra ac. Cras quis risus eu velit vestibulum vestibulum eu ac nibh. Donec sed fermentum mauris. In hac habitasse platea dictumst. Cras lacinia suscipit ligula, at accumsan turpis hendrerit ac. Quisque rutrum quam vitae justo malesuada tristique. Aenean quis finibus nulla. Donec sit amet nibh placerat, luctus lacus et, tincidunt augue. Suspendisse ac nisi augue.</p>\n\n<p style=\"text-align: justify\">Sed non nisi pretium, aliquet nibh et, sodales est. Maecenas ipsum ante, sagittis ac malesuada at, vestibulum a mi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse et scelerisque felis, ut scelerisque justo. Aenean volutpat luctus dui ac elementum. Praesent ut diam semper, mollis velit vitae, varius est. Maecenas fermentum pulvinar tempus. Cras tincidunt, quam id tristique pulvinar, dui quam scelerisque ex, vitae facilisis nunc sem nec nunc. Maecenas id tempus ipsum. Maecenas pulvinar erat ac convallis finibus. Sed maximus libero id mauris efficitur volutpat. Cras sollicitudin bibendum lectus et convallis.</p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "d6830ac9-b3e6-433b-9cc2-c5f134a8b825",
+                  "name": "mobile-5-coatsblog",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Donec semper placerat turpis, et pellentesque justo pharetra sed. Phasellus tempor, ligula sit amet iaculis volutpat, massa est vestibulum eros, vel imperdiet magna turpis ullamcorper tellus. In feugiat enim mattis, ultricies lacus vel, porttitor nunc. Fusce quis elementum nisl. Aenean sed mi at tellus varius viverra. Pellentesque dapibus arcu vel tincidunt gravida. In nec turpis a mi ultrices rhoncus nec quis neque. Fusce non pellentesque elit, ac condimentum massa.</p>"
+              }
+            ]
+          }
+        },
+        {
+          "locale": "de-DE",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Suspendisse potenti. Sed rhoncus blandit tortor, non accumsan turpis placerat a. Mauris sit amet ante a mi aliquet dictum vel viverra neque. Quisque sagittis rhoncus aliquam. In porttitor dui at tempor efficitur. Suspendisse condimentum auctor porta. In molestie lacus ligula, a tempor est bibendum et. Nam et quam sit amet lacus tempor finibus.\n\n<p style=\"text-align: justify\">Aenean ut tristique nunc. Vestibulum non metus eget velit semper porta vitae ac urna. Ut nisi magna, consectetur et neque vitae, rhoncus blandit nibh. Quisque tincidunt gravida neque, eget efficitur odio tristique sit amet. In tempor ornare scelerisque. Nam luctus dictum velit, aliquet laoreet eros blandit ac. Duis interdum tincidunt porttitor. Etiam sit amet faucibus justo, eu varius massa. Morbi nec ultrices dolor, vel ornare urna.</p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "be795e19-e6c4-4c3b-a5f7-5ab2b95b7756",
+                  "name": "md-salman-tWOz2_EK5EQ-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Aliquam ut augue tristique, venenatis mauris ut, tempor libero. Pellentesque consectetur lacus molestie, imperdiet neque sed, congue mi. Etiam dapibus nisi vitae dui consequat luctus. Quisque porttitor malesuada felis, non finibus massa viverra ac. Cras quis risus eu velit vestibulum vestibulum eu ac nibh. Donec sed fermentum mauris. In hac habitasse platea dictumst. Cras lacinia suscipit ligula, at accumsan turpis hendrerit ac. Quisque rutrum quam vitae justo malesuada tristique. Aenean quis finibus nulla. Donec sit amet nibh placerat, luctus lacus et, tincidunt augue. Suspendisse ac nisi augue.</p>\n\n<p style=\"text-align: justify\">Sed non nisi pretium, aliquet nibh et, sodales est. Maecenas ipsum ante, sagittis ac malesuada at, vestibulum a mi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse et scelerisque felis, ut scelerisque justo. Aenean volutpat luctus dui ac elementum. Praesent ut diam semper, mollis velit vitae, varius est. Maecenas fermentum pulvinar tempus. Cras tincidunt, quam id tristique pulvinar, dui quam scelerisque ex, vitae facilisis nunc sem nec nunc. Maecenas id tempus ipsum. Maecenas pulvinar erat ac convallis finibus. Sed maximus libero id mauris efficitur volutpat. Cras sollicitudin bibendum lectus et convallis.</p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "d6830ac9-b3e6-433b-9cc2-c5f134a8b825",
+                  "name": "mobile-5-coatsblog",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Donec semper placerat turpis, et pellentesque justo pharetra sed. Phasellus tempor, ligula sit amet iaculis volutpat, massa est vestibulum eros, vel imperdiet magna turpis ullamcorper tellus. In feugiat enim mattis, ultricies lacus vel, porttitor nunc. Fusce quis elementum nisl. Aenean sed mi at tellus varius viverra. Pellentesque dapibus arcu vel tincidunt gravida. In nec turpis a mi ultrices rhoncus nec quis neque. Fusce non pellentesque elit, ac condimentum massa.</p>"
+              }
+            ]
+          }
+        },
+        {
+          "locale": "es-ES",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Suspendisse potenti. Sed rhoncus blandit tortor, non accumsan turpis placerat a. Mauris sit amet ante a mi aliquet dictum vel viverra neque. Quisque sagittis rhoncus aliquam. In porttitor dui at tempor efficitur. Suspendisse condimentum auctor porta. In molestie lacus ligula, a tempor est bibendum et. Nam et quam sit amet lacus tempor finibus.\n\n<p style=\"text-align: justify\">Aenean ut tristique nunc. Vestibulum non metus eget velit semper porta vitae ac urna. Ut nisi magna, consectetur et neque vitae, rhoncus blandit nibh. Quisque tincidunt gravida neque, eget efficitur odio tristique sit amet. In tempor ornare scelerisque. Nam luctus dictum velit, aliquet laoreet eros blandit ac. Duis interdum tincidunt porttitor. Etiam sit amet faucibus justo, eu varius massa. Morbi nec ultrices dolor, vel ornare urna.</p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "be795e19-e6c4-4c3b-a5f7-5ab2b95b7756",
+                  "name": "md-salman-tWOz2_EK5EQ-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Aliquam ut augue tristique, venenatis mauris ut, tempor libero. Pellentesque consectetur lacus molestie, imperdiet neque sed, congue mi. Etiam dapibus nisi vitae dui consequat luctus. Quisque porttitor malesuada felis, non finibus massa viverra ac. Cras quis risus eu velit vestibulum vestibulum eu ac nibh. Donec sed fermentum mauris. In hac habitasse platea dictumst. Cras lacinia suscipit ligula, at accumsan turpis hendrerit ac. Quisque rutrum quam vitae justo malesuada tristique. Aenean quis finibus nulla. Donec sit amet nibh placerat, luctus lacus et, tincidunt augue. Suspendisse ac nisi augue.</p>\n\n<p style=\"text-align: justify\">Sed non nisi pretium, aliquet nibh et, sodales est. Maecenas ipsum ante, sagittis ac malesuada at, vestibulum a mi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse et scelerisque felis, ut scelerisque justo. Aenean volutpat luctus dui ac elementum. Praesent ut diam semper, mollis velit vitae, varius est. Maecenas fermentum pulvinar tempus. Cras tincidunt, quam id tristique pulvinar, dui quam scelerisque ex, vitae facilisis nunc sem nec nunc. Maecenas id tempus ipsum. Maecenas pulvinar erat ac convallis finibus. Sed maximus libero id mauris efficitur volutpat. Cras sollicitudin bibendum lectus et convallis.</p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "d6830ac9-b3e6-433b-9cc2-c5f134a8b825",
+                  "name": "mobile-5-coatsblog",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Donec semper placerat turpis, et pellentesque justo pharetra sed. Phasellus tempor, ligula sit amet iaculis volutpat, massa est vestibulum eros, vel imperdiet magna turpis ullamcorper tellus. In feugiat enim mattis, ultricies lacus vel, porttitor nunc. Fusce quis elementum nisl. Aenean sed mi at tellus varius viverra. Pellentesque dapibus arcu vel tincidunt gravida. In nec turpis a mi ultrices rhoncus nec quis neque. Fusce non pellentesque elit, ac condimentum massa.</p>"
+              }
+            ]
+          }
+        },
+        {
+          "locale": "it-IT",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Suspendisse potenti. Sed rhoncus blandit tortor, non accumsan turpis placerat a. Mauris sit amet ante a mi aliquet dictum vel viverra neque. Quisque sagittis rhoncus aliquam. In porttitor dui at tempor efficitur. Suspendisse condimentum auctor porta. In molestie lacus ligula, a tempor est bibendum et. Nam et quam sit amet lacus tempor finibus.\n\n<p style=\"text-align: justify\">Aenean ut tristique nunc. Vestibulum non metus eget velit semper porta vitae ac urna. Ut nisi magna, consectetur et neque vitae, rhoncus blandit nibh. Quisque tincidunt gravida neque, eget efficitur odio tristique sit amet. In tempor ornare scelerisque. Nam luctus dictum velit, aliquet laoreet eros blandit ac. Duis interdum tincidunt porttitor. Etiam sit amet faucibus justo, eu varius massa. Morbi nec ultrices dolor, vel ornare urna.</p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "be795e19-e6c4-4c3b-a5f7-5ab2b95b7756",
+                  "name": "md-salman-tWOz2_EK5EQ-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Aliquam ut augue tristique, venenatis mauris ut, tempor libero. Pellentesque consectetur lacus molestie, imperdiet neque sed, congue mi. Etiam dapibus nisi vitae dui consequat luctus. Quisque porttitor malesuada felis, non finibus massa viverra ac. Cras quis risus eu velit vestibulum vestibulum eu ac nibh. Donec sed fermentum mauris. In hac habitasse platea dictumst. Cras lacinia suscipit ligula, at accumsan turpis hendrerit ac. Quisque rutrum quam vitae justo malesuada tristique. Aenean quis finibus nulla. Donec sit amet nibh placerat, luctus lacus et, tincidunt augue. Suspendisse ac nisi augue.</p>\n\n<p style=\"text-align: justify\">Sed non nisi pretium, aliquet nibh et, sodales est. Maecenas ipsum ante, sagittis ac malesuada at, vestibulum a mi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse et scelerisque felis, ut scelerisque justo. Aenean volutpat luctus dui ac elementum. Praesent ut diam semper, mollis velit vitae, varius est. Maecenas fermentum pulvinar tempus. Cras tincidunt, quam id tristique pulvinar, dui quam scelerisque ex, vitae facilisis nunc sem nec nunc. Maecenas id tempus ipsum. Maecenas pulvinar erat ac convallis finibus. Sed maximus libero id mauris efficitur volutpat. Cras sollicitudin bibendum lectus et convallis.</p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "d6830ac9-b3e6-433b-9cc2-c5f134a8b825",
+                  "name": "mobile-5-coatsblog",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Donec semper placerat turpis, et pellentesque justo pharetra sed. Phasellus tempor, ligula sit amet iaculis volutpat, massa est vestibulum eros, vel imperdiet magna turpis ullamcorper tellus. In feugiat enim mattis, ultricies lacus vel, porttitor nunc. Fusce quis elementum nisl. Aenean sed mi at tellus varius viverra. Pellentesque dapibus arcu vel tincidunt gravida. In nec turpis a mi ultrices rhoncus nec quis neque. Fusce non pellentesque elit, ac condimentum massa.</p>"
+              }
+            ]
+          }
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "date": 1662163200000,
+    "readtime": 5
+  },
+  "version": 6,
+  "label": "Trends by Joshua",
+  "status": "ACTIVE",
+  "createdBy": "4f03be08-c84d-4baf-b0ac-24406cc2d618",
+  "createdDate": "2022-09-01T09:03:26.660Z",
+  "lastModifiedBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
+  "lastModifiedDate": "2022-09-05T10:36:21.630Z",
+  "lastPublishedVersion": 5,
+  "lastPublishedDate": "2022-09-02T11:59:13.034Z",
+  "deliveryId": "d6619d4e-1944-44dd-a430-b1255535428d"
+}

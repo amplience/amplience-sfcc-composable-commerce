@@ -1,0 +1,46 @@
+{
+  "id": "a5cf0229-e73d-4ea8-9685-3ea9174c7d37",
+  "body": {
+    "_meta": {
+      "name": "Guides",
+      "schema": "https://sfcc.com/components/tag"
+    },
+    "name": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "guides"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "guides"
+        },
+        {
+          "locale": "de-DE",
+          "value": "führer"
+        },
+        {
+          "locale": "es-ES",
+          "value": "guías"
+        },
+        {
+          "locale": "it-IT",
+          "value": "guide"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    }
+  },
+  "version": 1,
+  "label": "Guides",
+  "status": "ACTIVE",
+  "createdBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
+  "createdDate": "2022-09-05T10:34:48.949Z",
+  "lastModifiedBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
+  "lastModifiedDate": "2022-09-05T10:37:12.529Z",
+  "lastPublishedVersion": 1,
+  "lastPublishedDate": "2022-09-05T10:38:47.056Z",
+  "deliveryId": "a5cf0229-e73d-4ea8-9685-3ea9174c7d37"
+}

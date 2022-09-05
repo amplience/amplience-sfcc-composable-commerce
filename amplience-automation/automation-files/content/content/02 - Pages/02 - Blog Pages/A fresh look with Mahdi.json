@@ -1,0 +1,379 @@
+{
+  "id": "5de42572-25de-421b-a856-1a0248a0cd97",
+  "body": {
+    "_meta": {
+      "name": "A fresh look with Mahdi",
+      "schema": "https://sfcc.com/site/pages/blog",
+      "deliveryKey": "blog/what-to-wear/mahdi-bafande"
+    },
+    "seo": {
+      "title": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "Mahdi Bafande"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "Mahdi Bafande"
+          },
+          {
+            "locale": "de-DE",
+            "value": "Mahdi Bafande"
+          },
+          {
+            "locale": "es-ES",
+            "value": "Mahdi Bafande"
+          },
+          {
+            "locale": "it-IT",
+            "value": "Mahdi Bafande"
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      },
+      "description": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "Fresh look with Mahdi"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "Look frais avec Mahdi"
+          },
+          {
+            "locale": "de-DE",
+            "value": "Frischer Look mit Mahdi"
+          },
+          {
+            "locale": "es-ES",
+            "value": "Mirada fresca con Mahdi"
+          },
+          {
+            "locale": "it-IT",
+            "value": "Look fresco con Mahdi"
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      },
+      "noindex": false,
+      "keywords": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "cool, handsome, trendy"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "cool, beau, branché"
+          },
+          {
+            "locale": "de-DE",
+            "value": "cool, hübsch, trendy"
+          },
+          {
+            "locale": "es-ES",
+            "value": "Fresco, guapo, de moda"
+          },
+          {
+            "locale": "it-IT",
+            "value": "bello, bello, alla moda"
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      }
+    },
+    "image": {
+      "image": {
+        "crop": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "rot": 0,
+        "hue": 0,
+        "sat": 0,
+        "bri": 0,
+        "fliph": false,
+        "flipv": false,
+        "poi": {
+          "x": 0.4740966845344451,
+          "y": 0.5593607305936072
+        },
+        "aspectLock": "poi",
+        "query": "poi=0.4741,0.5594,0,0&scaleFit=poi",
+        "image": {
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+          },
+          "id": "970801b1-2b7e-499b-9ec1-7fddf523dd2c",
+          "name": "clark-street-mercantile-qnKhZJPKFD8-unsplash",
+          "endpoint": "sfcccompdev",
+          "defaultHost": "cdn.media.amplience.net"
+        }
+      },
+      "imageAltText": "Mahdi Bafande clothes for look",
+      "seoText": "A Fresh look with Mahdi"
+    },
+    "tags": [
+      {
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+        },
+        "contentType": "https://sfcc.com/components/tag",
+        "id": "4658b33c-9e58-4647-8621-1b66a61f55a2"
+      },
+      {
+        "_meta": {
+          "name": "What to wear",
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+        },
+        "id": "876c73af-6481-466d-b31e-a88dab9aea68",
+        "contentType": "https://sfcc.com/components/tag"
+      }
+    ],
+    "categories": [
+      {
+        "name": "(newarrivals-mens) Mens",
+        "id": "newarrivals-mens"
+      },
+      {
+        "name": "(mens) Mens",
+        "id": "mens"
+      },
+      {
+        "name": "(mens-clothing-suits) Suits",
+        "id": "mens-clothing-suits"
+      }
+    ],
+    "author": {
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+      },
+      "contentType": "https://sfcc.com/components/author",
+      "id": "676bedac-b157-463f-a52d-e0d51218d218"
+    },
+    "content": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": {
+            "richText": [
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "c37688f4-a42b-4637-99af-851884dfb8fc",
+                  "name": "mahdi-bafande-oocXfshoKks-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">\\\n\\\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dapibus sapien eu felis dictum auctor. Phasellus aliquam sed tellus sit amet ultrices. Phasellus dignissim fringilla neque non condimentum. Donec at lacus iaculis, porta orci et, tristique augue. Mauris tincidunt eget odio nec euismod. Suspendisse iaculis molestie ante vel suscipit. Cras porttitor vel tortor quis hendrerit. Ut posuere orci quis convallis lacinia. Duis laoreet elit hendrerit, tincidunt turpis quis, ullamcorper odio. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer velit elit, iaculis interdum varius ut, sollicitudin nec tellus. Integer nulla arcu, fringilla vitae nunc sed, convallis condimentum metus. Suspendisse potenti.</p>\n\n<p style=\"text-align: justify\">Sed quis pharetra tellus. Etiam euismod vulputate aliquet. Phasellus semper erat vel libero placerat elementum. Donec at sollicitudin enim. Sed tempor tortor sit amet imperdiet luctus. Vivamus volutpat vel mi non dictum. Ut condimentum vulputate est eget interdum. Curabitur eget sem quis eros venenatis convallis. Suspendisse in cursus ipsum, nec venenatis ligula. Nullam eu turpis nec tortor mattis elementum. Vestibulum sed elit nec erat tempor volutpat non eget elit. Curabitur facilisis euismod sem, a tempus quam facilisis ac. Sed ac mauris et eros laoreet vulputate. Pellentesque dapibus cursus arcu, vel egestas nisi molestie sit amet. Suspendisse eget magna laoreet nunc consectetur malesuada id vitae nisi.</p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "1439cc75-4ceb-471b-828b-27b08ab81f89",
+                  "name": "logan-weaver-lgnwvr-JqRQtSr2MCI-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Quisque at tellus eros. Morbi hendrerit vitae nisi et facilisis. Proin imperdiet libero a scelerisque sollicitudin. Vivamus fringilla urna nisl, imperdiet lacinia turpis gravida id. Ut fringilla velit id metus gravida, ac finibus nulla elementum. Aenean lacinia augue vel dui ultrices aliquet. Sed vel tortor sodales, varius purus at, fermentum ligula. Donec a aliquet purus, at sollicitudin eros. Donec lobortis suscipit enim vel pulvinar. Fusce ut porta ante. Ut eu lorem quis eros dapibus suscipit.</p>"
+              }
+            ]
+          }
+        },
+        {
+          "locale": "fr-FR",
+          "value": {
+            "richText": [
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "c37688f4-a42b-4637-99af-851884dfb8fc",
+                  "name": "mahdi-bafande-oocXfshoKks-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">\\\n\\\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dapibus sapien eu felis dictum auctor. Phasellus aliquam sed tellus sit amet ultrices. Phasellus dignissim fringilla neque non condimentum. Donec at lacus iaculis, porta orci et, tristique augue. Mauris tincidunt eget odio nec euismod. Suspendisse iaculis molestie ante vel suscipit. Cras porttitor vel tortor quis hendrerit. Ut posuere orci quis convallis lacinia. Duis laoreet elit hendrerit, tincidunt turpis quis, ullamcorper odio. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer velit elit, iaculis interdum varius ut, sollicitudin nec tellus. Integer nulla arcu, fringilla vitae nunc sed, convallis condimentum metus. Suspendisse potenti.</p>\n\n<p style=\"text-align: justify\">Sed quis pharetra tellus. Etiam euismod vulputate aliquet. Phasellus semper erat vel libero placerat elementum. Donec at sollicitudin enim. Sed tempor tortor sit amet imperdiet luctus. Vivamus volutpat vel mi non dictum. Ut condimentum vulputate est eget interdum. Curabitur eget sem quis eros venenatis convallis. Suspendisse in cursus ipsum, nec venenatis ligula. Nullam eu turpis nec tortor mattis elementum. Vestibulum sed elit nec erat tempor volutpat non eget elit. Curabitur facilisis euismod sem, a tempus quam facilisis ac. Sed ac mauris et eros laoreet vulputate. Pellentesque dapibus cursus arcu, vel egestas nisi molestie sit amet. Suspendisse eget magna laoreet nunc consectetur malesuada id vitae nisi.</p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "1439cc75-4ceb-471b-828b-27b08ab81f89",
+                  "name": "logan-weaver-lgnwvr-JqRQtSr2MCI-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Quisque at tellus eros. Morbi hendrerit vitae nisi et facilisis. Proin imperdiet libero a scelerisque sollicitudin. Vivamus fringilla urna nisl, imperdiet lacinia turpis gravida id. Ut fringilla velit id metus gravida, ac finibus nulla elementum. Aenean lacinia augue vel dui ultrices aliquet. Sed vel tortor sodales, varius purus at, fermentum ligula. Donec a aliquet purus, at sollicitudin eros. Donec lobortis suscipit enim vel pulvinar. Fusce ut porta ante. Ut eu lorem quis eros dapibus suscipit.</p>"
+              }
+            ]
+          }
+        },
+        {
+          "locale": "de-DE",
+          "value": {
+            "richText": [
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "c37688f4-a42b-4637-99af-851884dfb8fc",
+                  "name": "mahdi-bafande-oocXfshoKks-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">\\\n\\\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dapibus sapien eu felis dictum auctor. Phasellus aliquam sed tellus sit amet ultrices. Phasellus dignissim fringilla neque non condimentum. Donec at lacus iaculis, porta orci et, tristique augue. Mauris tincidunt eget odio nec euismod. Suspendisse iaculis molestie ante vel suscipit. Cras porttitor vel tortor quis hendrerit. Ut posuere orci quis convallis lacinia. Duis laoreet elit hendrerit, tincidunt turpis quis, ullamcorper odio. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer velit elit, iaculis interdum varius ut, sollicitudin nec tellus. Integer nulla arcu, fringilla vitae nunc sed, convallis condimentum metus. Suspendisse potenti.</p>\n\n<p style=\"text-align: justify\">Sed quis pharetra tellus. Etiam euismod vulputate aliquet. Phasellus semper erat vel libero placerat elementum. Donec at sollicitudin enim. Sed tempor tortor sit amet imperdiet luctus. Vivamus volutpat vel mi non dictum. Ut condimentum vulputate est eget interdum. Curabitur eget sem quis eros venenatis convallis. Suspendisse in cursus ipsum, nec venenatis ligula. Nullam eu turpis nec tortor mattis elementum. Vestibulum sed elit nec erat tempor volutpat non eget elit. Curabitur facilisis euismod sem, a tempus quam facilisis ac. Sed ac mauris et eros laoreet vulputate. Pellentesque dapibus cursus arcu, vel egestas nisi molestie sit amet. Suspendisse eget magna laoreet nunc consectetur malesuada id vitae nisi.</p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "1439cc75-4ceb-471b-828b-27b08ab81f89",
+                  "name": "logan-weaver-lgnwvr-JqRQtSr2MCI-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Quisque at tellus eros. Morbi hendrerit vitae nisi et facilisis. Proin imperdiet libero a scelerisque sollicitudin. Vivamus fringilla urna nisl, imperdiet lacinia turpis gravida id. Ut fringilla velit id metus gravida, ac finibus nulla elementum. Aenean lacinia augue vel dui ultrices aliquet. Sed vel tortor sodales, varius purus at, fermentum ligula. Donec a aliquet purus, at sollicitudin eros. Donec lobortis suscipit enim vel pulvinar. Fusce ut porta ante. Ut eu lorem quis eros dapibus suscipit.</p>"
+              }
+            ]
+          }
+        },
+        {
+          "locale": "es-ES",
+          "value": {
+            "richText": [
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "c37688f4-a42b-4637-99af-851884dfb8fc",
+                  "name": "mahdi-bafande-oocXfshoKks-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">\\\n\\\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dapibus sapien eu felis dictum auctor. Phasellus aliquam sed tellus sit amet ultrices. Phasellus dignissim fringilla neque non condimentum. Donec at lacus iaculis, porta orci et, tristique augue. Mauris tincidunt eget odio nec euismod. Suspendisse iaculis molestie ante vel suscipit. Cras porttitor vel tortor quis hendrerit. Ut posuere orci quis convallis lacinia. Duis laoreet elit hendrerit, tincidunt turpis quis, ullamcorper odio. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer velit elit, iaculis interdum varius ut, sollicitudin nec tellus. Integer nulla arcu, fringilla vitae nunc sed, convallis condimentum metus. Suspendisse potenti.</p>\n\n<p style=\"text-align: justify\">Sed quis pharetra tellus. Etiam euismod vulputate aliquet. Phasellus semper erat vel libero placerat elementum. Donec at sollicitudin enim. Sed tempor tortor sit amet imperdiet luctus. Vivamus volutpat vel mi non dictum. Ut condimentum vulputate est eget interdum. Curabitur eget sem quis eros venenatis convallis. Suspendisse in cursus ipsum, nec venenatis ligula. Nullam eu turpis nec tortor mattis elementum. Vestibulum sed elit nec erat tempor volutpat non eget elit. Curabitur facilisis euismod sem, a tempus quam facilisis ac. Sed ac mauris et eros laoreet vulputate. Pellentesque dapibus cursus arcu, vel egestas nisi molestie sit amet. Suspendisse eget magna laoreet nunc consectetur malesuada id vitae nisi.</p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "1439cc75-4ceb-471b-828b-27b08ab81f89",
+                  "name": "logan-weaver-lgnwvr-JqRQtSr2MCI-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Quisque at tellus eros. Morbi hendrerit vitae nisi et facilisis. Proin imperdiet libero a scelerisque sollicitudin. Vivamus fringilla urna nisl, imperdiet lacinia turpis gravida id. Ut fringilla velit id metus gravida, ac finibus nulla elementum. Aenean lacinia augue vel dui ultrices aliquet. Sed vel tortor sodales, varius purus at, fermentum ligula. Donec a aliquet purus, at sollicitudin eros. Donec lobortis suscipit enim vel pulvinar. Fusce ut porta ante. Ut eu lorem quis eros dapibus suscipit.</p>"
+              }
+            ]
+          }
+        },
+        {
+          "locale": "it-IT",
+          "value": {
+            "richText": [
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "c37688f4-a42b-4637-99af-851884dfb8fc",
+                  "name": "mahdi-bafande-oocXfshoKks-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">\\\n\\\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dapibus sapien eu felis dictum auctor. Phasellus aliquam sed tellus sit amet ultrices. Phasellus dignissim fringilla neque non condimentum. Donec at lacus iaculis, porta orci et, tristique augue. Mauris tincidunt eget odio nec euismod. Suspendisse iaculis molestie ante vel suscipit. Cras porttitor vel tortor quis hendrerit. Ut posuere orci quis convallis lacinia. Duis laoreet elit hendrerit, tincidunt turpis quis, ullamcorper odio. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer velit elit, iaculis interdum varius ut, sollicitudin nec tellus. Integer nulla arcu, fringilla vitae nunc sed, convallis condimentum metus. Suspendisse potenti.</p>\n\n<p style=\"text-align: justify\">Sed quis pharetra tellus. Etiam euismod vulputate aliquet. Phasellus semper erat vel libero placerat elementum. Donec at sollicitudin enim. Sed tempor tortor sit amet imperdiet luctus. Vivamus volutpat vel mi non dictum. Ut condimentum vulputate est eget interdum. Curabitur eget sem quis eros venenatis convallis. Suspendisse in cursus ipsum, nec venenatis ligula. Nullam eu turpis nec tortor mattis elementum. Vestibulum sed elit nec erat tempor volutpat non eget elit. Curabitur facilisis euismod sem, a tempus quam facilisis ac. Sed ac mauris et eros laoreet vulputate. Pellentesque dapibus cursus arcu, vel egestas nisi molestie sit amet. Suspendisse eget magna laoreet nunc consectetur malesuada id vitae nisi.</p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "1439cc75-4ceb-471b-828b-27b08ab81f89",
+                  "name": "logan-weaver-lgnwvr-JqRQtSr2MCI-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Quisque at tellus eros. Morbi hendrerit vitae nisi et facilisis. Proin imperdiet libero a scelerisque sollicitudin. Vivamus fringilla urna nisl, imperdiet lacinia turpis gravida id. Ut fringilla velit id metus gravida, ac finibus nulla elementum. Aenean lacinia augue vel dui ultrices aliquet. Sed vel tortor sodales, varius purus at, fermentum ligula. Donec a aliquet purus, at sollicitudin eros. Donec lobortis suscipit enim vel pulvinar. Fusce ut porta ante. Ut eu lorem quis eros dapibus suscipit.</p>"
+              }
+            ]
+          }
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "date": 1662595200000,
+    "readtime": 3
+  },
+  "version": 6,
+  "label": "A fresh look with Mahdi",
+  "status": "ACTIVE",
+  "createdBy": "4f03be08-c84d-4baf-b0ac-24406cc2d618",
+  "createdDate": "2022-09-01T09:38:06.563Z",
+  "lastModifiedBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
+  "lastModifiedDate": "2022-09-05T10:25:51.040Z",
+  "lastPublishedVersion": 6,
+  "lastPublishedDate": "2022-09-05T10:38:08.644Z",
+  "deliveryId": "5de42572-25de-421b-a856-1a0248a0cd97"
+}

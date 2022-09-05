@@ -1,0 +1,46 @@
+{
+  "id": "47034f2f-fbfe-46f2-beda-fe4cdef47d4d",
+  "body": {
+    "_meta": {
+      "name": "Interviews",
+      "schema": "https://sfcc.com/components/tag"
+    },
+    "name": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "interviews"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "entretiens"
+        },
+        {
+          "locale": "de-DE",
+          "value": "vorstellungsgespräche"
+        },
+        {
+          "locale": "es-ES",
+          "value": "entrevistas"
+        },
+        {
+          "locale": "it-IT",
+          "value": "interviste"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    }
+  },
+  "version": 1,
+  "label": "Interviews",
+  "status": "ACTIVE",
+  "createdBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
+  "createdDate": "2022-09-05T10:32:47.163Z",
+  "lastModifiedBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
+  "lastModifiedDate": "2022-09-05T10:37:14.899Z",
+  "lastPublishedVersion": 1,
+  "lastPublishedDate": "2022-09-05T10:38:32.856Z",
+  "deliveryId": "47034f2f-fbfe-46f2-beda-fe4cdef47d4d"
+}

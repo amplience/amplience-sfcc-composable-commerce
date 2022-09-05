@@ -2,98 +2,98 @@
     "id": "68c71bdc-d843-4fd8-be23-c1a0cff18402",
     "body": {
         "title": {
-          "values": [
-            {
-              "locale": "en-US",
-              "value": "Amplience Search Blog"
-            },
-            {
-              "locale": "fr-FR",
-              "value": "Amplience Chercher Blog"
-            },
-            {
-              "locale": "de-DE",
-              "value": "Amplience Suche Bloggen"
-            },
-            {
-              "locale": "es-ES",
-              "value": "Amplience Búsqueda Blog"
-            },
-            {
-              "locale": "it-IT",
-              "value": "Amplience Ricerca Blog"
+            "values": [
+                {
+                    "locale": "en-US",
+                    "value": "Amplience Blog Search"
+                },
+                {
+                    "locale": "fr-FR",
+                    "value": "Amplience Recherche Blog"
+                },
+                {
+                    "locale": "de-DE",
+                    "value": "Amplience Suche Bloggen"
+                },
+                {
+                    "locale": "es-ES",
+                    "value": "Amplience Búsqueda Blog"
+                },
+                {
+                    "locale": "it-IT",
+                    "value": "Amplience Ricerca Blog"
+                }
+            ],
+            "_meta": {
+                "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
             }
-          ],
-          "_meta": {
-            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
-          }
         },
         "subtitle": {
-          "values": [
-            {
-              "locale": "en-US",
-              "value": "This page showcases how to dynamically retrieve blog posts, query, facet and pagination between items using Amplience Search"
-            },
-            {
-              "locale": "fr-FR",
-              "value": "Cette page montre comment récupérer dynamiquement les articles de blog, la requête, la facette et la pagination entre les éléments à l'aide Amplience Chercher"
-            },
-            {
-              "locale": "de-DE",
-              "value": "Diese Seite zeigt, wie Sie Blog-Posts, Abfragen, Facetten und Seitenumbrüche zwischen Elementen dynamisch abrufen können Amplience Suche"
-            },
-            {
-              "locale": "es-ES",
-              "value": "Esta página muestra cómo recuperar dinámicamente publicaciones de blog, consultas, facetas y paginación entre elementos usando Amplience Búsqueda"
-            },
-            {
-              "locale": "it-IT",
-              "value": "Questa pagina mostra come recuperare dinamicamente post del blog, query, facet e impaginazione tra gli elementi utilizzando Amplience Ricerca"
+            "values": [
+                {
+                    "locale": "en-US",
+                    "value": "This page showcases how to dynamically retrieve blog posts, query, facet and pagination between items using Amplience Search"
+                },
+                {
+                    "locale": "fr-FR",
+                    "value": "Cette page montre comment récupérer dynamiquement les articles de blog, les requêtes, les facettes et la pagination entre les éléments à l'aide d'Amplience Search"
+                },
+                {
+                    "locale": "de-DE",
+                    "value": "Diese Seite zeigt, wie Sie Blog-Posts, Abfragen, Facetten und Seitenumbrüche zwischen Elementen dynamisch abrufen können Amplience Search"
+                },
+                {
+                    "locale": "es-ES",
+                    "value": "Esta página muestra cómo recuperar dinámicamente publicaciones de blog, consultas, facetas y paginación entre elementos usando Amplience Search"
+                },
+                {
+                    "locale": "it-IT",
+                    "value": "Questa pagina mostra come recuperare dinamicamente post del blog, query, facet e impaginazione tra gli elementi utilizzando Amplience Search"
+                }
+            ],
+            "_meta": {
+                "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
             }
-          ],
-          "_meta": {
-            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
-          }
         },
         "actions": [
-          {
-            "label": {
-              "values": [
-                {
-                  "locale": "en-US",
-                  "value": "Learn More"
+            {
+                "label": {
+                    "values": [
+                        {
+                            "locale": "en-US",
+                            "value": "Learn More"
+                        },
+                        {
+                            "locale": "fr-FR",
+                            "value": "Apprendre encore plus"
+                        },
+                        {
+                            "locale": "de-DE",
+                            "value": "Lern mehr"
+                        },
+                        {
+                            "locale": "es-ES",
+                            "value": "Aprende más"
+                        },
+                        {
+                            "locale": "it-IT",
+                            "value": "Per saperne di più"
+                        }
+                    ],
+                    "_meta": {
+                        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+                    }
                 },
-                {
-                  "locale": "fr-FR",
-                  "value": "Apprendre encore plus"
-                },
-                {
-                  "locale": "de-DE",
-                  "value": "Lern mehr"
-                },
-                {
-                  "locale": "es-ES",
-                  "value": "Aprende más"
-                },
-                {
-                  "locale": "it-IT",
-                  "value": "Per saperne di più"
-                }
-              ],
-              "_meta": {
-                "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
-              }
-            },
-            "url": "https://amplience.com/docs/development/search-indexes/readme.html"
-          }
+                "url": "https://amplience.com/docs/development/search-indexes/readme.html"
+            }
         ],
         "maxWidth": "3xl",
         "background": "gray.50",
         "_meta": {
-          "name": "Amplience Blog Header - Section",
-          "schema": "https://sfcc.com/components/section"
+            "name": "Amplience Blog Header - Section",
+            "schema": "https://sfcc.com/components/section"
         }
-      },
+    },
     "version": 1,
     "label": "Amplience Blog Header - Section",
     "status": "ACTIVE",

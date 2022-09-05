@@ -1,0 +1,46 @@
+{
+  "id": "4658b33c-9e58-4647-8621-1b66a61f55a2",
+  "body": {
+    "_meta": {
+      "name": "Trends",
+      "schema": "https://sfcc.com/components/tag"
+    },
+    "name": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "trends"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "tendances"
+        },
+        {
+          "locale": "de-DE",
+          "value": "tendenzen"
+        },
+        {
+          "locale": "es-ES",
+          "value": "tendencias"
+        },
+        {
+          "locale": "it-IT",
+          "value": "tendenze"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    }
+  },
+  "version": 1,
+  "label": "Trends",
+  "status": "ACTIVE",
+  "createdBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
+  "createdDate": "2022-09-05T10:23:17.844Z",
+  "lastModifiedBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
+  "lastModifiedDate": "2022-09-05T10:23:17.844Z",
+  "lastPublishedVersion": 1,
+  "lastPublishedDate": "2022-09-05T10:38:26.090Z",
+  "deliveryId": "4658b33c-9e58-4647-8621-1b66a61f55a2"
+}

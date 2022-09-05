@@ -1,0 +1,5 @@
+{
+    "body": "./schemas/tag-schema.json",
+    "schemaId": "https://sfcc.com/components/tag",
+    "validationLevel": "CONTENT_TYPE"
+}

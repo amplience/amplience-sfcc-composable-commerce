@@ -1,0 +1,394 @@
+{
+  "id": "4ccf7388-405e-49d4-a6a0-8baca0060244",
+  "body": {
+    "_meta": {
+      "name": "A new look to Summer",
+      "schema": "https://sfcc.com/site/pages/blog",
+      "deliveryKey": "blog/what-to-wear/women-dresses"
+    },
+    "seo": {
+      "title": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "summer clothes"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "vêtements d'été"
+          },
+          {
+            "locale": "de-DE",
+            "value": "Sommerkleidung"
+          },
+          {
+            "locale": "es-ES",
+            "value": "ropa de verano"
+          },
+          {
+            "locale": "it-IT",
+            "value": "abiti estivi"
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      },
+      "description": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "What to wear for summer"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "Quoi porter pour l'été"
+          },
+          {
+            "locale": "de-DE",
+            "value": "Was anziehen für den sommer"
+          },
+          {
+            "locale": "es-ES",
+            "value": "que ponerse para el verano"
+          },
+          {
+            "locale": "it-IT",
+            "value": "Cosa indossare per l'estate"
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      },
+      "noindex": false,
+      "keywords": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "summer, dress, clothes"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "été, robe, vêtements"
+          },
+          {
+            "locale": "de-DE",
+            "value": "sommer, kleid, kleidung"
+          },
+          {
+            "locale": "es-ES",
+            "value": "verano, vestido, ropa"
+          },
+          {
+            "locale": "it-IT",
+            "value": "estate, vestito, vestiti"
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      }
+    },
+    "image": {
+      "image": {
+        "crop": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "rot": 0,
+        "hue": 0,
+        "sat": 0,
+        "bri": 0,
+        "fliph": false,
+        "flipv": false,
+        "poi": {
+          "x": 0.5010754526322188,
+          "y": 0.4098173515981735
+        },
+        "aspectLock": "poi",
+        "query": "poi=0.5011,0.4098,0,0&scaleFit=poi",
+        "image": {
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+          },
+          "id": "46c04abb-bb28-4434-9015-aea9de420959",
+          "name": "reece-van-der-merwe-0aDFBQuoFu8-unsplash",
+          "endpoint": "sfcccompdev",
+          "defaultHost": "cdn.media.amplience.net"
+        }
+      },
+      "imageAltText": "summer clothes in water",
+      "seoText": "What to wear for summer"
+    },
+    "tags": [
+      {
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+        },
+        "contentType": "https://sfcc.com/components/tag",
+        "id": "876c73af-6481-466d-b31e-a88dab9aea68"
+      },
+      {
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+        },
+        "contentType": "https://sfcc.com/components/tag",
+        "id": "4658b33c-9e58-4647-8621-1b66a61f55a2"
+      }
+    ],
+    "categories": [
+      {
+        "name": "(newarrivals-womens) Womens",
+        "id": "newarrivals-womens"
+      },
+      {
+        "name": "(womens-clothing-dresses) Dresses",
+        "id": "womens-clothing-dresses"
+      }
+    ],
+    "author": {
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+      },
+      "contentType": "https://sfcc.com/components/author",
+      "id": "bca8395f-4864-4a3e-afef-38ab18c1076b"
+    },
+    "content": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Proin porta nunc ut nibh eleifend euismod. Morbi at convallis ipsum. Cras hendrerit fringilla turpis, vel commodo est placerat ut. Fusce placerat eget est dignissim porttitor. Vivamus nec ligula libero. Integer at augue molestie, ultrices lorem sed, ultrices lectus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed sit amet ex sit amet nisi consequat ultricies eget in massa. Pellentesque gravida diam et nisi sollicitudin pulvinar. In id nulla auctor, ornare quam ac, fermentum sapien."
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "a7eb8ffb-e91e-4bff-9b4c-544790778b13",
+                  "name": "alora-griffiths-Cc_ArxoAOAQ-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Mauris vitae cursus velit. Nam convallis nunc sagittis sem ullamcorper efficitur. Donec sit amet interdum nisl. Aliquam luctus eros ac arcu congue porta. Ut tellus lacus, tristique eu ligula ullamcorper, interdum sodales turpis. Proin nec justo convallis, sodales nunc et, dapibus urna. Morbi vulputate, dui viverra scelerisque dapibus, felis nunc pellentesque felis, sit amet pretium mi ex a erat. Sed ornare lacus neque, at suscipit ipsum rhoncus a. Cras eu blandit erat.</p>\n\n<p style=\"text-align: justify\"></p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "90b733f8-87ea-4875-bafc-3b27dfb706fd",
+                  "name": "lucas-lenzi-6QCZgqodrxI-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras at convallis urna. Praesent iaculis rutrum facilisis. Nullam a tortor sed elit facilisis sagittis quis ut neque. Morbi cursus placerat libero, sed congue orci semper sed. Sed suscipit varius quam, quis consectetur neque vulputate a. Nunc cursus est vitae urna gravida porta. Vestibulum viverra venenatis mauris a tempus. Morbi imperdiet metus id ultrices vulputate. Mauris in mauris vel neque fringilla consectetur. Vestibulum arcu lorem, porttitor eu tellus eget, faucibus mattis arcu. Sed semper non felis eu molestie. Nulla in eros eu ligula pulvinar pulvinar sit amet a arcu.</p>"
+              }
+            ]
+          }
+        },
+        {
+          "locale": "fr-FR",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Proin porta nunc ut nibh eleifend euismod. Morbi at convallis ipsum. Cras hendrerit fringilla turpis, vel commodo est placerat ut. Fusce placerat eget est dignissim porttitor. Vivamus nec ligula libero. Integer at augue molestie, ultrices lorem sed, ultrices lectus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed sit amet ex sit amet nisi consequat ultricies eget in massa. Pellentesque gravida diam et nisi sollicitudin pulvinar. In id nulla auctor, ornare quam ac, fermentum sapien."
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "a7eb8ffb-e91e-4bff-9b4c-544790778b13",
+                  "name": "alora-griffiths-Cc_ArxoAOAQ-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Mauris vitae cursus velit. Nam convallis nunc sagittis sem ullamcorper efficitur. Donec sit amet interdum nisl. Aliquam luctus eros ac arcu congue porta. Ut tellus lacus, tristique eu ligula ullamcorper, interdum sodales turpis. Proin nec justo convallis, sodales nunc et, dapibus urna. Morbi vulputate, dui viverra scelerisque dapibus, felis nunc pellentesque felis, sit amet pretium mi ex a erat. Sed ornare lacus neque, at suscipit ipsum rhoncus a. Cras eu blandit erat.</p>\n\n<p style=\"text-align: justify\"></p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "90b733f8-87ea-4875-bafc-3b27dfb706fd",
+                  "name": "lucas-lenzi-6QCZgqodrxI-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras at convallis urna. Praesent iaculis rutrum facilisis. Nullam a tortor sed elit facilisis sagittis quis ut neque. Morbi cursus placerat libero, sed congue orci semper sed. Sed suscipit varius quam, quis consectetur neque vulputate a. Nunc cursus est vitae urna gravida porta. Vestibulum viverra venenatis mauris a tempus. Morbi imperdiet metus id ultrices vulputate. Mauris in mauris vel neque fringilla consectetur. Vestibulum arcu lorem, porttitor eu tellus eget, faucibus mattis arcu. Sed semper non felis eu molestie. Nulla in eros eu ligula pulvinar pulvinar sit amet a arcu.</p>"
+              }
+            ]
+          }
+        },
+        {
+          "locale": "de-DE",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Proin porta nunc ut nibh eleifend euismod. Morbi at convallis ipsum. Cras hendrerit fringilla turpis, vel commodo est placerat ut. Fusce placerat eget est dignissim porttitor. Vivamus nec ligula libero. Integer at augue molestie, ultrices lorem sed, ultrices lectus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed sit amet ex sit amet nisi consequat ultricies eget in massa. Pellentesque gravida diam et nisi sollicitudin pulvinar. In id nulla auctor, ornare quam ac, fermentum sapien."
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "a7eb8ffb-e91e-4bff-9b4c-544790778b13",
+                  "name": "alora-griffiths-Cc_ArxoAOAQ-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Mauris vitae cursus velit. Nam convallis nunc sagittis sem ullamcorper efficitur. Donec sit amet interdum nisl. Aliquam luctus eros ac arcu congue porta. Ut tellus lacus, tristique eu ligula ullamcorper, interdum sodales turpis. Proin nec justo convallis, sodales nunc et, dapibus urna. Morbi vulputate, dui viverra scelerisque dapibus, felis nunc pellentesque felis, sit amet pretium mi ex a erat. Sed ornare lacus neque, at suscipit ipsum rhoncus a. Cras eu blandit erat.</p>\n\n<p style=\"text-align: justify\"></p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "90b733f8-87ea-4875-bafc-3b27dfb706fd",
+                  "name": "lucas-lenzi-6QCZgqodrxI-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras at convallis urna. Praesent iaculis rutrum facilisis. Nullam a tortor sed elit facilisis sagittis quis ut neque. Morbi cursus placerat libero, sed congue orci semper sed. Sed suscipit varius quam, quis consectetur neque vulputate a. Nunc cursus est vitae urna gravida porta. Vestibulum viverra venenatis mauris a tempus. Morbi imperdiet metus id ultrices vulputate. Mauris in mauris vel neque fringilla consectetur. Vestibulum arcu lorem, porttitor eu tellus eget, faucibus mattis arcu. Sed semper non felis eu molestie. Nulla in eros eu ligula pulvinar pulvinar sit amet a arcu.</p>"
+              }
+            ]
+          }
+        },
+        {
+          "locale": "es-ES",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Proin porta nunc ut nibh eleifend euismod. Morbi at convallis ipsum. Cras hendrerit fringilla turpis, vel commodo est placerat ut. Fusce placerat eget est dignissim porttitor. Vivamus nec ligula libero. Integer at augue molestie, ultrices lorem sed, ultrices lectus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed sit amet ex sit amet nisi consequat ultricies eget in massa. Pellentesque gravida diam et nisi sollicitudin pulvinar. In id nulla auctor, ornare quam ac, fermentum sapien."
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "a7eb8ffb-e91e-4bff-9b4c-544790778b13",
+                  "name": "alora-griffiths-Cc_ArxoAOAQ-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Mauris vitae cursus velit. Nam convallis nunc sagittis sem ullamcorper efficitur. Donec sit amet interdum nisl. Aliquam luctus eros ac arcu congue porta. Ut tellus lacus, tristique eu ligula ullamcorper, interdum sodales turpis. Proin nec justo convallis, sodales nunc et, dapibus urna. Morbi vulputate, dui viverra scelerisque dapibus, felis nunc pellentesque felis, sit amet pretium mi ex a erat. Sed ornare lacus neque, at suscipit ipsum rhoncus a. Cras eu blandit erat.</p>\n\n<p style=\"text-align: justify\"></p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "90b733f8-87ea-4875-bafc-3b27dfb706fd",
+                  "name": "lucas-lenzi-6QCZgqodrxI-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras at convallis urna. Praesent iaculis rutrum facilisis. Nullam a tortor sed elit facilisis sagittis quis ut neque. Morbi cursus placerat libero, sed congue orci semper sed. Sed suscipit varius quam, quis consectetur neque vulputate a. Nunc cursus est vitae urna gravida porta. Vestibulum viverra venenatis mauris a tempus. Morbi imperdiet metus id ultrices vulputate. Mauris in mauris vel neque fringilla consectetur. Vestibulum arcu lorem, porttitor eu tellus eget, faucibus mattis arcu. Sed semper non felis eu molestie. Nulla in eros eu ligula pulvinar pulvinar sit amet a arcu.</p>"
+              }
+            ]
+          }
+        },
+        {
+          "locale": "it-IT",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Proin porta nunc ut nibh eleifend euismod. Morbi at convallis ipsum. Cras hendrerit fringilla turpis, vel commodo est placerat ut. Fusce placerat eget est dignissim porttitor. Vivamus nec ligula libero. Integer at augue molestie, ultrices lorem sed, ultrices lectus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed sit amet ex sit amet nisi consequat ultricies eget in massa. Pellentesque gravida diam et nisi sollicitudin pulvinar. In id nulla auctor, ornare quam ac, fermentum sapien."
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "a7eb8ffb-e91e-4bff-9b4c-544790778b13",
+                  "name": "alora-griffiths-Cc_ArxoAOAQ-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Mauris vitae cursus velit. Nam convallis nunc sagittis sem ullamcorper efficitur. Donec sit amet interdum nisl. Aliquam luctus eros ac arcu congue porta. Ut tellus lacus, tristique eu ligula ullamcorper, interdum sodales turpis. Proin nec justo convallis, sodales nunc et, dapibus urna. Morbi vulputate, dui viverra scelerisque dapibus, felis nunc pellentesque felis, sit amet pretium mi ex a erat. Sed ornare lacus neque, at suscipit ipsum rhoncus a. Cras eu blandit erat.</p>\n\n<p style=\"text-align: justify\"></p>"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "90b733f8-87ea-4875-bafc-3b27dfb706fd",
+                  "name": "lucas-lenzi-6QCZgqodrxI-unsplash",
+                  "endpoint": "sfcccompdev",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "<p style=\"text-align: justify\">Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras at convallis urna. Praesent iaculis rutrum facilisis. Nullam a tortor sed elit facilisis sagittis quis ut neque. Morbi cursus placerat libero, sed congue orci semper sed. Sed suscipit varius quam, quis consectetur neque vulputate a. Nunc cursus est vitae urna gravida porta. Vestibulum viverra venenatis mauris a tempus. Morbi imperdiet metus id ultrices vulputate. Mauris in mauris vel neque fringilla consectetur. Vestibulum arcu lorem, porttitor eu tellus eget, faucibus mattis arcu. Sed semper non felis eu molestie. Nulla in eros eu ligula pulvinar pulvinar sit amet a arcu.</p>"
+              }
+            ]
+          }
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "date": 1662076800000,
+    "readtime": 3
+  },
+  "version": 7,
+  "label": "A new look to Summer",
+  "status": "ACTIVE",
+  "createdBy": "4f03be08-c84d-4baf-b0ac-24406cc2d618",
+  "createdDate": "2022-09-01T10:33:42.451Z",
+  "lastModifiedBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
+  "lastModifiedDate": "2022-09-05T10:26:25.107Z",
+  "lastPublishedVersion": 7,
+  "lastPublishedDate": "2022-09-05T10:38:06.543Z",
+  "deliveryId": "4ccf7388-405e-49d4-a6a0-8baca0060244"
+}
