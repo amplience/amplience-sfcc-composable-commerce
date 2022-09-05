@@ -1,0 +1,389 @@
+{
+  "replicaCount": 4,
+  "name": "sfcccompdev.blog-production-en-us",
+  "suffix": "blog-production-en-us",
+  "label": "blog-production_en-US",
+  "type": "PRODUCTION",
+  "createdDate": "2022-09-01T17:05:15.114Z",
+  "lastModifiedDate": "2022-09-01T17:05:46.082Z",
+  "settings": {
+    "minWordSizefor1Typo": 4,
+    "minWordSizefor2Typos": 8,
+    "hitsPerPage": 20,
+    "maxValuesPerFacet": 100,
+    "version": 2,
+    "searchableAttributes": [
+      "seo.title",
+      "seo.description",
+      "seo.keywords",
+      "description",
+      "tags",
+      "categories",
+      "author.name",
+      "author.role"
+    ],
+    "numericAttributesToIndex": null,
+    "attributesToRetrieve": null,
+    "unretrievableAttributes": null,
+    "optionalWords": null,
+    "replicas": [
+      "sfcccompdev.blog-production-en-us_sort-readtime-desc",
+      "sfcccompdev.blog-production-en-us_sort-readtime-asc",
+      "sfcccompdev.blog-production-en-us_sort-date-asc",
+      "sfcccompdev.blog-production-en-us_sort-date-desc"
+    ],
+    "attributesForFaceting": [
+      "searchable(categories)",
+      "searchable(categories.name)",
+      "searchable(categories.id)",
+      "searchable(author.name)",
+      "searchable(tags)",
+      "searchable(readtime)"
+    ],
+    "attributesToSnippet": null,
+    "attributesToHighlight": null,
+    "paginationLimitedTo": 1000,
+    "attributeForDistinct": null,
+    "exactOnSingleWordQuery": "attribute",
+    "ranking": [
+      "typo",
+      "geo",
+      "words",
+      "filters",
+      "proximity",
+      "attribute",
+      "exact",
+      "custom"
+    ],
+    "customRanking": null,
+    "separatorsToIndex": "",
+    "removeWordsIfNoResults": "none",
+    "queryType": "prefixLast",
+    "highlightPreTag": "<em>",
+    "highlightPostTag": "</em>",
+    "snippetEllipsisText": "",
+    "alternativesAsExact": [
+      "ignorePlurals",
+      "singleWordSynonym"
+    ]
+  },
+  "keys": {
+    "id": "630c9ff098b1e139a90b6138",
+    "type": "HUB_SEARCH",
+    "key": "fa9be8756d95a97f0021f0aba6f02bc4",
+    "applicationId": "4BS5I6EVVD"
+  },
+  "replicas": [
+    {
+      "id": "UIKIGz7L05lmiczwlAqSJI8k",
+      "parentId": "6310bcf3f7e0af00a7a3bf7a",
+      "name": "sfcccompdev.blog-production-en-us_sort-date-asc",
+      "suffix": "blog-production-en-us_sort-date-asc",
+      "label": "blog-production-en-us_sort-date-asc",
+      "type": "PRODUCTION",
+      "createdDate": "2022-09-02T12:10:25.735Z",
+      "lastModifiedDate": "2022-09-02T12:25:18.054Z",
+      "settings": {
+        "minWordSizefor1Typo": 4,
+        "minWordSizefor2Typos": 8,
+        "hitsPerPage": 20,
+        "maxValuesPerFacet": 100,
+        "version": 2,
+        "searchableAttributes": [
+          "seo.title",
+          "seo.description",
+          "seo.keywords",
+          "description",
+          "tags",
+          "date",
+          "readtime",
+          "categories",
+          "author.name",
+          "author.role"
+        ],
+        "numericAttributesToIndex": null,
+        "attributesToRetrieve": null,
+        "unretrievableAttributes": null,
+        "optionalWords": null,
+        "primary": "sfcccompdev.blog-production-en-us",
+        "attributesForFaceting": [
+          "searchable(categories)",
+          "searchable(categories.name)",
+          "searchable(categories.id)",
+          "searchable(author.name)",
+          "searchable(tags)",
+          "searchable(readtime)"
+        ],
+        "attributesToSnippet": null,
+        "attributesToHighlight": null,
+        "paginationLimitedTo": 1000,
+        "attributeForDistinct": null,
+        "exactOnSingleWordQuery": "attribute",
+        "ranking": [
+          "asc(date)",
+          "typo",
+          "geo",
+          "words",
+          "filters",
+          "proximity",
+          "attribute",
+          "exact",
+          "custom"
+        ],
+        "customRanking": null,
+        "separatorsToIndex": "",
+        "removeWordsIfNoResults": "none",
+        "queryType": "prefixLast",
+        "highlightPreTag": "<em>",
+        "highlightPostTag": "</em>",
+        "snippetEllipsisText": "",
+        "alternativesAsExact": [
+          "ignorePlurals",
+          "singleWordSynonym"
+        ]
+      },
+      "keys": {
+        "id": "630c9ff098b1e139a90b6138",
+        "type": "HUB_SEARCH",
+        "key": "fa9be8756d95a97f0021f0aba6f02bc4",
+        "applicationId": "4BS5I6EVVD"
+      }
+    },
+    {
+      "id": "meSNRFvbvs4grXL56ZKFi5e5",
+      "parentId": "6310bcf3f7e0af00a7a3bf7a",
+      "name": "sfcccompdev.blog-production-en-us_sort-date-desc",
+      "suffix": "blog-production-en-us_sort-date-desc",
+      "label": "blog-production-en-us_sort-date-desc",
+      "type": "PRODUCTION",
+      "createdDate": "2022-09-02T12:14:34.395Z",
+      "lastModifiedDate": "2022-09-02T12:14:39.579Z",
+      "settings": {
+        "minWordSizefor1Typo": 4,
+        "minWordSizefor2Typos": 8,
+        "hitsPerPage": 20,
+        "maxValuesPerFacet": 100,
+        "version": 2,
+        "searchableAttributes": [
+          "seo.title",
+          "seo.description",
+          "seo.keywords",
+          "description",
+          "tags",
+          "date",
+          "readtime",
+          "categories",
+          "author.name",
+          "author.role"
+        ],
+        "numericAttributesToIndex": null,
+        "attributesToRetrieve": null,
+        "unretrievableAttributes": null,
+        "optionalWords": null,
+        "primary": "sfcccompdev.blog-production-en-us",
+        "attributesForFaceting": [
+          "searchable(categories)",
+          "searchable(categories.name)",
+          "searchable(categories.id)",
+          "searchable(author.name)",
+          "searchable(tags)",
+          "searchable(readtime)"
+        ],
+        "attributesToSnippet": null,
+        "attributesToHighlight": null,
+        "paginationLimitedTo": 1000,
+        "attributeForDistinct": null,
+        "exactOnSingleWordQuery": "attribute",
+        "ranking": [
+          "desc(date)",
+          "typo",
+          "geo",
+          "words",
+          "filters",
+          "proximity",
+          "attribute",
+          "exact",
+          "custom"
+        ],
+        "customRanking": null,
+        "separatorsToIndex": "",
+        "removeWordsIfNoResults": "none",
+        "queryType": "prefixLast",
+        "highlightPreTag": "<em>",
+        "highlightPostTag": "</em>",
+        "snippetEllipsisText": "",
+        "alternativesAsExact": [
+          "ignorePlurals",
+          "singleWordSynonym"
+        ]
+      },
+      "keys": {
+        "id": "630c9ff098b1e139a90b6138",
+        "type": "HUB_SEARCH",
+        "key": "fa9be8756d95a97f0021f0aba6f02bc4",
+        "applicationId": "4BS5I6EVVD"
+      }
+    },
+    {
+      "id": "b7eeRNuqd9ZU5CRjHbhyCyf5",
+      "parentId": "6310bcf3f7e0af00a7a3bf7a",
+      "name": "sfcccompdev.blog-production-en-us_sort-readtime-asc",
+      "suffix": "blog-production-en-us_sort-readtime-asc",
+      "label": "blog-production-en-us_sort-readtime-asc",
+      "type": "PRODUCTION",
+      "createdDate": "2022-09-01T19:12:08.554Z",
+      "lastModifiedDate": "2022-09-02T12:26:58.692Z",
+      "settings": {
+        "minWordSizefor1Typo": 4,
+        "minWordSizefor2Typos": 8,
+        "hitsPerPage": 20,
+        "maxValuesPerFacet": 100,
+        "version": 2,
+        "searchableAttributes": [
+          "seo.title",
+          "seo.description",
+          "seo.keywords",
+          "description",
+          "tags",
+          "date",
+          "readtime",
+          "categories",
+          "author.name",
+          "author.role"
+        ],
+        "numericAttributesToIndex": null,
+        "attributesToRetrieve": null,
+        "unretrievableAttributes": null,
+        "optionalWords": null,
+        "primary": "sfcccompdev.blog-production-en-us",
+        "attributesForFaceting": [
+          "searchable(categories)",
+          "searchable(categories.name)",
+          "searchable(categories.id)",
+          "searchable(author.name)",
+          "searchable(tags)",
+          "searchable(readtime)"
+        ],
+        "attributesToSnippet": null,
+        "attributesToHighlight": null,
+        "paginationLimitedTo": 1000,
+        "attributeForDistinct": null,
+        "exactOnSingleWordQuery": "attribute",
+        "ranking": [
+          "asc(readtime)",
+          "typo",
+          "geo",
+          "words",
+          "filters",
+          "proximity",
+          "attribute",
+          "exact",
+          "custom"
+        ],
+        "customRanking": null,
+        "separatorsToIndex": "",
+        "removeWordsIfNoResults": "none",
+        "queryType": "prefixLast",
+        "highlightPreTag": "<em>",
+        "highlightPostTag": "</em>",
+        "snippetEllipsisText": "",
+        "alternativesAsExact": [
+          "ignorePlurals",
+          "singleWordSynonym"
+        ]
+      },
+      "keys": {
+        "id": "630c9ff098b1e139a90b6138",
+        "type": "HUB_SEARCH",
+        "key": "fa9be8756d95a97f0021f0aba6f02bc4",
+        "applicationId": "4BS5I6EVVD"
+      }
+    },
+    {
+      "id": "2q0EwPuYylYH2j9FB2PEJOIR",
+      "parentId": "6310bcf3f7e0af00a7a3bf7a",
+      "name": "sfcccompdev.blog-production-en-us_sort-readtime-desc",
+      "suffix": "blog-production-en-us_sort-readtime-desc",
+      "label": "blog-production-en-us_sort-readtime-desc",
+      "type": "PRODUCTION",
+      "createdDate": "2022-09-01T19:09:39.351Z",
+      "lastModifiedDate": "2022-09-01T19:10:04.156Z",
+      "settings": {
+        "minWordSizefor1Typo": 4,
+        "minWordSizefor2Typos": 8,
+        "hitsPerPage": 20,
+        "maxValuesPerFacet": 100,
+        "version": 2,
+        "searchableAttributes": [
+          "seo.title",
+          "seo.description",
+          "seo.keywords",
+          "description",
+          "tags",
+          "date",
+          "readtime",
+          "categories",
+          "author.name",
+          "author.role"
+        ],
+        "numericAttributesToIndex": null,
+        "attributesToRetrieve": null,
+        "unretrievableAttributes": null,
+        "optionalWords": null,
+        "primary": "sfcccompdev.blog-production-en-us",
+        "attributesForFaceting": [
+          "searchable(categories)",
+          "searchable(categories.name)",
+          "searchable(categories.id)",
+          "searchable(author.name)",
+          "searchable(tags)",
+          "searchable(readtime)"
+        ],
+        "attributesToSnippet": null,
+        "attributesToHighlight": null,
+        "paginationLimitedTo": 1000,
+        "attributeForDistinct": null,
+        "exactOnSingleWordQuery": "attribute",
+        "ranking": [
+          "desc(readtime)",
+          "typo",
+          "geo",
+          "words",
+          "filters",
+          "proximity",
+          "attribute",
+          "exact",
+          "custom"
+        ],
+        "customRanking": null,
+        "separatorsToIndex": "",
+        "removeWordsIfNoResults": "none",
+        "queryType": "prefixLast",
+        "highlightPreTag": "<em>",
+        "highlightPostTag": "</em>",
+        "snippetEllipsisText": "",
+        "alternativesAsExact": [
+          "ignorePlurals",
+          "singleWordSynonym"
+        ]
+      },
+      "keys": {
+        "id": "630c9ff098b1e139a90b6138",
+        "type": "HUB_SEARCH",
+        "key": "fa9be8756d95a97f0021f0aba6f02bc4",
+        "applicationId": "4BS5I6EVVD"
+      }
+    }
+  ],
+  "assignedContentTypes": [
+    {
+      "id": "6310e64c1a63d6f20d54e44f",
+      "contentTypeUri": "https://sfcc.com/site/pages/blog",
+      "createdDate": "2022-09-01T17:05:16.684Z",
+      "lastModifiedDate": "2022-09-01T17:05:16.684Z",
+      "webhook": "6310e64b1c8793f4cccc11c4",
+      "activeContentWebhook": "6310e64b1c8793f4cccc11c4",
+      "archivedContentWebhook": "6310e64c1c8793f4cccc11c6"
+    }
+  ]
+}

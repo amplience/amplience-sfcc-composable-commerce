@@ -1,0 +1,391 @@
+{
+  "replicaCount": 4,
+  "name": "sfcccompdev.blog-staging-en-us",
+  "suffix": "blog-staging-en-us",
+  "label": "blog-staging_en-US",
+  "type": "STAGING",
+  "createdDate": "2022-09-01T14:08:51.450Z",
+  "lastModifiedDate": "2022-09-02T12:14:37.378Z",
+  "settings": {
+    "minWordSizefor1Typo": 4,
+    "minWordSizefor2Typos": 8,
+    "hitsPerPage": 20,
+    "maxValuesPerFacet": 100,
+    "version": 2,
+    "searchableAttributes": [
+      "seo.title",
+      "seo.description",
+      "seo.keywords",
+      "description",
+      "tags",
+      "date",
+      "readtime",
+      "categories",
+      "author.name",
+      "author.role"
+    ],
+    "numericAttributesToIndex": null,
+    "attributesToRetrieve": null,
+    "unretrievableAttributes": null,
+    "optionalWords": null,
+    "replicas": [
+      "sfcccompdev.blog-staging-en-us_sort-readtime-desc",
+      "sfcccompdev.blog-staging-en-us_sort-readtime-asc",
+      "sfcccompdev.blog-staging-en-us_sort-date-asc",
+      "sfcccompdev.blog-staging-en-us_sort-date-desc"
+    ],
+    "attributesForFaceting": [
+      "searchable(categories)",
+      "searchable(categories.name)",
+      "searchable(categories.id)",
+      "searchable(author.name)",
+      "searchable(tags)",
+      "searchable(readtime)"
+    ],
+    "attributesToSnippet": null,
+    "attributesToHighlight": null,
+    "paginationLimitedTo": 1000,
+    "attributeForDistinct": null,
+    "exactOnSingleWordQuery": "attribute",
+    "ranking": [
+      "typo",
+      "geo",
+      "words",
+      "filters",
+      "proximity",
+      "attribute",
+      "exact",
+      "custom"
+    ],
+    "customRanking": null,
+    "separatorsToIndex": "",
+    "removeWordsIfNoResults": "none",
+    "queryType": "prefixLast",
+    "highlightPreTag": "<em>",
+    "highlightPostTag": "</em>",
+    "snippetEllipsisText": "",
+    "alternativesAsExact": [
+      "ignorePlurals",
+      "singleWordSynonym"
+    ]
+  },
+  "keys": {
+    "id": "630c9ff098b1e139a90b6138",
+    "type": "HUB_SEARCH",
+    "key": "fa9be8756d95a97f0021f0aba6f02bc4",
+    "applicationId": "4BS5I6EVVD"
+  },
+  "replicas": [
+    {
+      "id": "6311f2b165bb9cf7935d1fce",
+      "parentId": "6310bcf3f7e0af00a7a3bf7a",
+      "name": "sfcccompdev.blog-staging-en-us_sort-date-asc",
+      "suffix": "blog-staging-en-us_sort-date-asc",
+      "label": "blog-staging-en-us_sort-date-asc",
+      "type": "STAGING",
+      "createdDate": "2022-09-02T12:10:25.735Z",
+      "lastModifiedDate": "2022-09-02T12:25:18.054Z",
+      "settings": {
+        "minWordSizefor1Typo": 4,
+        "minWordSizefor2Typos": 8,
+        "hitsPerPage": 20,
+        "maxValuesPerFacet": 100,
+        "version": 2,
+        "searchableAttributes": [
+          "seo.title",
+          "seo.description",
+          "seo.keywords",
+          "description",
+          "tags",
+          "date",
+          "readtime",
+          "categories",
+          "author.name",
+          "author.role"
+        ],
+        "numericAttributesToIndex": null,
+        "attributesToRetrieve": null,
+        "unretrievableAttributes": null,
+        "optionalWords": null,
+        "primary": "sfcccompdev.blog-staging-en-us",
+        "attributesForFaceting": [
+          "searchable(categories)",
+          "searchable(categories.name)",
+          "searchable(categories.id)",
+          "searchable(author.name)",
+          "searchable(tags)",
+          "searchable(readtime)"
+        ],
+        "attributesToSnippet": null,
+        "attributesToHighlight": null,
+        "paginationLimitedTo": 1000,
+        "attributeForDistinct": null,
+        "exactOnSingleWordQuery": "attribute",
+        "ranking": [
+          "asc(date)",
+          "typo",
+          "geo",
+          "words",
+          "filters",
+          "proximity",
+          "attribute",
+          "exact",
+          "custom"
+        ],
+        "customRanking": null,
+        "separatorsToIndex": "",
+        "removeWordsIfNoResults": "none",
+        "queryType": "prefixLast",
+        "highlightPreTag": "<em>",
+        "highlightPostTag": "</em>",
+        "snippetEllipsisText": "",
+        "alternativesAsExact": [
+          "ignorePlurals",
+          "singleWordSynonym"
+        ]
+      },
+      "keys": {
+        "id": "630c9ff098b1e139a90b6138",
+        "type": "HUB_SEARCH",
+        "key": "fa9be8756d95a97f0021f0aba6f02bc4",
+        "applicationId": "4BS5I6EVVD"
+      }
+    },
+    {
+      "id": "6311f3aa185bdc44730bac24",
+      "parentId": "6310bcf3f7e0af00a7a3bf7a",
+      "name": "sfcccompdev.blog-staging-en-us_sort-date-desc",
+      "suffix": "blog-staging-en-us_sort-date-desc",
+      "label": "blog-staging-en-us_sort-date-desc",
+      "type": "STAGING",
+      "createdDate": "2022-09-02T12:14:34.395Z",
+      "lastModifiedDate": "2022-09-02T12:14:39.579Z",
+      "settings": {
+        "minWordSizefor1Typo": 4,
+        "minWordSizefor2Typos": 8,
+        "hitsPerPage": 20,
+        "maxValuesPerFacet": 100,
+        "version": 2,
+        "searchableAttributes": [
+          "seo.title",
+          "seo.description",
+          "seo.keywords",
+          "description",
+          "tags",
+          "date",
+          "readtime",
+          "categories",
+          "author.name",
+          "author.role"
+        ],
+        "numericAttributesToIndex": null,
+        "attributesToRetrieve": null,
+        "unretrievableAttributes": null,
+        "optionalWords": null,
+        "primary": "sfcccompdev.blog-staging-en-us",
+        "attributesForFaceting": [
+          "searchable(categories)",
+          "searchable(categories.name)",
+          "searchable(categories.id)",
+          "searchable(author.name)",
+          "searchable(tags)",
+          "searchable(readtime)"
+        ],
+        "attributesToSnippet": null,
+        "attributesToHighlight": null,
+        "paginationLimitedTo": 1000,
+        "attributeForDistinct": null,
+        "exactOnSingleWordQuery": "attribute",
+        "ranking": [
+          "desc(date)",
+          "typo",
+          "geo",
+          "words",
+          "filters",
+          "proximity",
+          "attribute",
+          "exact",
+          "custom"
+        ],
+        "customRanking": null,
+        "separatorsToIndex": "",
+        "removeWordsIfNoResults": "none",
+        "queryType": "prefixLast",
+        "highlightPreTag": "<em>",
+        "highlightPostTag": "</em>",
+        "snippetEllipsisText": "",
+        "alternativesAsExact": [
+          "ignorePlurals",
+          "singleWordSynonym"
+        ]
+      },
+      "keys": {
+        "id": "630c9ff098b1e139a90b6138",
+        "type": "HUB_SEARCH",
+        "key": "fa9be8756d95a97f0021f0aba6f02bc4",
+        "applicationId": "4BS5I6EVVD"
+      }
+    },
+    {
+      "id": "6311040831cbf009486ca823",
+      "parentId": "6310bcf3f7e0af00a7a3bf7a",
+      "name": "sfcccompdev.blog-staging-en-us_sort-readtime-asc",
+      "suffix": "blog-staging-en-us_sort-readtime-asc",
+      "label": "blog-staging-en-us_sort-readtime-asc",
+      "type": "STAGING",
+      "createdDate": "2022-09-01T19:12:08.554Z",
+      "lastModifiedDate": "2022-09-02T12:26:58.692Z",
+      "settings": {
+        "minWordSizefor1Typo": 4,
+        "minWordSizefor2Typos": 8,
+        "hitsPerPage": 20,
+        "maxValuesPerFacet": 100,
+        "version": 2,
+        "searchableAttributes": [
+          "seo.title",
+          "seo.description",
+          "seo.keywords",
+          "description",
+          "tags",
+          "date",
+          "readtime",
+          "categories",
+          "author.name",
+          "author.role"
+        ],
+        "numericAttributesToIndex": null,
+        "attributesToRetrieve": null,
+        "unretrievableAttributes": null,
+        "optionalWords": null,
+        "primary": "sfcccompdev.blog-staging-en-us",
+        "attributesForFaceting": [
+          "searchable(categories)",
+          "searchable(categories.name)",
+          "searchable(categories.id)",
+          "searchable(author.name)",
+          "searchable(tags)",
+          "searchable(readtime)"
+        ],
+        "attributesToSnippet": null,
+        "attributesToHighlight": null,
+        "paginationLimitedTo": 1000,
+        "attributeForDistinct": null,
+        "exactOnSingleWordQuery": "attribute",
+        "ranking": [
+          "asc(readtime)",
+          "typo",
+          "geo",
+          "words",
+          "filters",
+          "proximity",
+          "attribute",
+          "exact",
+          "custom"
+        ],
+        "customRanking": null,
+        "separatorsToIndex": "",
+        "removeWordsIfNoResults": "none",
+        "queryType": "prefixLast",
+        "highlightPreTag": "<em>",
+        "highlightPostTag": "</em>",
+        "snippetEllipsisText": "",
+        "alternativesAsExact": [
+          "ignorePlurals",
+          "singleWordSynonym"
+        ]
+      },
+      "keys": {
+        "id": "630c9ff098b1e139a90b6138",
+        "type": "HUB_SEARCH",
+        "key": "fa9be8756d95a97f0021f0aba6f02bc4",
+        "applicationId": "4BS5I6EVVD"
+      }
+    },
+    {
+      "id": "6311037399da20934b62efbe",
+      "parentId": "6310bcf3f7e0af00a7a3bf7a",
+      "name": "sfcccompdev.blog-staging-en-us_sort-readtime-desc",
+      "suffix": "blog-staging-en-us_sort-readtime-desc",
+      "label": "blog-staging-en-us_sort-readtime-desc",
+      "type": "STAGING",
+      "createdDate": "2022-09-01T19:09:39.351Z",
+      "lastModifiedDate": "2022-09-01T19:10:04.156Z",
+      "settings": {
+        "minWordSizefor1Typo": 4,
+        "minWordSizefor2Typos": 8,
+        "hitsPerPage": 20,
+        "maxValuesPerFacet": 100,
+        "version": 2,
+        "searchableAttributes": [
+          "seo.title",
+          "seo.description",
+          "seo.keywords",
+          "description",
+          "tags",
+          "date",
+          "readtime",
+          "categories",
+          "author.name",
+          "author.role"
+        ],
+        "numericAttributesToIndex": null,
+        "attributesToRetrieve": null,
+        "unretrievableAttributes": null,
+        "optionalWords": null,
+        "primary": "sfcccompdev.blog-staging-en-us",
+        "attributesForFaceting": [
+          "searchable(categories)",
+          "searchable(categories.name)",
+          "searchable(categories.id)",
+          "searchable(author.name)",
+          "searchable(tags)",
+          "searchable(readtime)"
+        ],
+        "attributesToSnippet": null,
+        "attributesToHighlight": null,
+        "paginationLimitedTo": 1000,
+        "attributeForDistinct": null,
+        "exactOnSingleWordQuery": "attribute",
+        "ranking": [
+          "desc(readtime)",
+          "typo",
+          "geo",
+          "words",
+          "filters",
+          "proximity",
+          "attribute",
+          "exact",
+          "custom"
+        ],
+        "customRanking": null,
+        "separatorsToIndex": "",
+        "removeWordsIfNoResults": "none",
+        "queryType": "prefixLast",
+        "highlightPreTag": "<em>",
+        "highlightPostTag": "</em>",
+        "snippetEllipsisText": "",
+        "alternativesAsExact": [
+          "ignorePlurals",
+          "singleWordSynonym"
+        ]
+      },
+      "keys": {
+        "id": "630c9ff098b1e139a90b6138",
+        "type": "HUB_SEARCH",
+        "key": "fa9be8756d95a97f0021f0aba6f02bc4",
+        "applicationId": "4BS5I6EVVD"
+      }
+    }
+  ],
+  "assignedContentTypes": [
+    {
+      "id": "6310bcf4f7e0af00a7a3bf81",
+      "contentTypeUri": "https://sfcc.com/site/pages/blog",
+      "createdDate": "2022-09-01T14:08:52.815Z",
+      "lastModifiedDate": "2022-09-01T14:08:52.815Z",
+      "webhook": "6310bcf472801a792ea52ac0",
+      "activeContentWebhook": "6310bcf472801a792ea52ac0",
+      "archivedContentWebhook": "6310bcf472801a792ea52ac2"
+    }
+  ]
+}

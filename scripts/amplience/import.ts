@@ -6,6 +6,10 @@ import {tmpdir} from 'os'
 import {join} from 'path'
 import {nanoid} from 'nanoid'
 import {Context} from './cli'
+import { ContentRepository, DynamicContent, Extension, Folder, HalResource, Hub, Page, SearchIndex,Pageable, Settings, Sortable } from 'dc-management-sdk-js'
+// Save Duplication
+import { connectSDK, paginator, searchIndexPaginator } from './clean'
+
 
 const recursiveTemplateSearch = async (baseDir: string, targetDir: string, dir: string, fileFunc: (path: string) => Promise<void>) => {
     const files = await promises.readdir(join(baseDir, dir))
@@ -137,6 +141,13 @@ export const importArgs = (yargs: Argv) => {
 };
 
 export const importHandler = async (context: Arguments<Context>): Promise<any> => {
+    const client = connectSDK(context);
+    
+    // Add the settings to the context for import (Hubname, stagingEnv, Algolia Keys)
+    const hub = await client.hubs.get(context.hubId)
+    context.vse = hub.settings?.virtualStagingEnvironment?.hostname || null
+    context.hubName = hub.name || null
+
     createTempDir(context)
 
     if (!context.sfccUrl && context.sfccVersion && context.authSecret && context.authClientId && context.siteId) {
@@ -156,7 +167,7 @@ export const importHandler = async (context: Arguments<Context>): Promise<any> =
                 --hubId ${context.hubId}`, 
             {stdio: 'inherit'}
         )
-
+           
         console.log(`Importing settings...`)
         execSync(
             `npx dc-cli settings import ${context.tempDir}/settings/hub-settings.json \
@@ -183,6 +194,24 @@ export const importHandler = async (context: Arguments<Context>): Promise<any> =
             {stdio: 'inherit'}
         )
 
+        console.log(`Importing Search Indexes...`)
+        console.log(`Context...`, context.tempDir)
+        execSync(
+            `npx dc-cli search-index import ${context.tempDir}/indexes \
+            --webhooks`,
+            {stdio: 'inherit'}
+        )
+
+        // Future option to write to config file automatically - required permissions to file
+        /*const searchIndexes = await paginator(searchIndexPaginator(hub))
+        if(searchIndexes && searchIndexes[0]){
+            const searchAPIKeys = await searchIndexes[0].related.keys.get()
+        }
+        //await promises.writeFile('/testfile', 'testresult', {encoding: 'utf8'})*/
+
+
+
+        
         console.log(`Importing content...`)
         execSync(
             `npx dc-cli content-item import ${context.tempDir}/content/content \
@@ -226,6 +255,7 @@ export const importHandler = async (context: Arguments<Context>): Promise<any> =
         console.log(`Done!`)
     } finally {
         console.log(`Cleaning up templates...`)
+        console.log(`Context...`, context.tempDir)
         await clearTemplates(context.tempDir)
     }
 };
