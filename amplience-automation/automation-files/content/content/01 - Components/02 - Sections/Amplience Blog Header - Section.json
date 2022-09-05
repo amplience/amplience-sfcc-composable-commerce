@@ -13,15 +13,15 @@
                 },
                 {
                     "locale": "de-DE",
-                    "value": "Amplience Suche Bloggen"
+                    "value": "Amplience Bloggen Suche"
                 },
                 {
                     "locale": "es-ES",
-                    "value": "Amplience Búsqueda Blog"
+                    "value": "Amplience Blog Búsqueda"
                 },
                 {
                     "locale": "it-IT",
-                    "value": "Amplience Ricerca Blog"
+                    "value": "Amplience Blog Ricerca"
                 }
             ],
             "_meta": {
