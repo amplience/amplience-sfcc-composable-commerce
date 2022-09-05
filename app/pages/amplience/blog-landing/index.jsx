@@ -193,7 +193,11 @@ const BlogLanding = () => {
                     />
                 </InputGroup>
                 <SimpleGrid {...styles.filters}>
-                    <Select placeholder="All Tags" onChange={(e) => onTagDropDownChanged(e)}>
+                    <Select
+                        value={tag}
+                        placeholder="All Tags"
+                        onChange={(e) => onTagDropDownChanged(e)}
+                    >
                         {tags.map((item, index) => {
                             var text = item.label + ` (${item.count})`
                             return (
@@ -204,6 +208,7 @@ const BlogLanding = () => {
                         })}
                     </Select>
                     <Select
+                        value={category}
                         placeholder="All Categories"
                         onChange={(e) => onCategoryDropDownChanged(e)}
                     >
@@ -217,6 +222,7 @@ const BlogLanding = () => {
                         })}
                     </Select>
                     <Select
+                        value={author}
                         placeholder="All Authors"
                         onChange={(e) => onAuthorDropDownChanged(e)}
                     >
