@@ -49,7 +49,7 @@ const BlogCard = ({item, ...otherProps}) => {
 
                 <Box {...styles.bottom}>
                     <Text {...styles.readTime}>
-                        {new Date(content.date).toLocaleDateString(siteLocale, { weekday: 'long', year: 'numeric', month: 'long', day: '2-digit' })} | {content.readtime} min
+                        {new Date(content.date).toLocaleDateString(siteLocale, { weekday: 'short', year: 'numeric', month: 'short', day: '2-digit' })} | {content.readtime} min
                     </Text>
                     {content.deliveryKey && (
                         <Button url={linkurl} target="_self" label="View" {...styles.button} />
