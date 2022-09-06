@@ -26,7 +26,7 @@ test('Hero renders actions and event handlers', () => {
     const onClick = jest.fn()
     const data = {
         title: 'title',
-        actions: <button data-testid="button" onClick={onClick} />,
+        actions: <button data-testid="button" onClick={onClick}></button>,
         img: {
             src: 'src',
             alt: 'alt'

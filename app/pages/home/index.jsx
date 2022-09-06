@@ -25,6 +25,7 @@ import {
 } from '@chakra-ui/react'
 
 // Project Components
+import Hero from '../../components/hero'
 import Seo from '../../components/seo'
 import Section from '../../components/section'
 import ProductScroller from '../../components/product-scroller'
@@ -33,6 +34,7 @@ import ProductScroller from '../../components/product-scroller'
 import AmplienceWrapper from '../../components/amplience/wrapper'
 
 // Others
+import {getAssetUrl} from 'pwa-kit-react-sdk/ssr/universal/utils'
 import {heroFeatures, features} from './data'
 
 // Constants
@@ -274,8 +276,6 @@ Home.getProps = async ({res, api, ampClient}) => {
     })
 
     const homeSlotTop = await (await ampClient.fetchContent([{key: 'home/slot/top'}])).pop()
-
-    // const slots = await (await fetchContent(homepage.slots.map(slot => ({ id: slot.id }))))
 
     return {productSearchResult, homeSlotTop}
 }
