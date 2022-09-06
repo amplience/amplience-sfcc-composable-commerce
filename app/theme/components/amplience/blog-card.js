@@ -33,7 +33,7 @@ export default {
             textFillColor: 'transparent',
             fontSize: 'xl',
             textAlign: 'left',
-            marginBottom: '10px',
+            marginBottom: '8px',
             transition: 'background-position 0.3s',
 
             _hover: {
@@ -44,6 +44,21 @@ export default {
             flex: 1,
             color: 'gray.700',
             fontWeight: '600'
+        },
+        tags: {
+            display: 'flex',
+            flexDirection: 'row-reverse',
+            flexWrap: 'wrap-reverse',
+            marginTop: '15px',
+            gap: '6px 8px'
+        },
+        tag: {
+            size: 'sm',
+            color: 'blue.600'
+        },
+        category: {
+            size: 'sm',
+            color: 'purple.600'
         },
         bottom: {
             display: 'flex',
@@ -77,6 +92,9 @@ export default {
         'body',
         'heading',
         'description',
+        'tags',
+        'tag',
+        'category',
         'bottom',
         'readTime',
         'button',
