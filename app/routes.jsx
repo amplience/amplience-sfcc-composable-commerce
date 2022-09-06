@@ -42,6 +42,8 @@ const RealtimeVisualization = loadable(() => import('./pages/amplience/realtime-
 const ContentPage = loadable(() => import('./pages/amplience/page'))
 const BlogPage = loadable(() => import('./pages/amplience/blog'))
 const BlogLanding = loadable(() => import('./pages/amplience/blog-landing'))
+const Authors = loadable(() => import('./pages/amplience/authors-landing'))
+const AuthorPage = loadable(() => import('./pages/amplience/author'))
 
 const routes = [
     {
@@ -100,6 +102,15 @@ const routes = [
         path: '/blog',
         component: BlogLanding,
         exact: true
+    },
+    {
+        path: '/authors',
+        component: Authors,
+        exact: true
+    },
+    {
+        path: '/author/:authorId',
+        component: AuthorPage
     },
     {
         path: '/category/:categoryId',
