@@ -90,12 +90,12 @@
         "maxWidth": "3xl",
         "background": "gray.50",
         "_meta": {
-            "name": "Amplience Blog Header - Section",
+            "name": "Amplience Blog Header",
             "schema": "https://sfcc.com/components/section"
         }
     },
     "version": 1,
-    "label": "Amplience Blog Header - Section",
+    "label": "Amplience Blog Header",
     "status": "ACTIVE",
     "createdBy": "80d6035b-48f7-49d0-b4f4-feed71fe7bf8",
     "locale": "en-US",
