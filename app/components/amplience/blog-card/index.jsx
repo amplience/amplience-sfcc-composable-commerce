@@ -31,9 +31,9 @@ const BlogCard = ({item, ...otherProps}) => {
                     />
                 )}
                 <Box {...styles.body}>
-                    {content.name && (
+                    {content.seo?.title && (
                         <Heading as="h2" {...styles.heading}>
-                            {content.name}
+                            {content.seo.title}
                         </Heading>
                     )}
                     {description && <Text {...styles.description}>{description}</Text>}
