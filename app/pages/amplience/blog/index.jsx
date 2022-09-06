@@ -30,7 +30,7 @@ import AmpliencePOIBackgroundImage from '../../../components/amplience/poi-backg
  * The page renders SEO metadata and a few promotion
  * categories and products, data is from local file.
  */
-const BlogPage = ({page, pageVse}) => {
+const BlogPage = ({targetLocale, page, pageVse}) => {
     const [pageModel, setPageModel] = useState(page)
 
     const {categories} = useCategories()
@@ -69,7 +69,17 @@ const BlogPage = ({page, pageVse}) => {
                     >
                         <Box {...styles.headerContainer}>
                             <Box {...styles.topInfo}>
-                                {new Date(pageModel.date).toDateString()} | {pageModel.readtime} Min
+                                {new Date(pageModel.date)
+                                    .toLocaleDateString(
+                                        targetLocale, 
+                                        {
+                                            month: 'long',
+                                            day: '2-digit', 
+                                            weekday: 'long',
+                                            year: 'numeric'
+                                        }
+                                    )
+                                } | {pageModel.readtime} min
                             </Box>
                             <Heading
                                 as="h1"
@@ -166,6 +176,7 @@ BlogPage.getProps = async ({req, res, params, location, api, ampClient}) => {
     }
 
     return {
+        targetLocale,
         page,
         pageVse
     }
@@ -177,6 +188,7 @@ BlogPage.propTypes = {
      * `false`. (Provided internally)
      */
     isLoading: PropTypes.bool,
+    targetLocale: PropTypes.date,
     page: PropTypes.object,
     pageVse: PropTypes.string
 }
