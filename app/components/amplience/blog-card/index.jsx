@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Author from '../author'
 import Link from '../../link'
 import Button from '../button'
-import {Box, Heading, Image, Text, useMultiStyleConfig} from '@chakra-ui/react'
+import { Box, Heading, Image, Text, useMultiStyleConfig } from '@chakra-ui/react'
 import useLocale from '../../../hooks/use-locale'
 
 
@@ -11,7 +11,7 @@ import useLocale from '../../../hooks/use-locale'
 /**
  * Button component cound be used anywhere
  */
-const BlogCard = ({item, ...otherProps}) => {
+const BlogCard = ({ item, ...otherProps }) => {
     const locale = useLocale()
     const siteLocale = locale.id.toLowerCase()
     const content = item
@@ -52,7 +52,11 @@ const BlogCard = ({item, ...otherProps}) => {
                         {new Date(content.date).toLocaleDateString(siteLocale, { weekday: 'short', year: 'numeric', month: 'short', day: '2-digit' })} | {content.readtime} min
                     </Text>
                     {content.deliveryKey && (
-                        <Button url={linkurl} target="_self" label="View" {...styles.button} />
+                        <Link
+                            key='blogcardlink'
+                            to={linkurl}
+                            {...styles.link}
+                        > <Button url="#" target="_self" label="View" {...styles.button} /></Link>
                     )}
                 </Box>
             </Box>
