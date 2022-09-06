@@ -208,6 +208,7 @@ const BlogLanding = () => {
                         type="search"
                         variant="filled"
                         placeholder="Search Blogs..."
+                        value={query}
                     />
                 </InputGroup>
                 <Flex width={'100%'}>

@@ -3,16 +3,16 @@ import PropTypes from 'prop-types'
 import Author from '../author'
 import Link from '../../link'
 import Button from '../button'
-import { Box, Heading, Image, Text, useMultiStyleConfig } from '@chakra-ui/react'
+import {Box, Heading, Image, Tag, Text, useMultiStyleConfig} from '@chakra-ui/react'
 import useLocale from '../../../hooks/use-locale'
-
-
+import {useCategories} from '../../../hooks/use-categories'
 
 /**
  * Button component cound be used anywhere
  */
-const BlogCard = ({ item, ...otherProps }) => {
+const BlogCard = ({item, ...otherProps}) => {
     const locale = useLocale()
+    const {categories} = useCategories()
     const siteLocale = locale.id.toLowerCase()
     const content = item
     const styles = useMultiStyleConfig('BlogCard')
@@ -42,6 +42,18 @@ const BlogCard = ({ item, ...otherProps }) => {
                         </Heading>
                     )}
                     {description && <Text {...styles.description}>{description}</Text>}
+                    <Box {...styles.tags}>
+                        {content.tags.map((tag, index) => (
+                            <Tag key={index} {...styles.tag}>
+                                {tag}
+                            </Tag>
+                        ))}
+                        {content.categories.map((cat, index) => (
+                            <Tag key={index + content.tags.length} {...styles.category}>
+                                {categories[cat.id]?.name}
+                            </Tag>
+                        ))}
+                    </Box>
                 </Box>
             </Link>
             <Box {...styles.actions}>
@@ -49,14 +61,19 @@ const BlogCard = ({ item, ...otherProps }) => {
 
                 <Box {...styles.bottom}>
                     <Text {...styles.readTime}>
-                        {new Date(content.date).toLocaleDateString(siteLocale, { weekday: 'short', year: 'numeric', month: 'short', day: '2-digit' })} | {content.readtime} min
+                        {new Date(content.date).toLocaleDateString(siteLocale, {
+                            weekday: 'short',
+                            year: 'numeric',
+                            month: 'short',
+                            day: '2-digit'
+                        })}{' '}
+                        | {content.readtime} min
                     </Text>
                     {content.deliveryKey && (
-                        <Link
-                            key='blogcardlink'
-                            to={linkurl}
-                            {...styles.link}
-                        > <Button url="#" target="_self" label="View" {...styles.button} /></Link>
+                        <Link key="blogcardlink" to={linkurl} {...styles.link}>
+                            {' '}
+                            <Button url="#" target="_self" label="View" {...styles.button} />
+                        </Link>
                     )}
                 </Box>
             </Box>
