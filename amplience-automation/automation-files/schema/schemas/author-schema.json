@@ -23,6 +23,13 @@
                 }
             }
         },
+        "seo": {
+            "allOf": [
+                {
+                    "$ref": "https://sfcc.com/libs/seo#/definitions/localized-seo"
+                }
+            ]
+        },
         "name": {
             "title": "Name",
             "description": "The name of the author.",
@@ -65,5 +72,5 @@
             }
         }
     },
-    "propertyOrder": ["_meta","name", "image", "role", "about"]
+    "propertyOrder": ["_meta", "seo", "name", "image", "role", "about"]
 }

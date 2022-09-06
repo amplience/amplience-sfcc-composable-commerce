@@ -1,0 +1,84 @@
+{
+    "id" : "c03e30e9-3af1-471d-95df-f1384a0ba2a0",
+    "body" : {
+        "_meta" : {
+            "name" : "Amplience Blog Header - Section",
+            "schema" : "https://sfcc.com/components/section"
+        },
+        "title" : {
+            "values" : [ {
+                "locale" : "en-US",
+                "value" : "Amplience Blog Authors"
+            }, {
+                "locale" : "fr-FR",
+                "value" : "Auteurs du blog Amplience"
+            }, {
+                "locale" : "de-DE",
+                "value" : "Amplience Bloggen Suche"
+            }, {
+                "locale" : "es-ES",
+                "value" : "Amplience Blog Búsqueda"
+            }, {
+                "locale" : "it-IT",
+                "value" : "Amplience Blog Ricerca"
+            } ],
+            "_meta" : {
+                "schema" : "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+            }
+        },
+        "subtitle" : {
+            "values" : [ {
+                "locale" : "en-US",
+                "value" : "This page showcases how to retrieve blog posts authors using Filter API"
+            }, {
+                "locale" : "de-DE",
+                "value" : "Diese Seite zeigt, wie Sie Blog-Posts, Abfragen, Facetten und Seitenumbrüche zwischen Elementen dynamisch abrufen können Amplience Suche"
+            }, {
+                "locale" : "es-ES",
+                "value" : "Esta página muestra cómo recuperar dinámicamente publicaciones de blog, consultas, facetas y paginación entre elementos usando Amplience Búsqueda"
+            }, {
+                "locale" : "it-IT",
+                "value" : "Questa pagina mostra come recuperare dinamicamente post del blog, query, facet e impaginazione tra gli elementi utilizzando Amplience Ricerca"
+            } ],
+            "_meta" : {
+                "schema" : "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+            }
+        },
+        "actions" : [ {
+            "label" : {
+                "values" : [ {
+                    "locale" : "en-US",
+                    "value" : "Learn More"
+                }, {
+                    "locale" : "fr-FR",
+                    "value" : "En savoir plus"
+                }, {
+                    "locale" : "de-DE",
+                    "value" : "Lern mehr"
+                }, {
+                    "locale" : "es-ES",
+                    "value" : "Aprende más"
+                }, {
+                    "locale" : "it-IT",
+                    "value" : "Per saperne di più"
+                } ],
+                "_meta" : {
+                    "schema" : "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+                }
+            },
+            "url" : "https://amplience.com/docs/development/contentdelivery/filterapiintro.html"
+        } ],
+        "maxWidth" : "3xl",
+        "background" : "gray.50"
+    },
+    "version" : 2,
+    "label" : "Amplience Authors Header - Section",
+    "status" : "ACTIVE",
+    "createdBy" : "ec8eae46-fcfe-4c9f-8e2c-5a0f8aea334c",
+    "createdDate" : "2022-09-06T20:40:50.288Z",
+    "lastModifiedBy" : "ec8eae46-fcfe-4c9f-8e2c-5a0f8aea334c",
+    "lastModifiedDate" : "2022-09-06T20:44:37.895Z",
+    "lastPublishedVersion" : 2,
+    "lastPublishedDate" : "2022-09-06T20:44:43.946Z",
+    "deliveryId" : "c03e30e9-3af1-471d-95df-f1384a0ba2a0"
+}

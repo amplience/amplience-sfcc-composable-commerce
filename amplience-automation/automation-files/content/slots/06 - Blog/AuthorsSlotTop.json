@@ -1,0 +1,27 @@
+{
+  "id" : "c49b37c2-b3a5-429b-8e05-7facfebf96ed",
+  "body" : {
+    "_meta" : {
+      "name" : "Authors / Slot / Top",
+      "schema" : "https://sfcc.com/slots/flexible-list",
+      "deliveryKey" : "authors/slot/top"
+    },
+    "content" : [ {
+      "_meta" : {
+        "schema" : "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+      },
+      "contentType" : "https://sfcc.com/components/section",
+      "id" : "c03e30e9-3af1-471d-95df-f1384a0ba2a0"
+    } ]
+  },
+  "version" : 2,
+  "label" : "Authors / Slot / Top",
+  "status" : "ACTIVE",
+  "createdBy" : "ec8eae46-fcfe-4c9f-8e2c-5a0f8aea334c",
+  "createdDate" : "2022-09-06T20:48:22.760Z",
+  "lastModifiedBy" : "ec8eae46-fcfe-4c9f-8e2c-5a0f8aea334c",
+  "lastModifiedDate" : "2022-09-06T20:49:47.172Z",
+  "lastPublishedVersion" : 2,
+  "lastPublishedDate" : "2022-09-06T20:49:56.678Z",
+  "deliveryId" : "c49b37c2-b3a5-429b-8e05-7facfebf96ed"
+}
