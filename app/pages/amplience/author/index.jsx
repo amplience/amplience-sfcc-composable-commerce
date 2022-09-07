@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import PropTypes from 'prop-types'
 import {resolveSiteFromUrl} from '../../../utils/site-utils'
 import {getTargetLocale} from '../../../utils/locale'
-import {useMultiStyleConfig} from '@chakra-ui/react'
+import {Breadcrumb, BreadcrumbItem, BreadcrumbLink, useMultiStyleConfig} from '@chakra-ui/react'
 
 // Components
 import {Box, Skeleton} from '@chakra-ui/react'
@@ -19,6 +19,8 @@ import {AmplienceContextProvider} from '../../../contexts/amplience'
 import {AmplienceAPI} from '../../../amplience-api'
 import AmplienceWrapper from '../../../components/amplience/wrapper'
 import {truncate} from '../../../utils/amplience/string'
+import Link from '../../../components/link'
+import { FormattedMessage } from 'react-intl'
 
 /**
  * This is an example blog author page for Retail React App.
@@ -55,6 +57,14 @@ const AuthorPage = ({page, pageVse}) => {
                     />
                     <Box {...styles.content}>
                         <AmplienceWrapper fetch={{key: 'authors/slot/top'}}></AmplienceWrapper>
+                        <Breadcrumb>
+                            <BreadcrumbItem>
+                                <BreadcrumbLink as={Link} to='/authors'><FormattedMessage defaultMessage="Authors" id="amplience.authors_landing.authors" /></BreadcrumbLink>
+                            </BreadcrumbItem>
+                            <BreadcrumbItem isCurrentPage>
+                                <BreadcrumbLink as={Link} to='#' style={{pointerEvents: 'none'}}>{pageModel.name}</BreadcrumbLink>
+                            </BreadcrumbItem>
+                        </Breadcrumb>
                         <AuthorCard item={pageModel} variant={"horizontal"} />
                     </Box>
                 </>

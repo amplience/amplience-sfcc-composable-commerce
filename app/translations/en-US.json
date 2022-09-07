@@ -147,8 +147,11 @@
   "add_to_cart_modal.recommended_products.title.might_also_like": {
     "defaultMessage": "You Might Also Like"
   },
-  "amplience.authors_landing.pagination": {
-    "defaultMessage": "Page {currentPage} of {totalPages}"
+  "amplience.authors_landing.authors": {
+    "defaultMessage": "Authors"
+  },
+  "amplience.blog.blog": {
+    "defaultMessage": "Blog"
   },
   "amplience.blog_card.min": {
     "defaultMessage": "min"

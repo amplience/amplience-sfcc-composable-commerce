@@ -361,22 +361,16 @@
       "value": "You Might Also Like"
     }
   ],
-  "amplience.authors_landing.pagination": [
+  "amplience.authors_landing.authors": [
     {
       "type": 0,
-      "value": "Page "
-    },
-    {
-      "type": 1,
-      "value": "currentPage"
-    },
+      "value": "Authors"
+    }
+  ],
+  "amplience.blog.blog": [
     {
       "type": 0,
-      "value": " of "
-    },
-    {
-      "type": 1,
-      "value": "totalPages"
+      "value": "Blog"
     }
   ],
   "amplience.blog_card.min": [
