@@ -98,6 +98,7 @@ const AmplienceListMenuTrigger = ({item, name, isOpen, onOpen, onClose, hasItems
                     onKeyDown={(e) => {
                         keyMap[e.key]?.(e)
                     }}
+                    style={{pointerEvents: 'none'}}
                     {...baseStyle.listMenuTriggerLinkIcon}
                 >
                     <PopoverTrigger>
