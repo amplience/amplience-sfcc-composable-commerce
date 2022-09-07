@@ -21,6 +21,7 @@ import AmplienceWrapper from '../../../components/amplience/wrapper'
 import {truncate} from '../../../utils/amplience/string'
 import Link from '../../../components/link'
 import { FormattedMessage } from 'react-intl'
+import { HTTPNotFound } from 'pwa-kit-react-sdk/ssr/universal/errors'
 
 /**
  * This is an example blog author page for Retail React App.
@@ -115,6 +116,10 @@ AuthorPage.getProps = async ({req, res, params, location, api, ampClient}) => {
         const authorKey = 'author/' + authorId
 
         page = await (await client.fetchContent([{key: authorKey}], {locale: targetLocale})).pop()
+    }
+
+    if (page.type === 'CONTENT_NOT_FOUND') {
+        throw new HTTPNotFound(`Author ${authorId} not found.`)
     }
 
     return {
