@@ -25,6 +25,7 @@ import {
     Flex,
     useMultiStyleConfig
 } from '@chakra-ui/react'
+import { useIntl, FormattedMessage } from 'react-intl'
 
 /**
  * This is an example blog page for Retail React App.
@@ -34,6 +35,7 @@ import {
  */
 const BlogLanding = () => {
     const locale = useLocale()
+    const intl = useIntl()
     const siteLocale = locale.id.toLowerCase()
 
     const {vse} = useContext(AmplienceContext)
@@ -207,7 +209,9 @@ const BlogLanding = () => {
                         onChange={(e) => onSearchInputChange(e)}
                         type="search"
                         variant="filled"
-                        placeholder="Search Blogs..."
+                        placeholder={intl.formatMessage({
+                            id: 'amplience.blog_landing.search_blogs',
+                            defaultMessage: 'Search Blog Posts...'})}
                         value={query}
                     />
                 </InputGroup>
@@ -215,7 +219,9 @@ const BlogLanding = () => {
                     <SimpleGrid {...styles.filters}>
                         <Select
                             value={tag}
-                            placeholder="All Tags"
+                            placeholder={intl.formatMessage({
+                                id: 'amplience.blog_landing.all_tags',
+                                defaultMessage: 'All tags'})}
                             onChange={(e) => onTagDropDownChanged(e)}
                         >
                             {tags.map((item, index) => {
@@ -229,7 +235,9 @@ const BlogLanding = () => {
                         </Select>
                         <Select
                             value={category}
-                            placeholder="All Categories"
+                            placeholder={intl.formatMessage({
+                                id: 'amplience.blog_landing.all_categories',
+                                defaultMessage: 'All categories'})}
                             onChange={(e) => onCategoryDropDownChanged(e)}
                         >
                             {thecategories.map((item, index) => {
@@ -243,7 +251,9 @@ const BlogLanding = () => {
                         </Select>
                         <Select
                             value={author}
-                            placeholder="All Authors"
+                            placeholder={intl.formatMessage({
+                                id: 'amplience.blog_landing.all_authors',
+                                defaultMessage: 'All authors'})}
                             onChange={(e) => onAuthorDropDownChanged(e)}
                         >
                             {authors.map((item, index) => {
@@ -258,13 +268,15 @@ const BlogLanding = () => {
 
                     </SimpleGrid>
                     <CloseButton
-                        title={"Clear filter"}
+                        title={intl.formatMessage({
+                            id: 'amplience.blog_landing.clear_filters',
+                            defaultMessage: 'Clear filters'})}
                         height={'44px'}
                         onClick={clearFilter}
                         variant="unstyled"
                     />
                 </Flex>
-                <Text>{numBlogs} Blog Posts</Text>
+                <Text>{numBlogs} <FormattedMessage defaultMessage="Blog Posts" id="amplience.blog_landing.blog_posts" /></Text>
             </VStack>
             <SimpleGrid {...styles.resultsGrid}>
                 {results.map((item, index) => {
@@ -272,9 +284,13 @@ const BlogLanding = () => {
                 })}
             </SimpleGrid>
             <Box {...styles.pagination}>
-                <Text>
-                    Page {currentIndex + 1} of {maxIndex}
-                </Text>
+                <FormattedMessage 
+                    defaultMessage="Page {currentPage} of {totalPages}" 
+                    id="amplience.blog_landing.pagination" 
+                    values={{
+                        currentPage: currentIndex + 1,
+                        totalPages: maxIndex 
+                    }}/>
                 <Select
                     value={currentIndex + 1}
                     onChange={(e) => onPaginationChanged(e)}

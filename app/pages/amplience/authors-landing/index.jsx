@@ -22,6 +22,7 @@ import {MAX_CACHE_AGE} from '../../../constants'
 import {AmplienceContextProvider} from '../../../contexts/amplience'
 import {AmplienceAPI} from '../../../amplience-api'
 import AuthorCard from '../../../components/amplience/author-card'
+import { FormattedMessage } from 'react-intl'
 
 /**
  * This is an example content page for Retail React App.
@@ -64,9 +65,13 @@ const AuthorsPage = ({results: initialResults = [], pageVse}) => {
                 })}
             </SimpleGrid>
             <Box {...styles.pagination}>
-                <Text>
-                    Page {currentIndex + 1} of {maxIndex}
-                </Text>
+                <FormattedMessage 
+                    defaultMessage="Page {currentPage} of {totalPages}" 
+                    id="amplience.authors_landing.pagination" 
+                    values={{
+                        currentPage: currentIndex + 1,
+                        totalPages: maxIndex 
+                    }}/>
                 <Select
                     value={currentIndex + 1}
                     onChange={(e) => onPaginationChanged(e)}
