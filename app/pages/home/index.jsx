@@ -34,6 +34,8 @@ import AmplienceWrapper from '../../components/amplience/wrapper'
 
 // Others
 import {heroFeatures, features} from './data'
+import {getTargetLocale} from '../../utils/locale'
+import {resolveSiteFromUrl} from '../../utils/site-utils'
 
 // Constants
 import {
@@ -261,10 +263,20 @@ Home.getTemplateName = () => 'home'
 Home.shouldGetProps = ({previousLocation, location}) =>
     !previousLocation || previousLocation.pathname !== location.pathname
 
-Home.getProps = async ({res, api, ampClient}) => {
+Home.getProps = async ({res, api, ampClient, location}) => {
     if (res && !ampClient.vse) {
         res.set('Cache-Control', `max-age=${MAX_CACHE_AGE}`)
     }
+
+    const site = resolveSiteFromUrl(location.pathname)
+    const l10nConfig = site.l10n
+    const targetLocale = getTargetLocale({
+        getUserPreferredLocales: () => {
+            const {locale} = api.getConfig()
+            return [locale]
+        },
+        l10nConfig
+    })
 
     const productSearchResult = await api.shopperSearch.productSearch({
         parameters: {
@@ -273,7 +285,9 @@ Home.getProps = async ({res, api, ampClient}) => {
         }
     })
 
-    const homeSlotTop = await (await ampClient.fetchContent([{key: 'home/slot/top'}])).pop()
+    const homeSlotTop = await (
+        await ampClient.fetchContent([{key: 'home/slot/top'}], {locale: targetLocale})
+    ).pop()
 
     // const slots = await (await fetchContent(homepage.slots.map(slot => ({ id: slot.id }))))
 
