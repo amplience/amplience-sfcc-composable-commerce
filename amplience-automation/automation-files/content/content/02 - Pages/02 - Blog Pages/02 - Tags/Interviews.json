@@ -9,23 +9,23 @@
       "values": [
         {
           "locale": "en-US",
-          "value": "interviews"
+          "value": "Interviews"
         },
         {
           "locale": "fr-FR",
-          "value": "entretiens"
+          "value": "Entretiens"
         },
         {
           "locale": "de-DE",
-          "value": "vorstellungsgespräche"
+          "value": "Vorstellungsgespräche"
         },
         {
           "locale": "es-ES",
-          "value": "entrevistas"
+          "value": "Entrevistas"
         },
         {
           "locale": "it-IT",
-          "value": "interviste"
+          "value": "Interviste"
         }
       ],
       "_meta": {

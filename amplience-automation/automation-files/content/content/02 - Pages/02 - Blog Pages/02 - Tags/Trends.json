@@ -9,23 +9,23 @@
       "values": [
         {
           "locale": "en-US",
-          "value": "trends"
+          "value": "Trends"
         },
         {
           "locale": "fr-FR",
-          "value": "tendances"
+          "value": "Tendances"
         },
         {
           "locale": "de-DE",
-          "value": "tendenzen"
+          "value": "Tendenzen"
         },
         {
           "locale": "es-ES",
-          "value": "tendencias"
+          "value": "Tendencias"
         },
         {
           "locale": "it-IT",
-          "value": "tendenze"
+          "value": "Tendenze"
         }
       ],
       "_meta": {

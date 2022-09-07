@@ -9,23 +9,23 @@
       "values": [
         {
           "locale": "en-US",
-          "value": "sustainability"
+          "value": "Sustainability"
         },
         {
           "locale": "fr-FR",
-          "value": "durabilité"
+          "value": "Durabilité"
         },
         {
           "locale": "de-DE",
-          "value": "nachhaltigkeit"
+          "value": "Nachhaltigkeit"
         },
         {
           "locale": "es-ES",
-          "value": "sustentabilidad"
+          "value": "Sustentabilidad"
         },
         {
           "locale": "it-IT",
-          "value": "sostenibilità"
+          "value": "Sostenibilità"
         }
       ],
       "_meta": {

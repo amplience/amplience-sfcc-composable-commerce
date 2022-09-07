@@ -9,23 +9,23 @@
       "values": [
         {
           "locale": "en-US",
-          "value": "what to wear"
+          "value": "What to wear"
         },
         {
           "locale": "fr-FR",
-          "value": "quoi porter"
+          "value": "Quoi porter"
         },
         {
           "locale": "de-DE",
-          "value": "was anziehen"
+          "value": "Was anziehen"
         },
         {
           "locale": "es-ES",
-          "value": "qué ponerse"
+          "value": "Qué ponerse"
         },
         {
           "locale": "it-IT",
-          "value": "cosa vestire"
+          "value": "Cosa vestire"
         }
       ],
       "_meta": {
