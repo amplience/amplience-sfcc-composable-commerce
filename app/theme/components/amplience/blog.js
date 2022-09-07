@@ -30,7 +30,9 @@ export default {
             color: 'white',
             background:
                 'linear-gradient(90deg, rgba(2,0,36,0.8870141806722689) 0%, rgba(9,9,121,0.6825323879551821) 100%)',
-            padding: '10px'
+            padding: '10px',
+            minHeight: '1.2em',
+            boxSizing: 'content-box'
         },
         infoBlock: {
             display: 'flex',
@@ -94,7 +96,7 @@ export default {
             margin: ['-30px 0 0 0', '-30px 0 0 0', '-30px 20px 0 20px'],
             backgroundColor: 'white',
             gap: '6px',
-            maxWidth: 'min(100%, 1024px)'
+            width: 'min(calc(100% - 40px), 1024px)'
         }
     },
     sizes: {

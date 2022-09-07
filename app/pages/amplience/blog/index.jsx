@@ -68,17 +68,13 @@ const BlogPage = ({targetLocale, page, pageVse}) => {
                     >
                         <Box {...styles.headerContainer}>
                             <Box {...styles.topInfo}>
-                                {new Date(pageModel.date)
-                                    .toLocaleDateString(
-                                        targetLocale, 
-                                        {
-                                            month: 'long',
-                                            day: '2-digit', 
-                                            weekday: 'long',
-                                            year: 'numeric'
-                                        }
-                                    )
-                                } | {pageModel.readtime} min
+                                {new Date(pageModel.date).toLocaleDateString(targetLocale, {
+                                    month: 'long',
+                                    day: '2-digit',
+                                    weekday: 'long',
+                                    year: 'numeric'
+                                })}{' '}
+                                | {pageModel.readtime} min
                             </Box>
                             <Heading
                                 as="h1"
@@ -92,7 +88,7 @@ const BlogPage = ({targetLocale, page, pageVse}) => {
                             <Box {...styles.infoBlock}>
                                 <Author content={pageModel.author} />
                                 <Box {...styles.tags}>
-                                    {pageModel.tags.map((tag, index) => (
+                                    {pageModel.tags?.map((tag, index) => (
                                         <Link
                                             key={index}
                                             to={`/blog?tag=${encodeURIComponent(tag.name)}`}
@@ -102,7 +98,7 @@ const BlogPage = ({targetLocale, page, pageVse}) => {
                                         </Link>
                                     ))}
 
-                                    {pageModel.categories.map((category, index) => (
+                                    {pageModel.categories?.map((category, index) => (
                                         <Link
                                             key={index}
                                             to={`/blog?category=${encodeURIComponent(category.id)}`}
@@ -117,13 +113,13 @@ const BlogPage = ({targetLocale, page, pageVse}) => {
                     </AmpliencePOIBackgroundImage>
                 </>
             )}
-            {pageModel == undefined ? (
-                <Skeleton height="200px" />
-            ) : (
-                <Box {...styles.content}>
+            <Box {...styles.content}>
+                {pageModel?.content?.richText == undefined ? (
+                    <Skeleton height="200px" />
+                ) : (
                     <AmplienceRichText content={pageModel.content.richText}></AmplienceRichText>
-                </Box>
-            )}
+                )}
+            </Box>
         </Box>
     )
 
