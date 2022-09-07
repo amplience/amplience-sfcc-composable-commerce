@@ -21,7 +21,8 @@ export default {
         },
         role: {
             color: 'white',
-            fontSize: '14px'
+            fontSize: '14px',
+            fontWeight: '700'
         }
     },
     variants: {
@@ -64,7 +65,7 @@ export default {
                 backgroundSize: '200%',
                 backgroundPosition: '0% 0%',
                 backgroundClip: 'text',
-                textFillColor: 'transparent',
+                textfillcolor: 'transparent',
                 fontSize: 'xl',
                 textAlign: 'left',
                 marginBottom: '10px',
@@ -115,7 +116,9 @@ export default {
                 alignItems: {base: 'flex-start'},
                 _hover: {
                     boxShadow: '0px 8px 8px rgba(0, 64, 128, 0.2)'
-                }
+                },
+                marginRight: 0,
+                marginTop: 4,
             },
             info: {
                 display: 'flex',
@@ -128,7 +131,7 @@ export default {
                 backgroundSize: '200%',
                 backgroundPosition: '0% 0%',
                 backgroundClip: 'text',
-                textFillColor: 'transparent',
+                textfillcolor: 'transparent',
                 fontSize: 'xl',
                 textAlign: 'left',
                 marginBottom: '10px',

@@ -5,6 +5,8 @@ import {app} from '../../config/default'
 export type IdOrKey = {id: string} | {key: string}
 export type FilterType = ((item: any) => boolean) | undefined
 
+const AUTHORS_SCHEMA = 'https://sfcc.com/components/author'
+
 export type FetchParams = {
     locale?: string;
     depth?: 'all' | 'root';
@@ -33,6 +35,18 @@ const clearTimeMachine = (vse: string): string => {
     const dashSplit = dotSplit[0].split('-')
 
     return [dashSplit[0], ...dotSplit.slice(1)].join('.')
+}
+
+const paginate = async (result) => {
+    const responses = [];
+    responses.push(...result.responses)
+
+    while (result.page.next) {
+        result = await result.page.next()
+        responses.push(...result.responses)
+    }
+
+    return responses;
 }
 
 export class AmplienceAPI {
@@ -94,8 +108,6 @@ export class AmplienceAPI {
     async getChildren(parent: any, filter: FilterType) {
         const id = parent._meta.deliveryId
 
-        const responses: ContentItemResponse<any>[] = []
-
         let result = await this.hierarchyClient
             .filterByParentId(id)
             .sortBy('default', 'ASC')
@@ -105,12 +117,7 @@ export class AmplienceAPI {
                 depth: 'all'
             })
 
-        responses.push(...result.responses)
-
-        while (result.page.next) {
-            result = await result.page.next()
-            responses.push(...result.responses)
-        }
+        const responses:ContentItemResponse[] = await paginate(result);
 
         const items = responses
             .map((response) => response.content)
@@ -205,6 +212,27 @@ export class AmplienceAPI {
         } while (childId != null)
 
         return root
+    }
+
+    async fetchBlogAuthors(params) {
+        await this.clientReady
+
+        if (params && !params.locale) {
+            params.locale = 'en-US,*'
+        }
+
+        let result = await this.client
+            .filterByContentType(AUTHORS_SCHEMA)
+            .page(12)
+            .request({
+                format: 'inlined',
+                depth: 'all',
+                locale: params.locale
+            })
+
+        const responses:ContentItemResponse[] = await paginate(result);
+
+        return responses
     }
 }
 

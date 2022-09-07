@@ -147,6 +147,48 @@
   "add_to_cart_modal.recommended_products.title.might_also_like": {
     "defaultMessage": "Vous aimerez peut-être aussi"
   },
+  "amplience.authors_landing.authors": {
+    "defaultMessage": "Auteurs"
+  },
+  "amplience.blog.blog": {
+    "defaultMessage": "Blog"
+  },
+  "amplience.blog_card.min": {
+    "defaultMessage": "min"
+  },
+  "amplience.blog_card.view": {
+    "defaultMessage": "Voir"
+  },
+  "amplience.blog_landing.all_authors": {
+    "defaultMessage": "Tous les auteurs"
+  },
+  "amplience.blog_landing.all_categories": {
+    "defaultMessage": "Toutes les catégories"
+  },
+  "amplience.blog_landing.all_tags": {
+    "defaultMessage": "Tous les tags"
+  },
+  "amplience.blog_landing.blog_posts": {
+    "defaultMessage": "articles de blog"
+  },
+  "amplience.blog_landing.clear_filters": {
+    "defaultMessage": "Effacer les filtres"
+  },
+  "amplience.blog_landing.pagination": {
+    "defaultMessage": "Page {currentPage} sur {totalPages}"
+  },
+  "amplience.blog_landing.search_blogs": {
+    "defaultMessage": "Rechercher les articles de blog..."
+  },
+  "amplience.preview.active": {
+    "defaultMessage": "Prévisualisation active :"
+  },
+  "amplience.preview.cancel": {
+    "defaultMessage": "Annuler"
+  },
+  "amplience.preview.edition": {
+    "defaultMessage": "Prévisualisation d'édition"
+  },
   "auth_modal.description.now_signed_in": {
     "defaultMessage": "Vous êtes bien connecté."
   },

@@ -6,12 +6,14 @@ import Button from '../button'
 import {Box, Heading, Image, Tag, Text, useMultiStyleConfig} from '@chakra-ui/react'
 import useLocale from '../../../hooks/use-locale'
 import {useCategories} from '../../../hooks/use-categories'
+import { useIntl, FormattedMessage } from 'react-intl'
 
 /**
  * Button component cound be used anywhere
  */
 const BlogCard = ({item, ...otherProps}) => {
     const locale = useLocale()
+    const intl = useIntl()
     const {categories} = useCategories()
     const siteLocale = locale.id.toLowerCase()
     const content = item
@@ -67,12 +69,18 @@ const BlogCard = ({item, ...otherProps}) => {
                             month: 'short',
                             day: '2-digit'
                         })}{' '}
-                        | {content.readtime} min
+                        | {content.readtime} <FormattedMessage defaultMessage="min" id="amplience.blog_card.min" /> 
                     </Text>
                     {content.deliveryKey && (
                         <Link key="blogcardlink" to={linkurl} {...styles.link}>
                             {' '}
-                            <Button url="#" target="_self" label="View" {...styles.button} />
+                            <Button 
+                                url="#" 
+                                target="_self" 
+                                label={intl.formatMessage({
+                                    id: 'amplience.blog_card.view',
+                                    defaultMessage: 'View'})}
+                                {...styles.button} />
                         </Link>
                     )}
                 </Box>

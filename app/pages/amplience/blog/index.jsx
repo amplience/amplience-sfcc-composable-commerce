@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import PropTypes from 'prop-types'
 import {resolveSiteFromUrl} from '../../../utils/site-utils'
 import {getTargetLocale} from '../../../utils/locale'
-import {useMultiStyleConfig} from '@chakra-ui/react'
+import {Breadcrumb, BreadcrumbItem, BreadcrumbLink, useMultiStyleConfig} from '@chakra-ui/react'
 import {HTTPNotFound} from 'pwa-kit-react-sdk/ssr/universal/errors'
 
 // Components
@@ -24,6 +24,7 @@ import {AmplienceContextProvider} from '../../../contexts/amplience'
 import {AmplienceAPI} from '../../../amplience-api'
 
 import AmpliencePOIBackgroundImage from '../../../components/amplience/poi-background-image'
+import {FormattedMessage} from 'react-intl'
 
 /**
  * This is an example blog page for Retail React App.
@@ -114,6 +115,18 @@ const BlogPage = ({targetLocale, page, pageVse}) => {
                 </>
             )}
             <Box {...styles.content}>
+                <Breadcrumb>
+                    <BreadcrumbItem>
+                        <BreadcrumbLink as={Link} to="/blog">
+                            <FormattedMessage defaultMessage="Blog" id="amplience.blog.blog" />
+                        </BreadcrumbLink>
+                    </BreadcrumbItem>
+                    <BreadcrumbItem isCurrentPage>
+                        <BreadcrumbLink as={Link} to="#" style={{pointerEvents: 'none'}}>
+                            {pageModel.seo?.title}
+                        </BreadcrumbLink>
+                    </BreadcrumbItem>
+                </Breadcrumb>
                 {pageModel?.content?.richText == undefined ? (
                     <Skeleton height="200px" />
                 ) : (

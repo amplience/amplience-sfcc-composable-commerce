@@ -147,6 +147,39 @@
   "add_to_cart_modal.recommended_products.title.might_also_like": {
     "defaultMessage": "You Might Also Like"
   },
+  "amplience.authors_landing.authors": {
+    "defaultMessage": "Authors"
+  },
+  "amplience.blog.blog": {
+    "defaultMessage": "Blog"
+  },
+  "amplience.blog_card.min": {
+    "defaultMessage": "min"
+  },
+  "amplience.blog_card.view": {
+    "defaultMessage": "View"
+  },
+  "amplience.blog_landing.all_authors": {
+    "defaultMessage": "All authors"
+  },
+  "amplience.blog_landing.all_categories": {
+    "defaultMessage": "All categories"
+  },
+  "amplience.blog_landing.all_tags": {
+    "defaultMessage": "All tags"
+  },
+  "amplience.blog_landing.blog_posts": {
+    "defaultMessage": "Blog Posts"
+  },
+  "amplience.blog_landing.clear_filters": {
+    "defaultMessage": "Clear filters"
+  },
+  "amplience.blog_landing.pagination": {
+    "defaultMessage": "Page {currentPage} of {totalPages}"
+  },
+  "amplience.blog_landing.search_blogs": {
+    "defaultMessage": "Search Blog Posts..."
+  },
   "amplience.preview.active": {
     "defaultMessage": "Preview Active:"
   },

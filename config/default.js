@@ -12,7 +12,7 @@ module.exports = {
             showDefaults: true
         },
         // The default site for your app. This value will be used when a siteRef could not be determined from the url
-        defaultSite: 'RefArch',
+        defaultSite: 'RefArchGlobal',
         // Provide aliases for your sites. These will be used in place of your site id when generating paths throughout the application.
         // siteAliases: {
         //     RefArch: 'us'
@@ -25,10 +25,10 @@ module.exports = {
         commerceAPI: {
             proxyPath: `/mobify/proxy/api`,
             parameters: {
-                clientId: '1d763261-6522-4913-9d52-5d947d3b94c4',
-                organizationId: 'f_ecom_zzte_053',
-                shortCode: 'kv7kzm78',
-                siteId: 'RefArch'
+                clientId: 'c9c45bfd-0ed3-4aa2-9971-40f88962b836',
+                organizationId: 'f_ecom_zzrf_001',
+                shortCode: '8o7m175y',
+                siteId: 'RefArchGlobal'
             }
         },
         // Einstein api config
@@ -65,7 +65,7 @@ module.exports = {
                 path: 'api'
             },
             {
-                host: 'zzte-053.sandbox.us02.dx.commercecloud.salesforce.com',
+                host: 'zzrf-001.sandbox.us03.dx.commercecloud.salesforce.com',
                 path: 'ocapi'
             },
             {
