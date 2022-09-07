@@ -280,7 +280,7 @@ const BlogLanding = () => {
             </VStack>
             <SimpleGrid {...styles.resultsGrid}>
                 {results.map((item, index) => {
-                    return <BlogCard item={item} key={index} />
+                    return <BlogCard setAuthor={setAuthor} item={item} key={index} />
                 })}
             </SimpleGrid>
             <Box {...styles.pagination}>
