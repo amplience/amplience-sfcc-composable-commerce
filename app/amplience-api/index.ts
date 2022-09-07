@@ -1,5 +1,5 @@
 import {ContentClient} from 'dc-delivery-sdk-js'
-import { ContentItemResponse } from 'dc-delivery-sdk-js/build/main/lib/content/model/FilterBy'
+import {ContentItemResponse} from 'dc-delivery-sdk-js/build/main/lib/content/model/FilterBy'
 import {app} from '../../config/default'
 
 export type IdOrKey = {id: string} | {key: string}
@@ -8,16 +8,26 @@ export type FilterType = ((item: any) => boolean) | undefined
 const AUTHORS_SCHEMA = 'https://sfcc.com/components/author'
 
 export type FetchParams = {
-    locale?: string;
-    depth?: 'all' | 'root';
-    format?: 'inlined';
-    client?: ContentClient;
+    locale?: string
+    depth?: 'all' | 'root'
+    format?: 'inlined'
+    client?: ContentClient
 }
 
 const referenceTypes = [
     'http://bigcontent.io/cms/schema/v1/core#/definitions/content-link',
     'http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference'
 ]
+
+const addFallback = (locale: string | undefined): string => {
+    if (locale == null) {
+        return 'en-US,*'
+    } else if (locale.indexOf(',') === -1) {
+        return locale + ',*'
+    }
+
+    return locale
+}
 
 const isTimeMachineVse = (vse: string): boolean => {
     if (vse == null || vse.length === 0) {
@@ -38,7 +48,7 @@ const clearTimeMachine = (vse: string): string => {
 }
 
 const paginate = async (result) => {
-    const responses = [];
+    const responses = []
     responses.push(...result.responses)
 
     while (result.page.next) {
@@ -46,7 +56,7 @@ const paginate = async (result) => {
         responses.push(...result.responses)
     }
 
-    return responses;
+    return responses
 }
 
 export class AmplienceAPI {
@@ -88,8 +98,8 @@ export class AmplienceAPI {
     async fetchContent(args: IdOrKey[], params: FetchParams = {}) {
         await this.clientReady
 
-        if (params && !params.locale) {
-            params.locale = 'en-US'
+        if (params) {
+            params.locale = addFallback(params.locale)
         }
 
         const client = params?.client ?? this.client
@@ -117,7 +127,7 @@ export class AmplienceAPI {
                 depth: 'all'
             })
 
-        const responses:ContentItemResponse[] = await paginate(result);
+        const responses: ContentItemResponse[] = await paginate(result)
 
         const items = responses
             .map((response) => response.content)
@@ -160,7 +170,7 @@ export class AmplienceAPI {
         }
     }
 
-    async enrichReferenceDeliveryKeys(item: any, locale = 'en-US') {
+    async enrichReferenceDeliveryKeys(item: any, locale?: string) {
         const refs = new Map<string, any>()
 
         this.getReferences(item, refs)
@@ -186,7 +196,7 @@ export class AmplienceAPI {
         }
     }
 
-    async fetchHierarchy(parent: IdOrKey, filter: FilterType, locale = 'en-US') {
+    async fetchHierarchy(parent: IdOrKey, filter: FilterType, locale?: string) {
         await this.clientReady
 
         const root = (await this.fetchContent([parent], {locale, client: this.hierarchyClient}))[0]
@@ -198,7 +208,7 @@ export class AmplienceAPI {
         return root
     }
 
-    async fetchHierarchyRootFromChild(childId: string, locale = 'en-US') {
+    async fetchHierarchyRootFromChild(childId: string, locale?: string) {
         await this.clientReady
 
         let root: any = undefined
@@ -217,8 +227,8 @@ export class AmplienceAPI {
     async fetchBlogAuthors(params) {
         await this.clientReady
 
-        if (params && !params.locale) {
-            params.locale = 'en-US,*'
+        if (params) {
+            params.locale = addFallback(params.locale)
         }
 
         let result = await this.client
@@ -230,7 +240,7 @@ export class AmplienceAPI {
                 locale: params.locale
             })
 
-        const responses:ContentItemResponse[] = await paginate(result);
+        const responses: ContentItemResponse[] = await paginate(result)
 
         return responses
     }
