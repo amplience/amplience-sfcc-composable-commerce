@@ -25,10 +25,10 @@ module.exports = {
         commerceAPI: {
             proxyPath: `/mobify/proxy/api`,
             parameters: {
-                clientId: '1d763261-6522-4913-9d52-5d947d3b94c4',
-                organizationId: 'f_ecom_zzte_053',
-                shortCode: 'kv7kzm78',
-                siteId: 'RefArch'
+                clientId: 'c9c45bfd-0ed3-4aa2-9971-40f88962b836',
+                organizationId: 'f_ecom_zzrf_001',
+                shortCode: '8o7m175y',
+                siteId: 'RefArchGlobal'
             }
         },
         // Einstein api config
@@ -61,7 +61,7 @@ module.exports = {
         ssrFunctionNodeVersion: '14.x',
         proxyConfigs: [
             {
-                host: 'kv7kzm78.api.commercecloud.salesforce.com',
+                host: '8o7m175y.api.commercecloud.salesforce.com',
                 path: 'api'
             },
             {
