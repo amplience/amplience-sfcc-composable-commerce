@@ -233,6 +233,8 @@ export class AmplienceAPI {
 
         let result = await this.client
             .filterByContentType(AUTHORS_SCHEMA)
+            .filterBy('/active', true)
+            .sortBy('default', 'ASC')
             .page(12)
             .request({
                 format: 'inlined',

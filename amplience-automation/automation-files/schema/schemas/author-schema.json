@@ -1,17 +1,28 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://sfcc.com/components/author",
-
     "title": "An Author",
     "description": "An author, typically used in a blog post",
-
     "allOf": [
         {
             "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
         }
     ],
-    
     "type": "object",
+    "trait:filterable": {
+        "filterBy": [
+            {
+                "paths": [
+                    "/active"
+                ]
+            }
+        ]
+    },
+    "trait:sortable": {
+        "sortBy": [
+            { "key": "default", "paths": ["/name"] }
+        ]
+    },
     "properties": {
         "_meta": {
             "title": "Author slug",
@@ -70,7 +81,13 @@
                     }
                 }
             }
+        },
+        "active": {
+            "title": "Active",
+            "description": "Is this item active?",
+            "type": "boolean",
+            "default": true
         }
     },
-    "propertyOrder": ["_meta", "seo", "name", "image", "role", "about"]
+    "propertyOrder": ["_meta", "active", "seo", "name", "image", "role", "about"]
 }
