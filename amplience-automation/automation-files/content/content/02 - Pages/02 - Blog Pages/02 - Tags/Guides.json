@@ -9,23 +9,23 @@
       "values": [
         {
           "locale": "en-US",
-          "value": "guides"
+          "value": "Guides"
         },
         {
           "locale": "fr-FR",
-          "value": "guides"
+          "value": "Guides"
         },
         {
           "locale": "de-DE",
-          "value": "führer"
+          "value": "Führer"
         },
         {
           "locale": "es-ES",
-          "value": "guías"
+          "value": "Guías"
         },
         {
           "locale": "it-IT",
-          "value": "guide"
+          "value": "Guide"
         }
       ],
       "_meta": {

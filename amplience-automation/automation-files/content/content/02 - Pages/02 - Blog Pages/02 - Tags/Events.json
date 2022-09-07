@@ -9,23 +9,23 @@
       "values": [
         {
           "locale": "en-US",
-          "value": "events"
+          "value": "Events"
         },
         {
           "locale": "fr-FR",
-          "value": "événements"
+          "value": "Événements"
         },
         {
           "locale": "de-DE",
-          "value": "veranstaltungen"
+          "value": "Veranstaltungen"
         },
         {
           "locale": "es-ES",
-          "value": "eventos"
+          "value": "Eventos"
         },
         {
           "locale": "it-IT",
-          "value": "eventi"
+          "value": "Eventi"
         }
       ],
       "_meta": {
