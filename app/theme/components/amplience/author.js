@@ -115,7 +115,8 @@ export default {
                 alignItems: {base: 'flex-start'},
                 _hover: {
                     boxShadow: '0px 8px 8px rgba(0, 64, 128, 0.2)'
-                }
+                },
+                marginRight: 0,
             },
             info: {
                 display: 'flex',

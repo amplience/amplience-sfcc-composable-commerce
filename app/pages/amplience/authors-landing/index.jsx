@@ -29,7 +29,7 @@ import AuthorCard from '../../../components/amplience/author-card'
  * The page renders SEO metadata and a few promotion
  * categories and products, data is from local file.
  */
-const AuthorsPage = ({results: initialResults, pageVse}) => {
+const AuthorsPage = ({results: initialResults = [], pageVse}) => {
     const [pages, setPages] = useState([])
     const [maxIndex, setMaxIndex] = useState(0)
     const [results, setResults] = useState(initialResults)
