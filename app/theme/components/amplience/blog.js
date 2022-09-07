@@ -72,19 +72,21 @@ export default {
         },
         tag: {
             display: 'inline-block',
-            padding: '4px 8px',
+            padding: '4px 10px',
             backgroundColor: 'blue.600',
             color: 'white',
             fontWeight: '600',
-            fontSize: ['sm', 'sm', 'md']
+            fontSize: ['sm', 'sm', 'md'],
+            borderRadius: 10
         },
         category: {
             display: 'inline-block',
-            padding: '4px 8px',
+            padding: '4px 10px',
             backgroundColor: 'purple.600',
             fontWeight: '600',
             color: 'white',
-            fontSize: ['sm', 'sm', 'md']
+            fontSize: ['sm', 'sm', 'md'],
+            borderRadius: 10
         },
         content: {
             display: 'flex',
