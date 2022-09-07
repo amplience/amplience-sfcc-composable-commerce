@@ -21,7 +21,8 @@ export default {
         },
         role: {
             color: 'white',
-            fontSize: '14px'
+            fontSize: '14px',
+            fontWeight: '700'
         }
     },
     variants: {
