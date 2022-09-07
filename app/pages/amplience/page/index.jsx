@@ -9,6 +9,7 @@ import React, {useEffect, useState} from 'react'
 import PropTypes from 'prop-types'
 import {resolveSiteFromUrl} from '../../../utils/site-utils'
 import {getTargetLocale} from '../../../utils/locale'
+import {HTTPNotFound} from 'pwa-kit-react-sdk/ssr/universal/errors'
 
 // Components
 import {Box, Heading, Skeleton} from '@chakra-ui/react'
@@ -32,10 +33,12 @@ import {AmplienceAPI} from '../../../amplience-api'
  * categories and products, data is from local file.
  */
 const ContentPage = ({page, pageVse}) => {
-    const [pageModel, setPageModel] = useState(undefined)
+    const [pageModel, setPageModel] = useState(page)
 
     useEffect(() => {
-        setPageModel(page)
+        if (pageModel != page) {
+            setPageModel(page)
+        }
     }, [page])
 
     useAmpRtv((model) => {
@@ -119,6 +122,10 @@ ContentPage.getProps = async ({req, res, params, location, api, ampClient}) => {
 
     if (pageId) {
         page = await (await client.fetchContent([{key: pageId}], {locale: targetLocale})).pop()
+    }
+
+    if (page.type === 'CONTENT_NOT_FOUND') {
+        throw new HTTPNotFound(`Page ${pageId} not found.`)
     }
 
     return {
