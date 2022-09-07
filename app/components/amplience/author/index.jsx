@@ -8,7 +8,7 @@ import {getImageUrl} from '../../../utils/amplience/image'
 /**
  * Button component cound be used anywhere
  */
-const Author = ({content, variant, ...otherProps}) => {
+const Author = ({content, setAuthor, variant, ...otherProps}) => {
     const styles = useMultiStyleConfig('Author', {variant})
 
     const authorUrl = `/blog?author=${encodeURIComponent(content.name)}`
@@ -17,11 +17,11 @@ const Author = ({content, variant, ...otherProps}) => {
 
     return (
         <Box {...styles.container} {...otherProps}>
-            <Link to={authorUrl}>
+            <Link to={authorUrl} onClick={() => setAuthor(content.name)}>
                 <Avatar name={content.name} src={authorImage} size="md" {...styles.image}></Avatar>
             </Link>
             <Box {...styles.info}>
-                <Link to={authorUrl} {...styles.name}>
+                <Link to={authorUrl} onClick={() => setAuthor(content.name)} {...styles.name}>
                     {content.name}
                 </Link>
                 <Box {...styles.role}>{content.role}</Box>

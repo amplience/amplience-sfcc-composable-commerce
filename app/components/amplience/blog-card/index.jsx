@@ -59,7 +59,7 @@ const BlogCard = ({item, ...otherProps}) => {
                 </Box>
             </Link>
             <Box {...styles.actions}>
-                <Author content={content.author} variant="card" {...styles.author} />
+                <Author content={content.author} variant="card" {...styles.author} {...otherProps}/>
 
                 <Box {...styles.bottom}>
                     <Text {...styles.readTime}>

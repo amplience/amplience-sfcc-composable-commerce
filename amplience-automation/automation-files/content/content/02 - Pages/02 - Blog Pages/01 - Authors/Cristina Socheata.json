@@ -6,6 +6,7 @@
       "schema": "https://sfcc.com/components/author",
       "deliveryKey": "author/cristina-socheata"
     },
+    "active": true,
     "image": {
       "_meta": {
         "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"

@@ -4,6 +4,7 @@ import Author from '../author'
 import Link from '../../link'
 import {Box, Image, Text, useMultiStyleConfig} from '@chakra-ui/react'
 import {getImageUrl} from '../../../utils/amplience/image'
+import AmplienceMarkdown from '../markdown'
 
 const AuthorCard = ({item, variant = 'extendedCard', ...otherProps}) => {
     const content = item
@@ -36,7 +37,7 @@ const AuthorCard = ({item, variant = 'extendedCard', ...otherProps}) => {
                     <Box {...styles.role}>{content.role}</Box>
                 </Box>
                 <Box {...styles.info}>
-                    {content.about && <Text {...styles.description}>{content.about}</Text>}
+                    {content.about && <AmplienceMarkdown {...styles.description} content={content.about} />}
                 </Box>
             </Box>
         </Box>
