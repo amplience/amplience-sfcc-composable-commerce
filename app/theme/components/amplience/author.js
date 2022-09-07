@@ -117,6 +117,7 @@ export default {
                     boxShadow: '0px 8px 8px rgba(0, 64, 128, 0.2)'
                 },
                 marginRight: 0,
+                marginTop: 4,
             },
             info: {
                 display: 'flex',
