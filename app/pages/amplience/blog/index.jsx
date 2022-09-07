@@ -115,22 +115,27 @@ const BlogPage = ({targetLocale, page, pageVse}) => {
                 </>
             )}
             <Box {...styles.content}>
-                <Breadcrumb>
-                    <BreadcrumbItem>
-                        <BreadcrumbLink as={Link} to="/blog">
-                            <FormattedMessage defaultMessage="Blog" id="amplience.blog.blog" />
-                        </BreadcrumbLink>
-                    </BreadcrumbItem>
-                    <BreadcrumbItem isCurrentPage>
-                        <BreadcrumbLink as={Link} to="#" style={{pointerEvents: 'none'}}>
-                            {pageModel.seo?.title}
-                        </BreadcrumbLink>
-                    </BreadcrumbItem>
-                </Breadcrumb>
                 {pageModel?.content?.richText == undefined ? (
                     <Skeleton height="200px" />
                 ) : (
-                    <AmplienceRichText content={pageModel.content.richText}></AmplienceRichText>
+                    <>
+                        <Breadcrumb>
+                            <BreadcrumbItem>
+                                <BreadcrumbLink as={Link} to="/blog">
+                                    <FormattedMessage
+                                        defaultMessage="Blog"
+                                        id="amplience.blog.blog"
+                                    />
+                                </BreadcrumbLink>
+                            </BreadcrumbItem>
+                            <BreadcrumbItem isCurrentPage>
+                                <BreadcrumbLink as={Link} to="#" style={{pointerEvents: 'none'}}>
+                                    {pageModel.seo?.title}
+                                </BreadcrumbLink>
+                            </BreadcrumbItem>
+                        </Breadcrumb>
+                        <AmplienceRichText content={pageModel.content.richText}></AmplienceRichText>
+                    </>
                 )}
             </Box>
         </Box>
