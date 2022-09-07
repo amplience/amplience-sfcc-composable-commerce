@@ -61,7 +61,7 @@ module.exports = {
         ssrFunctionNodeVersion: '14.x',
         proxyConfigs: [
             {
-                host: '8o7m175y.api.commercecloud.salesforce.com',
+                host: 'kv7kzm78.api.commercecloud.salesforce.com',
                 path: 'api'
             },
             {
