@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import {resolveSiteFromUrl} from '../../../utils/site-utils'
 import {getTargetLocale} from '../../../utils/locale'
 import {useMultiStyleConfig} from '@chakra-ui/react'
+import {HTTPNotFound} from 'pwa-kit-react-sdk/ssr/universal/errors'
 
 // Components
 import {Box, Heading, Skeleton} from '@chakra-ui/react'
@@ -47,8 +48,6 @@ const BlogPage = ({targetLocale, page, pageVse}) => {
     })
 
     const styles = useMultiStyleConfig('BlogPage')
-
-    const authorUrl = pageModel ? `/blog?author=${encodeURIComponent(pageModel.author.name)}` : ''
 
     const pageBody = (
         <Box data-testid="amplience-page" layerStyle="page" {...styles.container}>
@@ -173,6 +172,10 @@ BlogPage.getProps = async ({req, res, params, location, api, ampClient}) => {
         const blogKey = 'blog/' + blogId + (blogId2 != null ? '/' + blogId2 : '')
 
         page = await (await client.fetchContent([{key: blogKey}], {locale: targetLocale})).pop()
+    }
+
+    if (page.type === 'CONTENT_NOT_FOUND') {
+        throw new HTTPNotFound('Blog page not found.')
     }
 
     return {
