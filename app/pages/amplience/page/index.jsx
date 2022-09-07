@@ -125,7 +125,9 @@ ContentPage.getProps = async ({req, res, params, location, api, ampClient}) => {
     }
 
     if (page.type === 'CONTENT_NOT_FOUND') {
-        throw new HTTPNotFound(`Page ${pageId} not found.`)
+        console.error(`Page ${pageId} not found.`)
+        res.redirect(`/${targetLocale}`,302)
+        // throw new HTTPNotFound(`Page ${pageId} not found.`)
     }
 
     return {

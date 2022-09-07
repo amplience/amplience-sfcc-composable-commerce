@@ -4,6 +4,7 @@ import {resolveSiteFromUrl} from '../../../utils/site-utils'
 import {getTargetLocale} from '../../../utils/locale'
 import {Breadcrumb, BreadcrumbItem, BreadcrumbLink, useMultiStyleConfig} from '@chakra-ui/react'
 import {HTTPNotFound} from 'pwa-kit-react-sdk/ssr/universal/errors'
+import useLocale from '../../../hooks/use-locale'
 
 // Components
 import {Box, Heading, Skeleton} from '@chakra-ui/react'
@@ -189,7 +190,9 @@ BlogPage.getProps = async ({req, res, params, location, api, ampClient}) => {
     }
 
     if (page.type === 'CONTENT_NOT_FOUND') {
-        throw new HTTPNotFound('Blog page not found.')
+        console.error(`Blog page ${blogId} not found.`)
+        res.redirect(`/${targetLocale}/blog`,302)
+        // throw new HTTPNotFound('Blog page not found.')
     }
 
     return {
@@ -205,7 +208,7 @@ BlogPage.propTypes = {
      * `false`. (Provided internally)
      */
     isLoading: PropTypes.bool,
-    targetLocale: PropTypes.date,
+    targetLocale: PropTypes.string,
     page: PropTypes.object,
     pageVse: PropTypes.string
 }

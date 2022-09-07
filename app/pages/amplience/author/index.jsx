@@ -119,11 +119,12 @@ AuthorPage.getProps = async ({req, res, params, location, api, ampClient}) => {
     }
 
     if (page.type === 'CONTENT_NOT_FOUND') {
-        throw new HTTPNotFound(`Author ${authorId} not found.`)
+        console.error()
+        res.redirect(`/${targetLocale}/authors`,302)
+        // throw new HTTPNotFound(`Author ${authorId} not found.`)
     }
 
     return {
-        targetLocale,
         page,
         pageVse
     }
@@ -135,7 +136,6 @@ AuthorPage.propTypes = {
      * `false`. (Provided internally)
      */
     isLoading: PropTypes.bool,
-    targetLocale: PropTypes.date,
     page: PropTypes.object,
     pageVse: PropTypes.string
 }
