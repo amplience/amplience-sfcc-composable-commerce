@@ -361,6 +361,90 @@
       "value": "Vous aimerez peut-être aussi"
     }
   ],
+  "amplience.blog_card.min": [
+    {
+      "type": 0,
+      "value": "min"
+    }
+  ],
+  "amplience.blog_card.view": [
+    {
+      "type": 0,
+      "value": "Voir"
+    }
+  ],
+  "amplience.blog_landing.all_authors": [
+    {
+      "type": 0,
+      "value": "Tous les auteurs"
+    }
+  ],
+  "amplience.blog_landing.all_categories": [
+    {
+      "type": 0,
+      "value": "Toutes les catégories"
+    }
+  ],
+  "amplience.blog_landing.all_tags": [
+    {
+      "type": 0,
+      "value": "Tous les tags"
+    }
+  ],
+  "amplience.blog_landing.blog_posts": [
+    {
+      "type": 0,
+      "value": "articles de blog"
+    }
+  ],
+  "amplience.blog_landing.clear_filters": [
+    {
+      "type": 0,
+      "value": "Effacer les filtres"
+    }
+  ],
+  "amplience.blog_landing.pagination": [
+    {
+      "type": 0,
+      "value": "Page "
+    },
+    {
+      "type": 1,
+      "value": "currentPage"
+    },
+    {
+      "type": 0,
+      "value": " sur "
+    },
+    {
+      "type": 1,
+      "value": "totalPages"
+    }
+  ],
+  "amplience.blog_landing.search_blogs": [
+    {
+      "type": 0,
+      "value": "Rechercher les articles de blog..."
+    }
+  ],
+  "amplience.preview.active": [
+    {
+      "type": 0,
+      "value": "Prévisualisation active :"
+    }
+  ],
+  "amplience.preview.cancel": [
+    {
+      "type": 0,
+      "value": "Annuler"
+    }
+  ],
+  "amplience.preview.edition": [
+    {
+      "type": 0,
+      "value": "Prévisualisation d'édition"
+    }
+  ],
   "auth_modal.description.now_signed_in": [
     {
       "type": 0,

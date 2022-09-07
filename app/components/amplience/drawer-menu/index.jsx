@@ -131,7 +131,6 @@ const DrawerMenu = ({isOpen, onClose = noop, onLogoClick = noop, root, footer}) 
                             </Center>
                         )}
                         <DrawerSeparator />
-                        Application Actions
                         <VStack align='stretch' spacing={0} {...styles.actions} px={0}>
                             <Box {...styles.actionsItem}>
                                 {customer.isRegistered ? (
@@ -255,7 +254,6 @@ const DrawerMenu = ({isOpen, onClose = noop, onLogoClick = noop, root, footer}) 
                         {footer ? (
                             <>
                                 <DrawerSeparator />
-                                {footer.title || 'Support Links'}
                                 <NestedAccordion
                                     allowMultiple={true}
                                     // NOTE: Modify this content and builder as you see fit.
