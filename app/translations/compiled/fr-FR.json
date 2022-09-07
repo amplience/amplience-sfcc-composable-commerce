@@ -361,6 +361,24 @@
       "value": "Vous aimerez peut-être aussi"
     }
   ],
+  "amplience.authors_landing.pagination": [
+    {
+      "type": 0,
+      "value": "Page "
+    },
+    {
+      "type": 1,
+      "value": "currentPage"
+    },
+    {
+      "type": 0,
+      "value": " sur "
+    },
+    {
+      "type": 1,
+      "value": "totalPages"
+    }
+  ],
   "amplience.blog_card.min": [
     {
       "type": 0,
