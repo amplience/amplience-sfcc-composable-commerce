@@ -13,7 +13,9 @@ ___
 # Amplience specifics
 This is a version of the Retail React app with a starting point for Amplience fundamentals. The documentation below is 'as-is' from Salesforce. For Amplience specifics please see the following.
 
-> Note: This code is built against the code version @latest at the time which was PWAKit v2.1.0 released on July 5th 2022: https://github.com/SalesforceCommerceCloud/pwa-kit/releases/tag/v2.1.0
+> Note: This code is built against the code version @latest at the time which was PWAKit v2.2.0 released on August 27th 2022: https://github.com/SalesforceCommerceCloud/pwa-kit/releases/tag/v2.2.0
+
+If you are using an v2.1.0, either upgrade using this code base or use a previous Amplience version [v1.2.0](https://github.com/amplience/amplience-sfcc-composable-commerce/releases/tag/v1.2.0) with the capabilities at that time.
 
 ## Amplience Contents
 * [Overview](./docs/amplience/overview.md)
@@ -31,7 +33,7 @@ This is a version of the Retail React app with a starting point for Amplience fu
 ## Known Limitations
 
 ### Localisation
-The default box from Salesforce used for their Composable Commerce FE (PWAKit) demo does not support localisation. Therefore you will have to point to your own sandbox with localisation enabled to allow these capabilities to work.
+By default we point to the same SFCC instance as the vanilla Retail React app. If you are pointing to your own SFCC sandbox, you should ensure that you have localisation enabled. See guide at [Localization README.md](./app/translations/README.md), [Overview](./docs/amplience/overview.md) and  [Salesforce Commerce Cloud Setup](./docs/amplience/sfcc-setup.md)
 
 
 # The Retail React App

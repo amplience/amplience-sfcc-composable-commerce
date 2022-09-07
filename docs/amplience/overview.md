@@ -27,7 +27,7 @@ This contains the app code and also automation to populate an Amplience account.
 
 ## Localization enablement
 
-Please note, the default SFCC business manager account does not have locales enabled. Please refer to the documentation on Salesforce for further information.
+If using your own SFCC sandbox, you will have to have localisation enabled:
 
 To enable localization in PWA Kit there are 3 steps:
 
