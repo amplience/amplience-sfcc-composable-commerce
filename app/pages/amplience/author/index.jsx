@@ -17,6 +17,8 @@ import {MAX_CACHE_AGE} from '../../../constants'
 import {useAmpRtv} from '../../../utils/amplience/rtv'
 import {AmplienceContextProvider} from '../../../contexts/amplience'
 import {AmplienceAPI} from '../../../amplience-api'
+import AmplienceWrapper from '../../../components/amplience/wrapper'
+import {truncate} from '../../../utils/amplience/string'
 
 /**
  * This is an example blog author page for Retail React App.
@@ -46,12 +48,13 @@ const AuthorPage = ({page, pageVse}) => {
             ) : (
                 <>
                     <Seo
-                        title={pageModel.seo?.title}
-                        description={pageModel.seo?.description}
+                        title={pageModel.seo?.title || truncate(pageModel.name, 160)}
+                        description={pageModel.seo?.description || truncate(pageModel.about, 290)}
                         keywords={pageModel.seo?.keywords}
                         noIndex={pageModel.seo?.noindex}
                     />
                     <Box {...styles.content}>
+                        <AmplienceWrapper fetch={{key: 'authors/slot/top'}}></AmplienceWrapper>
                         <AuthorCard item={pageModel} variant={"horizontal"} />
                     </Box>
                 </>
