@@ -41,10 +41,8 @@ const AuthorPage = ({page, pageVse}) => {
         setPageModel(model.content)
     })
 
-    const styles = useMultiStyleConfig('Author')
-
     const pageBody = (
-        <Box data-testid="amplience-page" layerStyle="page" {...styles.container}>
+        <Box data-testid="amplience-page" layerStyle="page">
             {pageModel == undefined ? (
                 <Skeleton height="200px" />
             ) : (
@@ -55,7 +53,7 @@ const AuthorPage = ({page, pageVse}) => {
                         keywords={pageModel.seo?.keywords}
                         noIndex={pageModel.seo?.noindex}
                     />
-                    <Box {...styles.content}>
+                    <Box>
                         <AmplienceWrapper fetch={{key: 'authors/slot/top'}}></AmplienceWrapper>
                         <Breadcrumb>
                             <BreadcrumbItem>
