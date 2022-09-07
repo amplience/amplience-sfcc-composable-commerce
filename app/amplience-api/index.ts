@@ -1,4 +1,5 @@
 import {ContentClient} from 'dc-delivery-sdk-js'
+import { ContentItemResponse } from 'dc-delivery-sdk-js/build/main/lib/content/model/FilterBy'
 import {app} from '../../config/default'
 
 export type IdOrKey = {id: string} | {key: string}
@@ -93,16 +94,25 @@ export class AmplienceAPI {
     async getChildren(parent: any, filter: FilterType) {
         const id = parent._meta.deliveryId
 
-        // TODO: pagination, rate limit
-        const result = await this.hierarchyClient
+        const responses: ContentItemResponse<any>[] = []
+
+        let result = await this.hierarchyClient
             .filterByParentId(id)
             .sortBy('default', 'ASC')
+            .page(12)
             .request({
                 format: 'inlined',
                 depth: 'all'
             })
 
-        const items = result.responses
+        responses.push(...result.responses)
+
+        while (result.page.next) {
+            result = await result.page.next()
+            responses.push(...result.responses)
+        }
+
+        const items = responses
             .map((response) => response.content)
             .filter((response) => response != null && (!filter || filter(response)))
 
