@@ -20,7 +20,7 @@ import AmplienceWrapper from '../../../components/amplience/wrapper'
 import {truncate} from '../../../utils/amplience/string'
 import Link from '../../../components/amplience/link'
 import { FormattedMessage } from 'react-intl'
-import { HTTPNotFound } from 'pwa-kit-react-sdk/ssr/universal/errors'
+import BlogList from '../../../components/amplience/blog-list'
 
 /**
  * This is an example blog author page for Retail React App.
@@ -64,6 +64,7 @@ const AuthorPage = ({page, pageVse}) => {
                             </BreadcrumbItem>
                         </Breadcrumb>
                         <AuthorCard item={pageModel} variant={"horizontal"} />
+                        <BlogList filtersArray={[`author.name:${pageModel.name}`]} fetchAll={true}/>
                     </Box>
                 </>
             )}
