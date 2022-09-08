@@ -157,8 +157,8 @@ const BlogLanding = () => {
 
     const onTagDropDownChanged = (e) => {
         const input = e.target.value
-        setUrlParams('tag', input)
-        setTag(input)
+        setUrlParams('tag', input.toLowerCase())
+        setTag(input.toLowerCase())
     }
     const onAuthorDropDownChanged = (e) => {
         const input = e.target.value
@@ -227,7 +227,7 @@ const BlogLanding = () => {
                             {tags.map((item, index) => {
                                 var text = item.label + ` (${item.count})`
                                 return (
-                                    <option value={item.value} key={index}>
+                                    <option value={item.value.toLowerCase()} key={index}>
                                         {text}
                                     </option>
                                 )
