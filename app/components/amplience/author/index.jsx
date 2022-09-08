@@ -11,7 +11,8 @@ import {getImageUrl} from '../../../utils/amplience/image'
 const Author = ({content, variant, ...otherProps}) => {
     const styles = useMultiStyleConfig('Author', {variant})
 
-    const authorUrl = `/${content.deliveryKey}`
+    console.log(content)
+    const authorUrl = `/${content.deliveryKey || content._meta.deliveryKey}`
     const authorImage =
         (typeof content.image === 'string' ? content.image : getImageUrl(content.image)) + '?w=100'
 

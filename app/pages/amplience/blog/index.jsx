@@ -11,7 +11,7 @@ import {Box, Heading, Skeleton} from '@chakra-ui/react'
 
 // Project Components
 import Seo from '../../../components/amplience/seo'
-import Link from '../../../components/link'
+import Link from '../../../components/amplience/link'
 
 // Amplience Rich Text Component
 import AmplienceRichText from '../../../components/amplience/rich-text'
