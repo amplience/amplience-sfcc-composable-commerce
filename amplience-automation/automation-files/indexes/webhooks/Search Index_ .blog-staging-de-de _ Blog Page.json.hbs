@@ -1,0 +1,57 @@
+{
+  "id": "6310bcf472801a7920000007",
+  "label": "Search Index: {{hubName}}.blog-staging-de-de / Blog Page",
+  "events": [
+    "dynamic-content.content-item.created",
+    "dynamic-content.content-item.updated"
+  ],
+  "active": true,
+  "handlers": [
+    "https://4BS5I6EVVD.algolia.net/1/indexes/{{hubName}}.blog-staging-de-de/\{{payload.id}}"
+  ],
+  "notifications": [],
+  "secret": "6276d680848b646137510c751b612394316cb508a5c13fc14220ede66d9977a654b623e7e5703e276abc457943fbe0f80d657aa72dc5438718174a753f0b0321",
+  "createdDate": "2022-09-01T14:08:52.305Z",
+  "lastModifiedDate": "2022-09-02T11:55:23.809Z",
+  "headers": [
+    {
+      "key": "X-Algolia-Application-Id",
+      "value": "4BS5I6EVVD",
+      "secret": false
+    },
+    {
+      "key": "X-Algolia-API-Key",
+      "value": null,
+      "secret": true
+    }
+  ],
+  "filters": [
+    {
+      "type": "equal",
+      "arguments": [
+        {
+          "jsonPath": "$.payload.body._meta.schema"
+        },
+        {
+          "value": "https://sfcc.com/site/pages/blog"
+        }
+      ]
+    },
+    {
+      "type": "equal",
+      "arguments": [
+        {
+          "jsonPath": "$.payload.status"
+        },
+        {
+          "value": "ACTIVE"
+        }
+      ]
+    }
+  ],
+  "customPayload": {
+    "type": "text/x-handlebars-template",
+    "value": "\{{#withDeliveryContentItem contentItemId=payload.id account=\"{{hubName}}\" stagingEnvironment=\"{{vse}}\" mediaHost=\"{{vse}}\" locale=\"de-DE,en-US,*\"}}\n{\n  \{{#with image}}\n  \{{#with image}}\n  \"image\": \"https://\{{image.defaultHost}}/i/\{{image.endpoint}}/\{{image.name}}?\{{{query}}}\",\n  \{{/with}}\n  \"imageAltText\": \"\{{imageAltText}}\",\n  \"seoText\": \"\{{seoText}}\",\n  \{{/with}}\n  \"name\": \"\{{_meta.name}}\",\n  \"schema\": \"\{{_meta.schema}}\",\n  \"deliveryKey\": \"\{{_meta.deliveryKey}}\",\n  \"deliveryId\": \"\{{_meta.deliveryId}}\",\n  \"seo\":\{{{JSONstringify seo}}},\n  \"description\":\"\{{description}}\",\n  \"date\":\{{this.date}},\n  \"readtime\":\{{readtime}},\n  \"tags\":[\{{#each tags}}\{{#if @last}}\"\{{this.name}}\"\{{else}}\"\{{this.name}}\",\{{/if}}\{{/each}}],\n  \"categories\": \{{{JSONstringify categories}}},\n  \{{#with author}}\n  \"author\":{\n    \"name\":\"\{{name}}\",\n    \"role\":\"\{{role}}\",\n    \"deliveryKey\": \"\{{_meta.deliveryKey}}\",\n    \{{#with image}}\n    \"image\": \"https://\{{defaultHost}}/i/\{{endpoint}}/\{{name}}\"\n    \{{/with}}\n  }\n  \{{/with}}\n}\n\{{/withDeliveryContentItem}}"
+  },
+  "method": "PUT"
+}

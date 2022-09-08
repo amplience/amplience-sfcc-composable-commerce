@@ -147,6 +147,7 @@ export const importHandler = async (context: Arguments<Context>): Promise<any> =
     const hub = await client.hubs.get(context.hubId)
     context.vse = hub.settings?.virtualStagingEnvironment?.hostname || null
     context.hubName = hub.name || null
+    let searchAPIKeys
 
     createTempDir(context)
 
@@ -202,10 +203,11 @@ export const importHandler = async (context: Arguments<Context>): Promise<any> =
             {stdio: 'inherit'}
         )
 
-        // Future option to write to config file automatically - required permissions to file
-        /*const searchIndexes = await paginator(searchIndexPaginator(hub))
+        // Future option to write to config file automatically - required permissions to file, Currently Console.log
+        const searchIndexes = await paginator(searchIndexPaginator(hub))
         if(searchIndexes && searchIndexes[0]){
-            const searchAPIKeys = await searchIndexes[0].related.keys.get()
+            searchAPIKeys = await searchIndexes[0].related.keys.get()
+            console.log(searchAPIKeys)
         }
         //await promises.writeFile('/testfile', 'testresult', {encoding: 'utf8'})*/
 
@@ -257,5 +259,14 @@ export const importHandler = async (context: Arguments<Context>): Promise<any> =
         console.log(`Cleaning up templates...`)
         console.log(`Context...`, context.tempDir)
         await clearTemplates(context.tempDir)
+        console.log('--------------------')
+        console.log('Import Completed!! Please copy the following into "config/amplience/default.js')
+        var toLog =  {
+            hub: context.hubName,
+            searchAppID: searchAPIKeys?.applicationId || "",
+            searchAPIKey: searchAPIKeys?.key || ""
+        }
+
+        console.log(JSON.stringify(toLog))
     }
 };
