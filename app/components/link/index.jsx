@@ -8,14 +8,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {Link as ChakraLink} from '@chakra-ui/react'
 import {Link as SPALink, NavLink as NavSPALink} from 'react-router-dom'
-import {buildPathWithUrlConfig} from '../../utils/url'
-import useSite from '../../hooks/use-site'
-import useLocale from '../../hooks/use-locale'
+import useMultiSite from '../../hooks/use-multi-site'
 
 const Link = React.forwardRef(({href, to, useNavLink = false, ...props}, ref) => {
     const _href = to || href
-    const site = useSite()
-    const locale = useLocale()
+    const {site, locale, buildUrl} = useMultiSite()
+
 
     const isExternal = _href.length > 0 && _href[0] === '$'
 
@@ -36,10 +34,7 @@ const Link = React.forwardRef(({href, to, useNavLink = false, ...props}, ref) =>
         // if alias is not defined, use site id
         const updatedHref = isExternal
             ? _href.substring(1)
-            : buildPathWithUrlConfig(_href, {
-                  locale: locale.alias || locale.id,
-                  site: site.alias || site.id
-              })
+            : buildUrl(_href)
 
         props.to = _href === '/' ? '/' : updatedHref
         props.as = useNavLink ? NavSPALink : SPALink

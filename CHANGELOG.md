@@ -147,6 +147,11 @@ All notable changes to this project will be documented in this file. See [standa
 
 ## v2.0.0 (May 16, 2022)
 
+- Update translation docs [#570](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/570)
+- Fixed loading correct amount of skeletons [#576] (https://github.com/SalesforceCommerceCloud/pwa-kit/pull/576)
+- Remove manifest path [#582](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/582)
+- Fix Verbose ShellJS Command [#588](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/588)
+- Drop node 12 support for [#589](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/589)
 - Multi-site, Fix the case when no site aliases is set [#551](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/551)
 - Fix invalid refresh token [#528](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/528)
 - Add valid token check before using refresh token on login [#533](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/533)
@@ -235,3 +240,16 @@ All notable changes to this project will be documented in this file. See [standa
 ## v1.0.0 (Sep 08, 2021)
 
 - PWA Kit General Availability and open source. 🎉
+
+# PWA Kit Changelog
+
+## v2.2.0 (Aug 25, 2022)
+- Update zzrf-001 url [#694](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/694)
+- Optimize Server-side performance [#667](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/667)
+- Remove references to session bridging [#684](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/684)
+
+## v2.1.0 (Jul 05, 2022)
+- Update translations [#643](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/643)
+- Update translations [#653](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/653)
+- Add bundlesize test back into CI [#652](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/652)
+- Fix UI bug on notifications badge [#620](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/620)

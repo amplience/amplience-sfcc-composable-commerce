@@ -53,7 +53,7 @@ import LoadingSpinner from '../../loading-spinner'
 import {getLinkUrl} from '../../../utils/amplience/link'
 
 import useNavigation from '../../../hooks/use-navigation'
-import useSite from '../../../hooks/use-site'
+import useMultiSite from '../../../hooks/use-multi-site'
 
 // The FONT_SIZES and FONT_WEIGHTS constants are used to control the styling for
 // the accordion buttons as their current depth. In the below definition we assign
@@ -85,7 +85,7 @@ const DrawerMenu = ({isOpen, onClose = noop, onLogoClick = noop, root, footer}) 
     const styles = useMultiStyleConfig('DrawerMenu')
     const drawerSize = useBreakpointValue({sm: PHONE_DRAWER_SIZE, md: TABLET_DRAWER_SIZE})
     const socialIconVariant = useBreakpointValue({base: 'flex', md: 'flex-start'})
-    const site = useSite()
+    const {site, buildUrl} = useMultiSite()
     const {l10n} = site
     const [showLoading, setShowLoading] = useState(false)
     const onSignoutClick = async () => {
@@ -243,7 +243,7 @@ const DrawerMenu = ({isOpen, onClose = noop, onLogoClick = noop, root, footer}) 
                                         locales={supportedLocaleIds}
                                         onSelect={(newLocale) => {
                                             // Update the `locale` in the URL.
-                                            const newUrl = getPathWithLocale(newLocale, {
+                                            const newUrl = getPathWithLocale(newLocale, buildUrl, {
                                                 disallowParams: ['refine']
                                             })
                                             window.location = newUrl

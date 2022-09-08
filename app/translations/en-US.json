@@ -147,15 +147,6 @@
   "add_to_cart_modal.recommended_products.title.might_also_like": {
     "defaultMessage": "You Might Also Like"
   },
-  "amplience.preview.active": {
-    "defaultMessage": "Preview Active:"
-  },
-  "amplience.preview.cancel": {
-    "defaultMessage": "Cancel"
-  },
-  "amplience.preview.edition": {
-    "defaultMessage": "Edition Preview"
-  },
   "auth_modal.description.now_signed_in": {
     "defaultMessage": "You're now signed in."
   },
@@ -501,9 +492,6 @@
   "footer.link.order_status": {
     "defaultMessage": "Order Status"
   },
-  "footer.link.page": {
-    "defaultMessage": "Amplience FAQ"
-  },
   "footer.link.privacy_policy": {
     "defaultMessage": "Privacy Policy"
   },
@@ -661,8 +649,14 @@
   "home.link.contact_us": {
     "defaultMessage": "Contact Us"
   },
+  "home.link.get_started": {
+    "defaultMessage": "Get started"
+  },
   "home.link.read_docs": {
     "defaultMessage": "Read docs"
+  },
+  "home.title.react_starter_store": {
+    "defaultMessage": "The React PWA Starter Store for Retail"
   },
   "item_attributes.label.promotions": {
     "defaultMessage": "Promotions"

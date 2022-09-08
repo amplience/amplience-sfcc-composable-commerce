@@ -19,9 +19,11 @@ import {
     CustomerProductListsProvider,
     CustomerProvider
 } from '../../commerce-api/contexts'
+import {MultiSiteProvider} from '../../contexts'
 import {resolveSiteFromUrl} from '../../utils/site-utils'
 import {resolveLocaleFromUrl} from '../../utils/utils'
 import {getConfig} from 'pwa-kit-runtime/utils/ssr-config'
+import {createUrlTemplate} from '../../utils/url'
 import {AmplienceAPI, defaultAmpClient} from '../../amplience-api'
 
 /**
@@ -37,15 +39,17 @@ const AppConfig = ({children, locals = {}}) => {
     const [customer, setCustomer] = useState(null)
 
     return (
-        <CommerceAPIProvider value={locals.api}>
-            <CustomerProvider value={{customer, setCustomer}}>
-                <BasketProvider value={{basket, setBasket}}>
-                    <CustomerProductListsProvider>
-                        <ChakraProvider theme={theme}>{children}</ChakraProvider>
-                    </CustomerProductListsProvider>
-                </BasketProvider>
-            </CustomerProvider>
-        </CommerceAPIProvider>
+        <MultiSiteProvider site={locals.site} locale={locals.locale} buildUrl={locals.buildUrl}>
+            <CommerceAPIProvider value={locals.api}>
+                <CustomerProvider value={{customer, setCustomer}}>
+                    <BasketProvider value={{basket, setBasket}}>
+                        <CustomerProductListsProvider>
+                            <ChakraProvider theme={theme}>{children}</ChakraProvider>
+                        </CustomerProductListsProvider>
+                    </BasketProvider>
+                </CustomerProvider>
+            </CommerceAPIProvider>
+        </MultiSiteProvider>
     )
 }
 
@@ -67,6 +71,9 @@ AppConfig.restore = (locals = {}) => {
     apiConfig.parameters.siteId = site.id
 
     locals.api = new CommerceAPI({...apiConfig, locale: locale.id, currency})
+    locals.buildUrl = createUrlTemplate(appConfig, site.alias || site.id, locale.id)
+    locals.site = site
+    locals.locale = locale.id
     locals.ampClient = typeof window === 'undefined' ? new AmplienceAPI() : defaultAmpClient
 }
 
@@ -75,7 +82,10 @@ AppConfig.freeze = () => undefined
 AppConfig.extraGetPropsArgs = (locals = {}) => {
     return {
         api: locals.api,
-        ampClient: locals.ampClient
+        ampClient: locals.ampClient,
+        buildUrl: locals.buildUrl,
+        site: locals.site,
+        locale: locals.locale
     }
 }
 

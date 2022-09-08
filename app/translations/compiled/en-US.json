@@ -361,24 +361,6 @@
       "value": "You Might Also Like"
     }
   ],
-  "amplience.preview.active": [
-    {
-      "type": 0,
-      "value": "Preview Active:"
-    }
-  ],
-  "amplience.preview.cancel": [
-    {
-      "type": 0,
-      "value": "Cancel"
-    }
-  ],
-  "amplience.preview.edition": [
-    {
-      "type": 0,
-      "value": "Edition Preview"
-    }
-  ],
   "auth_modal.description.now_signed_in": [
     {
       "type": 0,
@@ -1207,12 +1189,6 @@
       "value": "Order Status"
     }
   ],
-  "footer.link.page": [
-    {
-      "type": 0,
-      "value": "Amplience FAQ"
-    }
-  ],
   "footer.link.privacy_policy": [
     {
       "type": 0,
@@ -1565,10 +1541,22 @@
       "value": "Contact Us"
     }
   ],
+  "home.link.get_started": [
+    {
+      "type": 0,
+      "value": "Get started"
+    }
+  ],
   "home.link.read_docs": [
     {
       "type": 0,
       "value": "Read docs"
+    }
+  ],
+  "home.title.react_starter_store": [
+    {
+      "type": 0,
+      "value": "The React PWA Starter Store for Retail"
     }
   ],
   "item_attributes.label.promotions": [
