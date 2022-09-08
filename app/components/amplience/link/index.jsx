@@ -6,25 +6,24 @@ import {Link as SPALink, NavLink as NavSPALink, useLocation} from 'react-router-
 import {buildPathWithUrlConfig} from '../../../utils/url'
 import useSite from '../../../hooks/use-site'
 import useLocale from '../../../hooks/use-locale'
+const QUERY_PARAMS = ['pagevse'];
 
-const enrichWithQuery = (to, location) => {
+const enrichWithQuery = (to, queryParams, location) => {
     const url = new URLSearchParams(location.search)
     const newUrl = new URL(to, 'http://localhost')
 
-    url.forEach((value, key) => {
-        newUrl.searchParams.set(key, value)
+    queryParams.map((key) => {
+        newUrl.searchParams.set(key, url.get(key))
     })
 
    return `${newUrl.pathname}${newUrl.search}`;
 }
 
-const AmplienceLink = React.forwardRef(({href, to, useNavLink = false, ...props}, ref) => {
+const AmplienceLink = React.forwardRef(({href, to, queryParams = QUERY_PARAMS, useNavLink = false, ...props}, ref) => {
     const _href = to || href
     const site = useSite()
     const locale = useLocale()
     const location = useLocation()
-
-    console.log('location', location)
 
     const isExternal = _href.length > 0 && _href[0] === '$'
 
@@ -54,7 +53,7 @@ const AmplienceLink = React.forwardRef(({href, to, useNavLink = false, ...props}
         props.as = useNavLink ? NavSPALink : SPALink
     }
 
-    props.to = enrichWithQuery(props.to, location)
+    props.to = enrichWithQuery(props.to, queryParams, location)
 
     return <ChakraLink {...(useNavLink && {exact: true})} {...props} ref={ref} />
 })
