@@ -207,7 +207,6 @@ export const importHandler = async (context: Arguments<Context>): Promise<any> =
         const searchIndexes = await paginator(searchIndexPaginator(hub))
         if(searchIndexes && searchIndexes[0]){
             searchAPIKeys = await searchIndexes[0].related.keys.get()
-            console.log(searchAPIKeys)
         }
         //await promises.writeFile('/testfile', 'testresult', {encoding: 'utf8'})*/
 
@@ -259,8 +258,8 @@ export const importHandler = async (context: Arguments<Context>): Promise<any> =
         console.log(`Cleaning up templates...`)
         console.log(`Context...`, context.tempDir)
         await clearTemplates(context.tempDir)
-        console.log('--------------------')
-        console.log('Import Completed!! Please copy the following into "config/amplience/default.js')
+        console.log(`--------------------`)
+        console.log(`Import Completed!! Please copy the following into "config/amplience/default.js"`)
         var toLog =  {
             hub: context.hubName,
             searchAppID: searchAPIKeys?.applicationId || "",
