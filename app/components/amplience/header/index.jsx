@@ -142,7 +142,7 @@ const Header = ({
                                 {...styles.logo}
                                 style={{...ampStyles.logo}}
                                 alt={'logo'}
-                                src={`${url}?w=88&fmt=auto`}
+                                src={`${url}?w=192&fmt=auto`}
                             />
                         }
                         {...styles.icons}
