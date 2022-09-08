@@ -26,6 +26,61 @@
             "enum": [
                 "https://sfcc.com/slots/flexible-list"
             ]
+        },
+        "gridItem": {
+            "title": "In-Grid Content",
+            "description": "",
+            
+            "type": "object",
+            "properties": {
+                "position": {
+                    "title": "Grid Position",
+                    "description": "Where in the listing grid the item will be placed.",
+                    "type": "number",
+                    "minimum": 0,
+                    "default": 0
+                },
+                "cols": {
+                    "title": "Column Span",
+                    "description": "Width of the item in number of grid columns. (only used for 3 column layout)",
+                    "type": "string",
+                    "default": "1",
+                    "minimum": 0,
+                    "enum": [
+                        "1",
+                        "2",
+                        "3"
+                    ]
+                },
+                "rows": {
+                    "title": "Row Span",
+                    "description": "Height of the item in number of grid rows. (only used for 3 column layout)",
+                    "type": "string",
+                    "minimum": 0,
+                    "default": "1",
+                    "enum": [
+                        "1",
+                        "2",
+                        "3"
+                    ]
+                },
+                "content": {
+                    "title": "Content",
+                    "allOf": [
+                        { "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference" },
+                        {
+                            "properties": {
+                                "contentType": {
+                                    "enum": [
+                                        "https://sfcc.com/components/hero"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            "propertyOrder": ["position", "cols", "rows", "content"]
         }
     }
 }

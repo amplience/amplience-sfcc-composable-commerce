@@ -76,6 +76,20 @@
             "description": "Append the subcategories from SFCC into this node's children when rendering navigation.",
             "type": "boolean",
             "default": false
+        },
+        "gridItem": {
+            "title": "In-Grid Content",
+            "description": "",
+            "type": "array",
+            "minItems": 0,
+            "maxItems": 10,
+            "items": {
+                "allOf": [
+                    {
+                        "$ref": "https://sfcc.com/libs/all-definitions#/definitions/gridItem"
+                    }
+                ]
+            }
         }
     },
     "required": [
@@ -85,6 +99,7 @@
     "propertyOrder": [
         "common",
         "_meta",
-        "includeSFCC"
+        "includeSFCC",
+        "gridItem"
     ]
 }
