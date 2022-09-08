@@ -6,14 +6,15 @@ import {Link as SPALink, NavLink as NavSPALink, useLocation} from 'react-router-
 import {buildPathWithUrlConfig} from '../../../utils/url'
 import useSite from '../../../hooks/use-site'
 import useLocale from '../../../hooks/use-locale'
-const QUERY_PARAMS = ['pagevse'];
+const QUERY_PARAMS = ['pagevse', 'vse'];
 
 const enrichWithQuery = (to, queryParams, location) => {
     const url = new URLSearchParams(location.search)
     const newUrl = new URL(to, 'http://localhost')
 
     queryParams.map((key) => {
-        newUrl.searchParams.set(key, url.get(key))
+        const value = url.get(key);
+        value && newUrl.searchParams.set(key, value)
     })
 
    return `${newUrl.pathname}${newUrl.search}`;
