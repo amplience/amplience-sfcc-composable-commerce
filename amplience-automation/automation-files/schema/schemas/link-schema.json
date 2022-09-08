@@ -1,0 +1,47 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://sfcc.com/components/link",
+	"title": "Title",
+	"description": "Description",
+	"allOf": [
+		{
+			"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+		}
+	],
+	"type": "object",
+	"properties": {
+		"label": {
+			"title": "Label",
+			"description": "",
+			"allOf": [
+				{
+					"$ref": "http://bigcontent.io/cms/schema/v1/localization#/definitions/localized-string"
+				}
+			]
+		},
+		"value": {
+			"type": "string",
+			"title": "Value",
+			"description": "A relative URL, absolute URL or an ID",
+			"minLength": 0,
+			"maxLength": 2000
+		},
+		"type": {
+			"type": "string",
+			"title": "Link Type",
+			"default": "URL",
+			"description": "The type of link. Default is URL",
+			"enum": [
+				"URL",
+				"Category ID",
+				"Product SKU",
+				"Page ID"
+			]
+		}
+	},
+	"propertyOrder": [
+		"label",
+		"type",
+		"value"
+	]
+}
