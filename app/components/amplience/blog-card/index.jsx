@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Author from '../author'
-import Link from '../../link'
+import Link from '../link'
 import Button from '../button'
 import {Box, Heading, Image, Tag, Text, useMultiStyleConfig} from '@chakra-ui/react'
 import useLocale from '../../../hooks/use-locale'

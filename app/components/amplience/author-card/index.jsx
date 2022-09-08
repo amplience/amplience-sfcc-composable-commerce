@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Author from '../author'
-import Link from '../../link'
+import Link from '../link'
 import {Box, Image, Text, useMultiStyleConfig} from '@chakra-ui/react'
 import {getImageUrl} from '../../../utils/amplience/image'
 import AmplienceMarkdown from '../markdown'
