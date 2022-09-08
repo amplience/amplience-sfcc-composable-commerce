@@ -9,7 +9,6 @@ import {Box, Skeleton} from '@chakra-ui/react'
 
 // Project Components
 import Seo from '../../../components/amplience/seo'
-import Author from '../../../components/amplience/author'
 import AuthorCard from '../../../components/amplience/author-card'
 
 // Constants
@@ -19,7 +18,7 @@ import {AmplienceContextProvider} from '../../../contexts/amplience'
 import {AmplienceAPI} from '../../../amplience-api'
 import AmplienceWrapper from '../../../components/amplience/wrapper'
 import {truncate} from '../../../utils/amplience/string'
-import Link from '../../../components/link'
+import Link from '../../../components/amplience/link'
 import { FormattedMessage } from 'react-intl'
 import { HTTPNotFound } from 'pwa-kit-react-sdk/ssr/universal/errors'
 
