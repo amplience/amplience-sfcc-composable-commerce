@@ -231,7 +231,7 @@ const BlogLanding = ({allTags = []}) => {
                             onChange={(e) => onTagDropDownChanged(e)}
                         >
                             {tags.map((item, index) => {
-                                var text = item.label + ` (${item.count})`
+                                var text = item.label
                                 return (
                                     <option value={item.value.toLowerCase()} key={index}>
                                         {text}
@@ -247,7 +247,7 @@ const BlogLanding = ({allTags = []}) => {
                             onChange={(e) => onCategoryDropDownChanged(e)}
                         >
                             {thecategories.map((item, index) => {
-                                var text = item.label + ` (${item.count})`
+                                var text = item.label
                                 return (
                                     <option value={item.value} key={index}>
                                         {text}
@@ -263,7 +263,7 @@ const BlogLanding = ({allTags = []}) => {
                             onChange={(e) => onAuthorDropDownChanged(e)}
                         >
                             {authors.map((item, index) => {
-                                var text = item.label + ` (${item.count})`
+                                var text = item.label
                                 return (
                                     <option value={item.value} key={index}>
                                         {text}
