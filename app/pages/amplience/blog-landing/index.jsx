@@ -38,7 +38,7 @@ import { useIntl, FormattedMessage } from 'react-intl'
  * The page renders SEO metadata and a few promotion
  * categories and products, data is from local file.
  */
-const BlogLanding = ({allTags = []}) => {
+const BlogLanding = ({allTags}) => {
     const locale = useLocale()
     const intl = useIntl()
     const siteLocale = locale.id.toLowerCase()
@@ -77,7 +77,7 @@ const BlogLanding = ({allTags = []}) => {
             let myLabel = property
             if (isCategory) {
                 myLabel = categories[property]?.name || property
-            } else if (isTag) {
+            } else if (allTags && isTag) {
                 const tag = allTags.filter(item => item.content._meta.deliveryKey == property)
                 myLabel = tag[0]?.content?.name || property
             }
