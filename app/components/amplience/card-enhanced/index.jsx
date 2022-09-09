@@ -41,6 +41,8 @@ const CardEnhanced = ({
     cols,
     rows
 }) => {
+    links ??= []
+
     const styles = useMultiStyleConfig('CardEnhanced', {
         blend: blend,
         color: color,
@@ -92,7 +94,7 @@ const CardEnhanced = ({
         }
     })
 
-    const {img} = image || {}
+    const img = image?.image
 
     const cardtransformations =
         cols && rows

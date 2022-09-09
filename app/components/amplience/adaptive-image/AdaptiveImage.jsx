@@ -33,7 +33,7 @@ AdaptiveImage.displayName = 'AdaptiveImage'
 AdaptiveImage.propTypes = {
     image: PropTypes.object,
     transformations: PropTypes.object,
-    children: PropTypes.object,
+    children: PropTypes.node,
     imageRef: PropTypes.object
 }
 

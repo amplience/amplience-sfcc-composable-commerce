@@ -5,6 +5,7 @@ import PropTypes from 'prop-types'
 import Hero from '../hero'
 import Section from '../section'
 import CuratedProductList from '../curated-product-list'
+import CardEnhanced from '../card-enhanced'
 // Slots
 import flexibleListSlot from '../flexibleListSlot'
 import {useIntl} from 'react-intl'
@@ -16,6 +17,7 @@ const componentsMapping = {
     'https://sfcc.com/components/hero': Hero,
     'https://sfcc.com/components/section': Section,
     'https://sfcc.com/components/curated-product': CuratedProductList,
+    'https://sfcc.com/components/card-enhanced': CardEnhanced,
     'https://sfcc.com/slots/flexible-list': flexibleListSlot,
 
     'https://sfcc.com/site/navigation/root': Blank,
