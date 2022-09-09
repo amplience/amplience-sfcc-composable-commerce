@@ -7,7 +7,7 @@
 
 import React, {useEffect, useState} from 'react'
 import PropTypes from 'prop-types'
-import {useHistory, useParams} from 'react-router-dom'
+import {useHistory, useLocation, useParams} from 'react-router-dom'
 import {FormattedMessage, useIntl} from 'react-intl'
 import {Helmet} from 'react-helmet'
 
@@ -17,6 +17,7 @@ import {
     Flex,
     SimpleGrid,
     Grid,
+    GridItem,
     Select,
     Text,
     FormControl,
@@ -35,7 +36,8 @@ import {
     DrawerHeader,
     DrawerOverlay,
     DrawerContent,
-    DrawerCloseButton
+    DrawerCloseButton,
+    useBreakpointValue
 } from '@chakra-ui/react'
 
 // Project Components
@@ -47,11 +49,14 @@ import SelectedRefinements from './partials/selected-refinements'
 import EmptySearchResults from './partials/empty-results'
 import PageHeader from './partials/page-header'
 
+// Amplience Components
+import AmplienceWrapper from '../../components/amplience/wrapper'
+
 // Icons
 import {FilterIcon, ChevronDownIcon} from '../../components/icons'
 
 // Hooks
-import {useLimitUrls, usePageUrls, useSortUrls, useSearchParams} from '../../hooks'
+import {useLimitUrls, useSortUrls, useSearchParams} from '../../hooks'
 import {useToast} from '../../hooks/use-toast'
 import useWishlist from '../../hooks/use-wishlist'
 import {parse as parseSearchParams} from '../../hooks/use-search-params'
@@ -71,10 +76,116 @@ import {
 } from '../../constants'
 import useNavigation from '../../hooks/use-navigation'
 import LoadingSpinner from '../../components/loading-spinner'
+import {resolveSiteFromUrl} from '../../utils/site-utils'
+import {getTargetLocale} from '../../utils/locale'
+import {useMemo} from 'react'
+import {buildUrlSet} from '../../utils/url'
+import {useAmpRtv} from '../../utils/amplience/rtv'
 
 // NOTE: You can ignore certain refinements on a template level by updating the below
 // list of ignored refinements.
 const REFINEMENT_DISALLOW_LIST = ['c_isNew']
+
+const calculatePageOffsets = (pageSize, totalCount, ampSlots, isMobile) => {
+    // Amplience slots reduce the page size of sfcc content.
+    const pages = []
+    let processed = 0
+    let offset = 0
+
+    const pageNumber = (index) => {
+        return Math.floor(index / pageSize)
+    }
+
+    const fillPages = (upTo) => {
+        const uptoBasePage = pageNumber(upTo + offset)
+
+        while (pages.length <= uptoBasePage) {
+            pages.push(pages.length * pageSize - offset)
+        }
+
+        processed = upTo
+    }
+
+    const skipContent = (size) => {
+        // If this splits a page, create one.
+        offset += size
+
+        fillPages(processed)
+    }
+
+    for (let i = 0; i < ampSlots.length; i++) {
+        const slot = ampSlots[i]
+
+        fillPages(slot.position)
+
+        const size = isMobile ? 1 : Number(slot.cols) * Number(slot.rows)
+
+        skipContent(size)
+    }
+
+    fillPages(totalCount)
+
+    return pages
+}
+
+const enrichResults = (productSearchResults, ampSlots, pages, isMobile) => {
+    if (productSearchResults.hits) {
+        const pageSize = productSearchResults.limit
+        const offset = productSearchResults.offset
+        const total = productSearchResults.total
+
+        let pageId = pages.findIndex((pageIndex) => pageIndex > offset) - 1
+        if (pageId == -2) {
+            pageId = pages.length - 1
+        }
+
+        const pageBase = pageId * pageSize
+
+        const sfccCount = (pages[pageId + 1] ?? total) - pages[pageId]
+        const items = productSearchResults.hits.slice(0, sfccCount)
+
+        let reservedSpaces = 0
+
+        for (let slot of ampSlots) {
+            const pos = slot.position
+
+            if (pos < pageBase) {
+                continue
+            }
+
+            if (pos >= pageBase + pageSize) {
+                break
+            }
+
+            // Place content up to the given slot.
+            const size = isMobile ? 1 : Number(slot.rows) * Number(slot.cols)
+
+            slot.isAmplience = true
+
+            items.splice(pos - pageBase - reservedSpaces, 0, slot)
+
+            reservedSpaces += size - 1
+        }
+
+        return items
+    }
+
+    return productSearchResults.hits
+}
+
+/*
+ * Generate a memoized list of page size urls influenced by inline amplience content.
+ * Changing the page size will reset the offset to zero to simplify things.
+ */
+export const useAmpPageUrls = ({total = 0, limit, pageOffsets}) => {
+    const location = useLocation()
+    const [searchParams] = useSearchParams()
+    const _limit = limit || searchParams.limit
+
+    return useMemo(() => {
+        return buildUrlSet(`${location.pathname}${location.search}`, 'offset', pageOffsets)
+    }, [location.pathname, location.search, _limit, total, pageOffsets])
+}
 
 /*
  * This is a simple product listing page. It displays a paginated list
@@ -102,6 +213,14 @@ const ProductList = (props) => {
     const {categories} = useCategories()
     const toast = useToast()
 
+    const [ampSlots, setAmpSlots] = useState(props.ampSlots)
+    delete rest.ampSlots
+
+    useAmpRtv((model) => {
+        // handle form model change
+        setAmpSlots(model.content.gridItem)
+    })
+
     // Get the current category from global state.
     let category = undefined
     if (!searchQuery) {
@@ -115,8 +234,37 @@ const ProductList = (props) => {
         setFiltersLoading(isLoading)
     }, [isLoading])
 
+    const [searchParams, {stringify: stringifySearchParams}] = useSearchParams()
+
+    const isMobile = useBreakpointValue({base: true, md: false})
+
+    const pageOffsets = useMemo(() => {
+        return calculatePageOffsets(searchParams.limit, total, ampSlots, isMobile)
+    }, [searchParams.limit, total, ampSlots, isMobile])
+
+    useEffect(() => {
+        let dist = Infinity
+        let pageId = 0
+
+        for (let i = 0; i < pageOffsets.length; i++) {
+            const myDist = Math.abs(pageOffsets[i] - searchParams.offset)
+
+            if (myDist < dist) {
+                dist = myDist
+                pageId = i
+            }
+        }
+
+        if (pageOffsets[pageId] !== searchParams.offset) {
+            const searchParamsCopy = {...searchParams, offset: pageOffsets[pageId]}
+            navigate(`/category/${params.categoryId}?${stringifySearchParams(searchParamsCopy)}`)
+        }
+
+        // Reload the page if the mobile layout page doesn't line up with the current offset.
+    }, [isMobile, searchParams.offset])
+
     // Get urls to be used for pagination, page size changes, and sorting.
-    const pageUrls = usePageUrls({total})
+    const pageUrls = useAmpPageUrls({total, pageOffsets})
     const sortUrls = useSortUrls({options: sortingOptions})
     const limitUrls = useLimitUrls()
 
@@ -179,7 +327,6 @@ const ProductList = (props) => {
     }
 
     /**************** Filters ****************/
-    const [searchParams, {stringify: stringifySearchParams}] = useSearchParams()
     const [filtersLoading, setFiltersLoading] = useState(false)
 
     // Toggles filter on and off
@@ -234,6 +381,8 @@ const ProductList = (props) => {
     if (!selectedSortingOptionLabel) {
         selectedSortingOptionLabel = productSearchResult?.sortingOptions?.[0]
     }
+
+    const results = enrichResults(productSearchResult, ampSlots, pageOffsets, isMobile)
 
     return (
         <Box
@@ -375,36 +524,59 @@ const ProductList = (props) => {
                                           .map((value, index) => (
                                               <ProductTileSkeleton key={index} />
                                           ))
-                                    : productSearchResult.hits.map((productSearchItem) => {
-                                          const productId = productSearchItem.productId
-                                          const isInWishlist = !!wishlist.findItemByProductId(
-                                              productId
-                                          )
+                                    : results.map((item) => {
+                                          if (item.isAmplience) {
+                                              // Amplience content tile
 
-                                          return (
-                                              <ProductTile
-                                                  data-testid={`sf-product-tile-${productSearchItem.productId}`}
-                                                  key={productSearchItem.productId}
-                                                  product={productSearchItem}
-                                                  enableFavourite={true}
-                                                  isFavourite={isInWishlist}
-                                                  onFavouriteToggle={(isFavourite) => {
-                                                      const action = isFavourite
-                                                          ? addItemToWishlist
-                                                          : removeItemFromWishlist
-                                                      return action(productSearchItem)
-                                                  }}
-                                                  dynamicImageProps={{
-                                                      widths: [
-                                                          '50vw',
-                                                          '50vw',
-                                                          '20vw',
-                                                          '20vw',
-                                                          '25vw'
-                                                      ]
-                                                  }}
-                                              />
-                                          )
+                                              return (
+                                                  <GridItem
+                                                      key={item.content?.id}
+                                                      colEnd={{
+                                                          base: `span 1`,
+                                                          md: `span ${item.cols}`
+                                                      }}
+                                                      rowEnd={{
+                                                          base: `span 1`,
+                                                          md: `span ${item.rows}`
+                                                      }}
+                                                  >
+                                                      <AmplienceWrapper
+                                                          fetch={{id: item.content?.id}}
+                                                      ></AmplienceWrapper>
+                                                  </GridItem>
+                                              )
+                                          } else {
+                                              const productSearchItem = item
+                                              const productId = productSearchItem.productId
+                                              const isInWishlist = !!wishlist.findItemByProductId(
+                                                  productId
+                                              )
+
+                                              return (
+                                                  <ProductTile
+                                                      data-testid={`sf-product-tile-${productSearchItem.productId}`}
+                                                      key={productSearchItem.productId}
+                                                      product={productSearchItem}
+                                                      enableFavourite={true}
+                                                      isFavourite={isInWishlist}
+                                                      onFavouriteToggle={(isFavourite) => {
+                                                          const action = isFavourite
+                                                              ? addItemToWishlist
+                                                              : removeItemFromWishlist
+                                                          return action(productSearchItem)
+                                                      }}
+                                                      dynamicImageProps={{
+                                                          widths: [
+                                                              '50vw',
+                                                              '50vw',
+                                                              '20vw',
+                                                              '20vw',
+                                                              '25vw'
+                                                          ]
+                                                      }}
+                                                  />
+                                              )
+                                          }
                                       })}
                             </SimpleGrid>
                             {/* Footer */}
@@ -551,7 +723,7 @@ ProductList.shouldGetProps = ({previousLocation, location}) =>
     previousLocation.pathname !== location.pathname ||
     previousLocation.search !== location.search
 
-ProductList.getProps = async ({res, params, location, api}) => {
+ProductList.getProps = async ({res, params, location, api, ampClient}) => {
     const {categoryId} = params
     const urlParams = new URLSearchParams(location.search)
     let searchQuery = urlParams.get('q')
@@ -564,6 +736,29 @@ ProductList.getProps = async ({res, params, location, api}) => {
     if (!categoryId && !isSearch) {
         // We will simulate search for empty string
         return {searchQuery: ' ', productSearchResult: {}}
+    }
+
+    // Amplience in-grid content.
+
+    const site = resolveSiteFromUrl(location.pathname)
+    const l10nConfig = site.l10n
+    const targetLocale = getTargetLocale({
+        getUserPreferredLocales: () => {
+            const {locale} = api.getConfig()
+            return [locale]
+        },
+        l10nConfig
+    })
+
+    // Try fetch grid slots for this category from Amplience.
+    const ampCategory = await (
+        await ampClient.fetchContent([{key: `category/${categoryId}`}], {locale: targetLocale})
+    ).pop()
+
+    let ampSlots = []
+
+    if (ampCategory.type !== 'CONTENT_NOT_FOUND') {
+        ampSlots = ampCategory.gridItem ?? []
     }
 
     const searchParams = parseSearchParams(location.search, false)
@@ -602,7 +797,7 @@ ProductList.getProps = async ({res, params, location, api}) => {
         throw new HTTPNotFound(category.detail)
     }
 
-    return {searchQuery: searchQuery, productSearchResult}
+    return {searchQuery: searchQuery, productSearchResult, ampSlots}
 }
 
 ProductList.propTypes = {
@@ -626,7 +821,12 @@ ProductList.propTypes = {
     location: PropTypes.object,
     searchQuery: PropTypes.string,
     onAddToWishlistClick: PropTypes.func,
-    onRemoveWishlistClick: PropTypes.func
+    onRemoveWishlistClick: PropTypes.func,
+
+    /**
+     * Amplience specific - in-grid content positions and ids.
+     */
+    ampSlots: PropTypes.array
 }
 
 export default ProductList
