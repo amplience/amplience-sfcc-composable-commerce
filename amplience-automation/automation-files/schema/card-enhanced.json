@@ -1,0 +1,5 @@
+{
+    "body": "./schemas/card-enhanced-schema.json",
+    "schemaId": "https://sfcc.com/components/card-enhanced",
+    "validationLevel": "CONTENT_TYPE"
+}

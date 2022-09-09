@@ -211,6 +211,7 @@
                             "properties": {
                                 "contentType": {
                                     "enum": [
+                                        "https://sfcc.com/components/card-enhanced",
                                         "https://sfcc.com/components/hero"
                                     ]
                                 }

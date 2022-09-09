@@ -79,7 +79,7 @@
         },
         "gridItem": {
             "title": "In-Grid Content",
-            "description": "",
+            "description": "Items to display in the grid",
             "type": "array",
             "minItems": 0,
             "maxItems": 10,
