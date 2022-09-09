@@ -6,7 +6,8 @@
             "enum": [
                 "https://sfcc.com/components/hero",
                 "https://sfcc.com/components/section",
-                "https://sfcc.com/components/curated-product"
+                "https://sfcc.com/components/curated-product",
+                "https://sfcc.com/components/blogList"
             ]
         },
         "anyPage": {
@@ -19,7 +20,8 @@
                 "https://sfcc.com/components/hero",
                 "https://sfcc.com/components/section",
                 "https://sfcc.com/components/curated-product",
-                "https://sfcc.com/site/pages/content-page"
+                "https://sfcc.com/site/pages/content-page",
+                "https://sfcc.com/components/blogList"
             ]
         },
         "anySlot": {
@@ -179,7 +181,8 @@
                             "contentTypes": [
                                 "https://sfcc.com/components/section",
                                 "https://sfcc.com/components/hero",
-                                "https://sfcc.com/components/curated-product"
+                                "https://sfcc.com/components/curated-product",
+                                "https://sfcc.com/components/blogList"
                             ],
                             "contentTypeSettings": [
                                 {

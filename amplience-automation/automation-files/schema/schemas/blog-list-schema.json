@@ -1,0 +1,92 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://sfcc.com/components/blogList",
+
+  "title": "Blog list",
+  "description": "",
+
+  "allOf": [
+    {
+      "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+    }
+  ],
+
+  "type": "object",
+  "properties": {
+    "author": {
+      "title": "Author to filter",
+      "allOf": [
+        { "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link" },
+        {
+          "properties": {
+            "contentType": {
+              "enum": [
+                "https://sfcc.com/components/author"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "tag": {
+      "title": "Tag to filter",
+      "allOf": [
+        { "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link" },
+        {
+          "properties": {
+            "contentType": {
+              "enum": [
+                "https://sfcc.com/components/tag"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "category": {
+      "title": "Category",
+      "description": "Single-select Category and store ID as string",
+      "type": "string",
+      "ui:extension": {
+        "name": "ecomm-toolkit",
+        "params": {
+          "label": "Category",
+          "view": "single",
+          "data": "category",
+          "type": "string"
+        }
+      }
+    },
+    "query": {
+      "title": "Query to search",
+      "description": "",
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 100
+    },
+    "numItems": {
+      "title": "Number of items to return",
+      "description": "",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "fetchAll": {
+      "title": "Fetch all items?",
+      "description": "description",
+      "type": "boolean"
+    },
+    "render": {
+      "title": "Render view",
+      "description": "",
+      "type": "string",
+      "enum": [
+        "Grid",
+        "Scroller"
+      ]
+    }
+
+
+  },
+  "propertyOrder": []
+}

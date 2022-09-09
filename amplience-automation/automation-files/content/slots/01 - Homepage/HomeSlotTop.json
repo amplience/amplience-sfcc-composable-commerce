@@ -20,6 +20,13 @@
                 },
                 "contentType": "https://sfcc.com/components/hero",
                 "id": "f02a8387-fa6e-4875-b263-724db2d41334"
+            },
+            {
+                "_meta" : {
+                    "schema" : "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                },
+                "contentType" : "https://sfcc.com/components/blogList",
+                "id" : "46e2a59b-fc64-4636-b5ea-68dec09b2b0a"
             }
         ]
     },

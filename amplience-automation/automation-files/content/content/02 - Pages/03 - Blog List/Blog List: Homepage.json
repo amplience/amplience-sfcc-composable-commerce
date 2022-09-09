@@ -1,0 +1,25 @@
+{
+  "id" : "46e2a59b-fc64-4636-b5ea-68dec09b2b0a",
+  "contentRepositoryId" : "62f2da5bc9e77c0001ecfa57",
+  "folderId" : "631b0e0fc9e77c0001dc0c9a",
+  "body" : {
+    "_meta" : {
+      "name" : "Blog List: Homepage",
+      "schema" : "https://sfcc.com/components/blogList"
+    },
+    "title": "Newest blog posts",
+    "fetchAll" : true,
+    "category" : "newarrivals-womens",
+    "render" : "Scroller"
+  },
+  "version" : 14,
+  "label" : "Blog List: Homepage",
+  "status" : "ACTIVE",
+  "createdBy" : "ec8eae46-fcfe-4c9f-8e2c-5a0f8aea334c",
+  "createdDate" : "2022-09-09T10:00:38.083Z",
+  "lastModifiedBy" : "ec8eae46-fcfe-4c9f-8e2c-5a0f8aea334c",
+  "lastModifiedDate" : "2022-09-09T12:25:46.172Z",
+  "lastPublishedVersion" : 14,
+  "lastPublishedDate" : "2022-09-09T12:25:52.831Z",
+  "deliveryId" : "46e2a59b-fc64-4636-b5ea-68dec09b2b0a"
+}
