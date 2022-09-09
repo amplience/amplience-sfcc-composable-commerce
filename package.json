@@ -16,7 +16,7 @@
         "@emotion/styled": "^11.1.5",
         "@formatjs/cli": "^4.2.27",
         "@lerna/child-process": "^3.3.0",
-        "@lhci/cli": "^0.7.0",
+        "@lhci/cli": "^0.9.0",
         "@loadable/component": "^5.15.0",
         "@peculiar/webcrypto": "^1.3.3",
         "@testing-library/jest-dom": "^5.16.4",
@@ -42,7 +42,7 @@
         "js-cookie": "^3.0.1",
         "jwt-decode": "^3.1.2",
         "msw": "^0.28.1",
-        "nanoid": "^3.1.31",
+        "nanoid": "^3.3.4",
         "njwt": "^1.2.0",
         "node-fetch": "^2.6.7",
         "npm-run-all": "^4.1.5",
@@ -106,6 +106,7 @@
         "last 4 ChromeAndroid versions"
     ],
     "dependencies": {
+        "@types/yargs": "^15.0.14",
         "child_process": "^1.0.2",
         "cookie": "^0.5.0",
         "dc-management-sdk-js": "^1.17.1",
@@ -113,6 +114,6 @@
         "express-urlrewrite": "^2.0.0",
         "lodash": "^4.17.21",
         "react-json-tree": "^0.17.0",
-        "yargs": "^17.5.1"
+        "yargs": "^15.4.1"
     }
 }
