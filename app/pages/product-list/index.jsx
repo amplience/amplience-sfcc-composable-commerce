@@ -225,6 +225,10 @@ const ProductList = (props) => {
         setAmpSlots(model.content.gridItem)
     })
 
+    useEffect(() => {
+        setAmpSlots(props.ampSlots)
+    }, [props.ampSlots])
+
     // Get the current category from global state.
     let category = undefined
     if (!searchQuery) {
