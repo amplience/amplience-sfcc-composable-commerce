@@ -124,7 +124,7 @@ const CardEnhanced = ({
                     style={{...styles.image}}
                     ref={imageRef}
                     onLoad={() => handleImageLoaded()}
-                    image={img?.image.image}
+                    image={img?.image}
                     transformations={cardtransformations}
                 />
             </div>
@@ -216,7 +216,7 @@ CardEnhanced.propTypes = {
         _meta: PropTypes.shape({
             schema: PropTypes.string
         }),
-        img: PropTypes.shape({
+        image: PropTypes.shape({
             image: PropTypes.shape({
                 aspectLock: PropTypes.string,
                 bri: PropTypes.number,

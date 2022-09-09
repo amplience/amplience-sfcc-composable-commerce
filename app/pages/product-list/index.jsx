@@ -543,6 +543,7 @@ const ProductList = (props) => {
                                                           base: `span 1`,
                                                           md: `span ${item.rows}`
                                                       }}
+                                                      display="flex"
                                                   >
                                                       <AmplienceWrapper
                                                           fetch={{id: item.content?.id}}
