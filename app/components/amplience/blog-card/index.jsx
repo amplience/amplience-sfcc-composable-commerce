@@ -47,7 +47,7 @@ const BlogCard = ({item, ...otherProps}) => {
                     <Box {...styles.tags}>
                         {content.tags.map((tag, index) => (
                             <Tag key={index} {...styles.tag}>
-                                {tag}
+                                {tag.name}
                             </Tag>
                         ))}
                         {content.categories.map((cat, index) => (

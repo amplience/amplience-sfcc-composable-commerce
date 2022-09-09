@@ -6,6 +6,7 @@ export type IdOrKey = {id: string} | {key: string}
 export type FilterType = ((item: any) => boolean) | undefined
 
 const AUTHORS_SCHEMA = 'https://sfcc.com/components/author'
+const TAGS_SCHEMA = 'https://sfcc.com/components/tag'
 
 export type FetchParams = {
     locale?: string
@@ -47,8 +48,8 @@ const clearTimeMachine = (vse: string): string => {
     return [dashSplit[0], ...dotSplit.slice(1)].join('.')
 }
 
-const paginate = async (result) => {
-    const responses = []
+const paginate = async (result: any) => {
+    const responses = [] as any[]
     responses.push(...result.responses)
 
     while (result.page.next) {
@@ -235,6 +236,27 @@ export class AmplienceAPI {
             .filterByContentType(AUTHORS_SCHEMA)
             .filterBy('/active', true)
             .sortBy('default', 'ASC')
+            .page(12)
+            .request({
+                format: 'inlined',
+                depth: 'all',
+                locale: params.locale
+            })
+
+        const responses: ContentItemResponse[] = await paginate(result)
+
+        return responses
+    }
+
+    async fetchTags(params) {
+        await this.clientReady
+
+        if (params) {
+            params.locale = addFallback(params.locale)
+        }
+
+        let result = await this.client
+            .filterByContentType(TAGS_SCHEMA)
             .page(12)
             .request({
                 format: 'inlined',

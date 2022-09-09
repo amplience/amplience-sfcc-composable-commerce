@@ -1,9 +1,14 @@
 import React, {useState, useEffect, useContext} from 'react'
+import PropTypes from 'prop-types'
+import {resolveSiteFromUrl} from '../../../utils/site-utils'
+import {getTargetLocale} from '../../../utils/locale'
+
 // Algolia
 import algoliasearch from 'algoliasearch/lite'
 
 import amplience from '/config/amplience/default.js'
 import {AmplienceContext} from '../../../contexts/amplience'
+
 // Amplience Wrapper Component
 import AmplienceWrapper from '/app/components/amplience/wrapper'
 import {useCategories} from '../../../hooks/use-categories'
@@ -27,13 +32,19 @@ import {
 } from '@chakra-ui/react'
 import { useIntl, FormattedMessage } from 'react-intl'
 
+// Constants
+import {MAX_CACHE_AGE} from '../../../constants'
+import {AmplienceContextProvider} from '../../../contexts/amplience'
+import {AmplienceAPI} from '../../../amplience-api'
+import { ContentTypeSchemaPage } from 'dc-management-sdk-js/build/main/lib/model/ContentTypeSchema'
+
 /**
  * This is an example blog page for Retail React App.
  * The page is created for demonstration purposes.
  * The page renders SEO metadata and a few promotion
  * categories and products, data is from local file.
  */
-const BlogLanding = () => {
+const BlogLanding = ({allTags = []}) => {
     const locale = useLocale()
     const intl = useIntl()
     const siteLocale = locale.id.toLowerCase()
@@ -66,12 +77,15 @@ const BlogLanding = () => {
     const searchClient = algoliasearch(algoliaID, algoliaKey)
     const index = searchClient.initIndex(algoliaIndexName)
 
-    const facetHitsToArray = (list, isCategory) => {
+    const facetHitsToArray = (list, isCategory, isTag) => {
         let facetArray = []
         for (const property in list) {
             let myLabel = property
             if (isCategory) {
                 myLabel = categories[property]?.name || property
+            } else if (isTag) {
+                const tag = allTags.filter(item => item.content._meta.deliveryKey == property)
+                myLabel = tag[0]?.content?.name || property
             }
             facetArray.push({value: property, label: myLabel, count: list[property]})
         }
@@ -85,7 +99,7 @@ const BlogLanding = () => {
         const authorParam = url.searchParams.get('author')
         const categoryParam = url.searchParams.get('category')
         const tagParam = url.searchParams.get('tag')
-
+       
         setCurrentIndex(Number(pageParam) - 1 || 0)
         setAuthor(authorParam || '')
         setCategory(categoryParam || '')
@@ -97,7 +111,7 @@ const BlogLanding = () => {
         // Lets get the facets
         let filtersArray = []
         if (tag) {
-            filtersArray.push('tags:' + tag)
+            filtersArray.push('tags.deliveryKey:' + tag)
         }
         if (author) {
             filtersArray.push('author.name:' + author)
@@ -107,7 +121,7 @@ const BlogLanding = () => {
         }
         index
             .search(query, {
-                facets: ['tags', 'author.name', 'categories.id'],
+                facets: ['tags.deliveryKey', 'author.name', 'categories.id'],
                 facetFilters: filtersArray,
                 hitsPerPage: numItems,
                 page: currentIndex
@@ -120,12 +134,10 @@ const BlogLanding = () => {
                     pagesArray.push(i + 1)
                 }
                 setPages(pagesArray)
-                setTags(facetHitsToArray(results.facets.tags))
+                setTags(facetHitsToArray(results.facets['tags.deliveryKey'], false, true))
                 setCategories(facetHitsToArray(results.facets['categories.id'], true))
                 setAuthors(facetHitsToArray(results.facets['author.name']))
                 setResults(results.hits)
-
-                console.log('Combined results:', results)
             })
     }
 
@@ -311,6 +323,31 @@ const BlogLanding = () => {
 
 BlogLanding.getTemplateName = () => 'bloglanding'
 
-BlogLanding.propTypes = {}
+BlogLanding.shouldGetProps = ({previousLocation, location}) => 
+    !previousLocation || previousLocation.pathname !== location.pathname
+
+BlogLanding.getProps = async ({req, res, location, api, ampClient}) => {
+    const site = resolveSiteFromUrl(location.pathname)
+    const l10nConfig = site.l10n
+    const targetLocale = getTargetLocale({
+        getUserPreferredLocales: () => {
+            const {locale} = api.getConfig()
+            return [locale]
+        },
+        l10nConfig
+    })
+
+    let client = ampClient
+
+    const allTags = await client.fetchTags({locale: targetLocale});
+
+    return {
+        allTags
+    }
+}
+
+BlogLanding.propTypes = {
+    allTags: PropTypes.any
+}
 
 export default BlogLanding

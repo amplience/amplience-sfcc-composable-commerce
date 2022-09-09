@@ -93,7 +93,7 @@ const BlogPage = ({targetLocale, page, pageVse}) => {
                                     {pageModel.tags?.map((tag, index) => (
                                         <Link
                                             key={index}
-                                            to={`/blog?tag=${encodeURIComponent(tag.name.toLowerCase())}`}
+                                            to={`/blog?tag=${encodeURIComponent(tag._meta.deliveryKey)}`}
                                             {...styles.tag}
                                         >
                                             {tag.name}
