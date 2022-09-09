@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import PropTypes from 'prop-types'
-import {getImageURL} from '../../../amplience/utils/getImageURL'
+import {getImageURL} from '../utils/getImageURL'
 import {AdaptiveImageContext} from './AdaptiveImage'
 
 /* interface Props extends React.DetailedHTMLProps<React.SourceHTMLAttributes<HTMLSourceElement>, HTMLSourceElement> {
