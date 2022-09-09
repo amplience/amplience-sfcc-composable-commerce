@@ -39,7 +39,8 @@
       "searchable(categories.name)",
       "searchable(categories.id)",
       "searchable(author.name)",
-      "searchable(tags)",
+      "searchable(tags.name)",
+      "searchable(tags.deliveryKey)",
       "searchable(readtime)"
     ],
     "attributesToSnippet": null,
@@ -113,7 +114,8 @@
           "searchable(categories.name)",
           "searchable(categories.id)",
           "searchable(author.name)",
-          "searchable(tags)",
+          "searchable(tags.name)",
+          "searchable(tags.deliveryKey)",
           "searchable(readtime)"
         ],
         "attributesToSnippet": null,
@@ -188,7 +190,8 @@
           "searchable(categories.name)",
           "searchable(categories.id)",
           "searchable(author.name)",
-          "searchable(tags)",
+          "searchable(tags.name)",
+          "searchable(tags.deliveryKey)",
           "searchable(readtime)"
         ],
         "attributesToSnippet": null,
@@ -263,7 +266,8 @@
           "searchable(categories.name)",
           "searchable(categories.id)",
           "searchable(author.name)",
-          "searchable(tags)",
+          "searchable(tags.name)",
+          "searchable(tags.deliveryKey)",
           "searchable(readtime)"
         ],
         "attributesToSnippet": null,
@@ -338,7 +342,8 @@
           "searchable(categories.name)",
           "searchable(categories.id)",
           "searchable(author.name)",
-          "searchable(tags)",
+          "searchable(tags.name)",
+          "searchable(tags.deliveryKey)",
           "searchable(readtime)"
         ],
         "attributesToSnippet": null,
