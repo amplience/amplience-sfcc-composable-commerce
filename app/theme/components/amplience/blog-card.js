@@ -1,6 +1,7 @@
 export default {
     baseStyle: () => ({
         container: {
+            height: '100%',
             display: 'flex',
             flexDirection: 'column',
             boxShadow: '0px 5px 5px rgba(0, 0, 0, 0.1)',
@@ -99,6 +100,7 @@ export default {
         'readTime',
         'button',
         'author',
-        'actions'
+        'actions',
+        'scroller'
     ]
 }

@@ -58,6 +58,7 @@ import BlogPage from './components/amplience/blog'
 import BlogLanding from './components/amplience/blog-landing'
 import BlogCard from './components/amplience/blog-card'
 import Author from './components/amplience/author'
+import Scroller from './components/amplience/scroller'
 
 // Please refer to the Chakra-Ui theme customization docs found
 // here https://chakra-ui.com/docs/theming/customize-theme to learn
@@ -114,7 +115,8 @@ const overrides = {
         BlogPage,
         BlogLanding,
         BlogCard,
-        Author
+        Author,
+        Scroller
     }
 }
 

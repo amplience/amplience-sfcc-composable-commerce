@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import PropTypes from 'prop-types'
 import {resolveSiteFromUrl} from '../../../utils/site-utils'
 import {getTargetLocale} from '../../../utils/locale'
-import {Breadcrumb, BreadcrumbItem, BreadcrumbLink, useMultiStyleConfig} from '@chakra-ui/react'
+import {Breadcrumb, BreadcrumbItem, BreadcrumbLink, Spacer} from '@chakra-ui/react'
 
 // Components
 import {Box, Skeleton} from '@chakra-ui/react'
@@ -10,6 +10,7 @@ import {Box, Skeleton} from '@chakra-ui/react'
 // Project Components
 import Seo from '../../../components/amplience/seo'
 import AuthorCard from '../../../components/amplience/author-card'
+import Scroller from '../../../components/amplience/scroller'
 
 // Constants
 import {MAX_CACHE_AGE} from '../../../constants'
@@ -67,7 +68,8 @@ const AuthorPage = ({page, pageVse}) => {
                             </BreadcrumbItem>
                         </Breadcrumb>
                         <AuthorCard item={pageModel} variant={"horizontal"} />
-                        <BlogList filtersArray={[`author.name:${pageModel.name}`]} fetchAll={true}/>
+                        <Spacer height={4}/>
+                        <BlogList filtersArray={[`author.name:${pageModel.name}`]} RenderComponent={Scroller} fetchAll={true}/>
                     </Box>
                 </>
             )}

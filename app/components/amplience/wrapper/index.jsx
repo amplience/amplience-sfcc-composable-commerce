@@ -9,6 +9,7 @@ import CuratedProductList from '../curated-product-list'
 import flexibleListSlot from '../flexibleListSlot'
 import {useIntl} from 'react-intl'
 import {AmplienceContext} from '../../../contexts/amplience'
+import BlogList from '../blog-list'
 
 const Blank = () => <></>
 
@@ -17,6 +18,7 @@ const componentsMapping = {
     'https://sfcc.com/components/section': Section,
     'https://sfcc.com/components/curated-product': CuratedProductList,
     'https://sfcc.com/slots/flexible-list': flexibleListSlot,
+    'https://sfcc.com/components/blogList': BlogList,
 
     'https://sfcc.com/site/navigation/root': Blank,
     'https://sfcc.com/site/navigation/external': Blank,
