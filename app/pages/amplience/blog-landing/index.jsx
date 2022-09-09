@@ -32,12 +32,6 @@ import {
 } from '@chakra-ui/react'
 import { useIntl, FormattedMessage } from 'react-intl'
 
-// Constants
-import {MAX_CACHE_AGE} from '../../../constants'
-import {AmplienceContextProvider} from '../../../contexts/amplience'
-import {AmplienceAPI} from '../../../amplience-api'
-import { ContentTypeSchemaPage } from 'dc-management-sdk-js/build/main/lib/model/ContentTypeSchema'
-
 /**
  * This is an example blog page for Retail React App.
  * The page is created for demonstration purposes.
