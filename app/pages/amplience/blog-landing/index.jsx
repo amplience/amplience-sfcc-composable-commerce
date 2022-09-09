@@ -38,7 +38,7 @@ import { useIntl, FormattedMessage } from 'react-intl'
  * The page renders SEO metadata and a few promotion
  * categories and products, data is from local file.
  */
-const BlogLanding = ({allTags}) => {
+const BlogLanding = ({allTags = []}) => {
     const locale = useLocale()
     const intl = useIntl()
     const siteLocale = locale.id.toLowerCase()
@@ -333,7 +333,7 @@ BlogLanding.getProps = async ({req, res, location, api, ampClient}) => {
 
     let client = ampClient
 
-    const allTags = await client.fetchTags({locale: targetLocale});
+    const allTags = await client.fetchTags({locale: targetLocale})
 
     return {
         allTags
