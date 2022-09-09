@@ -113,14 +113,16 @@ const calculatePageOffsets = (pageSize, totalCount, ampSlots, isMobile) => {
         fillPages(processed)
     }
 
-    for (let i = 0; i < ampSlots.length; i++) {
-        const slot = ampSlots[i]
+    if (ampSlots) {
+        for (let i = 0; i < ampSlots.length; i++) {
+            const slot = ampSlots[i]
 
-        fillPages(slot.position)
+            fillPages(slot.position)
 
-        const size = isMobile ? 1 : Number(slot.cols) * Number(slot.rows)
+            const size = isMobile ? 1 : Number(slot.cols) * Number(slot.rows)
 
-        skipContent(size)
+            skipContent(size)
+        }
     }
 
     fillPages(totalCount)
@@ -129,7 +131,7 @@ const calculatePageOffsets = (pageSize, totalCount, ampSlots, isMobile) => {
 }
 
 const enrichResults = (productSearchResults, ampSlots, pages, isMobile) => {
-    if (productSearchResults.hits) {
+    if (productSearchResults?.hits) {
         const pageSize = productSearchResults.limit
         const offset = productSearchResults.offset
         const total = productSearchResults.total
@@ -146,31 +148,33 @@ const enrichResults = (productSearchResults, ampSlots, pages, isMobile) => {
 
         let reservedSpaces = 0
 
-        for (let slot of ampSlots) {
-            const pos = slot.position
+        if (ampSlots) {
+            for (let slot of ampSlots) {
+                const pos = slot.position
 
-            if (pos < pageBase) {
-                continue
+                if (pos < pageBase) {
+                    continue
+                }
+
+                if (pos >= pageBase + pageSize) {
+                    break
+                }
+
+                // Place content up to the given slot.
+                const size = isMobile ? 1 : Number(slot.rows) * Number(slot.cols)
+
+                slot.isAmplience = true
+
+                items.splice(pos - pageBase - reservedSpaces, 0, slot)
+
+                reservedSpaces += size - 1
             }
-
-            if (pos >= pageBase + pageSize) {
-                break
-            }
-
-            // Place content up to the given slot.
-            const size = isMobile ? 1 : Number(slot.rows) * Number(slot.cols)
-
-            slot.isAmplience = true
-
-            items.splice(pos - pageBase - reservedSpaces, 0, slot)
-
-            reservedSpaces += size - 1
         }
 
         return items
     }
 
-    return productSearchResults.hits
+    return productSearchResults?.hits
 }
 
 /*
