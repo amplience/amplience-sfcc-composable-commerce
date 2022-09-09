@@ -4,16 +4,18 @@ import {resolveSiteFromUrl} from '../../../utils/site-utils'
 import {getTargetLocale} from '../../../utils/locale'
 
 // Components
-import {Box, SimpleGrid, useMultiStyleConfig} from '@chakra-ui/react'
+import {Box, Breadcrumb, BreadcrumbItem, BreadcrumbLink, SimpleGrid, useMultiStyleConfig} from '@chakra-ui/react'
 
 // Amplience Wrapper Component
 import AmplienceWrapper from '../../../components/amplience/wrapper'
+import Link from '../../../components/amplience/link'
 
 // Constants
 import {MAX_CACHE_AGE} from '../../../constants'
 import {AmplienceContextProvider} from '../../../contexts/amplience'
 import {AmplienceAPI} from '../../../amplience-api'
 import AuthorCard from '../../../components/amplience/author-card'
+import { FormattedMessage } from 'react-intl'
 
 /**
  * This is an example content page for Retail React App.
@@ -27,7 +29,14 @@ const AuthorsPage = ({results = [], pageVse}) => {
     const pageBody = (
         <Box data-testid="amplience-page" layerStyle="page">
             <AmplienceWrapper fetch={{key: 'authors/slot/top'}}></AmplienceWrapper>
-
+            <Breadcrumb>
+                <BreadcrumbItem>
+                    <BreadcrumbLink as={Link} to='/blog'><FormattedMessage defaultMessage="Blog" id="amplience.blog.blog" /></BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbItem isCurrentPage>
+                    <BreadcrumbLink as={Link} to='#' style={{pointerEvents: 'none'}}><FormattedMessage defaultMessage="Authors" id="amplience.authors_landing.authors" /></BreadcrumbLink>
+                </BreadcrumbItem>
+            </Breadcrumb>
             <SimpleGrid {...styles.resultsGrid}>
                 {results.map((item, index) => {
                     return <AuthorCard item={item.content} key={index} />

@@ -57,6 +57,9 @@ const AuthorPage = ({page, pageVse}) => {
                         <AmplienceWrapper fetch={{key: 'authors/slot/top'}}></AmplienceWrapper>
                         <Breadcrumb>
                             <BreadcrumbItem>
+                                <BreadcrumbLink as={Link} to='/blog'><FormattedMessage defaultMessage="Blog" id="amplience.blog.blog" /></BreadcrumbLink>
+                            </BreadcrumbItem>
+                            <BreadcrumbItem>
                                 <BreadcrumbLink as={Link} to='/authors'><FormattedMessage defaultMessage="Authors" id="amplience.authors_landing.authors" /></BreadcrumbLink>
                             </BreadcrumbItem>
                             <BreadcrumbItem isCurrentPage>
