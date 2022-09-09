@@ -1,8 +1,8 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "https://sfcc.com/components/link",
-	"title": "Title",
-	"description": "Description",
+	"title": "Link",
+	"description": "A link",
 	"allOf": [
 		{
 			"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
@@ -12,7 +12,7 @@
 	"properties": {
 		"label": {
 			"title": "Label",
-			"description": "",
+			"description": "Label for the link",
 			"allOf": [
 				{
 					"$ref": "http://bigcontent.io/cms/schema/v1/localization#/definitions/localized-string"
