@@ -77,7 +77,7 @@ const BlogLanding = ({allTags = []}) => {
             let myLabel = property
             if (isCategory) {
                 myLabel = categories[property]?.name || property
-            } else if (isTag) {
+            } else if (allTags && isTag) {
                 const tag = allTags.filter(item => item.content._meta.deliveryKey == property)
                 myLabel = tag[0]?.content?.name || property
             }
@@ -231,7 +231,7 @@ const BlogLanding = ({allTags = []}) => {
                             onChange={(e) => onTagDropDownChanged(e)}
                         >
                             {tags.map((item, index) => {
-                                var text = item.label + ` (${item.count})`
+                                var text = item.label
                                 return (
                                     <option value={item.value.toLowerCase()} key={index}>
                                         {text}
@@ -247,7 +247,7 @@ const BlogLanding = ({allTags = []}) => {
                             onChange={(e) => onCategoryDropDownChanged(e)}
                         >
                             {thecategories.map((item, index) => {
-                                var text = item.label + ` (${item.count})`
+                                var text = item.label
                                 return (
                                     <option value={item.value} key={index}>
                                         {text}
@@ -263,7 +263,7 @@ const BlogLanding = ({allTags = []}) => {
                             onChange={(e) => onAuthorDropDownChanged(e)}
                         >
                             {authors.map((item, index) => {
-                                var text = item.label + ` (${item.count})`
+                                var text = item.label
                                 return (
                                     <option value={item.value} key={index}>
                                         {text}
@@ -333,7 +333,7 @@ BlogLanding.getProps = async ({req, res, location, api, ampClient}) => {
 
     let client = ampClient
 
-    const allTags = await client.fetchTags({locale: targetLocale});
+    const allTags = await client.fetchTags({locale: targetLocale})
 
     return {
         allTags
