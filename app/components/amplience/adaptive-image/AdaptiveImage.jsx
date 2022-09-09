@@ -33,10 +33,11 @@ AdaptiveImage.displayName = 'AdaptiveImage'
 AdaptiveImage.propTypes = {
     image: PropTypes.object,
     transformations: PropTypes.object,
-    children: PropTypes.array,
+    children: PropTypes.object,
     imageRef: PropTypes.object
 }
 
+// eslint-disable-next-line react/display-name
 export default forwardRef((props, ref) => (
     <AdaptiveImage {...props} imageRef={ref}>
         {props.children}

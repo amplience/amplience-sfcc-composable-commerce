@@ -151,4 +151,5 @@ TrueAdaptiveImage.propTypes = {
     transformations: PropTypes.object
 }
 
+// eslint-disable-next-line react/display-name
 export default forwardRef((props, ref) => <TrueAdaptiveImage imageRef={ref} {...props} />)
