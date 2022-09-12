@@ -99,21 +99,30 @@ export const applyRtvToHierarchy = (root, rtv, setter, enrichConfig?: EnrichConf
     }
 }
 
-export const useAmpRtv = (method, ampVizSdk) => {
+export const useAmpRtv = (method, ampVizSdk, captures = []) => {
     if (ampVizSdk === undefined) {
         ampVizSdk = useContext(RealtimeVisualization).ampVizSdk
     }
 
     useEffect(() => {
         let removeChangedSubscription
+        let cancelled = false
 
         if (ampVizSdk !== null) {
             ampVizSdk.form.saved(() => {
                 window.location.reload()
             })
 
+            ampVizSdk.form.get().then((model) => {
+                if (!cancelled) {
+                    method(model)
+                }
+            })
+
             removeChangedSubscription = ampVizSdk.form.changed((model) => {
-                method(model)
+                if (!cancelled) {
+                    method(model)
+                }
             })
         }
 
@@ -121,8 +130,9 @@ export const useAmpRtv = (method, ampVizSdk) => {
             if (removeChangedSubscription != undefined) {
                 removeChangedSubscription()
             }
+            cancelled = true
         }
-    }, [ampVizSdk])
+    }, [ampVizSdk, ...captures])
 }
 
 export const useAmpRtvHier = (method, ampVizSdk, ampClient, filter, enrichMethod, locale) => {

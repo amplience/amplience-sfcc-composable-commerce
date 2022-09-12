@@ -273,7 +273,7 @@ const ProductList = (props) => {
         const dataForTopContent = await childContentPromise();
         setAmpTopContent(dataForTopContent)
         setAmpBottomContent(model.content.bottomContent)
-    })
+    }, undefined, [initialAmpSlots, initialAmpBottomContent, initialAmpTopContent])
 
     useEffect(() => {
         setAmpSlots(initialAmpSlots)
