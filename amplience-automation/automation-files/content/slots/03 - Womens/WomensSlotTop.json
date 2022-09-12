@@ -1,0 +1,29 @@
+{
+    "id": "311b072e-555f-4dc4-b7c5-311c34d50f40",
+    "body": {
+        "content": [
+            {
+                "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                },
+                "contentType": "https://sfcc.com/components/hero",
+                "id": "443896ce-059f-4aec-8c7c-a812c2fc48a7"
+            }
+        ],
+        "_meta": {
+            "name": "Womens / Slot / Top",
+            "schema": "https://sfcc.com/slots/flexible-list",
+            "deliveryKey": "womens/slot/top"
+        }
+    },
+    "version": 8,
+    "label": "Womens / Slot / Top",
+    "status": "ACTIVE",
+    "createdBy": "9afdef5b-e35e-472a-8265-f37d29ff1154",
+    "createdDate": "2022-08-04T09:25:08.509Z",
+    "lastModifiedBy": "9afdef5b-e35e-472a-8265-f37d29ff1154",
+    "lastModifiedDate": "2022-08-04T09:38:23.005Z",
+    "lastPublishedVersion": 5,
+    "lastPublishedDate": "2022-08-04T10:00:09.491Z",
+    "deliveryId": "311b072e-555f-4dc4-b7c5-311c34d50f40"
+}

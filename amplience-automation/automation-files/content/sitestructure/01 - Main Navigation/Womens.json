@@ -29,7 +29,16 @@
             },
             "priority": 1
         },
-        "includeSFCC": true
+        "includeSFCC": true,
+        "topContent": [
+            {
+                "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference"
+                },
+                "contentType": "https://sfcc.com/slots/flexible-list",
+                "id": "311b072e-555f-4dc4-b7c5-311c34d50f40"
+            }
+        ]
     },
     "version": 8,
     "label": "Womens",
