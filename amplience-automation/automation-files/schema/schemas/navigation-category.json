@@ -79,7 +79,7 @@
         },
         "topContent": {
             "title": "Top Content Content",
-            "description":"he content / slots for the top of the page",
+            "description":"The content / slots for the top of the page",
             "type": "array",
             "minItems": 0,
             "maxItems": 10,
