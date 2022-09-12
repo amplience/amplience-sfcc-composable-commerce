@@ -38,6 +38,15 @@
                 "contentType": "https://sfcc.com/slots/flexible-list",
                 "id": "311b072e-555f-4dc4-b7c5-311c34d50f40"
             }
+        ],
+        "bottomContent": [
+            {
+                "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference"
+                },
+                "contentType": "https://sfcc.com/components/section",
+                "id": "c18343f7-61c4-4d4f-9ea4-be9286f6f6ab"
+            }
         ]
     },
     "version": 8,
