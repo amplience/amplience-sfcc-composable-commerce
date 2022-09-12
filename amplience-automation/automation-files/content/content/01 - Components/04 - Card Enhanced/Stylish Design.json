@@ -1,0 +1,137 @@
+{
+  "id": "3428271d-ae0f-4d3c-9174-8118be534cad",
+  "contentRepositoryId": "62f2da5bc9e77c0001ecfa57",
+  "folderId": "631b30b6c9e77c0001f8623a",
+  "body": {
+    "_meta": {
+      "name": "Stylish Design",
+      "schema": "https://sfcc.com/components/card-enhanced"
+    },
+    "image": {
+      "image": {
+        "crop": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "rot": 0,
+        "hue": 0,
+        "sat": 0,
+        "bri": 0,
+        "fliph": false,
+        "flipv": false,
+        "poi": {
+          "x": -1,
+          "y": -1
+        },
+        "aspectLock": "clear",
+        "image": {
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+          },
+          "id": "cb954567-d6ce-46d3-b4bc-d4512f02a6ad",
+          "name": "clem-onojeghuo-c4pbb7yNM2c-unsplash",
+          "endpoint": "sfcccompdev",
+          "defaultHost": "cdn.media.amplience.net"
+        }
+      },
+      "imageAltText": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "Stylish Design"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "Conception élégante"
+          },
+          {
+            "locale": "de-DE",
+            "value": "Stylistisches Aussehen"
+          },
+          {
+            "locale": "es-ES",
+            "value": "Diseño elegante"
+          },
+          {
+            "locale": "it-IT",
+            "value": "Design elegante"
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      }
+    },
+    "mainText": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Stylish Design"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Conception élégante"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Stylistisches Aussehen"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Diseño elegante"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Design elegante"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "subText": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Check our new Design collection"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Découvrez notre nouvelle collection Design"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Sehen Sie sich unsere neue Designkollektion an"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Consulta nuestra nueva colección de diseño"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Dai un'occhiata alla nostra nuova collezione di design"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "textAlignment": "right",
+    "verticalAlignment": "bottom",
+    "linkPosition": "withtext",
+    "blend": "normal",
+    "color": "rgb(0, 0, 0)"
+  },
+  "version": 2,
+  "label": "Stylish Design",
+  "status": "ACTIVE",
+  "createdBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
+  "createdDate": "2022-09-12T15:10:47.140Z",
+  "lastModifiedBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
+  "lastModifiedDate": "2022-09-12T15:10:54.613Z",
+  "lastPublishedVersion": 2,
+  "lastPublishedDate": "2022-09-12T16:40:45.162Z",
+  "deliveryId": "3428271d-ae0f-4d3c-9174-8118be534cad"
+}
