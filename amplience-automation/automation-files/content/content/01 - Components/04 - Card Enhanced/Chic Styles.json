@@ -1,0 +1,200 @@
+{
+  "id": "f5a40609-fc89-4266-9830-4ec38ce4dfed",
+  "contentRepositoryId": "62f2da5bc9e77c0001ecfa57",
+  "folderId": "631b30b6c9e77c0001f8623a",
+  "body": {
+    "_meta": {
+      "name": "Fashionable Loungewear",
+      "schema": "https://sfcc.com/components/card-enhanced"
+    },
+    "image": {
+      "image": {
+        "crop": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "rot": 0,
+        "hue": 0,
+        "sat": 0,
+        "bri": 0,
+        "fliph": false,
+        "flipv": false,
+        "poi": {
+          "x": 0.46917808219178087,
+          "y": 0.3972602739726027
+        },
+        "aspectLock": "poi",
+        "query": "poi=0.4692,0.3973,0,0&scaleFit=poi",
+        "image": {
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+          },
+          "id": "09a69d36-e458-48c1-b63f-459b25dcb619",
+          "name": "corey-saldana-pIKQbdSzF_k-unsplash",
+          "endpoint": "sfcccompdev",
+          "defaultHost": "cdn.media.amplience.net"
+        }
+      },
+      "imageAltText": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "Girl on street with accessories"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "Fille dans la rue avec accessoires"
+          },
+          {
+            "locale": "de-DE",
+            "value": "Mädchen auf der Straße mit Zubehör"
+          },
+          {
+            "locale": "es-ES",
+            "value": "Chica en la calle con accesorios."
+          },
+          {
+            "locale": "it-IT",
+            "value": "Ragazza in strada con accessori"
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      },
+      "seoText": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "Chic Styles & Pairings"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "Styles et accords chics"
+          },
+          {
+            "locale": "de-DE",
+            "value": "Schicke Styles & Pairings"
+          },
+          {
+            "locale": "es-ES",
+            "value": "Estilos chic y combinaciones"
+          },
+          {
+            "locale": "it-IT",
+            "value": "Stili e abbinamenti chic"
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      }
+    },
+    "mainText": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Chic Styles & Pairings"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Styles et accords chics"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Schicke Styles & Pairings"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Estilos chic y combinaciones"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Stili e abbinamenti chic"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "subText": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Complete your chic look with accessories to match"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Complétez votre look chic avec des accessoires assortis"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Vervollständigen Sie Ihren schicken Look mit passenden Accessoires"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Completa tu look chic con accesorios a juego"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Completa il tuo look chic con gli accessori da abbinare"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "textAlignment": "left",
+    "verticalAlignment": "bottom",
+    "linkPosition": "withtext",
+    "blend": "normal",
+    "links": [
+      {
+        "_meta": {
+          "schema": "https://sfcc.com/components/link"
+        },
+        "label": {
+          "values": [
+            {
+              "locale": "en-US",
+              "value": "View"
+            },
+            {
+              "locale": "fr-FR",
+              "value": "Voir"
+            },
+            {
+              "locale": "de-DE",
+              "value": "Aussicht"
+            },
+            {
+              "locale": "es-ES",
+              "value": "Vista"
+            },
+            {
+              "locale": "it-IT",
+              "value": "Visualizzazione"
+            }
+          ],
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+          }
+        },
+        "type": "URL",
+        "value": "/category/womens-accessories"
+      }
+    ]
+  },
+  "version": 2,
+  "label": "Chic Styles",
+  "status": "ACTIVE",
+  "createdBy": "b5b7704b-34ca-4424-a7dc-f6880734c30e",
+  "createdDate": "2022-09-12T16:54:15.531Z",
+  "lastModifiedBy": "b5b7704b-34ca-4424-a7dc-f6880734c30e",
+  "lastModifiedDate": "2022-09-12T16:58:47.593Z",
+  "lastPublishedVersion": 2,
+  "lastPublishedDate": "2022-09-12T17:04:15.651Z",
+  "deliveryId": "f5a40609-fc89-4266-9830-4ec38ce4dfed"
+}

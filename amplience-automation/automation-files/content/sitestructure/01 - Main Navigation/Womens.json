@@ -39,6 +39,68 @@
                 "id": "311b072e-555f-4dc4-b7c5-311c34d50f40"
             }
         ],
+        "gridItem": [
+            {
+                "position": 1,
+                "cols": "2",
+                "rows": "1",
+                "content": {
+                    "_meta": {
+                        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference"
+                    },
+                    "contentType": "https://sfcc.com/components/card-enhanced",
+                    "id": "bbe17cee-564e-46ee-a3a5-f912c37d2643"
+                }
+            },
+            {
+                "position": 10,
+                "cols": "2",
+                "rows": "2",
+                "content": {
+                    "_meta": {
+                        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference"
+                    },
+                    "contentType": "https://sfcc.com/components/card-enhanced",
+                    "id": "abfb6cdd-656f-4706-b0ea-5f9986a813fa"
+                }
+            },
+            {
+                "position": 20,
+                "cols": "1",
+                "rows": "2",
+                "content": {
+                    "_meta": {
+                        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference"
+                    },
+                    "contentType": "https://sfcc.com/components/card-enhanced",
+                    "id": "60ebf6e7-d821-4769-ab1a-49d0ef4dbba9"
+                }
+            },
+            {
+                "position": 28,
+                "cols": "1",
+                "rows": "2",
+                "content": {
+                    "_meta": {
+                        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference"
+                    },
+                    "contentType": "https://sfcc.com/components/card-enhanced",
+                    "id": "f5a40609-fc89-4266-9830-4ec38ce4dfed"
+                }
+            },
+            {
+                "position": 36,
+                "cols": "1",
+                "rows": "2",
+                "content": {
+                    "_meta": {
+                        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference"
+                    },
+                    "contentType": "https://sfcc.com/components/card-enhanced",
+                    "id": "a77a9289-e125-49f7-8fb7-9ab09cb9bdc3"
+                }
+            }
+        ],
         "bottomContent": [
             {
                 "_meta": {

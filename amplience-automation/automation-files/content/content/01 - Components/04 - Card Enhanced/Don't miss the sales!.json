@@ -1,0 +1,137 @@
+{
+  "id": "6511f76d-ce39-4bc7-8a96-b3526db81935",
+  "contentRepositoryId": "62f2da5bc9e77c0001ecfa57",
+  "folderId": "631b30b6c9e77c0001f8623a",
+  "body": {
+    "_meta": {
+      "name": "Don't miss the sales!",
+      "schema": "https://sfcc.com/components/card-enhanced"
+    },
+    "image": {
+      "image": {
+        "crop": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "rot": 0,
+        "hue": 0,
+        "sat": 0,
+        "bri": 0,
+        "fliph": false,
+        "flipv": false,
+        "poi": {
+          "x": -1,
+          "y": -1
+        },
+        "aspectLock": "clear",
+        "image": {
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+          },
+          "id": "cc54672f-a1c8-405d-b1d2-80fe85705106",
+          "name": "markus-spiske-BTKF6G-O8fU-unsplash",
+          "endpoint": "sfcccompdev",
+          "defaultHost": "cdn.media.amplience.net"
+        }
+      },
+      "imageAltText": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "Sales"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "Soldes"
+          },
+          {
+            "locale": "de-DE",
+            "value": "Verkauf"
+          },
+          {
+            "locale": "es-ES",
+            "value": "Ventas"
+          },
+          {
+            "locale": "it-IT",
+            "value": "I saldi"
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      }
+    },
+    "mainText": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Don't miss the sale!"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Ne manquez pas les soldes !"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Verpassen Sie nicht die Verkäufe!"
+        },
+        {
+          "locale": "es-ES",
+          "value": "¡No te pierdas las rebajas!"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Non perdere i saldi!"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "subText": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Here are the unmissable offers before possible out of stock"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Voici les offres immanquables avant de possibles rupture de stock"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Hier sind die unumgänglichen Angebote, bevor sie möglicherweise nicht auf Lager sind"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Aquí tienes las ofertas imperdibles antes de que se agoten las existencias"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Ecco le offerte imperdibili prima di possibili esaurimenti"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "textAlignment": "right",
+    "verticalAlignment": "bottom",
+    "linkPosition": "withtext",
+    "blend": "normal",
+    "color": "rgb(0, 0, 0)"
+  },
+  "version": 2,
+  "label": "Don't miss the sales!",
+  "status": "ACTIVE",
+  "createdBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
+  "createdDate": "2022-09-12T15:04:27.967Z",
+  "lastModifiedBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
+  "lastModifiedDate": "2022-09-12T15:06:30.969Z",
+  "lastPublishedVersion": 2,
+  "lastPublishedDate": "2022-09-12T16:40:51.724Z",
+  "deliveryId": "6511f76d-ce39-4bc7-8a96-b3526db81935"
+}

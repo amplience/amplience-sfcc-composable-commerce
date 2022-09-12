@@ -1,0 +1,198 @@
+{
+  "id": "6ae4a2f6-64c7-4c76-a569-58eb69325031",
+  "body": {
+    "_meta": {
+      "name": "Fall Fashions",
+      "schema": "https://sfcc.com/components/card-enhanced"
+    },
+    "image": {
+      "image": {
+        "crop": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "rot": 0,
+        "hue": 0,
+        "sat": 0,
+        "bri": 0,
+        "fliph": false,
+        "flipv": false,
+        "poi": {
+          "x": 0.44863013698630133,
+          "y": 0.2831050228310502
+        },
+        "aspectLock": "poi",
+        "image": {
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+          },
+          "id": "641ed084-04f9-4a62-b1b8-84d6bbf7629e",
+          "name": "pedram-normohamadian-M3-eH4_UNpQ-unsplash",
+          "endpoint": "nmrsaalphatest",
+          "defaultHost": "cdn.media.amplience.net"
+        },
+        "query": "poi=0.4486,0.2831,0,0&scaleFit=poi"
+      },
+      "imageAltText": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "man in jacket and jeans standing on road"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "homme en veste et jean debout sur la route"
+          },
+          {
+            "locale": "de-DE",
+            "value": "Mann in Jacke und Jeans steht auf Straße"
+          },
+          {
+            "locale": "es-ES",
+            "value": "hombre con chaqueta y jeans de pie en la carretera"
+          },
+          {
+            "locale": "it-IT",
+            "value": "uomo in giacca e jeans in piedi sulla strada"
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      },
+      "seoText": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "Fall Fashions"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "Mode automnale"
+          },
+          {
+            "locale": "de-DE",
+            "value": "Herbstmode"
+          },
+          {
+            "locale": "es-ES",
+            "value": "Modas de otoño"
+          },
+          {
+            "locale": "it-IT",
+            "value": "Moda autunnale"
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      }
+    },
+    "mainText": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Fall Fashions"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Mode automnale"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Herbstmode"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Modas de otoño"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Moda autunnale"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "subText": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Step out in comfort and fashion when the weather gets colder"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Sortez confortablement et à la mode lorsque le temps se refroidit"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Steigen Sie bequem und modisch aus, wenn das Wetter kälter wird"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Salga con comodidad y a la moda cuando hace más frío"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Esci all'insegna del comfort e della moda quando fa più freddo"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "links": [
+      {
+        "_meta": {
+          "schema": "https://sfcc.com/components/link"
+        },
+        "label": {
+          "values": [
+            {
+              "locale": "en-US",
+              "value": "Explore"
+            },
+            {
+              "locale": "fr-FR",
+              "value": "Explorez"
+            },
+            {
+              "locale": "de-DE",
+              "value": "Erkunden"
+            },
+            {
+              "locale": "es-ES",
+              "value": "Explorar"
+            },
+            {
+              "locale": "it-IT",
+              "value": "Esplora"
+            }
+          ],
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+          }
+        },
+        "type": "URL",
+        "value": "/"
+      }
+    ],
+    "textAlignment": "right",
+    "verticalAlignment": "middle",
+    "linkPosition": "withtext",
+    "blend": "normal"
+  },
+  "version": 2,
+  "label": "Fall Fashions",
+  "status": "ACTIVE",
+  "createdBy": "2f1f5720-8acc-43b5-9f67-bab73ba7524a",
+  "createdDate": "2022-09-12T18:08:53.718Z",
+  "lastModifiedBy": "df984790-5cf9-4b6e-96a0-3a0ea9475b64",
+  "lastModifiedDate": "2022-09-12T18:10:18.214Z",
+  "lastPublishedVersion": 1,
+  "lastPublishedDate": "2022-09-12T18:09:06.560Z",
+  "deliveryId": "6ae4a2f6-64c7-4c76-a569-58eb69325031"
+}
