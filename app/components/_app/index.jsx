@@ -444,7 +444,6 @@ App.getProps = async ({api, res, req, ampClient}) => {
 
     // Getting all tags for mapping
     const allTags = await ampClient.fetchTags({locale: targetLocale})
-    console.log("APP TAGS:" ,allTags)
 
     const [headerNav, footerNav] = await Promise.all(
         [headerKey, footerKey].map(async (key) =>
