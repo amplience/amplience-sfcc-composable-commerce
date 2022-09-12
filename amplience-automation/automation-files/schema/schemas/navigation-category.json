@@ -77,6 +77,29 @@
             "type": "boolean",
             "default": false
         },
+        "topContent": {
+            "title": "Top Content Content",
+            "description":"he content / slots for the top of the page",
+            "type": "array",
+            "minItems": 0,
+            "maxItems": 10,
+            "items": {
+                "title": "Top Content",
+                "description":"The content / slots for the top of the page",
+                "allOf": [
+                    {
+                        "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference"
+                    },
+                    {
+                        "properties": {
+                            "contentType": {
+                                "$ref": "https://sfcc.com/libs/all-definitions#/definitions/anyComponentPageAndSlot"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
         "gridItem": {
             "title": "In-Grid Content",
             "description": "Items to display in the grid",
@@ -90,6 +113,29 @@
                     }
                 ]
             }
+        },
+        "bottomContent": {
+            "title": "Bottom Content",
+            "description":"test",
+            "type": "array",
+            "minItems": 0,
+            "maxItems": 10,
+            "items": {
+                "title": "Bottom Content",
+                "description":"The content / slots for the bottom of the page",
+                "allOf": [
+                    {
+                        "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference"
+                    },
+                    {
+                        "properties": {
+                            "contentType": {
+                                "$ref": "https://sfcc.com/libs/all-definitions#/definitions/anyComponentPageAndSlot"
+                            }
+                        }
+                    }
+                ]
+            }
         }
     },
     "required": [
@@ -100,6 +146,8 @@
         "common",
         "_meta",
         "includeSFCC",
-        "gridItem"
+        "topContent",
+        "gridItem",
+        "bottomContent"
     ]
 }

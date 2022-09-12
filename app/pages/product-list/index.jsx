@@ -51,6 +51,7 @@ import PageHeader from './partials/page-header'
 
 // Amplience Components
 import AmplienceWrapper from '../../components/amplience/wrapper'
+import _ from 'lodash'
 
 // Icons
 import {FilterIcon, ChevronDownIcon} from '../../components/icons'
@@ -61,6 +62,7 @@ import {useToast} from '../../hooks/use-toast'
 import useWishlist from '../../hooks/use-wishlist'
 import {parse as parseSearchParams} from '../../hooks/use-search-params'
 import {useCategories} from '../../hooks/use-categories'
+import useMultiSite from '../../hooks/use-multi-site'
 
 // Others
 import {HTTPNotFound} from 'pwa-kit-react-sdk/ssr/universal/errors'
@@ -81,6 +83,7 @@ import {getTargetLocale} from '../../utils/locale'
 import {useMemo} from 'react'
 import {buildUrlSet} from '../../utils/url'
 import {useAmpRtv} from '../../utils/amplience/rtv'
+import { defaultAmpClient } from '../../amplience-api'
 
 // NOTE: You can ignore certain refinements on a template level by updating the below
 // list of ignored refinements.
@@ -219,15 +222,41 @@ const ProductList = (props) => {
 
     const [ampSlots, setAmpSlots] = useState(props.ampSlots)
     delete rest.ampSlots
+    const [ampTopContent, setAmpTopContent] = useState(props.ampTopContent)
+    const [ampBottomContent, setAmpBottomContent] = useState(props.ampTopContent)
 
-    useAmpRtv((model) => {
+    const {locale} = useMultiSite()
+
+    let childContentPromise
+
+    useAmpRtv(async(model) => {
         // handle form model change
-        setAmpSlots(model.content.gridItem)
+        setAmpSlots(model.content?.gridItem)
+        // As SSR for Top Content, needs to fetch content before setting the state
+        function getIdsForContent(item) {
+            return {id: item.id};
+        }
+        childContentPromise = (async () => {
+            if(!model.content.topContent) return [];
+            const topContentIDs = model.content?.topContent.map(getIdsForContent) || [];
+            if(topContentIDs && topContentIDs.length){
+                const rtvTopContent = await defaultAmpClient.fetchContent(topContentIDs, {locale: locale + ',*'})
+                return rtvTopContent
+            }else{
+                return []
+            }
+            
+        })();
+        const dataForTopContent = await childContentPromise
+        setAmpTopContent(dataForTopContent)
+        setAmpBottomContent(model.content.bottomContent)
     })
 
     useEffect(() => {
         setAmpSlots(props.ampSlots)
-    }, [props.ampSlots])
+        setAmpTopContent(props.ampTopContent)
+        setAmpBottomContent(props.ampBottomContent)
+    }, [props.ampSlots, props.ampTopContent, props.ampBottomContent])
 
     // Get the current category from global state.
     let category = undefined
@@ -410,7 +439,11 @@ const ProductList = (props) => {
             ) : (
                 <>
                     {/* Header */}
-
+                    {/* Amplience - Top Content SSR */}
+                    {
+                        ampTopContent &&
+                        _.compact(ampTopContent).map(content => <AmplienceWrapper content={content}></AmplienceWrapper>)
+                    }
                     <Stack
                         display={{base: 'none', lg: 'flex'}}
                         direction="row"
@@ -427,7 +460,6 @@ const ProductList = (props) => {
                                 isLoading={isLoading}
                             />
                         </Flex>
-
                         <Box flex={1} paddingTop={'45px'}>
                             <SelectedRefinements
                                 filters={productSearchResult?.refinements}
@@ -435,6 +467,7 @@ const ProductList = (props) => {
                                 selectedFilterValues={productSearchResult?.selectedRefinements}
                             />
                         </Box>
+                        
                         <Box paddingTop={'45px'}>
                             <Sort
                                 sortUrls={sortUrls}
@@ -509,7 +542,7 @@ const ProductList = (props) => {
                             />
                         </Box>
                     </HideOnDesktop>
-
+                    <div>2nd option fo Amplience Top Content</div>
                     {/* Body  */}
                     <Grid templateColumns={{base: '1fr', md: '280px 1fr'}} columnGap={6}>
                         <Stack display={{base: 'none', md: 'flex'}}>
@@ -615,6 +648,11 @@ const ProductList = (props) => {
                             </Flex>
                         </Box>
                     </Grid>
+                    {/* Amplience - Bottom Content CSR */}
+                    {
+                        ampBottomContent &&
+                        _.compact(ampBottomContent).map(content => <AmplienceWrapper fetch={{id: content.id}}></AmplienceWrapper>)
+                    }
                 </>
             )}
             <Modal
@@ -764,6 +802,25 @@ ProductList.getProps = async ({res, params, location, api, ampClient}) => {
         await ampClient.fetchContent([{key: `category/${categoryId}`}], {locale: targetLocale})
     ).pop()
 
+    const rawTopContent = ampCategory?.topContent || []
+    // For the top content, we will showcase SSR and will need to load all the content references
+    // Need to get all of the ID's for a fetch.
+    function getIdsForContent(item) {
+        return {id: item.id};
+    }
+    const topContentIDs = rawTopContent.map(getIdsForContent);
+    let ampTopContent = [];
+    if( topContentIDs && topContentIDs.length){
+        ampTopContent = await (
+            await ampClient.fetchContent(topContentIDs, {locale: targetLocale})
+        )
+    }
+
+    const ampBottomContent = ampCategory?.bottomContent || []
+    // For the bottom content, we will load client side - no need to fetch additional data
+
+    // This content may or may not have content for Top and Bottom page content. If content references exist, we should fetch the, too.
+
     let ampSlots = []
 
     if (ampCategory.type !== 'CONTENT_NOT_FOUND') {
@@ -806,7 +863,7 @@ ProductList.getProps = async ({res, params, location, api, ampClient}) => {
         throw new HTTPNotFound(category.detail)
     }
 
-    return {searchQuery: searchQuery, productSearchResult, ampSlots}
+    return {searchQuery: searchQuery, productSearchResult, ampSlots , ampTopContent:ampTopContent, ampBottomContent:ampBottomContent}
 }
 
 ProductList.propTypes = {
@@ -835,7 +892,12 @@ ProductList.propTypes = {
     /**
      * Amplience specific - in-grid content positions and ids.
      */
-    ampSlots: PropTypes.array
+    ampSlots: PropTypes.array,
+    /**
+     * Amplience specific - Top and bottom Slots.
+     */
+    ampTopContent: PropTypes.array,
+    ampBottomContent: PropTypes.array
 }
 
 export default ProductList

@@ -27,6 +27,15 @@
                 "https://sfcc.com/slots/flexible-list"
             ]
         },
+        "anyComponentPageAndSlot": {
+            "enum": [
+                "https://sfcc.com/components/hero",
+                "https://sfcc.com/components/section",
+                "https://sfcc.com/components/curated-product",
+                "https://sfcc.com/site/pages/content-page",
+                "https://sfcc.com/slots/flexible-list"
+            ]
+        },
         "diImage": {
             "properties": {
                 "image": {
