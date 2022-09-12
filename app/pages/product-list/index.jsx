@@ -243,7 +243,7 @@ const ProductList = (props) => {
 
     const {total, sortingOptions} = productSearchResult || {}
     const basePath = `${location.pathname}${location.search}`
-    const category = !searchQuery && params.categoryId ? categories[params.categoryId]: undefined;
+    const category = !searchQuery && params.categoryId ? categories[params.categoryId] : undefined
 
     const isMobile = useBreakpointValue({base: true, md: false})
     const sortUrls = useSortUrls({options: sortingOptions})
@@ -256,23 +256,29 @@ const ProductList = (props) => {
 
     const showNoResults = !isLoading && productSearchResult && !productSearchResult?.hits
 
-    useAmpRtv(async (model) => {
-        setAmpSlots(model.content?.gridItem)
+    useAmpRtv(
+        async (model) => {
+            setAmpSlots(model.content?.gridItem)
 
-        const childContentPromise = async () => {
-            if (!model.content.topContent) return []
-            const topContentIDs = model.content?.topContent.map(getIdsForContent) || []
-            if (topContentIDs && topContentIDs.length) {
-                const rtvTopContent = await defaultAmpClient.fetchContent(topContentIDs, {locale: locale + ',*'})
-                return rtvTopContent
-            } else {
-                return []
+            const childContentPromise = async () => {
+                if (!model.content.topContent) return []
+                const topContentIDs = model.content?.topContent.map(getIdsForContent) || []
+                if (topContentIDs && topContentIDs.length) {
+                    const rtvTopContent = await defaultAmpClient.fetchContent(topContentIDs, {
+                        locale: locale + ',*'
+                    })
+                    return rtvTopContent
+                } else {
+                    return []
+                }
             }
-        }
-        const dataForTopContent = await childContentPromise();
-        setAmpTopContent(dataForTopContent)
-        setAmpBottomContent(model.content.bottomContent)
-    }, undefined, [initialAmpSlots, initialAmpBottomContent, initialAmpTopContent])
+            const dataForTopContent = await childContentPromise()
+            setAmpTopContent(dataForTopContent)
+            setAmpBottomContent(model.content.bottomContent)
+        },
+        undefined,
+        [initialAmpSlots, initialAmpBottomContent, initialAmpTopContent]
+    )
 
     useEffect(() => {
         setAmpSlots(initialAmpSlots)
@@ -302,7 +308,6 @@ const ProductList = (props) => {
             const searchParamsCopy = {...searchParams, offset: pageOffsets[pageId]}
             navigate(`/category/${params.categoryId}?${stringifySearchParams(searchParamsCopy)}`)
         }
-
     }, [isMobile, searchParams.offset])
 
     // TODO: DRY this handler when intl provider is available globally
@@ -385,11 +390,18 @@ const ProductList = (props) => {
         navigate(window.location.pathname)
     }
 
-    const selectedSortingOptionLabel = productSearchResult?.sortingOptions?.find(
-        (option) => option.id === productSearchResult?.selectedSortingOption
-    ) || productSearchResult?.sortingOptions?.[0]
+    const selectedSortingOptionLabel =
+        productSearchResult?.sortingOptions?.find(
+            (option) => option.id === productSearchResult?.selectedSortingOption
+        ) || productSearchResult?.sortingOptions?.[0]
 
-    const results = enrichResults(productSearchResult, searchParams.limit, ampSlots, pageOffsets, isMobile)
+    const results = enrichResults(
+        productSearchResult,
+        searchParams.limit,
+        ampSlots,
+        pageOffsets,
+        isMobile
+    )
 
     return (
         <Box
@@ -410,10 +422,10 @@ const ProductList = (props) => {
                 <>
                     {/* Header */}
                     {/* Amplience - Top Content SSR */}
-                    {
-                        ampTopContent &&
-                        _.compact(ampTopContent).map((content, ind) => <AmplienceWrapper key={ind} content={content}></AmplienceWrapper>)
-                    }
+                    {ampTopContent &&
+                        _.compact(ampTopContent).map((content, ind) => (
+                            <AmplienceWrapper key={ind} content={content}></AmplienceWrapper>
+                        ))}
                     <Stack
                         display={{base: 'none', lg: 'flex'}}
                         direction="row"
@@ -530,74 +542,68 @@ const ProductList = (props) => {
                             >
                                 {isLoading || !productSearchResult
                                     ? new Array(searchParams.limit)
-                                        .fill(0)
-                                        .map((value, index) => (
-                                            <ProductTileSkeleton key={index} />
-                                        ))
+                                          .fill(0)
+                                          .map((value, index) => (
+                                              <ProductTileSkeleton key={index} />
+                                          ))
                                     : results.map((item, index) => {
-                                        if (item.isAmplience) {
-                                            // Amplience content tile
+                                          if (item.isAmplience) {
+                                              // Amplience content tile
 
-                                            return (
-                                                <GridItem
-                                                    key={index}
-                                                    colEnd={{
-                                                        base: `span 1`,
-                                                        md: `span ${item.cols}`
-                                                    }}
-                                                    rowEnd={{
-                                                        base: `span 1`,
-                                                        md: `span ${item.rows}`
-                                                    }}
-                                                    display="flex"
-                                                >
-                                                    <AmplienceWrapper
-                                                        fetch={{id: item.content?.id}}
-                                                        components={inGridComponents}
-                                                        cols={useBreakpointValue({
-                                                            base: 1,
-                                                            md: item.cols
-                                                        })}
-                                                        rows={useBreakpointValue({
-                                                            base: 1,
-                                                            md: item.rows
-                                                        })}
-                                                    ></AmplienceWrapper>
-                                                </GridItem>
-                                            )
-                                        } else {
-                                            const productSearchItem = item
-                                            const productId = productSearchItem.productId
-                                            const isInWishlist = !!wishlist.findItemByProductId(
-                                                productId
-                                            )
+                                              return (
+                                                  <GridItem
+                                                      key={index}
+                                                      colEnd={{
+                                                          base: `span 1`,
+                                                          md: `span ${item.cols}`
+                                                      }}
+                                                      rowEnd={{
+                                                          base: `span 1`,
+                                                          md: `span ${item.rows}`
+                                                      }}
+                                                      display="flex"
+                                                  >
+                                                      <AmplienceWrapper
+                                                          fetch={{id: item.content?.id}}
+                                                          components={inGridComponents}
+                                                          cols={isMobile ? 1 : item.cols}
+                                                          rows={isMobile ? 1 : item.rows}
+                                                      ></AmplienceWrapper>
+                                                  </GridItem>
+                                              )
+                                          } else {
+                                              const productSearchItem = item
+                                              const productId = productSearchItem.productId
+                                              const isInWishlist = !!wishlist.findItemByProductId(
+                                                  productId
+                                              )
 
-                                            return (
-                                                <ProductTile
-                                                    data-testid={`sf-product-tile-${productSearchItem.productId}`}
-                                                    key={productSearchItem.productId}
-                                                    product={productSearchItem}
-                                                    enableFavourite={true}
-                                                    isFavourite={isInWishlist}
-                                                    onFavouriteToggle={(isFavourite) => {
-                                                        const action = isFavourite
-                                                            ? addItemToWishlist
-                                                            : removeItemFromWishlist
-                                                        return action(productSearchItem)
-                                                    }}
-                                                    dynamicImageProps={{
-                                                        widths: [
-                                                            '50vw',
-                                                            '50vw',
-                                                            '20vw',
-                                                            '20vw',
-                                                            '25vw'
-                                                        ]
-                                                    }}
-                                                />
-                                            )
-                                        }
-                                    })}
+                                              return (
+                                                  <ProductTile
+                                                      data-testid={`sf-product-tile-${productSearchItem.productId}`}
+                                                      key={productSearchItem.productId}
+                                                      product={productSearchItem}
+                                                      enableFavourite={true}
+                                                      isFavourite={isInWishlist}
+                                                      onFavouriteToggle={(isFavourite) => {
+                                                          const action = isFavourite
+                                                              ? addItemToWishlist
+                                                              : removeItemFromWishlist
+                                                          return action(productSearchItem)
+                                                      }}
+                                                      dynamicImageProps={{
+                                                          widths: [
+                                                              '50vw',
+                                                              '50vw',
+                                                              '20vw',
+                                                              '20vw',
+                                                              '25vw'
+                                                          ]
+                                                      }}
+                                                  />
+                                              )
+                                          }
+                                      })}
                             </SimpleGrid>
                             {/* Footer */}
                             <Flex
@@ -626,13 +632,12 @@ const ProductList = (props) => {
                             </Flex>
                         </Box>
                     </Grid>
-                    <Spacer height={6}/>
+                    <Spacer height={6} />
                     {/* Amplience - Bottom Content CSR */}
-                    {
-                        ampBottomContent &&
-                        _.compact(ampBottomContent).map((content, ind) => <AmplienceWrapper key={ind}
-                            fetch={{id: content.id}}></AmplienceWrapper>)
-                    }
+                    {ampBottomContent &&
+                        _.compact(ampBottomContent).map((content, ind) => (
+                            <AmplienceWrapper key={ind} fetch={{id: content.id}}></AmplienceWrapper>
+                        ))}
                 </>
             )}
             <Modal
@@ -729,7 +734,7 @@ const ProductList = (props) => {
                                 <Text
                                     as={
                                         selectedSortingOptionLabel?.label ===
-                                        productSearchResult?.sortingOptions[idx]?.label && 'u'
+                                            productSearchResult?.sortingOptions[idx]?.label && 'u'
                                     }
                                 >
                                     {productSearchResult?.sortingOptions[idx]?.label}
@@ -780,11 +785,14 @@ ProductList.getProps = async ({res, params, location, api, ampClient}) => {
     })
 
     // Try fetch grid slots for this category from Amplience.
-    const ampCategory = (await ampClient.fetchContent([{key: `category/${categoryId}`}], {locale: targetLocale})).pop()
+    const ampCategory = (
+        await ampClient.fetchContent([{key: `category/${categoryId}`}], {locale: targetLocale})
+    ).pop()
 
     const rawTopContent = ampCategory?.topContent || []
-    const ids = rawTopContent.map(getIdsForContent);
-    const ampTopContent = ids && ids.length ? await ampClient.fetchContent(ids, {locale: targetLocale}) : [];
+    const ids = rawTopContent.map(getIdsForContent)
+    const ampTopContent =
+        ids && ids.length ? await ampClient.fetchContent(ids, {locale: targetLocale}) : []
 
     let ampSlots = []
 
@@ -804,8 +812,8 @@ ProductList.getProps = async ({res, params, location, api, ampClient}) => {
         isSearch
             ? Promise.resolve()
             : api.shopperProducts.getCategory({
-                parameters: {id: categoryId, levels: 0}
-            }),
+                  parameters: {id: categoryId, levels: 0}
+              }),
         api.shopperSearch.productSearch({
             parameters: searchParams
         })
@@ -822,7 +830,13 @@ ProductList.getProps = async ({res, params, location, api, ampClient}) => {
         throw new HTTPNotFound(category.detail)
     }
 
-    return {searchQuery, productSearchResult, ampSlots, ampTopContent, ampBottomContent: ampCategory?.bottomContent || []}
+    return {
+        searchQuery,
+        productSearchResult,
+        ampSlots,
+        ampTopContent,
+        ampBottomContent: ampCategory?.bottomContent || []
+    }
 }
 
 ProductList.propTypes = {
@@ -855,8 +869,8 @@ ProductList.propTypes = {
     /**
      * Amplience specific - Top and bottom Slots.
      */
-    initialAmpTopContent: PropTypes.array,
-    initiaAmpBottomContent: PropTypes.array
+    ampTopContent: PropTypes.array,
+    ampBottomContent: PropTypes.array
 }
 
 export default ProductList
