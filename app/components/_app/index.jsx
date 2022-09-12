@@ -83,6 +83,7 @@ const App = (props) => {
 
     const [headerNav, setHeaderNav] = useState(props.headerNav)
     const [footerNav, setFooterNav] = useState(props.footerNav)
+    const [allTags,setAllTags] = useState(props.allTags)
 
     const configValues = {
         locale: locale.alias || locale.id,
@@ -223,7 +224,7 @@ const App = (props) => {
             >
                 <CategoriesProvider categories={allCategories}>
                     <CurrencyProvider currency={currency}>
-                        <AmplienceContextProvider {...vseProps}>
+                        <AmplienceContextProvider allTags={allTags} {...vseProps}>
                             {showVse && <PreviewHeader {...vseProps} />}
                             <RealtimeVisualization.Provider value={{ampVizSdk, status}}>
                                 <Seo>
@@ -441,6 +442,10 @@ App.getProps = async ({api, res, req, ampClient}) => {
         }
     }
 
+    // Getting all tags for mapping
+    const allTags = await ampClient.fetchTags({locale: targetLocale})
+    console.log("APP TAGS:" ,allTags)
+
     const [headerNav, footerNav] = await Promise.all(
         [headerKey, footerKey].map(async (key) =>
             enrichNavigation(
@@ -458,7 +463,8 @@ App.getProps = async ({api, res, req, ampClient}) => {
         config: res?.locals?.config,
         vseProps,
         headerNav,
-        footerNav
+        footerNav,
+        allTags
     }
 }
 
@@ -470,7 +476,8 @@ App.propTypes = {
     config: PropTypes.object,
     vseProps: PropTypes.object,
     headerNav: PropTypes.object,
-    footerNav: PropTypes.object
+    footerNav: PropTypes.object,
+    tags: PropTypes.any
 }
 
 export default App

@@ -38,14 +38,14 @@ import { useIntl, FormattedMessage } from 'react-intl'
  * The page renders SEO metadata and a few promotion
  * categories and products, data is from local file.
  */
-const BlogLanding = ({allTags = []}) => {
+const BlogLanding = () => {
     const locale = useLocale()
     const intl = useIntl()
     const siteLocale = locale.id.toLowerCase()
 
     const {vse} = useContext(AmplienceContext)
+    const {allTags} = useContext(AmplienceContext)
     const {categories} = useCategories()
-
     const [results, setResults] = useState([])
     const [query, setQuery] = useState('')
     const [authors, setAuthors] = useState([])
@@ -77,7 +77,7 @@ const BlogLanding = ({allTags = []}) => {
             let myLabel = property
             if (isCategory) {
                 myLabel = categories[property]?.name || property
-            } else if (allTags && isTag) {
+            } else if (isTag) {
                 const tag = allTags.filter(item => item.content._meta.deliveryKey == property)
                 myLabel = tag[0]?.content?.name || property
             }
@@ -316,32 +316,5 @@ const BlogLanding = ({allTags = []}) => {
 }
 
 BlogLanding.getTemplateName = () => 'bloglanding'
-
-BlogLanding.shouldGetProps = ({previousLocation, location}) => 
-    !previousLocation || previousLocation.pathname !== location.pathname
-
-BlogLanding.getProps = async ({req, res, location, api, ampClient}) => {
-    const site = resolveSiteFromUrl(location.pathname)
-    const l10nConfig = site.l10n
-    const targetLocale = getTargetLocale({
-        getUserPreferredLocales: () => {
-            const {locale} = api.getConfig()
-            return [locale]
-        },
-        l10nConfig
-    })
-
-    let client = ampClient
-
-    const allTags = await client.fetchTags({locale: targetLocale})
-
-    return {
-        allTags
-    }
-}
-
-BlogLanding.propTypes = {
-    allTags: PropTypes.any
-}
 
 export default BlogLanding

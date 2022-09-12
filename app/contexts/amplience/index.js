@@ -66,15 +66,15 @@ RealtimeVisualizationProvider.propTypes = {
 
 export const AmplienceContext = React.createContext()
 
-export const AmplienceContextProvider = ({vse, vseTimestamp, children}) => {
+export const AmplienceContextProvider = ({vse, vseTimestamp, children, allTags}) => {
     // Init client using VSE
     const [client] = useState(new AmplienceAPI())
-
+    
     // Switch the API to use the provided VSE, if present.
     client.setVse(vse)
 
     return (
-        <AmplienceContext.Provider value={{vse, vseTimestamp, client}}>
+        <AmplienceContext.Provider value={{vse, vseTimestamp, client, allTags}}>
             {children}
         </AmplienceContext.Provider>
     )
@@ -113,6 +113,6 @@ export const generateVseProps = ({req, res, query}) => {
 AmplienceContextProvider.propTypes = {
     vse: PropTypes.string,
     vseTimestamp: PropTypes.number,
-
+    allTags: PropTypes.any,
     children: PropTypes.node.isRequired
 }
