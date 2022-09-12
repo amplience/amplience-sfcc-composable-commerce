@@ -28,7 +28,7 @@ const componentsMapping = {
     'https://sfcc.com/site/navigation/group': Blank
 }
 
-const AmplienceWrapper = ({fetch, content, components}) => {
+const AmplienceWrapper = ({fetch, content, components, ...rest}) => {
     const {client} = useContext(AmplienceContext)
     const [fetchedContent, setFetchedContent] = useState(content)
     const {locale} = useIntl()
@@ -54,7 +54,11 @@ const AmplienceWrapper = ({fetch, content, components}) => {
     }, [fetch, content])
 
     const Component = mapping[fetchedContent?._meta?.schema]
-    return Component ? <Component {...fetchedContent} /> : <>{JSON.stringify(fetchedContent)}</>
+    return Component ? (
+        <Component {...fetchedContent} {...rest} />
+    ) : (
+        <>{JSON.stringify(fetchedContent)}</>
+    )
 }
 
 AmplienceWrapper.displayName = 'Amplience Wrapper Block'

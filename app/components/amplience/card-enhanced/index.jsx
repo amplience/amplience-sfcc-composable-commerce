@@ -88,9 +88,6 @@ const CardEnhanced = ({
             ratio =
                 cols === rows ? w / r + ':' + h / r : (w / cols) * cols + ':' + (h / rows) * rows
             setRatio(ratio)
-            /* console.log('grid Width:', width)
-            console.log('grid height:', height)
-            console.log('ratio:', ratio) */
         }
     })
 
@@ -99,22 +96,22 @@ const CardEnhanced = ({
     const cardtransformations =
         cols && rows
             ? {
-                  ...img?.image,
-                  upscale: true,
-                  strip: true,
-                  quality: 80,
-                  width: width * cols,
-                  height: height * rows,
-                  aspectRatio: ratio,
-                  scaleMode: 'c',
-                  scaleFit:
-                      !image?.disablePoiAspectRatio &&
-                      img?.image?.poi &&
-                      img?.image?.poi.x != -1 &&
-                      img?.image?.poi.y != -1
-                          ? 'poi'
-                          : undefined
-              }
+                ...img?.image,
+                upscale: true,
+                strip: true,
+                quality: 80,
+                width: width * cols,
+                height: height * rows,
+                aspectRatio: ratio,
+                scaleMode: 'c',
+                scaleFit:
+                    !image?.disablePoiAspectRatio &&
+                    img?.image?.poi &&
+                    img?.image?.poi.x != -1 &&
+                    img?.image?.poi.y != -1
+                        ? 'poi'
+                        : undefined
+            }
             : {...img.image}
 
     const content = (
@@ -187,7 +184,7 @@ const CardEnhanced = ({
     )
 
     return links[0] ? (
-        <Skeleton isLoaded={!imageLoading}>
+        <Skeleton isLoaded={!imageLoading} sx={{width: '100%', height: '100%'}}>
             <Contain
                 ref={parentRef}
                 className={`amp-tile amp-tile-${index + 1}`}
@@ -197,7 +194,7 @@ const CardEnhanced = ({
             </Contain>
         </Skeleton>
     ) : (
-        <Skeleton isLoaded={!imageLoading}>
+        <Skeleton isLoaded={!imageLoading} sx={{width: '100%', height: '100%'}}>
             <Contain ref={parentRef} className={`amp-tile amp-tile-${index + 1}`}>
                 {content}
             </Contain>
@@ -257,7 +254,8 @@ CardEnhanced.propTypes = {
     textAlignment: PropTypes.string,
     verticalAlignment: PropTypes.string,
     cols: PropTypes.number,
-    rows: PropTypes.number
+    rows: PropTypes.number,
+    rest: PropTypes.object
 }
 
 export default CardEnhanced

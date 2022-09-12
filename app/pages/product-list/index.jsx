@@ -555,6 +555,14 @@ const ProductList = (props) => {
                                                     <AmplienceWrapper
                                                         fetch={{id: item.content?.id}}
                                                         components={inGridComponents}
+                                                        cols={useBreakpointValue({
+                                                            base: 1,
+                                                            md: item.cols
+                                                        })}
+                                                        rows={useBreakpointValue({
+                                                            base: 1,
+                                                            md: item.rows
+                                                        })}
                                                     ></AmplienceWrapper>
                                                 </GridItem>
                                             )
