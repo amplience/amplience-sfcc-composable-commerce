@@ -143,9 +143,8 @@ const calculatePageOffsets = (pageSize, totalCount, ampSlots, isMobile) => {
     return pages
 }
 
-const enrichResults = (productSearchResults, ampSlots, pages, isMobile) => {
+const enrichResults = (productSearchResults, pageSize, ampSlots, pages, isMobile) => {
     if (productSearchResults?.hits) {
-        const pageSize = productSearchResults.limit
         const offset = productSearchResults.offset
         const total = productSearchResults.total
 
@@ -390,7 +389,7 @@ const ProductList = (props) => {
         (option) => option.id === productSearchResult?.selectedSortingOption
     ) || productSearchResult?.sortingOptions?.[0]
 
-    const results = enrichResults(productSearchResult, ampSlots, pageOffsets, isMobile)
+    const results = enrichResults(productSearchResult, searchParams.limit, ampSlots, pageOffsets, isMobile)
 
     return (
         <Box
