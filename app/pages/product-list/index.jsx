@@ -542,7 +542,6 @@ const ProductList = (props) => {
                             />
                         </Box>
                     </HideOnDesktop>
-                    <div>2nd option fo Amplience Top Content</div>
                     {/* Body  */}
                     <Grid templateColumns={{base: '1fr', md: '280px 1fr'}} columnGap={6}>
                         <Stack display={{base: 'none', md: 'flex'}}>
