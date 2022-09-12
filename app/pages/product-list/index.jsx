@@ -212,6 +212,8 @@ const ProductList = (props) => {
         staticContext,
         location,
         isLoading,
+        ampTopContent: initialAmpTopContent,
+        ampBottomContent: initialAmpBottomContent,
         ...rest
     } = props
     const {total, sortingOptions} = productSearchResult || {}
@@ -227,8 +229,8 @@ const ProductList = (props) => {
 
     const [ampSlots, setAmpSlots] = useState(props.ampSlots)
     delete rest.ampSlots
-    const [ampTopContent, setAmpTopContent] = useState(props.ampTopContent)
-    const [ampBottomContent, setAmpBottomContent] = useState(props.ampTopContent)
+    const [ampTopContent, setAmpTopContent] = useState(props.initialAmpTopContent)
+    const [ampBottomContent, setAmpBottomContent] = useState(props.initialAmpBottomContent)
 
     const {locale} = useMultiSite()
 
@@ -901,8 +903,8 @@ ProductList.propTypes = {
     /**
      * Amplience specific - Top and bottom Slots.
      */
-    ampTopContent: PropTypes.array,
-    ampBottomContent: PropTypes.array
+    initialAmpTopContent: PropTypes.array,
+    initiaAmpBottomContent: PropTypes.array
 }
 
 export default ProductList
