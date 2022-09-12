@@ -188,7 +188,8 @@ export const importHandler = async (context: Arguments<Context>): Promise<any> =
             `npx dc-cli content-item import ${context.tempDir}/content/content \
                 --baseRepo ${context.contentRepoId} \
                 --media true \
-                --publish true \
+                --publish \
+                --batchPublish \
                 --mapFile ${mappingFile}`,
             {stdio: 'inherit'}
         )
@@ -198,6 +199,7 @@ export const importHandler = async (context: Arguments<Context>): Promise<any> =
             `npx dc-cli content-item import ${context.tempDir}/content/slots \
                 --baseRepo ${context.slotsRepoId} \
                 --publish \
+                --batchPublish \
                 --mapFile ${mappingFile}`, 
             {stdio: 'inherit'}
         )
@@ -208,7 +210,8 @@ export const importHandler = async (context: Arguments<Context>): Promise<any> =
                 ${context.tempDir}/content/sitestructure \
                 --baseRepo ${context.sitestructureRepoId} \
                 --media true \
-                --publish true \
+                --publish \
+                --batchPublish \
                 --mapFile ${mappingFile}`, 
             {stdio: 'inherit'}
         )
