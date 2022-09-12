@@ -1,3 +1,10 @@
+/*
+ * Copyright (c) 2021, salesforce.com, inc.
+ * All rights reserved.
+ * SPDX-License-Identifier: BSD-3-Clause
+ * For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
+ */
+
 import React from 'react'
 import PropTypes from 'prop-types'
 import {Box, Flex, Heading, Stack, Image} from '@chakra-ui/react'
@@ -14,30 +21,45 @@ const GridItemHero = ({title, img, actions, ...props}) => {
 
     return (
         <Box
-            marginBottom={{base: 0}}
-            height={{lg: 'xs'}}
+            marginBottom={{base: 0, md: 10}}
+            height={{lg: 'xl'}}
             position={{lg: 'relative'}}
             {...props}
         >
             <Stack
                 align={'center'}
-                spacing={{base: 2}}
-                paddingTop={{base: 4}}
-                paddingBottom={{base: 2}}
-                direction={{base: 'column'}}
+                spacing={{base: 8, md: 10}}
+                paddingTop={{base: 12, md: 10}}
+                paddingBottom={{base: 6, md: 10}}
+                direction={{base: 'column', lg: 'row'}}
             >
-                {
+                <Stack flex={1} spacing={{base: 5, md: 8}}>
+                    <Heading
+                        as="h1"
+                        fontSize={{base: '4xl', md: '5xl', lg: '6xl'}}
+                        maxWidth={{base: '75%', md: '50%', lg: 'md'}}
+                    >
+                        {title}
+                    </Heading>
 
-                    src &&
+                    {actions && (
+                        <Box width={{base: 'full', lg: 'inherit'}}>
+                            {actions.map((props, ind) => (
+                                <Button key={ind} label={props.label} url={props.url}></Button>
+                            ))}
+                        </Box>
+                    )}
+                </Stack>
+                {src && (
                     <Flex
                         flex={1}
                         justify={'center'}
                         align={'center'}
                         position={'relative'}
                         width={'full'}
-                        paddingTop={{base: 2}}
+                        paddingTop={{base: 4, lg: 0}}
                     >
-                        <Box position={'relative'}>
+                        <Box position={'relative'} width={{base: 'full', md: '80%', lg: 'full'}}>
                             <Image
                                 fit={'cover'}
                                 align={'center'}
@@ -47,22 +69,14 @@ const GridItemHero = ({title, img, actions, ...props}) => {
                                 alt={alt}
                             />
                         </Box>
-                        {actions && (
-                            <Box position={'absolute'}>
-                                <Button
-                                    label={actions[0].label}
-                                    url={actions[0].url}>
-                                </Button>
-                            </Box>
-                        )}
                     </Flex>
-                }
+                )}
             </Stack>
         </Box>
     )
 }
 
-GridItemHero.displayName = 'NavigationHero'
+GridItemHero.displayName = 'GridItemHero'
 
 GridItemHero.propTypes = {
     /**
@@ -80,7 +94,6 @@ GridItemHero.propTypes = {
     /**
      * Hero component main title
      */
-    // title: PropTypes.string,
     title: PropTypes.string,
     /**
      * Call to action component(s)
@@ -90,7 +103,15 @@ GridItemHero.propTypes = {
             label: PropTypes.string,
             url: PropTypes.string
         })
-    )
+    ),
+    /**
+     * Hero button label
+     */
+    label: PropTypes.string,
+    /**
+     * Hero button url
+     */
+    url: PropTypes.string
 }
 
 export default GridItemHero
