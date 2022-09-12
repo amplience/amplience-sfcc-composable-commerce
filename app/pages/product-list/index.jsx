@@ -84,6 +84,11 @@ import {useMemo} from 'react'
 import {buildUrlSet} from '../../utils/url'
 import {useAmpRtv} from '../../utils/amplience/rtv'
 import { defaultAmpClient } from '../../amplience-api'
+import GridItemHero from '../../components/amplience/hero/gridItemHero'
+
+const inGridComponents = {
+    'https://sfcc.com/components/hero': GridItemHero
+}
 
 // NOTE: You can ignore certain refinements on a template level by updating the below
 // list of ignored refinements.
@@ -583,6 +588,7 @@ const ProductList = (props) => {
                                                   >
                                                       <AmplienceWrapper
                                                           fetch={{id: item.content?.id}}
+                                                          components={inGridComponents}
                                                       ></AmplienceWrapper>
                                                   </GridItem>
                                               )
