@@ -534,13 +534,13 @@ const ProductList = (props) => {
                                         .map((value, index) => (
                                             <ProductTileSkeleton key={index} />
                                         ))
-                                    : results.map((item) => {
+                                    : results.map((item, index) => {
                                         if (item.isAmplience) {
                                             // Amplience content tile
 
                                             return (
                                                 <GridItem
-                                                    key={item.content?.id}
+                                                    key={index}
                                                     colEnd={{
                                                         base: `span 1`,
                                                         md: `span ${item.cols}`
