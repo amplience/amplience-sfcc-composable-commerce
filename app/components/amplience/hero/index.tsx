@@ -7,11 +7,22 @@
 
 import React from 'react'
 import PropTypes from 'prop-types'
-import {Box, Flex, Heading, Stack, Image} from '@chakra-ui/react'
+import {Box, Flex, Heading, Stack, Image, useMultiStyleConfig} from '@chakra-ui/react'
 import Button from '../button'
 import {getImageUrl} from '../../../utils/amplience/image'
 
-const Hero = ({title, img, actions, ...props}) => {
+const Hero = ({
+                  title,
+                  img,
+                  actions,
+                  textAlign = 'Left',
+                  justifyContent = 'Left',
+                  alignItems = 'Center',
+                  fullWidth = false,
+                  variant,
+                  ...props
+              }) => {
+    const styles = useMultiStyleConfig('Hero', {variant: variant || (fullWidth && 'full')})
     let src = ''
     let alt = ''
     if (img) {
@@ -21,29 +32,27 @@ const Hero = ({title, img, actions, ...props}) => {
 
     return (
         <Box
-            marginBottom={{base: 0, md: 10}}
-            height={{lg: 'xl'}}
-            position={{lg: 'relative'}}
+            {...styles.container}
             {...props}
         >
             <Stack
-                align={'center'}
-                spacing={{base: 8, md: 10}}
-                paddingTop={{base: 12, md: 10}}
-                paddingBottom={{base: 6, md: 10}}
-                direction={{base: 'column', lg: 'row'}}
+                {...styles.stackContainer}
+                justifyContent={justifyContent.toLowerCase()}
+                alignItems={alignItems.toLowerCase()}
             >
-                <Stack flex={1} spacing={{base: 5, md: 8}}>
+                <Stack {...styles.textContainer} textAlign={{base: 'center', lg: textAlign.toLowerCase()}}
+                       position={fullWidth ? 'absolute' : ''}>
                     <Heading
                         as="h1"
                         fontSize={{base: '4xl', md: '5xl', lg: '6xl'}}
-                        maxWidth={{base: '75%', md: '50%', lg: 'md'}}
+                        maxWidth={{base: 'full', md: '75%'}}
+                        {...styles.heading}
                     >
                         {title}
                     </Heading>
 
                     {actions && (
-                        <Box width={{base: 'full', lg: 'inherit'}}>
+                        <Box maxWidth={{base: 'full', md: '75%'}}>
                             {actions.map((props, ind) => (
                                 <Button key={ind} label={props.label} url={props.url}></Button>
                             ))}
@@ -52,14 +61,9 @@ const Hero = ({title, img, actions, ...props}) => {
                 </Stack>
                 {src && (
                     <Flex
-                        flex={1}
-                        justify={'center'}
-                        align={'center'}
-                        position={'relative'}
-                        width={'full'}
-                        paddingTop={{base: 4, lg: 0}}
+                        {...styles.imageContainer}
                     >
-                        <Box position={'relative'} width={{base: 'full', md: '80%', lg: 'full'}}>
+                        <Box position={'relative'} width={'full'}>
                             <Image
                                 fit={'cover'}
                                 align={'center'}
