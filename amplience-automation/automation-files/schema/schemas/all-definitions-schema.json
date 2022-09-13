@@ -186,7 +186,7 @@
             "properties": {
                 "position": {
                     "title": "Grid Position",
-                    "description": "Where in the listing grid the item will be placed. You cannot have grid items in the same position of overlapping their size in cols / rows",
+                    "description": "Grid item placement. No duplicate or overlap",
                     "type": "number",
                     "minimum": 0,
                     "default": 0
