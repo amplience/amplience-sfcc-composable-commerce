@@ -81,6 +81,7 @@ const Home = ({productSearchResult, isLoading, homeSlotTop}) => {
                 position={{base: 'relative', md: 'inherit'}}
                 left={{base: '50%', md: 'inherit'}}
                 right={{base: '50%', md: 'inherit'}}
+                marginTop="8"
                 marginLeft={{base: '-50vw', md: 'auto'}}
                 marginRight={{base: '-50vw', md: 'auto'}}
             >
