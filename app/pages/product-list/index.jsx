@@ -141,7 +141,7 @@ const calculatePageOffsets = (pageSize, totalCount, ampSlots, isMobile) => {
 
             fillPages(slot.position)
 
-            const size = isMobile ? 1 : Number(slot.cols) * Number(slot.rows)
+            const size = isMobile ? 1 : Number(slot?.cols || 1) * Number(slot?.rows || 1)
 
             skipContent(size)
         }
@@ -182,7 +182,7 @@ const enrichResults = (productSearchResults, pageSize, ampSlots, pages, isMobile
                 }
 
                 // Place content up to the given slot.
-                const size = isMobile ? 1 : Number(slot.rows) * Number(slot.cols)
+                const size = isMobile ? 1 : Number(slot?.rows || 1) * Number(slot?.cols || 1)
                 const index = pos - pageBase - reservedSpaces
 
                 slot.isAmplience = true
@@ -567,19 +567,19 @@ const ProductList = (props) => {
                                                       key={index}
                                                       colEnd={{
                                                           base: `span 1`,
-                                                          md: `span ${item.cols}`
+                                                          md: `span ${item?.cols || 1}`
                                                       }}
                                                       rowEnd={{
                                                           base: `span 1`,
-                                                          md: `span ${item.rows}`
+                                                          md: `span ${item?.rows || 1}`
                                                       }}
                                                       display="flex"
                                                   >
                                                       <AmplienceWrapper
                                                           fetch={{id: item.content?.id}}
                                                           components={inGridComponents}
-                                                          cols={isMobile ? 1 : item.cols}
-                                                          rows={isMobile ? 1 : item.rows}
+                                                          cols={isMobile ? 1 : item?.cols || 1}
+                                                          rows={isMobile ? 1 : item?.rows || 1}
                                                           skeleton={{display: 'flex', flex: 1}}
                                                       ></AmplienceWrapper>
                                                   </GridItem>
