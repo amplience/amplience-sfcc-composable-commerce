@@ -65,7 +65,6 @@ export type ImageTransformations = {
 }; */
 
 export function getImageURL(image, transformations) {
-
     const {
         seoFileName,
         format,
@@ -86,69 +85,73 @@ export function getImageURL(image, transformations) {
         templates,
         strip,
         quality
-    } = transformations;
+    } = transformations
 
     const getImageHost = (host) => {
         if (host === 'i1.adis.ws') {
-            return 'cdn.media.amplience.net';
+            return 'cdn.media.amplience.net'
         }
-        return host;
+        return host
     }
 
-    let url = typeof image === 'string' ? image :
-        `https://${getImageHost(image.defaultHost)}/i/${encodeURIComponent(image.endpoint)}/${encodeURIComponent(image.name)}`;
+    let url =
+        typeof image === 'string'
+            ? image
+            : `https://${getImageHost(image.defaultHost)}/i/${encodeURIComponent(
+                  image.endpoint
+              )}/${encodeURIComponent(image.name)}`
 
     if (seoFileName) {
-        url += `/${encodeURIComponent(seoFileName)}`;
+        url += `/${encodeURIComponent(seoFileName)}`
     }
 
     if (format && format !== 'default') {
-        url += `.${format}`;
+        url += `.${format}`
     }
 
-    const query = [];
+    const query = []
 
     const params = {
-        'w': width,
-        'h': height,
-        'sm': scaleMode,
-        'scaleFit': scaleFit,
-        'aspect': aspectRatio,
-        'upscale': upscale,
-        'fliph': fliph,
-        'flipv': flipv,
-        'rotate': rot,
-        'hue': hue,
-        'sat': sat,
-        'bri': bri,
-        'strip': strip,
-        'qlt': quality
-    };
+        w: width,
+        h: height,
+        sm: scaleMode,
+        scaleFit: scaleFit,
+        aspect: aspectRatio,
+        upscale: upscale,
+        fliph: fliph,
+        flipv: flipv,
+        rotate: rot,
+        hue: hue,
+        sat: sat,
+        bri: bri,
+        strip: strip,
+        qlt: quality
+    }
 
     for (let param of Object.keys(params)) {
-        const value = params[param];
+        const value = params[param]
         if (value !== undefined && value !== null && value != 0) {
-            query.push(`${param}=${value}`);
+            query.push(`${param}=${value}`)
         }
     }
 
     if (poi && poi.x !== -1 && poi.y !== -1) {
-        query.push(`poi=${poi.x},${poi.y},0.01,0.01`);
+        query.push(`poi=${poi.x},${poi.y},0.01,0.01`)
     }
 
-    if (crop && crop.length === 4 && crop.filter(x => x !== 0).length > 0) {
-        query.push(`crop=${crop[0]},${crop[1]},${crop[2]},${crop[3]}`);
+    if (crop && crop.length === 4 && crop.filter((x) => x !== 0).length > 0) {
+        query.push(`crop=${crop[0]},${crop[1]},${crop[2]},${crop[3]}`)
     }
 
     if (templates) {
         for (let template of templates) {
-            query.push(`$${template}$`);
+            query.push(`$${template}$`)
         }
     }
 
     if (query.length > 0) {
-        url += `?${query.join('&')}`;
+        url += `?${query.join('&')}`
     }
 
-    return url;
+    return url
 }
