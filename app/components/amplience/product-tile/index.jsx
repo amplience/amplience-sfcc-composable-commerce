@@ -49,11 +49,18 @@ const Contain = styled(Link)`
             margin: 0 4px 4px !important;
         }
     }
-    @media (max-width: 768px) {
+    @media (min-width: 461px) and (max-width: 768px) {
         .ptile-hover-pane {
             font-size: inherit !important;
             margin: 0 9px 9px !important;
-            background: rgba(255, 255, 255, 1) !important;
+            background: rgba(255, 255, 255, 0.75) !important;
+        }
+    }
+    @media (max-width: 460px) {
+        .ptile-hover-pane {
+            font-size: 11px !important;
+            margin: 0 4px 4px !important;
+            background: rgba(255, 255, 255, 0.75) !important;
         }
     }
     &:hover .chakra-aspect-ratio {
