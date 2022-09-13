@@ -27,6 +27,11 @@ const homeSlotTop = await (await fetchContent([{ key: 'home/slot/top' }]))
 <AmplienceWrapper content={homeSlotTop}></AmplienceWrapper>
 ```
 
+Example of loading by  with custom props:
+```
+<AmplienceWrapper fetch={{key: 'home/slot/top'}} myProp1='a' myProp2='b'></AmplienceWrapper>
+```
+
 The wrapper component itself makes life easier as it handles the loading of the data and mapping into which component to render dynamically.
 
 ## Overview of functionality:
@@ -35,6 +40,7 @@ The wrapper component itself makes life easier as it handles the loading of the 
 * Checks the content data and chooses which content to render based on the content model schema ID in Amplience
 * draws the component passing in the props from Amplience
 * If no component is found, renders the JSON for the component
+* Ability to pass through custom props to send to child components
 
 Supported components are imported:
 
