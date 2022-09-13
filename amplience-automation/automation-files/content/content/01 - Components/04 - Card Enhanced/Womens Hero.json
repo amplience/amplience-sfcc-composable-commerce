@@ -1,0 +1,80 @@
+{
+    "image": {
+        "image": {
+            "crop": [0, 0, 0, 0],
+            "rot": 0,
+            "hue": 0,
+            "sat": 0,
+            "bri": 0,
+            "fliph": false,
+            "flipv": false,
+            "poi": {
+                "x": -1,
+                "y": -1
+            },
+            "aspectLock": "clear",
+            "image": {
+                "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                },
+                "id": "f03b7d98-1775-4286-add5-9ad6470ca71f",
+                "name": "max-harlynking-unsplash",
+                "endpoint": "sfcccompdev",
+                "defaultHost": "cdn.media.amplience.net"
+            }
+        },
+        "imageAltText": {
+            "values": [
+                {
+                    "locale": "en-US",
+                    "value": "womens' category image"
+                }
+            ],
+            "_meta": {
+                "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+            }
+        },
+        "seoText": {
+            "values": [
+                {
+                    "locale": "en-US",
+                    "value": "womens' category image"
+                }
+            ],
+            "_meta": {
+                "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+            }
+        }
+    },
+    "mainText": {
+        "values": [
+            {
+                "locale": "en-US",
+                "value": "Womens' Collection"
+            }
+        ],
+        "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+    },
+    "subText": {
+        "values": [
+            {
+                "locale": "en-US",
+                "value": "Fall Fashions arriving"
+            }
+        ],
+        "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+    },
+    "textAlignment": "right",
+    "verticalAlignment": "top",
+    "linkPosition": "withtext",
+    "blend": "overlay",
+    "color": "rgb(59, 58, 58)",
+    "_meta": {
+        "name": "Womens Hero",
+        "schema": "https://sfcc.com/components/card-enhanced"
+    }
+}
