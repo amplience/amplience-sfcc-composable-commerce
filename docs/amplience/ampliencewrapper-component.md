@@ -23,7 +23,7 @@ Example of loading by Key:
 Example of loading data elsewhere and loading passing into the component:
 
 ```javascript
-const homeSlotTop = await (await fetchContent([{ key: 'home/slot/top' }]))
+const homeSlotTop = await (await ampClient.fetchContent([{key: 'home/slot/top'}], {locale: targetLocale}))
 ```
 ```javascript
 <AmplienceWrapper content={homeSlotTop}></AmplienceWrapper>
