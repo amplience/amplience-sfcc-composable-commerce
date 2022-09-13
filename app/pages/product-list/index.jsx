@@ -178,10 +178,13 @@ const enrichResults = (productSearchResults, pageSize, ampSlots, pages, isMobile
 
                 // Place content up to the given slot.
                 const size = isMobile ? 1 : Number(slot.rows) * Number(slot.cols)
+                const index = pos - pageBase - reservedSpaces
 
                 slot.isAmplience = true
 
-                items.splice(pos - pageBase - reservedSpaces, 0, slot)
+                if (index <= items.length) {
+                    items.splice(index, 0, slot)
+                }
 
                 reservedSpaces += size - 1
             }
