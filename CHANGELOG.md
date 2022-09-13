@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/amplience/amplience-sfcc-composable-commerce/compare/v1.2.0...v1.3.0) (2022-09-08)
+
+
+### Features
+
+* merged PWA Kit 2.2.0 ([fde8e42](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/fde8e427c5528371dc3be43ea6a72b77ffa65ae2))
+
 ## [1.2.0](https://github.com/amplience/amplience-sfcc-composable-commerce/compare/v1.1.0...v1.2.0) (2022-08-26)
 
 
