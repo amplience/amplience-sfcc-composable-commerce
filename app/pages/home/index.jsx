@@ -61,7 +61,7 @@ const Home = ({productSearchResult, isLoading, homeSlotTop}) => {
                 keywords="Commerce Cloud, Retail React App, React Storefront"
             />
             <Heading as="h3">Slot - Amplience Wrapper by key</Heading>
-            <AmplienceWrapper fetch={{key: 'home/slot/top'}}></AmplienceWrapper>
+            <AmplienceWrapper fetch={{key: 'mens/slot/top'}}></AmplienceWrapper>
 
             <Heading as="h3">Slot - Amplience Wrapper by Content</Heading>
             <AmplienceWrapper content={homeSlotTop}></AmplienceWrapper>
