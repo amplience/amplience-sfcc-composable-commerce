@@ -126,8 +126,9 @@ const CardEnhanced = ({
 
     let compHeight = 'auto'
     if (cols == 3) {
+        const gap = 16
         // Force the height to a fraction of the width (minus gap)
-        compHeight = (rows * (w - 16 * (cols - 1))) / 3 + 'px'
+        compHeight = (rows * (w - gap * (cols - 1))) / 3 + (rows - 1) * gap + 'px'
     }
 
     useEffect(() => {
