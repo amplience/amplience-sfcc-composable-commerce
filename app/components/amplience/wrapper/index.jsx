@@ -10,6 +10,7 @@ import CardEnhanced from '../card-enhanced'
 import flexibleListSlot from '../flexibleListSlot'
 import {useIntl} from 'react-intl'
 import {AmplienceContext} from '../../../contexts/amplience'
+import {Skeleton} from '@chakra-ui/react'
 
 const Blank = () => <></>
 
@@ -28,7 +29,7 @@ const componentsMapping = {
     'https://sfcc.com/site/navigation/group': Blank
 }
 
-const AmplienceWrapper = ({fetch, content, components, ...rest}) => {
+const AmplienceWrapper = ({fetch, content, components, skeleton, ...rest}) => {
     const {client} = useContext(AmplienceContext)
     const [fetchedContent, setFetchedContent] = useState(content)
     const {locale} = useIntl()
@@ -54,10 +55,19 @@ const AmplienceWrapper = ({fetch, content, components, ...rest}) => {
     }, [fetch, content])
 
     const Component = mapping[fetchedContent?._meta?.schema]
-    return Component ? (
+
+    const result = Component ? (
         <Component {...fetchedContent} {...rest} />
     ) : (
         <>{JSON.stringify(fetchedContent)}</>
+    )
+
+    return skeleton ? (
+        <Skeleton {...skeleton} isLoaded={fetchedContent != null}>
+            {result}
+        </Skeleton>
+    ) : (
+        result
     )
 }
 
@@ -66,7 +76,8 @@ AmplienceWrapper.displayName = 'Amplience Wrapper Block'
 AmplienceWrapper.propTypes = {
     fetch: PropTypes.object,
     content: PropTypes.object,
-    components: PropTypes.object
+    components: PropTypes.object,
+    skeleton: PropTypes.object
 }
 
 export default AmplienceWrapper
