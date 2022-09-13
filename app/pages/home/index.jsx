@@ -68,7 +68,6 @@ const Home = ({productSearchResult, isLoading, homeSlotTop}) => {
 
             <Heading as="h3">Content Directly by key</Heading>
             <AmplienceWrapper fetch={{key: 'hero'}}></AmplienceWrapper>
-            <AmplienceWrapper fetch={{key: 'section'}}></AmplienceWrapper>
             <AmplienceWrapper fetch={{key: 'simple-product-list'}}></AmplienceWrapper>
 
             <Section
@@ -173,19 +172,8 @@ const Home = ({productSearchResult, isLoading, homeSlotTop}) => {
                 </Section>
             )}
 
-            <Section
-                padding={4}
-                paddingTop={32}
-                title={intl.formatMessage({
-                    defaultMessage: 'Features',
-                    id: 'home.heading.features'
-                })}
-                subtitle={intl.formatMessage({
-                    defaultMessage:
-                        'Out-of-the-box features so that you focus only on adding enhancements.',
-                    id: 'home.description.features'
-                })}
-            >
+            <AmplienceWrapper fetch={{key: 'section'}}></AmplienceWrapper>
+
                 <Container maxW={'6xl'} marginTop={10}>
                     <SimpleGrid columns={{base: 1, md: 2, lg: 3}} spacing={10}>
                         {features.map((feature, index) => {
@@ -215,7 +203,6 @@ const Home = ({productSearchResult, isLoading, homeSlotTop}) => {
                         })}
                     </SimpleGrid>
                 </Container>
-            </Section>
 
             <Section
                 padding={4}
