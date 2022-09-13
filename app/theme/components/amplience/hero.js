@@ -9,7 +9,7 @@ export default {
             spacing: {base: 0, md: 4},
             paddingTop: {base: 0, md: 4},
             paddingBottom: {base: 0, md: 4},
-            direction: {base: 'column', md: 'row'}
+            direction: {base: 'column-reverse', md: 'row'},
         },
         textContainer: {
             flex: 1,
@@ -54,7 +54,7 @@ export default {
                 spacing: {base: 0, md: 4},
                 paddingTop: {base: 0, md: 4},
                 paddingBottom: {base: 0, md: 4},
-                direction: {base: 'column', md: 'row'},
+                direction: {base: 'column-reverse', md: 'row'},
                 justifyContent: {base: 'center', md: 'unset'}
             },
         }),
