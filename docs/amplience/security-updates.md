@@ -26,30 +26,30 @@ Because Amplience visualisations are loaded via iFrame, we also need to tell you
 If you have already changed your security policy, please be careful and add to rather than simply replacing.
 
 
-```
+```json
 contentSecurityPolicy: {
-                useDefaults: true,
-                directives: {
-                    'img-src': [
-                        "'self'",
-                        '*.commercecloud.salesforce.com',
-                        'data:',
-                        '*.cdn.content.amplience.net',
-                        'cdn.media.amplience.net',
-                        '*.staging.bigcontent.io'
-                    ],
-                    'script-src': [
-                        "'self'",
-                        "'unsafe-eval'",
-                        'storage.googleapis.com',
-                        '*.cdn.content.amplience.net',
-                        'cdn.media.amplience.net',
-                        '*.staging.bigcontent.io'
-                    ],
-                    'default-src': ["'self'", "'unsafe-eval'", '*.cdn.content.amplience.net', 'cdn.media.amplience.net', '*.staging.bigcontent.io'],
-                    'frame-ancestors': ["'self'", '*.amplience.net'],
-                    // Do not upgrade insecure requests for local development
-                    'upgrade-insecure-requests': isRemote() ? [] : null
-                }
-            },
+    useDefaults: true,
+    directives: {
+        'img-src': [
+            "'self'",
+            '*.commercecloud.salesforce.com',
+            'data:',
+            '*.cdn.content.amplience.net',
+            'cdn.media.amplience.net',
+            '*.staging.bigcontent.io'
+        ],
+        'script-src': [
+            "'self'",
+            "'unsafe-eval'",
+            'storage.googleapis.com',
+            '*.cdn.content.amplience.net',
+            'cdn.media.amplience.net',
+            '*.staging.bigcontent.io'
+        ],
+        'default-src': ["'self'", "'unsafe-eval'", '*.cdn.content.amplience.net', 'cdn.media.amplience.net', '*.staging.bigcontent.io'],
+        'frame-ancestors': ["'self'", '*.amplience.net'],
+        // Do not upgrade insecure requests for local development
+        'upgrade-insecure-requests': isRemote() ? [] : null
+    }
+}
 ```
