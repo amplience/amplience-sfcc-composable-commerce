@@ -121,9 +121,10 @@ const CardEnhanced = ({
         }
     }, [imageRef?.current?.complete])
 
+    const h = parentRef.current?.clientHeight == 0 ? 400 : parentRef.current?.clientHeight
+    const w = parentRef.current?.clientWidth == 0 ? 400 : parentRef.current?.clientWidth
+
     useEffect(() => {
-        const h = parentRef.current?.clientHeight == 0 ? 400 : parentRef.current?.clientHeight
-        const w = parentRef.current?.clientWidth == 0 ? 400 : parentRef.current?.clientWidth
         let r, ratio
 
         if (w && h) {
@@ -133,8 +134,9 @@ const CardEnhanced = ({
             ratio =
                 cols === rows ? w / r + ':' + h / r : (w / cols) * cols + ':' + (h / rows) * rows
             setRatio(ratio)
+            setImageLoading(true)
         }
-    }, [cols, rows])
+    }, [w, h, cols, rows])
 
     const img = image?.image
 
