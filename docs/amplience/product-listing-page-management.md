@@ -1,6 +1,6 @@
 # Product Listing Page (PLP) management
 
-Blurb about what the PLP is
+PLP's are typically hard to manage content into. With a modern storefront and headless content this becomes easier and puts control into the hands of the business users.
 
 ## Key differences
 
@@ -105,16 +105,16 @@ useAmpRtv(
 ```
 
 ## Rules for displaying in grid content
-As we are enriching the product list content with content, we need rules to display the content as the order and quantity of products may change. Plus sizes (columns and rows) for desktop are not valid for mobile:
+24As we are enriching the product list content with content, we need rules to display the content as the order and quantity of products may change. Plus sizes (columns and rows) for desktop are not valid for mobile:
 
 * In-Grid content should not overwrite products, they should be moved aside.
 * Ensure the search with/without the in-grid content have the same products.
 * Products should wrap to the next page at an earlier point when in-grid content is present, but it should not skip any.
-* In-Grid content positions should have 24 slots per page. For example, content at 25 should appear at the start of the 2nd page, 50 at the 3rd, etc.
+* In-Grid content positions should have 24 slots per page. For example, content at 24 should appear at the start of the 2nd page, 48 at the 3rd, etc.
 * Mobile size should force all in-grid content to be 1x1, and it should recover when resizing to desktop.
 * It should reload the page if the page offset is not valid relative to the content.
 * It’s possible to place invalid grid tiles since we can’t place constraints on the values. Follow these rules when testing:
-    * Pages start at multiples of 25 from the first result.
+    * Pages start at multiples of 24 from the first result.
     * Lines start at multiples of 3 from the start of the page. (2 for desktop)* 2-column content should only be placed at the start or middle of a line (for example, position 2 is not allowed)
     * 3-column content should only be placed at the start of a line. (page base + multiple of 3)
 * I can put the same content in multiple times.
