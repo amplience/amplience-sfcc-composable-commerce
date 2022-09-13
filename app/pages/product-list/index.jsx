@@ -249,7 +249,7 @@ const ProductList = (props) => {
     const basePath = `${location.pathname}${location.search}`
     const category = !searchQuery && params.categoryId ? categories[params.categoryId] : undefined
 
-    const isMobile = useBreakpointValue({base: true, md: false})
+    const isMobile = useBreakpointValue({base: false, sm: true, md: false})
     const sortUrls = useSortUrls({options: sortingOptions})
 
     const pageOffsets = useMemo(() => {
