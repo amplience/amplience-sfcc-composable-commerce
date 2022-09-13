@@ -33,7 +33,7 @@ Where we have multiple content references to fetch Server Side, we combine them 
 ## Product Tile changes
 For asthetics, we have changed the look of the default product tile on the PLP. If you would like to put back to the original you can follow the steps below:
 
-1) Go to `app/pages/product-list/index.jsx`
+1) Go to `app/pages/amplience/product-list/index.jsx`
 2) Remove lines 57-59
 ```javascript
 // TO switch back to the OOTB Product Tile, comment the next 2 line out and uncomment line 46 above
