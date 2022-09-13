@@ -147,7 +147,7 @@
     "textAlignment": "left",
     "verticalAlignment": "bottom",
     "linkPosition": "withtext",
-    "blend": "overlay",
+    "blend": "normal",
     "links": [
       {
         "_meta": {

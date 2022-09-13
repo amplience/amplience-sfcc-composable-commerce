@@ -15,7 +15,7 @@ export default {
             display: 'table',
             top: 0,
             left: 0,
-            padding: '20px',
+            padding: '9px',
             width: '100%',
             height: '100%',
             transition: 'all 0.8s ease',
@@ -37,7 +37,8 @@ export default {
             display: 'inline-block',
             padding: '6px 10px',
             width: '70%',
-            transition: 'all 0.8s ease'
+            transition: 'all 0.8s ease',
+            background: 'rgba(255, 255, 255, 0.5)'
         },
         h: {
             fontSize: '22px'

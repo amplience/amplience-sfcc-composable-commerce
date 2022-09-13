@@ -10,10 +10,20 @@ const Contain = styled(Link)`
     position: relative;
     margin: 0;
     display: block;
+    &:hover img {
+        filter: grayscale(70%) !important;
+        opacity: 0.8;
+    }
+    &:hover .hover {
+        opacity: 1 !important;
+    }
+    &:hover .text-pane {
+        background: rgba(255, 255, 255, 0.9) !important;
+    }
     @media (min-width: 1024px) and (max-width: 1200px) {
         .hover,
         .blend {
-            padding: px !important;
+            padding: 9px !important;
         }
         .text-pane {
             width: 80% !important;
@@ -49,11 +59,10 @@ const Contain = styled(Link)`
     @media (max-width: 1024px) {
         .hover,
         .blend {
-            padding: 9px !important;
+            padding: 4px !important;
         }
         .text-pane {
         {
-            background: rgba(255, 255, 255, 0.75) !important;
             width: 85% !important;
             h2, p {
                 font-size: 12px !important;
@@ -61,13 +70,8 @@ const Contain = styled(Link)`
         }
     }
     @media (max-width: 460px) {
-        .hover,
-        .blend {
-            padding: 4px !important;
-        }
         .text-pane {
         {
-            background: rgba(255, 255, 255, 0.75) !important;
             width: 85% !important;
             h2 {
                 font-size: 11px !important;
@@ -76,19 +80,6 @@ const Contain = styled(Link)`
                 display: none;
             }
         }
-    }
-    .text-pane {
-        background: rgba(255, 255, 255, 0.5);
-    }
-    &:hover img {
-        filter: grayscale(70%) !important;
-        opacity: 0.8;
-    }
-    &:hover .hover {
-        opacity: 1 !important;
-    }
-    &:hover .text-pane {
-        background: rgba(255, 255, 255, 0.8) !important;
     }
     span {
         text-decoration: underline;
