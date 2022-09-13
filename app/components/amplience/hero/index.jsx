@@ -44,7 +44,7 @@ const Hero = ({
                        position={fullWidth ? 'absolute' : ''}>
                     <Heading
                         as="h1"
-                        fontSize={{base: '4xl', md: '5xl', lg: '6xl'}}
+                        fontSize={{base: '2xl', md: '5xl', lg: '6xl'}}
                         maxWidth={{base: 'full', md: '75%'}}
                         {...styles.heading}
                     >
