@@ -6,18 +6,18 @@ export default {
         },
         stackContainer: {
             align: 'center',
-            spacing: {base: 8, md: 10},
-            paddingTop: {base: 12, md: 10},
-            paddingBottom: {base: 6, md: 10},
+            spacing: {base: 0, md: 4},
+            paddingTop: {base: 0, md: 4},
+            paddingBottom: {base: 0, md: 4},
             direction: {base: 'column', md: 'row'}
         },
         textContainer: {
             flex: 1,
-            spacing: {base: 5, md: 8},
+            spacing: {base: 2, md: 5},
             textAlign: {base: 'center'},
             alignItems: {base: 'center', md: 'unset'},
             backgroundColor: {base: "rgba(255,255,255,0.5)"},
-            margin: {base: 8}
+            margin: {base: 4}
 
         },
         imageContainer: {
@@ -35,7 +35,7 @@ export default {
                 flex: 1,
                 spacing: {base: 5, md: 8},
                 zIndex: 2,
-                position: 'absolute',
+                position: {base: 'unset', md: 'absolute'},
                 padding: 8,
                 textAlign: {base: 'center'},
                 alignItems: {base: 'center', md: 'unset'}
@@ -48,7 +48,15 @@ export default {
                 width: 'full',
                 marginInlineStart: '0 !important',
                 marginTop: '0 !important',
-            }
+            },
+            stackContainer: {
+                align: 'center',
+                spacing: {base: 0, md: 4},
+                paddingTop: {base: 0, md: 4},
+                paddingBottom: {base: 0, md: 4},
+                direction: {base: 'column', md: 'row'},
+                justifyContent: {base: 'center', md: 'unset'}
+            },
         }),
         inGrid: (props) => ({
             textContainer: {

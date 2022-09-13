@@ -37,14 +37,14 @@ const Hero = ({
         >
             <Stack
                 {...styles.stackContainer}
-                justifyContent={justifyContent.toLowerCase()}
-                alignItems={alignItems.toLowerCase()}
+                justifyContent={{base: "unset", md: justifyContent.toLowerCase()}}
+                alignItems={{base: "unset", md: alignItems.toLowerCase()}}
             >
                 <Stack {...styles.textContainer} textAlign={{base: 'center', md: textAlign.toLowerCase()}}
-                       position={fullWidth ? 'absolute' : ''}>
+                       position={fullWidth ? {base: 'unset', md: 'absolute'} : ''}>
                     <Heading
                         as="h1"
-                        fontSize={{base: '2xl', md: '5xl', lg: '6xl'}}
+                        fontSize={{base: 'md', md: '2xl', lg: '6xl'}}
                         maxWidth={{base: 'full', md: '75%'}}
                         {...styles.heading}
                     >
