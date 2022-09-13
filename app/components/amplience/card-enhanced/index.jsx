@@ -149,12 +149,11 @@ const CardEnhanced = ({
                   height: height * rows,
                   aspectRatio: ratio,
                   scaleMode: 'c',
-                  scaleFit:
-                      !image?.disablePoiAspectRatio &&
-                      img?.image?.poi &&
-                      img?.image?.poi.x != -1 &&
-                      img?.image?.poi.y != -1
-                          ? 'poi'
+                  query: img?.query,
+                  scaleFit: img?.poi && img?.poi.x != -1 && img?.poi.y != -1 ? 'poi' : undefined,
+                  poi:
+                      img?.poi && img?.poi.x != -1 && img?.poi.y != -1
+                          ? img?.poi.x + ',' + img?.poi.y + ',0,0'
                           : undefined
               }
             : {...img.image}
@@ -167,6 +166,7 @@ const CardEnhanced = ({
                     ref={imageRef}
                     onLoad={() => handleImageLoaded()}
                     image={img?.image}
+                    data={image}
                     transformations={cardtransformations}
                 />
             </div>
@@ -259,30 +259,28 @@ CardEnhanced.propTypes = {
             schema: PropTypes.string
         }),
         image: PropTypes.shape({
+            aspectLock: PropTypes.string,
+            bri: PropTypes.number,
+            crop: PropTypes.arrayOf(PropTypes.number),
+            fliph: PropTypes.bool,
+            flipv: PropTypes.bool,
+            hue: PropTypes.number,
+            query: PropTypes.string,
             image: PropTypes.shape({
-                aspectLock: PropTypes.string,
-                bri: PropTypes.number,
-                crop: PropTypes.arrayOf(PropTypes.number),
-                fliph: PropTypes.bool,
-                flipv: PropTypes.bool,
-                hue: PropTypes.number,
-                image: PropTypes.shape({
-                    defaultHost: PropTypes.string,
-                    endpoint: PropTypes.string,
-                    id: PropTypes.string,
-                    name: PropTypes.string,
-                    _meta: PropTypes.shape({
-                        schema: PropTypes.string
-                    })
-                }),
-                poi: PropTypes.shape({
-                    x: PropTypes.number,
-                    y: PropTypes.number
-                }),
-                query: PropTypes.string,
-                rot: PropTypes.number,
-                sat: PropTypes.number
-            })
+                defaultHost: PropTypes.string,
+                endpoint: PropTypes.string,
+                id: PropTypes.string,
+                name: PropTypes.string,
+                _meta: PropTypes.shape({
+                    schema: PropTypes.string
+                })
+            }),
+            poi: PropTypes.shape({
+                x: PropTypes.number,
+                y: PropTypes.number
+            }),
+            rot: PropTypes.number,
+            sat: PropTypes.number
         })
     }),
     index: PropTypes.number,
