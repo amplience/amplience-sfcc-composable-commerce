@@ -1,7 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react'
 import styled from '@emotion/styled'
 import {Heading} from '@chakra-ui/layout'
-import {useMultiStyleConfig, Link, Skeleton, useBreakpointValue} from '@chakra-ui/react'
+import {useMultiStyleConfig, Link, Skeleton} from '@chakra-ui/react'
 import TrueAdaptiveImage from '../adaptive-image/TrueAdaptiveImage'
 import PropTypes from 'prop-types'
 
@@ -88,8 +88,6 @@ const CardEnhanced = ({
 }) => {
     links ??= []
 
-    const isMobile = useBreakpointValue({base: true, md: false})
-
     const styles = useMultiStyleConfig('CardEnhanced', {
         blend: blend,
         color: color,
@@ -143,22 +141,22 @@ const CardEnhanced = ({
     const cardtransformations =
         cols && rows
             ? {
-                ...img?.image,
-                upscale: true,
-                strip: true,
-                quality: 80,
-                width: width * cols,
-                height: height * rows,
-                aspectRatio: ratio,
-                scaleMode: 'c',
-                scaleFit:
-                    !image?.disablePoiAspectRatio &&
-                    img?.image?.poi &&
-                    img?.image?.poi.x != -1 &&
-                    img?.image?.poi.y != -1
-                        ? 'poi'
-                        : undefined
-            }
+                  ...img?.image,
+                  upscale: true,
+                  strip: true,
+                  quality: 80,
+                  width: width * cols,
+                  height: height * rows,
+                  aspectRatio: ratio,
+                  scaleMode: 'c',
+                  scaleFit:
+                      !image?.disablePoiAspectRatio &&
+                      img?.image?.poi &&
+                      img?.image?.poi.x != -1 &&
+                      img?.image?.poi.y != -1
+                          ? 'poi'
+                          : undefined
+              }
             : {...img.image}
 
     const content = (
