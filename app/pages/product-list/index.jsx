@@ -114,7 +114,7 @@ const calculatePageOffsets = (pageSize, totalCount, ampSlots, isMobile) => {
     }
 
     const fillPages = (upTo) => {
-        const uptoBasePage = pageNumber(upTo + offset)
+        const uptoBasePage = pageNumber(upTo)
 
         while (pages.length <= uptoBasePage) {
             pages.push(pages.length * pageSize - offset)
