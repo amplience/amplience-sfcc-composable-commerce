@@ -68,7 +68,6 @@ const Home = ({productSearchResult, isLoading, homeSlotTop}) => {
 
             <Heading as="h3">Content Directly by key</Heading>
             <AmplienceWrapper fetch={{key: 'hero'}}></AmplienceWrapper>
-            <AmplienceWrapper fetch={{key: 'section'}}></AmplienceWrapper>
             <AmplienceWrapper fetch={{key: 'simple-product-list'}}></AmplienceWrapper>
 
             <Section
@@ -81,6 +80,7 @@ const Home = ({productSearchResult, isLoading, homeSlotTop}) => {
                 position={{base: 'relative', md: 'inherit'}}
                 left={{base: '50%', md: 'inherit'}}
                 right={{base: '50%', md: 'inherit'}}
+                marginTop="8"
                 marginLeft={{base: '-50vw', md: 'auto'}}
                 marginRight={{base: '-50vw', md: 'auto'}}
             >
@@ -172,49 +172,37 @@ const Home = ({productSearchResult, isLoading, homeSlotTop}) => {
                 </Section>
             )}
 
-            <Section
-                padding={4}
-                paddingTop={32}
-                title={intl.formatMessage({
-                    defaultMessage: 'Features',
-                    id: 'home.heading.features'
-                })}
-                subtitle={intl.formatMessage({
-                    defaultMessage:
-                        'Out-of-the-box features so that you focus only on adding enhancements.',
-                    id: 'home.description.features'
-                })}
-            >
-                <Container maxW={'6xl'} marginTop={10}>
-                    <SimpleGrid columns={{base: 1, md: 2, lg: 3}} spacing={10}>
-                        {features.map((feature, index) => {
-                            const featureMessage = feature.message
-                            return (
-                                <HStack key={index} align={'top'}>
-                                    <VStack align={'start'}>
-                                        <Flex
-                                            width={16}
-                                            height={16}
-                                            align={'center'}
-                                            justify={'left'}
-                                            color={'gray.900'}
-                                            paddingX={2}
-                                        >
-                                            {feature.icon}
-                                        </Flex>
-                                        <Text color={'black'} fontWeight={700} fontSize={20}>
-                                            {intl.formatMessage(featureMessage.title)}
-                                        </Text>
-                                        <Text color={'black'}>
-                                            {intl.formatMessage(featureMessage.text)}
-                                        </Text>
-                                    </VStack>
-                                </HStack>
-                            )
-                        })}
-                    </SimpleGrid>
-                </Container>
-            </Section>
+            <AmplienceWrapper fetch={{key: 'section'}}></AmplienceWrapper>
+
+            <Container maxW={'6xl'} marginTop={10}>
+                <SimpleGrid columns={{base: 1, md: 2, lg: 3}} spacing={10}>
+                    {features.map((feature, index) => {
+                        const featureMessage = feature.message
+                        return (
+                            <HStack key={index} align={'top'}>
+                                <VStack align={'start'}>
+                                    <Flex
+                                        width={16}
+                                        height={16}
+                                        align={'center'}
+                                        justify={'left'}
+                                        color={'gray.900'}
+                                        paddingX={2}
+                                    >
+                                        {feature.icon}
+                                    </Flex>
+                                    <Text color={'black'} fontWeight={700} fontSize={20}>
+                                        {intl.formatMessage(featureMessage.title)}
+                                    </Text>
+                                    <Text color={'black'}>
+                                        {intl.formatMessage(featureMessage.text)}
+                                    </Text>
+                                </VStack>
+                            </HStack>
+                        )
+                    })}
+                </SimpleGrid>
+            </Container>
 
             <Section
                 padding={4}
