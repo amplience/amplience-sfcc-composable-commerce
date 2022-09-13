@@ -25,7 +25,7 @@ If you are using an v2.1.0, either upgrade using this code base or use a previou
 * [Amplience Components List](./docs/amplience/amplience-components-list.md)
 * [AmplienceWrapper Component](./docs/amplience/ampliencewrapper-component.md)
 * [Navigation](./docs/amplience/navigation.md)
-* [PLP Management](./docs/amplience/product-listing-page-management.md)
+* [Product Listing Page (PLP) Management](./docs/amplience/product-listing-page-management.md)
 * [Visualization](docs/amplience/visualization.md)
 * [Preview](docs/amplience/preview.md)
 * [Amplience Account](docs/amplience/amplience-account.md)

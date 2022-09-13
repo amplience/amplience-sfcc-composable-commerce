@@ -12,25 +12,37 @@ This component makes it really easy for you to add content aware components to a
 * **content**: If you want to load you data and manipulate it elsewhere (ie in getProps) you can just pass in the content (Server Side)
 
 Example of loading by ID:
-```
+```javascript
 <AmplienceWrapper fetch={{id: '1234567'}}></AmplienceWrapper>
 ```
 
 Example of loading by Key:
-```
+```javascript
 <AmplienceWrapper fetch={{key: 'home/slot/top'}}></AmplienceWrapper>
 ```
 Example of loading data elsewhere and loading passing into the component:
 
-```
+```javascript
 const homeSlotTop = await (await fetchContent([{ key: 'home/slot/top' }]))
+```
+```javascript
 <AmplienceWrapper content={homeSlotTop}></AmplienceWrapper>
 ```
 
 Example of with custom props:
 > Note this can be with any loading mechanism (key, id, content)
-```
+```javascript
 <AmplienceWrapper fetch={{key: 'home/slot/top'}} myProp1='a' myProp2='b'></AmplienceWrapper>
+```
+
+Example of with a different component mapping:
+```javascript
+const menuComponents = {
+    'https://sfcc.com/components/hero': NavigationHero
+}
+```
+```javascript
+<AmplienceWrapper content={content} components={menuComponents} />
 ```
 
 The wrapper component itself makes life easier as it handles the loading of the data and mapping into which component to render dynamically.
@@ -45,11 +57,13 @@ The wrapper component itself makes life easier as it handles the loading of the 
 
 Supported components are imported:
 
-`import Hero from '../../hero'`
+```javascript
+import Hero from '../../hero'
+```
 
 The component mapping matches the schema name to the component:
 
-```
+```javascript
 const componentsMapping = {
     'https://sfcc.com/components/hero': Hero
 }
@@ -57,7 +71,7 @@ const componentsMapping = {
 
 If the data and schema has a match in the mapping it renders the component otherwise just JSON:
 
-```
+```javascript
 const Component = components[fetchedContent?._meta?.schema]
 return Component ? <Component {...fetchedContent} /> : <>{JSON.stringify(fetchedContent)}</>
 ```
