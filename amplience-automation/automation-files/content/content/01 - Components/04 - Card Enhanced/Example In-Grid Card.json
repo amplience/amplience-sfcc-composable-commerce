@@ -1,0 +1,140 @@
+{
+    "id" : "f5d217a8-8e50-4c35-b564-1d51f92226d9",
+    "body" : {
+      "_meta" : {
+        "name" : "Example In-Grid Card",
+        "schema" : "https://sfcc.com/components/card-enhanced"
+      },
+      "image" : {
+        "image" : {
+          "crop" : [ 0, 0, 0, 0 ],
+          "rot" : 0,
+          "hue" : 0,
+          "sat" : 0,
+          "bri" : 0,
+          "fliph" : false,
+          "flipv" : false,
+          "poi" : {
+            "x" : 0.4922938497479581,
+            "y" : 0.6666666666666666
+          },
+          "aspectLock" : "poi",
+          "query" : "poi=0.4923,0.6667,0,0&scaleFit=poi",
+          "image" : {
+            "_meta" : {
+              "schema" : "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+            },
+            "id" : "849936bf-9c19-4bcb-a57d-f0f80c008cad",
+            "name" : "yang-wewe-UBe-M4bBxjw-unsplash",
+            "endpoint" : "sfcccompdev",
+            "defaultHost" : "cdn.media.amplience.net"
+          }
+        },
+        "imageAltText" : {
+          "values" : [ {
+            "locale" : "en-US",
+            "value" : "Picture of sun loungers next to an infinity pool"
+          }, {
+            "locale" : "fr-FR",
+            "value" : "Photo de chaises longues à côté d'une piscine"
+          }, {
+            "locale" : "de-DE",
+            "value" : "Bild von Sonnenliegen neben einem Infinity-Pool"
+          }, {
+            "locale" : "es-ES",
+            "value" : "Imagen de tumbonas junto a una piscina infinity"
+          }, {
+            "locale" : "it-IT",
+            "value" : "Immagine di lettini accanto a una piscina a sfioro"
+          } ],
+          "_meta" : {
+            "schema" : "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+          }
+        },
+        "seoText" : {
+          "values" : [ {
+            "locale" : "en-US",
+            "value" : "Life of Luxury"
+          }, {
+            "locale" : "fr-FR",
+            "value" : "La vie de luxe"
+          }, {
+            "locale" : "de-DE",
+            "value" : "Leben im Luxus"
+          }, {
+            "locale" : "es-ES",
+            "value" : "Vida de lujo"
+          }, {
+            "locale" : "it-IT",
+            "value" : "Vita di lusso"
+          } ],
+          "_meta" : {
+            "schema" : "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+          }
+        }
+      },
+      "mainText" : {
+        "values" : [ {
+          "locale" : "en-US",
+          "value" : "Life of Luxury"
+        }, {
+          "locale" : "fr-FR",
+          "value" : "La vie de luxe"
+        }, {
+          "locale" : "de-DE",
+          "value" : "Leben im Luxus"
+        }, {
+          "locale" : "es-ES",
+          "value" : "Vida de lujo"
+        }, {
+          "locale" : "it-IT",
+          "value" : "Vita di lusso"
+        } ],
+        "_meta" : {
+          "schema" : "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      },
+      "subText" : {
+        "values" : [ {
+          "locale" : "en-US",
+          "value" : "Press the power button on your computer to immediately feel bliss."
+        }, {
+          "locale" : "fr-FR",
+          "value" : "Appuyez sur le bouton d'alimentation de votre ordinateur pour ressentir immédiatement le bonheur."
+        }, {
+          "locale" : "de-DE",
+          "value" : "Drücken Sie den Netzschalter an Ihrem Computer, um sich sofort glücklich zu fühlen."
+        }, {
+          "locale" : "es-ES",
+          "value" : "Presiona el botón de encendido de tu computadora para sentir la felicidad de inmediato."
+        }, {
+          "locale" : "it-IT",
+          "value" : "Premi il pulsante di accensione sul tuo computer per sentirti immediatamente felice."
+        } ],
+        "_meta" : {
+          "schema" : "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      },
+      "textAlignment" : "right",
+      "verticalAlignment" : "bottom",
+      "linkPosition" : "withtext",
+      "color" : "rgb(0, 53, 118)",
+      "blend" : "normal",
+      "links" : [ {
+        "_meta" : {
+          "schema" : "https://sfcc.com/components/link"
+        },
+        "type" : "URL"
+      } ]
+    },
+    "version" : 3,
+    "label" : "Example In-Grid Card",
+    "status" : "ACTIVE",
+    "createdBy" : "fb90fd96-dcaf-4d67-9747-b9676282f661",
+    "createdDate" : "2022-09-09T14:17:38.708Z",
+    "lastModifiedBy" : "b5b7704b-34ca-4424-a7dc-f6880734c30e",
+    "lastModifiedDate" : "2022-09-09T18:10:41.646Z",
+    "lastPublishedVersion" : 3,
+    "lastPublishedDate" : "2022-09-09T18:11:19.985Z",
+    "deliveryId" : "f5d217a8-8e50-4c35-b564-1d51f92226d9"
+  }

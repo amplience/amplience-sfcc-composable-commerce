@@ -11,6 +11,22 @@
                 {
                     "locale": "en-US",
                     "value": "Features"
+                },
+                {
+                    "locale": "fr-FR",
+                    "value": "Fonctionnalités"
+                },
+                {
+                    "locale": "de-DE",
+                    "value": "Merkmale"
+                },
+                {
+                    "locale": "es-ES",
+                    "value": "Características"
+                },
+                {
+                    "locale": "it-IT",
+                    "value": "Caratteristiche"
                 }
             ],
             "_meta": {
@@ -22,6 +38,22 @@
                 {
                     "locale": "en-US",
                     "value": "Out-of-the-box features so that you focus only on adding enhancements."
+                },
+                {
+                    "locale": "fr-FR",
+                    "value": "Des fonctionnalités prêtes à l'emploi pour que vous vous concentriez uniquement sur l'ajout d'améliorations."
+                },
+                {
+                    "locale": "de-DE",
+                    "value": "Sofort einsatzbereite Funktionen, sodass Sie sich nur auf das Hinzufügen von Verbesserungen konzentrieren können."
+                },
+                {
+                    "locale": "es-ES",
+                    "value": "Funciones listas para usar para que solo se concentre en agregar mejoras."
+                },
+                {
+                    "locale": "it-IT",
+                    "value": "Funzionalità pronte all'uso in modo da concentrarti solo sull'aggiunta di miglioramenti."
                 }
             ],
             "_meta": {

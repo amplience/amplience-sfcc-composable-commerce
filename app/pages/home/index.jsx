@@ -43,6 +43,8 @@ import {
     HOME_SHOP_PRODUCTS_CATEGORY_ID,
     HOME_SHOP_PRODUCTS_LIMIT
 } from '../../constants'
+import { resolveSiteFromUrl } from '../../utils/site-utils'
+import { getTargetLocale } from '../../utils/locale'
 
 /**
  * This is the home page for Retail React App.
@@ -60,15 +62,14 @@ const Home = ({productSearchResult, isLoading, homeSlotTop}) => {
                 description="Commerce Cloud Retail React App"
                 keywords="Commerce Cloud, Retail React App, React Storefront"
             />
-            <Heading as="h3">Slot - Amplience Wrapper by key</Heading>
-            <AmplienceWrapper fetch={{key: 'home/slot/top'}}></AmplienceWrapper>
-
             <Heading as="h3">Slot - Amplience Wrapper by Content</Heading>
             <AmplienceWrapper content={homeSlotTop}></AmplienceWrapper>
 
+            <Heading as="h3">Slot - Amplience Wrapper by key</Heading>
+            <AmplienceWrapper fetch={{key: 'mens/slot/top'}}></AmplienceWrapper>
+
             <Heading as="h3">Content Directly by key</Heading>
             <AmplienceWrapper fetch={{key: 'hero'}}></AmplienceWrapper>
-            <AmplienceWrapper fetch={{key: 'section'}}></AmplienceWrapper>
             <AmplienceWrapper fetch={{key: 'simple-product-list'}}></AmplienceWrapper>
 
             <Section
@@ -81,6 +82,7 @@ const Home = ({productSearchResult, isLoading, homeSlotTop}) => {
                 position={{base: 'relative', md: 'inherit'}}
                 left={{base: '50%', md: 'inherit'}}
                 right={{base: '50%', md: 'inherit'}}
+                marginTop="8"
                 marginLeft={{base: '-50vw', md: 'auto'}}
                 marginRight={{base: '-50vw', md: 'auto'}}
             >
@@ -172,49 +174,37 @@ const Home = ({productSearchResult, isLoading, homeSlotTop}) => {
                 </Section>
             )}
 
-            <Section
-                padding={4}
-                paddingTop={32}
-                title={intl.formatMessage({
-                    defaultMessage: 'Features',
-                    id: 'home.heading.features'
-                })}
-                subtitle={intl.formatMessage({
-                    defaultMessage:
-                        'Out-of-the-box features so that you focus only on adding enhancements.',
-                    id: 'home.description.features'
-                })}
-            >
-                <Container maxW={'6xl'} marginTop={10}>
-                    <SimpleGrid columns={{base: 1, md: 2, lg: 3}} spacing={10}>
-                        {features.map((feature, index) => {
-                            const featureMessage = feature.message
-                            return (
-                                <HStack key={index} align={'top'}>
-                                    <VStack align={'start'}>
-                                        <Flex
-                                            width={16}
-                                            height={16}
-                                            align={'center'}
-                                            justify={'left'}
-                                            color={'gray.900'}
-                                            paddingX={2}
-                                        >
-                                            {feature.icon}
-                                        </Flex>
-                                        <Text color={'black'} fontWeight={700} fontSize={20}>
-                                            {intl.formatMessage(featureMessage.title)}
-                                        </Text>
-                                        <Text color={'black'}>
-                                            {intl.formatMessage(featureMessage.text)}
-                                        </Text>
-                                    </VStack>
-                                </HStack>
-                            )
-                        })}
-                    </SimpleGrid>
-                </Container>
-            </Section>
+            <AmplienceWrapper fetch={{key: 'section'}}></AmplienceWrapper>
+
+            <Container maxW={'6xl'} marginTop={10}>
+                <SimpleGrid columns={{base: 1, md: 2, lg: 3}} spacing={10}>
+                    {features.map((feature, index) => {
+                        const featureMessage = feature.message
+                        return (
+                            <HStack key={index} align={'top'}>
+                                <VStack align={'start'}>
+                                    <Flex
+                                        width={16}
+                                        height={16}
+                                        align={'center'}
+                                        justify={'left'}
+                                        color={'gray.900'}
+                                        paddingX={2}
+                                    >
+                                        {feature.icon}
+                                    </Flex>
+                                    <Text color={'black'} fontWeight={700} fontSize={20}>
+                                        {intl.formatMessage(featureMessage.title)}
+                                    </Text>
+                                    <Text color={'black'}>
+                                        {intl.formatMessage(featureMessage.text)}
+                                    </Text>
+                                </VStack>
+                            </HStack>
+                        )
+                    })}
+                </SimpleGrid>
+            </Container>
 
             <Section
                 padding={4}
@@ -263,10 +253,20 @@ Home.getTemplateName = () => 'home'
 Home.shouldGetProps = ({previousLocation, location}) =>
     !previousLocation || previousLocation.pathname !== location.pathname
 
-Home.getProps = async ({res, api, ampClient}) => {
+Home.getProps = async ({res, location, api, ampClient}) => {
     if (res && !ampClient.vse) {
         res.set('Cache-Control', `max-age=${MAX_CACHE_AGE}`)
     }
+
+    const site = resolveSiteFromUrl(location.pathname)
+    const l10nConfig = site.l10n
+    const targetLocale = getTargetLocale({
+        getUserPreferredLocales: () => {
+            const {locale} = api.getConfig()
+            return [locale]
+        },
+        l10nConfig
+    })
 
     const productSearchResult = await api.shopperSearch.productSearch({
         parameters: {
@@ -275,7 +275,7 @@ Home.getProps = async ({res, api, ampClient}) => {
         }
     })
 
-    const homeSlotTop = await (await ampClient.fetchContent([{key: 'home/slot/top'}])).pop()
+    const homeSlotTop = await (await ampClient.fetchContent([{key: 'home/slot/top'}], {locale: targetLocale})).pop()
 
     return {productSearchResult, homeSlotTop}
 }

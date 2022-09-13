@@ -1,4 +1,5 @@
 import {ContentClient} from 'dc-delivery-sdk-js'
+import {chunk, flatten} from 'lodash'
 import {app} from '../../config/default'
 
 export type IdOrKey = {id: string} | {key: string}
@@ -80,9 +81,11 @@ export class AmplienceAPI {
         const client = params?.client ?? this.client
 
         delete params.client
+        const chunks = chunk(args, 12)
 
-        let responses = await (await client.getContentItems(args, params)).responses
-        return responses.map((response) => {
+        let responses = await Promise.all(chunks.map(async (arg) => (await client.getContentItems(arg, params)).responses))
+
+        return flatten(responses).map((response) => {
             if ('content' in response) {
                 return response.content
             }

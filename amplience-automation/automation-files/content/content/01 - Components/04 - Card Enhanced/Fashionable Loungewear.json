@@ -1,0 +1,198 @@
+{
+  "id": "60ebf6e7-d821-4769-ab1a-49d0ef4dbba9",
+  "body": {
+    "_meta": {
+      "name": "Fashionable Loungewear",
+      "schema": "https://sfcc.com/components/card-enhanced"
+    },
+    "image": {
+      "image": {
+        "crop": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "rot": 0,
+        "hue": 0,
+        "sat": 0,
+        "bri": 0,
+        "fliph": false,
+        "flipv": false,
+        "poi": {
+          "x": 0.4968397698836519,
+          "y": 0.1986301369863014
+        },
+        "aspectLock": "poi",
+        "query": "poi=0.4968,0.1986,0,0&scaleFit=poi",
+        "image": {
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+          },
+          "id": "4e4dc882-a16f-4b34-9146-1feef5e98a56",
+          "name": "dom-hill-nimElTcTNyY-unsplash",
+          "endpoint": "sfcccompdev",
+          "defaultHost": "cdn.media.amplience.net"
+        }
+      },
+      "imageAltText": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "Girl in yellow clothes"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "Fille en vêtements jaunes"
+          },
+          {
+            "locale": "de-DE",
+            "value": "Mädchen in gelber Kleidung"
+          },
+          {
+            "locale": "es-ES",
+            "value": "Chica en ropa amarilla"
+          },
+          {
+            "locale": "it-IT",
+            "value": "Ragazza in abiti gialli"
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      },
+      "seoText": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "Fashionable Loungewear"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "Vêtements de détente à la mode"
+          },
+          {
+            "locale": "de-DE",
+            "value": "Modische Loungewear"
+          },
+          {
+            "locale": "es-ES",
+            "value": "Ropa de salón de moda"
+          },
+          {
+            "locale": "it-IT",
+            "value": "Abbigliamento da casa alla moda"
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      }
+    },
+    "mainText": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Fashionable Loungewear"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Vêtements de détente à la mode"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Modische Loungewear"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Ropa de salón de moda"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Abbigliamento da casa alla moda"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "subText": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Want comfort and fashion? Check out our loungewear that gives you both"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Envie de confort et de mode ? Découvrez nos vêtements d'intérieur qui vous offrent les deux"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Willst du Komfort und Mode? Schauen Sie sich unsere Loungewear an, die Ihnen beides bietet"
+        },
+        {
+          "locale": "es-ES",
+          "value": "¿Quieres comodidad y moda? Echa un vistazo a nuestra ropa de salón que te ofrece ambos"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Vuoi comodità e moda? Dai un'occhiata al nostro loungewear che ti offre entrambi"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "textAlignment": "left",
+    "verticalAlignment": "bottom",
+    "linkPosition": "withtext",
+    "blend": "normal",
+    "links": [
+      {
+        "_meta": {
+          "schema": "https://sfcc.com/components/link"
+        },
+        "label": {
+          "values": [
+            {
+              "locale": "en-US",
+              "value": "View"
+            },
+            {
+              "locale": "fr-FR",
+              "value": "Voir"
+            },
+            {
+              "locale": "de-DE",
+              "value": "Aussicht"
+            },
+            {
+              "locale": "es-ES",
+              "value": "Vista"
+            },
+            {
+              "locale": "it-IT",
+              "value": "Visualizzazione"
+            }
+          ],
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+          }
+        },
+        "type": "URL",
+        "value": "/"
+      }
+    ]
+  },
+  "version": 2,
+  "label": "Fashionable Loungewear",
+  "status": "ACTIVE",
+  "createdBy": "b5b7704b-34ca-4424-a7dc-f6880734c30e",
+  "createdDate": "2022-09-12T16:50:13.427Z",
+  "lastModifiedBy": "b5b7704b-34ca-4424-a7dc-f6880734c30e",
+  "lastModifiedDate": "2022-09-12T16:53:41.751Z",
+  "lastPublishedVersion": 2,
+  "lastPublishedDate": "2022-09-12T17:04:15.613Z",
+  "deliveryId": "60ebf6e7-d821-4769-ab1a-49d0ef4dbba9"
+}

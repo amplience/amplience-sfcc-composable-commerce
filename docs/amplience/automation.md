@@ -40,7 +40,7 @@ npm run import \
     --clientSecret <clientSecret> \
     --contentRepoId <contentRepoId> \
     --slotsRepoId <slotsRepoId> \
-    --sitestructureRepoId <sitestructureRepoId>
+    --sitestructureRepoId <sitestructureRepoId> \
     --mapFile <mapFile> \
     --tempDir <tempDir> \
     --sfccUrl <sfccUrl> \

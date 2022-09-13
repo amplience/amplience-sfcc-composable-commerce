@@ -1,0 +1,198 @@
+{
+  "id": "19e05a37-f7cf-46b3-a40e-cd67cb1389fb",
+  "body": {
+    "_meta": {
+      "name": "California Cool",
+      "schema": "https://sfcc.com/components/card-enhanced"
+    },
+    "image": {
+      "image": {
+        "crop": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "rot": 0,
+        "hue": 0,
+        "sat": 0,
+        "bri": 0,
+        "fliph": false,
+        "flipv": false,
+        "poi": {
+          "x": 0.44863013698630133,
+          "y": 0.3333333333333333
+        },
+        "aspectLock": "poi",
+        "image": {
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+          },
+          "id": "43cb0c7d-b150-443b-847b-d95ed4f54b46",
+          "name": "sam-burriss-eB0Emi-vJRk-unsplash",
+          "endpoint": "nmrsaalphatest",
+          "defaultHost": "cdn.media.amplience.net"
+        },
+        "query": "poi=0.4486,0.3333,0,0&scaleFit=poi"
+      },
+      "imageAltText": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "man in black pants"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "homme en pantalon noir"
+          },
+          {
+            "locale": "de-DE",
+            "value": "Mann in schwarzen Hosen"
+          },
+          {
+            "locale": "es-ES",
+            "value": "hombre en pantalones negros"
+          },
+          {
+            "locale": "it-IT",
+            "value": "uomo in pantaloni neri"
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      },
+      "seoText": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "California Cool"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "Cool californien"
+          },
+          {
+            "locale": "de-DE",
+            "value": "Kalifornien Cool"
+          },
+          {
+            "locale": "es-ES",
+            "value": "California Cool"
+          },
+          {
+            "locale": "it-IT",
+            "value": "California Cool"
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      }
+    },
+    "mainText": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "California Cool"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Cool californien"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Kalifornien Cool"
+        },
+        {
+          "locale": "es-ES",
+          "value": "California Cool"
+        },
+        {
+          "locale": "it-IT",
+          "value": "California Cool"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "subText": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Explore this collection inspired by Coastal California"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Découvrez cette collection inspirée de la Californie côtière"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Entdecken Sie diese Kollektion inspiriert von Coastal California"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Explore esta colección inspirada en la costa de California"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Esplora questa collezione ispirata alla California costiera"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "textAlignment": "center",
+    "verticalAlignment": "bottom",
+    "linkPosition": "withtext",
+    "blend": "normal",
+    "links": [
+      {
+        "_meta": {
+          "schema": "https://sfcc.com/components/link"
+        },
+        "label": {
+          "values": [
+            {
+              "locale": "en-US",
+              "value": "Explore"
+            },
+            {
+              "locale": "fr-FR",
+              "value": "Explorez"
+            },
+            {
+              "locale": "de-DE",
+              "value": "Erkunden"
+            },
+            {
+              "locale": "es-ES",
+              "value": "Explorar"
+            },
+            {
+              "locale": "it-IT",
+              "value": "Esplora"
+            }
+          ],
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+          }
+        },
+        "type": "URL",
+        "value": "/"
+      }
+    ]
+  },
+  "version": 2,
+  "label": "California Cool",
+  "status": "ACTIVE",
+  "createdBy": "2f1f5720-8acc-43b5-9f67-bab73ba7524a",
+  "createdDate": "2022-09-12T18:08:52.421Z",
+  "lastModifiedBy": "df984790-5cf9-4b6e-96a0-3a0ea9475b64",
+  "lastModifiedDate": "2022-09-12T18:10:52.147Z",
+  "lastPublishedVersion": 1,
+  "lastPublishedDate": "2022-09-12T18:09:05.791Z",
+  "deliveryId": "19e05a37-f7cf-46b3-a40e-cd67cb1389fb"
+}

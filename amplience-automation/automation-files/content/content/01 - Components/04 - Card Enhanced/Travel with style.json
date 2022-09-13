@@ -1,0 +1,135 @@
+{
+  "id": "abfb6cdd-656f-4706-b0ea-5f9986a813fa",
+  "body": {
+    "_meta": {
+      "name": "Travel with style",
+      "schema": "https://sfcc.com/components/card-enhanced"
+    },
+    "image": {
+      "image": {
+        "crop": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "rot": 0,
+        "hue": 0,
+        "sat": 0,
+        "bri": 0,
+        "fliph": false,
+        "flipv": false,
+        "poi": {
+          "x": -1,
+          "y": -1
+        },
+        "aspectLock": "clear",
+        "image": {
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+          },
+          "id": "794b4991-2d99-42f4-88bd-ae4dce4f1643",
+          "name": "clarisse-meyer-d6pLNFVZt_4-unsplash",
+          "endpoint": "sfcccompdev",
+          "defaultHost": "cdn.media.amplience.net"
+        }
+      },
+      "imageAltText": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "Travel with style"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "Voyagez avec style"
+          },
+          {
+            "locale": "de-DE",
+            "value": "Reisen Sie mit Stil"
+          },
+          {
+            "locale": "es-ES",
+            "value": "Viaja con estilo"
+          },
+          {
+            "locale": "it-IT",
+            "value": "Viaggia con stile"
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      }
+    },
+    "mainText": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Travel with style"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Voyagez avec style"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Reisen Sie mit Stil"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Viaja con estilo"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Viaggia con stile"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "subText": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Discover our new travel accessories"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Découvrez nos nouveaux accessoires de voyage"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Entdecken Sie unser neues Reisezubehör"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Descubre nuestros nuevos accesorios de viaje"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Scopri i nostri nuovi accessori da viaggio"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "textAlignment": "right",
+    "verticalAlignment": "bottom",
+    "linkPosition": "withtext",
+    "blend": "normal",
+    "color": "rgb(0, 0, 0)"
+  },
+  "version": 1,
+  "label": "Travel with style",
+  "status": "ACTIVE",
+  "createdBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
+  "createdDate": "2022-09-12T15:14:10.806Z",
+  "lastModifiedBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
+  "lastModifiedDate": "2022-09-12T15:14:10.806Z",
+  "lastPublishedVersion": 1,
+  "lastPublishedDate": "2022-09-12T16:40:41.539Z",
+  "deliveryId": "abfb6cdd-656f-4706-b0ea-5f9986a813fa"
+}

@@ -10,23 +10,23 @@
             "values": [
                 {
                     "locale": "en-US",
-                    "value": "Simple Product List"
+                    "value": "Product List"
                 },
                 {
                     "locale": "fr-FR",
-                    "value": "Simple Product List (fr)"
+                    "value": "Liste de produits"
                 },
                 {
                     "locale": "de-DE",
-                    "value": "Simple Product List (de)"
+                    "value": "Produktliste"
                 },
                 {
                     "locale": "es-ES",
-                    "value": "Simple Product List (es)"
+                    "value": "Lista de productos"
                 },
                 {
                     "locale": "it-IT",
-                    "value": "Simple Product List (it)"
+                    "value": "Elenco prodotti"
                 }
             ],
             "_meta": {

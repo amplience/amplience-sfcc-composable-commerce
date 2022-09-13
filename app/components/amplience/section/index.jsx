@@ -18,7 +18,7 @@ import Button from '../button'
 const Section = ({title, subtitle, actions, maxWidth, children, ...props}) => {
     const sectionMaxWidth = maxWidth || '3xl'
     return (
-        <Box as={'section'} paddingBottom="16" {...props}>
+        <Box as={'section'} marginTop="4" marginBottom="8" paddingTop="8" paddingBottom="16" {...props}>
             <Stack spacing={4} as={Container} maxW={sectionMaxWidth} textAlign={'center'}>
                 {title && (
                     <Heading as="h2" fontSize={40} textAlign="center">

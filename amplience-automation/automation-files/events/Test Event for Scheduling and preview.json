@@ -240,7 +240,7 @@
                                     "_meta": {
                                         "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link",
                                         "locked": false,
-                                        "rootContentItemId": "f02a8387-fa6e-4875-b263-724db2d41334"
+                                        "rootContentItemId": "af9803be-e9b7-456c-89e3-267a90e726cc"
                                     },
                                     "contentType": "https://sfcc.com/components/hero",
                                     "id": "62eb938ac9e77c00013c36b8"

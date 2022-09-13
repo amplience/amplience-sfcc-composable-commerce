@@ -1,0 +1,198 @@
+{
+  "id": "717ce797-3ac6-4a67-9301-7aefe6b62671",
+  "body": {
+    "_meta": {
+      "name": "Casual Essentials",
+      "schema": "https://sfcc.com/components/card-enhanced"
+    },
+    "image": {
+      "image": {
+        "crop": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "rot": 0,
+        "hue": 0,
+        "sat": 0,
+        "bri": 0,
+        "fliph": false,
+        "flipv": false,
+        "poi": {
+          "x": 0.5068493150684932,
+          "y": 0.3424657534246575
+        },
+        "aspectLock": "poi",
+        "image": {
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+          },
+          "id": "a48df4cc-d3fa-4f65-8234-de86a8a4f683",
+          "name": "brandon-atchison-eexdeq3NleQ-unsplash",
+          "endpoint": "nmrsaalphatest",
+          "defaultHost": "cdn.media.amplience.net"
+        },
+        "query": "poi=0.5068,0.3425,0,0&scaleFit=poi"
+      },
+      "imageAltText": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "man walking on beach"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "homme marchant sur la plage"
+          },
+          {
+            "locale": "de-DE",
+            "value": "Mann geht am Strand spazieren"
+          },
+          {
+            "locale": "es-ES",
+            "value": "hombre caminando en la playa"
+          },
+          {
+            "locale": "it-IT",
+            "value": "uomo che cammina sulla spiaggia"
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      },
+      "seoText": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "Casual Essentials"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "Essentiels décontrac"
+          },
+          {
+            "locale": "de-DE",
+            "value": "Lässige Essen"
+          },
+          {
+            "locale": "es-ES",
+            "value": "Imprescindibles informales"
+          },
+          {
+            "locale": "it-IT",
+            "value": "Essenziali casual"
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      }
+    },
+    "mainText": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Casual Essentials"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Essentiels décontrac"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Lässige Essen"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Imprescindibles informales"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Essenziali casual"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "subText": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Whether it's a day at the beach or a round of golf, be comfortable and cool in these clothes"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Qu'il s'agisse d'une journée à la plage ou d'une partie de golf, soyez à l'aise et au frais dans ces vêtements"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Egal, ob es ein Tag am Strand oder eine Runde Golf ist, fühlen Sie sich in dieser Kleidung bequem und cool"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Ya sea para un día en la playa o una partida de golf, siéntete cómoda y fresca con esta ropa"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Che si tratti di una giornata in spiaggia o di una partita a golf, sii comodo e alla moda con questi vestiti"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "textAlignment": "left",
+    "verticalAlignment": "bottom",
+    "linkPosition": "withtext",
+    "blend": "normal",
+    "links": [
+      {
+        "_meta": {
+          "schema": "https://sfcc.com/components/link"
+        },
+        "label": {
+          "values": [
+            {
+              "locale": "en-US",
+              "value": "Play"
+            },
+            {
+              "locale": "fr-FR",
+              "value": "Jouez"
+            },
+            {
+              "locale": "de-DE",
+              "value": "abspielen"
+            },
+            {
+              "locale": "es-ES",
+              "value": "Juega"
+            },
+            {
+              "locale": "it-IT",
+              "value": "Gioca"
+            }
+          ],
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+          }
+        },
+        "type": "URL",
+        "value": "/"
+      }
+    ]
+  },
+  "version": 2,
+  "label": "Casual Essentials",
+  "status": "ACTIVE",
+  "createdBy": "2f1f5720-8acc-43b5-9f67-bab73ba7524a",
+  "createdDate": "2022-09-12T18:08:53.541Z",
+  "lastModifiedBy": "df984790-5cf9-4b6e-96a0-3a0ea9475b64",
+  "lastModifiedDate": "2022-09-12T18:10:31.021Z",
+  "lastPublishedVersion": 1,
+  "lastPublishedDate": "2022-09-12T18:09:08.428Z",
+  "deliveryId": "717ce797-3ac6-4a67-9301-7aefe6b62671"
+}

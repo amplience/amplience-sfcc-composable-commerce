@@ -1,0 +1,198 @@
+{
+  "id": "a77a9289-e125-49f7-8fb7-9ab09cb9bdc3",
+  "body": {
+    "_meta": {
+      "name": "Evening Inspiration",
+      "schema": "https://sfcc.com/components/card-enhanced"
+    },
+    "image": {
+      "image": {
+        "crop": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "rot": 0,
+        "hue": 0,
+        "sat": 0,
+        "bri": 0,
+        "fliph": false,
+        "flipv": false,
+        "poi": {
+          "x": 0.538055330710813,
+          "y": 0.2865296803652968
+        },
+        "aspectLock": "poi",
+        "query": "poi=0.5381,0.2865,0,0&scaleFit=poi",
+        "image": {
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+          },
+          "id": "166f6236-3150-4e56-ba3f-cbdaa1e38a17",
+          "name": "monica-silva-VlMMBxSZuSI-unsplash",
+          "endpoint": "sfcccompdev",
+          "defaultHost": "cdn.media.amplience.net"
+        }
+      },
+      "imageAltText": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "Blue evening dress"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "Robe de soirée bleue"
+          },
+          {
+            "locale": "de-DE",
+            "value": "Blaues Abendkleid"
+          },
+          {
+            "locale": "es-ES",
+            "value": "vestido de noche azul"
+          },
+          {
+            "locale": "it-IT",
+            "value": "Abito da sera blu"
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      },
+      "seoText": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "Evening inspiration"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "Inspiration du soir"
+          },
+          {
+            "locale": "de-DE",
+            "value": "Abendinspiration"
+          },
+          {
+            "locale": "es-ES",
+            "value": "Inspiración nocturna"
+          },
+          {
+            "locale": "it-IT",
+            "value": "Ispirazione serale"
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      }
+    },
+    "mainText": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Evening inspiration"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Inspiration du soir"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Abendinspiration"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Inspiración nocturna"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Ispirazione serale"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "subText": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Make your nights special with great evening dresses"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Rendez vos soirées spéciales avec de superbes robes de soirée"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Machen Sie Ihre Nächte mit tollen Abendkleidern zu etwas Besonderem"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Haz que tus noches sean especiales con fantásticos vestidos de noche"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Rendi speciali le tue notti con fantastici abiti da sera"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "textAlignment": "right",
+    "verticalAlignment": "bottom",
+    "linkPosition": "withtext",
+    "blend": "normal",
+    "links": [
+      {
+        "_meta": {
+          "schema": "https://sfcc.com/components/link"
+        },
+        "label": {
+          "values": [
+            {
+              "locale": "en-US",
+              "value": "View"
+            },
+            {
+              "locale": "fr-FR",
+              "value": "Voir"
+            },
+            {
+              "locale": "de-DE",
+              "value": "Aussicht"
+            },
+            {
+              "locale": "es-ES",
+              "value": "Vista"
+            },
+            {
+              "locale": "it-IT",
+              "value": "Visualizzazione"
+            }
+          ],
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+          }
+        },
+        "type": "URL",
+        "value": "/category/womens-clothing-dresses"
+      }
+    ]
+  },
+  "version": 2,
+  "label": "Evening Inspiration",
+  "status": "ACTIVE",
+  "createdBy": "b5b7704b-34ca-4424-a7dc-f6880734c30e",
+  "createdDate": "2022-09-12T16:59:54.000Z",
+  "lastModifiedBy": "b5b7704b-34ca-4424-a7dc-f6880734c30e",
+  "lastModifiedDate": "2022-09-12T17:03:26.154Z",
+  "lastPublishedVersion": 2,
+  "lastPublishedDate": "2022-09-12T17:04:05.795Z",
+  "deliveryId": "a77a9289-e125-49f7-8fb7-9ab09cb9bdc3"
+}

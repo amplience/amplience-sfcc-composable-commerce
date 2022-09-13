@@ -27,9 +27,96 @@
                     "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
                 }
             },
-            "priority": 1
+            "priority": 1,
+            "navcontent": {
+                "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                },
+                "contentType": "https://sfcc.com/components/hero",
+                "id": "af9803be-e9b7-456c-89e3-267a90e726cc"
+            }
         },
-        "includeSFCC": true
+        "includeSFCC": true,
+        "topContent": [
+            {
+                "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference"
+                },
+                "contentType": "https://sfcc.com/slots/flexible-list",
+                "id": "311b072e-555f-4dc4-b7c5-311c34d50f40"
+            }
+        ],
+        "gridItem": [
+            {
+                "position": 1,
+                "cols": "2",
+                "rows": "1",
+                "content": {
+                    "_meta": {
+                        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference"
+                    },
+                    "contentType": "https://sfcc.com/components/card-enhanced",
+                    "id": "bbe17cee-564e-46ee-a3a5-f912c37d2643"
+                }
+            },
+            {
+                "position": 9,
+                "cols": "2",
+                "rows": "1",
+                "content": {
+                    "_meta": {
+                        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference"
+                    },
+                    "contentType": "https://sfcc.com/components/card-enhanced",
+                    "id": "6511f76d-ce39-4bc7-8a96-b3526db81935"
+                }
+            },
+            {
+                "position": 19,
+                "cols": "1",
+                "rows": "2",
+                "content": {
+                    "_meta": {
+                        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference"
+                    },
+                    "contentType": "https://sfcc.com/components/card-enhanced",
+                    "id": "60ebf6e7-d821-4769-ab1a-49d0ef4dbba9"
+                }
+            },
+            {
+                "position": 28,
+                "cols": "1",
+                "rows": "2",
+                "content": {
+                    "_meta": {
+                        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference"
+                    },
+                    "contentType": "https://sfcc.com/components/card-enhanced",
+                    "id": "f5a40609-fc89-4266-9830-4ec38ce4dfed"
+                }
+            },
+            {
+                "position": 36,
+                "cols": "1",
+                "rows": "2",
+                "content": {
+                    "_meta": {
+                        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference"
+                    },
+                    "contentType": "https://sfcc.com/components/card-enhanced",
+                    "id": "a77a9289-e125-49f7-8fb7-9ab09cb9bdc3"
+                }
+            }
+        ],
+        "bottomContent": [
+            {
+                "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference"
+                },
+                "contentType": "https://sfcc.com/components/section",
+                "id": "c18343f7-61c4-4d4f-9ea4-be9286f6f6ab"
+            }
+        ]
     },
     "version": 8,
     "label": "Womens",

@@ -1,0 +1,108 @@
+{
+    "id": "c18343f7-61c4-4d4f-9ea4-be9286f6f6ab",
+    "body": {
+        "title": {
+            "values": [
+                {
+                    "locale": "en-US",
+                    "value": "About Women's"
+                },
+                {
+                    "locale": "fr-FR",
+                    "value": "À propos des femmes"
+                },
+                {
+                    "locale": "de-DE",
+                    "value": "Über Frauen"
+                },
+                {
+                    "locale": "es-ES",
+                    "value": "Acerca de las mujeres"
+                },
+                {
+                    "locale": "it-IT",
+                    "value": "A proposito di donne"
+                }
+            ],
+            "_meta": {
+                "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+            }
+        },
+        "subtitle": {
+            "values": [
+                {
+                    "locale": "en-US",
+                    "value": "You're probably here for a bit of new. For all the latest fashion straight from the catwalk, this is where it's at. We’ve got all the clothing ranges to make sure you’re maximising your attitude whilst taking your style game to new heights. Revamp your wardrobe with fresh fabrics straight from the new season “ whether it’s dropping dollar on some artisan embroidery for a subtle feminine kick, adding a techy touch for a metallic, space-age vibe or keeping it grunge in ripped detailing and neutral tones. Head into the party season and demand attention in strictly sequins or make it all about you in glitzy embellishment. From casual, off-duty looks to maximum-mileage outfits, we bet your bottom dollar you’ll be splashing out on more than just one. Get browsin’, get clickin’ and look fire."
+                },
+                {
+                    "locale": "fr-FR",
+                    "value": "Vous êtes probablement ici pour un peu de nouveau. Pour toutes les dernières tendances en direct des podiums, c'est là que ça se passe. Nous avons toutes les gammes de vêtements pour vous assurer de maximiser votre attitude tout en portant votre jeu de style vers de nouveaux sommets. Réorganisez votre garde-robe avec des tissus frais tout droit sortis de la nouvelle saison, qu'il s'agisse de baisser le dollar sur une broderie artisanale pour un coup de pied féminin subtil, d'ajouter une touche technique pour une ambiance métallique de l'ère spatiale ou de la garder grunge dans des détails déchirés et des tons neutres. Dirigez-vous vers la saison des fêtes et exigez de l'attention en sequins stricts ou faites tout pour vous dans des embellissements scintillants. Des looks décontractés et décontractés aux tenues à kilométrage maximum, nous parions que votre dernier dollar vous en coûtera plus d'un. Naviguez, cliquez et regardez le feu."
+                },
+                {
+                    "locale": "de-DE",
+                    "value": "Sie sind wahrscheinlich hier für ein bisschen Neues. Hier finden Sie die neueste Mode direkt vom Laufsteg. Wir haben alle Bekleidungslinien, um sicherzustellen, dass Sie Ihre Einstellung maximieren und gleichzeitig Ihr Stilspiel auf neue Höhen bringen. Erneuern Sie Ihre Garderobe mit frischen Stoffen direkt aus der neuen Saison – egal, ob Sie Geld für eine handwerkliche Stickerei für einen subtilen femininen Kick verlieren, einen technischen Touch für einen metallischen Space-Age-Vibe hinzufügen oder es mit zerrissenen Details und neutralen Tönen im Grunge-Stil halten. Gehen Sie in die Party-Saison und fordern Sie Aufmerksamkeit in strengen Pailletten oder machen Sie alles mit glitzernden Verzierungen. Von lässigen Looks für die Freizeit bis hin zu Outfits mit maximaler Laufleistung – wir wetten, dass Sie mehr als nur eins ausgeben werden. Blättern Sie, klicken Sie und schauen Sie Feuer."
+                },
+                {
+                    "locale": "es-ES",
+                    "value": "Probablemente estés aquí por un poco de novedad. Para conocer la última moda directamente de la pasarela, aquí es donde está. Tenemos todas las gamas de ropa para asegurarnos de que maximizas tu actitud mientras llevas tu juego de estilo a nuevas alturas. Renueve su guardarropa con telas frescas directamente de la nueva temporada, ya sea gastando dólares en algunos bordados artesanales para una sutil patada femenina, agregando un toque tecnológico para una vibra metálica de la era espacial o manteniendo el estilo grunge en detalles rasgados y tonos neutros. Diríjase a la temporada de fiestas y llame la atención con estrictamente lentejuelas o hágalo todo sobre usted con adornos deslumbrantes. Desde looks informales y fuera de servicio hasta atuendos para el máximo kilometraje, apostamos tu último dólar a que gastarás en más de uno. Navega, haz clic y luce como un fuego."
+                },
+                {
+                    "locale": "it-IT",
+                    "value": "Probabilmente sei qui per un po' di novità. Per tutta l'ultima moda direttamente dalla passerella, ecco dove si trova. Abbiamo tutte le gamme di abbigliamento per assicurarti di massimizzare il tuo atteggiamento mentre porti il ​​tuo gioco di stile a nuovi livelli. Rinnova il tuo guardaroba con tessuti freschi direttamente dalla nuova stagione \" che si tratti di perdere soldi su alcuni ricami artigianali per un tocco femminile sottile, aggiungere un tocco tecnico per un'atmosfera metallica e spaziale o mantenerlo grunge con dettagli strappati e toni neutri. Entra nella stagione delle feste e richiedi l'attenzione rigorosamente in paillettes o fai tutto su di te con decorazioni sfarzose. Dai look casual e fuori servizio agli abiti con il chilometraggio massimo, scommettiamo il tuo dollaro più basso che sguazzerai su più di uno. Sfoglia, fai clic e guarda il fuoco."
+                }
+            ],
+            "_meta": {
+                "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+            }
+        },
+        "actions": [
+            {
+                "label": {
+                    "values": [
+                        {
+                            "locale": "en-US",
+                            "value": "View Latest"
+                        },
+                        {
+                            "locale": "fr-FR",
+                            "value": "Afficher les dernières"
+                        },
+                        {
+                            "locale": "de-DE",
+                            "value": "Neueste anzeigen"
+                        },
+                        {
+                            "locale": "es-ES",
+                            "value": "Ver más reciente"
+                        },
+                        {
+                            "locale": "it-IT",
+                            "value": "Visualizza più recenti"
+                        }
+                    ],
+                    "_meta": {
+                        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+                    }
+                },
+                "url": "/category/newarrivals-womens"
+            }
+        ],
+        "maxWidth": "3xl",
+        "background": "gray.50",
+        "_meta": {
+            "name": "Womens Section",
+            "schema": "https://sfcc.com/components/section"
+        }
+    },
+    "version": 4,
+    "label": "Womens Section",
+    "status": "ACTIVE",
+    "createdBy": "80d6035b-48f7-49d0-b4f4-feed71fe7bf8",
+    "locale": "en-US",
+    "createdDate": "2022-08-04T09:18:17.824Z",
+    "lastModifiedBy": "80d6035b-48f7-49d0-b4f4-feed71fe7bf8",
+    "lastModifiedDate": "2022-08-04T10:37:45.882Z",
+    "lastPublishedVersion": 4,
+    "lastPublishedDate": "2022-08-04T10:38:45.544Z",
+    "deliveryId": "c18343f7-61c4-4d4f-9ea4-be9286f6f6ab"
+}
