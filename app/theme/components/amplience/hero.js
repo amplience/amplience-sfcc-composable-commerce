@@ -15,7 +15,9 @@ export default {
             flex: 1,
             spacing: {base: 5, md: 8},
             textAlign: {base: 'center'},
-            alignItems: {base: 'center', lg: 'unset'}
+            alignItems: {base: 'center', lg: 'unset'},
+            backgroundColor: {base: "rgba(255,255,255,0.5)"},
+            margin: {base: 8}
 
         },
         imageContainer: {
@@ -34,7 +36,7 @@ export default {
                 spacing: {base: 5, md: 8},
                 zIndex: 2,
                 position: 'absolute',
-                padding: 2,
+                padding: 8,
                 textAlign: {base: 'center'},
                 alignItems: {base: 'center', lg: 'unset'}
             },
