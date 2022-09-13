@@ -40,7 +40,7 @@ const Hero = ({
                 justifyContent={justifyContent.toLowerCase()}
                 alignItems={alignItems.toLowerCase()}
             >
-                <Stack {...styles.textContainer} textAlign={{base: 'center', lg: textAlign.toLowerCase()}}
+                <Stack {...styles.textContainer} textAlign={{base: 'center', md: textAlign.toLowerCase()}}
                        position={fullWidth ? 'absolute' : ''}>
                     <Heading
                         as="h1"

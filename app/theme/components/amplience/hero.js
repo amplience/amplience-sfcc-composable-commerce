@@ -2,20 +2,20 @@ export default {
     baseStyle: (props) => ({
         container: {
             marginBottom: {base: 0, md: 10},
-            position: {lg: 'relative'}
+            position: {md: 'relative'}
         },
         stackContainer: {
             align: 'center',
             spacing: {base: 8, md: 10},
             paddingTop: {base: 12, md: 10},
             paddingBottom: {base: 6, md: 10},
-            direction: {base: 'column', lg: 'row'}
+            direction: {base: 'column', md: 'row'}
         },
         textContainer: {
             flex: 1,
             spacing: {base: 5, md: 8},
             textAlign: {base: 'center'},
-            alignItems: {base: 'center', lg: 'unset'},
+            alignItems: {base: 'center', md: 'unset'},
             backgroundColor: {base: "rgba(255,255,255,0.5)"},
             margin: {base: 8}
 
@@ -26,7 +26,7 @@ export default {
             alignItems: 'center',
             position: 'relative',
             width: 'full',
-            paddingTop: {base: 4, lg: 0}
+            paddingTop: 0
         }
     }),
     variants: {
@@ -38,7 +38,7 @@ export default {
                 position: 'absolute',
                 padding: 8,
                 textAlign: {base: 'center'},
-                alignItems: {base: 'center', lg: 'unset'}
+                alignItems: {base: 'center', md: 'unset'}
             },
             imageContainer: {
                 flex: 1,
@@ -46,7 +46,8 @@ export default {
                 alignItems: 'center',
                 position: 'relative',
                 width: 'full',
-                marginInlineStart: '0 !important'
+                marginInlineStart: '0 !important',
+                marginTop: '0 !important',
             }
         }),
         inGrid: (props) => ({
@@ -56,7 +57,7 @@ export default {
                 zIndex: 2,
                 padding: 2,
                 textAlign: {base: 'center'},
-                alignItems: {base: 'center', lg: 'unset'}
+                alignItems: {base: 'center', md: 'unset'}
             },
             container: {
                 marginBottom: 0
