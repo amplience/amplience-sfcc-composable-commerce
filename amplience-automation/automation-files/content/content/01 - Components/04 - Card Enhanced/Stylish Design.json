@@ -28,8 +28,8 @@
           "_meta": {
             "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
           },
-          "id": "cb954567-d6ce-46d3-b4bc-d4512f02a6ad",
-          "name": "clem-onojeghuo-c4pbb7yNM2c-unsplash",
+          "id": "b60155d1-b23c-48a9-b394-2db34d501543",
+          "name": "clem-onojeghuo-c4pbb7yNM2c-unsplash-2",
           "endpoint": "sfcccompdev",
           "defaultHost": "cdn.media.amplience.net"
         }
