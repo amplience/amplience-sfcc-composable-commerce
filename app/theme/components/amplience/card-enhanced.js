@@ -36,7 +36,7 @@ export default {
             borderRadius: '4px',
             display: 'inline-block',
             padding: '6px 10px',
-            width: '50%',
+            width: '70%',
             transition: 'all 0.8s ease'
         },
         h: {

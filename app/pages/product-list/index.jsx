@@ -43,7 +43,7 @@ import {
 
 // Project Components
 import Pagination from '../../components/pagination'
-import ProductTile, {Skeleton as ProductTileSkeleton} from '../../components/product-tile'
+//import ProductTile, {Skeleton as ProductTileSkeleton} from '../../components/product-tile'
 import {HideOnDesktop} from '../../components/responsive'
 import Refinements from './partials/refinements'
 import SelectedRefinements from './partials/selected-refinements'
@@ -53,6 +53,10 @@ import PageHeader from './partials/page-header'
 // Amplience Components
 import AmplienceWrapper from '../../components/amplience/wrapper'
 import _ from 'lodash'
+
+// TO switch back to the OOTB Product Tile, comment the next 2 line out and uncomment line 46 above
+import AmplienceProductTile from '../../components/amplience/product-tile'
+import {Skeleton as ProductTileSkeleton} from '../../components/amplience/product-tile'
 
 // Icons
 import {FilterIcon, ChevronDownIcon} from '../../components/icons'
@@ -538,7 +542,7 @@ const ProductList = (props) => {
                             <SimpleGrid
                                 columns={[2, 2, 3, 3]}
                                 spacingX={4}
-                                spacingY={{base: 12, lg: 16}}
+                                spacingY={{base: 4, lg: 4}}
                             >
                                 {isLoading || !productSearchResult
                                     ? new Array(searchParams.limit)
@@ -579,7 +583,7 @@ const ProductList = (props) => {
                                               )
 
                                               return (
-                                                  <ProductTile
+                                                  <AmplienceProductTile
                                                       data-testid={`sf-product-tile-${productSearchItem.productId}`}
                                                       key={productSearchItem.productId}
                                                       product={productSearchItem}

@@ -32,10 +32,10 @@ const TrueAdaptiveImage = (props) => {
                       ...transformations,
                       format: 'webp',
                       width: transformations.width
-                          ? Math.floor(transformations.width / 1.25)
+                          ? Math.floor(transformations.width * 2)
                           : undefined,
                       height: transformations.height
-                          ? Math.floor(transformations.height / 1.25)
+                          ? Math.floor(transformations.height * 2)
                           : undefined
                   }
                 : {
@@ -47,10 +47,10 @@ const TrueAdaptiveImage = (props) => {
                 ? {
                       ...transformations,
                       width: transformations.width
-                          ? Math.floor(transformations.width / 1.25)
+                          ? Math.floor(transformations.width * 2)
                           : undefined,
                       height: transformations.height
-                          ? Math.floor(transformations.height / 1.25)
+                          ? Math.floor(transformations.height * 2)
                           : undefined
                   }
                 : {
@@ -62,10 +62,10 @@ const TrueAdaptiveImage = (props) => {
                       ...transformations,
                       format: 'webp',
                       width: transformations.width
-                          ? Math.floor(transformations.width / 1.56)
+                          ? Math.floor(transformations.width * 2)
                           : undefined,
                       height: transformations.height
-                          ? Math.floor(transformations.height / 1.56)
+                          ? Math.floor(transformations.height * 2)
                           : undefined
                   }
                 : {
@@ -77,10 +77,10 @@ const TrueAdaptiveImage = (props) => {
                 ? {
                       ...transformations,
                       width: transformations.width
-                          ? Math.floor(transformations.width / 1.56)
+                          ? Math.floor(transformations.width * 2)
                           : undefined,
                       height: transformations.height
-                          ? Math.floor(transformations.height / 1.56)
+                          ? Math.floor(transformations.height * 2)
                           : undefined
                   }
                 : {
@@ -92,10 +92,10 @@ const TrueAdaptiveImage = (props) => {
                       ...transformations,
                       format: 'webp',
                       width: transformations.width
-                          ? Math.floor(transformations.width / 2.125)
+                          ? Math.floor(transformations.width * 2)
                           : undefined,
                       height: transformations.height
-                          ? Math.floor(transformations.height / 2.125)
+                          ? Math.floor(transformations.height * 2)
                           : undefined
                   }
                 : {
@@ -107,10 +107,10 @@ const TrueAdaptiveImage = (props) => {
                 ? {
                       ...transformations,
                       width: transformations.width
-                          ? Math.floor(transformations.width / 2.125)
+                          ? Math.floor(transformations.width * 2)
                           : undefined,
                       height: transformations.height
-                          ? Math.floor(transformations.height / 2.125)
+                          ? Math.floor(transformations.height * 2)
                           : undefined
                   }
                 : {
@@ -119,8 +119,6 @@ const TrueAdaptiveImage = (props) => {
                   }
         ]
     }, [transformations])
-
-    //console.log('xl image transform: ', xl);
 
     return (
         <AdaptiveImage ref={imageRef} {...props}>
