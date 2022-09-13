@@ -67,7 +67,10 @@ const Contain = styled(Link)`
     @media (max-width: 768px) {
         .text-pane {
         {
-            background: rgba(255, 255, 255, 1) !important;
+            background: rgba(255, 255, 255, 0.75) !important;
+            p {
+                display: none;
+            }
         }
     }
 `

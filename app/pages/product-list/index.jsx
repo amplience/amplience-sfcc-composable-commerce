@@ -103,6 +103,12 @@ function getIdsForContent(item) {
     return {id: item.id}
 }
 
+const processSlots = (ampSlots) => {
+    ampSlots.sort((a, b) => a.position - b.position)
+
+    return ampSlots
+}
+
 const calculatePageOffsets = (pageSize, totalCount, ampSlots, isMobile) => {
     // Amplience slots reduce the page size of sfcc content.
     const pages = []
@@ -274,7 +280,7 @@ const ProductList = (props) => {
 
     useAmpRtv(
         async (model) => {
-            setAmpSlots(model.content?.gridItem)
+            setAmpSlots(processSlots(model.content?.gridItem))
 
             const childContentPromise = async () => {
                 if (!model.content.topContent) return []
@@ -815,6 +821,8 @@ ProductList.getProps = async ({res, params, location, api, ampClient}) => {
 
     if (ampCategory.type !== 'CONTENT_NOT_FOUND') {
         ampSlots = ampCategory.gridItem ?? []
+
+        processSlots(ampSlots)
     }
 
     const searchParams = parseSearchParams(location.search, false)
