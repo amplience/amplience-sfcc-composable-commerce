@@ -4,22 +4,15 @@
         "_meta": {
             "name": "Home / Slot / Top",
             "schema": "https://sfcc.com/slots/flexible-list",
-            "deliveryKey": "home/slot/top",
-            "edition": {
-                "id": "62eb93804cedfd0001cc3565",
-                "start": "2022-08-06T23:00:00.443Z",
-                "end": "2022-08-13T22:59:59.999Z"
-            }
+            "deliveryKey": "home/slot/top"
         },
         "content": [
             {
                 "_meta": {
-                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link",
-                    "locked": false,
-                    "rootContentItemId": "f02a8387-fa6e-4875-b263-724db2d41334"
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
                 },
                 "contentType": "https://sfcc.com/components/hero",
-                "id": "f02a8387-fa6e-4875-b263-724db2d41334"
+                "id": "af9803be-e9b7-456c-89e3-267a90e726cc"
             }
         ]
     },

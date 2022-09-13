@@ -6,8 +6,8 @@
                 "_meta": {
                     "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
                 },
-                "contentType": "https://sfcc.com/components/card-enhanced",
-                "id": "9bf17e62-11ef-4e86-a83d-deb0cc0a5df5"
+                "contentType": "https://sfcc.com/components/hero",
+                "id": "af9803be-e9b7-456c-89e3-267a90e726cc"
             }
         ],
         "_meta": {

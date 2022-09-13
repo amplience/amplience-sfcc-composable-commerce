@@ -23,7 +23,14 @@
                     "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
                 }
             },
-            "priority": 2
+            "priority": 2,
+            "navcontent": {
+                "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                },
+                "contentType": "https://sfcc.com/components/hero",
+                "id": "8a08a479-efc0-4d3b-9cdd-0a7c14b36d16"
+            }
         },
         "includeSFCC": true,
         "topContent": [
@@ -85,8 +92,8 @@
                 }
             },
             {
-                "position": 36,
-                "cols": "1",
+                "position": 37,
+                "cols": "2",
                 "rows": "2",
                 "content": {
                     "_meta": {
@@ -94,6 +101,18 @@
                     },
                     "contentType": "https://sfcc.com/components/card-enhanced",
                     "id": "6511f76d-ce39-4bc7-8a96-b3526db81935"
+                }
+            },
+            {
+                "position": 48,
+                "cols": "2",
+                "rows": "1",
+                "content": {
+                    "_meta": {
+                        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference"
+                    },
+                    "contentType": "https://sfcc.com/components/card-enhanced",
+                    "id": "f5d217a8-8e50-4c35-b564-1d51f92226d9"
                 }
             }
         ],

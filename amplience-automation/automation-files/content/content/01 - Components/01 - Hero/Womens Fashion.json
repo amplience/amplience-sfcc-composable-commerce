@@ -1,91 +1,94 @@
 {
-    "id": "443896ce-059f-4aec-8c7c-a812c2fc48a7",
-    "body": {
-        "title": {
-            "values": [
-                {
-                    "locale": "en-US",
-                    "value": "Women's Fashion"
-                },
-                {
-                    "locale": "fr-FR",
-                    "value": "La mode des femmes"
-                },
-                {
-                    "locale": "de-DE",
-                    "value": "Frauenmode"
-                },
-                {
-                    "locale": "es-ES",
-                    "value": "Moda femenina"
-                },
-                {
-                    "locale": "it-IT",
-                    "value": "Moda femminile"
-                }
-            ],
-            "_meta": {
-                "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
-            }
-        },
-        "img": {
-            "image": {
-                "_meta": {
-                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
-                },
-                "id": "7d72965e-dd46-47d4-84c4-260cc9540b11",
-                "name": "freestocks-_3Q3tsJ01nc-unsplash",
-                "endpoint": "sfcccomposable",
-                "defaultHost": "cdn.media.amplience.net"
-            },
-            "alt": "Womens Fashion"
-        },
-        "actions": [
-            {
-                "label": {
-                    "values": [
-                        {
-                            "locale": "en-US",
-                            "value": "View Latest"
-                        },
-                        {
-                            "locale": "fr-FR",
-                            "value": "Afficher les dernières"
-                        },
-                        {
-                            "locale": "de-DE",
-                            "value": "Neueste anzeigen"
-                        },
-                        {
-                            "locale": "es-ES",
-                            "value": "Ver más reciente"
-                        },
-                        {
-                            "locale": "it-IT",
-                            "value": "Visualizza più recenti"
-                        }
-                    ],
-                    "_meta": {
-                        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
-                    }
-                },
-                "url": "/category/newarrivals-womens"
-            }
-        ],
-        "_meta": {
-            "name": "Womens Fashion",
-            "schema": "https://sfcc.com/components/hero"
-        }
+  "id": "af9803be-e9b7-456c-89e3-267a90e726cc",
+  "body": {
+    "_meta": {
+      "name": "Womens Fashion",
+      "schema": "https://sfcc.com/components/hero"
     },
-    "version": 4,
-    "label": "Womens Fashion",
-    "status": "ACTIVE",
-    "createdBy": "80d6035b-48f7-49d0-b4f4-feed71fe7bf8",
-    "locale": "en-US",
-    "createdDate": "2022-08-03T12:06:40.734Z",
-    "lastModifiedBy": "4a8aba40-a4a5-4bf2-89ad-1fd81d82c142",
-    "lastModifiedDate": "2022-08-03T17:58:01.651Z",
-    "lastPublishedVersion": 4,
-    "lastPublishedDate": "2022-08-04T09:36:00.559Z",
-    "deliveryId": "443896ce-059f-4aec-8c7c-a812c2fc48a7"
+    "title": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Women's Fashion"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "La mode des femmes"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Frauenmode"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Moda femenina"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Moda femminile"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "img": {
+      "image": {
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+        },
+        "id": "c6438e69-6aac-47ea-9e12-6f2fbd9c6da8",
+        "name": "freestocks-_3Q3tsJ01nc-unsplash-2",
+        "endpoint": "sfcccompdev",
+        "defaultHost": "cdn.media.amplience.net"
+      },
+      "alt": "Womens Fashion"
+    },
+    "actions": [
+      {
+        "label": {
+          "values": [
+            {
+              "locale": "en-US",
+              "value": "View Latest"
+            },
+            {
+              "locale": "fr-FR",
+              "value": "Afficher les dernières"
+            },
+            {
+              "locale": "de-DE",
+              "value": "Neueste anzeigen"
+            },
+            {
+              "locale": "es-ES",
+              "value": "Ver más reciente"
+            },
+            {
+              "locale": "it-IT",
+              "value": "Visualizza più recenti"
+            }
+          ],
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+          }
+        },
+        "url": "/category/newarrivals-womens"
+      }
+    ],
+    "fullWidth": true,
+    "textAlign": "Left",
+    "justifyContent": "Left",
+    "alignItems": "Start"
+  },
+  "version": 10,
+  "label": "Womens Fashion",
+  "status": "ACTIVE",
+  "createdBy": "b5b7704b-34ca-4424-a7dc-f6880734c30e",
+  "createdDate": "2022-09-12T11:19:56.244Z",
+  "lastModifiedBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
+  "lastModifiedDate": "2022-09-13T11:30:38.488Z",
+  "lastPublishedVersion": 10,
+  "lastPublishedDate": "2022-09-13T11:38:25.805Z",
+  "deliveryId": "af9803be-e9b7-456c-89e3-267a90e726cc"
 }
