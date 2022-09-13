@@ -99,8 +99,8 @@ const CardEnhanced = ({
     const [imageLoading, setImageLoading] = useState(true)
     const imageRef = useRef()
 
-    const [height, setHeight] = useState(0)
-    const [width, setWidth] = useState(0)
+    const [height, setHeight] = useState(400)
+    const [width, setWidth] = useState(400)
     const [ratio, setRatio] = useState('1:1')
     const parentRef = useRef()
 
@@ -121,9 +121,16 @@ const CardEnhanced = ({
         }
     }, [imageRef?.current?.complete])
 
+    const h = parentRef.current?.clientHeight == 0 ? 400 : parentRef.current?.clientHeight
+    const w = parentRef.current?.clientWidth == 0 ? 400 : parentRef.current?.clientWidth
+
+    let compHeight = 'auto'
+    if (cols == 3) {
+        // Force the height to a fraction of the width (minus gap)
+        compHeight = (rows * (w - 16 * (cols - 1))) / 3 + 'px'
+    }
+
     useEffect(() => {
-        const h = parentRef.current?.clientHeight == 0 ? 400 : parentRef.current?.clientHeight
-        const w = parentRef.current?.clientWidth == 0 ? 400 : parentRef.current?.clientWidth
         let r, ratio
 
         if (w && h) {
@@ -133,8 +140,9 @@ const CardEnhanced = ({
             ratio =
                 cols === rows ? w / r + ':' + h / r : (w / cols) * cols + ':' + (h / rows) * rows
             setRatio(ratio)
+            setImageLoading(true)
         }
-    }, [cols, rows])
+    }, [w, h, cols, rows])
 
     const img = image?.image
 
@@ -228,7 +236,7 @@ const CardEnhanced = ({
     )
 
     return links[0] ? (
-        <Skeleton isLoaded={!imageLoading} sx={{width: '100%', height: 'auto'}}>
+        <Skeleton isLoaded={!imageLoading} sx={{width: '100%', height: compHeight}}>
             <Contain
                 ref={parentRef}
                 className={`amp-tile amp-tile-${index + 1}`}
@@ -238,7 +246,7 @@ const CardEnhanced = ({
             </Contain>
         </Skeleton>
     ) : (
-        <Skeleton isLoaded={!imageLoading} sx={{width: '100%', height: 'auto'}}>
+        <Skeleton isLoaded={!imageLoading} sx={{width: '100%', height: compHeight}}>
             <Contain ref={parentRef} className={`amp-tile amp-tile-${index + 1}`}>
                 {content}
             </Contain>
