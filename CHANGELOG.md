@@ -2,6 +2,76 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/amplience/amplience-sfcc-composable-commerce/compare/v1.3.0...v1.4.0) (2022-09-13)
+
+
+### Features
+
+* add skeleton support to amplience wrapper ([0da44c7](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/0da44c78078f3e2c4f9fb4bd3642b49748f13a40))
+* allow rtv to reload on filter change ([062eb9f](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/062eb9f229952bbb729efbeb66f4944b1038eac2))
+* amplience product list page ([ebfc43d](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/ebfc43d67a455bb9cd72b8d8741482d4ce73b305))
+* Automation for card-enhanced ([b376a91](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/b376a913082202d66e3ed871a191b8846d982031))
+* Automation for WIP In grid item, schemas, types, icon and card ([a3d634e](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/a3d634e61c6e1801c8bab87cba31bfd06248f112))
+* **automation:** add hero automation ([fe7c374](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/fe7c3741942512a2fab6046a803e16f79b8e26d4))
+* fallback to default components ([73ead8e](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/73ead8e35dfa19d42eaa986ae6daf82cbe418935))
+* Grid Item Hero render ([9ead12b](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/9ead12b3681128655986c4ddf72fd8105a49ff10))
+* **in-grid:** allow using hero in grid ([f23090f](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/f23090f4113a273120d60324c8e229d681fe3fb4))
+* initial version of in-grid content ([266556e](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/266556e84534240b4a668730bf0338f0378e41a7))
+* Localised values for diimage SEO ([cc08253](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/cc082533dc0d804ef3ed760d5f4a8bfd092472bb))
+* new Hero render for In Grid Item ([fb59437](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/fb594373b7aaa741bf9bc4c656da5f5178de768f))
+* start working adaptive image into it ([73632f6](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/73632f611340536d413bb697913befd8c9712e58))
+* use batch publish for automation ([1fcaa7c](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/1fcaa7c88196bd22e3299275264d5f27cf97569b))
+* WIP for Top and Bottom Content: https://ampliencedev.atlassian.net/browse/NOVADEV-648 ([cec2c80](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/cec2c80fc62f8236df675ff236f87a44af9c7c76))
+
+
+### Bug Fixes
+
+* **amplience-api:** max batch size 12 ([07dd2ad](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/07dd2ade1644764a843d819aaa9d1a62e92ddc8e))
+* bound in-grid content to show only when products are present ([bb85111](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/bb851114bd706a3f2ed1f2e8ff8da40072b87e9c))
+* checking if mobile ([15be6bf](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/15be6bfc5a396b09fa86ba23f58ad2509967089c))
+* converting to numbers ([a06f37a](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/a06f37abe4106f049e2edc100f91405c359bce43))
+* Correct content in hierarchy ([8ff608a](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/8ff608a5edfe7ac3d9667f555895b79c5fa91cd8))
+* default 1 when undefined cols or rows ([41d6745](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/41d6745b3bdf29b358c25fac4eb2a91fed52c67c))
+* fix card initial state ([2cfe51d](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/2cfe51d6aa5f3a43a9ecda069ee0e92f83f76af6))
+* fix card sizing at cols = 3 ([3fd5bc6](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/3fd5bc6504ee4a07caae865fbab5f8757e7c78ea))
+* fix categories without slots ([ec33039](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/ec33039b64f1e24d77179b92b5b4928d7f6c87f3))
+* fix duplicating grid content ([d54ca3a](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/d54ca3abcd1a9b9c9f988122a280996d67fee2ae))
+* fix error with row/col passing, proptypes ([248a84e](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/248a84ea26983d838c872de056639c387c7daf63))
+* fix page count with in-grid content ([68d8eb6](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/68d8eb61b5a5d91db6eb4edf8e75b35fdc306dfb))
+* fix pagination ([a5d9831](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/a5d983144ed785140d494dccfda08d7005df4cea))
+* fix product count across pages ([19a3915](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/19a3915be342bf2f5082d25515a0f07a35771f02))
+* fix product-list ampSlots not updating ([efbfa2c](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/efbfa2c7042b920930c1679ec2d88e45b2802d11))
+* fix some things with the enhanced card ([27c4a74](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/27c4a7434a6aab44a2b47be51d78565ce61f7edc))
+* force card back to loading state when resizing ([da680a1](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/da680a165bd028d5b8fee87fba17a0eee427f822))
+* force ordering on ampSlots ([1b5b553](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/1b5b553d97d2dd0d4a56c77c5f7cd88bc42b2653))
+* Hero mobile view heading ([c4cecb5](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/c4cecb5e3b5f3f035d3b9179835ad78e949fd08c))
+* **hero:** fix mobile direction ([fdc526d](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/fdc526db1ee97fbd116d1117139c45c2e9576310))
+* **hero:** fix mobile positioning ([4fe9b74](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/4fe9b74c6e570fc3af41486764d7c3cde69a8b5d))
+* **hero:** fix positioning styles ([88ddb59](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/88ddb59b35825d5e0428f781a43dd8f0db0a996f))
+* image data now mapped correctly so scaleFir and poi are set correctly when they are present ([c1057d0](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/c1057d097a9b14d6ceec976db8ba83dd186c25e1))
+* improve size calculation ([c48b070](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/c48b070f76bf6c24fb8da9478b100f630e506584))
+* less opaque & less text on mobile ([df44f29](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/df44f2907e63fe44e5dea5be3f0f7ea824b60672))
+* localized home page ([5c0fb70](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/5c0fb70cd760c4bca5af016b08a9fe34c6656c4e))
+* mobile css in card ([96375af](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/96375af9a97d52a0445350939662fbbf7edd6fa1))
+* mobile css updates ([2e99f2b](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/2e99f2bf34f57e17041a45df98f3b090361b2f12))
+* more mobile ([da30122](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/da30122db7ef0d2584083e13b2c62e1ab84975ab))
+* NOVADEV-650 ([342da10](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/342da10e30ffedf0a455845d29c77fcdf4d3bf40))
+* NOVADEV-650 ([20ba1cf](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/20ba1cfad51f8572a30ed27125f18bfed988bc33))
+* NOVADEV-650 ([0c21697](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/0c2169775901430462ef31e4dd9cecd0648e7383))
+* NOVADEV-650 ([ece32b6](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/ece32b6b712e0ff6020aa5eabe8bfd54e3994633))
+* package depencies ([a33e0b8](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/a33e0b83cb73ca94ef864fa134c796211a2447da))
+* poi fixed ([c4e64ad](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/c4e64adc656ad5125be7c92c2b8616f8d2b49994))
+* props vs variables ([ef169ae](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/ef169aee11368c4063670a15d45a54a1d553c95c))
+* recalcuate image when rows/cols change ([9a90d1a](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/9a90d1af854913566c589347562a1f474cd872b2))
+* removed double content ([9178e3d](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/9178e3dc31dd1add51bc4911ff888720872e66c7))
+* reverted fix ([459b1f0](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/459b1f056df279e85e509dd680e1160f62178e52))
+* Right content in automation ([4604022](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/4604022ec5cb86210ec7037a363f464e50ec71fc))
+* smaller text for sm mobile ([728cba4](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/728cba4bd87a3c928832a326427366b61f7c028c))
+* Typo in example import ([9b0942a](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/9b0942a94a82e861ed22ee7f092c49f11cc297bd))
+* Typo in schema ([b72f3a8](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/b72f3a848aaaaabd1e9df0a97078c04995f78e7f))
+* updated types ([9007c68](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/9007c68b3be814bd263c122c9f181873a7e43772))
+* use desktop layout for ssr default ([39d045b](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/39d045b8aa5585a3166bc671b1bc326f834886d4))
+
 ## [1.3.0](https://github.com/amplience/amplience-sfcc-composable-commerce/compare/v1.2.0...v1.3.0) (2022-09-08)
 
 
