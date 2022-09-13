@@ -139,8 +139,8 @@ const calculatePageOffsets = (pageSize, totalCount, ampSlots, isMobile) => {
     if (ampSlots) {
         for (let i = 0; i < ampSlots.length; i++) {
             const slot = ampSlots[i]
-            slot.rows = slot.rows || 1
-            slot.cols = slot.cols || 1
+            slot.rows = Number(slot.rows) || 1
+            slot.cols = Number(slot.cols) || 1
 
             if (slot.position > totalCount + offset) {
                 // Slots outside of the bounds of the shown products are not drawn.
@@ -149,7 +149,7 @@ const calculatePageOffsets = (pageSize, totalCount, ampSlots, isMobile) => {
 
             fillPages(slot.position)
 
-            const size = isMobile ? 1 : Number(slot.cols) * Number(slot.rows)
+            const size = isMobile ? 1 : slot.cols * slot.rows
 
             skipContent(size)
         }
@@ -180,8 +180,8 @@ const enrichResults = (productSearchResults, pageSize, ampSlots, pages, isMobile
         if (ampSlots) {
             for (let slot of ampSlots) {
                 const pos = slot.position
-                slot.rows = slot.rows || 1
-                slot.cols = slot.cols || 1
+                slot.rows = Number(slot.rows) || 1
+                slot.cols = Number(slot.cols) || 1
 
                 if (pos < pageBase) {
                     continue
