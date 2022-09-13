@@ -134,6 +134,11 @@ const calculatePageOffsets = (pageSize, totalCount, ampSlots, isMobile) => {
         for (let i = 0; i < ampSlots.length; i++) {
             const slot = ampSlots[i]
 
+            if (slot.position > totalCount + offset) {
+                // Slots outside of the bounds of the shown products are not drawn.
+                break
+            }
+
             fillPages(slot.position)
 
             const size = isMobile ? 1 : Number(slot.cols) * Number(slot.rows)
@@ -142,7 +147,7 @@ const calculatePageOffsets = (pageSize, totalCount, ampSlots, isMobile) => {
         }
     }
 
-    fillPages(totalCount)
+    fillPages(totalCount + offset)
 
     return pages
 }
@@ -178,10 +183,13 @@ const enrichResults = (productSearchResults, pageSize, ampSlots, pages, isMobile
 
                 // Place content up to the given slot.
                 const size = isMobile ? 1 : Number(slot.rows) * Number(slot.cols)
+                const index = pos - pageBase - reservedSpaces
 
                 slot.isAmplience = true
 
-                items.splice(pos - pageBase - reservedSpaces, 0, slot)
+                if (index <= items.length) {
+                    items.splice(index, 0, slot)
+                }
 
                 reservedSpaces += size - 1
             }
