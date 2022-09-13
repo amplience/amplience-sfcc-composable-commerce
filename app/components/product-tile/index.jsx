@@ -8,6 +8,7 @@
 import React, {useState} from 'react'
 import PropTypes from 'prop-types'
 import {HeartIcon, HeartSolidIcon} from '../icons'
+import styled from '@emotion/styled'
 
 // Components
 import {
@@ -31,6 +32,12 @@ import withRegistration from '../../hoc/with-registration'
 import {useCurrency} from '../../hooks'
 
 const IconButtonWithRegistration = withRegistration(IconButton)
+
+const Contain = styled(Link)`
+    img {
+        height: 100%;
+    }
+`
 
 // Component Skeleton
 export const Skeleton = () => {
@@ -77,7 +84,7 @@ const ProductTile = (props) => {
     const styles = useMultiStyleConfig('ProductTile')
 
     return (
-        <Link
+        <Contain
             data-testid="product-tile"
             {...styles.container}
             to={productUrlBuilder({id: productId}, intl.local)}
@@ -132,7 +139,7 @@ const ProductTile = (props) => {
                     currency: currency || activeCurrency
                 })}
             </Text>
-        </Link>
+        </Contain>
     )
 }
 

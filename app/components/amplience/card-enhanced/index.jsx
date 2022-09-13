@@ -1,7 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react'
 import styled from '@emotion/styled'
 import {Heading} from '@chakra-ui/layout'
-import {useMultiStyleConfig, Link, Skeleton} from '@chakra-ui/react'
+import {useMultiStyleConfig, Link, Skeleton, useBreakpointValue} from '@chakra-ui/react'
 import TrueAdaptiveImage from '../adaptive-image/TrueAdaptiveImage'
 import PropTypes from 'prop-types'
 
@@ -10,6 +10,9 @@ const Contain = styled(Link)`
     position: relative;
     margin: 0;
     display: block;
+    .text-pane {
+        background: rgba(255, 255, 255, 0.5);
+    }
     &:hover img {
         filter: grayscale(70%) !important;
         opacity: 0.8;
@@ -18,12 +21,54 @@ const Contain = styled(Link)`
         opacity: 1 !important;
     }
     &:hover .text-pane {
-        background: rgba(255, 255, 255, 0.8);
+        background: rgba(255, 255, 255, 0.8) !important;
     }
     span {
         text-decoration: underline;
         text-transform: uppercase;
         font-weight: bold;
+    }
+    @media (min-width: 768px) and (max-width: 1024px) {
+        .hover,
+        .blend {
+            padding: 10px !important;
+        }
+        .text-pane {
+            width: 100% !important;
+        }
+        .text-pane h2 {
+            font-size: 16px !important;
+        }
+        .text-pane p {
+            font-size: 12px !important;
+        }
+        .text-pane span {
+            font-size: 12px !important;
+        }
+    }
+    @media (min-width: 1024px) and (max-width: 1200px) {
+        .hover,
+        .blend {
+            padding: 15px !important;
+        }
+        .text-pane {
+            width: 80% !important;
+        }
+        .text-pane h2 {
+            font-size: 18px !important;
+        }
+        .text-pane p {
+            font-size: 14px !important;
+        }
+        .text-pane span {
+            font-size: 12px !important;
+        }
+    }
+    @media (max-width: 768px) {
+        .text-pane {
+        {
+            background: rgba(255, 255, 255, 1) !important;
+        }
     }
 `
 
@@ -42,6 +87,8 @@ const CardEnhanced = ({
     rows
 }) => {
     links ??= []
+
+    const isMobile = useBreakpointValue({base: true, md: false})
 
     const styles = useMultiStyleConfig('CardEnhanced', {
         blend: blend,
@@ -184,7 +231,7 @@ const CardEnhanced = ({
     )
 
     return links[0] ? (
-        <Skeleton isLoaded={!imageLoading} sx={{width: '100%', height: '100%'}}>
+        <Skeleton isLoaded={!imageLoading} sx={{width: '100%', height: 'auto'}}>
             <Contain
                 ref={parentRef}
                 className={`amp-tile amp-tile-${index + 1}`}
@@ -194,7 +241,7 @@ const CardEnhanced = ({
             </Contain>
         </Skeleton>
     ) : (
-        <Skeleton isLoaded={!imageLoading} sx={{width: '100%', height: '100%'}}>
+        <Skeleton isLoaded={!imageLoading} sx={{width: '100%', height: 'auto'}}>
             <Contain ref={parentRef} className={`amp-tile amp-tile-${index + 1}`}>
                 {content}
             </Contain>
