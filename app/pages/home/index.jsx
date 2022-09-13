@@ -43,6 +43,8 @@ import {
     HOME_SHOP_PRODUCTS_CATEGORY_ID,
     HOME_SHOP_PRODUCTS_LIMIT
 } from '../../constants'
+import { resolveSiteFromUrl } from '../../utils/site-utils'
+import { getTargetLocale } from '../../utils/locale'
 
 /**
  * This is the home page for Retail React App.
@@ -251,10 +253,20 @@ Home.getTemplateName = () => 'home'
 Home.shouldGetProps = ({previousLocation, location}) =>
     !previousLocation || previousLocation.pathname !== location.pathname
 
-Home.getProps = async ({res, api, ampClient}) => {
+Home.getProps = async ({res, location, api, ampClient}) => {
     if (res && !ampClient.vse) {
         res.set('Cache-Control', `max-age=${MAX_CACHE_AGE}`)
     }
+
+    const site = resolveSiteFromUrl(location.pathname)
+    const l10nConfig = site.l10n
+    const targetLocale = getTargetLocale({
+        getUserPreferredLocales: () => {
+            const {locale} = api.getConfig()
+            return [locale]
+        },
+        l10nConfig
+    })
 
     const productSearchResult = await api.shopperSearch.productSearch({
         parameters: {
@@ -263,7 +275,7 @@ Home.getProps = async ({res, api, ampClient}) => {
         }
     })
 
-    const homeSlotTop = await (await ampClient.fetchContent([{key: 'home/slot/top'}])).pop()
+    const homeSlotTop = await (await ampClient.fetchContent([{key: 'home/slot/top'}], {locale: targetLocale})).pop()
 
     return {productSearchResult, homeSlotTop}
 }
