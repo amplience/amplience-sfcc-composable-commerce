@@ -99,8 +99,8 @@ const CardEnhanced = ({
     const [imageLoading, setImageLoading] = useState(true)
     const imageRef = useRef()
 
-    const [height, setHeight] = useState(0)
-    const [width, setWidth] = useState(0)
+    const [height, setHeight] = useState(400)
+    const [width, setWidth] = useState(400)
     const [ratio, setRatio] = useState('1:1')
     const parentRef = useRef()
 
