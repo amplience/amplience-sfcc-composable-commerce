@@ -300,8 +300,8 @@ CardEnhanced.propTypes = {
     subText: PropTypes.string,
     textAlignment: PropTypes.string,
     verticalAlignment: PropTypes.string,
-    cols: PropTypes.number,
-    rows: PropTypes.number,
+    cols: PropTypes.string,
+    rows: PropTypes.string,
     rest: PropTypes.object
 }
 

@@ -56,6 +56,7 @@ import PreviewHeader from './components/amplience/preview-header'
 import AmplienceHeader from './components/amplience/header'
 import CardEnhanced from './components/amplience/card-enhanced'
 import GridLock from './components/amplience/grid-lock'
+import Hero from './components/amplience/hero'
 import AmplienceProductTile from './components/amplience/product-tile'
 
 // Please refer to the Chakra-Ui theme customization docs found
@@ -112,6 +113,7 @@ const overrides = {
         AmplienceListMenu: ListMenu,
         CardEnhanced,
         GridLock,
+        Hero,
         AmplienceProductTile
     }
 }

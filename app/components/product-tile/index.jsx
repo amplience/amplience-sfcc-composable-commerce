@@ -95,6 +95,7 @@ const ProductTile = (props) => {
                     <DynamicImage
                         src={`${image.disBaseLink || image.link}[?sw={width}&q=60]`}
                         widths={dynamicImageProps?.widths}
+                        alignItems={"flex-start !important"}
                         imageProps={{
                             alt: image.alt,
                             ...dynamicImageProps?.imageProps
