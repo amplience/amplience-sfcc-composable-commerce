@@ -134,7 +134,7 @@ const CardEnhanced = ({
                 cols === rows ? w / r + ':' + h / r : (w / cols) * cols + ':' + (h / rows) * rows
             setRatio(ratio)
         }
-    })
+    }, [cols, rows])
 
     const img = image?.image
 
