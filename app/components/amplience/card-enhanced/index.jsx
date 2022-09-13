@@ -147,7 +147,7 @@ const CardEnhanced = ({
     const img = image?.image
 
     const cardtransformations =
-        cols && rows
+        cols && rows && img?.poi
             ? {
                   ...img?.image,
                   upscale: true,
@@ -161,10 +161,10 @@ const CardEnhanced = ({
                   scaleFit: img?.poi && img?.poi.x != -1 && img?.poi.y != -1 ? 'poi' : undefined,
                   poi:
                       img?.poi && img?.poi.x != -1 && img?.poi.y != -1
-                          ? img?.poi.x + ',' + img?.poi.y + ',0,0'
+                          ? {x: img?.poi.x, y: img?.poi.y}
                           : undefined
               }
-            : {...img.image}
+            : {...img}
 
     const content = (
         <>
@@ -174,7 +174,6 @@ const CardEnhanced = ({
                     ref={imageRef}
                     onLoad={() => handleImageLoaded()}
                     image={img?.image}
-                    data={image}
                     transformations={cardtransformations}
                 />
             </div>
