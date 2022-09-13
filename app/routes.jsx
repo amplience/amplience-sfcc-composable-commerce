@@ -34,6 +34,7 @@ const CheckoutConfirmation = loadable(() => import('./pages/checkout/confirmatio
 const LoginRedirect = loadable(() => import('./pages/login-redirect'), {fallback})
 const ProductDetail = loadable(() => import('./pages/product-detail'), {fallback})
 const ProductList = loadable(() => import('./pages/product-list'), {fallback})
+const AmpProductList = loadable(() => import('./pages/amplience/product-list'), {fallback})
 const Wishlist = loadable(() => import('./pages/account/wishlist'), {fallback})
 const PageNotFound = loadable(() => import('./pages/page-not-found'))
 
@@ -96,7 +97,7 @@ const routes = [
     },
     {
         path: '/category/:categoryId',
-        component: ProductList
+        component: AmpProductList
     },
     {
         path: '/account/wishlist',
