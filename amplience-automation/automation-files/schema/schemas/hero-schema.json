@@ -74,6 +74,44 @@
                     }
                 ]
             }
+        },
+        "fullWidth": {
+            "title": "Full width?",
+            "description": "",
+            "type": "boolean"
+        },
+        "textAlign": {
+            "title": "Text align",
+            "description": "",
+            "type": "string",
+            "default": "Left",
+            "enum": [
+                "Left",
+                "Center",
+                "Right"
+            ]
+        },
+        "justifyContent": {
+            "title": "Horizontal align",
+            "description": "",
+            "type": "string",
+            "default": "Left",
+            "enum": [
+                "Left",
+                "Center",
+                "Right"
+            ]
+        },
+        "alignItems": {
+            "title": "Vertical align",
+            "description": "",
+            "type": "string",
+            "default": "Center",
+            "enum": [
+                "Start",
+                "Center",
+                "End"
+            ]
         }
     },
     "propertyOrder": []
