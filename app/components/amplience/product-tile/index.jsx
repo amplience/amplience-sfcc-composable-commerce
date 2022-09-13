@@ -43,16 +43,16 @@ const Contain = styled(Link)`
             margin: 0 4px 4px !important;
         }
     }
-    @media (min-width: 768px) and (max-width: 960px) {
+    @media (min-width: 769px) and (max-width: 960px) {
         .ptile-hover-pane {
             font-size: 11px !important;
             margin: 0 4px 4px !important;
         }
     }
-    @media (min-width: 461px) and (max-width: 768px) {
+    @media (min-width: 461px) and (max-width: 769px) {
         .ptile-hover-pane {
-            font-size: inherit !important;
-            margin: 0 9px 9px !important;
+            font-size: 11px !important;
+            margin: 0 4px 4px !important;
             background: rgba(255, 255, 255, 0.75) !important;
         }
     }

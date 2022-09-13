@@ -49,7 +49,7 @@ const Contain = styled(Link)`
     @media (min-width: 1024px) and (max-width: 1200px) {
         .hover,
         .blend {
-            padding: 15px !important;
+            padding: px !important;
         }
         .text-pane {
             width: 80% !important;
@@ -64,10 +64,32 @@ const Contain = styled(Link)`
             font-size: 12px !important;
         }
     }
-    @media (max-width: 768px) {
+    @media (min-width: 461px) and (max-width: 1024px) {
+        .hover,
+        .blend {
+            padding: 9px !important;
+        }
         .text-pane {
         {
             background: rgba(255, 255, 255, 0.75) !important;
+            width: 85% !important;
+            h2, p {
+                font-size: 12px !important;
+            }
+        }
+    }
+    @media (max-width: 460px) {
+        .hover,
+        .blend {
+            padding: 4px !important;
+        }
+        .text-pane {
+        {
+            background: rgba(255, 255, 255, 0.75) !important;
+            width: 85% !important;
+            h2 {
+                font-size: 11px !important;
+            }
             p {
                 display: none;
             }
