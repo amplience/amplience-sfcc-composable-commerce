@@ -27,7 +27,8 @@ const homeSlotTop = await (await fetchContent([{ key: 'home/slot/top' }]))
 <AmplienceWrapper content={homeSlotTop}></AmplienceWrapper>
 ```
 
-Example of loading by  with custom props:
+Example of with custom props:
+> Note this can be with any loading mechanism (key, id, content)
 ```
 <AmplienceWrapper fetch={{key: 'home/slot/top'}} myProp1='a' myProp2='b'></AmplienceWrapper>
 ```
