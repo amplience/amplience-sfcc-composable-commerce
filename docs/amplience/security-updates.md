@@ -12,14 +12,14 @@ Because Composable storefront will be loading both content and media from Amplie
 
 |Type|Published|Unpublished|
 |:----|:----|:----|
-|Content (JSON)|*.cdn.content.amplience.net|*.staging.bigcontent.io|
-|Media (images & video)|cdn.media.amplience.net|*.staging.bigcontent.io|
+|Content (JSON)|`*.cdn.content.amplience.net`|`*.staging.bigcontent.io`|
+|Media (images & video)|`cdn.media.amplience.net`|`*.staging.bigcontent.io`|
 
 Because Amplience visualisations are loaded via iFrame, we also need to tell you application to allow from the Amplience back office.
 
 |Type|Value|
 |:----|:----|
-|iFrame (frame ancestors|*.amplience.net|
+|iFrame (frame ancestors)|`*.amplience.net`|
 
 ## What should my security policy look like?
 

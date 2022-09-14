@@ -4,18 +4,18 @@
 
 [🏖️ View Amplience Demo](https://ascc-production.mobify-storefront.com/)
 
-The Amplience PWA Kit is a storefront technology for headless commerce using [Amplience APIs](https://amplience.com/docs/integration/reference.html), Salesforce Commerce APIs and React. It provides front-end developers with a more flexible and agile approach to build and maintain modern eCommerce experiences with the use of [Amplience](https://amplience.com/)
+The Amplience PWA Kit is a storefront technology for headless commerce using [Amplience APIs](https://amplience.com/docs/integration/reference.html), Salesforce Commerce APIs and React. It provides front-end developers with a more flexible and agile approach to build and maintain modern eCommerce experiences with the use of [Amplience](https://amplience.com/).
 
 ![Amplience pwa-kit banner)](./amplience-automation/media/hero.png)
 
 ___
 
-# Amplience specifics
+# Amplience Specifics
 This is a version of the Retail React app with a starting point for Amplience fundamentals. The documentation below is 'as-is' from Salesforce. For Amplience specifics please see the following.
 
 > Note: This code is built against the code version @latest at the time which was PWAKit v2.2.0 released on August 27th 2022: https://github.com/SalesforceCommerceCloud/pwa-kit/releases/tag/v2.2.0
 
-If you are using an v2.1.0, either upgrade using this code base or use a previous Amplience version [v1.2.0](https://github.com/amplience/amplience-sfcc-composable-commerce/releases/tag/v1.2.0) with the capabilities at that time.
+If you are using a v2.1.0, either upgrade using this code base or use a previous Amplience version [v1.2.0](https://github.com/amplience/amplience-sfcc-composable-commerce/releases/tag/v1.2.0) with the capabilities at that time.
 
 ## Amplience Contents
 * [Overview](./docs/amplience/overview.md)
@@ -34,12 +34,12 @@ If you are using an v2.1.0, either upgrade using this code base or use a previou
 ## Known Limitations
 
 ### Localisation
-By default we point to the same SFCC instance as the vanilla Retail React app. If you are pointing to your own SFCC sandbox, you should ensure that you have localisation enabled. See guide at [Localization README.md](./app/translations/README.md), [Overview](./docs/amplience/overview.md) and  [Salesforce Commerce Cloud Setup](./docs/amplience/sfcc-setup.md)
+By default we point to the same SFCC instance as the vanilla Retail React app. If you are pointing to your own SFCC sandbox, you should ensure that you have localisation enabled. See guide at [Localization README.md](./app/translations/README.md), [Overview](./docs/amplience/overview.md) and  [Salesforce Commerce Cloud Setup](./docs/amplience/sfcc-setup.md).
 
 
 # The Retail React App
 
-A project template that includes an isomorphic JavaScript storefront and [Progressive Web App](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps) built using [React](https://reactjs.org/) and [Express](https://expressjs.com/). It uses a modern headless architecture that enables developers to decouple front-end code from back-end systems. It leverages popular open-source libraries in the React ecosystem, such as [Chakra UI](https://chakra-ui.com/) components, [Emotion](https://emotion.sh/docs/introduction) (CSS-in-JS), [Webpack](https://webpack.js.org/), and many more.
+The Retail React App is a project template that includes an isomorphic JavaScript storefront and [Progressive Web App](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps) built using [React](https://reactjs.org/) and [Express](https://expressjs.com/). It uses a modern headless architecture that enables developers to decouple front-end code from back-end systems. It leverages popular open-source libraries in the React ecosystem, such as [Chakra UI](https://chakra-ui.com/) components, [Emotion](https://emotion.sh/docs/introduction) (CSS-in-JS), [Webpack](https://webpack.js.org/), and many more.
 
 Developers don’t have to worry about the underlying infrastructure, whether they’re developing their app locally, deploying it to a [Managed Runtime](https://developer.salesforce.com/docs/commerce/pwa-kit-managed-runtime/guide/mrt-overview.html) environment, or testing the app live.
 
@@ -56,9 +56,7 @@ To start your web server for local development, run the following command in you
 npm start
 ```
 
-Now that the development server is running, you can open a browser and preview your commerce app:
-
--   Go to http://localhost:3000/
+Now that the development server is running, you can open a browser and preview your commerce app and go to http://localhost:3000.
 
 ## Localization
 

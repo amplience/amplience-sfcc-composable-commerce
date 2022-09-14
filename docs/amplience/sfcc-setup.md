@@ -15,9 +15,13 @@ In order to setup a Client ID and Secret, you’ll need Admin Rights in SFCC Acc
 
 1. Sign in to Account Manager
 2. Then click “API Client” and the “Add API Client” button
+
 ![Salesforce Account Manager](media/sf-account-manager.png)
+
 3. Enter a description and a Password. The password will be your secret, so don’t forget it. But if you do, can just reset it.
+
 ![Salesforce Client Setup](media/sf-client-setup.png)
+
 4. Click “Save” at the bottom of the page, you’ll then see your newly created Client ID 🎉🎉🎉
 
 ## OCAPI Configuration
@@ -111,4 +115,4 @@ To get you started, we’ve setup a few things in this reference application its
 
 In addition to the Amplience SF FE configs, your ODS will also need to have locales setup and enabled for the site you are pointing to, and they **MUST MATCH** the locales setup in `config/sites.js` Setting up locales on your SFCC ODS is well documented in the [SFCC B2C Info Center](https://documentation.b2c.commercecloud.salesforce.com/DOC2/index.jsp?topic=%2Fcom.demandware.dochelp%2Fcontent%2Fb2c_commerce%2Ftopics%2Fadmin%2Fb2c_configuring_site_locales.html)
 
-> Note: if pointing to your own SFCC instance with a localized OOTB site (RefArchGlobal), de-DE won’t have translations even if that locale has been setup in Business Manager
+> Note: if pointing to your own SFCC instance with a localized OOTB site (`RefArchGlobal`), de-DE won’t have translations even if that locale has been setup in Business Manager

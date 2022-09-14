@@ -2,7 +2,7 @@
 
 In order to save manual entry to use this starting point we have included an automation directory with all the relevant content and media
 
-##Media
+## Media
 
 Take the media from `amplience/media` and upload to your Amplience Content Hub and publish.
 
@@ -10,9 +10,10 @@ Take the media from `amplience/media` and upload to your Amplience Content Hub a
 
 Install the Amplience Dynamic Content CLI as can be found [here](https://github.com/amplience/dc-cli)
 
-Configure the CLI to point to your account (you will need your Amplience hub ID, clientID and clientSecret)
+Configure the CLI to point to your account (you will need your Amplience hubId, clientId and clientSecret)
 
 You will need the following information from your Ampliene and SFCC account:
+
 * Amplience Hub ID
 * API details: Note the [Amplience Account](amplience-account.md) specifics which require admin and DAM-API access.
     * API Client ID
@@ -51,7 +52,7 @@ npm run import \
     --siteId <siteId>
 ```
 
-## Hub clean
+## Hub Clean
 
 The script run will clean out the hub, delete or archive next items:
  - content type schemas
