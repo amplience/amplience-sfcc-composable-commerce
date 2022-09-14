@@ -103,6 +103,7 @@ const AmplienceProductTile = (props) => {
         isFavourite,
         onFavouriteToggle,
         dynamicImageProps,
+        children,
         ...rest
     } = props
     const {currency, image, price, productId} = product
@@ -123,6 +124,7 @@ const AmplienceProductTile = (props) => {
             to={productUrlBuilder({id: productId}, intl.local)}
             {...rest}
         >
+            {children}
             <Box {...styles.imageWrapper}>
                 <AspectRatio {...styles.image}>
                     <DynamicImage
@@ -221,7 +223,11 @@ AmplienceProductTile.propTypes = {
      * interacts with favourite icon/button.
      */
     onFavouriteToggle: PropTypes.func,
-    dynamicImageProps: PropTypes.object
+    dynamicImageProps: PropTypes.object,
+    /**
+     * Content to inject before card
+     */
+    children: PropTypes.node
 }
 
 export default AmplienceProductTile

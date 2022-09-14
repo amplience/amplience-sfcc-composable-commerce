@@ -160,6 +160,16 @@ const calculatePageOffsets = (pageSize, totalCount, ampSlots, isMobile) => {
     return pages
 }
 
+const generateIndices = (pos, rows, cols) => {
+    const result = []
+    const size = rows * cols
+    for (let i = 0; i < size; i++) {
+        result.push(pos + i)
+    }
+
+    return result
+}
+
 const enrichResults = (productSearchResults, pageSize, ampSlots, pages, isMobile) => {
     if (productSearchResults?.hits) {
         const offset = productSearchResults.offset
@@ -176,6 +186,18 @@ const enrichResults = (productSearchResults, pageSize, ampSlots, pages, isMobile
         const items = productSearchResults.hits.slice(0, sfccCount)
 
         let reservedSpaces = 0
+
+        let lastIndex = 0
+        let lastPos = pageBase
+
+        const fillIndices = (to, toPos) => {
+            for (let i = lastIndex; i < to; i++) {
+                items[i].indices = [lastPos++]
+            }
+
+            lastIndex = to + 1
+            lastPos = toPos
+        }
 
         if (ampSlots) {
             for (let slot of ampSlots) {
@@ -196,14 +218,23 @@ const enrichResults = (productSearchResults, pageSize, ampSlots, pages, isMobile
                 const index = pos - pageBase - reservedSpaces
 
                 slot.isAmplience = true
+                slot.indices = generateIndices(
+                    pos,
+                    isMobile ? 1 : slot.rows,
+                    isMobile ? 1 : slot.cols
+                )
 
                 if (index <= items.length) {
                     items.splice(index, 0, slot)
                 }
 
+                fillIndices(index, pos + size)
+
                 reservedSpaces += size - 1
             }
         }
+
+        fillIndices(items.length, pageBase + pageSize)
 
         return items
     }
@@ -262,6 +293,7 @@ const ProductList = (props) => {
     const [sortOpen, setSortOpen] = useState(false)
     const [wishlistLoading, setWishlistLoading] = useState([])
     const [filtersLoading, setFiltersLoading] = useState(false)
+    const [rtvActive, setRtvActive] = useState(false)
 
     const {total, sortingOptions} = productSearchResult || {}
     const basePath = `${location.pathname}${location.search}`
@@ -297,6 +329,7 @@ const ProductList = (props) => {
             const dataForTopContent = await childContentPromise()
             setAmpTopContent(dataForTopContent)
             setAmpBottomContent(model.content.bottomContent)
+            setRtvActive(true)
         },
         undefined,
         [initialAmpSlots, initialAmpBottomContent, initialAmpTopContent]
@@ -424,6 +457,15 @@ const ProductList = (props) => {
         pageOffsets,
         isMobile
     )
+
+    const indexStyle = {
+        position: 'absolute',
+        zIndex: '1',
+        background: 'white',
+        padding: '2px 9px',
+        margin: '5px',
+        borderRadius: '30px'
+    }
 
     return (
         <Box
@@ -585,6 +627,11 @@ const ProductList = (props) => {
                                                       }}
                                                       display="flex"
                                                   >
+                                                      {rtvActive && (
+                                                          <Box {...indexStyle}>
+                                                              {item.indices.join(', ')}
+                                                          </Box>
+                                                      )}
                                                       <AmplienceWrapper
                                                           fetch={{id: item.content?.id}}
                                                           components={inGridComponents}
@@ -623,7 +670,13 @@ const ProductList = (props) => {
                                                               '25vw'
                                                           ]
                                                       }}
-                                                  />
+                                                  >
+                                                      {rtvActive && (
+                                                          <Box {...indexStyle}>
+                                                              {item.indices.join(', ')}
+                                                          </Box>
+                                                      )}
+                                                  </AmplienceProductTile>
                                               )
                                           }
                                       })}
