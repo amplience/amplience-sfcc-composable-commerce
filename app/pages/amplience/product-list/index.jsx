@@ -103,8 +103,45 @@ function getIdsForContent(item) {
     return {id: item.id}
 }
 
-const processSlots = (ampSlots) => {
+const processSlots = (ampSlots, setValidationResult) => {
+    if (ampSlots == null) {
+        return ampSlots
+    }
+
     ampSlots.sort((a, b) => a.position - b.position)
+
+    // Validate slots to remove invalid overlaps.
+
+    let removed = []
+
+    for (let i = 0; i < ampSlots.length; i++) {
+        const slot = ampSlots[i]
+
+        const pos = slot.position
+        const size = (slot.rows || 1) * (slot.cols || 1)
+        const end = pos + size
+
+        for (let j = 0; j < i; j++) {
+            const slot2 = ampSlots[j]
+
+            const pos2 = slot2.position
+            const size2 = (slot2.rows || 1) * (slot2.cols || 1)
+            const end2 = pos2 + size2
+
+            if (pos < end2 && end > pos) {
+                // These two slots overlap, remove the later one and add an error.
+                removed.push(`(${slot.position}:\xa0${slot.cols}x${slot.rows})`)
+                ampSlots.splice(i--, 1)
+                break
+            }
+        }
+    }
+
+    if (removed.length > 0) {
+        setValidationResult(`In-grid content at invalid positions: ${removed.join(', ')}`)
+    } else {
+        setValidationResult(null)
+    }
 
     return ampSlots
 }
@@ -160,6 +197,16 @@ const calculatePageOffsets = (pageSize, totalCount, ampSlots, isMobile) => {
     return pages
 }
 
+const generateIndices = (pos, rows, cols) => {
+    const result = []
+    const size = rows * cols
+    for (let i = 0; i < size; i++) {
+        result.push(pos + i)
+    }
+
+    return result
+}
+
 const enrichResults = (productSearchResults, pageSize, ampSlots, pages, isMobile) => {
     if (productSearchResults?.hits) {
         const offset = productSearchResults.offset
@@ -176,6 +223,18 @@ const enrichResults = (productSearchResults, pageSize, ampSlots, pages, isMobile
         const items = productSearchResults.hits.slice(0, sfccCount)
 
         let reservedSpaces = 0
+
+        let lastIndex = 0
+        let lastPos = pageBase
+
+        const fillIndices = (to, toPos) => {
+            for (let i = lastIndex; i < to; i++) {
+                items[i].indices = [lastPos++]
+            }
+
+            lastIndex = Math.max(0, to + 1)
+            lastPos = toPos
+        }
 
         if (ampSlots) {
             for (let slot of ampSlots) {
@@ -195,15 +254,28 @@ const enrichResults = (productSearchResults, pageSize, ampSlots, pages, isMobile
                 const size = isMobile ? 1 : Number(slot.rows) * Number(slot.cols)
                 const index = pos - pageBase - reservedSpaces
 
+                if (index > items.length) {
+                    break
+                }
+
                 slot.isAmplience = true
+                slot.indices = generateIndices(
+                    pos,
+                    isMobile ? 1 : slot.rows,
+                    isMobile ? 1 : slot.cols
+                )
 
                 if (index <= items.length) {
                     items.splice(index, 0, slot)
                 }
 
+                fillIndices(index, pos + size)
+
                 reservedSpaces += size - 1
             }
         }
+
+        fillIndices(items.length, pageBase + pageSize)
 
         return items
     }
@@ -259,9 +331,11 @@ const ProductList = (props) => {
     const [ampSlots, setAmpSlots] = useState(initialAmpSlots)
     const [ampTopContent, setAmpTopContent] = useState(initialAmpTopContent)
     const [ampBottomContent, setAmpBottomContent] = useState(initialAmpBottomContent)
+    const [validationResult, setValidationResult] = useState(null)
     const [sortOpen, setSortOpen] = useState(false)
     const [wishlistLoading, setWishlistLoading] = useState([])
     const [filtersLoading, setFiltersLoading] = useState(false)
+    const [rtvActive, setRtvActive] = useState(false)
 
     const {total, sortingOptions} = productSearchResult || {}
     const basePath = `${location.pathname}${location.search}`
@@ -280,7 +354,7 @@ const ProductList = (props) => {
 
     useAmpRtv(
         async (model) => {
-            setAmpSlots(processSlots(model.content?.gridItem))
+            setAmpSlots(processSlots(model.content?.gridItem, setValidationResult))
 
             const childContentPromise = async () => {
                 if (!model.content.topContent) return []
@@ -297,6 +371,7 @@ const ProductList = (props) => {
             const dataForTopContent = await childContentPromise()
             setAmpTopContent(dataForTopContent)
             setAmpBottomContent(model.content.bottomContent)
+            setRtvActive(true)
         },
         undefined,
         [initialAmpSlots, initialAmpBottomContent, initialAmpTopContent]
@@ -424,6 +499,15 @@ const ProductList = (props) => {
         pageOffsets,
         isMobile
     )
+
+    const indexStyle = {
+        position: 'absolute',
+        zIndex: '1',
+        background: 'white',
+        padding: '2px 9px',
+        margin: '5px',
+        borderRadius: '30px'
+    }
 
     return (
         <Box
@@ -556,7 +640,21 @@ const ProductList = (props) => {
                                 selectedFilters={searchParams.refine}
                             />
                         </Stack>
-                        <Box>
+                        <Box position="relative">
+                            {validationResult && (
+                                <Box
+                                    transform="translate(0, -100%)"
+                                    color="red"
+                                    backgroundColor="white"
+                                    padding="2px 8px"
+                                    border="1px solid red"
+                                    position="absolute"
+                                    zIndex="2"
+                                    maxW="100%"
+                                >
+                                    {validationResult}
+                                </Box>
+                            )}
                             <SimpleGrid
                                 columns={[2, 2, 3, 3]}
                                 spacingX={4}
@@ -585,11 +683,17 @@ const ProductList = (props) => {
                                                       }}
                                                       display="flex"
                                                   >
+                                                      {rtvActive && (
+                                                          <Box {...indexStyle}>
+                                                              {item.indices.join(', ')}
+                                                          </Box>
+                                                      )}
                                                       <AmplienceWrapper
                                                           fetch={{id: item.content?.id}}
                                                           components={inGridComponents}
                                                           cols={isMobile ? 1 : item.cols}
                                                           rows={isMobile ? 1 : item.rows}
+                                                          gap={16}
                                                           skeleton={{display: 'flex', flex: 1}}
                                                       ></AmplienceWrapper>
                                                   </GridItem>
@@ -623,7 +727,13 @@ const ProductList = (props) => {
                                                               '25vw'
                                                           ]
                                                       }}
-                                                  />
+                                                  >
+                                                      {rtvActive && (
+                                                          <Box {...indexStyle}>
+                                                              {item.indices.join(', ')}
+                                                          </Box>
+                                                      )}
+                                                  </AmplienceProductTile>
                                               )
                                           }
                                       })}
@@ -822,7 +932,9 @@ ProductList.getProps = async ({res, params, location, api, ampClient}) => {
     if (ampCategory.type !== 'CONTENT_NOT_FOUND') {
         ampSlots = ampCategory.gridItem ?? []
 
-        processSlots(ampSlots)
+        processSlots(ampSlots, () => {
+            /* Validation result ignored */
+        })
     }
 
     const searchParams = parseSearchParams(location.search, false)

@@ -61,17 +61,24 @@ export default {
         inGrid: (props) => ({
             textContainer: {
                 flex: 1,
-                spacing: {base: 5, md: 8},
                 zIndex: 2,
-                padding: 2,
-                textAlign: {base: 'center'},
-                alignItems: {base: 'center', md: 'unset'}
+                borderRadius: '4px',
+                display: 'inline-block',
+                padding: '6px 10px',
+                width: '70%',
+                transition: 'all 0.8s ease',
+                background: 'rgba(255, 255, 255, 0.5)'
             },
             container: {
-                marginBottom: 0
+                marginBottom: 0,
+                width: '100%',
+                height: '100%'
             },
             heading: {
                 fontSize: {base: 'md', md: 'xl'}
+            },
+            image: {
+                width: '100%'
             },
             stackContainer: {
                 paddingTop: 0,
