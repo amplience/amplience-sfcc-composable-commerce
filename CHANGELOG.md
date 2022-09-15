@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/amplience/amplience-sfcc-composable-commerce/compare/v1.4.0...v1.5.0) (2022-09-15)
+
+
+### Features
+
+* add validation for slot positions ([147a000](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/147a0001ed359080875ccdf36382937c3135f5e5))
+* **automation:** add hero schema to be used in ingrid content ([d983044](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/d9830446097bcb6b57387f99a43b0431adcbe272))
+* **hero:** add ingrid responsive hero ([4ea3817](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/4ea3817ae4b48c75d86ec85d997deed3c88aeb31))
+* **hero:** ingrid hero style fixes ([f72fbe1](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/f72fbe156446ae95aa4eb7a7f05fe2d1c85a6dda))
+* show in-grid indices in rtv mode ([d012665](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/d012665dda865de62ae04ea0fa7288431efd46aa))
+
+
+### Bug Fixes
+
+* add fixed sizing for card at all times ([6033177](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/60331776148989b52d0e48570b04fc274a23715c))
+* fix a few issues with the in-grid hero ([1a91907](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/1a919070470a99d7dc2a9127c9ea43eafba00d35))
+* fix crash when content is placed at the end of a product list ([5b46050](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/5b46050d02712dff33d2815450263188047455ba))
+* fix crash when invalid overlaps are present ([1209585](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/1209585614c515a318e153660b9e2aa077749a8b))
+* fix deleting only in-grid item ([e64feaa](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/e64feaa81f8dffba8aa70fdbba7961b9c7569913))
+* Force grid item for hero to always be full width. Other params can be as per configuration ([30bf443](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/30bf443b4048919893ede9bfe92aefa29c5c357d))
+* improve styling for validation errors ([6bf1b8e](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/6bf1b8ef2783458060f2f716451a9052a50eb900))
+
 ## [1.4.0](https://github.com/amplience/amplience-sfcc-composable-commerce/compare/v1.3.0...v1.4.0) (2022-09-13)
 
 
