@@ -100,7 +100,8 @@ const CardEnhanced = ({
     textAlignment,
     verticalAlignment,
     cols,
-    rows
+    rows,
+    gap
 }) => {
     links ??= []
 
@@ -141,10 +142,9 @@ const CardEnhanced = ({
     const w = parentRef.current?.clientWidth == 0 ? 400 : parentRef.current?.clientWidth
 
     let compHeight = 'auto'
-    if (cols == 3) {
-        const gap = 16
+    if (cols && rows && gap) {
         // Force the height to a fraction of the width (minus gap)
-        compHeight = (rows * (w - gap * (cols - 1))) / 3 + (rows - 1) * gap + 'px'
+        compHeight = (rows * (w - gap * (cols - 1))) / cols + (rows - 1) * gap + 'px'
     }
 
     useEffect(() => {
@@ -322,6 +322,7 @@ CardEnhanced.propTypes = {
     verticalAlignment: PropTypes.string,
     cols: PropTypes.number,
     rows: PropTypes.number,
+    gap: PropTypes.number,
     rest: PropTypes.object
 }
 

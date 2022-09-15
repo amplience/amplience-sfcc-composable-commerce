@@ -637,6 +637,7 @@ const ProductList = (props) => {
                                                           components={inGridComponents}
                                                           cols={isMobile ? 1 : item.cols}
                                                           rows={isMobile ? 1 : item.rows}
+                                                          gap={16}
                                                           skeleton={{display: 'flex', flex: 1}}
                                                       ></AmplienceWrapper>
                                                   </GridItem>
