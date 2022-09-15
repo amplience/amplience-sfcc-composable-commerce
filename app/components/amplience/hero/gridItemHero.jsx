@@ -20,6 +20,10 @@ const Contain = styled('div')`
   position: relative;
   margin: 0;
   display: block;
+  
+  span {
+    margin-top: 0 !important;
+  }
 
   @media (min-width: 1024px) and (max-width: 1200px) {
     .hover,
@@ -112,7 +116,6 @@ const InGridHero = ({
                         textAlign = 'Left',
                         justifyContent = 'Left',
                         alignItems = 'Center',
-                        fullWidth = false,
                         variant,
                         cols,
                         rows,
@@ -178,16 +181,22 @@ const InGridHero = ({
                 <Stack className="text-pane"
                        style={{display: `${imageLoading ? 'none' : 'flex'}`}} {...styles.textContainer}
                        textAlign={{base: 'center', md: textAlign.toLowerCase()}}
-                       position={fullWidth ? {base: 'absolute'} : ''}
+                       position={{base: 'absolute'}}
                 >
                     <Heading
                         as="h2"
                         fontSize={{base: 'md', md: '4xl', lg: '6xl'}}
-                        maxWidth={{base: 'full', md: '75%'}}
+                        maxWidth={{base: 'full'}}
                         {...styles.heading}
                     >
                         {title}
                     </Heading>
+                    {actions.map(({label}, ind) => {
+                        if (label) {
+                            return (<span key={ind}>{label}</span>)
+                        }
+                        return null
+                    })}
                 </Stack>
                 <div className="img-place" style={{display: `${imageLoading ? 'none' : 'block'}`, width: '100%'}}>
                     <TrueAdaptiveImage
