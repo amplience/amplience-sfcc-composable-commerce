@@ -104,6 +104,10 @@ function getIdsForContent(item) {
 }
 
 const processSlots = (ampSlots, setValidationResult) => {
+    if (ampSlots == null) {
+        return ampSlots
+    }
+
     ampSlots.sort((a, b) => a.position - b.position)
 
     // Validate slots to remove invalid overlaps.
