@@ -195,7 +195,7 @@ const enrichResults = (productSearchResults, pageSize, ampSlots, pages, isMobile
                 items[i].indices = [lastPos++]
             }
 
-            lastIndex = to + 1
+            lastIndex = Math.max(0, to + 1)
             lastPos = toPos
         }
 
