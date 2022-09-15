@@ -103,8 +103,41 @@ function getIdsForContent(item) {
     return {id: item.id}
 }
 
-const processSlots = (ampSlots) => {
+const processSlots = (ampSlots, setValidationResult) => {
     ampSlots.sort((a, b) => a.position - b.position)
+
+    // Validate slots to remove invalid overlaps.
+
+    let removed = []
+
+    for (let i = 0; i < ampSlots.length; i++) {
+        const slot = ampSlots[i]
+
+        const pos = slot.position
+        const size = (slot.rows || 1) * (slot.cols || 1)
+        const end = pos + size
+
+        for (let j = 0; j < i; j++) {
+            const slot2 = ampSlots[j]
+
+            const pos2 = slot2.position
+            const size2 = (slot2.rows || 1) * (slot2.cols || 1)
+            const end2 = pos2 + size2
+
+            if (pos < end2 && end > pos) {
+                // These two slots overlap, remove the later one and add an error.
+                removed.push(`(${slot.position}: ${slot.cols}x${slot.rows})`)
+                ampSlots.splice(i--, 1)
+                break
+            }
+        }
+    }
+
+    if (removed.length > 0) {
+        setValidationResult(`In-grid content at invalid positions: ${removed.join(', ')}`)
+    } else {
+        setValidationResult(null)
+    }
 
     return ampSlots
 }
@@ -290,6 +323,7 @@ const ProductList = (props) => {
     const [ampSlots, setAmpSlots] = useState(initialAmpSlots)
     const [ampTopContent, setAmpTopContent] = useState(initialAmpTopContent)
     const [ampBottomContent, setAmpBottomContent] = useState(initialAmpBottomContent)
+    const [validationResult, setValidationResult] = useState(null)
     const [sortOpen, setSortOpen] = useState(false)
     const [wishlistLoading, setWishlistLoading] = useState([])
     const [filtersLoading, setFiltersLoading] = useState(false)
@@ -312,7 +346,7 @@ const ProductList = (props) => {
 
     useAmpRtv(
         async (model) => {
-            setAmpSlots(processSlots(model.content?.gridItem))
+            setAmpSlots(processSlots(model.content?.gridItem, setValidationResult))
 
             const childContentPromise = async () => {
                 if (!model.content.topContent) return []
@@ -598,7 +632,21 @@ const ProductList = (props) => {
                                 selectedFilters={searchParams.refine}
                             />
                         </Stack>
-                        <Box>
+                        <Box position="relative">
+                            {validationResult && (
+                                <Box
+                                    margin="0px auto"
+                                    color="red"
+                                    backgroundColor="white"
+                                    padding="2px 8px"
+                                    border="1px solid red"
+                                    position="absolute"
+                                    zIndex="2"
+                                    maxW="100%"
+                                >
+                                    {validationResult}
+                                </Box>
+                            )}
                             <SimpleGrid
                                 columns={[2, 2, 3, 3]}
                                 spacingX={4}
@@ -876,7 +924,9 @@ ProductList.getProps = async ({res, params, location, api, ampClient}) => {
     if (ampCategory.type !== 'CONTENT_NOT_FOUND') {
         ampSlots = ampCategory.gridItem ?? []
 
-        processSlots(ampSlots)
+        processSlots(ampSlots, () => {
+            /* Validation result ignored */
+        })
     }
 
     const searchParams = parseSearchParams(location.search, false)
