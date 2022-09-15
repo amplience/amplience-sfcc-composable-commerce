@@ -250,6 +250,10 @@ const enrichResults = (productSearchResults, pageSize, ampSlots, pages, isMobile
                 const size = isMobile ? 1 : Number(slot.rows) * Number(slot.cols)
                 const index = pos - pageBase - reservedSpaces
 
+                if (index > items.length) {
+                    break
+                }
+
                 slot.isAmplience = true
                 slot.indices = generateIndices(
                     pos,
