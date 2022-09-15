@@ -7,7 +7,7 @@
 
 import React, {useEffect, useRef, useState} from 'react'
 import PropTypes from 'prop-types'
-import {Box, Link, Heading, Stack, Image, useMultiStyleConfig, Skeleton} from '@chakra-ui/react'
+import {Box, Link, Heading, Stack, useMultiStyleConfig, Skeleton} from '@chakra-ui/react'
 import TrueAdaptiveImage from '../adaptive-image/TrueAdaptiveImage'
 import styled from '@emotion/styled'
 
@@ -106,25 +106,23 @@ const Contain = styled('div')`
 `
 
 const InGridHero = ({
-                        title,
-                        img,
-                        actions = [],
-                        textAlign = 'Left',
-                        justifyContent = 'Left',
-                        alignItems = 'Center',
-                        fullWidth = false,
-                        variant,
-                        cols,
-                        rows,
-                        ...props
-                    }) => {
+    title,
+    img,
+    actions = [],
+    textAlign = 'Left',
+    justifyContent = 'Left',
+    alignItems = 'Center',
+    cols,
+    rows,
+    gap,
+    ...props
+}) => {
     const styles = useMultiStyleConfig('Hero', {variant: 'inGrid'})
     const parentRef = useRef()
     const imageRef = useRef()
 
-    // Fr grid items not full width, lets force full width
-    fullWidth = true
-
+    // For grid items not full width, lets force full width
+    const fullWidth = true
 
     const h = parentRef.current?.clientHeight == 0 ? 400 : parentRef.current?.clientHeight
     const w = parentRef.current?.clientWidth == 0 ? 400 : parentRef.current?.clientWidth
@@ -143,15 +141,14 @@ const InGridHero = ({
             ratio =
                 cols === rows ? w / r + ':' + h / r : (w / cols) * cols + ':' + (h / rows) * rows
             setRatio(ratio)
-            setImageLoading(true)
+            setImageLoading(img.image != null)
         }
-    }, [w, h, cols, rows])
+    }, [w, h, cols, rows, img.image])
 
     let compHeight = 'auto'
-    if (cols == 3) {
-        const gap = 16
+    if (cols && rows && gap) {
         // Force the height to a fraction of the width (minus gap)
-        compHeight = (rows * (w - gap * (cols - 1))) / 3 + (rows - 1) * gap + 'px'
+        compHeight = (rows * (w - gap * (cols - 1))) / cols + (rows - 1) * gap + 'px'
     }
 
     const cardTransformations = {
@@ -166,44 +163,50 @@ const InGridHero = ({
         query: img?.query
     }
 
-    const content = (<Contain>
-        <Stack
-            {...styles.stackContainer}
-        >
-            <Skeleton isLoaded={!imageLoading}
-                      sx={{width: '100%', height: compHeight}}
-                      style={{
-                          justifyContent: justifyContent.toLowerCase(),
-                          alignItems: alignItems.toLowerCase(),
-                          display: 'flex'
-                      }}
-            >
-                <Stack className="text-pane"
-                       style={{display: `${imageLoading ? 'none' : 'flex'}`}} {...styles.textContainer}
-                       textAlign={{base: 'center', md: textAlign.toLowerCase()}}
-                       position={fullWidth ? {base: 'absolute'} : ''}
+    const content = (
+        <Contain>
+            <Stack {...styles.stackContainer}>
+                <Skeleton
+                    isLoaded={!imageLoading}
+                    sx={{width: '100%', height: compHeight}}
+                    style={{
+                        justifyContent: justifyContent.toLowerCase(),
+                        alignItems: alignItems.toLowerCase(),
+                        display: 'flex'
+                    }}
                 >
-                    <Heading
-                        as="h2"
-                        fontSize={{base: 'md', md: '4xl', lg: '6xl'}}
-                        maxWidth={{base: 'full', md: '75%'}}
-                        {...styles.heading}
+                    <Stack
+                        className="text-pane"
+                        style={{display: `${imageLoading ? 'none' : 'flex'}`}}
+                        {...styles.textContainer}
+                        textAlign={{base: 'center', md: textAlign.toLowerCase()}}
+                        position={fullWidth ? {base: 'absolute'} : ''}
                     >
-                        {title}
-                    </Heading>
-                </Stack>
-                <div className="img-place" style={{display: `${imageLoading ? 'none' : 'block'}`, width: '100%'}}>
-                    <TrueAdaptiveImage
-                        style={{...styles.image}}
-                        ref={imageRef}
-                        onLoad={() => setImageLoading(false)}
-                        image={img?.image}
-                        transformations={cardTransformations}
-                    />
-                </div>
-            </Skeleton>
-        </Stack>
-    </Contain>)
+                        <Heading
+                            as="h2"
+                            fontSize={{base: 'md', md: '4xl', lg: '6xl'}}
+                            maxWidth={{base: 'full', md: '75%'}}
+                            {...styles.heading}
+                        >
+                            {title}
+                        </Heading>
+                    </Stack>
+                    <div
+                        className="img-place"
+                        style={{display: `${imageLoading ? 'none' : 'block'}`, width: '100%'}}
+                    >
+                        <TrueAdaptiveImage
+                            style={{...styles.image}}
+                            ref={imageRef}
+                            onLoad={() => setImageLoading(false)}
+                            image={img?.image}
+                            transformations={cardTransformations}
+                        />
+                    </div>
+                </Skeleton>
+            </Stack>
+        </Contain>
+    )
 
     return (
         <Box
@@ -212,7 +215,7 @@ const InGridHero = ({
             sx={{width: '100%', height: compHeight}}
             {...props}
         >
-            {actions[0]?.url ? (<Link href={actions[0]?.url}>{content}</Link>) : content}
+            {actions[0]?.url ? <Link href={actions[0]?.url}>{content}</Link> : content}
         </Box>
     )
 }
@@ -230,7 +233,8 @@ InGridHero.propTypes = {
             endpoint: PropTypes.string,
             defaultHost: PropTypes.string
         }),
-        alt: PropTypes.string
+        alt: PropTypes.string,
+        query: PropTypes.string
     }),
     /**
      * Hero component main title
@@ -253,8 +257,24 @@ InGridHero.propTypes = {
      * Hero button url
      */
     url: PropTypes.string,
+    /**
+     * Hero text alignment
+     */
+    textAlign: PropTypes.string,
+    /**
+     * Hero justify content
+     */
+    justifyContent: PropTypes.string,
+    /**
+     * Hero align items
+     */
+    alignItems: PropTypes.string,
+    /**
+     * Grid item props
+     */
     cols: PropTypes.number,
-    rows: PropTypes.number
+    rows: PropTypes.number,
+    gap: PropTypes.number
 }
 
 export default InGridHero
