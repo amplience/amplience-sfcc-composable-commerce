@@ -126,7 +126,7 @@ const processSlots = (ampSlots, setValidationResult) => {
 
             if (pos < end2 && end > pos) {
                 // These two slots overlap, remove the later one and add an error.
-                removed.push(`(${slot.position}: ${slot.cols}x${slot.rows})`)
+                removed.push(`(${slot.position}:\xa0${slot.cols}x${slot.rows})`)
                 ampSlots.splice(i--, 1)
                 break
             }
@@ -635,7 +635,7 @@ const ProductList = (props) => {
                         <Box position="relative">
                             {validationResult && (
                                 <Box
-                                    margin="0px auto"
+                                    transform="translate(0, -100%)"
                                     color="red"
                                     backgroundColor="white"
                                     padding="2px 8px"
