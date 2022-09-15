@@ -122,6 +122,9 @@ const InGridHero = ({
     const parentRef = useRef()
     const imageRef = useRef()
 
+    // Fr grid items not full width, lets force full width
+    fullWidth = true
+
 
     const h = parentRef.current?.clientHeight == 0 ? 400 : parentRef.current?.clientHeight
     const w = parentRef.current?.clientWidth == 0 ? 400 : parentRef.current?.clientWidth
