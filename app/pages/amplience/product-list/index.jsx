@@ -79,7 +79,8 @@ import {
     MAX_CACHE_AGE,
     TOAST_ACTION_VIEW_WISHLIST,
     TOAST_MESSAGE_ADDED_TO_WISHLIST,
-    TOAST_MESSAGE_REMOVED_FROM_WISHLIST
+    TOAST_MESSAGE_REMOVED_FROM_WISHLIST,
+    DEFAULT_SEARCH_PARAMS
 } from '../../../constants'
 import useNavigation from '../../../hooks/use-navigation'
 import LoadingSpinner from '../../../components/loading-spinner'
@@ -111,8 +112,12 @@ const processSlots = (ampSlots, setValidationResult) => {
     ampSlots.sort((a, b) => a.position - b.position)
 
     // Validate slots to remove invalid overlaps.
+    // Also flag an error when a page is 100% in-grid content.
 
     let removed = []
+    let pageFilled = []
+    let lastPage = 0
+    let pageSlots = 0
 
     for (let i = 0; i < ampSlots.length; i++) {
         const slot = ampSlots[i]
@@ -135,10 +140,36 @@ const processSlots = (ampSlots, setValidationResult) => {
                 break
             }
         }
+
+        let page = Math.floor(pos / DEFAULT_SEARCH_PARAMS.limit)
+
+        if (page != lastPage) {
+            lastPage = page
+            pageSlots = 0
+        }
+
+        pageSlots += size
+        if (pageSlots >= DEFAULT_SEARCH_PARAMS.limit) {
+            pageFilled.push(page)
+        }
     }
 
-    if (removed.length > 0) {
-        setValidationResult(`In-grid content at invalid positions: ${removed.join(', ')}`)
+    if (removed.length > 0 || pageFilled.length > 0) {
+        const messages = []
+
+        if (removed.length > 0) {
+            messages.push(`In-grid content at invalid positions: ${removed.join(', ')}`)
+        }
+
+        if (pageFilled.length > 0) {
+            messages.push(
+                `Page (${pageFilled.join(
+                    ', '
+                )}) is completely filled with content - move some elsewhere.`
+            )
+        }
+
+        setValidationResult(messages.join('\n'))
     } else {
         setValidationResult(null)
     }
