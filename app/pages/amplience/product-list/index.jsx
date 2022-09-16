@@ -163,9 +163,9 @@ const processSlots = (ampSlots, setValidationResult) => {
 
         if (pageFilled.length > 0) {
             messages.push(
-                `Page (${pageFilled.join(
+                `In-grid content is hidden on desktop b/c Page (${pageFilled.join(
                     ', '
-                )}) is completely filled with content - move some elsewhere.`
+                )}) is completely filled - move in-grid content or reduce sizes.`
             )
         }
 
