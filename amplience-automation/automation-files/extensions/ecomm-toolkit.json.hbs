@@ -11,6 +11,10 @@
         {
             "label": "Category Selector",
             "body": "{\n  \"title\": \"Category\",\n  \"description\": \"Single-select Category and store ID as string\",\n  \"type\": \"string\",\n  \"ui:extension\": {\n    \"name\": \"ecomm-toolkit\",\n    \"params\": {\n      \"label\": \"Category\",\n      \"view\": \"single\",\n      \"data\": \"category\",\n      \"type\": \"string\"\n    }\n  }\n}"
+        },
+        {
+            "label": "",
+            "body": "{\n  \"title\": \"User Segments (multi-select)\",\n   \"description\": \"Multi-select User Segments, stored as string\",\n  \"type\": \"array\",\n  \"minItems\": 0,\n  \"maxItems\": 5,\n    \"items\": {\n     \"type\": \"string\"\n   },\n  \"ui:extension\": {\n     \"name\": \"ecomm-toolkit\",\n  \"params\": {\n     \"label\": \"User Segments\",\n     \"view\": \"multi\",\n      \"data\": \"segment\",\n        \"type\": \"string\"\n      }\n  }\n}"
         }
     ],
     "settings": "{\"API\":{\"READ\":true,\"EDIT\":true},\"SANDBOX\":{\"SAME_ORIGIN\":true,\"MODALS\":false,\"NAVIGATION\":false,\"POPUPS\":false,\"POPUP_ESCAPE_SANDBOX\":false,\"DOWNLOADS\":false,\"FORMS\":false}}",
