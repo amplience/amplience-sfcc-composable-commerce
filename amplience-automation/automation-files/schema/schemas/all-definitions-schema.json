@@ -7,7 +7,8 @@
                 "https://sfcc.com/components/hero",
                 "https://sfcc.com/components/section",
                 "https://sfcc.com/components/curated-product",
-                "https://sfcc.com/components/card-enhanced"
+                "https://sfcc.com/components/card-enhanced",
+                "https://sfcc.com/site/segmented-content"
             ]
         },
         "anyPage": {
@@ -21,7 +22,8 @@
                 "https://sfcc.com/components/section",
                 "https://sfcc.com/components/curated-product",
                 "https://sfcc.com/site/pages/content-page",
-                "https://sfcc.com/components/card-enhanced"
+                "https://sfcc.com/components/card-enhanced",
+                "https://sfcc.com/site/segmented-content"
             ]
         },
         "anySlot": {
@@ -36,7 +38,8 @@
                 "https://sfcc.com/components/curated-product",
                 "https://sfcc.com/site/pages/content-page",
                 "https://sfcc.com/slots/flexible-list",
-                "https://sfcc.com/components/card-enhanced"
+                "https://sfcc.com/components/card-enhanced",
+                "https://sfcc.com/site/segmented-content"
             ]
         },
         "diImage": {
@@ -233,6 +236,53 @@
                 }
             },
             "propertyOrder": ["position", "cols", "rows", "content"]
+        },
+        "segmentedContent":{
+            "title": "Segmented Content",
+            "description": "",
+            "type": "object",
+            "properties": {
+                "segment": {
+                    "title": "User Segments",
+                    "description": "The segment audience that should see this content",
+                    "type": "array",
+                    "minItems": 0,
+                    "maxItems": 5,
+                    "items": {
+                        "type": "string"
+                    },
+                    "ui:extension": {
+                        "name": "ecomm-toolkit",
+                        "params": {
+                            "label": "User Segments",
+                            "view": "multi",
+                            "data": "segment",
+                            "type": "string"
+                        }
+                    }
+                },
+                "content": {
+                    "title": "Content",
+                    "allOf": [
+                        {
+                            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference"
+                        },
+                        {
+                            "properties": {
+                                "contentType": {
+                                    "enum": [
+                                        "https://sfcc.com/libs/all-definitions#/definitions/anyComponentPageAndSlot"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            "propertyOrder": [
+                "segment",
+                "content"
+            ]
         }
     }
 }
