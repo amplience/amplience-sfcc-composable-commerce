@@ -1,0 +1,5 @@
+{
+    "body": "./schemas/personalised-slot-schema",
+    "schemaId": "https://sfcc.com/slots/personalised-slot",
+    "validationLevel": "SLOT"
+}

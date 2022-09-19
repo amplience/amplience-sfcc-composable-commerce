@@ -1,0 +1,47 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://sfcc.com/slots/personalised-slot",
+
+	"title": "Title",
+	"description": "Description",
+
+	"allOf": [
+		{
+			"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+		}
+	],
+	
+	"type": "object",
+	"properties": {
+		"defaultContent": {
+			"title": "Default",
+			"type": "array",
+			"minItems": 0,
+			"maxItems": 10,
+			"items": {
+				"allOf": [
+					{ "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link" },
+					{
+						"properties": {
+							"contentType": { 
+								"$ref": "https://sfcc.com/libs/all-definitions#/definitions/anyComponent" 
+							}
+						}
+					}
+				]
+			}
+		},
+		"variants": {
+			"type": "array",
+			"title": "Variants",
+			"items": {
+                "allOf": [
+                    {
+                        "$ref": "https://sfcc.com/libs/all-definitions#/definitions/variantLinks"
+                    }
+                ]
+            }
+		}
+	},
+	"propertyOrder": []
+}

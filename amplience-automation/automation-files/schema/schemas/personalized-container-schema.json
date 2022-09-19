@@ -1,9 +1,9 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
-	"$id": "https://sfcc.com/site/segmented-content",
+	"$id": "https://sfcc.com/components/personalised-container",
 
-	"title": "Title",
-	"description": "Description",
+	"title": "Personalised Container",
+	"description": "",
 
 	"allOf": [
 		{
@@ -13,15 +13,12 @@
 	
 	"type": "object",
 	"properties": {
-		"content": {
-            "title": "Content",
-            "description":"The unsegmented content / slots",
+		"defaultContent": {
+            "title": "Default",
             "type": "array",
             "minItems": 0,
             "maxItems": 10,
             "items": {
-                "title": "Top Content",
-                "description":"The unsegmented content / slots",
                 "allOf": [
                     {
                         "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference"
@@ -29,23 +26,22 @@
                     {
                         "properties": {
                             "contentType": {
-                                "$ref": "https://sfcc.com/libs/all-definitions#/definitions/anyComponentPageAndSlot"
+                                "$ref": "https://sfcc.com/libs/all-definitions#/definitions/anyComponent"
                             }
                         }
                     }
                 ]
             }
         },
-		"segmentedContent": {
-            "title": "Segmented Content",
-            "description": "",
+		"variants": {
+            "title": "Variants",
             "type": "array",
             "minItems": 0,
             "maxItems": 10,
             "items": {
                 "allOf": [
                     {
-                        "$ref": "https://sfcc.com/libs/all-definitions#/definitions/segmentedContent"
+                        "$ref": "https://sfcc.com/libs/all-definitions#/definitions/variantRefs"
                     }
                 ]
             }

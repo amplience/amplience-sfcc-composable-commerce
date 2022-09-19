@@ -1,0 +1,5 @@
+{
+    "body": "./schemas/personalised-container-schema.json",
+    "schemaId": "https://sfcc.com/components/personalised-container",
+    "validationLevel": "CONTENT_TYPE"
+}
