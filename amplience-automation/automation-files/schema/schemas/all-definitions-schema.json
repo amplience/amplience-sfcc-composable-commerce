@@ -262,20 +262,23 @@
                 },
                 "content": {
                     "title": "Content",
-                    "allOf": [
-                        {
-                            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference"
-                        },
-                        {
-                            "properties": {
-                                "contentType": {
-                                    "enum": [
-                                        "https://sfcc.com/libs/all-definitions#/definitions/anyComponent"
-                                    ]
+                    "type": "array",
+                    "minItems": 0,
+                    "maxItems": 10,
+                    "items": {
+                        "allOf": [
+                            {
+                                "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                            },
+                            {
+                                "properties": {
+                                    "contentType": {
+                                        "$ref": "https://sfcc.com/libs/all-definitions#/definitions/anyComponent"
+                                    }
                                 }
                             }
-                        }
-                    ]
+                        ]
+                    }
                 }
             },
             "propertyOrder": [
@@ -308,20 +311,23 @@
                 },
                 "content": {
                     "title": "Content",
-                    "allOf": [
-                        {
-                            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
-                        },
-                        {
-                            "properties": {
-                                "contentType": {
-                                    "enum": [
-                                        "https://sfcc.com/libs/all-definitions#/definitions/anyComponent"
-                                    ]
+                    "type": "array",
+                    "minItems": 0,
+                    "maxItems": 10,
+                    "items": {
+                        "allOf": [
+                            {
+                                "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                            },
+                            {
+                                "properties": {
+                                    "contentType": {
+                                        "$ref": "https://sfcc.com/libs/all-definitions#/definitions/anyComponent"
+                                    }
                                 }
                             }
-                        }
-                    ]
+                        ]
+                    }
                 }
             },
             "propertyOrder": [

@@ -33,6 +33,14 @@
                 ]
             }
         },
+        "maxNumberMatches": {
+          "title": "Max number of matches",
+          "description": "",
+          "type": "number",
+          "minimum": 0,
+          "maximum": 10,
+          "default": 1
+        },
 		"variants": {
             "title": "Variants",
             "type": "array",
