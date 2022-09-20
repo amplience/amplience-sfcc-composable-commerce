@@ -81,14 +81,14 @@
     "justifyContent": "Right",
     "alignItems": "Start"
   },
-  "version": 5,
+  "version": 1,
   "label": "Mens Fashion",
   "status": "ACTIVE",
   "createdBy": "b5b7704b-34ca-4424-a7dc-f6880734c30e",
   "createdDate": "2022-09-12T11:19:15.690Z",
   "lastModifiedBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
   "lastModifiedDate": "2022-09-13T11:34:41.544Z",
-  "lastPublishedVersion": 5,
+  "lastPublishedVersion": 1,
   "lastPublishedDate": "2022-09-13T11:34:52.741Z",
   "deliveryId": "8a08a479-efc0-4d3b-9cdd-0a7c14b36d16"
 }

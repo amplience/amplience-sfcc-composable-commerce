@@ -122,14 +122,14 @@
     "blend": "normal",
     "color": "rgb(0, 0, 0)"
   },
-  "version": 2,
+  "version": 1,
   "label": "Don't miss the sales!",
   "status": "ACTIVE",
   "createdBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
   "createdDate": "2022-09-12T15:04:27.967Z",
   "lastModifiedBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
   "lastModifiedDate": "2022-09-12T15:06:30.969Z",
-  "lastPublishedVersion": 2,
+  "lastPublishedVersion": 1,
   "lastPublishedDate": "2022-09-12T16:40:51.724Z",
   "deliveryId": "6511f76d-ce39-4bc7-8a96-b3526db81935"
 }

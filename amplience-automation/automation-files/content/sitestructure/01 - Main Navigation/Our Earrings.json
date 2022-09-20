@@ -27,14 +27,14 @@
         },
         "includeSFCC": false
     },
-    "version": 9,
+    "version": 1,
     "label": "Our Earrings",
     "status": "ACTIVE",
     "createdBy": "ec8eae46-fcfe-4c9f-8e2c-5a0f8aea334c",
     "createdDate": "2022-08-25T12:25:18.249Z",
     "lastModifiedBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
     "lastModifiedDate": "2022-08-26T08:09:45.927Z",
-    "lastPublishedVersion": 9,
+    "lastPublishedVersion": 1,
     "lastPublishedDate": "2022-08-26T08:10:09.929Z",
     "hierarchy": {
         "parentId": "73249be6-4dd4-43dc-b4f9-d3ffffe7340c",

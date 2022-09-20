@@ -126,14 +126,14 @@
             }
         ]
     },
-    "version": 4,
+    "version": 1,
     "label": "Mens",
     "status": "ACTIVE",
     "createdBy": "fb90fd96-dcaf-4d67-9747-b9676282f661",
     "createdDate": "2022-08-18T15:56:39.101Z",
     "lastModifiedBy": "fb90fd96-dcaf-4d67-9747-b9676282f661",
     "lastModifiedDate": "2022-08-24T14:55:58.758Z",
-    "lastPublishedVersion": 4,
+    "lastPublishedVersion": 1,
     "lastPublishedDate": "2022-08-24T16:19:53.872Z",
     "hierarchy": {
         "parentId": "250114dd-abbe-481c-80d8-4080537c40c4",

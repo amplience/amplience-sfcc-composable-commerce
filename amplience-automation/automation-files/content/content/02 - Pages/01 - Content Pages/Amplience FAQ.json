@@ -66,7 +66,7 @@
             }
         ]
     },
-    "version": 5,
+    "version": 1,
     "label": "Amplience FAQ",
     "status": "ACTIVE",
     "createdBy": "5ae42671-d773-424f-84d8-b1b3d5225fe6",
@@ -74,7 +74,7 @@
     "createdDate": "2022-08-08T20:52:08.887Z",
     "lastModifiedBy": "5ae42671-d773-424f-84d8-b1b3d5225fe6",
     "lastModifiedDate": "2022-08-11T14:34:01.797Z",
-    "lastPublishedVersion": 5,
+    "lastPublishedVersion": 1,
     "lastPublishedDate": "2022-08-11T14:34:12.316Z",
     "deliveryId": "01fcc5a1-54bb-407f-ad19-b837dd4d4a09"
 }

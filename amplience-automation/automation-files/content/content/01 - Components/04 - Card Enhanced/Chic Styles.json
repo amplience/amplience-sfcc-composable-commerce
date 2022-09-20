@@ -185,14 +185,14 @@
       }
     ]
   },
-  "version": 2,
+  "version": 1,
   "label": "Chic Styles",
   "status": "ACTIVE",
   "createdBy": "b5b7704b-34ca-4424-a7dc-f6880734c30e",
   "createdDate": "2022-09-12T16:54:15.531Z",
   "lastModifiedBy": "b5b7704b-34ca-4424-a7dc-f6880734c30e",
   "lastModifiedDate": "2022-09-12T16:58:47.593Z",
-  "lastPublishedVersion": 2,
+  "lastPublishedVersion": 1,
   "lastPublishedDate": "2022-09-12T17:04:15.651Z",
   "deliveryId": "f5a40609-fc89-4266-9830-4ec38ce4dfed"
 }

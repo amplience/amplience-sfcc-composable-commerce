@@ -77,14 +77,14 @@
             }
         ]
     },
-    "version": 2,
+    "version": 1,
     "label": "Hero Version 01",
     "status": "ACTIVE",
     "createdBy": "9afdef5b-e35e-472a-8265-f37d29ff1154",
     "createdDate": "2022-08-04T09:28:53.794Z",
     "lastModifiedBy": "9afdef5b-e35e-472a-8265-f37d29ff1154",
     "lastModifiedDate": "2022-08-04T09:31:03.240Z",
-    "lastPublishedVersion": 2,
+    "lastPublishedVersion": 1,
     "lastPublishedDate": "2022-08-04T10:00:09.491Z",
     "deliveryId": "d97fa8ac-85da-4594-8734-84070bdc249c"
 }

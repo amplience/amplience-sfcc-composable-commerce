@@ -81,14 +81,14 @@
     "justifyContent": "Left",
     "alignItems": "Start"
   },
-  "version": 10,
+  "version": 1,
   "label": "Womens Fashion",
   "status": "ACTIVE",
   "createdBy": "b5b7704b-34ca-4424-a7dc-f6880734c30e",
   "createdDate": "2022-09-12T11:19:56.244Z",
   "lastModifiedBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
   "lastModifiedDate": "2022-09-13T11:30:38.488Z",
-  "lastPublishedVersion": 10,
+  "lastPublishedVersion": 1,
   "lastPublishedDate": "2022-09-13T11:38:25.805Z",
   "deliveryId": "af9803be-e9b7-456c-89e3-267a90e726cc"
 }

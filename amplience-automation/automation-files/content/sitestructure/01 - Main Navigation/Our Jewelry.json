@@ -27,14 +27,14 @@
         },
         "includeSFCC": true
     },
-    "version": 15,
+    "version": 1,
     "label": "Our Jewelry",
     "status": "ACTIVE",
     "createdBy": "fb90fd96-dcaf-4d67-9747-b9676282f661",
     "createdDate": "2022-08-24T14:49:36.093Z",
     "lastModifiedBy": "ec8eae46-fcfe-4c9f-8e2c-5a0f8aea334c",
     "lastModifiedDate": "2022-08-26T05:32:13.071Z",
-    "lastPublishedVersion": 15,
+    "lastPublishedVersion": 1,
     "lastPublishedDate": "2022-08-26T08:10:12.084Z",
     "hierarchy": {
         "parentId": "25057185-10a6-41c6-8ba2-13abe4363449",

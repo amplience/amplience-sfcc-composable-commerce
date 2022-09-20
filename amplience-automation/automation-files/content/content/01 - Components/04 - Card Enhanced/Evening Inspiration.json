@@ -185,14 +185,14 @@
       }
     ]
   },
-  "version": 2,
+  "version": 1,
   "label": "Evening Inspiration",
   "status": "ACTIVE",
   "createdBy": "b5b7704b-34ca-4424-a7dc-f6880734c30e",
   "createdDate": "2022-09-12T16:59:54.000Z",
   "lastModifiedBy": "b5b7704b-34ca-4424-a7dc-f6880734c30e",
   "lastModifiedDate": "2022-09-12T17:03:26.154Z",
-  "lastPublishedVersion": 2,
+  "lastPublishedVersion": 1,
   "lastPublishedDate": "2022-09-12T17:04:05.795Z",
   "deliveryId": "a77a9289-e125-49f7-8fb7-9ab09cb9bdc3"
 }

@@ -32,14 +32,14 @@
         },
         "internalUrl": "/"
     },
-    "version": 2,
+    "version": 1,
     "label": "Sign In",
     "status": "ACTIVE",
     "createdBy": "fb90fd96-dcaf-4d67-9747-b9676282f661",
     "createdDate": "2022-08-18T14:35:57.544Z",
     "lastModifiedBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
     "lastModifiedDate": "2022-08-24T21:05:03.983Z",
-    "lastPublishedVersion": 2,
+    "lastPublishedVersion": 1,
     "lastPublishedDate": "2022-08-24T21:05:57.663Z",
     "hierarchy": {
         "parentId": "8436d159-6c3e-4c01-a65e-03c817751425",

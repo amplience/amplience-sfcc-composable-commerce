@@ -123,14 +123,14 @@
     "blend": "normal",
     "color": "rgb(0, 0, 0)"
   },
-  "version": 3,
+  "version": 1,
   "label": "New Season",
   "status": "ACTIVE",
   "createdBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
   "createdDate": "2022-09-12T15:00:02.316Z",
   "lastModifiedBy": "b5b7704b-34ca-4424-a7dc-f6880734c30e",
   "lastModifiedDate": "2022-09-12T16:38:19.371Z",
-  "lastPublishedVersion": 3,
+  "lastPublishedVersion": 1,
   "lastPublishedDate": "2022-09-12T16:40:41.683Z",
   "deliveryId": "bbe17cee-564e-46ee-a3a5-f912c37d2643"
 }
