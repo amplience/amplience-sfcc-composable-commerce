@@ -1,9 +1,20 @@
-import {ContentClient} from 'dc-delivery-sdk-js'
+import {ContentClient, ContentItem, ContentReference} from 'dc-delivery-sdk-js'
 import {chunk, flatten} from 'lodash'
 import {app} from '../../config/default'
 
 export type IdOrKey = {id: string} | {key: string}
 export type FilterType = ((item: any) => boolean) | undefined
+
+export type Variant = {
+    segment: String[];
+    content: ContentReference[];
+}
+
+export type PersonalisedContent = {
+    defaultContent: ContentItem;
+    maxNumberMatches: number;
+    variants: Variant[];
+}
 
 export type FetchParams = {
     locale?: string;
@@ -143,6 +154,33 @@ export class AmplienceAPI {
                     this.getReferences(prop, refs)
                 }
             })
+        }
+    }
+
+    async getVariantsContent({variants, maxNumberMatches = 1, defaultContent}: PersonalisedContent, params) {
+        let allContent = []
+
+        //add matching logic here
+
+        let responses = await Promise.all(variants.map(async (arg: Variant) => {
+            const content = await (await this.client.getContentItems(arg.content.map(({id}) => ({id})), params)).responses
+            const mappedContent = content.map((response) => {
+                if ('content' in response) {
+                    return response.content
+                }
+                return response.error
+            })
+            allContent = allContent.concat(mappedContent)
+
+            return {
+                ...arg,
+                content: mappedContent
+            }
+        }))
+
+        return {
+            variants: responses,
+            content: allContent
         }
     }
 
