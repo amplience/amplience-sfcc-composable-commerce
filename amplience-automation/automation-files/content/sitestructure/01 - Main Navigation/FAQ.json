@@ -36,14 +36,14 @@
             "id": "01fcc5a1-54bb-407f-ad19-b837dd4d4a09"
         }
     },
-    "version": 7,
+    "version": 1,
     "label": "FAQ",
     "status": "ACTIVE",
     "createdBy": "fb90fd96-dcaf-4d67-9747-b9676282f661",
     "createdDate": "2022-08-18T16:10:01.610Z",
     "lastModifiedBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
     "lastModifiedDate": "2022-08-24T21:22:10.960Z",
-    "lastPublishedVersion": 7,
+    "lastPublishedVersion": 1,
     "lastPublishedDate": "2022-08-24T21:22:22.440Z",
     "hierarchy": {
         "parentId": "388e47b3-0c2f-495c-8e2a-2bf94a59ee84",

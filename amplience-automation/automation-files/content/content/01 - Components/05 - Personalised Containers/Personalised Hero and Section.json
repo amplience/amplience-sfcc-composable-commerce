@@ -30,14 +30,14 @@
                 "content": [
                     {
                         "_meta": {
-                            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference"
                         },
                         "contentType": "https://sfcc.com/components/hero",
                         "id": "8a08a479-efc0-4d3b-9cdd-0a7c14b36d16"
                     },
                     {
                         "_meta": {
-                            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference"
                         },
                         "contentType": "https://sfcc.com/components/section",
                         "id": "24ea6b6c-0c5f-46bd-bed2-636bc1ece3c5"
@@ -51,7 +51,7 @@
                 "content": [
                     {
                         "_meta": {
-                            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference"
                         },
                         "contentType": "https://sfcc.com/components/hero",
                         "id": "d97fa8ac-85da-4594-8734-84070bdc249c"
@@ -66,7 +66,7 @@
                 "content": [
                     {
                         "_meta": {
-                            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference"
                         },
                         "contentType": "https://sfcc.com/components/section",
                         "id": "164c1306-4c74-49cf-90b8-011872158370"
@@ -80,7 +80,7 @@
                 "content": [
                     {
                         "_meta": {
-                            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference"
                         },
                         "contentType": "https://sfcc.com/components/hero",
                         "id": "a14b3f21-b6b0-43d1-9e35-f50c2addd5cc"
@@ -89,12 +89,14 @@
             }
         ]
     },
-    "version": 4,
+    "version": 1,
     "label": "Personalised Hero and Section",
     "status": "ACTIVE",
     "createdBy": "faf50c60-6d31-48fe-8af3-c52557850527",
     "createdDate": "2022-09-20T08:38:16.031Z",
     "lastModifiedBy": "faf50c60-6d31-48fe-8af3-c52557850527",
     "lastModifiedDate": "2022-09-20T09:09:24.659Z",
+    "lastPublishedVersion": 1,
+    "lastPublishedDate": "2022-09-12T16:40:41.539Z",
     "deliveryId": "fe76a6c7-fa05-4038-98f8-03491b775ec3"
 }

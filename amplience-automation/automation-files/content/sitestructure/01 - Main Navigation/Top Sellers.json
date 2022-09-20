@@ -27,14 +27,14 @@
         },
         "includeSFCC": true
     },
-    "version": 2,
+    "version": 1,
     "label": "Top Sellers",
     "status": "ACTIVE",
     "createdBy": "fb90fd96-dcaf-4d67-9747-b9676282f661",
     "createdDate": "2022-08-18T15:58:22.794Z",
     "lastModifiedBy": "b5b7704b-34ca-4424-a7dc-f6880734c30e",
     "lastModifiedDate": "2022-08-22T11:07:04.452Z",
-    "lastPublishedVersion": 2,
+    "lastPublishedVersion": 1,
     "lastPublishedDate": "2022-08-24T16:19:53.872Z",
     "hierarchy": {
         "parentId": "250114dd-abbe-481c-80d8-4080537c40c4",

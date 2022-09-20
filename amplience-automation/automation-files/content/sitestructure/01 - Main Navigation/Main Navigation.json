@@ -21,14 +21,14 @@
         "title": "Main Navigation",
         "description": "The main navigation that appears at the top of the page."
     },
-    "version": 3,
+    "version": 1,
     "label": "Main Navigation",
     "status": "ACTIVE",
     "createdBy": "fb90fd96-dcaf-4d67-9747-b9676282f661",
     "createdDate": "2022-08-18T15:19:48.726Z",
     "lastModifiedBy": "ec8eae46-fcfe-4c9f-8e2c-5a0f8aea334c",
     "lastModifiedDate": "2022-08-22T15:55:35.087Z",
-    "lastPublishedVersion": 3,
+    "lastPublishedVersion": 1,
     "lastPublishedDate": "2022-08-24T16:19:53.872Z",
     "hierarchy": {
         "root": true
