@@ -1,5 +1,5 @@
 import {ContentClient, ContentItem, ContentReference} from 'dc-delivery-sdk-js'
-import {chunk, flatten} from 'lodash'
+import {chunk, flatten, intersection, compact} from 'lodash'
 import {app} from '../../config/default'
 import {EnrichTarget, isContentReference, enrichContent, isPersonalized} from './enrich'
 
@@ -151,12 +151,23 @@ export class AmplienceAPI {
         }
     }
 
-    async getVariantsContent({variants, maxNumberMatches = 1, defaultContent}: PersonalisedContent, params) {
+    async getVariantsContent({
+                                 variants,
+                                 maxNumberMatches = 1,
+                                 defaultContent
+                             }: PersonalisedContent, params) {
+        const customerGroups = ['Everyone'] //todo change
         let allContent = []
 
-        //add matching logic here
+        const matches = compact(variants.map(async (arg: Variant) => {
+            const similar = intersection(arg.segment, customerGroups)
+            if (similar && similar.length < arg.segment.length) {
+                return null
+            }
+            return arg;
+        }))
 
-        let responses = await Promise.all(variants.map(async (arg: Variant) => {
+        let responses = await Promise.all(matches.slice(0, maxNumberMatches).map(async (arg: Variant) => {
             const content = await (await this.client.getContentItems(arg.content.map(({id}) => ({id})), params)).responses
             const mappedContent: any = content.map((response) => {
                 if ('content' in response) {
