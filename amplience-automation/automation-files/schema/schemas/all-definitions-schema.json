@@ -268,7 +268,7 @@
                     "items": {
                         "allOf": [
                             {
-                                "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                                "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference"
                             },
                             {
                                 "properties": {
