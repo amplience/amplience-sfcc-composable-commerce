@@ -92,7 +92,7 @@ export class AmplienceAPI {
         const chunks = chunk(args, 12)
 
         let responses = await Promise.all(
-            chunks.map(async (arg) => (await client.getContentItems(arg, params)).responses)
+            chunks.map(async (arg: IdOrKey[]) => (await client.getContentItems(arg, params)).responses)
         )
 
         const items = flatten(responses).map((response) => {
@@ -166,10 +166,8 @@ export class AmplienceAPI {
         }
     }
 
-    async getVariantsContent(
-        {variants, maxNumberMatches = 1, defaultContent}: PersonalisedContent,
-        params
-    ) {
+    async getVariantsContent(props: PersonalisedContent, params) {
+        const {variants, maxNumberMatches = 1, defaultContent} = props
         const customerGroups = ['Everyone'] //todo change
         let allContent: any[] = []
 
@@ -189,12 +187,7 @@ export class AmplienceAPI {
 
         let responses = await Promise.all(
             matches.slice(0, maxNumberMatches).map(async (arg: Variant) => {
-                const content = await (
-                    await this.client.getContentItems(
-                        arg.content.map(({id}) => ({id})),
-                        params
-                    )
-                ).responses
+                const content = (await this.client.getContentItems(arg.content.map(({id}) => ({id})), params)).responses
                 const mappedContent: any = content.map((response) => {
                     if ('content' in response) {
                         return response.content
@@ -215,6 +208,7 @@ export class AmplienceAPI {
         }
 
         return {
+            ...props,
             variants: responses,
             content: allContent
         }
