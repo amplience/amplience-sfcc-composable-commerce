@@ -154,6 +154,7 @@ export class AmplienceAPI {
     async getVariantsContent({
                                  variants,
                                  maxNumberMatches = 1,
+                                 matchMode = 'Any',
                                  defaultContent
                              }: PersonalisedContent, params) {
         const customerGroups = ['Everyone'] //todo change
@@ -161,7 +162,7 @@ export class AmplienceAPI {
 
         const matches = compact(variants.map(async (arg: Variant) => {
             const similar = intersection(arg.segment, customerGroups)
-            if (similar && similar.length < arg.segment.length) {
+            if (similar && ((matchMode === 'All' && similar.length < arg.segment.length) || (matchMode === 'Any' && !similar.length))) {
                 return null
             }
             return arg;
