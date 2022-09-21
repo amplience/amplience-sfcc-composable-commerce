@@ -192,7 +192,7 @@ export class AmplienceAPI {
     async enrichVariantsInternal(targets: EnrichTarget[], locale: string) {
         for (let target of targets) {
             const item = target.item
-            target.parent[target.index] = await this.getVariantsContent({variants: item}, {locale})
+            Object.assign(item, await this.getVariantsContent(item, {locale}))
         }
     }
 

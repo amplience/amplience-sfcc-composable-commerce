@@ -16,7 +16,12 @@ export interface EnrichStrategy {
 }
 
 export const isPersonalized = (item: any): boolean => {
-    return Object.keys(item).length === 2 && Array.isArray(item.segment) && Array.isArray(item)
+    return (
+        Object.keys(item).length === 3 &&
+        Array.isArray(item.defaultContent) &&
+        typeof item.defaultContent === 'number' &&
+        Array.isArray(item.variants)
+    )
 }
 
 export const isContentReference = (item: any): boolean => {
