@@ -165,7 +165,7 @@ export class AmplienceAPI {
         const customerGroups = ['Everyone'] //todo change
         let allContent = []
 
-        const matches = compact(variants.map(async (arg: Variant) => {
+        const matches = compact(variants.map((arg: Variant) => {
             const similar = intersection(arg.segment, customerGroups)
             if (similar && similar.length < arg.segment.length) {
                 return null
