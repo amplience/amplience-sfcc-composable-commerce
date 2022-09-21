@@ -11,7 +11,8 @@ import {getAppOrigin} from 'pwa-kit-react-sdk/utils/url'
 import ShopperBaskets from './shopper-baskets'
 import OcapiShopperOrders from './ocapi-shopper-orders'
 import {getTenantId, isError, isTokenValid} from './utils'
-import Auth from './auth'
+//import Auth from './auth'
+import Auth from '../amplience-api/auth'
 import EinsteinAPI from './einstein'
 
 /**

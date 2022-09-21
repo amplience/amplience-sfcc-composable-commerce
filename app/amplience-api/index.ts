@@ -9,10 +9,11 @@ export type FilterType = ((item: any) => boolean) | undefined
 export type Variant = {
     segment: String[];
     content: ContentReference[];
+    matchMode: 'Any' | 'All';
 }
 
 export type PersonalisedContent = {
-    defaultContent: ContentItem;
+    defaultContent: any[];
     maxNumberMatches: number;
     variants: Variant[];
 }
@@ -94,12 +95,26 @@ export class AmplienceAPI {
             chunks.map(async (arg) => (await client.getContentItems(arg, params)).responses)
         )
 
-        return flatten(responses).map((response) => {
+        const items = flatten(responses).map((response) => {
             if ('content' in response) {
                 return response.content
             }
             return response.error
         })
+
+        await this.defaultEnrich(items, params)
+
+        return items
+    }
+
+    async defaultEnrich(items: any[], params: FetchParams = {}) {
+        if (params && !params.locale) {
+            params.locale = 'en-US'
+        }
+
+        for (let item of items) {
+            await this.enrichVariants(item, params.locale)
+        }
     }
 
     async getChildren(parent: any, filter: FilterType) {
@@ -151,38 +166,53 @@ export class AmplienceAPI {
         }
     }
 
-    async getVariantsContent({
-                                 variants,
-                                 maxNumberMatches = 1,
-                                 matchMode = 'Any',
-                                 defaultContent
-                             }: PersonalisedContent, params) {
+    async getVariantsContent(
+        {variants, maxNumberMatches = 1, defaultContent}: PersonalisedContent,
+        params
+    ) {
         const customerGroups = ['Everyone'] //todo change
-        let allContent = []
+        let allContent: any[] = []
 
-        const matches = compact(variants.map(async (arg: Variant) => {
-            const similar = intersection(arg.segment, customerGroups)
-            if (similar && ((matchMode === 'All' && similar.length < arg.segment.length) || (matchMode === 'Any' && !similar.length))) {
-                return null
-            }
-            return arg;
-        }))
-
-        let responses = await Promise.all(matches.slice(0, maxNumberMatches).map(async (arg: Variant) => {
-            const content = await (await this.client.getContentItems(arg.content.map(({id}) => ({id})), params)).responses
-            const mappedContent: any = content.map((response) => {
-                if ('content' in response) {
-                    return response.content
+        const matches = compact(
+            variants.map((arg: Variant) => {
+                const similar = intersection(arg.segment, customerGroups)
+                if (
+                    arg.matchMode == 'Any'
+                        ? similar.length == 0
+                        : similar.length < arg.segment.length
+                ) {
+                    return null
                 }
-                return response.error
+                return arg
             })
-            allContent = allContent.concat(mappedContent)
+        )
 
-            return {
-                ...arg,
-                content: mappedContent
-            }
-        }))
+        let responses = await Promise.all(
+            matches.slice(0, maxNumberMatches).map(async (arg: Variant) => {
+                const content = await (
+                    await this.client.getContentItems(
+                        arg.content.map(({id}) => ({id})),
+                        params
+                    )
+                ).responses
+                const mappedContent: any = content.map((response) => {
+                    if ('content' in response) {
+                        return response.content
+                    }
+                    return response.error
+                })
+                allContent = [...allContent, ...mappedContent]
+
+                return {
+                    ...arg,
+                    content: mappedContent
+                }
+            })
+        )
+
+        if (allContent.length === 0) {
+            allContent = [...allContent, ...defaultContent]
+        }
 
         return {
             variants: responses,
