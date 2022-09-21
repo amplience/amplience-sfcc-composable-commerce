@@ -11,9 +11,24 @@
         ],
         "visualizations": [
             {
+                "label": "Default - Live",
+                "templatedUri": "https://ascc-production.mobify-storefront.com/{{locales}}/{{delivery.key}}?vse={{vse.domain}}",
+                "default": true
+            },
+            {
+                "label": "Header - Live",
+                "templatedUri": "https://ascc-production.mobify-storefront.com/{{locales}}/visualization/{{hub.name}}/{{content.sys.id}}/{{vse.domain}}?navvis=header&navchild={{content.sys.id}}&vse={{vse.domain}}",
+                "default": false
+            },
+            {
+                "label": "Footer - Live",
+                "templatedUri": "https://ascc-production.mobify-storefront.com/{{locales}}/visualization/{{hub.name}}/{{content.sys.id}}/{{vse.domain}}?navvis=footer&navchild={{content.sys.id}}&vse={{vse.domain}}",
+                "default": false
+            },
+            {
                 "label": "Default - Localhost",
                 "templatedUri": "http://localhost:3000/{{locales}}/{{delivery.key}}?vse={{vse.domain}}",
-                "default": true
+                "default": false
             },
             {
                 "label": "Header - Localhost",

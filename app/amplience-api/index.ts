@@ -1,6 +1,7 @@
 import {ContentClient, ContentItem, ContentReference} from 'dc-delivery-sdk-js'
-import {chunk, flatten} from 'lodash'
+import {chunk, flatten, intersection, compact} from 'lodash'
 import {app} from '../../config/default'
+import {EnrichTarget, isContentReference, enrichContent, isPersonalized} from './enrich'
 
 export type IdOrKey = {id: string} | {key: string}
 export type FilterType = ((item: any) => boolean) | undefined
@@ -8,10 +9,11 @@ export type FilterType = ((item: any) => boolean) | undefined
 export type Variant = {
     segment: String[];
     content: ContentReference[];
+    matchMode: 'Any' | 'All';
 }
 
 export type PersonalisedContent = {
-    defaultContent: ContentItem;
+    defaultContent: any[];
     maxNumberMatches: number;
     variants: Variant[];
 }
@@ -22,11 +24,6 @@ export type FetchParams = {
     format?: 'inlined';
     client?: ContentClient;
 }
-
-const referenceTypes = [
-    'http://bigcontent.io/cms/schema/v1/core#/definitions/content-link',
-    'http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference'
-]
 
 const isTimeMachineVse = (vse: string): boolean => {
     if (vse == null || vse.length === 0) {
@@ -94,14 +91,30 @@ export class AmplienceAPI {
         delete params.client
         const chunks = chunk(args, 12)
 
-        let responses = await Promise.all(chunks.map(async (arg) => (await client.getContentItems(arg, params)).responses))
+        let responses = await Promise.all(
+            chunks.map(async (arg) => (await client.getContentItems(arg, params)).responses)
+        )
 
-        return flatten(responses).map((response) => {
+        const items = flatten(responses).map((response) => {
             if ('content' in response) {
                 return response.content
             }
             return response.error
         })
+
+        await this.defaultEnrich(items, params)
+
+        return items
+    }
+
+    async defaultEnrich(items: any[], params: FetchParams = {}) {
+        if (params && !params.locale) {
+            params.locale = 'en-US'
+        }
+
+        for (let item of items) {
+            await this.enrichVariants(item, params.locale)
+        }
     }
 
     async getChildren(parent: any, filter: FilterType) {
@@ -127,56 +140,79 @@ export class AmplienceAPI {
         await Promise.all(items.map((item) => this.getChildren(item, filter)))
     }
 
-    getReferences(item: any, refs: Map<string, any>) {
-        if (Array.isArray(item)) {
-            item.forEach((contained) => {
-                this.getReferences(contained, refs)
-            })
-        } else if (item != null && typeof item === 'object') {
-            const allPropertyNames = Object.getOwnPropertyNames(item)
-            // Does this object match the pattern expected for a content item or reference?
-            if (
-                item._meta &&
-                referenceTypes.indexOf(item._meta.schema) !== -1 &&
-                typeof item.contentType === 'string' &&
-                typeof item.id === 'string'
-            ) {
-                if (!refs.get(item.id)) {
-                    refs.set(item.id, [])
-                }
-                refs.set(item.id, [...refs.get(item.id), item])
-                return
-            }
+    async enrichReferenceDeliveryKeysInternal(targets: EnrichTarget[], locale: string) {
+        const ids = new Set<string>(targets.map((target) => target.item.id))
 
-            allPropertyNames.forEach((propName) => {
-                const prop = item[propName]
-                if (typeof prop === 'object') {
-                    this.getReferences(prop, refs)
+        if (ids.size > 0) {
+            const items = await this.fetchContent(
+                Array.from(ids).map((id) => ({
+                    id
+                })),
+                {
+                    locale,
+                    depth: 'root',
+                    client: this.hierarchyClient
                 }
-            })
+            )
+
+            for (let item of items) {
+                const key = item._meta.deliveryKey
+                if (key) {
+                    targets
+                        .filter((target) => target.item.id === item._meta.deliveryId)
+                        .forEach((target) => (target.item.deliveryKey = key))
+                }
+            }
         }
     }
 
-    async getVariantsContent({variants, maxNumberMatches = 1, defaultContent}: PersonalisedContent, params) {
-        let allContent = []
+    async getVariantsContent(
+        {variants, maxNumberMatches = 1, defaultContent}: PersonalisedContent,
+        params
+    ) {
+        const customerGroups = ['Everyone'] //todo change
+        let allContent: any[] = []
 
-        //add matching logic here
-
-        let responses = await Promise.all(variants.map(async (arg: Variant) => {
-            const content = await (await this.client.getContentItems(arg.content.map(({id}) => ({id})), params)).responses
-            const mappedContent: any = content.map((response) => {
-                if ('content' in response) {
-                    return response.content
+        const matches = compact(
+            variants.map((arg: Variant) => {
+                const similar = intersection(arg.segment, customerGroups)
+                if (
+                    arg.matchMode == 'Any'
+                        ? similar.length == 0
+                        : similar.length < arg.segment.length
+                ) {
+                    return null
                 }
-                return response.error
+                return arg
             })
-            allContent = allContent.concat(mappedContent)
+        )
 
-            return {
-                ...arg,
-                content: mappedContent
-            }
-        }))
+        let responses = await Promise.all(
+            matches.slice(0, maxNumberMatches).map(async (arg: Variant) => {
+                const content = await (
+                    await this.client.getContentItems(
+                        arg.content.map(({id}) => ({id})),
+                        params
+                    )
+                ).responses
+                const mappedContent: any = content.map((response) => {
+                    if ('content' in response) {
+                        return response.content
+                    }
+                    return response.error
+                })
+                allContent = [...allContent, ...mappedContent]
+
+                return {
+                    ...arg,
+                    content: mappedContent
+                }
+            })
+        )
+
+        if (allContent.length === 0) {
+            allContent = [...allContent, ...defaultContent]
+        }
 
         return {
             variants: responses,
@@ -184,30 +220,30 @@ export class AmplienceAPI {
         }
     }
 
-    async enrichReferenceDeliveryKeys(item: any, locale = 'en-US') {
-        const refs = new Map<string, any>()
-
-        this.getReferences(item, refs)
-
-        const ids = Array.from(refs.keys()).map((id) => ({id}))
-
-        if (ids.length > 0) {
-            const items = await this.fetchContent(ids, {
-                locale,
-                depth: 'root',
-                client: this.hierarchyClient
-            })
-
-            for (let item of items) {
-                const key = item._meta.deliveryKey
-                if (key) {
-                    refs.get(item._meta.deliveryId).map((el) => {
-                        el.deliveryKey = key
-                        return el
-                    })
-                }
-            }
+    async enrichVariantsInternal(targets: EnrichTarget[], locale: string) {
+        for (let target of targets) {
+            const item = target.item
+            Object.assign(item, await this.getVariantsContent(item, {locale}))
         }
+    }
+
+    async enrichVariants(item: any, locale = 'en-US') {
+        await enrichContent(item, [
+            {
+                trigger: isPersonalized,
+                enrich: (targets: EnrichTarget[]) => this.enrichVariantsInternal(targets, locale)
+            }
+        ])
+    }
+
+    async enrichReferenceDeliveryKeys(item: any, locale = 'en-US') {
+        await enrichContent(item, [
+            {
+                trigger: isContentReference,
+                enrich: (targets: EnrichTarget[]) =>
+                    this.enrichReferenceDeliveryKeysInternal(targets, locale)
+            }
+        ])
     }
 
     async fetchHierarchy(parent: IdOrKey, filter: FilterType, locale = 'en-US') {

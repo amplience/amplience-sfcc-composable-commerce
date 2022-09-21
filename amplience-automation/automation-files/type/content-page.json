@@ -11,9 +11,14 @@
         ],
         "visualizations": [
             {
+                "label": "Live",
+                "templatedUri": "https://ascc-production.mobify-storefront.com/{{locales}}/page/{{delivery.key}}?pagevse={{vse.domain}}",
+                "default": true
+            },
+            {
                 "label": "Localhost",
                 "templatedUri": "http://localhost:3000/{{locales}}/page/{{delivery.key}}?pagevse={{vse.domain}}",
-                "default": true
+                "default": false
             },
             {
                 "label": "JSON",

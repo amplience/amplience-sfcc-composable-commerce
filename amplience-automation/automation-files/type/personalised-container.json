@@ -6,14 +6,19 @@
         "icons": [
             {
                 "size": 256,
-                "url": "https://sfcccomposable.a.bigcontent.io/v1/static/icon-component-card-enhanced"
+                "url": "https://sfcccomposable.a.bigcontent.io/v1/static/icon-component-personalised-container"
             }
         ],
         "visualizations": [
             {
+                "label": "Live",
+                "templatedUri": "https://ascc-production.mobify-storefront.com/{{locales}}/visualization/{{hub.name}}/{{content.sys.id}}/{{vse.domain}}",
+                "default": true
+            },
+            {
                 "label": "Localhost",
                 "templatedUri": "http://localhost:3000/{{locales}}/visualization/{{hub.name}}/{{content.sys.id}}/{{vse.domain}}",
-                "default": true
+                "default": false
             },
             {
                 "label": "JSON",

@@ -42,7 +42,8 @@
                         "contentType": "https://sfcc.com/components/section",
                         "id": "24ea6b6c-0c5f-46bd-bed2-636bc1ece3c5"
                     }
-                ]
+                ],
+                "matchMode": "Any"
             },
             {
                 "segment": [
@@ -56,7 +57,8 @@
                         "contentType": "https://sfcc.com/components/hero",
                         "id": "d97fa8ac-85da-4594-8734-84070bdc249c"
                     }
-                ]
+                ],
+                "matchMode": "Any"
             },
             {
                 "segment": [
@@ -71,7 +73,8 @@
                         "contentType": "https://sfcc.com/components/section",
                         "id": "164c1306-4c74-49cf-90b8-011872158370"
                     }
-                ]
+                ],
+                "matchMode": "All"
             },
             {
                 "segment": [
@@ -85,7 +88,8 @@
                         "contentType": "https://sfcc.com/components/hero",
                         "id": "a14b3f21-b6b0-43d1-9e35-f50c2addd5cc"
                     }
-                ]
+                ],
+                "matchMode": "Any"
             }
         ]
     },
