@@ -260,6 +260,16 @@
                         }
                     }
                 },
+                "matchMode": {
+                    "title": "Matching Mode",
+                    "description": "Match on any segment or all segments",
+                    "type": "string",
+                    "default": "Any",
+                    "enum": [
+                        "Any",
+                        "All"
+                    ]
+                },
                 "content": {
                     "title": "Content",
                     "type": "array",
@@ -282,6 +292,7 @@
                 }
             },
             "propertyOrder": [
+                "matchMode",
                 "segment",
                 "content"
             ]
@@ -309,6 +320,16 @@
                         }
                     }
                 },
+                "matchMode": {
+                    "title": "Matching Mode",
+                    "description": "Match on any segment or all segments",
+                    "type": "string",
+                    "default": "Any",
+                    "enum": [
+                        "Any",
+                        "All"
+                    ]
+                },
                 "content": {
                     "title": "Content",
                     "type": "array",
@@ -331,6 +352,7 @@
                 }
             },
             "propertyOrder": [
+                "matchMode",
                 "segment",
                 "content"
             ]

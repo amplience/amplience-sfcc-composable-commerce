@@ -27,7 +27,8 @@
                         "contentType": "https://sfcc.com/components/hero",
                         "id": "8a08a479-efc0-4d3b-9cdd-0a7c14b36d16"
                     }
-                ]
+                ],
+                "matchMode": "Any"
             }
         ]
 
