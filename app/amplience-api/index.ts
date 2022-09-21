@@ -9,10 +9,11 @@ export type FilterType = ((item: any) => boolean) | undefined
 export type Variant = {
     segment: String[];
     content: ContentReference[];
+    matchMode: 'Any' | 'All';
 }
 
 export type PersonalisedContent = {
-    defaultContent: ContentItem;
+    defaultContent: any[];
     maxNumberMatches: number;
     variants: Variant[];
 }
@@ -165,37 +166,53 @@ export class AmplienceAPI {
         }
     }
 
-    async getVariantsContent({
-                                 variants,
-                                 maxNumberMatches = 1,
-                                 defaultContent
-                             }: PersonalisedContent, params) {
+    async getVariantsContent(
+        {variants, maxNumberMatches = 1, defaultContent}: PersonalisedContent,
+        params
+    ) {
         const customerGroups = ['Everyone'] //todo change
-        let allContent = []
+        let allContent: any[] = []
 
-        const matches = compact(variants.map((arg: Variant) => {
-            const similar = intersection(arg.segment, customerGroups)
-            if (similar && similar.length < arg.segment.length) {
-                return null
-            }
-            return arg;
-        }))
-
-        let responses = await Promise.all(matches.slice(0, maxNumberMatches).map(async (arg: Variant) => {
-            const content = await (await this.client.getContentItems(arg.content.map(({id}) => ({id})), params)).responses
-            const mappedContent: any = content.map((response) => {
-                if ('content' in response) {
-                    return response.content
+        const matches = compact(
+            variants.map((arg: Variant) => {
+                const similar = intersection(arg.segment, customerGroups)
+                if (
+                    arg.matchMode == 'Any'
+                        ? similar.length == 0
+                        : similar.length < arg.segment.length
+                ) {
+                    return null
                 }
-                return response.error
+                return arg
             })
-            allContent = allContent.concat(mappedContent)
+        )
 
-            return {
-                ...arg,
-                content: mappedContent
-            }
-        }))
+        let responses = await Promise.all(
+            matches.slice(0, maxNumberMatches).map(async (arg: Variant) => {
+                const content = await (
+                    await this.client.getContentItems(
+                        arg.content.map(({id}) => ({id})),
+                        params
+                    )
+                ).responses
+                const mappedContent: any = content.map((response) => {
+                    if ('content' in response) {
+                        return response.content
+                    }
+                    return response.error
+                })
+                allContent = [...allContent, ...mappedContent]
+
+                return {
+                    ...arg,
+                    content: mappedContent
+                }
+            })
+        )
+
+        if (allContent.length === 0) {
+            allContent = [...allContent, ...defaultContent]
+        }
 
         return {
             variants: responses,
