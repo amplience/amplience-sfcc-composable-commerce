@@ -13,6 +13,16 @@
 	
 	"type": "object",
 	"properties": {
+		"_meta": {
+			"type": "object",
+			"properties": {
+				"deliveryKey": {
+					"type": "string",
+					"title": "Delivery Key",
+					"description": "A unique key for this slot in your application (home/top)"
+				}
+			}
+		},
 		"defaultContent": {
 			"title": "Default",
 			"type": "array",

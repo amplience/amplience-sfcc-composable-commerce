@@ -187,7 +187,13 @@ export class AmplienceAPI {
 
         let responses = await Promise.all(
             matches.slice(0, maxNumberMatches).map(async (arg: Variant) => {
-                const content = (await this.client.getContentItems(arg.content.map(({id}) => ({id})), params)).responses
+                const ids = compact(arg.content.map(({id}) => (id && {id})))
+                if (!ids || !ids.length) {
+                    allContent = [...allContent, ...arg.content]
+                    return Promise.resolve(arg)
+                }
+
+                const content = (await this.client.getContentItems(ids, params)).responses
                 const mappedContent: any = content.map((response) => {
                     if ('content' in response) {
                         return response.content
