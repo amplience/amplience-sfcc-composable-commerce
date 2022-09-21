@@ -30,7 +30,7 @@ export const RealtimeVisualizationProvider = ({status: initState, ampViz}) => {
     const [status, setStatus] = useState(initState)
     const [ampVizSdk, setAmpVizSdk] = useState(ampViz)
 
-    ;async () => {
+    async () => {
         const sdk = await init({debug: true})
 
         setAmpVizSdk(sdk)
@@ -66,15 +66,22 @@ RealtimeVisualizationProvider.propTypes = {
 
 export const AmplienceContext = React.createContext()
 
-export const AmplienceContextProvider = ({vse, vseTimestamp, children}) => {
+export const AmplienceContextProvider = ({vse, vseTimestamp, groups: initialGroups, children}) => {
     // Init client using VSE
     const [client] = useState(new AmplienceAPI())
+    const [groups, setGroups] = useState(initialGroups);
 
     // Switch the API to use the provided VSE, if present.
     client.setVse(vse)
+    client.setGroups(groups)
+
+    const updateGroups = (groups) => {
+        setGroups(groups)
+        client.setGroups(groups)
+    }
 
     return (
-        <AmplienceContext.Provider value={{vse, vseTimestamp, client}}>
+        <AmplienceContext.Provider value={{vse, vseTimestamp, groups, updateGroups, client}}>
             {children}
         </AmplienceContext.Provider>
     )
@@ -88,6 +95,23 @@ const getCookies = (headers) => {
     }
 
     return {}
+}
+
+export const getGroupsFromLocalStorage = ({req, res}) => {
+    let groups = []
+
+    if (res) {
+        const cookies = getCookies(req.rawHeaders)
+        groups = cookies['customerGroups']
+
+        try {
+            groups = JSON.parse(groups)
+        } catch (e) {
+            console.error(e)
+        }
+    }
+
+    return groups
 }
 
 export const generateVseProps = ({req, res, query}) => {

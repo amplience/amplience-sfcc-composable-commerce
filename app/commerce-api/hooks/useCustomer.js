@@ -9,6 +9,8 @@ import {nanoid} from 'nanoid'
 import {useCommerceAPI, CustomerContext} from '../contexts'
 import {app} from '../../../config/default'
 import {createOcapiFetch} from '../../amplience-api/utils'
+import {AmplienceContext} from '../../contexts/amplience'
+import useNavigation from '../../hooks/use-navigation'
 
 const AuthTypes = Object.freeze({GUEST: 'guest', REGISTERED: 'registered'})
 
@@ -16,6 +18,8 @@ const ocapiFetch = createOcapiFetch(app.commerceAPI)
 
 export default function useCustomer() {
     const api = useCommerceAPI()
+    const navigate = useNavigation();
+    const ampContext = useContext(AmplienceContext)
     const {customer, setCustomer} = useContext(CustomerContext)
 
     const self = useMemo(() => {
@@ -70,17 +74,19 @@ export default function useCustomer() {
                 let groups = []
                 if (skeletonCustomer.authType === 'guest') {
                     setCustomer(skeletonCustomer)
-                    console.log('groups:', groups)
-                    api.auth._storage.set('customer_groups', groups)
                 } else {
                     const customer = await api.shopperCustomers.getCustomer({
                         parameters: {customerId: skeletonCustomer.customerId}
                     })
                     setCustomer(customer)
                     groups = await self.getUserGroups()
-                    console.log('groups:', groups)
-                    api.auth._storage.set('customer_groups', groups)
                 }
+
+                console.log('groups:', groups)
+                if (ampContext && ampContext.updateGroups){
+                    ampContext.updateGroups(groups);
+                }
+                document.cookie = `customerGroups=${JSON.stringify(groups)};`
             },
 
             async getUserGroups() {
@@ -97,6 +103,10 @@ export default function useCustomer() {
              */
             async logout() {
                 const customer = await api.auth.logout()
+                document.cookie = `customerGroups=;`
+                if (ampContext && ampContext.updateGroups){
+                    ampContext.updateGroups([]);
+                }
                 setCustomer(customer)
             },
 

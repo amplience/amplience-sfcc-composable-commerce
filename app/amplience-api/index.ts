@@ -47,6 +47,7 @@ export class AmplienceAPI {
     client: ContentClient
     hierarchyClient: ContentClient
     vse: string
+    groups: string[]
 
     clientReady: Promise<void>
     clientReadyResolve
@@ -55,6 +56,10 @@ export class AmplienceAPI {
         this.clientReady = new Promise((resolve) => (this.clientReadyResolve = resolve))
         this.client = new ContentClient({hubName: app.amplience.hub})
         this.hierarchyClient = this.client
+    }
+
+    setGroups(groups) {
+        this.groups = groups
     }
 
     setVse(vse) {
@@ -168,12 +173,11 @@ export class AmplienceAPI {
 
     async getVariantsContent(props: PersonalisedContent, params) {
         const {variants, maxNumberMatches = 1, defaultContent} = props
-        const customerGroups = ['Everyone'] //todo change
         let allContent: any[] = []
 
         const matches = compact(
             variants.map((arg: Variant) => {
-                const similar = intersection(arg.segment, customerGroups)
+                const similar = intersection(arg.segment, this.groups)
                 if (
                     arg.matchMode == 'Any'
                         ? similar.length == 0
@@ -210,7 +214,7 @@ export class AmplienceAPI {
         )
 
         if (allContent.length === 0) {
-            allContent = [...allContent, ...defaultContent]
+            allContent = [...defaultContent]
         }
 
         return {
