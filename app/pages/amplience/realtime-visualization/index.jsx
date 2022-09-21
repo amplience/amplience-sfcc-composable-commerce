@@ -5,16 +5,17 @@
  * For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
 
-import React, {useContext, useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import {useParams} from 'react-router-dom'
 import PropTypes from 'prop-types'
 import {Box} from '@chakra-ui/react'
 import Seo from '../../../components/seo'
 
 // Amplience
-import {RealtimeVisualization, AmplienceContextProvider} from '../../../contexts/amplience'
+import {AmplienceContextProvider} from '../../../contexts/amplience'
 import AmplienceWrapper from '../../../components/amplience/wrapper'
 import {useIntl} from 'react-intl'
+import {useAmpRtv} from '../../../utils/amplience/rtv'
 
 /**
  * This is the home page for Retail React App.
@@ -25,42 +26,11 @@ import {useIntl} from 'react-intl'
 const AmpRtv = () => {
     const {hubname, contentId, vse, locale} = useParams()
     const intl = useIntl()
-
-    const RTV = useContext(RealtimeVisualization)
-    let removeChangedSubscription = undefined
     const [formContent, setFormContent] = useState(undefined)
 
-    useEffect(() => {
-        if (RTV !== null && RTV.ampVizSdk !== null) {
-            const options = {
-                format: 'inline',
-                depth: 'all'
-            }
-
-            RTV.ampVizSdk.form.get(options).then((model) => {
-                setFormContent(model.content)
-            })
-
-            RTV.ampVizSdk.form.saved(() => {
-                window.location.reload()
-            })
-
-            RTV.ampVizSdk.locale.changed(() => {
-                window.location.reload()
-            })
-
-            removeChangedSubscription = RTV.ampVizSdk.form.changed((model) => {
-                // handle form model change
-                setFormContent(model.content)
-            })
-        }
-
-        return () => {
-            if (removeChangedSubscription != undefined) {
-                removeChangedSubscription()
-            }
-        }
-    }, [RTV.ampVizSdk])
+    useAmpRtv((model) => {
+        setFormContent(model.content)
+    })
 
     // Overwrite the context to perform vis from vse.
 

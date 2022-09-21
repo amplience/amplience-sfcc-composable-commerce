@@ -101,11 +101,19 @@ export class AmplienceAPI {
             return response.error
         })
 
+        await this.defaultEnrich(items, params)
+
+        return items
+    }
+
+    async defaultEnrich(items: any[], params: FetchParams = {}) {
+        if (params && !params.locale) {
+            params.locale = 'en-US'
+        }
+
         for (let item of items) {
             await this.enrichVariants(item, params.locale)
         }
-
-        return items
     }
 
     async getChildren(parent: any, filter: FilterType) {
