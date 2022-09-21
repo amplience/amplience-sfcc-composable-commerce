@@ -1,0 +1,61 @@
+{
+  "id": "6597390a-3731-44e9-9eb2-830ef7102396",
+  "body": {
+    "title": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Find your shoe"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Trouvez votre chaussure"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Finden Sie Ihren Schuh"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Encuentra tu zapato"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Trova la tua scarpa"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "img": {
+      "image": {
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+        },
+        "id": "099a6d46-a681-4bd2-85ac-79e7286d7f98",
+        "name": "amanda-vick-Az3yuE3out0-unsplash",
+        "endpoint": "sfcccompdev2",
+        "defaultHost": "cdn.media.amplience.net"
+      }
+    },
+    "fullWidth": true,
+    "textAlign": "Left",
+    "justifyContent": "Left",
+    "alignItems": "Start",
+    "_meta": {
+      "name": "Find your shoe",
+      "schema": "https://sfcc.com/components/hero"
+    }
+  },
+  "version": 1,
+  "label": "Find your shoe",
+  "status": "ACTIVE",
+  "createdBy": "b5b7704b-34ca-4424-a7dc-f6880734c30e",
+  "createdDate": "2022-09-12T11:19:15.690Z",
+  "lastModifiedBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
+  "lastModifiedDate": "2022-09-13T11:34:41.544Z",
+  "lastPublishedVersion": 1,
+  "lastPublishedDate": "2022-09-13T11:34:52.741Z",
+  "deliveryId": "6597390a-3731-44e9-9eb2-830ef7102396"
+}
