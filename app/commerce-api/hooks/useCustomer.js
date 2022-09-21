@@ -7,8 +7,12 @@
 import {useContext, useMemo} from 'react'
 import {nanoid} from 'nanoid'
 import {useCommerceAPI, CustomerContext} from '../contexts'
+import {app} from '../../../config/default'
+import {createOcapiFetch} from '../../amplience-api/utils'
 
 const AuthTypes = Object.freeze({GUEST: 'guest', REGISTERED: 'registered'})
+
+const ocapiFetch = createOcapiFetch(app.commerceAPI)
 
 export default function useCustomer() {
     const api = useCommerceAPI()
@@ -63,14 +67,28 @@ export default function useCustomer() {
              */
             async login(credentials) {
                 const skeletonCustomer = await api.auth.login(credentials)
+                let groups = []
                 if (skeletonCustomer.authType === 'guest') {
                     setCustomer(skeletonCustomer)
+                    console.log('groups:', groups)
+                    api.auth._storage.set('customer_groups', groups)
                 } else {
                     const customer = await api.shopperCustomers.getCustomer({
                         parameters: {customerId: skeletonCustomer.customerId}
                     })
                     setCustomer(customer)
+                    groups = await self.getUserGroups()
+                    console.log('groups:', groups)
+                    api.auth._storage.set('customer_groups', groups)
                 }
+            },
+
+            async getUserGroups() {
+                const data = await ocapiFetch('customers/' + api.auth._storage.get('cid'), 'GET', [
+                    {headers: {Authorization: api.auth._storage.get('token')}}
+                ])
+                console.log('ocapi_customer_data', data)
+                return data.c_customerGroups
             },
 
             /**
