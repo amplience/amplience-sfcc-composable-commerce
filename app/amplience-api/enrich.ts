@@ -4,10 +4,10 @@ const referenceTypes = [
 ]
 
 export interface EnrichTarget {
-    index: string | number;
-
     item: any;
-    parent: any;
+
+    parent?: any;
+    index?: string | number;
 }
 
 export interface EnrichStrategy {
@@ -17,9 +17,8 @@ export interface EnrichStrategy {
 
 export const isPersonalized = (item: any): boolean => {
     return (
-        Object.keys(item).length === 3 &&
         Array.isArray(item.defaultContent) &&
-        typeof item.defaultContent === 'number' &&
+        (item.maxNumberMatches == null || typeof item.maxNumberMatches === 'number') &&
         Array.isArray(item.variants)
     )
 }
@@ -49,7 +48,7 @@ export const getEnrichTargets = (
         // Does this object match the pattern expected for enrich?
 
         for (let i = 0; i < enrichStrategies.length; i++) {
-            if (enrichStrategies[i].trigger(item) && index != null) {
+            if (enrichStrategies[i].trigger(item)) {
                 enrichTargets[i].push({
                     parent,
                     index,
@@ -73,7 +72,7 @@ export const enrichContent = async (item: any, enrichStrategies: EnrichStrategy[
         targets.push([])
     }
 
-    await getEnrichTargets(item, enrichStrategies, targets)
+    getEnrichTargets(item, enrichStrategies, targets)
 
     for (let i = 0; i < enrichStrategies.length; i++) {
         const group = targets[i]

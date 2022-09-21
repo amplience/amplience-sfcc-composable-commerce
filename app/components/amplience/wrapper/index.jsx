@@ -20,6 +20,8 @@ const componentsMapping = {
     'https://sfcc.com/components/curated-product': CuratedProductList,
     'https://sfcc.com/components/card-enhanced': CardEnhanced,
     'https://sfcc.com/slots/flexible-list': flexibleListSlot,
+    'https://sfcc.com/slots/personalised-slot': flexibleListSlot,
+    'https://sfcc.com/components/personalised-container': flexibleListSlot,
 
     'https://sfcc.com/site/navigation/root': Blank,
     'https://sfcc.com/site/navigation/external': Blank,

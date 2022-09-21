@@ -94,12 +94,18 @@ export class AmplienceAPI {
             chunks.map(async (arg) => (await client.getContentItems(arg, params)).responses)
         )
 
-        return flatten(responses).map((response) => {
+        const items = flatten(responses).map((response) => {
             if ('content' in response) {
                 return response.content
             }
             return response.error
         })
+
+        for (let item of items) {
+            await this.enrichVariants(item, params.locale)
+        }
+
+        return items
     }
 
     async getChildren(parent: any, filter: FilterType) {
