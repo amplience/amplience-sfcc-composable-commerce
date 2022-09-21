@@ -73,7 +73,7 @@ export const enrichContent = async (item: any, enrichStrategies: EnrichStrategy[
     for (let i = 0; i < enrichStrategies.length; i++) {
         const group = targets[i]
         if (group.length > 0) {
-            enrichStrategies[i].enrich(group)
+            await enrichStrategies[i].enrich(group)
         }
     }
 }
