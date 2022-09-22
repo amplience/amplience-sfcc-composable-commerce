@@ -18,7 +18,6 @@ const ocapiFetch = createOcapiFetch(app.commerceAPI)
 
 export default function useCustomer() {
     const api = useCommerceAPI()
-    const navigate = useNavigation()
     const ampContext = useContext(AmplienceContext)
     const {customer, setCustomer} = useContext(CustomerContext)
 
@@ -83,8 +82,8 @@ export default function useCustomer() {
                 }
 
                 console.log('groups:', groups)
-                if (ampContext && ampContext.updateGroups) {
-                    ampContext.updateGroups(groups)
+                if (ampContext && ampContext.updateGroups){
+                    ampContext.updateGroups(groups);
                 }
                 document.cookie = `customerGroups=${JSON.stringify(groups)};`
             },
@@ -107,6 +106,7 @@ export default function useCustomer() {
                 if (ampContext && ampContext.updateGroups){
                     ampContext.updateGroups([]);
                 }
+                window.location.reload();
                 setCustomer(customer)
             },
 

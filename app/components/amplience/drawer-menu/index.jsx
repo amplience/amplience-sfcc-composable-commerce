@@ -91,7 +91,7 @@ const DrawerMenu = ({isOpen, onClose = noop, onLogoClick = noop, root, footer}) 
     const onSignoutClick = async () => {
         setShowLoading(true)
         await customer.logout()
-        navigate('/login')
+        //navigate('/login')
         setShowLoading(false)
     }
 
