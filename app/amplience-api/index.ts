@@ -230,7 +230,6 @@ export class AmplienceAPI {
             matches.slice(0, maxNumberMatches).map(async (arg: Variant) => {
                 const ids = compact(arg.content.map(({id}) => id && {id}))
                 if (!ids || !ids.length) {
-                    allContent = [...allContent, ...arg.content]
                     return Promise.resolve(arg)
                 }
 
