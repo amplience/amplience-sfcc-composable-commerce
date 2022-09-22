@@ -61,11 +61,14 @@ import PreviewHeader from '../amplience/preview-header'
 import {defaultAmpClient} from '../../amplience-api'
 import {useAmpRtvNav} from '../../utils/amplience/rtv'
 
+import OcapiApi from '../../ocapi-api'
+import {app} from '../../../config/default'
+
 const DEFAULT_NAV_DEPTH = 3
 const DEFAULT_ROOT_CATEGORY = 'root'
 
 const App = (props) => {
-    const {children, targetLocale, messages, categories: allCategories = {}, ampProps} = props
+    const {children, targetLocale, messages, categories: allCategories = {}, ampProps, customerGroups} = props
 
     const appOrigin = getAppOrigin()
 
@@ -396,6 +399,10 @@ App.getProps = async ({api, res, req, ampClient}) => {
     // the application.
     const categories = flatten(rootCategory, 'categories')
 
+    const ocapiApi = new OcapiApi(app.commerceAPI)
+    const groupList = await ocapiApi.getAllGroups()
+    const customerGroups = groupList.data.map(g => g.id)
+
     // The serverside and clientside both have an Amplience client, both should receive the VSE params.
     const ampProps = generateVseProps({req, res, query: req.query})
     const groups = getGroupsFromLocalStorage({req, res, query: req.query})
@@ -403,6 +410,7 @@ App.getProps = async ({api, res, req, ampClient}) => {
     ampClient.setGroups(groups)
 
     ampProps.groups = groups
+    ampProps.customerGroups = customerGroups
 
     let headerKey = 'main-nav'
     let footerKey = 'footer-nav'
@@ -447,7 +455,8 @@ App.getProps = async ({api, res, req, ampClient}) => {
         config: res?.locals?.config,
         ampProps,
         headerNav,
-        footerNav
+        footerNav,
+        customerGroups
     }
 }
 

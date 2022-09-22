@@ -1,5 +1,6 @@
 import {getAppOrigin} from 'pwa-kit-react-sdk/utils/url'
-//import fetch from 'cross-fetch'
+import {Headers} from 'headers-polyfill'
+import fetch from 'cross-fetch'
 
 type requestOptions = {
     method: string;
