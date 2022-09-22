@@ -51,7 +51,7 @@ const CuratedProductList = ({title, products}) => {
         return () => (active = false)
     }, [api, products])
 
-    return <ProductScroller title={title} products={apiProducts} isLoading={isLoading} />
+    return <ProductScroller style={{paddingBottom: 30}} title={title} products={apiProducts} isLoading={isLoading} />
 }
 
 CuratedProductList.displayName = 'Curated Product List'

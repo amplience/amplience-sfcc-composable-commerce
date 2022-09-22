@@ -63,13 +63,19 @@ const Home = ({productSearchResult, isLoading, homeSlotTop}) => {
                 keywords="Commerce Cloud, Retail React App, React Storefront"
             />
             <Heading as="h3">Personalised Slot - Amplience Wrapper by Content</Heading>
+            <Text>Getting content from slot <i>home/slot/top-personalized</i></Text>
             <AmplienceWrapper content={homeSlotTop}></AmplienceWrapper>
 
             <Heading as="h3">Slot - Amplience Wrapper by key</Heading>
+            <Text>Getting content from slot <i>mens/slot/top</i></Text>
             <AmplienceWrapper fetch={{key: 'mens/slot/top'}}></AmplienceWrapper>
 
             <Heading as="h3">Content Directly by key</Heading>
+            <Text>Getting content from content item <i>hero/autumn-sales</i></Text>
             <AmplienceWrapper fetch={{key: 'hero/autumn-sales'}}></AmplienceWrapper>
+            
+            <Heading as="h3">Content Directly by key</Heading>
+            <Text>Getting content from content item <i>simple-product-list</i></Text>
             <AmplienceWrapper fetch={{key: 'simple-product-list'}}></AmplienceWrapper>
 
 
@@ -175,6 +181,8 @@ const Home = ({productSearchResult, isLoading, homeSlotTop}) => {
                 </Section>
             )}
 
+            <Heading as="h2">Content Directly by key</Heading>
+            <Text>Getting content from content item <i>section</i></Text>
             <AmplienceWrapper fetch={{key: 'section'}}></AmplienceWrapper>
 
             <Container maxW={'6xl'} marginTop={10}>
