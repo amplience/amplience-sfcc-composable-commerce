@@ -69,7 +69,7 @@ const Home = ({productSearchResult, isLoading, homeSlotTop}) => {
             <AmplienceWrapper fetch={{key: 'mens/slot/top'}}></AmplienceWrapper>
 
             <Heading as="h3">Content Directly by key</Heading>
-            <AmplienceWrapper fetch={{key: 'hero'}}></AmplienceWrapper>
+            <AmplienceWrapper fetch={{key: 'hero/autumn-sales'}}></AmplienceWrapper>
             <AmplienceWrapper fetch={{key: 'simple-product-list'}}></AmplienceWrapper>
 
 
