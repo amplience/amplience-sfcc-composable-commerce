@@ -82,7 +82,7 @@ const PreviewHeader = ({vse, vseTimestamp, customerGroups, groups, ...otherProps
         }
     }    
 
-    const {isOpen, onOpen, onClose} = useDisclosure()
+    const {isOpen, onToggle, onClose} = useDisclosure()
 
     return (
         <>
@@ -92,7 +92,7 @@ const PreviewHeader = ({vse, vseTimestamp, customerGroups, groups, ...otherProps
                 position={'fixed'}
                 opacity={0.5}
                 icon={<SettingsIcon />}
-                onClick={onOpen}
+                onClick={onToggle}
             />
 
             <Drawer placement={'top'} onClose={onClose} isOpen={isOpen}>
