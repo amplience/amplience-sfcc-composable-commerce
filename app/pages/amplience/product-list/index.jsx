@@ -91,9 +91,17 @@ import {buildUrlSet} from '../../../utils/url'
 import {useAmpRtv} from '../../../utils/amplience/rtv'
 import {defaultAmpClient} from '../../../amplience-api'
 import GridItemHero from '../../../components/amplience/hero/gridItemHero'
+import PersonalisedContainer from '../../../components/amplience/personalised-container'
+
+const PersonalisedGridItem = ({...props}) => {
+    return <PersonalisedContainer limit="1" {...props} />
+}
 
 const inGridComponents = {
-    'https://sfcc.com/components/hero': GridItemHero
+    'https://sfcc.com/components/hero': GridItemHero,
+    'https://sfcc.com/slots/personalised-slot': PersonalisedGridItem,
+    'https://sfcc.com/container/personalised-container': PersonalisedGridItem
+
 }
 
 // NOTE: You can ignore certain refinements on a template level by updating the below
