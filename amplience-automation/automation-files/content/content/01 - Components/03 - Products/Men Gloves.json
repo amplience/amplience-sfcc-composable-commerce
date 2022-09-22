@@ -2,7 +2,7 @@
   "id": "93c47f44-5a43-4709-a556-498cc9ccac75",
   "body": {
     "_meta": {
-      "name": "Gloves",
+      "name": "Men Gloves",
       "schema": "https://sfcc.com/components/curated-product"
     },
     "title": {
@@ -40,7 +40,7 @@
     ]
   },
   "version": 1,
-  "label": "Gloves",
+  "label": "Men Gloves",
   "status": "ACTIVE",
   "createdBy": "755e6f44-78bf-47f8-a567-bd950719e817",
   "createdDate": "2022-09-21T12:23:44.953Z",
