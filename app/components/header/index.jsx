@@ -96,7 +96,7 @@ const Header = ({
     const onSignoutClick = async () => {
         setShowLoading(true)
         await customer.logout()
-        navigate('/login')
+        //navigate('/login')
         setShowLoading(false)
     }
 

@@ -54,7 +54,7 @@ const Account = () => {
     const onSignoutClick = async () => {
         setShowLoading(true)
         await customer.logout()
-        navigate('/login')
+        //navigate('/login')
     }
 
     const LogoutButton = () => (
@@ -89,7 +89,7 @@ const Account = () => {
     // Using Redirect allows us to store the directed page to location
     // so we can direct users back after they are successfully log in
     if (customer.authType != null && !customer.isRegistered) {
-        const path = buildUrl('/login')
+        const path = buildUrl('/')
         return <Redirect to={{pathname: path, state: {directedFrom: location.pathname}}} />
     }
 
