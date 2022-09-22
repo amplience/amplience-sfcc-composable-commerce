@@ -105,6 +105,7 @@ export const useAmpRtv = (method, ampVizSdk, captures = []) => {
     }
 
     const client = useContext(AmplienceContext)?.client
+    const updateGroups = useContext(AmplienceContext)?.updateGroups
 
     useEffect(() => {
         let removeChangedSubscription
@@ -112,8 +113,12 @@ export const useAmpRtv = (method, ampVizSdk, captures = []) => {
 
         if (ampVizSdk !== null) {
             const enrichAndSignal = async (model) => {
+                if (updateGroups){
+                    const list = window.localStorage.getItem('customerGroups')
+                    updateGroups(JSON.parse(list))
+                }
                 if (client) {
-                    await client.defaultEnrich([model])
+                    await client.defaultEnrich([model], {personalised: true})
                 }
 
                 if (!cancelled) {

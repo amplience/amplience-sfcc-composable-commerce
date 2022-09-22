@@ -85,6 +85,7 @@ export default function useCustomer() {
                 if (ampContext && ampContext.updateGroups){
                     ampContext.updateGroups(groups);
                 }
+                api.auth._storage.set('customerGroups', JSON.stringify(groups))
                 document.cookie = `customerGroups=${JSON.stringify(groups)};`
             },
 
@@ -102,11 +103,12 @@ export default function useCustomer() {
              */
             async logout() {
                 const customer = await api.auth.logout()
-                document.cookie = `customerGroups='[]';`
-                if (ampContext && ampContext.updateGroups){
-                    ampContext.updateGroups([]);
+                api.auth._storage.set('customerGroups', [])
+                document.cookie = `customerGroups=[];`
+                if (ampContext && ampContext.updateGroups) {
+                    ampContext.updateGroups([])
                 }
-                window.location.reload();
+                window.location.reload()
                 setCustomer(customer)
             },
 
