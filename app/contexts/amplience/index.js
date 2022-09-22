@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import PropTypes from 'prop-types'
 import * as cookie from 'cookie'
 import {AmplienceAPI} from '../../amplience-api'
@@ -69,15 +69,20 @@ export const AmplienceContext = React.createContext()
 export const AmplienceContextProvider = ({vse, vseTimestamp, groups: initialGroups, children}) => {
     // Init client using VSE
     const [client] = useState(new AmplienceAPI())
-    const [groups, setGroups] = useState(initialGroups);
+    const [groups, setGroups] = useState(initialGroups)
+
+    useEffect(() => {
+        if (groups !== initialGroups) {
+            setGroups(initialGroups)
+        }
+    }, [initialGroups])
 
     // Switch the API to use the provided VSE, if present.
-    client.setVse(vse)
     client.setGroups(groups)
+    client.setVse(vse)
 
     const updateGroups = (groups) => {
         setGroups(groups)
-        client.setGroups(groups)
     }
 
     return (

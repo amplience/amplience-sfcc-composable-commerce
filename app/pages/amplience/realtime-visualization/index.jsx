@@ -5,16 +5,15 @@
  * For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
 
-import React, {useState} from 'react'
+import React, {useContext, useState} from 'react'
 import {useParams} from 'react-router-dom'
 import PropTypes from 'prop-types'
 import {Box} from '@chakra-ui/react'
 import Seo from '../../../components/seo'
 
 // Amplience
-import {AmplienceContextProvider} from '../../../contexts/amplience'
+import {AmplienceContext, AmplienceContextProvider} from '../../../contexts/amplience'
 import AmplienceWrapper from '../../../components/amplience/wrapper'
-import {useIntl} from 'react-intl'
 import {useAmpRtv} from '../../../utils/amplience/rtv'
 
 /**
@@ -24,9 +23,9 @@ import {useAmpRtv} from '../../../utils/amplience/rtv'
  * categories and products, data is from local file.
  */
 const AmpRtv = () => {
-    const {hubname, contentId, vse, locale} = useParams()
-    const intl = useIntl()
+    const {contentId, vse} = useParams()
     const [formContent, setFormContent] = useState(undefined)
+    const {groups} = useContext(AmplienceContext)
 
     useAmpRtv((model) => {
         setFormContent(model.content)
@@ -38,7 +37,7 @@ const AmpRtv = () => {
 
     return (
         <Box data-testid="real-viz" layerStyle="page">
-            <AmplienceContextProvider vse={vse}>
+            <AmplienceContextProvider vse={vse} groups={groups}>
                 <Seo
                     title="Home Page"
                     description="Commerce Cloud Retail React App"
