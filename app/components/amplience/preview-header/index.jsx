@@ -45,7 +45,7 @@ const PreviewHeader = ({vse, vseTimestamp, customerGroups, groups, ...otherProps
     const [previewDate, setPreviewDate] = useState(moment(vseTimestamp).format('YYYY-MM-DD'))
     const [previewTime, setPreviewTime] = useState(moment(vseTimestamp).format('HH:mm:ss'))
     const [previewTimestamp, setPreviewTimestamp] = useState(vseTimestamp)
-    const [previewCustomerGroups, setPreviewCustomerGroups] = useState(groups)
+    const [previewCustomerGroups, setPreviewCustomerGroups] = useState(groups || [])
 
     useEffect(() => {
         if (vse) {
