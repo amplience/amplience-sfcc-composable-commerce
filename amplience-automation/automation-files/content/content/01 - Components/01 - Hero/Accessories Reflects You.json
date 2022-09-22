@@ -2,7 +2,7 @@
   "id": "3168d3a4-2dd1-461c-94b2-157a8683147b",
   "body": {
     "_meta": {
-      "name": "Accessories  Reflects You",
+      "name": "Accessories Reflects You",
       "schema": "https://sfcc.com/components/hero"
     },
     "title": {
@@ -49,7 +49,7 @@
     "alignItems": "End"
   },
   "version": 1,
-  "label": "Accessories  Reflects You",
+  "label": "Accessories Reflects You",
   "status": "ACTIVE",
   "createdBy": "755e6f44-78bf-47f8-a567-bd950719e817",
   "createdDate": "2022-09-21T13:03:07.509Z",
