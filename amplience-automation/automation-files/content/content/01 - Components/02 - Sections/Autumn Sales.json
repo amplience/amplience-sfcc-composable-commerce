@@ -1,0 +1,108 @@
+{
+  "id": "272ae8aa-584b-4191-8012-4787c6aaf532",
+  "body": {
+    "_meta": {
+      "name": "Autumn Sales",
+      "schema": "https://sfcc.com/components/section"
+    },
+    "title": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Autumn Sales"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Soldes d'automne"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Herbstverkauf"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Rebajas de otoño"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Saldi autunnali"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "subtitle": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Introducing our new collection, featuring modern tailoring, rich textures & classic style made for today. We offer you new collections that will make you and yourself colourful this autumn. Wide selection of featured clothing, shoes, and accessories for men for all occasions. Shop for your fall favorites before its too late"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Présentation de notre nouvelle collection, avec des coupes modernes, des textures riches et un style classique fait pour aujourd'hui. Nous vous proposons de nouvelles collections qui vous mettront en couleur cet automne. Large sélection de vêtements, chaussures et accessoires pour hommes en vedette pour toutes les occasions. Achetez vos favoris d'automne avant qu'il ne soit trop tard"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Wir stellen unsere neue Kollektion vor, mit moderner Schneiderei, reichhaltigen Texturen und klassischem Stil für heute. Wir bieten Ihnen neue Kollektionen, die Sie und sich in diesem Herbst bunt machen. Große Auswahl an Kleidung, Schuhen und Accessoires für Männer für alle Gelegenheiten. Kaufen Sie Ihre Herbstfavoriten, bevor es zu spät ist"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Presentamos nuestra nueva colección, que presenta una sastrería moderna, ricas texturas y un estilo clásico hecho para hoy. Te ofrecemos nuevas colecciones que te llenarán de color este otoño. Amplia selección de ropa, zapatos y accesorios destacados para hombres para todas las ocasiones. Compre sus favoritos de otoño antes de que sea demasiado tarde"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Ti presentiamo la nostra nuova collezione, caratterizzata da sartoria moderna, trame ricche e stile classico realizzati per oggi. Ti proponiamo nuove collezioni che renderanno te e te stesso colorati questo autunno. Ampia selezione di abbigliamento, scarpe e accessori da uomo in evidenza per tutte le occasioni. Acquista i tuoi preferiti autunnali prima che sia troppo tardi"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "actions": [
+      {
+        "label": {
+          "values": [
+            {
+              "locale": "en-US",
+              "value": "See Now, Buy Now"
+            },
+            {
+              "locale": "fr-FR",
+              "value": "Voir maintenant, acheter maintenant"
+            },
+            {
+              "locale": "de-DE",
+              "value": "Jetzt sehen, jetzt kaufen"
+            },
+            {
+              "locale": "es-ES",
+              "value": "Ver ahora, comprar ahora"
+            },
+            {
+              "locale": "it-IT",
+              "value": "Vedi ora, acquista ora"
+            }
+          ],
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+          }
+        },
+        "url": "/category/mens-clothing"
+      }
+    ],
+    "maxWidth": "md",
+    "background": "yellow.50"
+  },
+  "version": 1,
+  "label": "Autumn Sales",
+  "status": "ACTIVE",
+  "createdBy": "755e6f44-78bf-47f8-a567-bd950719e817",
+  "locale": "en-US",
+  "createdDate": "2022-09-21T10:02:29.095Z",
+  "lastModifiedBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+  "lastModifiedDate": "2022-09-22T08:13:33.507Z",
+  "lastPublishedVersion": 1,
+  "lastPublishedDate": "2022-09-22T08:13:38.852Z",
+  "deliveryId": "272ae8aa-584b-4191-8012-4787c6aaf532"
+}

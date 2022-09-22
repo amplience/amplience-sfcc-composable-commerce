@@ -62,15 +62,16 @@ const Home = ({productSearchResult, isLoading, homeSlotTop}) => {
                 description="Commerce Cloud Retail React App"
                 keywords="Commerce Cloud, Retail React App, React Storefront"
             />
-            <Heading as="h3">Slot - Amplience Wrapper by Content</Heading>
+            <Heading as="h3">Personalised Slot - Amplience Wrapper by Content</Heading>
             <AmplienceWrapper content={homeSlotTop}></AmplienceWrapper>
 
             <Heading as="h3">Slot - Amplience Wrapper by key</Heading>
             <AmplienceWrapper fetch={{key: 'mens/slot/top'}}></AmplienceWrapper>
 
             <Heading as="h3">Content Directly by key</Heading>
-            <AmplienceWrapper fetch={{key: 'hero'}}></AmplienceWrapper>
+            <AmplienceWrapper fetch={{key: 'hero/autumn-sales'}}></AmplienceWrapper>
             <AmplienceWrapper fetch={{key: 'simple-product-list'}}></AmplienceWrapper>
+
 
             <Section
                 background={'gray.50'}
@@ -275,7 +276,7 @@ Home.getProps = async ({res, location, api, ampClient}) => {
         }
     })
 
-    const homeSlotTop = await (await ampClient.fetchContent([{key: 'home/slot/top'}], {locale: targetLocale})).pop()
+    const homeSlotTop = await (await ampClient.fetchContent([{key: 'home/slot/top-personalized'}], {locale: targetLocale})).pop()
 
     return {productSearchResult, homeSlotTop}
 }

@@ -1,0 +1,108 @@
+{
+  "id": "178c32c1-5c5a-4acd-b50f-aa2bd1ed6c9c",
+  "body": {
+    "_meta": {
+      "name": "Our Luxury Collection",
+      "schema": "https://sfcc.com/components/section"
+    },
+    "title": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Our Luxury Collection"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Notre collection de luxe"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Unsere Luxuskollektion"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Nuestra colección de lujo"
+        },
+        {
+          "locale": "it-IT",
+          "value": "La nostra collezione di lusso"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "subtitle": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "This exclusive collection was designed to spotlight and celebrate the unspoken narrative of hockey that symbolizes the origin of a new generation of diversity and inclusion. Revamp your wardrobe with fresh fabrics straight from the new season “ whether it’s dropping dollar on some artisan embroidery for a subtle feminine kick, adding a techy touch for a metallic, space-age vibe or keeping it grunge in ripped detailing and neutral tones. From luxury loungewear co-ords to knitwear and winter warmers containing cashmere and wool, you can level up your winter wardrobe without breaking the bank."
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Cette collection exclusive a été conçue pour mettre en lumière et célébrer le récit tacite du hockey qui symbolise l'origine d'une nouvelle génération de diversité et d'inclusion. Réorganisez votre garde-robe avec des tissus frais tout droit sortis de la nouvelle saison, qu'il s'agisse de baisser le dollar sur une broderie artisanale pour un coup de pied féminin subtil, d'ajouter une touche technique pour une ambiance métallique de l'ère spatiale ou de la garder grunge dans des détails déchirés et des tons neutres. Des ensembles loungewear de luxe aux pulls et vestes d'hiver contenant du cachemire et de la laine, vous pouvez améliorer votre garde-robe d'hiver sans vous ruiner."
+        },
+        {
+          "locale": "de-DE",
+          "value": "Diese exklusive Kollektion wurde entwickelt, um die unausgesprochene Geschichte des Eishockeys hervorzuheben und zu feiern, die den Ursprung einer neuen Generation von Vielfalt und Inklusion symbolisiert. Erneuern Sie Ihre Garderobe mit frischen Stoffen direkt aus der neuen Saison – egal, ob Sie Geld für eine handwerkliche Stickerei für einen subtilen femininen Kick verlieren, einen technischen Touch für einen metallischen Space-Age-Vibe hinzufügen oder es mit zerrissenen Details und neutralen Tönen im Grunge-Stil halten. Von luxuriöser Loungewear-Koordinierung bis hin zu Strickwaren und Winterwärmern mit Kaschmir und Wolle können Sie Ihre Wintergarderobe aufwerten, ohne die Bank zu sprengen."
+        },
+        {
+          "locale": "es-ES",
+          "value": "Esta colección exclusiva fue diseñada para resaltar y celebrar la narrativa tácita del hockey que simboliza el origen de una nueva generación de diversidad e inclusión. Renueve su guardarropa con telas frescas directamente de la nueva temporada, ya sea gastando dólares en algunos bordados artesanales para una sutil patada femenina, agregando un toque tecnológico para una vibra metálica de la era espacial o manteniendo el estilo grunge en detalles rasgados y tonos neutros. Desde conjuntos de ropa de salón de lujo hasta prendas de punto y calentadores de invierno que contienen cachemira y lana, puedes subir de nivel tu guardarropa de invierno sin tener que gastar mucho dinero."
+        },
+        {
+          "locale": "it-IT",
+          "value": "Questa collezione esclusiva è stata progettata per mettere in luce e celebrare la narrativa non detta dell'hockey che simboleggia l'origine di una nuova generazione di diversità e inclusione. Rinnova il tuo guardaroba con tessuti freschi direttamente dalla nuova stagione \" che si tratti di perdere soldi su alcuni ricami artigianali per un tocco femminile sottile, aggiungere un tocco tecnico per un'atmosfera metallica e spaziale o mantenerlo grunge con dettagli strappati e toni neutri. Dai lussuosi coordinati per l'abbigliamento da casa alla maglieria e agli scaldini invernali contenenti cashmere e lana, puoi migliorare il tuo guardaroba invernale senza spendere troppo."
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "actions": [
+      {
+        "label": {
+          "values": [
+            {
+              "locale": "en-US",
+              "value": "Shop Now!"
+            },
+            {
+              "locale": "fr-FR",
+              "value": "Achetez maintenant!"
+            },
+            {
+              "locale": "de-DE",
+              "value": "Jetzt einkaufen!"
+            },
+            {
+              "locale": "es-ES",
+              "value": "¡Compra ahora!"
+            },
+            {
+              "locale": "it-IT",
+              "value": "Acquistare ora!"
+            }
+          ],
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+          }
+        },
+        "url": "/category/newarrivals-womens"
+      }
+    ],
+    "maxWidth": "2xl",
+    "background": "yellow.50"
+  },
+  "version": 1,
+  "label": "Our Luxury Collection",
+  "status": "ACTIVE",
+  "createdBy": "755e6f44-78bf-47f8-a567-bd950719e817",
+  "locale": "en-US",
+  "createdDate": "2022-09-21T08:57:38.197Z",
+  "lastModifiedBy": "755e6f44-78bf-47f8-a567-bd950719e817",
+  "lastModifiedDate": "2022-09-21T10:04:45.602Z",
+  "lastPublishedVersion": 1,
+  "lastPublishedDate": "2022-09-21T09:52:33.863Z",
+  "deliveryId": "178c32c1-5c5a-4acd-b50f-aa2bd1ed6c9c"
+}
