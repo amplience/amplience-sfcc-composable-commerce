@@ -14,12 +14,12 @@ export type FilterType = ((item: any) => boolean) | undefined
 
 export type Variant = {
     segment: String[];
-    content: ContentReference[];
+    content: ContentReference[] | ContentReference;
     matchMode: 'Any' | 'All';
 }
 
 export type PersonalisedContent = {
-    defaultContent: any[];
+    defaultContent: any[] | any;
     maxNumberMatches: number;
     variants: Variant[];
 }
@@ -228,7 +228,15 @@ export class AmplienceAPI {
 
         let responses = await Promise.all(
             matches.slice(0, maxNumberMatches).map(async (arg: Variant) => {
-                const ids = compact(arg.content.map(({id}) => id && {id}))
+                let rawIds: ('' | {id: string})[]
+                if (Array.isArray(arg.content)) {
+                    rawIds = arg.content.map(({id}) => id && {id})
+                } else {
+                    rawIds = [arg.content.id && {id: arg.content.id}]
+                }
+
+                const ids = compact(rawIds)
+
                 if (!ids || !ids.length) {
                     return Promise.resolve(arg)
                 }
@@ -251,7 +259,11 @@ export class AmplienceAPI {
         let allContent = flatten(responses.map((response) => response.content))
 
         if (allContent.length === 0) {
-            allContent = [...defaultContent]
+            if (Array.isArray(defaultContent)) {
+                allContent = [...defaultContent]
+            } else {
+                allContent = [defaultContent]
+            }
         }
 
         return {
