@@ -62,20 +62,84 @@ const Home = ({productSearchResult, isLoading, homeSlotTop}) => {
                 description="Commerce Cloud Retail React App"
                 keywords="Commerce Cloud, Retail React App, React Storefront"
             />
-            <Heading as="h3">Personalised Slot - Amplience Wrapper by Content</Heading>
-            <Text>Getting content from slot <i>home/slot/top-personalized</i></Text>
+            <Section
+                background={'pink.50'}
+                marginX="auto"
+                paddingY={{base: 4, md: 8}}
+                paddingX={{base: 4, md: 8}}
+                borderRadius="base"
+                width={{base: '100vw', md: 'inherit'}}
+                position={{base: 'relative', md: 'inherit'}}
+                left={{base: '50%', md: 'inherit'}}
+                right={{base: '50%', md: 'inherit'}}
+                marginTop="8"
+                marginBottom="8"
+                marginLeft={{base: '-50vw', md: 'auto'}}
+                marginRight={{base: '-50vw', md: 'auto'}}
+            >
+                <Heading as="h3">Personalised Slot - Amplience Wrapper by content</Heading>
+                <Text>Getting content from slot <i>home/slot/top-personalized</i></Text>
+            </Section>
             <AmplienceWrapper content={homeSlotTop}></AmplienceWrapper>
 
-            <Heading as="h3">Slot - Amplience Wrapper by key</Heading>
-            <Text>Getting content from slot <i>mens/slot/top</i></Text>
+            <Section
+                background={'pink.50'}
+                marginX="auto"
+                paddingY={{base: 4, md: 8}}
+                paddingX={{base: 4, md: 8}}
+                borderRadius="base"
+                width={{base: '100vw', md: 'inherit'}}
+                position={{base: 'relative', md: 'inherit'}}
+                left={{base: '50%', md: 'inherit'}}
+                right={{base: '50%', md: 'inherit'}}
+                marginTop="8"
+                marginBottom="8"
+                marginLeft={{base: '-50vw', md: 'auto'}}
+                marginRight={{base: '-50vw', md: 'auto'}}
+            >
+                <Heading as="h3">Slot - Amplience Wrapper by key</Heading>
+                <Text>Getting content from slot <i>mens/slot/top</i></Text>
+            </Section>
             <AmplienceWrapper fetch={{key: 'mens/slot/top'}}></AmplienceWrapper>
 
-            <Heading as="h3">Content Directly by key</Heading>
-            <Text>Getting content from content item <i>hero/autumn-sales</i></Text>
+            <Section
+                background={'pink.50'}
+                marginX="auto"
+                paddingY={{base: 4, md: 8}}
+                paddingX={{base: 4, md: 8}}
+                borderRadius="base"
+                width={{base: '100vw', md: 'inherit'}}
+                position={{base: 'relative', md: 'inherit'}}
+                left={{base: '50%', md: 'inherit'}}
+                right={{base: '50%', md: 'inherit'}}
+                marginTop="8"
+                marginBottom="8"
+                marginLeft={{base: '-50vw', md: 'auto'}}
+                marginRight={{base: '-50vw', md: 'auto'}}
+            >
+                <Heading as="h3">Content - Amplience Wrapper by key</Heading>
+                <Text>Getting content from content item <i>hero/autumn-sales</i></Text>
+            </Section>
             <AmplienceWrapper fetch={{key: 'hero/autumn-sales'}}></AmplienceWrapper>
             
-            <Heading as="h3">Content Directly by key</Heading>
-            <Text>Getting content from content item <i>simple-product-list</i></Text>
+            <Section
+                background={'pink.50'}
+                marginX="auto"
+                paddingY={{base: 4, md: 8}}
+                paddingX={{base: 4, md: 8}}
+                borderRadius="base"
+                width={{base: '100vw', md: 'inherit'}}
+                position={{base: 'relative', md: 'inherit'}}
+                left={{base: '50%', md: 'inherit'}}
+                right={{base: '50%', md: 'inherit'}}
+                marginTop="8"
+                marginBottom="8"
+                marginLeft={{base: '-50vw', md: 'auto'}}
+                marginRight={{base: '-50vw', md: 'auto'}}
+            >
+                <Heading as="h3">Content - Amplience Wrapper by key</Heading>
+                <Text>Getting content from content item <i>simple-product-list</i></Text>
+            </Section>
             <AmplienceWrapper fetch={{key: 'simple-product-list'}}></AmplienceWrapper>
 
 
@@ -181,8 +245,24 @@ const Home = ({productSearchResult, isLoading, homeSlotTop}) => {
                 </Section>
             )}
 
-            <Heading as="h2">Content Directly by key</Heading>
-            <Text>Getting content from content item <i>section</i></Text>
+            <Section
+                background={'pink.50'}
+                marginX="auto"
+                paddingY={{base: 4, md: 8}}
+                paddingX={{base: 4, md: 8}}
+                borderRadius="base"
+                width={{base: '100vw', md: 'inherit'}}
+                position={{base: 'relative', md: 'inherit'}}
+                left={{base: '50%', md: 'inherit'}}
+                right={{base: '50%', md: 'inherit'}}
+                marginTop="8"
+                marginBottom="8"
+                marginLeft={{base: '-50vw', md: 'auto'}}
+                marginRight={{base: '-50vw', md: 'auto'}}
+            >
+                <Heading as="h2">Content - Amplience Wrapper by key</Heading>
+                <Text>Getting content from content item <i>section</i></Text>
+            </Section>
             <AmplienceWrapper fetch={{key: 'section'}}></AmplienceWrapper>
 
             <Container maxW={'6xl'} marginTop={10}>

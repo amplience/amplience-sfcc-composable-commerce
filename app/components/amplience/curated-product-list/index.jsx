@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import {useCommerceAPI} from '../../../commerce-api/contexts'
 import {handleAsyncError} from '../../../commerce-api/utils'
 import ProductScroller from '../../product-scroller'
+import { Stack } from '@chakra-ui/react'
 
 const selectImage = (product) => {
     const groups = product.imageGroups
@@ -51,7 +52,11 @@ const CuratedProductList = ({title, products}) => {
         return () => (active = false)
     }, [api, products])
 
-    return <ProductScroller style={{paddingBottom: 30}} title={title} products={apiProducts} isLoading={isLoading} />
+    return (
+        <Stack pt={8} spacing={16}>
+            <ProductScroller title={title} products={apiProducts} isLoading={isLoading} />
+        </Stack>
+    )
 }
 
 CuratedProductList.displayName = 'Curated Product List'
