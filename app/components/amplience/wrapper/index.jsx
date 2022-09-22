@@ -12,6 +12,7 @@ import {useIntl} from 'react-intl'
 import {AmplienceContext} from '../../../contexts/amplience'
 import {Skeleton} from '@chakra-ui/react'
 import PersonalisedContainer from '../personalised-container'
+import PersonalisedComponent from '../personalised-component'
 
 const Blank = () => <></>
 
@@ -20,6 +21,7 @@ const componentsMapping = {
     'https://sfcc.com/components/section': Section,
     'https://sfcc.com/components/curated-product': CuratedProductList,
     'https://sfcc.com/components/card-enhanced': CardEnhanced,
+    'https://sfcc.com/components/personalised-component': PersonalisedComponent,
     'https://sfcc.com/components/personalised-container': PersonalisedContainer,
     'https://sfcc.com/slots/flexible-list': flexibleListSlot,
     'https://sfcc.com/slots/personalised-slot': flexibleListSlot,
