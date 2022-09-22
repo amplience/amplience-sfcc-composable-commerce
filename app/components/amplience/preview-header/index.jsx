@@ -38,14 +38,14 @@ const timestampToString = (intl, timestamp) => {
     return date.toLocaleString()
 }
 
-const PreviewHeader = ({vse, vseTimestamp, customerGroups, ...otherProps}) => {
+const PreviewHeader = ({vse, vseTimestamp, customerGroups, groups, ...otherProps}) => {
     const intl = useIntl()
     const styles = useMultiStyleConfig('PreviewHeader')
 
     const [previewDate, setPreviewDate] = useState(moment(vseTimestamp).format('YYYY-MM-DD'))
     const [previewTime, setPreviewTime] = useState(moment(vseTimestamp).format('HH:mm:ss'))
     const [previewTimestamp, setPreviewTimestamp] = useState(vseTimestamp)
-    const [previewCustomerGroups, setPreviewCustomerGroups] = useState([])
+    const [previewCustomerGroups, setPreviewCustomerGroups] = useState(groups)
 
     useEffect(() => {
         if (vse) {
