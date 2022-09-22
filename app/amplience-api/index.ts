@@ -1,7 +1,13 @@
-import {ContentClient, ContentItem, ContentReference} from 'dc-delivery-sdk-js'
+import {ContentClient, ContentReference} from 'dc-delivery-sdk-js'
 import {chunk, flatten, intersection, compact} from 'lodash'
 import {app} from '../../config/default'
-import {EnrichTarget, isContentReference, enrichContent, isPersonalized} from './enrich'
+import {
+    EnrichTarget,
+    isContentReference,
+    enrichContent,
+    isPersonalised,
+    EnrichStrategy
+} from './enrich'
 
 export type IdOrKey = {id: string} | {key: string}
 export type FilterType = ((item: any) => boolean) | undefined
@@ -23,6 +29,7 @@ export type FetchParams = {
     depth?: 'all' | 'root';
     format?: 'inlined';
     client?: ContentClient;
+    personalised?: boolean;
 }
 
 const isTimeMachineVse = (vse: string): boolean => {
@@ -41,6 +48,34 @@ const clearTimeMachine = (vse: string): string => {
     const dashSplit = dotSplit[0].split('-')
 
     return [dashSplit[0], ...dotSplit.slice(1)].join('.')
+}
+
+const defaultParams: FetchParams = {
+    personalised: true
+}
+
+const addDefaultParams = (params: FetchParams = {}): FetchParams => {
+    if (params) {
+        return {
+            ...defaultParams,
+            locale: 'en-US',
+            ...params
+        }
+    } else {
+        return {
+            ...defaultParams
+        }
+    }
+}
+
+const getClientParams = (params: FetchParams): FetchParams => {
+    const result: FetchParams = {}
+
+    if (params.locale != null) result.locale = params.locale
+    if (params.depth != null) result.depth = params.depth
+    if (params.format != null) result.format = params.format
+
+    return result
 }
 
 export class AmplienceAPI {
@@ -87,17 +122,16 @@ export class AmplienceAPI {
     async fetchContent(args: IdOrKey[], params: FetchParams = {}) {
         await this.clientReady
 
-        if (params && !params.locale) {
-            params.locale = 'en-US'
-        }
+        params = addDefaultParams(params)
 
         const client = params?.client ?? this.client
-
-        delete params.client
         const chunks = chunk(args, 12)
 
         let responses = await Promise.all(
-            chunks.map(async (arg: IdOrKey[]) => (await client.getContentItems(arg, params)).responses)
+            chunks.map(
+                async (arg: IdOrKey[]) =>
+                    (await client.getContentItems(arg, getClientParams(params))).responses
+            )
         )
 
         const items = flatten(responses).map((response) => {
@@ -113,12 +147,16 @@ export class AmplienceAPI {
     }
 
     async defaultEnrich(items: any[], params: FetchParams = {}) {
-        if (params && !params.locale) {
-            params.locale = 'en-US'
+        params = addDefaultParams(params)
+
+        const strategies: EnrichStrategy[] = []
+
+        if (params.personalised) {
+            strategies.push(this.enrichVariantsStrategy(params.locale))
         }
 
         for (let item of items) {
-            await this.enrichVariants(item, params.locale)
+            await enrichContent(item, strategies)
         }
     }
 
@@ -191,7 +229,7 @@ export class AmplienceAPI {
 
         let responses = await Promise.all(
             matches.slice(0, maxNumberMatches).map(async (arg: Variant) => {
-                const ids = compact(arg.content.map(({id}) => (id && {id})))
+                const ids = compact(arg.content.map(({id}) => id && {id}))
                 if (!ids || !ids.length) {
                     allContent = [...allContent, ...arg.content]
                     return Promise.resolve(arg)
@@ -231,13 +269,11 @@ export class AmplienceAPI {
         }
     }
 
-    async enrichVariants(item: any, locale = 'en-US') {
-        await enrichContent(item, [
-            {
-                trigger: isPersonalized,
-                enrich: (targets: EnrichTarget[]) => this.enrichVariantsInternal(targets, locale)
-            }
-        ])
+    enrichVariantsStrategy(locale = 'en-US') {
+        return {
+            trigger: isPersonalised,
+            enrich: (targets: EnrichTarget[]) => this.enrichVariantsInternal(targets, locale)
+        }
     }
 
     async enrichReferenceDeliveryKeys(item: any, locale = 'en-US') {

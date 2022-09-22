@@ -15,7 +15,7 @@ export interface EnrichStrategy {
     enrich: (content: EnrichTarget[]) => Promise<void>;
 }
 
-export const isPersonalized = (item: any): boolean => {
+export const isPersonalised = (item: any): boolean => {
     return (
         Array.isArray(item.defaultContent) &&
         (item.maxNumberMatches == null || typeof item.maxNumberMatches === 'number') &&

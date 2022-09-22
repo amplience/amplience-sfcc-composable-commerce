@@ -23,9 +23,9 @@ module.exports = {
         commerceAPI: {
             proxyPath: `/mobify/proxy/api`,
             parameters: {
-                clientId: 'c9c45bfd-0ed3-4aa2-9971-40f88962b836',
-                organizationId: 'f_ecom_zzrf_001',
-                shortCode: '8o7m175y',
+                clientId: 'a98aec4c-4ffe-4f09-aa5d-9d72b7b2b659',
+                organizationId: 'f_ecom_zzfr_004',
+                shortCode: 'kv7kzm78',
                 siteId: 'RefArchGlobal'
             }
         },
@@ -55,7 +55,7 @@ module.exports = {
                 path: 'api'
             },
             {
-                host: 'zzrf-001.sandbox.us03.dx.commercecloud.salesforce.com',
+                host: 'zzfr-004.sandbox.us03.dx.commercecloud.salesforce.com',
                 path: 'ocapi'
             },
             {
