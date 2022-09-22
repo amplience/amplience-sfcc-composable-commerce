@@ -103,7 +103,7 @@ export default function useCustomer() {
              */
             async logout() {
                 const customer = await api.auth.logout()
-                document.cookie = `customerGroups=;`
+                document.cookie = `customerGroups='[]';`
                 if (ampContext && ampContext.updateGroups){
                     ampContext.updateGroups([]);
                 }
