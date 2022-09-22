@@ -115,23 +115,31 @@ export const getGroupsFromLocalStorage = ({req, res}) => {
 }
 
 export const generateVseProps = ({req, res, query}) => {
-    let vse = null
-    let vseTimestamp = 0
+    // '/:locale/visualization/:hubname/:contentId/:vse'
+    const vizRegEx = /\/(.*)\/visualization\/(.*)\/(.*)\/(.*)\?.*/
+    if (req.originalUrl.match(vizRegEx)) {
+        const [match, locale, hubname, contentId, vse] = req.originalUrl.match(vizRegEx)
+        return {vse, hubname, contentId, locale}
+    } else if (query['vse'] || query['vse-timestamp']) {
+        let vse = null
+        let vseTimestamp = 0
 
-    if (res) {
-        vse = query.vse
-        vseTimestamp = query['vse-timestamp']
-        vseTimestamp = vseTimestamp == 'null' ? 0 : Number(vseTimestamp)
+        // why if (res)? we don't use res anywhere here?
+        if (res) {
+            vse = query.vse
+            vseTimestamp = query['vse-timestamp']
+            vseTimestamp = vseTimestamp == 'null' ? 0 : Number(vseTimestamp)
 
-        if (vse == null) {
-            const cookies = getCookies(req.rawHeaders)
-            vse = cookies['vse']
-            vseTimestamp = cookies['vse-timestamp']
-            vseTimestamp = vseTimestamp != null ? Number(vseTimestamp) : undefined
+            if (vse == null) {
+                const cookies = getCookies(req.rawHeaders)
+                vse = cookies['vse']
+                vseTimestamp = cookies['vse-timestamp']
+                vseTimestamp = vseTimestamp != null ? Number(vseTimestamp) : undefined
+            }
         }
+        return {vse, vseTimestamp}
     }
-
-    return {vse, vseTimestamp}
+    return { vse: undefined, vseTimestamp: undefined }
 }
 
 AmplienceContextProvider.propTypes = {
