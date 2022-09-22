@@ -1,0 +1,108 @@
+{
+  "id": "27f4c85c-cc7e-4cae-9d6a-ccff46cbab26",
+  "body": {
+    "_meta": {
+      "name": "Explore Our Shoes Collection",
+      "schema": "https://sfcc.com/components/section"
+    },
+    "title": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Explore Our Shoes Collection"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Découvrez notre collection de chaussures"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Entdecken Sie unsere Schuhkollektion"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Explora nuestra colección de zapatos"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Esplora la nostra collezione di scarpe"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "subtitle": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Designed For Sports, Crafted For Life. Discover The Our Latest Shoes Online. Get Fresh, Classic & Iconic Styles. Shop The Latest Luxury Collection Shoes Online. Hand Stitched Leathers, Flexible & Air Breathed Materials For Personalised Shoes. Choose From A Wide Range Of Models And Colours. Get An Extra 20% Select Styles Today! Continue Your Summer Fun With More Summer Savings!, Multiple Payment Options. Long Lasting Comfort."
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Conçu pour le sport, conçu pour la vie. Découvrez nos dernières chaussures en ligne. Obtenez des styles frais, classiques et emblématiques. Achetez les dernières chaussures de la collection de luxe en ligne. Cuirs cousus à la main, matériaux souples et respirants pour des chaussures personnalisées. Choisissez parmi une large gamme de modèles et de couleurs. Obtenez 20 % supplémentaires sur certains styles dès aujourd'hui ! Continuez votre plaisir d'été avec plus d'économies d'été !, Plusieurs options de paiement. Confort longue durée."
+        },
+        {
+          "locale": "de-DE",
+          "value": "Entworfen für den Sport, hergestellt fürs Leben. Entdecken Sie unsere neuesten Schuhe online. Holen Sie sich frische, klassische und kultige Styles. Kaufen Sie die neuesten Schuhe der Luxuskollektion online. Handgenähtes Leder, flexible und atmungsaktive Materialien für personalisierte Schuhe. Wählen Sie aus einer großen Auswahl an Modellen und Farben. Holen Sie sich noch heute zusätzliche 20 % auf ausgewählte Styles! Setzen Sie Ihren Sommerspaß mit mehr Sommerersparnissen fort!, Mehrere Zahlungsoptionen. Langanhaltender Komfort."
+        },
+        {
+          "locale": "es-ES",
+          "value": "Diseñado para deportes, fabricado para la vida. Descubre nuestros últimos zapatos en línea. Obtenga estilos frescos, clásicos e icónicos. Compre los últimos zapatos de la colección de lujo en línea. Cueros cosidos a mano, materiales flexibles y transpirables para zapatos personalizados. Elige Entre Una Amplia Gama De Modelos Y Colores. ¡Obtenga un 20% adicional en estilos selectos hoy! ¡Continúe su diversión de verano con más ahorros de verano! Múltiples opciones de pago. Comodidad duradera."
+        },
+        {
+          "locale": "it-IT",
+          "value": "Progettato per lo sport, realizzato per la vita. Scopri le nostre ultime scarpe online. Ottieni stili freschi, classici e iconici. Acquista l'ultima collezione di scarpe di lusso online. Pelli cucite a mano, materiali flessibili e traspiranti per scarpe personalizzate. Scegli tra una vasta gamma di modelli e colori. Ottieni un extra del 20% su stili selezionati oggi! Continua il tuo divertimento estivo con più risparmi estivi!, Molteplici opzioni di pagamento. Comfort di lunga durata."
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "actions": [
+      {
+        "label": {
+          "values": [
+            {
+              "locale": "en-US",
+              "value": "Lets Get Walking"
+            },
+            {
+              "locale": "fr-FR",
+              "value": "Marchons"
+            },
+            {
+              "locale": "de-DE",
+              "value": "Gehen wir spazieren"
+            },
+            {
+              "locale": "es-ES",
+              "value": "Vamos a caminar"
+            },
+            {
+              "locale": "it-IT",
+              "value": "Andiamo a camminare"
+            }
+          ],
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+          }
+        },
+        "url": "/category/newarrivals-men"
+      }
+    ],
+    "maxWidth": "2xl",
+    "background": "yellow.50"
+  },
+  "version": 1,
+  "label": "Explore Our Shoes Collection",
+  "status": "ACTIVE",
+  "createdBy": "755e6f44-78bf-47f8-a567-bd950719e817",
+  "locale": "en-US",
+  "createdDate": "2022-09-21T09:23:55.022Z",
+  "lastModifiedBy": "755e6f44-78bf-47f8-a567-bd950719e817",
+  "lastModifiedDate": "2022-09-21T10:05:15.775Z",
+  "lastPublishedVersion": 1,
+  "lastPublishedDate": "2022-09-21T09:53:04.049Z",
+  "deliveryId": "27f4c85c-cc7e-4cae-9d6a-ccff46cbab26"
+}

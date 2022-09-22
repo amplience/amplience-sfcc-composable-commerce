@@ -1,0 +1,61 @@
+{
+  "id": "3168d3a4-2dd1-461c-94b2-157a8683147b",
+  "body": {
+    "_meta": {
+      "name": "Accessories  Reflects You",
+      "schema": "https://sfcc.com/components/hero"
+    },
+    "title": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Accessories Reflects You"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Les accessoires vous reflètent"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Accessoires spiegeln Sie wider"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Los accesorios te reflejan"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Gli accessori ti rispecchiano"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "img": {
+      "image": {
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+        },
+        "id": "a606a7d1-7f2f-422e-80e5-df6ba3a2d771",
+        "name": "aydin-ghadakchi-lamor-1BBlGVr2_Yw-unsplash (1)",
+        "endpoint": "sfcccompdev2",
+        "defaultHost": "cdn.media.amplience.net"
+      }
+    },
+    "fullWidth": true,
+    "textAlign": "Right",
+    "justifyContent": "Left",
+    "alignItems": "End"
+  },
+  "version": 1,
+  "label": "Accessories  Reflects You",
+  "status": "ACTIVE",
+  "createdBy": "755e6f44-78bf-47f8-a567-bd950719e817",
+  "createdDate": "2022-09-21T13:03:07.509Z",
+  "lastModifiedBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+  "lastModifiedDate": "2022-09-22T08:12:28.083Z",
+  "lastPublishedVersion": 1,
+  "lastPublishedDate": "2022-09-22T08:12:40.736Z",
+  "deliveryId": "3168d3a4-2dd1-461c-94b2-157a8683147b"
+}

@@ -1,0 +1,61 @@
+{
+  "id": "657df3b9-d047-4981-b31b-d6b77bb7528f",
+  "body": {
+    "_meta": {
+      "name": "Autumn Sales Here",
+      "schema": "https://sfcc.com/components/hero"
+    },
+    "title": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Warm up with autumn sales"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Réchauffez-vous avec les soldes d'automne"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Wärmen Sie sich mit Herbstverkäufen auf"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Entra en calor con las rebajas de otoño"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Riscaldati con i saldi autunnali"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "img": {
+      "image": {
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+        },
+        "id": "e0e50c46-3491-4a0f-82f4-4d0b0f0179b4",
+        "name": "paige-cody-29j0KKj2fbg-unsplash",
+        "endpoint": "sfcccompdev2",
+        "defaultHost": "cdn.media.amplience.net"
+      }
+    },
+    "fullWidth": true,
+    "textAlign": "Right",
+    "justifyContent": "Right",
+    "alignItems": "End"
+  },
+  "version": 1,
+  "label": "Autumn Sales Here",
+  "status": "ACTIVE",
+  "createdBy": "755e6f44-78bf-47f8-a567-bd950719e817",
+  "createdDate": "2022-09-21T13:54:59.446Z",
+  "lastModifiedBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+  "lastModifiedDate": "2022-09-22T08:51:59.384Z",
+  "lastPublishedVersion": 1,
+  "lastPublishedDate": "2022-09-22T08:52:10.452Z",
+  "deliveryId": "657df3b9-d047-4981-b31b-d6b77bb7528f"
+}

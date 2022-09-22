@@ -1,0 +1,108 @@
+{
+  "id": "b49d4af2-c8d2-4e5b-814c-f76f29e589fc",
+  "body": {
+    "_meta": {
+      "name": "Never Without Accessories",
+      "schema": "https://sfcc.com/components/section"
+    },
+    "title": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Never Without Accessories"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Jamais sans accessoires"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Niemals ohne Zubehör"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Nunca sin accesorios"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Mai senza accessori"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "subtitle": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Enhance Your Favorite Looks with the Latest Accessories. Discover Accessories to match your soul, Find watches, handbags, wallets and more today! Shop and SAVE on women's accessories including women's sunglasses and belts, now with exclusive sales and discounts. Are you one of those who can't do without accessories,  What are you waiting for?"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Améliorez vos looks préférés avec les derniers accessoires. Découvrez des accessoires qui correspondent à votre âme, trouvez des montres, des sacs à main, des portefeuilles et plus aujourd'hui ! Magasinez et ÉCONOMISEZ sur les accessoires pour femmes, y compris les lunettes de soleil et les ceintures pour femmes, maintenant avec des soldes et des rabais exclusifs. Vous faites partie de ceux qui ne peuvent pas se passer d'accessoires, qu'attendez-vous ?"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Werten Sie Ihre Lieblingslooks mit den neuesten Accessoires auf. Entdecken Sie Accessoires, die zu Ihrer Seele passen, finden Sie noch heute Uhren, Handtaschen, Geldbörsen und mehr! Kaufen und SPAREN Sie bei Damen-Accessoires, einschließlich Damen-Sonnenbrillen und Gürteln, jetzt mit exklusiven Angeboten und Rabatten. Gehören Sie zu denen, die auf Zubehör nicht verzichten können, worauf warten Sie noch?"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Mejora tus looks favoritos con los últimos accesorios. ¡Descubre accesorios que combinan con tu alma, encuentra relojes, bolsos, carteras y más hoy! Compre y AHORRE en accesorios para mujer, incluidos anteojos de sol y cinturones para mujer, ahora con ofertas y descuentos exclusivos. Eres de las que no puede prescindir de los complementos, ¿a qué esperas?"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Migliora i tuoi look preferiti con gli ultimi accessori. Scopri gli accessori adatti alla tua anima, trova orologi, borse, portafogli e altro ancora oggi! Acquista e RISPARMIA sugli accessori da donna inclusi occhiali da sole e cinture da donna, ora con saldi e sconti esclusivi. Sei uno di quelli che non può fare a meno degli accessori, cosa aspetti?"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "actions": [
+      {
+        "label": {
+          "values": [
+            {
+              "locale": "en-US",
+              "value": "Ready to Shop"
+            },
+            {
+              "locale": "fr-FR",
+              "value": "Prêt à magasiner"
+            },
+            {
+              "locale": "de-DE",
+              "value": "Bereit zum Einkaufen"
+            },
+            {
+              "locale": "es-ES",
+              "value": "Lista para comprar"
+            },
+            {
+              "locale": "it-IT",
+              "value": "Pronto per fare acquisti"
+            }
+          ],
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+          }
+        },
+        "url": "/category/womens-accessories"
+      }
+    ],
+    "maxWidth": "md",
+    "background": "yellow.50"
+  },
+  "version": 1,
+  "label": "Never Without Accessories",
+  "status": "ACTIVE",
+  "createdBy": "755e6f44-78bf-47f8-a567-bd950719e817",
+  "locale": "en-US",
+  "createdDate": "2022-09-21T12:30:28.474Z",
+  "lastModifiedBy": "755e6f44-78bf-47f8-a567-bd950719e817",
+  "lastModifiedDate": "2022-09-21T13:09:06.727Z",
+  "lastPublishedVersion": 1,
+  "lastPublishedDate": "2022-09-21T13:09:06.370Z",
+  "deliveryId": "b49d4af2-c8d2-4e5b-814c-f76f29e589fc"
+}

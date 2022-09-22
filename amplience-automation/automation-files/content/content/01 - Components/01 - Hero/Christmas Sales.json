@@ -1,0 +1,61 @@
+{
+  "id": "2da1ae67-149f-423b-86c0-f84b45ea60c0",
+  "body": {
+    "_meta": {
+      "name": "Christmas Sales",
+      "schema": "https://sfcc.com/components/hero"
+    },
+    "title": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Don't Miss Christmas Sales"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Ne manquez pas les soldes de Noël"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Verpassen Sie nicht das Weihnachtsgeschäft"
+        },
+        {
+          "locale": "es-ES",
+          "value": "No te pierdas las ofertas navideñas"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Non perdere i saldi di Natale"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "img": {
+      "image": {
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+        },
+        "id": "aa26e633-aabb-4d5e-abfc-2a9b69661372",
+        "name": "dog-xmas2",
+        "endpoint": "sfcccompdev2",
+        "defaultHost": "cdn.media.amplience.net"
+      }
+    },
+    "fullWidth": true,
+    "textAlign": "Right",
+    "justifyContent": "Center",
+    "alignItems": "End"
+  },
+  "version": 1,
+  "label": "Christmas Sales",
+  "status": "ACTIVE",
+  "createdBy": "755e6f44-78bf-47f8-a567-bd950719e817",
+  "createdDate": "2022-09-21T13:07:21.759Z",
+  "lastModifiedBy": "755e6f44-78bf-47f8-a567-bd950719e817",
+  "lastModifiedDate": "2022-09-21T13:58:50.128Z",
+  "lastPublishedVersion": 1,
+  "lastPublishedDate": "2022-09-21T14:03:58.312Z",
+  "deliveryId": "2da1ae67-149f-423b-86c0-f84b45ea60c0"
+}

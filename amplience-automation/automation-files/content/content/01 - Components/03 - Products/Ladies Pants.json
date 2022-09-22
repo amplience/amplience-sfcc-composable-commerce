@@ -1,0 +1,51 @@
+{
+  "id": "653a801d-714f-459a-8aab-33874b5085be",
+  "body": {
+    "_meta": {
+      "name": "Ladies Pants",
+      "schema": "https://sfcc.com/components/curated-product"
+    },
+    "title": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Ladies Pants"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Dames Pantalon"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Damenhosen"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Pantalones de mujer"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Pantaloni da donna"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "products": [
+      "25501785M",
+      "25518958M",
+      "25589157M"
+    ]
+  },
+  "version": 1,
+  "label": "Ladies Pants",
+  "status": "ACTIVE",
+  "createdBy": "755e6f44-78bf-47f8-a567-bd950719e817",
+  "createdDate": "2022-09-21T12:20:02.126Z",
+  "lastModifiedBy": "755e6f44-78bf-47f8-a567-bd950719e817",
+  "lastModifiedDate": "2022-09-22T09:29:16.248Z",
+  "lastPublishedVersion": 1,
+  "lastPublishedDate": "2022-09-22T09:29:23.235Z",
+  "deliveryId": "653a801d-714f-459a-8aab-33874b5085be"
+}

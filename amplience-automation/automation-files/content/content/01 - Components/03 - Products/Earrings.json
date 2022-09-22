@@ -1,0 +1,57 @@
+{
+  "id": "63dbba07-41e3-4374-a782-c6c305b3dae3",
+  "body": {
+    "_meta": {
+      "name": "Earrings",
+      "schema": "https://sfcc.com/components/curated-product"
+    },
+    "title": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Earrings"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Des boucles d'oreilles"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Ohrringe"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Aretes"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Orecchini"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "products": [
+      "25448066M",
+      "25448068M",
+      "25490259M",
+      "25534901M",
+      "25720029M",
+      "25720033M",
+      "25720024M",
+      "25720054M",
+      "25720061M"
+    ]
+  },
+  "version": 1,
+  "label": "Earrings",
+  "status": "ACTIVE",
+  "createdBy": "755e6f44-78bf-47f8-a567-bd950719e817",
+  "createdDate": "2022-09-21T12:21:37.164Z",
+  "lastModifiedBy": "755e6f44-78bf-47f8-a567-bd950719e817",
+  "lastModifiedDate": "2022-09-22T09:30:27.412Z",
+  "lastPublishedVersion": 1,
+  "lastPublishedDate": "2022-09-21T14:16:55.649Z",
+  "deliveryId": "63dbba07-41e3-4374-a782-c6c305b3dae3"
+}
