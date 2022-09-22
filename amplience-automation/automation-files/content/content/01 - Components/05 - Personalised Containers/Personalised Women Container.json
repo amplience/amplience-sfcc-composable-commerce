@@ -1,0 +1,60 @@
+{
+  "id": "8d749911-3a57-47b6-99ac-25b6f024b217",
+  "body": {
+    "_meta": {
+      "name": "Personalised Women Container",
+      "schema": "https://sfcc.com/components/personalised-container"
+    },
+    "defaultContent": [
+      {
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+        },
+        "contentType": "https://sfcc.com/components/hero",
+        "id": "acb865ae-f79e-4260-aac5-02bda07c02ce"
+      },
+      {
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+        },
+        "contentType": "https://sfcc.com/components/curated-product",
+        "id": "653a801d-714f-459a-8aab-33874b5085be"
+      }
+    ],
+    "maxNumberMatches": 1,
+    "variants": [
+      {
+        "matchMode": "Any",
+        "segment": [
+          "Everyone"
+        ],
+        "content": [
+          {
+            "_meta": {
+              "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference"
+            },
+            "contentType": "https://sfcc.com/components/hero",
+            "id": "3168d3a4-2dd1-461c-94b2-157a8683147b"
+          },
+          {
+            "_meta": {
+              "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference"
+            },
+            "contentType": "https://sfcc.com/components/curated-product",
+            "id": "63dbba07-41e3-4374-a782-c6c305b3dae3"
+          }
+        ]
+      }
+    ]
+  },
+  "version": 1,
+  "label": "Personalised Women Container",
+  "status": "ACTIVE",
+  "createdBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+  "createdDate": "2022-09-22T10:00:32.639Z",
+  "lastModifiedBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+  "lastModifiedDate": "2022-09-22T10:11:42.035Z",
+  "lastPublishedVersion": 1,
+  "lastPublishedDate": "2022-09-22T10:11:55.276Z",
+  "deliveryId": "8d749911-3a57-47b6-99ac-25b6f024b217"
+}

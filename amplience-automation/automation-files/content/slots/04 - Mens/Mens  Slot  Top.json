@@ -1,0 +1,29 @@
+{
+  "id": "d821a5cd-d9f3-4b6c-a03c-4137d410571b",
+  "body": {
+    "_meta": {
+      "name": "Mens / Slot / Top",
+      "schema": "https://sfcc.com/slots/flexible-list",
+      "deliveryKey": "mens/slot/top"
+    },
+    "content": [
+      {
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+        },
+        "contentType": "https://sfcc.com/components/personalised-container",
+        "id": "7f202c0f-37b9-4cd5-a44a-547c1b42f553"
+      }
+    ]
+  },
+  "version": 1,
+  "label": "Mens / Slot / Top",
+  "status": "ACTIVE",
+  "createdBy": "abcbd95f-d499-46e1-8adf-5fe93dd277b5",
+  "createdDate": "2022-09-20T02:45:16.734Z",
+  "lastModifiedBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+  "lastModifiedDate": "2022-09-22T10:14:26.324Z",
+  "lastPublishedVersion": 1,
+  "lastPublishedDate": "2022-09-22T10:14:41.144Z",
+  "deliveryId": "d821a5cd-d9f3-4b6c-a03c-4137d410571b"
+}

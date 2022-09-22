@@ -1,0 +1,52 @@
+{
+  "id": "bb987e36-8f83-4609-b6d8-b42a0aa724f9",
+  "body": {
+    "_meta": {
+      "name": "Men Suit",
+      "schema": "https://sfcc.com/components/curated-product"
+    },
+    "title": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Men Suit"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Hommes Costume"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Männer Anzug"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Traje de hombre"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Abito da uomo"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "products": [
+      "25604524M",
+      "25686364M",
+      "25686571M",
+      "25686544M"
+    ]
+  },
+  "version": 1,
+  "label": "Men Suit",
+  "status": "ACTIVE",
+  "createdBy": "755e6f44-78bf-47f8-a567-bd950719e817",
+  "createdDate": "2022-09-22T10:36:23.963Z",
+  "lastModifiedBy": "755e6f44-78bf-47f8-a567-bd950719e817",
+  "lastModifiedDate": "2022-09-22T10:36:23.963Z",
+  "lastPublishedVersion": 1,
+  "lastPublishedDate": "2022-09-22T10:36:33.423Z",
+  "deliveryId": "bb987e36-8f83-4609-b6d8-b42a0aa724f9"
+}

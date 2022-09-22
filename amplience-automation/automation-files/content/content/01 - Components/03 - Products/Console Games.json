@@ -1,0 +1,53 @@
+{
+  "id": "011536d1-b032-414d-b88f-138e6ecd4bd3",
+  "body": {
+    "_meta": {
+      "name": "Console Games",
+      "schema": "https://sfcc.com/components/curated-product"
+    },
+    "title": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Gaming"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "jeux de console"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Konsolenspiele"
+        },
+        {
+          "locale": "es-ES",
+          "value": "juegos de consola"
+        },
+        {
+          "locale": "it-IT",
+          "value": "giochi per console"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "products": [
+      "midway-cruisn-wiiM",
+      "nintendo-mario-kart-nintendodsM",
+      "lucasarts-lego-indiana-jones-original-adventure-wiiM",
+      "easports-madden-nfl-09-wiiM",
+      "sega-mario-sonic-olympics-2008-wiiM"
+    ]
+  },
+  "version": 1,
+  "label": "Console Games",
+  "status": "ACTIVE",
+  "createdBy": "755e6f44-78bf-47f8-a567-bd950719e817",
+  "createdDate": "2022-09-22T10:33:43.646Z",
+  "lastModifiedBy": "755e6f44-78bf-47f8-a567-bd950719e817",
+  "lastModifiedDate": "2022-09-22T10:34:38.519Z",
+  "lastPublishedVersion": 1,
+  "lastPublishedDate": "2022-09-22T10:34:23.303Z",
+  "deliveryId": "011536d1-b032-414d-b88f-138e6ecd4bd3"
+}
