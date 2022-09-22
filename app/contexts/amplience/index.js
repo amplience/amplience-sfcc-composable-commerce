@@ -107,7 +107,7 @@ export const getGroupsFromLocalStorage = ({req, res}) => {
         try {
             groups = JSON.parse(groups)
         } catch (e) {
-            console.error(e)
+            console.error(`No customer groups found in cookies`)
         }
     }
 
