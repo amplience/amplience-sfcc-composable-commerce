@@ -137,6 +137,26 @@ const Home = ({productSearchResult, isLoading, homeSlotTop}) => {
                 marginLeft={{base: '-50vw', md: 'auto'}}
                 marginRight={{base: '-50vw', md: 'auto'}}
             >
+                <Heading as="h3">Personalised Content - Amplience Wrapper by key</Heading>
+                <Text>Getting content from content item <i>hero/personalised-men-luxury</i></Text>
+            </Section>
+            <AmplienceWrapper fetch={{key: 'hero/personalised-men-luxury'}}></AmplienceWrapper>
+            
+            <Section
+                background={'pink.50'}
+                marginX="auto"
+                paddingY={{base: 4, md: 8}}
+                paddingX={{base: 4, md: 8}}
+                borderRadius="base"
+                width={{base: '100vw', md: 'inherit'}}
+                position={{base: 'relative', md: 'inherit'}}
+                left={{base: '50%', md: 'inherit'}}
+                right={{base: '50%', md: 'inherit'}}
+                marginTop="8"
+                marginBottom="8"
+                marginLeft={{base: '-50vw', md: 'auto'}}
+                marginRight={{base: '-50vw', md: 'auto'}}
+            >
                 <Heading as="h3">Content - Amplience Wrapper by key</Heading>
                 <Text>Getting content from content item <i>simple-product-list</i></Text>
             </Section>

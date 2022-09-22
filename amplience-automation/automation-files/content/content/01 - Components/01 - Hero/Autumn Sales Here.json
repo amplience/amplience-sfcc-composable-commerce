@@ -3,6 +3,7 @@
   "body": {
     "_meta": {
       "name": "Autumn Sales Here",
+      "deliveryKey": "hero/autumn-sales",
       "schema": "https://sfcc.com/components/hero"
     },
     "title": {
