@@ -211,7 +211,6 @@ export class AmplienceAPI {
 
     async getVariantsContent(props: PersonalisedContent, params) {
         const {variants, maxNumberMatches = 1, defaultContent} = props
-        let allContent: any[] = []
 
         const matches = compact(
             variants.map((arg: Variant) => {
@@ -242,7 +241,6 @@ export class AmplienceAPI {
                     }
                     return response.error
                 })
-                allContent = [...allContent, ...mappedContent]
 
                 return {
                     ...arg,
@@ -250,6 +248,8 @@ export class AmplienceAPI {
                 }
             })
         )
+
+        let allContent = flatten(responses.map((response) => response.content))
 
         if (allContent.length === 0) {
             allContent = [...defaultContent]
