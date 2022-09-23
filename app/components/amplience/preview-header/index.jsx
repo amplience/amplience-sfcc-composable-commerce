@@ -136,7 +136,7 @@ const PreviewHeader = ({vse, vseTimestamp, customerGroups, ...otherProps}) => {
                                                         onChange={(x) =>
                                                             setPreviewDate(x.target.value)
                                                         }
-                                                        min={moment(vseTimestamp).format(
+                                                        min={moment().format(
                                                             'YYYY-MM-DD'
                                                         )}
                                                     />
