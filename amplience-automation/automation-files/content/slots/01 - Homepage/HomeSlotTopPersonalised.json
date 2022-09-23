@@ -40,10 +40,10 @@
                 "matchMode": "Any"
             },
             {
-                "matchMode": "All",
+                "matchMode": "Any",
                 "segment": [
-                    "Everyone",
-                    "Registered"
+                    "Registered",
+                    "Big Spenders"
                 ],
                 "content": [
                     {
