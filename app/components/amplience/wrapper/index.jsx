@@ -35,7 +35,7 @@ const componentsMapping = {
 }
 
 const AmplienceWrapper = ({fetch, content, components, skeleton, ...rest}) => {
-    const {client} = useContext(AmplienceContext)
+    const {client, groups} = useContext(AmplienceContext)
     const [fetchedContent, setFetchedContent] = useState(content)
     const {locale} = useIntl()
 
@@ -57,7 +57,7 @@ const AmplienceWrapper = ({fetch, content, components, skeleton, ...rest}) => {
         }
 
         return () => (active = false)
-    }, [fetch?.id, fetch?.key, content])
+    }, [fetch?.id, fetch?.key, content, groups])
 
     const Component = mapping[fetchedContent?._meta?.schema]
 
