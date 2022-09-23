@@ -115,7 +115,8 @@ Hero.propTypes = {
     /**
      * Hero button url
      */
-    url: PropTypes.string
+    url: PropTypes.string,
+    fullWidth: PropTypes.bool
 }
 
 export default Hero
