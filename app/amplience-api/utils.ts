@@ -91,3 +91,17 @@ export const createOcapiFetch = (commerceAPIConfig) => async (
         return convertedResponse
     }
 }
+
+let forceReload = false
+
+export const personalisationChanged = () => {
+    const reload = forceReload
+
+    forceReload = false
+
+    return reload
+}
+
+export const signalPersonalisationChanged = () => {
+    forceReload = true
+}

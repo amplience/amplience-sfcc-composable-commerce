@@ -24,6 +24,7 @@ import {MAX_CACHE_AGE} from '../../../constants'
 import {useAmpRtv} from '../../../utils/amplience/rtv'
 import {AmplienceContextProvider} from '../../../contexts/amplience'
 import {AmplienceAPI} from '../../../amplience-api'
+import {personalisationChanged} from '../../../amplience-api/utils'
 
 /**
  * This is an example content page for Retail React App.
@@ -86,7 +87,9 @@ const ContentPage = ({page, pageVse}) => {
 ContentPage.getTemplateName = () => 'contentpage'
 
 ContentPage.shouldGetProps = ({previousLocation, location}) =>
-    !previousLocation || previousLocation.pathname !== location.pathname
+    !previousLocation ||
+    previousLocation.pathname !== location.pathname ||
+    personalisationChanged(true)
 
 ContentPage.getProps = async ({req, res, params, location, api, ampClient}) => {
     const {pageId} = params
@@ -112,6 +115,7 @@ ContentPage.getProps = async ({req, res, params, location, api, ampClient}) => {
         client = new AmplienceAPI()
         client.setVse(pageVse)
     } else {
+        console.log(ampClient.groups)
         client = ampClient
     }
 

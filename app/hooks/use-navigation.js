@@ -26,8 +26,12 @@ const useNavigation = () => {
          * @param  {...any} args - additional args passed to `.push` or `.replace`
          */
         (path, action = 'push', ...args) => {
-            const updatedHref = buildUrl(path)
-            history[action](path === '/' ? '/' : updatedHref, ...args)
+            if (path == null) {
+                history[action](history.location.pathname + history.location.search, ...args)
+            } else {
+                const updatedHref = buildUrl(path)
+                history[action](path === '/' ? '/' : updatedHref, ...args)
+            }
         },
         [localeShortCode, site]
     )

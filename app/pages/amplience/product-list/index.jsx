@@ -93,6 +93,7 @@ import {defaultAmpClient} from '../../../amplience-api'
 import GridItemHero from '../../../components/amplience/hero/gridItemHero'
 import PersonalisedContainer from '../../../components/amplience/personalised-container'
 import PersonalisedComponent from '../../../components/amplience/personalised-component'
+import {personalisationChanged} from '../../../amplience-api/utils'
 
 const PersonalisedContainerGridItem = ({...props}) => {
     return <PersonalisedContainer limit="1" components={inGridComponents} {...props} />
@@ -930,7 +931,8 @@ ProductList.getTemplateName = () => 'product-list'
 ProductList.shouldGetProps = ({previousLocation, location}) =>
     !previousLocation ||
     previousLocation.pathname !== location.pathname ||
-    previousLocation.search !== location.search
+    previousLocation.search !== location.search ||
+    personalisationChanged(true)
 
 ProductList.getProps = async ({res, params, location, api, ampClient}) => {
     const {categoryId} = params

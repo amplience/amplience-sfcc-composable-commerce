@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import PropTypes from 'prop-types'
 import * as cookie from 'cookie'
-import {AmplienceAPI} from '../../amplience-api'
+import {AmplienceAPI, defaultAmpClient} from '../../amplience-api'
 
 /**
  * This is the global Amplience Realtime Visualization Context on Non-category pages
@@ -20,6 +20,7 @@ import {AmplienceAPI} from '../../amplience-api'
  * }
  */
 import {init} from 'dc-visualization-sdk'
+import {signalPersonalisationChanged} from '../../amplience-api/utils'
 
 export const RealtimeVisualization = React.createContext()
 
@@ -82,6 +83,8 @@ export const AmplienceContextProvider = ({vse, vseTimestamp, groups: initialGrou
     client.setVse(vse)
 
     const updateGroups = (groups) => {
+        defaultAmpClient.setGroups(groups)
+        signalPersonalisationChanged()
         setGroups(groups)
     }
 

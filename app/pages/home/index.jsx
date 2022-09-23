@@ -45,6 +45,7 @@ import {
 } from '../../constants'
 import { resolveSiteFromUrl } from '../../utils/site-utils'
 import { getTargetLocale } from '../../utils/locale'
+import { personalisationChanged } from '../../amplience-api/utils'
 
 /**
  * This is the home page for Retail React App.
@@ -380,7 +381,9 @@ const Home = ({productSearchResult, isLoading, homeSlotTop}) => {
 Home.getTemplateName = () => 'home'
 
 Home.shouldGetProps = ({previousLocation, location}) =>
-    !previousLocation || previousLocation.pathname !== location.pathname
+    !previousLocation ||
+    previousLocation.pathname !== location.pathname ||
+    personalisationChanged(true)
 
 Home.getProps = async ({res, location, api, ampClient}) => {
     if (res && !ampClient.vse) {

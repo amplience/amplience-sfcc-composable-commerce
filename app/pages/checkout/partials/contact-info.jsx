@@ -29,10 +29,12 @@ import useLoginFields from '../../../components/forms/useLoginFields'
 import {ToggleCard, ToggleCardEdit, ToggleCardSummary} from '../../../components/toggle-card'
 import Field from '../../../components/field'
 import {AuthModal, useAuthModal} from '../../../hooks/use-auth-modal'
+import useNavigation from '../../../hooks/use-navigation'
 
 const ContactInfo = () => {
     const {formatMessage} = useIntl()
     const history = useHistory()
+    const navigate = useNavigation()
     const authModal = useAuthModal('password')
 
     const {
@@ -183,7 +185,7 @@ const ContactInfo = () => {
                     isOpen={signOutConfirmDialogIsOpen}
                     onClose={() => setSignOutConfirmDialogIsOpen(false)}
                     onConfirm={async () => {
-                        await customer.logout()
+                        await customer.logout(navigate)
                         await basket.getOrCreateBasket()
                         history.replace('/')
                         setSignOutConfirmDialogIsOpen(false)

@@ -82,8 +82,8 @@ export default function useCustomer() {
                 }
 
                 console.log('groups:', groups)
-                if (ampContext && ampContext.updateGroups){
-                    ampContext.updateGroups(groups);
+                if (ampContext && ampContext.updateGroups) {
+                    ampContext.updateGroups(groups)
                 }
                 api.auth._storage.set('customerGroups', JSON.stringify(groups))
                 document.cookie = `customerGroups=${JSON.stringify(groups)};`
@@ -101,14 +101,14 @@ export default function useCustomer() {
              * Log out current customer.
              * and retrive a guest access token
              */
-            async logout() {
+            async logout(navigate) {
                 const customer = await api.auth.logout()
                 api.auth._storage.set('customerGroups', '[]')
                 document.cookie = `customerGroups=[];`
                 if (ampContext && ampContext.updateGroups) {
                     ampContext.updateGroups([])
                 }
-                window.location.reload()
+                navigate()
                 setCustomer(customer)
             },
 
