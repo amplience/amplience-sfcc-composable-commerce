@@ -27,9 +27,13 @@ const AmpRtv = () => {
     const [formContent, setFormContent] = useState(undefined)
     const {groups} = useContext(AmplienceContext)
 
-    useAmpRtv((model) => {
-        setFormContent(model.content)
-    })
+    useAmpRtv(
+        (model) => {
+            setFormContent(model.content)
+        },
+        undefined,
+        [groups]
+    )
 
     // Overwrite the context to perform vis from vse.
 

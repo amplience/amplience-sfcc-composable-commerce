@@ -105,16 +105,10 @@ export const useAmpRtv = (method, ampVizSdk, captures = []) => {
     }
 
     const client = useContext(AmplienceContext)?.client
-    const updateGroups = useContext(AmplienceContext)?.updateGroups
 
     useEffect(() => {
         let removeChangedSubscription
         let cancelled = false
-
-        if (updateGroups) {
-            const list = window.localStorage.getItem('customerGroups') || "[]"
-            updateGroups(JSON.parse(list))
-        }
 
         if (ampVizSdk !== null) {
             const enrichAndSignal = async (model) => {
