@@ -1,0 +1,43 @@
+{
+  "id": "808c0ef0-bde6-4330-ae1d-3205bbca6462",
+  "body": {
+    "_meta": {
+      "name": "Personalised Shop Mobile Hero",
+      "schema": "https://sfcc.com/components/personalised-component"
+    },
+    "defaultContent": {
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+      },
+      "contentType": "https://sfcc.com/components/hero",
+      "id": "a062b293-408f-4b1d-8404-3f32d972e5bc"
+    },
+    "maxNumberMatches": 1,
+    "variants": [
+      {
+        "matchMode": "Any",
+        "segment": [
+          "genY",
+          "Everyone"
+        ],
+        "content": {
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference"
+          },
+          "contentType": "https://sfcc.com/components/hero",
+          "id": "0ea31cea-7312-4323-9e7c-24c456a72623"
+        }
+      }
+    ]
+  },
+  "version": 1,
+  "label": "Personalised Shop Mobile Hero",
+  "status": "ACTIVE",
+  "createdBy": "755e6f44-78bf-47f8-a567-bd950719e817",
+  "createdDate": "2022-09-23T08:52:39.629Z",
+  "lastModifiedBy": "755e6f44-78bf-47f8-a567-bd950719e817",
+  "lastModifiedDate": "2022-09-23T08:52:39.629Z",
+  "lastPublishedVersion": 1,
+  "lastPublishedDate": "2022-09-23T08:53:19.348Z",
+  "deliveryId": "808c0ef0-bde6-4330-ae1d-3205bbca6462"
+}

@@ -1,0 +1,43 @@
+{
+  "id": "a84dfbeb-8006-47ed-b2fa-b0a411055d71",
+  "body": {
+    "_meta": {
+      "name": "Personalised Women Hero",
+      "schema": "https://sfcc.com/components/personalised-component"
+    },
+    "defaultContent": {
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+      },
+      "contentType": "https://sfcc.com/components/hero",
+      "id": "acb865ae-f79e-4260-aac5-02bda07c02ce"
+    },
+    "maxNumberMatches": 1,
+    "variants": [
+      {
+        "matchMode": "Any",
+        "segment": [
+          "genZ",
+          "Everyone"
+        ],
+        "content": {
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference"
+          },
+          "contentType": "https://sfcc.com/components/hero",
+          "id": "2da1ae67-149f-423b-86c0-f84b45ea60c0"
+        }
+      }
+    ]
+  },
+  "version": 1,
+  "label": "Personalised Women Hero",
+  "status": "ACTIVE",
+  "createdBy": "755e6f44-78bf-47f8-a567-bd950719e817",
+  "createdDate": "2022-09-22T15:53:47.197Z",
+  "lastModifiedBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+  "lastModifiedDate": "2022-09-23T07:06:49.667Z",
+  "lastPublishedVersion": 1,
+  "lastPublishedDate": "2022-09-23T07:07:04.289Z",
+  "deliveryId": "a84dfbeb-8006-47ed-b2fa-b0a411055d71"
+}

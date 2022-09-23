@@ -1,0 +1,44 @@
+{
+  "id": "fffd3c8a-425d-4134-9761-3f0185603597",
+  "body": {
+    "_meta": {
+      "name": "Personalised Luxury Collection Men",
+      "schema": "https://sfcc.com/components/personalised-component",
+      "deliveryKey": "hero/personalised-men-luxury"
+    },
+    "defaultContent": {
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+      },
+      "contentType": "https://sfcc.com/components/hero",
+      "id": "0ea31cea-7312-4323-9e7c-24c456a72623"
+    },
+    "maxNumberMatches": 2,
+    "variants": [
+      {
+        "matchMode": "Any",
+        "segment": [
+          "Registered",
+          "Everyone"
+        ],
+        "content": {
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference"
+          },
+          "contentType": "https://sfcc.com/components/hero",
+          "id": "b9fbfa9b-f44b-4d5e-a11c-cd4c118ecf64"
+        }
+      }
+    ]
+  },
+  "version": 1,
+  "label": "Personalised Luxury Collection Men Hero",
+  "status": "ACTIVE",
+  "createdBy": "755e6f44-78bf-47f8-a567-bd950719e817",
+  "createdDate": "2022-09-22T15:49:11.235Z",
+  "lastModifiedBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+  "lastModifiedDate": "2022-09-22T17:16:19.149Z",
+  "lastPublishedVersion": 1,
+  "lastPublishedDate": "2022-09-22T17:16:34.355Z",
+  "deliveryId": "fffd3c8a-425d-4134-9761-3f0185603597"
+}
