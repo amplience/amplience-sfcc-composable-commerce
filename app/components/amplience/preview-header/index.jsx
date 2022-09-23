@@ -25,6 +25,9 @@ import {useIntl} from 'react-intl'
 import moment from 'moment'
 
 import {Table, Tbody, Tr, Td, TableContainer} from '@chakra-ui/react'
+import {useContext} from 'react'
+import {AmplienceContext} from '../../../contexts/amplience'
+import useNavigation from '../../../hooks/use-navigation'
 
 const timestampToString = (intl, timestamp) => {
     if (timestamp == 0) {
@@ -46,6 +49,8 @@ const PreviewHeader = ({vse, vseTimestamp, customerGroups, groups, ...otherProps
     const [previewTime, setPreviewTime] = useState(moment(vseTimestamp).format('HH:mm:ss'))
     const [previewTimestamp, setPreviewTimestamp] = useState(vseTimestamp)
     const [previewCustomerGroups, setPreviewCustomerGroups] = useState(groups || [])
+    const {updateGroups} = useContext(AmplienceContext)
+    const navigate = useNavigation()
 
     useEffect(() => {
         if (vse) {
@@ -74,13 +79,17 @@ const PreviewHeader = ({vse, vseTimestamp, customerGroups, groups, ...otherProps
     }
 
     const clickCustomerGroup = (obj) => {
+        let groups
         if (previewCustomerGroups.includes(obj.target.value)) {
-            setPreviewCustomerGroups(previewCustomerGroups.filter(x => x !== obj.target.value))
+            groups = previewCustomerGroups.filter((x) => x !== obj.target.value)
+        } else {
+            groups = [...previewCustomerGroups, obj.target.value]
         }
-        else {
-            setPreviewCustomerGroups([...previewCustomerGroups, obj.target.value])
-        }
-    }    
+
+        setPreviewCustomerGroups(groups)
+        updateGroups(groups)
+        navigate()
+    }
 
     const {isOpen, onToggle, onClose} = useDisclosure()
 
@@ -186,9 +195,21 @@ const PreviewHeader = ({vse, vseTimestamp, customerGroups, groups, ...otherProps
 
                         <Box>
                             <Wrap spacing={4}>
-                                {customerGroups.map(group => {
-                                    const groupColor = previewCustomerGroups.includes(group) ? 'blue' : 'gray'
-                                    return <WrapItem><Button value={group} colorScheme={groupColor} onClick={clickCustomerGroup}>{group}</Button></WrapItem>
+                                {customerGroups.map((group, index) => {
+                                    const groupColor = previewCustomerGroups.includes(group)
+                                        ? 'blue'
+                                        : 'gray'
+                                    return (
+                                        <WrapItem key={index}>
+                                            <Button
+                                                value={group}
+                                                colorScheme={groupColor}
+                                                onClick={clickCustomerGroup}
+                                            >
+                                                {group}
+                                            </Button>
+                                        </WrapItem>
+                                    )
                                 })}
                             </Wrap>
                         </Box>
@@ -201,7 +222,9 @@ const PreviewHeader = ({vse, vseTimestamp, customerGroups, groups, ...otherProps
 
 PreviewHeader.propTypes = {
     vse: PropTypes.string,
-    vseTimestamp: PropTypes.number
+    vseTimestamp: PropTypes.number,
+    customerGroups: PropTypes.array,
+    groups: PropTypes.array
 }
 
 export default PreviewHeader
