@@ -41,15 +41,16 @@ const timestampToString = (intl, timestamp) => {
     return date.toLocaleString()
 }
 
-const PreviewHeader = ({vse, vseTimestamp, customerGroups, groups, ...otherProps}) => {
+const PreviewHeader = ({vse, vseTimestamp, customerGroups, ...otherProps}) => {
     const intl = useIntl()
     const styles = useMultiStyleConfig('PreviewHeader')
+
+    const {groups, updateGroups} = useContext(AmplienceContext)
 
     const [previewDate, setPreviewDate] = useState(moment(vseTimestamp).format('YYYY-MM-DD'))
     const [previewTime, setPreviewTime] = useState(moment(vseTimestamp).format('HH:mm:ss'))
     const [previewTimestamp, setPreviewTimestamp] = useState(vseTimestamp)
     const [previewCustomerGroups, setPreviewCustomerGroups] = useState(groups || [])
-    const {updateGroups} = useContext(AmplienceContext)
     const navigate = useNavigation()
 
     useEffect(() => {
@@ -58,6 +59,10 @@ const PreviewHeader = ({vse, vseTimestamp, customerGroups, groups, ...otherProps
             document.cookie = `vse-timestamp=${vseTimestamp};`
         }
     }, [vse, vseTimestamp])
+
+    useEffect(() => {
+        setPreviewCustomerGroups(groups || [])
+    }, [groups])
 
     useEffect(() => {
         const m = moment(`${previewDate} ${previewTime}`, `YYYY-MM-DD HH:mm:ss`)
@@ -223,8 +228,7 @@ const PreviewHeader = ({vse, vseTimestamp, customerGroups, groups, ...otherProps
 PreviewHeader.propTypes = {
     vse: PropTypes.string,
     vseTimestamp: PropTypes.number,
-    customerGroups: PropTypes.array,
-    groups: PropTypes.array
+    customerGroups: PropTypes.array
 }
 
 export default PreviewHeader
