@@ -57,7 +57,7 @@ const AmplienceWrapper = ({fetch, content, components, skeleton, ...rest}) => {
         }
 
         return () => (active = false)
-    }, [fetch, content])
+    }, [fetch?.id, fetch?.key, content])
 
     const Component = mapping[fetchedContent?._meta?.schema]
 
