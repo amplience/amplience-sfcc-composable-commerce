@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://sfcc.com/components/personalised-container",
-    "title": "Personalised Container",
+    "$id": "https://sfcc.com/components/personalised-component",
+    "title": "Personalised Component",
     "description": "",
     "allOf": [
         {
@@ -12,23 +12,18 @@
     "properties": {
         "defaultContent": {
             "title": "Default",
-            "type": "array",
-            "minItems": 0,
-            "maxItems": 10,
-            "items": {
-                "allOf": [
-                    {
-                        "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
-                    },
-                    {
-                        "properties": {
-                            "contentType": {
-                                "$ref": "https://sfcc.com/libs/all-definitions#/definitions/anyComponent"
-                            }
+            "allOf": [
+                {
+                    "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                },
+                {
+                    "properties": {
+                        "contentType": {
+                            "$ref": "https://sfcc.com/libs/all-definitions#/definitions/anyComponent"
                         }
                     }
-                ]
-            }
+                }
+            ]
         },
         "maxNumberMatches": {
             "title": "Max number of matches",
@@ -46,7 +41,7 @@
             "items": {
                 "allOf": [
                     {
-                        "$ref": "https://sfcc.com/libs/all-definitions#/definitions/variantRefs"
+                        "$ref": "https://sfcc.com/libs/all-definitions#/definitions/variantRef"
                     }
                 ]
             }

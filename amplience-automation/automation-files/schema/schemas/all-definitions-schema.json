@@ -8,7 +8,8 @@
                 "https://sfcc.com/components/section",
                 "https://sfcc.com/components/curated-product",
                 "https://sfcc.com/components/card-enhanced",
-                "https://sfcc.com/components/personalised-container"
+                "https://sfcc.com/components/personalised-container",
+                "https://sfcc.com/components/personalised-component"
             ]
         },
         "anyPage": {
@@ -22,6 +23,7 @@
                 "https://sfcc.com/components/section",
                 "https://sfcc.com/components/curated-product",
                 "https://sfcc.com/components/personalised-container",
+                "https://sfcc.com/components/personalised-component",
                 "https://sfcc.com/site/pages/content-page",
                 "https://sfcc.com/components/card-enhanced"
             ]
@@ -37,6 +39,7 @@
                 "https://sfcc.com/components/section",
                 "https://sfcc.com/components/curated-product",
                 "https://sfcc.com/components/personalised-container",
+                "https://sfcc.com/components/personalised-component",
                 "https://sfcc.com/site/pages/content-page",
                 "https://sfcc.com/slots/flexible-list",
                 "https://sfcc.com/components/card-enhanced"
@@ -184,7 +187,6 @@
         "gridItem": {
             "title": "In-Grid Content",
             "description": "",
-            
             "type": "object",
             "properties": {
                 "position": {
@@ -221,13 +223,17 @@
                 "content": {
                     "title": "Content",
                     "allOf": [
-                        { "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference" },
+                        {
+                            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference"
+                        },
                         {
                             "properties": {
                                 "contentType": {
                                     "enum": [
                                         "https://sfcc.com/components/card-enhanced",
-                                        "https://sfcc.com/components/hero"
+                                        "https://sfcc.com/components/hero",
+                                        "https://sfcc.com/components/personalised-component",
+                                        "https://sfcc.com/components/personalised-container"
                                     ]
                                 }
                             }
@@ -235,9 +241,14 @@
                     ]
                 }
             },
-            "propertyOrder": ["position", "cols", "rows", "content"]
+            "propertyOrder": [
+                "position",
+                "cols",
+                "rows",
+                "content"
+            ]
         },
-        "variantRefs":{
+        "variantRefs": {
             "title": "Variants",
             "type": "object",
             "properties": {
@@ -297,7 +308,7 @@
                 "content"
             ]
         },
-        "variantLinks":{
+        "variantLinks": {
             "title": "Variants",
             "type": "object",
             "properties": {
@@ -349,6 +360,116 @@
                             }
                         ]
                     }
+                }
+            },
+            "propertyOrder": [
+                "matchMode",
+                "segment",
+                "content"
+            ]
+        },
+        "variantRef": {
+            "title": "Variants",
+            "type": "object",
+            "properties": {
+                "segment": {
+                    "title": "User Segments",
+                    "description": "The segment audience that should see this content",
+                    "type": "array",
+                    "minItems": 0,
+                    "maxItems": 5,
+                    "items": {
+                        "type": "string"
+                    },
+                    "ui:extension": {
+                        "name": "ecomm-toolkit",
+                        "params": {
+                            "label": "User Segments",
+                            "view": "multi",
+                            "data": "segment",
+                            "type": "string"
+                        }
+                    }
+                },
+                "matchMode": {
+                    "title": "Matching Mode",
+                    "description": "Match on any segment or all segments",
+                    "type": "string",
+                    "default": "Any",
+                    "enum": [
+                        "Any",
+                        "All"
+                    ]
+                },
+                "content": {
+                    "title": "Content",
+                    "allOf": [
+                        {
+                            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference"
+                        },
+                        {
+                            "properties": {
+                                "contentType": {
+                                    "$ref": "https://sfcc.com/libs/all-definitions#/definitions/anyComponent"
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            "propertyOrder": [
+                "matchMode",
+                "segment",
+                "content"
+            ]
+        },
+        "variantLink": {
+            "title": "Variants",
+            "type": "object",
+            "properties": {
+                "segment": {
+                    "title": "User Segments",
+                    "description": "The segment audience that should see this content",
+                    "type": "array",
+                    "minItems": 0,
+                    "maxItems": 5,
+                    "items": {
+                        "type": "string"
+                    },
+                    "ui:extension": {
+                        "name": "ecomm-toolkit",
+                        "params": {
+                            "label": "User Segments",
+                            "view": "multi",
+                            "data": "segment",
+                            "type": "string"
+                        }
+                    }
+                },
+                "matchMode": {
+                    "title": "Matching Mode",
+                    "description": "Match on any segment or all segments",
+                    "type": "string",
+                    "default": "Any",
+                    "enum": [
+                        "Any",
+                        "All"
+                    ]
+                },
+                "content": {
+                    "title": "Content",
+                    "allOf": [
+                        {
+                            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                        },
+                        {
+                            "properties": {
+                                "contentType": {
+                                    "$ref": "https://sfcc.com/libs/all-definitions#/definitions/anyComponent"
+                                }
+                            }
+                        }
+                    ]
                 }
             },
             "propertyOrder": [
