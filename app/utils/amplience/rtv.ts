@@ -112,7 +112,7 @@ export const useAmpRtv = (method, ampVizSdk, captures = []) => {
         let cancelled = false
 
         if (updateGroups) {
-            const list = window.localStorage.getItem('customerGroups')
+            const list = window.localStorage.getItem('customerGroups') || "[]"
             updateGroups(JSON.parse(list))
         }
 
