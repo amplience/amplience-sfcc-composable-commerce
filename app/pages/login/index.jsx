@@ -28,7 +28,6 @@ const Login = () => {
     const submitForm = async (data) => {
         try {
             await customer.login(data)
-            console.log('send reload')
             window.location.reload();
         } catch (error) {
             const message = /invalid credentials/i.test(error.message)

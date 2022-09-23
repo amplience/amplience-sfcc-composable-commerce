@@ -111,12 +111,13 @@ export const useAmpRtv = (method, ampVizSdk, captures = []) => {
         let removeChangedSubscription
         let cancelled = false
 
+        if (updateGroups) {
+            const list = window.localStorage.getItem('customerGroups')
+            updateGroups(JSON.parse(list))
+        }
+
         if (ampVizSdk !== null) {
             const enrichAndSignal = async (model) => {
-                if (updateGroups){
-                    const list = window.localStorage.getItem('customerGroups')
-                    updateGroups(JSON.parse(list))
-                }
                 if (client) {
                     await client.defaultEnrich([model], {personalised: true})
                 }
