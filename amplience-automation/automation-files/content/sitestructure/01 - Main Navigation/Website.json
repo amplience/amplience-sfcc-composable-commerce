@@ -26,7 +26,7 @@
                     "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
                 }
             },
-            "priority": 1
+            "priority": 2
         },
         "externalUrl": {
             "values": [
