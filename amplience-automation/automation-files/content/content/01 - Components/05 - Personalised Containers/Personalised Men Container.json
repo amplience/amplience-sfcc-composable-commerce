@@ -11,7 +11,7 @@
           "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
         },
         "contentType": "https://sfcc.com/components/hero",
-        "id": "8a08a479-efc0-4d3b-9cdd-0a7c14b36d16"
+        "id": "bf556936-b474-4542-a5f6-cb026772f331"
       },
       {
         "_meta": {
@@ -21,11 +21,14 @@
         "id": "93c47f44-5a43-4709-a556-498cc9ccac75"
       }
     ],
-    "maxNumberMatches": 2,
+    "maxNumberMatches": 1,
     "variants": [
       {
         "matchMode": "Any",
         "segment": [
+          "genY",
+          "genZ",
+          "genx",
           "Everyone"
         ],
         "content": [
@@ -53,8 +56,8 @@
   "createdBy": "faf50c60-6d31-48fe-8af3-c52557850527",
   "createdDate": "2022-09-22T10:04:05.543Z",
   "lastModifiedBy": "755e6f44-78bf-47f8-a567-bd950719e817",
-  "lastModifiedDate": "2022-09-22T10:39:32.028Z",
+  "lastModifiedDate": "2022-09-23T09:11:07.497Z",
   "lastPublishedVersion": 1,
-  "lastPublishedDate": "2022-09-22T10:39:42.755Z",
+  "lastPublishedDate": "2022-09-23T09:11:23.348Z",
   "deliveryId": "7f202c0f-37b9-4cd5-a44a-547c1b42f553"
 }

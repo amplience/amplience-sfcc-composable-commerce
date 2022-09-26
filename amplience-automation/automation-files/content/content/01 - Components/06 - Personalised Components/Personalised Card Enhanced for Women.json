@@ -1,0 +1,45 @@
+{
+  "id": "84816706-deb4-4a5b-8bad-6feb48e59f47",
+  "contentRepositoryId": "6321ee3f4cedfd0001b5a5e8",
+  "folderId": "632c7fbbecba450001be7325",
+  "body": {
+    "_meta": {
+      "name": "Personalised Card Enhanced for Women",
+      "schema": "https://sfcc.com/components/personalised-component"
+    },
+    "defaultContent": {
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+      },
+      "contentType": "https://sfcc.com/components/card-enhanced",
+      "id": "6f328bc9-f668-4390-9628-6b8728656f4c"
+    },
+    "maxNumberMatches": 1,
+    "variants": [
+      {
+        "matchMode": "Any",
+        "segment": [
+          "Everyone",
+          "female"
+        ],
+        "content": {
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference"
+          },
+          "contentType": "https://sfcc.com/components/card-enhanced",
+          "id": "09951a43-9ea5-48f3-b3ab-77bf37560090"
+        }
+      }
+    ]
+  },
+  "version": 1,
+  "label": "Personalised Card Enhanced for Women",
+  "status": "ACTIVE",
+  "createdBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+  "createdDate": "2022-09-26T11:00:41.766Z",
+  "lastModifiedBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+  "lastModifiedDate": "2022-09-26T11:00:41.766Z",
+  "lastPublishedVersion": 1,
+  "lastPublishedDate": "2022-09-26T11:00:56.252Z",
+  "deliveryId": "84816706-deb4-4a5b-8bad-6feb48e59f47"
+}

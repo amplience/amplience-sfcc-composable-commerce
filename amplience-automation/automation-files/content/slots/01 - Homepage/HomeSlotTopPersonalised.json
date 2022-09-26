@@ -12,14 +12,14 @@
                     "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
                 },
                 "contentType": "https://sfcc.com/components/hero",
-                "id": "acb865ae-f79e-4260-aac5-02bda07c02ce"
+                "id": "af9803be-e9b7-456c-89e3-267a90e726cc"
             },
             {
                 "_meta": {
                     "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
                 },
                 "contentType": "https://sfcc.com/components/section",
-                "id": "5116d108-e6cb-4692-a964-2dd554c0b2cf"
+                "id": "c18343f7-61c4-4d4f-9ea4-be9286f6f6ab"
             }
         ],
         "maxNumberMatches": 2,
