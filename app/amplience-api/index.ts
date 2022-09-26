@@ -15,6 +15,7 @@ export type FilterType = ((item: any) => boolean) | undefined
 export type Variant = {
     segment: String[];
     content: ContentReference[] | ContentReference;
+    match?: string;
     matchMode: 'Any' | 'All';
 }
 
@@ -213,7 +214,7 @@ export class AmplienceAPI {
         const {variants, maxNumberMatches = 1, defaultContent} = props
 
         const matches = compact(
-            variants.map((arg: Variant) => {
+            variants.map((arg: Variant, ind: number) => {
                 const similar = intersection(arg.segment, this.groups)
                 if (
                     arg.matchMode == 'Any'
@@ -222,6 +223,7 @@ export class AmplienceAPI {
                 ) {
                     return null
                 }
+                arg.match = `Match on variant ${ind + 1} (${arg.matchMode}), ${similar.join(', ')} segment${similar.length > 1 ? 's' : ''}`
                 return arg
             })
         )
@@ -244,7 +246,10 @@ export class AmplienceAPI {
                 const content = (await this.client.getContentItems(ids, params)).responses
                 const mappedContent: any = content.map((response) => {
                     if ('content' in response) {
-                        return response.content
+                        return {
+                            ...response.content,
+                            match: arg.match
+                        }
                     }
                     return response.error
                 })
@@ -260,9 +265,12 @@ export class AmplienceAPI {
 
         if (allContent.length === 0) {
             if (Array.isArray(defaultContent)) {
-                allContent = [...defaultContent]
+                allContent = [...defaultContent.map((el) => {
+                    el.match = 'Default variant'
+                    return el
+                })]
             } else {
-                allContent = [defaultContent]
+                allContent = [{...defaultContent, match: 'Default variant'}]
             }
         }
 

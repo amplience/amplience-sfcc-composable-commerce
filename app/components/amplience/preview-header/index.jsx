@@ -54,6 +54,15 @@ const PreviewHeader = ({vse, vseTimestamp, customerGroups, ...otherProps}) => {
     const navigate = useNavigation()
 
     useEffect(() => {
+        if (window && !previewCustomerGroups.length) {
+            const customerGroups = window.localStorage.getItem('customerGroups')
+            if (customerGroups) {
+                updateGroups(JSON.parse(customerGroups))
+            }
+        }
+    }, [])
+
+    useEffect(() => {
         if (vse) {
             document.cookie = `vse=${vse};`
             document.cookie = `vse-timestamp=${vseTimestamp};`

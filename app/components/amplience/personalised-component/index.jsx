@@ -1,28 +1,38 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import AmplienceWrapper from '../wrapper'
+import {Box} from '@chakra-ui/react'
+import {indexStyle} from '../personalised-container'
 
 const PersonalisedComponent = ({
-    content,
-    components,
-    limit,
-    defaultContent,
-    maxNumberMatches,
-    variants,
-    ...props
-}) => {
+                                   content,
+                                   components,
+                                   limit,
+                                   defaultContent,
+                                   maxNumberMatches,
+                                   variants,
+                                   rtvActive,
+                                   ...props
+                               }) => {
     if (content) {
         if (limit) {
             content = content.slice(0, limit)
         }
 
         return content.map((contentItem, index) => (
-            <AmplienceWrapper
-                content={contentItem}
-                components={components}
-                key={index}
-                {...props}
-            />
+            <>
+                {rtvActive && contentItem.match && (
+                    <Box {...indexStyle}>
+                        {contentItem.match}
+                    </Box>
+                )}
+                <AmplienceWrapper
+                    content={contentItem}
+                    components={components}
+                    key={index}
+                    {...props}
+                />
+            </>
         ))
     }
 

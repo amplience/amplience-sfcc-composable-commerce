@@ -68,7 +68,7 @@ const DEFAULT_NAV_DEPTH = 3
 const DEFAULT_ROOT_CATEGORY = 'root'
 
 const App = (props) => {
-    const {children, targetLocale, messages, categories: allCategories = {}, ampProps, customerGroups} = props
+    const {children, targetLocale, messages, categories: allCategories = {}, ampProps} = props
 
     const appOrigin = getAppOrigin()
 
