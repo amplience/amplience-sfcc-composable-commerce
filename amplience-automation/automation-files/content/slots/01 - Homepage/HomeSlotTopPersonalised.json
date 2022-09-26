@@ -26,7 +26,8 @@
         "variants": [
             {
                 "segment": [
-                    "Everyone"
+                    "Everyone",
+                    "Big Spenders"
                 ],
                 "content": [
                     {
@@ -58,7 +59,7 @@
             {
                 "matchMode": "Any",
                 "segment": [
-                    "Registered"
+                    "Unregistered"
                 ],
                 "content": [
                     {
