@@ -57,7 +57,12 @@ export class OcapiApi {
 
         const response = await fetch(this.shopUrl + 'folders/(root)?levels=0', this.requestOptions)
         const json = await response.json()
-        return json
+
+        if (json.fault) {
+            return null
+        } else {
+            return json
+        }
     }
 }
 
