@@ -20,7 +20,7 @@ The front end is where the the API's are called from Amplience and Salesforce in
 
 ## Personalised Containers
 
-Personalized container types have a few mandatory fields which define what content is selected for a given user.
+Personalised container types have a few mandatory fields which define what content is selected for a given user.
 
 - Default Content: This is a content link and can be a list of any content. This content is displayed when no matches are made.
 - Max Number of Matches: Defines the maximum number of matched content items that can be displayed. Content items past the limit (in order of variation appearance) will be silently removed.
@@ -28,8 +28,8 @@ Personalized container types have a few mandatory fields which define what conte
 
 ## Technical Behaviour
 
-When content is fetched, it is scanned using a generalized "enrich" method that looks for certain patterns, then runs handlers to enrich that data. The combination of pattern and handler is called an "Enrich Strategy", and one is enabled by default for personalized content.
+When content is fetched, it is scanned using a generalized "enrich" method that looks for certain patterns, then runs handlers to enrich that data. The combination of pattern and handler is called an "Enrich Strategy", and one is enabled by default for personalised content.
 
 This enrich strategy searches for the appearance of personalised containers, and then either filters existing content or fetches it based on the groups currently assigned to the content client. This content then replaces the `content` property of the container, so that it can be rendered directly. The matching variants are also placed into `variants` with their content embedded, if you wish to see all matching variants separately.
 
-Because this runs on any fetch, it can be used seamlessly for fetches on the server and client side, and the content will be available without triggering any extra reflows. Our implementation of Real-Time Visualization also runs the default enrich methods, so personalized content is updated in real time as you change it in the content form.
+Because this runs on any fetch, it can be used seamlessly for fetches on the server and client side, and the content will be available without triggering any extra reflows. Our implementation of Real-Time Visualization also runs the default enrich methods, so personalised content is updated in real time as you change it in the content form.
