@@ -191,7 +191,7 @@ const App = (props) => {
 
     const headerStyles = {...styles.headerWrapper}
 
-    const showVse = ampProps.vse // && !isNaN(vseProps.vseTimestamp) && vseProps.vseTimestamp != null
+    const showVse = ampProps.showVse
 
     if (showVse) {
         Object.assign(headerStyles, styles.headerAmpPreview)
@@ -411,6 +411,7 @@ App.getProps = async ({api, res, req, ampClient}) => {
 
     ampProps.groups = groups
     ampProps.customerGroups = customerGroups
+    ampProps.showVse = ampProps.vse != null || req?.query['pagevse'] != null
 
     let headerKey = 'main-nav'
     let footerKey = 'footer-nav'
