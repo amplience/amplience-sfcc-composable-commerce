@@ -211,7 +211,7 @@ export class AmplienceAPI {
     }
 
     async getVariantsContent(props: PersonalisedContent, params) {
-        const {variants, maxNumberMatches = 1, defaultContent} = props
+        const {variants, maxNumberMatches = 1, defaultContent, _meta: {name}} = props
 
         const matches = compact(
             variants.map((arg: Variant, ind: number) => {
@@ -223,7 +223,7 @@ export class AmplienceAPI {
                 ) {
                     return null
                 }
-                arg.match = `Match on variant ${ind + 1} (${arg.matchMode}), ${similar.join(', ')} segment${similar.length > 1 ? 's' : ''}`
+                arg.match = `${name} match on variant ${ind + 1} (${arg.matchMode}), ${similar.join(', ')} segment${similar.length > 1 ? 's' : ''}`
                 return arg
             })
         )
