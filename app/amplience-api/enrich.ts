@@ -1,8 +1,14 @@
+/**
+ * Schema IDs for Amplience content link and reference.
+ */
 const referenceTypes = [
     'http://bigcontent.io/cms/schema/v1/core#/definitions/content-link',
     'http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference'
 ]
 
+/**
+ * An object being enriched, along with its parent and index so it can be replaced if needed.
+ */
 export interface EnrichTarget {
     item: any;
 
@@ -10,11 +16,19 @@ export interface EnrichTarget {
     index?: string | number;
 }
 
+/**
+ * A strategy for detecting and enriching objects within content items.
+ */
 export interface EnrichStrategy {
     trigger: (content: any) => boolean;
     enrich: (content: EnrichTarget[]) => Promise<void>;
 }
 
+/**
+ * Determine if the given object is personalised.
+ * @param item The object to check.
+ * @returns True if personalised, false otherwise.
+ */
 export const isPersonalised = (item: any): boolean => {
     return (
         (Array.isArray(item.defaultContent) || typeof item.defaultContent === 'object') &&
@@ -23,6 +37,11 @@ export const isPersonalised = (item: any): boolean => {
     )
 }
 
+/**
+ * Determine if the given object is a content reference.
+ * @param item The object to check.
+ * @returns True if a content reference, false otherwise.
+ */
 export const isContentReference = (item: any): boolean => {
     return (
         item._meta &&
@@ -32,6 +51,14 @@ export const isContentReference = (item: any): boolean => {
     )
 }
 
+/**
+ * Recursively scan content for objects that trigger the given enrich strategies.
+ * @param item The current object being scanned.
+ * @param enrichStrategies Enrich strategies to scan with.
+ * @param enrichTargets Arrays to place found enrich targets into.
+ * @param parent The parent of the object being scanned.
+ * @param index The index into the parent of the object being scanned.
+ */
 export const getEnrichTargets = (
     item: any,
     enrichStrategies: EnrichStrategy[],
@@ -66,6 +93,11 @@ export const getEnrichTargets = (
     }
 }
 
+/**
+ * Enrich objects in a given content item using te given enrich strategies.
+ * @param item The content item to enrich.
+ * @param enrichStrategies Enrich strategies to execute.
+ */
 export const enrichContent = async (item: any, enrichStrategies: EnrichStrategy[]) => {
     const targets: EnrichTarget[][] = []
     for (let i = 0; i < enrichStrategies.length; i++) {

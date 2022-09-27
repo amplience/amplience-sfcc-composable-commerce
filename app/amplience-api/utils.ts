@@ -36,8 +36,12 @@ export const keysToCamel = (obj) => {
     return obj
 }
 
-// This function coverts errors/faults returned from the OCAPI API to the format that is returned from the CAPI
-// I added the fault key to make life easier as it's hard to discern a CAPI error
+/**
+ * This function coverts errors/faults returned from the OCAPI API to the format that is returned from the CAPI
+ * The fault key has been added to make life easier as it's hard to discern a CAPI error
+ * @param error An ocapi error.
+ * @returns A capi style error object.
+ */
 export const convertOcapiFaultToCapiError = (error) => {
     return {
         title: error.message,
@@ -49,7 +53,10 @@ export const convertOcapiFaultToCapiError = (error) => {
     }
 }
 
-// This function is used to interact with the OCAPI API
+/**
+ * This function is used to interact with the OCAPI API.
+ * @param commerceAPIConfig Commerce API Configuration.
+ */ 
 export const createOcapiFetch = (commerceAPIConfig) => async (
     endpoint,
     method,
@@ -94,6 +101,10 @@ export const createOcapiFetch = (commerceAPIConfig) => async (
 
 let forceReload = false
 
+/**
+ * Determine if personalisation has been changed since the last check.
+ * @returns True if a change was detected, false otherwise.
+ */
 export const personalisationChanged = () => {
     const reload = forceReload
 
@@ -102,6 +113,9 @@ export const personalisationChanged = () => {
     return reload
 }
 
+/**
+ * Signals that personalisation has been changed.
+ */
 export const signalPersonalisationChanged = () => {
     forceReload = true
 }

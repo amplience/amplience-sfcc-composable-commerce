@@ -141,7 +141,7 @@ const Header = ({
                                 {...styles.logo}
                                 style={{...ampStyles.logo}}
                                 alt={'logo'}
-                                src={url}
+                                src={`${url}?w=192&fmt=auto`}
                             />
                         }
                         {...styles.icons}
