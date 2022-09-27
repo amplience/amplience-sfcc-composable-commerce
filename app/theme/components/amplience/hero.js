@@ -52,8 +52,8 @@ export default {
             stackContainer: {
                 align: 'center',
                 spacing: {base: 0, md: 4},
-                paddingTop: {base: 0, md: 4},
-                paddingBottom: {base: 0, md: 4},
+                paddingTop: 0,
+                paddingBottom: 0,
                 direction: {base: 'column-reverse', md: 'row'},
                 justifyContent: {base: 'center', md: 'unset'}
             },

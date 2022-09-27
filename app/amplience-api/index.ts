@@ -311,6 +311,10 @@ export class AmplienceAPI {
             matches.slice(0, maxNumberMatches).map(async (arg: Variant) => {
                 let rawIds: ('' | {id: string})[]
                 if (Array.isArray(arg.content)) {
+                    arg.content = arg.content.map((el) => ({
+                        ...el,
+                        match: arg.match
+                    }))
                     rawIds = arg.content.map(({id}) => id && {id})
                 } else {
                     rawIds = [arg.content.id && {id: arg.content.id}]

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import AmplienceWrapper from '../wrapper'
 import {Box} from '@chakra-ui/react'
 import {indexStyle} from '../personalised-container'
+import {useLocation} from 'react-router-dom'
 
 const PersonalisedComponent = ({
                                    content,
@@ -14,6 +15,9 @@ const PersonalisedComponent = ({
                                    rtvActive,
                                    ...props
                                }) => {
+    const location = useLocation()
+    const showInfo = (location.search && (location.search.includes('vse=') || location.search.includes('pagevse='))) || rtvActive;
+
     if (content) {
         if (limit) {
             content = content.slice(0, limit)
@@ -21,7 +25,7 @@ const PersonalisedComponent = ({
 
         return content.map((contentItem, index) => (
             <>
-                {rtvActive && contentItem.match && (
+                {showInfo && contentItem.match && (
                     <Box {...indexStyle}>
                         {contentItem.match}
                     </Box>
