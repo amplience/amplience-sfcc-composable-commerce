@@ -34,6 +34,7 @@ import {personalisationChanged} from '../../../amplience-api/utils'
  */
 const ContentPage = ({page, pageVse}) => {
     const [pageModel, setPageModel] = useState(undefined)
+    const [rtvActive, setRtvActive] = useState(false)
 
     useEffect(() => {
         setPageModel(page)
@@ -42,6 +43,7 @@ const ContentPage = ({page, pageVse}) => {
     useAmpRtv((model) => {
         // handle form model change
         setPageModel(model.content)
+        setRtvActive(true)
     })
 
     const pageBody = (
@@ -70,7 +72,7 @@ const ContentPage = ({page, pageVse}) => {
             ) : (
                 <>
                     {pageModel.content?.map((item) => {
-                        return <AmplienceWrapper key={item._meta.deliveryId} content={item} />
+                        return <AmplienceWrapper key={item._meta.deliveryId} content={item} rtvActive={rtvActive}  />
                     })}
                 </>
             )}
