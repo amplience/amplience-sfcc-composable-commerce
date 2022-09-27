@@ -81,7 +81,6 @@ export default function useCustomer() {
                     groups = await self.getUserGroups()
                 }
 
-                console.log('groups:', groups)
                 if (ampContext && ampContext.updateGroups) {
                     ampContext.updateGroups(groups)
                 }
@@ -93,8 +92,11 @@ export default function useCustomer() {
                 const data = await ocapiFetch('customers/' + api.auth._storage.get('cid'), 'GET', [
                     {headers: {Authorization: api.auth._storage.get('token')}}
                 ])
-                console.log('ocapi_customer_data', data)
-                return data.c_customerGroups
+                if ( data.c_customerGroups ) {
+                    return data.c_customerGroups
+                } else {
+                    return []
+                }
             },
 
             /**
