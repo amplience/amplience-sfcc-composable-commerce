@@ -25,7 +25,8 @@ export class OcapiApi {
     baseUrl: string
     oathUrl: string
     dataUrl: string
-    //fetch: Function
+    shopUrl: string
+    clientID: string
     headers: Headers
     urlencoded: URLSearchParams
     requestOptions: requestOptions
@@ -38,41 +39,15 @@ export class OcapiApi {
 
         this.dataUrl =
             this.baseUrl + '/s/Sites-Site/dw/data/v21_3/sites/' + config.parameters.siteId + '/'
-        //this.fetch = createOcapiFetch(config)
-    }
 
-    async oauthToken() {
-        this.headers = new Headers()
-        this.headers.append('Content-Type', 'application/x-www-form-urlencoded')
-        this.headers.append(
-            'Authorization',
-            'Basic cmJhcnJhZ2FuLXN3ZWV0ZW5AYW1wbGllbmNlLmNvbTpSUTlaYVk5eHo1MUc6c2VjcmV0VGh5bWUyMDIw'
-        )
+        this.shopUrl = this.baseUrl + '/s/' + config.parameters.siteId + '/dw/shop/v21_3/'
 
-        this.urlencoded = new URLSearchParams()
-        this.urlencoded.append(
-            'grant_type',
-            'urn:demandware:params:oauth:grant-type:client-id:dwsid:dwsecuretoken'
-        )
-
-        this.requestOptions = {
-            method: 'POST',
-            headers: this.headers,
-            body: this.urlencoded,
-            redirect: 'follow'
-        }
-
-        const response = await fetch(this.oathUrl, this.requestOptions)
-        const json = await response.json()
-        return json
+        this.clientID = config.parameters.clientId
     }
 
     async getAllGroups() {
-        const auth = await this.oauthToken()
-        console.log('tok response', auth)
-
         this.headers = new Headers()
-        this.headers.append('Authorization', auth.token_type + ' ' + auth.access_token)
+        this.headers.append('x-dw-client-id', this.clientID)
 
         this.requestOptions = {
             method: 'GET',
@@ -80,7 +55,7 @@ export class OcapiApi {
             redirect: 'follow'
         }
 
-        const response = await fetch(this.dataUrl + 'customer_groups', this.requestOptions)
+        const response = await fetch(this.shopUrl + 'folders/(root)?levels=0', this.requestOptions)
         const json = await response.json()
         return json
     }

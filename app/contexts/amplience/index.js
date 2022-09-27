@@ -148,12 +148,13 @@ export const generateVseProps = ({req, res, query}) => {
         }
         return {vse, vseTimestamp}
     }
-    return { vse: undefined, vseTimestamp: undefined }
+    return {vse: undefined, vseTimestamp: undefined}
 }
 
 AmplienceContextProvider.propTypes = {
     vse: PropTypes.string,
     vseTimestamp: PropTypes.number,
+    groups: PropTypes.object,
 
     children: PropTypes.node.isRequired
 }

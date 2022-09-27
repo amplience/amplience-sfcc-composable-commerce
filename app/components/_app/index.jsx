@@ -401,7 +401,7 @@ App.getProps = async ({api, res, req, ampClient}) => {
 
     const ocapiApi = new OcapiApi(app.commerceAPI)
     const groupList = await ocapiApi.getAllGroups()
-    const customerGroups = groupList.data.map(g => g.id)
+    const customerGroups = groupList.data[0].c_customerGroups
 
     // The serverside and clientside both have an Amplience client, both should receive the VSE params.
     const ampProps = generateVseProps({req, res, query: req.query})
