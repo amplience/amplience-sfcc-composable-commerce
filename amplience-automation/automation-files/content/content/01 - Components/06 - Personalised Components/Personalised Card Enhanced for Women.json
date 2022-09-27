@@ -12,7 +12,7 @@
         "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
       },
       "contentType": "https://sfcc.com/components/card-enhanced",
-      "id": "6f328bc9-f668-4390-9628-6b8728656f4c"
+      "id": "bbe17cee-564e-46ee-a3a5-f912c37d2643"
     },
     "maxNumberMatches": 1,
     "variants": [
@@ -27,7 +27,7 @@
             "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference"
           },
           "contentType": "https://sfcc.com/components/card-enhanced",
-          "id": "09951a43-9ea5-48f3-b3ab-77bf37560090"
+          "id": "a77a9289-e125-49f7-8fb7-9ab09cb9bdc3"
         }
       }
     ]
