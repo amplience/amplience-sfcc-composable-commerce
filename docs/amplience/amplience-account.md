@@ -1,5 +1,7 @@
 # Amplience Account pre-requisites
 
+![Amplience Personalisation)](./media/amplience-dynamic-content.png)
+
 ## Recommended account provisioning
 If you are an Amplience Customer / Partner and have access to the Amplience support desk we recommend that you use the [Demo Store Core Provisioning Ticket Item](https://support.amplience.com/support/catalog/items/118) as all of the requirements below are already part of the process.
 
