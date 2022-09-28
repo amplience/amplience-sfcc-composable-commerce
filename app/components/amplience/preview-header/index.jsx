@@ -51,6 +51,7 @@ const PreviewHeader = ({vse, vseTimestamp, customerGroups, ...otherProps}) => {
     const [previewTime, setPreviewTime] = useState(moment(vseTimestamp).format('HH:mm:ss'))
     const [previewTimestamp, setPreviewTimestamp] = useState(vseTimestamp)
     const [previewCustomerGroups, setPreviewCustomerGroups] = useState(groups || [])
+    const [matchVisible, setMatchVisible] = useState(true)
     const navigate = useNavigation()
 
     useEffect(() => {
@@ -68,6 +69,19 @@ const PreviewHeader = ({vse, vseTimestamp, customerGroups, ...otherProps}) => {
             document.cookie = `vse-timestamp=${vseTimestamp};`
         }
     }, [vse, vseTimestamp])
+
+    useEffect(() => {
+        if (document) {
+            const body = document.getElementsByTagName('body')
+
+            if (body && !matchVisible) {
+                body[0].classList.add('matchVisible')
+            } else if (body && matchVisible) {
+                body[0].classList.remove('matchVisible')
+            }
+        }
+
+    }, [matchVisible])
 
     useEffect(() => {
         setPreviewCustomerGroups(groups || [])
@@ -125,7 +139,7 @@ const PreviewHeader = ({vse, vseTimestamp, customerGroups, ...otherProps}) => {
                         Preview/Visualization Settings
                     </DrawerHeader>
                     <DrawerBody>
-                        {vseTimestamp && (
+                        {vseTimestamp ? (
                             <Box {...styles.container} {...otherProps}>
                                 <TableContainer>
                                     <Table>
@@ -183,7 +197,7 @@ const PreviewHeader = ({vse, vseTimestamp, customerGroups, ...otherProps}) => {
                                     </Table>
                                 </TableContainer>
                             </Box>
-                        )}
+                        ): <></>}
 
                         <Box
                             style={{
@@ -207,7 +221,28 @@ const PreviewHeader = ({vse, vseTimestamp, customerGroups, ...otherProps}) => {
                             </p>
                         </Box>
 
-                        <Box>
+                        <Box
+                            style={{
+                                padding: 20,
+                                marginBottom: 20,
+                                border: '1px solid #fba9ed'
+                            }}
+                        >
+                            <p>
+                                <b>Customer groups</b>
+                            </p>
+                            <Button
+                                onClick={() => setMatchVisible(!matchVisible)}
+                                margin={'10px 0'}
+                            >
+                                {matchVisible ? intl.formatMessage({
+                                    id: 'amplience.preview.hideMatches',
+                                    defaultMessage: 'Hide matches'
+                                }): intl.formatMessage({
+                                    id: 'amplience.preview.showMatches',
+                                    defaultMessage: 'Show matches'
+                                })}
+                            </Button>
                             <Wrap spacing={4}>
                                 {customerGroups.map((group, index) => {
                                     const groupColor = previewCustomerGroups.includes(group)

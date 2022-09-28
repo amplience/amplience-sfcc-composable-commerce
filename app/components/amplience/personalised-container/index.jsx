@@ -33,7 +33,7 @@ const PersonalisedContainer = ({
         return content.map((contentItem, index) => (
             <>
                 {showInfo && contentItem.match && (
-                    <Box {...indexStyle}>
+                    <Box className={"matchInfo"} {...indexStyle}>
                         {contentItem.match}
                     </Box>
                 )}
