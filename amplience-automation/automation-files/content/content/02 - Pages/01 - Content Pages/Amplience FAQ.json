@@ -1,5 +1,7 @@
 {
-    "id": "01fcc5a1-54bb-407f-ad19-b837dd4d4a09",
+    "id": "eb196555-d971-4d38-af55-6c1d76bebec9",
+    "contentRepositoryId": "6321ee3f4cedfd0001b5a5e8",
+    "folderId": "632928f4c9e77c0001580da4",
     "body": {
         "_meta": {
             "name": "Amplience FAQ",
@@ -45,10 +47,25 @@
         "content": [
             {
                 "_meta": {
+                    "name": "Content Page Section",
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                },
+                "id": "46798dd3-8eec-4985-9c7d-5bb2c36ef1a4",
+                "contentType": "https://sfcc.com/components/section"
+            },
+            {
+                "_meta": {
                     "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
                 },
                 "contentType": "https://sfcc.com/components/hero",
-                "id": "f02a8387-fa6e-4875-b263-724db2d41334"
+                "id": "af9803be-e9b7-456c-89e3-267a90e726cc"
+            },
+            {
+                "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                },
+                "contentType": "https://sfcc.com/components/section",
+                "id": "c18343f7-61c4-4d4f-9ea4-be9286f6f6ab"
             },
             {
                 "_meta": {
@@ -56,25 +73,18 @@
                 },
                 "contentType": "https://sfcc.com/components/curated-product",
                 "id": "bf8b5951-a9e5-4e56-a70c-a4d0e369a221"
-            },
-            {
-                "_meta": {
-                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
-                },
-                "contentType": "https://sfcc.com/components/section",
-                "id": "164c1306-4c74-49cf-90b8-011872158370"
             }
         ]
     },
     "version": 1,
     "label": "Amplience FAQ",
     "status": "ACTIVE",
-    "createdBy": "5ae42671-d773-424f-84d8-b1b3d5225fe6",
+    "createdBy": "abcbd95f-d499-46e1-8adf-5fe93dd277b5",
     "locale": "en-US",
-    "createdDate": "2022-08-08T20:52:08.887Z",
-    "lastModifiedBy": "5ae42671-d773-424f-84d8-b1b3d5225fe6",
-    "lastModifiedDate": "2022-08-11T14:34:01.797Z",
+    "createdDate": "2022-09-20T02:44:27.234Z",
+    "lastModifiedBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+    "lastModifiedDate": "2022-09-26T11:22:42.000Z",
     "lastPublishedVersion": 1,
-    "lastPublishedDate": "2022-08-11T14:34:12.316Z",
-    "deliveryId": "01fcc5a1-54bb-407f-ad19-b837dd4d4a09"
+    "lastPublishedDate": "2022-09-26T11:22:52.116Z",
+    "deliveryId": "eb196555-d971-4d38-af55-6c1d76bebec9"
 }
