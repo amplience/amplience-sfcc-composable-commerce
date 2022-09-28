@@ -6,7 +6,7 @@
 
 The Amplience PWA Kit is a storefront technology for headless commerce using [Amplience APIs](https://amplience.com/docs/integration/reference.html), Salesforce Commerce APIs and React. It provides front-end developers with a more flexible and agile approach to build and maintain modern eCommerce experiences with the use of [Amplience](https://amplience.com/).
 
-![Amplience pwa-kit banner)](./amplience-automation/media/hero.png)
+![Amplience PWA Kit Banner)](./amplience-automation/media/hero.png)
 
 ___
 
