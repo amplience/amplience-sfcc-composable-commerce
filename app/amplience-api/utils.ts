@@ -2,6 +2,11 @@ import {getAppOrigin} from 'pwa-kit-react-sdk/utils/url'
 import {HTTPError} from 'pwa-kit-react-sdk/ssr/universal/errors'
 import fetch from 'cross-fetch'
 
+/**
+ * Convert a snake case string to camel case.
+ * @param str The snake case string.
+ * @returns The string converted to camel case.
+ */
 const toCamel = (str) => {
     if (str.startsWith('_') || str.startsWith('c_')) {
         return str
@@ -14,10 +19,20 @@ const toCamel = (str) => {
     })
 }
 
+/**
+ * Check if the given argument is an object.
+ * @param obj The potential object.
+ * @returns True if an object, false otherwise.
+ */
 const isObject = (obj) => {
     return obj === Object(obj) && !Array.isArray(obj) && typeof obj !== 'function'
 }
 
+/**
+ * Converts an object with snake case keys to one with camel case keys.
+ * @param obj The object to convert.
+ * @returns A converted deep copy of the object.
+ */
 export const keysToCamel = (obj) => {
     if (isObject(obj)) {
         const n = {}
@@ -56,7 +71,7 @@ export const convertOcapiFaultToCapiError = (error) => {
 /**
  * This function is used to interact with the OCAPI API.
  * @param commerceAPIConfig Commerce API Configuration.
- */ 
+ */
 export const createOcapiFetch = (commerceAPIConfig) => async (
     endpoint,
     method,
