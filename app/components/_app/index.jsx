@@ -84,7 +84,10 @@ const App = (props) => {
     const [headerNav, setHeaderNav] = useState(props.headerNav)
     const [footerNav, setFooterNav] = useState(props.footerNav)
     const {isOpen, onOpen, onClose} = useDisclosure()
+    const [showVse, setShowVse] = useState(ampProps.showVse)
 
+
+    console.log(showVse)
     // Used to conditionally render header/footer for checkout page
     const isCheckout = /\/checkout$/.test(location?.pathname)
 
@@ -144,6 +147,9 @@ const App = (props) => {
         // Lets automatically close the mobile navigation when the
         // location path is changed.
         onClose()
+        
+        const showPreview = (location.search && (location.search.includes('vse=') || location.search.includes('pagevse='))) || location.pathname.includes('visualization')
+        setShowVse(showPreview)
     }, [location])
 
     if (typeof window !== 'undefined') {
@@ -191,7 +197,6 @@ const App = (props) => {
 
     const headerStyles = {...styles.headerWrapper}
 
-    const showVse = ampProps.showVse
 
     if (showVse) {
         Object.assign(headerStyles, styles.headerAmpPreview)
@@ -219,8 +224,8 @@ const App = (props) => {
             >
                 <CategoriesProvider categories={allCategories}>
                     <CurrencyProvider currency={currency}>
-                        <AmplienceContextProvider {...ampProps}>
-                            {showVse && <PreviewHeader {...ampProps} />}
+                        <AmplienceContextProvider {...ampProps} showVse={showVse}>
+                            {showVse && <PreviewHeader {...ampProps} showVse={showVse} />}
                             <RealtimeVisualization.Provider value={{ampVizSdk, status}}>
                                 <Seo>
                                     <meta name="theme-color" content={THEME_COLOR} />
@@ -402,8 +407,8 @@ App.getProps = async ({api, res, req, ampClient}) => {
     const ocapiApi = new OcapiApi(app.commerceAPI)
     const groupList = await ocapiApi.getAllGroups()
     const customerGroups = groupList?.data[0].c_customerGroups || [
-        'Unregistered', 
-        'Registered', 
+        'Unregistered',
+        'Registered',
         'Everyone'
     ]
 
