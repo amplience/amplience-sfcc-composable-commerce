@@ -200,44 +200,7 @@ const Home = ({productSearchResult, isLoading, homeSlotTop}) => {
                 </SimpleGrid>
             </Container>
 
-            <Section
-                padding={4}
-                paddingTop={32}
-                title={intl.formatMessage({
-                    defaultMessage: "We're here to help",
-                    id: 'home.heading.here_to_help'
-                })}
-                subtitle={
-                    <>
-                        <>
-                            {intl.formatMessage({
-                                defaultMessage: 'Contact our support staff.',
-                                id: 'home.description.here_to_help'
-                            })}
-                        </>
-                        <br />
-                        <>
-                            {intl.formatMessage({
-                                defaultMessage: 'They will get you to the right place.',
-                                id: 'home.description.here_to_help_line_2'
-                            })}
-                        </>
-                    </>
-                }
-                actions={
-                    <Button
-                        as={Link}
-                        href="https://help.salesforce.com/s/?language=en_US"
-                        target="_blank"
-                        width={'auto'}
-                        paddingX={7}
-                        _hover={{textDecoration: 'none'}}
-                    >
-                        <FormattedMessage defaultMessage="Contact Us" id="home.link.contact_us" />
-                    </Button>
-                }
-                maxWidth={'xl'}
-            />
+            <AmplienceWrapper fetch={{key: 'section/we-are-here'}}></AmplienceWrapper>
         </Box>
     )
 }

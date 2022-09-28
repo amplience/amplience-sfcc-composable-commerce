@@ -1,0 +1,107 @@
+{
+    "id": "f5ede58e-28ac-40f3-804b-a5c22662eae3",
+    "body": {
+        "title": {
+            "values": [
+                {
+                    "locale": "en-US",
+                    "value": "We're here to help"
+                },
+                {
+                    "locale": "fr-FR",
+                    "value": "Nous sommes là pour vous aider"
+                },
+                {
+                    "locale": "de-DE",
+                    "value": "Wir sind hier um zu helfen"
+                },
+                {
+                    "locale": "es-ES",
+                    "value": "Nosotros estamos aqui para ayudar"
+                },
+                {
+                    "locale": "it-IT",
+                    "value": "Siamo qui per aiutare"
+                }
+            ],
+            "_meta": {
+                "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+            }
+        },
+        "subtitle": {
+            "values": [
+                {
+                    "locale": "en-US",
+                    "value": "Contact our support staff. They will get you to the right place."
+                },
+                {
+                    "locale": "fr-FR",
+                    "value": "Contactez notre équipe d'assistance. Ils vous amèneront au bon endroit."
+                },
+                {
+                    "locale": "de-DE",
+                    "value": "Wenden Sie sich an unsere Support-Mitarbeiter. Sie bringen Sie an die richtige Stelle."
+                },
+                {
+                    "locale": "es-ES",
+                    "value": "Póngase en contacto con nuestro personal de soporte. Ellos te llevarán al lugar correcto."
+                },
+                {
+                    "locale": "it-IT",
+                    "value": "Contatta il nostro personale di supporto. Ti porteranno nel posto giusto."
+                }
+            ],
+            "_meta": {
+                "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+            }
+        },
+        "actions": [
+            {
+                "label": {
+                    "values": [
+                        {
+                            "locale": "en-US",
+                            "value": "Contact Us"
+                        },
+                        {
+                            "locale": "fr-FR",
+                            "value": "Nous contacter"
+                        },
+                        {
+                            "locale": "de-DE",
+                            "value": "Kontaktiere uns"
+                        },
+                        {
+                            "locale": "es-ES",
+                            "value": "Contacta con nosotros"
+                        },
+                        {
+                            "locale": "it-IT",
+                            "value": "Contattaci"
+                        }
+                    ],
+                    "_meta": {
+                        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+                    }
+                },
+                "url": "https://amplience.com/contact"
+            }
+        ],
+        "_meta": {
+            "deliveryKey": "section/we-are-here",
+            "name": "We're here to help",
+            "schema": "https://sfcc.com/components/section"
+        }
+    },
+    "version": 1,
+    "label": "We are here",
+    "status": "ACTIVE",
+    "createdBy": "80d6035b-48f7-49d0-b4f4-feed71fe7bf8",
+    "locale": "en-US",
+    "createdDate": "2022-08-04T09:18:17.824Z",
+    "lastModifiedBy": "80d6035b-48f7-49d0-b4f4-feed71fe7bf8",
+    "lastModifiedDate": "2022-08-04T10:37:45.882Z",
+    "lastPublishedVersion": 1,
+    "lastPublishedDate": "2022-08-04T10:38:45.544Z",
+    "deliveryId": "f5ede58e-28ac-40f3-804b-a5c22662eae3"
+}
