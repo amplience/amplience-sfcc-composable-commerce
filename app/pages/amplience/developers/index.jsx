@@ -39,6 +39,10 @@ const Developers = ({isLoading, homeSlotTop}) => {
                 keywords="Commerce Cloud, Retail React App, React Storefront"
             />
 
+            <Heading
+                as="h1" 
+                fontSize={{base: '4xl', md: '5xl', lg: '6xl'}}>Developers Information</Heading>
+
             <AmplienceWrapper fetch={{key: 'section-developers'}}></AmplienceWrapper>
 
             <Section
