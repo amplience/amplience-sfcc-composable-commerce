@@ -117,7 +117,6 @@ ContentPage.getProps = async ({req, res, params, location, api, ampClient}) => {
         client = new AmplienceAPI()
         client.setVse(pageVse)
     } else {
-        console.log(ampClient.groups)
         client = ampClient
     }
 
