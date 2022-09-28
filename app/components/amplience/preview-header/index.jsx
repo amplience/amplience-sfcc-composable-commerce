@@ -242,7 +242,12 @@ const PreviewHeader = ({ vse, vseTimestamp, customerGroups, ...otherProps }) => 
                                     return (
                                         <WrapItem key={index}>
                                             <Button
-                                                style={{ fontSize: 11, height: 28 }}
+                                                size='xs'
+                                                height={`${group.length > 30 ? "60px" : "30px"}`}
+                                                style={{
+                                                    whiteSpace: "normal",
+                                                    wordWrap: "break-word"
+                                                }}
                                                 value={group}
                                                 colorScheme={groupColor}
                                                 onClick={clickCustomerGroup}
