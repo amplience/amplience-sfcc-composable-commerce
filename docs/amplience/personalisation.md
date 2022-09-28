@@ -19,7 +19,11 @@ Amplience acts as the place where teams curate and manage personalised experienc
 ### Composable Storefront (FE):
 The front end is where the the API's are called from Amplience and Salesforce in order to display the right content variations to the customer.
 
-![Amplience Preview Toolbar](./media/amplience-preview-toolbar.png)
+![Amplience Personalisation Default](./media/personalisation-default.png)
+
+![Amplience Personalisation Toolbar](./media/personalisation-toolbar.png)
+
+![Amplience Personalisation Toolbar](./media/personalisation-rules.png)
 
 A Preview Toolbar allows you to select Customer Group combinations to test your personalisation rules.
 
