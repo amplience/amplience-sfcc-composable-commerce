@@ -5,7 +5,7 @@
             "name": "Amplience",
             "schema": "https://sfcc.com/site/navigation/external",
             "hierarchy": {
-                "parentId": "388e47b3-0c2f-495c-8e2a-2bf94a59ee84",
+                "parentId": "9f936991-381e-4695-895e-be814de1ce9c",
                 "root": false
             }
         },
@@ -26,7 +26,7 @@
                     "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
                 }
             },
-            "priority": 2
+            "priority": 0
         },
         "externalUrl": {
             "values": [
@@ -50,7 +50,7 @@
     "lastPublishedVersion": 1,
     "lastPublishedDate": "2022-08-24T16:19:53.872Z",
     "hierarchy": {
-        "parentId": "388e47b3-0c2f-495c-8e2a-2bf94a59ee84",
+        "parentId": "9f936991-381e-4695-895e-be814de1ce9c",
         "root": false
     },
     "deliveryId": "bf55e749-7b01-4155-b4a3-600dcd28db1d"

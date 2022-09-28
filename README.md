@@ -30,7 +30,7 @@ If you are using a v2.1.0, either upgrade using this code base or use a previous
 * [Preview](docs/amplience/preview.md)
 * [Amplience Account](docs/amplience/amplience-account.md)
 * [Automation](docs/amplience/automation.md)
-* [Personalisation](docs/amplience/personalisation.md)  
+* [Personalisation (Customer Groups)](docs/amplience/personalisation.md)  
 
 ## Known Limitations
 
@@ -40,7 +40,7 @@ By default we point to the same SFCC instance as the vanilla Retail React app. I
 ### Customer Groups API
 There is currently no 'out of the box' API available that enabled you to see which customer groups a user is associated to for personalisation. When pointing to your own sandbox and wanting to showcase personalisation, please follow the steps to install a cartridge which enables a hook to get the required information via the API.
 
-> TODO: UPDATE WITH URL TO GITHUB AND INSTALLATION PARAMS
+Please ensure that your SFCC sandbox has the [Amplience Hooks Bridge Cartridge](https://github.com/amplience/amplience-sfcc-hooksbridge) is installed with the correct OCAPI permissions as per the documentation.
 
 > Note: When the Salesforce [Shopper Context API](https://developer.salesforce.com/docs/commerce/commerce-api/references/shopper-context) is out of BETA, the code examples may change to make use of this API.
 
