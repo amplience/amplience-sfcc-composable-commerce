@@ -2,7 +2,7 @@
   "id": "bbe17cee-564e-46ee-a3a5-f912c37d2643",
   "body": {
     "_meta": {
-      "name": "New Season",
+      "name": "New Season [Default]",
       "schema": "https://sfcc.com/components/card-enhanced"
     },
     "image": {
@@ -124,7 +124,7 @@
     "color": "rgb(0, 0, 0)"
   },
   "version": 1,
-  "label": "New Season",
+  "label": "New Season [Default]",
   "status": "ACTIVE",
   "createdBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
   "createdDate": "2022-09-12T15:00:02.316Z",
