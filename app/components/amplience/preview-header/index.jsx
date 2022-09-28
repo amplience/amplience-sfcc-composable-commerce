@@ -137,7 +137,7 @@ const PreviewHeader = ({ vse, vseTimestamp, customerGroups, ...otherProps }) => 
                     <DrawerHeader borderBottomWidth="1px">
                         Preview Settings
                     </DrawerHeader>
-                    <DrawerBody>
+                    <DrawerBody padding={3}>
                         {vseTimestamp ? (
                             <Box {...styles.container} {...otherProps}>
                                 <p style={{fontWeight: 700, color: 'red'}}>
