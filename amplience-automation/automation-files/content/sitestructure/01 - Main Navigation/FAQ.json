@@ -5,7 +5,7 @@
             "name": "FAQ",
             "schema": "https://sfcc.com/site/navigation/content-page",
             "hierarchy": {
-                "parentId": "388e47b3-0c2f-495c-8e2a-2bf94a59ee84",
+                "parentId": "dbc534ae-6336-49dc-8da0-d6f9a1dfd920",
                 "root": false
             }
         },
@@ -46,7 +46,7 @@
     "lastPublishedVersion": 1,
     "lastPublishedDate": "2022-08-24T21:22:22.440Z",
     "hierarchy": {
-        "parentId": "388e47b3-0c2f-495c-8e2a-2bf94a59ee84",
+        "parentId": "dbc534ae-6336-49dc-8da0-d6f9a1dfd920",
         "root": false
     },
     "deliveryId": "0f100fa6-a78e-4c3d-a69c-f092618e4571"
