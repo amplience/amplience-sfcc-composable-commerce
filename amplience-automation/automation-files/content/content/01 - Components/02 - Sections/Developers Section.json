@@ -1,0 +1,93 @@
+{
+    "id": "1e80657b-a70f-4f6f-b1d2-5996d1507858",
+    "body": {
+        "title": {
+            "values": [
+                {
+                    "locale": "en-US",
+                    "value": "Developers Information"
+                },
+                {
+                    "locale": "fr-FR",
+                    "value": "Informations pour les développeurs"
+                },
+                {
+                    "locale": "de-DE",
+                    "value": "Informationen für Entwickler"
+                },
+                {
+                    "locale": "es-ES",
+                    "value": "Información para desarrolladores"
+                },
+                {
+                    "locale": "it-IT",
+                    "value": "Informazioni per gli sviluppatori"
+                }
+            ],
+            "_meta": {
+                "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+            }
+        },
+        "subtitle": {
+            "values": [
+                {
+                    "locale": "en-US",
+                    "value": "This page showcases the various methods to fetch content from Amplience"
+                },
+                {
+                    "locale": "fr-FR",
+                    "value": "Cette page présente les différentes méthodes pour récupérer le contenu d'Amplience"
+                },
+                {
+                    "locale": "de-DE",
+                    "value": "Diese Seite zeigt die verschiedenen Methoden zum Abrufen von Inhalten von Amplience"
+                },
+                {
+                    "locale": "es-ES",
+                    "value": "Esta página muestra los diversos métodos para obtener contenido de Amplience"
+                },
+                {
+                    "locale": "it-IT",
+                    "value": "Questa pagina mostra i vari metodi per recuperare i contenuti da Amplience"
+                }
+            ],
+            "_meta": {
+                "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+            }
+        },
+        "actions": [
+            {
+                "label": {
+                    "values": [
+                        {
+                            "locale": "en-US",
+                            "value": "Content Delivery 2"
+                        }
+                    ],
+                    "_meta": {
+                        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+                    }
+                },
+                "url": "https://amplience.com/docs/development/contentdelivery/readme.html"
+            }
+        ],
+        "maxWidth": "3xl",
+        "background": "gray.50",
+        "_meta": {
+            "name": "Developers Section",
+            "deliveryKey": "section-developers",
+            "schema": "https://sfcc.com/components/section"
+        }
+    },
+    "version": 1,
+    "label": "Developers Section",
+    "status": "ACTIVE",
+    "createdBy": "80d6035b-48f7-49d0-b4f4-feed71fe7bf8",
+    "locale": "en-US",
+    "createdDate": "2022-08-04T09:18:17.824Z",
+    "lastModifiedBy": "80d6035b-48f7-49d0-b4f4-feed71fe7bf8",
+    "lastModifiedDate": "2022-08-04T10:37:45.882Z",
+    "lastPublishedVersion": 1,
+    "lastPublishedDate": "2022-08-04T10:38:45.544Z",
+    "deliveryId": "1e80657b-a70f-4f6f-b1d2-5996d1507858"
+}
