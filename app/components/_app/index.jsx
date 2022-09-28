@@ -86,8 +86,6 @@ const App = (props) => {
     const {isOpen, onOpen, onClose} = useDisclosure()
     const [showVse, setShowVse] = useState(ampProps.showVse)
 
-
-    console.log(showVse)
     // Used to conditionally render header/footer for checkout page
     const isCheckout = /\/checkout$/.test(location?.pathname)
 

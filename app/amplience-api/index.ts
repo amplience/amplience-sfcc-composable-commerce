@@ -29,7 +29,7 @@ export type PersonalisedContent = {
     _meta: ContentMeta;
     defaultContent: any[] | any;
     maxNumberMatches: number;
-    variants: Variant[];
+    variants?: Variant[];
 }
 
 /**
@@ -284,7 +284,7 @@ export class AmplienceAPI {
      */
     async getVariantsContent(props: PersonalisedContent, params) {
         const {
-            variants,
+            variants = [],
             maxNumberMatches = 1,
             defaultContent,
             _meta: {name}
