@@ -38,7 +38,7 @@
                     "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
                 }
             },
-            "priority": 2
+            "priority": 1
         }
     },
     "version": 1,
