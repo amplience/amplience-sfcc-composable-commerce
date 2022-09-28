@@ -17,6 +17,22 @@
                     {
                         "locale": "en-US",
                         "value": "Our Jewelry"
+                    },
+                    {
+                        "locale": "fr-FR",
+                        "value": "Nos bijoux"
+                    },
+                    {
+                        "locale": "de-DE",
+                        "value": "Unser Schmuck"
+                    },
+                    {
+                        "locale": "es-ES",
+                        "value": "Nuestras Joyas"
+                    },
+                    {
+                        "locale": "it-IT",
+                        "value": "I nostri gioielli"
                     }
                 ],
                 "_meta": {

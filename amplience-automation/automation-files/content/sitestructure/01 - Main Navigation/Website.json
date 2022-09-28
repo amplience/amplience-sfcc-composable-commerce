@@ -20,6 +20,18 @@
                     {
                         "locale": "fr-FR",
                         "value": "Site Internet"
+                    },
+                    {
+                        "locale": "de-DE",
+                        "value": "Webseite"
+                    },
+                    {
+                        "locale": "es-ES",
+                        "value": "Sitio de Internet"
+                    },
+                    {
+                        "locale": "it-IT",
+                        "value": "Sito web"
                     }
                 ],
                 "_meta": {

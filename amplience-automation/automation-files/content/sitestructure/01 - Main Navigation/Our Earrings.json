@@ -17,7 +17,23 @@
                     {
                         "locale": "en-US",
                         "value": "Our Earrings"
-                    }
+                      },
+                      {
+                        "locale": "fr-FR",
+                        "value": "Nos boucles d'oreilles"
+                      },
+                      {
+                        "locale": "de-DE",
+                        "value": "Unsere Ohrringe"
+                      },
+                      {
+                        "locale": "es-ES",
+                        "value": "Nuestras Pendientes"
+                      },
+                      {
+                        "locale": "it-IT",
+                        "value": "I nostri orecchini"
+                      }
                 ],
                 "_meta": {
                     "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"

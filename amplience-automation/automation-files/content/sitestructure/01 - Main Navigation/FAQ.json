@@ -20,6 +20,18 @@
                     {
                         "locale": "fr-FR",
                         "value": "Foire aux questions"
+                    },
+                    {
+                        "locale": "de-DE",
+                        "value": "Häufig gestellte Fragen"
+                    },
+                    {
+                        "locale": "es-ES",
+                        "value": "Preguntas frecuentes"
+                    },
+                    {
+                        "locale": "it-IT",
+                        "value": "Domande frequenti"
                     }
                 ],
                 "_meta": {

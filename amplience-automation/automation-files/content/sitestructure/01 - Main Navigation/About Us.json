@@ -20,6 +20,18 @@
                     {
                         "locale": "fr-FR",
                         "value": "À propos"
+                    },
+                    {
+                        "locale": "de-DE",
+                        "value": "Über uns"
+                    },
+                    {
+                        "locale": "es-ES",
+                        "value": "Sobre nosotros"
+                    },
+                    {
+                        "locale": "it-IT",
+                        "value": "Chi siamo"
                     }
                 ],
                 "_meta": {
