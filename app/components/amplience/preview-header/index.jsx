@@ -132,11 +132,11 @@ const PreviewHeader = ({vse, vseTimestamp, customerGroups, ...otherProps}) => {
                 onClick={onToggle}
             />
 
-            <Drawer placement={'top'} onClose={onClose} isOpen={isOpen}>
+            <Drawer placement={'left'} onClose={onClose} isOpen={isOpen}>
                 <DrawerOverlay />
                 <DrawerContent>
                     <DrawerHeader borderBottomWidth="1px">
-                        Preview/Visualization Settings
+                        Preview Settings
                     </DrawerHeader>
                     <DrawerBody>
                         {vseTimestamp ? (
@@ -229,7 +229,7 @@ const PreviewHeader = ({vse, vseTimestamp, customerGroups, ...otherProps}) => {
                             }}
                         >
                             <p>
-                                <b>Customer groups</b>
+                                <b>Personalisation</b>
                             </p>
                             <Button
                                 onClick={() => setMatchVisible(!matchVisible)}
@@ -243,14 +243,18 @@ const PreviewHeader = ({vse, vseTimestamp, customerGroups, ...otherProps}) => {
                                     defaultMessage: 'Show matches'
                                 })}
                             </Button>
-                            <Wrap spacing={4}>
-                                {customerGroups.map((group, index) => {
+                            <p>
+                                <b>Customer groups</b>
+                            </p>
+                            <Wrap spacing={2} paddingTop={4}>
+                                {customerGroups.sort().map((group, index) => {
                                     const groupColor = previewCustomerGroups.includes(group)
                                         ? 'blue'
                                         : 'gray'
                                     return (
                                         <WrapItem key={index}>
                                             <Button
+                                            style={{fontSize: 11, height: 28}}
                                                 value={group}
                                                 colorScheme={groupColor}
                                                 onClick={clickCustomerGroup}
