@@ -26,12 +26,10 @@ const AmpRtv = () => {
     const {contentId, vse} = useParams()
     const [formContent, setFormContent] = useState(undefined)
     const {groups} = useContext(AmplienceContext)
-    const [rtvActive, setRtvActive] = useState(false)
 
     useAmpRtv(
         (model) => {
             setFormContent(model.content)
-            setRtvActive(true)
         },
         undefined,
         [groups]
@@ -50,7 +48,7 @@ const AmpRtv = () => {
                     keywords="Commerce Cloud, Retail React App, React Storefront"
                 />
 
-                <AmplienceWrapper content={formContent} fetch={fetch} type="SLOT" rtvActive={rtvActive} />
+                <AmplienceWrapper content={formContent} fetch={fetch} type="SLOT" rtvActive={true} />
             </AmplienceContextProvider>
         </Box>
     )
