@@ -30,7 +30,7 @@ If you are using a v2.1.0, either upgrade using this code base or use a previous
 * [Preview](docs/amplience/preview.md)
 * [Amplience Account](docs/amplience/amplience-account.md)
 * [Automation](docs/amplience/automation.md)
-* [Personalisation](docs/amplience/personalisation.md)  
+* [Personalisation (Customer Groups)](docs/amplience/personalisation.md)  
 
 ## Known Limitations
 
