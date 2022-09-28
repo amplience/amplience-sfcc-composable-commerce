@@ -246,7 +246,7 @@ export class AmplienceAPI {
     }
 
     /**
-     * Enrich filtered content items with their delivery keys.
+     * Enrich content item references with their delivery keys.
      * @param targets Matching content items.
      * @param locale The locale to fetch with.
      */
@@ -391,7 +391,7 @@ export class AmplienceAPI {
     }
 
     /**
-     * Enrich filtered content items with their delivery keys.
+     * Enrich content item references with their delivery keys.
      * @param item Item to search for missing delivery keys.
      * @param locale Locale to fetch with.
      */
