@@ -44,12 +44,12 @@
     "justifyContent": "Left",
     "alignItems": "End",
     "_meta": {
-      "name": "Discover our luxury collection [Everyone]",
+      "name": "Discover our luxury collection",
       "schema": "https://sfcc.com/components/hero"
     }
   },
   "version": 1,
-  "label": "Discover our luxury collection",
+  "label": "Discover our luxury collection [Everyone]",
   "status": "ACTIVE",
   "createdBy": "b5b7704b-34ca-4424-a7dc-f6880734c30e",
   "createdDate": "2022-09-12T11:19:15.690Z",

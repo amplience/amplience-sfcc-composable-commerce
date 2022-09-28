@@ -2,7 +2,7 @@
   "id": "af9803be-e9b7-456c-89e3-267a90e726cc",
   "body": {
     "_meta": {
-      "name": "Womens Fashion [Default]",
+      "name": "Womens Fashion",
       "schema": "https://sfcc.com/components/hero"
     },
     "title": {
@@ -82,7 +82,7 @@
     "alignItems": "Start"
   },
   "version": 1,
-  "label": "Womens Fashion",
+  "label": "Womens Fashion [Default]",
   "status": "ACTIVE",
   "createdBy": "b5b7704b-34ca-4424-a7dc-f6880734c30e",
   "createdDate": "2022-09-12T11:19:56.244Z",
