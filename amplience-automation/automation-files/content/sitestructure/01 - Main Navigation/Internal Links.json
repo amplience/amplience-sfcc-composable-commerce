@@ -1,8 +1,8 @@
 {
-    "id": "9f936991-381e-4695-895e-be814de1ce9c",
+    "id": "442a88ab-629b-4c4f-a88e-8586e48ae93e",
     "body": {
         "_meta": {
-            "name": "External Links",
+            "name": "Internal Links",
             "schema": "https://sfcc.com/site/navigation/group",
             "hierarchy": {
                 "parentId": "388e47b3-0c2f-495c-8e2a-2bf94a59ee84",
@@ -15,34 +15,34 @@
                 "values": [
                     {
                         "locale": "en-US",
-                        "value": "External Links"
+                        "value": "Internal Links"
                     },
                     {
                         "locale": "fr-FR",
-                        "value": "Liens externes"
+                        "value": "Liens internes"
                     },
                     {
                         "locale": "de-DE",
-                        "value": "Externe Links"
+                        "value": "Interne Links"
                     },
                     {
                         "locale": "es-ES",
-                        "value": "Enlaces externos"
+                        "value": "Vínculos internos"
                     },
                     {
                         "locale": "it-IT",
-                        "value": "Link esterno"
+                        "value": "Collegamenti interni"
                     }
                 ],
                 "_meta": {
                     "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
                 }
             },
-            "priority": 2
+            "priority": 1
         }
     },
     "version": 1,
-    "label": "External Links",
+    "label": "Internal Links",
     "status": "ACTIVE",
     "createdBy": "faf50c60-6d31-48fe-8af3-c52557850527",
     "createdDate": "2022-09-28T07:56:35.414Z",
@@ -54,5 +54,5 @@
         "parentId": "388e47b3-0c2f-495c-8e2a-2bf94a59ee84",
         "root": false
     },
-    "deliveryId": "9f936991-381e-4695-895e-be814de1ce9c"
+    "deliveryId": "442a88ab-629b-4c4f-a88e-8586e48ae93e"
 }
