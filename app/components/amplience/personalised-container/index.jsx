@@ -7,9 +7,10 @@ import {useLocation} from 'react-router-dom'
 export const indexStyle = {
     position: 'absolute',
     zIndex: '5',
-    background: 'transparent',
+    background: 'gray.50',
+    padding: '5px',
     margin: '5px',
-    borderRadius: '30px',
+    borderRadius: '5px',
 }
 
 const PersonalisedContainer = ({
