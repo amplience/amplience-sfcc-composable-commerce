@@ -19,7 +19,7 @@ import {
     // Hooks
     useStyleConfig
 } from '@chakra-ui/react'
-import Link from '../../link'
+import Link from '../link'
 // Icons
 import {ChevronDownIcon, ChevronRightIcon} from '../../icons'
 

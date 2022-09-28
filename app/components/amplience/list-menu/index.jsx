@@ -10,7 +10,7 @@ import PropTypes from 'prop-types'
 import {Link as RouteLink} from 'react-router-dom'
 
 // Project Components
-import LinksList from '../../links-list'
+import LinksList from '../links-list'
 
 // Components
 import {
@@ -31,7 +31,7 @@ import {
     useDisclosure,
     Heading
 } from '@chakra-ui/react'
-import Link from '../../link'
+import Link from '../link'
 // Others
 import {getLinkUrl} from '../../../utils/amplience/link'
 import {ChevronDownIcon} from '../../icons'

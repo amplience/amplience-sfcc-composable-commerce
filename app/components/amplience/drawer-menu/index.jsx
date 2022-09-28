@@ -41,7 +41,7 @@ import {
     useBreakpointValue,
     useMultiStyleConfig
 } from '@chakra-ui/react'
-import Link from '../../link'
+import Link from '../link'
 // Icons
 import {BrandLogo, LocationIcon, SignoutIcon, UserIcon} from '../../icons'
 

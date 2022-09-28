@@ -31,7 +31,7 @@ import {
 import useBasket from '../../../commerce-api/hooks/useBasket'
 import useCustomer from '../../../commerce-api/hooks/useCustomer'
 
-import Link from '../../link'
+import Link from '../link'
 import Search from '../../search'
 import withRegistration from '../../../hoc/with-registration'
 import {
