@@ -17,6 +17,27 @@ Amplience acts as the place where teams curate and manage personalised experienc
 ### Composable Storefront (FE):
 The front end is where the the API's are called from Amplience and Salesforce in order to display the right content variations to the customer.
 
+## Authoring - Listing customer groups for selection
+In order to list customer groups for a user to select, we need to get a list of available customer groups from Salesforce via the Open Commerce API.
+
+Endpoint: `/customer_groups`
+
+Documentation: [CustomerGroups resource (Data API)](https://documentation.b2c.commercecloud.salesforce.com/DOC2/index.jsp?topic=%2Fcom.demandware.dochelp%2Fcontent%2Fb2c_commerce%2Ftopics%2Fcustomers%2Fb2c_creating_a_customer_group.html)
+
+![Customer Groups Call)](./media/personalisation_customer-groups-authoring.png)
+
+The eComm Toolkit Extension calls the customer groups enpoint to retrieve the list for user selection.
+
+The selected customer groups are then stored in the content so they they can be used, filtered, referenced for decision making.
+
+```json
+"segment": [
+    "Everyone",
+    "genY",
+    "genZ"
+]
+```
+
 
 ## Personalised Containers
 
@@ -33,3 +54,9 @@ When content is fetched, it is scanned using a generalized "enrich" method that 
 This enrich strategy searches for the appearance of personalised containers, and then either filters existing content or fetches it based on the groups currently assigned to the content client. This content then replaces the `content` property of the container, so that it can be rendered directly. The matching variants are also placed into `variants` with their content embedded, if you wish to see all matching variants separately.
 
 Because this runs on any fetch, it can be used seamlessly for fetches on the server and client side, and the content will be available without triggering any extra reflows. Our implementation of Real-Time Visualization also runs the default enrich methods, so personalised content is updated in real time as you change it in the content form.
+
+### Fetching groups and passing through the application
+
+Active customer groups are primarily stored on cookies, so that the serverside renderer can use them when initially navigating to a page. Cookies from the client are initially read in `_app`, then passed through as props to the `AmplienceContext` and the Amplience content clients from there.
+
+When the user logs in, the groups are fetched, saved into cookies, and the current page is soft reloaded. This is done by triggering a navigation to the current page, and setting a flag to make sure its `shouldGetProps` method returns true to force a refetch of any content obtained in getProps. The groups are changed on the default client and `AmplienceContext` directly so that content can be fetched with the new groups without doing a full reload.

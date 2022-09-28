@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  * For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import {
     Box,
@@ -20,13 +20,12 @@ import {
     Wrap,
     WrapItem
 } from '@chakra-ui/react'
-import {SettingsIcon} from '@chakra-ui/icons'
-import {useIntl} from 'react-intl'
+import { SettingsIcon } from '@chakra-ui/icons'
+import { useIntl } from 'react-intl'
 import moment from 'moment'
 
-import {Table, Tbody, Tr, Td, TableContainer} from '@chakra-ui/react'
-import {useContext} from 'react'
-import {AmplienceContext} from '../../../contexts/amplience'
+import { useContext } from 'react'
+import { AmplienceContext } from '../../../contexts/amplience'
 import useNavigation from '../../../hooks/use-navigation'
 
 const timestampToString = (intl, timestamp) => {
@@ -41,11 +40,11 @@ const timestampToString = (intl, timestamp) => {
     return date.toLocaleString()
 }
 
-const PreviewHeader = ({vse, vseTimestamp, customerGroups, ...otherProps}) => {
+const PreviewHeader = ({ vse, vseTimestamp, customerGroups, ...otherProps }) => {
     const intl = useIntl()
     const styles = useMultiStyleConfig('PreviewHeader')
 
-    const {groups, updateGroups} = useContext(AmplienceContext)
+    const { groups, updateGroups } = useContext(AmplienceContext)
 
     const [previewDate, setPreviewDate] = useState(moment(vseTimestamp).format('YYYY-MM-DD'))
     const [previewTime, setPreviewTime] = useState(moment(vseTimestamp).format('HH:mm:ss'))
@@ -119,7 +118,7 @@ const PreviewHeader = ({vse, vseTimestamp, customerGroups, ...otherProps}) => {
         navigate()
     }
 
-    const {isOpen, onToggle, onClose} = useDisclosure()
+    const { isOpen, onToggle, onClose } = useDisclosure()
 
     return (
         <>
@@ -132,78 +131,67 @@ const PreviewHeader = ({vse, vseTimestamp, customerGroups, ...otherProps}) => {
                 onClick={onToggle}
             />
 
-            <Drawer placement={'top'} onClose={onClose} isOpen={isOpen}>
+            <Drawer placement={'left'} onClose={onClose} isOpen={isOpen}>
                 <DrawerOverlay />
                 <DrawerContent>
                     <DrawerHeader borderBottomWidth="1px">
-                        Preview/Visualization Settings
+                        Preview Settings
                     </DrawerHeader>
                     <DrawerBody>
                         {vseTimestamp ? (
                             <Box {...styles.container} {...otherProps}>
-                                <TableContainer>
-                                    <Table>
-                                        <Tbody>
-                                            <Tr>
-                                                <Td>
-                                                    {intl.formatMessage({
-                                                        id: 'amplience.preview.active',
-                                                        defaultMessage: 'Preview Active'
-                                                    })}{' '}
-                                                </Td>
-                                                <Td>
-                                                    <input
-                                                        id="preview-date"
-                                                        type="date"
-                                                        value={previewDate}
-                                                        onChange={(x) =>
-                                                            setPreviewDate(x.target.value)
-                                                        }
-                                                        min={moment().format(
-                                                            'YYYY-MM-DD'
-                                                        )}
-                                                    />
-                                                </Td>
-                                                <Td>
-                                                    <input
-                                                        id="preview-time"
-                                                        type="time"
-                                                        value={previewTime}
-                                                        onChange={(x) =>
-                                                            setPreviewTime(x.target.value)
-                                                        }
-                                                    />
-                                                </Td>
-                                                <Td>
-                                                    {previewTimestamp !== vseTimestamp && (
-                                                        <Button
-                                                            variant="link"
-                                                            onClick={updateVseTimestamp}
-                                                        >
-                                                            Update
-                                                        </Button>
-                                                    )}
-                                                </Td>
-                                                <Td>
-                                                    <Button variant="link" onClick={clearVse}>
-                                                        {intl.formatMessage({
-                                                            id: 'amplience.preview.cancel',
-                                                            defaultMessage: 'Cancel'
-                                                        })}
-                                                    </Button>
-                                                </Td>
-                                            </Tr>
-                                        </Tbody>
-                                    </Table>
-                                </TableContainer>
+                                <p style={{fontWeight: 700, color: 'red'}}>
+                                    {intl.formatMessage({
+                                        id: 'amplience.preview.active',
+                                        defaultMessage: 'Preview Active'
+                                    })}
+                                </p>
+                                <p>
+                                    Date: <input
+                                        id="preview-date"
+                                        type="date"
+                                        value={previewDate}
+                                        onChange={(x) =>
+                                            setPreviewDate(x.target.value)
+                                        }
+                                        min={moment().format(
+                                            'YYYY-MM-DD'
+                                        )}
+                                    />
+                                </p>
+                                <p>
+                                    Time: <input
+                                        id="preview-time"
+                                        type="time"
+                                        value={previewTime}
+                                        onChange={(x) =>
+                                            setPreviewTime(x.target.value)
+                                        }
+                                    />
+                                </p>
+                                <p>
+                                    {previewTimestamp !== vseTimestamp && (
+                                        <Button
+                                            style={{marginRight: 10}}
+                                            onClick={updateVseTimestamp}
+                                        >
+                                            Update
+                                        </Button>
+                                    )}
+                                    <Button onClick={clearVse}>
+                                        {intl.formatMessage({
+                                            id: 'amplience.preview.cancel',
+                                            defaultMessage: 'Cancel'
+                                        })}
+                                    </Button>
+                                </p>
                             </Box>
-                        ): <></>}
+                        ) : <></>}
 
                         <Box
                             style={{
                                 padding: 20,
                                 marginBottom: 20,
-                                backgroundColor: '#fef4fd',
                                 border: '1px solid #fba9ed'
                             }}
                         >
@@ -229,7 +217,7 @@ const PreviewHeader = ({vse, vseTimestamp, customerGroups, ...otherProps}) => {
                             }}
                         >
                             <p>
-                                <b>Customer groups</b>
+                                <b>Personalisation</b>
                             </p>
                             <Button
                                 onClick={() => setMatchVisible(!matchVisible)}
@@ -238,19 +226,28 @@ const PreviewHeader = ({vse, vseTimestamp, customerGroups, ...otherProps}) => {
                                 {matchVisible ? intl.formatMessage({
                                     id: 'amplience.preview.hideMatches',
                                     defaultMessage: 'Hide matches'
-                                }): intl.formatMessage({
+                                }) : intl.formatMessage({
                                     id: 'amplience.preview.showMatches',
                                     defaultMessage: 'Show matches'
                                 })}
                             </Button>
-                            <Wrap spacing={4}>
-                                {customerGroups.map((group, index) => {
+                            <p>
+                                <b>Customer groups</b>
+                            </p>
+                            <Wrap spacing={2} paddingTop={4}>
+                                {customerGroups.sort().map((group, index) => {
                                     const groupColor = previewCustomerGroups.includes(group)
                                         ? 'blue'
                                         : 'gray'
                                     return (
                                         <WrapItem key={index}>
                                             <Button
+                                                size='xs'
+                                                height={`${group.length > 30 ? "60px" : "30px"}`}
+                                                style={{
+                                                    whiteSpace: "normal",
+                                                    wordWrap: "break-word"
+                                                }}
                                                 value={group}
                                                 colorScheme={groupColor}
                                                 onClick={clickCustomerGroup}
