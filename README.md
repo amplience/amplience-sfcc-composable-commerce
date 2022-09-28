@@ -11,6 +11,9 @@ The Amplience PWA Kit is a storefront technology for headless commerce using [Am
 ___
 
 # Amplience Specifics
+
+![Amplience SFCC Composable](./docs/amplience/media/amplience-sfcc-composable.png)
+
 This is a version of the Retail React app with a starting point for Amplience fundamentals. The documentation below is 'as-is' from Salesforce. For Amplience specifics please see the following.
 
 > Note: This code is built against the code version @latest at the time which was PWAKit v2.2.0 released on August 27th 2022: https://github.com/SalesforceCommerceCloud/pwa-kit/releases/tag/v2.2.0
