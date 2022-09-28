@@ -18,7 +18,7 @@ const RealtimeVisualization = loadable(() => import('./pages/amplience/realtime-
 
 Additional Route:
 
-```json
+``` js
 {
   path: '/visualization/:hubname/:contentId/:vse/:locale',
   component: RealtimeVisualization,
