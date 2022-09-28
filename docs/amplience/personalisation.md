@@ -1,5 +1,7 @@
 # Personalisation
 
+![Amplience Personalisation)](./media/personalisation-rules.png)
+
 Salesforce B2C Commerce has some powerful capabilties for personalisation. Typically this uses **Customer Groups**. Customers can be assigned to one or many static customer groups as well as dynamic customer groups.
 
 In a headless storefront we can use the same concepts but there are architectural differences as Salesforce is no longer responsible for delivering content and experiences onto the page.
