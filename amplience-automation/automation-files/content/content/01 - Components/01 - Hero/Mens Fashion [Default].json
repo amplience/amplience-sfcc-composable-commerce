@@ -2,7 +2,7 @@
   "id": "8a08a479-efc0-4d3b-9cdd-0a7c14b36d16",
   "body": {
     "_meta": {
-      "name": "Mens Fashion",
+      "name": "Mens Fashion [Default]",
       "schema": "https://sfcc.com/components/hero"
     },
     "title": {
@@ -42,7 +42,7 @@
         "endpoint": "sfcccompdev",
         "defaultHost": "cdn.media.amplience.net"
       },
-      "alt": "Mens Fashion"
+      "alt": "Mens Fashion [Default]"
     },
     "actions": [
       {

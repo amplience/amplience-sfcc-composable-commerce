@@ -2,7 +2,7 @@
   "id": "af9803be-e9b7-456c-89e3-267a90e726cc",
   "body": {
     "_meta": {
-      "name": "Womens Fashion",
+      "name": "Womens Fashion [Default]",
       "schema": "https://sfcc.com/components/hero"
     },
     "title": {
@@ -42,7 +42,7 @@
         "endpoint": "sfcccompdev",
         "defaultHost": "cdn.media.amplience.net"
       },
-      "alt": "Womens Fashion"
+      "alt": "Womens Fashion [Default]"
     },
     "actions": [
       {
