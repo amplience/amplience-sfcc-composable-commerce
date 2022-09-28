@@ -11,7 +11,8 @@ In a headless storefront we can use the same concepts but there are architectura
 In a headless storefront, teams are no longer required to work with a rigid structure for personalisation.
 
 ### Salesforce:
-Is the single source of truth for customers and customer groups. It is both the administration interface for defining these and the rules and the API source to list customer groups for selection, authenticate a user and which customer groups they are assigned to.
+TODO - clarify
+Is the single source of truth for customers and customer groups. It is both the administration interface for defining these and the rules, while the API is the source to list customer groups for selection, authenticate a user and which customer groups they are assigned to.
 
 ### Amplience:
 Amplience acts as the place where teams curate and manage personalised experiences. They need attribute variations to customer groups in their content.
@@ -38,7 +39,7 @@ Documentation: [CustomerGroups resource (Data API)](https://documentation.b2c.co
 
 The eComm Toolkit Extension calls the customer groups enpoint to retrieve the list for user selection.
 
-The selected customer groups are then stored in the content so they they can be used, filtered, referenced for decision making.
+The selected customer groups are then stored in the content so thqt they can be used, filtered, referenced for decision making.
 
 ```json
 "segment": [
@@ -54,7 +55,7 @@ The selected customer groups are then stored in the content so they they can be 
 Personalised container types have a few mandatory fields which define what content is selected for a given user.
 
 - Default Content: This is a content link and can be a list of any content. This content is displayed when no matches are made.
-- Max Number of Matches: Defines the maximum number of matched content items that can be displayed. Content items past the limit (in order of variation appearance) will be silently removed.
+- Max Number of Matches: Defines the maximum number of matched content items that can be displayed. Content items past the limit (in order of variation appearance) will be silently removed. TODO: example
 - Content Variations: Each variation can be assigned to one or many customer groups. Each variation also has a list of content. This list can be a reference so content for a variation is only fetched if it matches the current user. Result content is ordered by their variant's order of appearance.
 
 ## Technical Behaviour
@@ -65,8 +66,30 @@ This enrich strategy searches for the appearance of personalised containers, and
 
 Because this runs on any fetch, it can be used seamlessly for fetches on the server and client side, and the content will be available without triggering any extra reflows. Our implementation of Real-Time Visualization also runs the default enrich methods, so personalised content is updated in real time as you change it in the content form.
 
+In addition, because we've structured content variants as references in our schemas, content will not be exposed UNLESS a user is in fact 'allowed' to view it, i.e., they are part of a targeted user segment.  
+
 ### Fetching groups and passing through the application
 
 Active customer groups are primarily stored on cookies, so that the serverside renderer can use them when initially navigating to a page. Cookies from the client are initially read in `_app`, then passed through as props to the `AmplienceContext` and the Amplience content clients from there.
 
 When the user logs in, the groups are fetched, saved into cookies, and the current page is soft reloaded. This is done by triggering a navigation to the current page, and setting a flag to make sure its `shouldGetProps` method returns true to force a refetch of any content obtained in getProps. The groups are changed on the default client and `AmplienceContext` directly so that content can be fetched with the new groups without doing a full reload.
+
+## New Components/Slots
+
+### Personalized Content Container
+
+### Personalized Slot Container
+
+TODO: 
+
+## PowerToolbar Enhancements
+
+In addition to the preview features of the Toolbar, we've also incorporated the ability to preview your site content based on selected user group(s)
+
+![Toolbar Groups](./media/toolbar-groups.png)
+
+By Selecting one or more groups you'll see exactly what type of user matches the group selections:
+
+![Content Groups Feedback](./media/groups-rule-feedback.png)
+
+Each piece of content will indicate the number of matches based on groups
