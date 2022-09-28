@@ -6,7 +6,7 @@
 
 The Amplience PWA Kit is a storefront technology for headless commerce using [Amplience APIs](https://amplience.com/docs/integration/reference.html), Salesforce Commerce APIs and React. It provides front-end developers with a more flexible and agile approach to build and maintain modern eCommerce experiences with the use of [Amplience](https://amplience.com/).
 
-![Amplience pwa-kit banner)](./amplience-automation/media/hero.png)
+![Amplience PWA Kit Banner)](./amplience-automation/media/hero.png)
 
 ___
 
@@ -43,7 +43,7 @@ By default we point to the same SFCC instance as the vanilla Retail React app. I
 ### Customer Groups API
 There is currently no 'out of the box' API available that enabled you to see which customer groups a user is associated to for personalisation. When pointing to your own sandbox and wanting to showcase personalisation, please follow the steps to install a cartridge which enables a hook to get the required information via the API.
 
-Please ensure that your SFCC sandbox has the [Amplience Hooks Bridge Cartridge](https://github.com/amplience/amplience-sfcc-hooksbridge) is installed with the correct OCAPI permissions as per the documentation.
+Please ensure that your SFCC sandbox has the [Amplience Hooks Bridge Cartridge](https://github.com/amplience/amplience-sfcc-hooksbridge) installed with the correct OCAPI permissions as per the documentation.
 
 > Note: When the Salesforce [Shopper Context API](https://developer.salesforce.com/docs/commerce/commerce-api/references/shopper-context) is out of BETA, the code examples may change to make use of this API.
 

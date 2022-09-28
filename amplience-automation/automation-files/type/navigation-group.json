@@ -11,24 +11,9 @@
         ],
         "visualizations": [
             {
-                "label": "Default - Live",
-                "templatedUri": "https://ascc-production.mobify-storefront.com/{{locales}}/visualization/{{hub.name}}/{{content.sys.id}}/{{vse.domain}}?vse={{vse.domain}}",
-                "default": true
-            },
-            {
-                "label": "Header - Live",
-                "templatedUri": "https://ascc-production.mobify-storefront.com/{{locales}}/visualization/{{hub.name}}/{{content.sys.id}}/{{vse.domain}}?navvis=header&navchild={{content.sys.id}}&vse={{vse.domain}}",
-                "default": false
-            },
-            {
-                "label": "Footer - Live",
-                "templatedUri": "https://ascc-production.mobify-storefront.com/{{locales}}/visualization/{{hub.name}}/{{content.sys.id}}/{{vse.domain}}?navvis=footer&navchild={{content.sys.id}}&vse={{vse.domain}}",
-                "default": false
-            },
-            {
                 "label": "Default - Localhost",
                 "templatedUri": "http://localhost:3000/{{locales}}/visualization/{{hub.name}}/{{content.sys.id}}/{{vse.domain}}?vse={{vse.domain}}",
-                "default": false
+                "default": true
             },
             {
                 "label": "Header - Localhost",
@@ -38,6 +23,21 @@
             {
                 "label": "Footer - Localhost",
                 "templatedUri": "http://localhost:3000/{{locales}}/visualization/{{hub.name}}/{{content.sys.id}}/{{vse.domain}}?navvis=footer&navchild={{content.sys.id}}&vse={{vse.domain}}",
+                "default": false
+            },
+            {
+                "label": "Default - Live (Amplience MRT)",
+                "templatedUri": "https://ascc-production.mobify-storefront.com/{{locales}}/visualization/{{hub.name}}/{{content.sys.id}}/{{vse.domain}}?vse={{vse.domain}}",
+                "default": false
+            },
+            {
+                "label": "Header - Live (Amplience MRT)",
+                "templatedUri": "https://ascc-production.mobify-storefront.com/{{locales}}/visualization/{{hub.name}}/{{content.sys.id}}/{{vse.domain}}?navvis=header&navchild={{content.sys.id}}&vse={{vse.domain}}",
+                "default": false
+            },
+            {
+                "label": "Footer - Live (Amplience MRT)",
+                "templatedUri": "https://ascc-production.mobify-storefront.com/{{locales}}/visualization/{{hub.name}}/{{content.sys.id}}/{{vse.domain}}?navvis=footer&navchild={{content.sys.id}}&vse={{vse.domain}}",
                 "default": false
             },
             {

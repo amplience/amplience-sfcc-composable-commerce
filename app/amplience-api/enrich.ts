@@ -93,7 +93,7 @@ export const getEnrichTargets = (
 }
 
 /**
- * Enrich objects in a given content item using te given enrich strategies.
+ * Enrich objects in a given content item using the given enrich strategies.
  * @param item The content item to enrich.
  * @param enrichStrategies Enrich strategies to execute.
  */

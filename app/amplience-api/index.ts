@@ -213,7 +213,9 @@ export class AmplienceAPI {
         }
 
         for (let item of items) {
-            await enrichContent(item, strategies)
+            if (item._meta) {
+                await enrichContent(item, strategies)
+            }
         }
     }
 
@@ -246,7 +248,7 @@ export class AmplienceAPI {
     }
 
     /**
-     * Enrich filtered content items with their delivery keys.
+     * Enrich content item references with their delivery keys.
      * @param targets Matching content items.
      * @param locale The locale to fetch with.
      */
@@ -391,7 +393,7 @@ export class AmplienceAPI {
     }
 
     /**
-     * Enrich filtered content items with their delivery keys.
+     * Enrich content item references with their delivery keys.
      * @param item Item to search for missing delivery keys.
      * @param locale Locale to fetch with.
      */
@@ -416,6 +418,14 @@ export class AmplienceAPI {
         await this.clientReady
 
         const root = (await this.fetchContent([parent], {locale, client: this.hierarchyClient}))[0]
+
+        if (!root._meta) {
+            // Root node is missing. Return the error with an empty children array.
+
+            root.children = []
+
+            return root
+        }
 
         await this.getChildren(root, filter)
 

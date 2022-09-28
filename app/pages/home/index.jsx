@@ -7,8 +7,7 @@
 
 import React from 'react'
 import PropTypes from 'prop-types'
-import {useIntl, FormattedMessage} from 'react-intl'
-import {Heading} from '@chakra-ui/react'
+import {useIntl} from 'react-intl'
 
 // Components
 import {
@@ -25,23 +24,18 @@ import {
 } from '@chakra-ui/react'
 
 // Project Components
-import Hero from '../../components/hero'
 import Seo from '../../components/seo'
 import Section from '../../components/section'
-import ProductScroller from '../../components/product-scroller'
 
 // Amplience Wrapper Component
 import AmplienceWrapper from '../../components/amplience/wrapper'
 
 // Others
-import {getAssetUrl} from 'pwa-kit-react-sdk/ssr/universal/utils'
 import {heroFeatures, features} from './data'
 
 // Constants
 import {
-    MAX_CACHE_AGE,
-    HOME_SHOP_PRODUCTS_CATEGORY_ID,
-    HOME_SHOP_PRODUCTS_LIMIT
+    MAX_CACHE_AGE
 } from '../../constants'
 import { resolveSiteFromUrl } from '../../utils/site-utils'
 import { getTargetLocale } from '../../utils/locale'
@@ -53,7 +47,7 @@ import { personalisationChanged } from '../../amplience-api/utils'
  * The page renders SEO metadata and a few promotion
  * categories and products, data is from local file.
  */
-const Home = ({productSearchResult, isLoading, homeSlotTop}) => {
+const Home = ({isLoading, homeSlotTop}) => {
     const intl = useIntl()
 
     return (
@@ -115,59 +109,7 @@ const Home = ({productSearchResult, isLoading, homeSlotTop}) => {
                 </SimpleGrid>
             </Section>
 
-            {productSearchResult && (
-                <Section
-                    padding={4}
-                    paddingTop={16}
-                    title={intl.formatMessage({
-                        defaultMessage: 'Shop Products',
-                        id: 'home.heading.shop_products'
-                    })}
-                    subtitle={intl.formatMessage(
-                        {
-                            defaultMessage:
-                                'This section contains content from the catalog. {docLink} on how to replace it.',
-                            id: 'home.description.shop_products',
-                            description:
-                                '{docLink} is a html button that links the user to https://sfdc.co/business-manager-manage-catalogs'
-                        },
-                        {
-                            docLink: (
-                                <Link
-                                    target="_blank"
-                                    href={'https://sfdc.co/business-manager-manage-catalogs'}
-                                    textDecoration={'none'}
-                                    position={'relative'}
-                                    _after={{
-                                        position: 'absolute',
-                                        content: `""`,
-                                        height: '2px',
-                                        bottom: '-2px',
-                                        margin: '0 auto',
-                                        left: 0,
-                                        right: 0,
-                                        background: 'gray.700'
-                                    }}
-                                    _hover={{textDecoration: 'none'}}
-                                >
-                                    {intl.formatMessage({
-                                        defaultMessage: 'Read docs',
-                                        id: 'home.link.read_docs'
-                                    })}
-                                </Link>
-                            )
-                        }
-                    )}
-                >
-                    <Stack pt={8} spacing={16}>
-                        <ProductScroller
-                            products={productSearchResult?.hits}
-                            isLoading={isLoading}
-                        />
-                    </Stack>
-                </Section>
-            )}
-
+            <AmplienceWrapper fetch={{key: 'simple-product-list'}}></AmplienceWrapper>
             <AmplienceWrapper fetch={{key: 'section'}}></AmplienceWrapper>
 
             <Container maxW={'6xl'} marginTop={10}>
@@ -200,44 +142,7 @@ const Home = ({productSearchResult, isLoading, homeSlotTop}) => {
                 </SimpleGrid>
             </Container>
 
-            <Section
-                padding={4}
-                paddingTop={32}
-                title={intl.formatMessage({
-                    defaultMessage: "We're here to help",
-                    id: 'home.heading.here_to_help'
-                })}
-                subtitle={
-                    <>
-                        <>
-                            {intl.formatMessage({
-                                defaultMessage: 'Contact our support staff.',
-                                id: 'home.description.here_to_help'
-                            })}
-                        </>
-                        <br />
-                        <>
-                            {intl.formatMessage({
-                                defaultMessage: 'They will get you to the right place.',
-                                id: 'home.description.here_to_help_line_2'
-                            })}
-                        </>
-                    </>
-                }
-                actions={
-                    <Button
-                        as={Link}
-                        href="https://help.salesforce.com/s/?language=en_US"
-                        target="_blank"
-                        width={'auto'}
-                        paddingX={7}
-                        _hover={{textDecoration: 'none'}}
-                    >
-                        <FormattedMessage defaultMessage="Contact Us" id="home.link.contact_us" />
-                    </Button>
-                }
-                maxWidth={'xl'}
-            />
+            <AmplienceWrapper fetch={{key: 'section/we-are-here'}}></AmplienceWrapper>
         </Box>
     )
 }
@@ -264,24 +169,12 @@ Home.getProps = async ({res, location, api, ampClient}) => {
         l10nConfig
     })
 
-    const productSearchResult = await api.shopperSearch.productSearch({
-        parameters: {
-            refine: [`cgid=${HOME_SHOP_PRODUCTS_CATEGORY_ID}`, 'htype=master'],
-            limit: HOME_SHOP_PRODUCTS_LIMIT
-        }
-    })
-
     const homeSlotTop = await (await ampClient.fetchContent([{key: 'home/slot/top'}], {locale: targetLocale})).pop()
 
-    return {productSearchResult, homeSlotTop}
+    return {homeSlotTop}
 }
 
 Home.propTypes = {
-    /**
-     * The search result object showing all the product hits, that belong
-     * in the supplied category.
-     */
-    productSearchResult: PropTypes.object,
     /**
      * Home slot data requested from Amplience.
      */
