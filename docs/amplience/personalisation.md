@@ -45,7 +45,7 @@ In addition to the preview features of the Toolbar, we've also incorporated the 
 
 ![OCAPI Hook Request](./media/folders-hook.png)
 
-In order for this part of the toolbar to work you'll also need to install our [Amplience Hooks Bridge](https://github.com/amplience/amplience-sfcc-hooksbridge) cartridge in your SFCC envrionment. When installed your preview toolbar should have your site's customer groups. Below is an example of what it will look like. 
+In order for this part of the toolbar to work you'll also need to install our [Amplience Hooks Bridge](https://github.com/amplience/amplience-sfcc-hooksbridge) cartridge in your SFCC envrionment. When installed your preview toolbar should include all your site's customer groups. Below is an example of what it will look like. 
 
 ![Amplience Personalisation Toolbar](./media/personalisation-toolbar.png)
 
@@ -66,19 +66,7 @@ Each piece of content will indicate the number of matches based on groups
 
 ## Technical Behaviour
 
-### Guest v. Logged in View
-
-When the site is first loaded, the customer will be a guest as they are not logged. In this case the default content of any personalised content will be visible.
-
-When the customer logs in or creates an account, we make an OCAPI call to `customer/{customer_id}` which we've enhanced with a hook (that hook can be found and included in your setup [here](https://github.com/amplience/amplience-sfcc-hooksbridge))
-
-![Ocapi Call](./media/customers-hook.png)
-
-The hook appends a customer's groups to the response where we then store in in cookies to reference against fetched content.
-
-### Fetch & Filter
-
-When content then is fetched, it is scanned using a generalized "enrich" method that looks for certain patterns, then runs handlers to enrich that data. The combination of pattern and handler is called an "Enrich Strategy", and one is enabled by default for personalised content.
+When content is then fetched, it is scanned using a generalized "enrich" method that looks for certain patterns, then runs handlers to enrich that data. The combination of pattern and handler is called an "Enrich Strategy", and one is enabled by default for personalised content.
 
 This enrich strategy searches for the appearance of personalised containers, and then either filters existing content or fetches it based on the groups currently assigned to the content client. This content then replaces the `content` property of the container, so that it can be rendered directly. The matching variants are also placed into `variants` with their content embedded, if you wish to see all matching variants separately.
 
@@ -91,9 +79,16 @@ In addition, because we've structured content variants as references in our sche
 
 ### Fetching groups and passing through the application
 
+
 Active customer groups are primarily stored on cookies, so that the serverside renderer can use them when initially navigating to a page. Cookies from the client are initially read in `_app`, then passed through as props to the `AmplienceContext` and the Amplience content clients from there.
 
-When the user logs in, the groups are fetched, saved into cookies, and the current page is soft reloaded. This is done by triggering a navigation to the current page, and setting a flag to make sure its `shouldGetProps` method returns true to force a refetch of any content obtained in getProps. The groups are changed on the default client and `AmplienceContext` directly so that content can be fetched with the new groups without doing a full reload.
+When the site is first loaded, the customer will be a guest as they are not logged. In this case the default content of any personalised content will be visible.
+
+When the customer logs in or creates an account, we make an OCAPI call to `customer/{customer_id}` which we've enhanced with a hook (that hook can be found and included in your setup [here](https://github.com/amplience/amplience-sfcc-hooksbridge))
+
+![Ocapi Call](./media/customers-hook.png)
+
+The groups are then saved into cookies, and the current page is soft reloaded. This is done by triggering a navigation to the current page, and setting a flag to make sure its `shouldGetProps` method returns true to force a refetch of any content obtained in getProps. The groups are changed on the default client and `AmplienceContext` directly so that content can be fetched with the new groups without doing a full reload.
 
 ### Authoring - Listing customer groups for selection
 In order to list customer groups for a user to select, we need to get a list of available customer groups from Salesforce via the Open Commerce API.
