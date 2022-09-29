@@ -109,6 +109,7 @@ const Home = ({isLoading, homeSlotTop}) => {
                 </SimpleGrid>
             </Section>
 
+            <AmplienceWrapper content={homeSlotTop}></AmplienceWrapper>
             <AmplienceWrapper fetch={{key: 'simple-product-list'}}></AmplienceWrapper>
             <AmplienceWrapper fetch={{key: 'section'}}></AmplienceWrapper>
 
