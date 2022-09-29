@@ -41,7 +41,11 @@ For example, if your max matches is 2 AND if you are a user matching 3 groups th
 
 ## Toolbar Enhancements
 
-In addition to the preview features of the Toolbar, we've also incorporated the ability to preview your site content based on selected user group(s)
+In addition to the preview features of the Toolbar, we've also incorporated the ability to preview your site content based on selected user group(s). In order to get all the customers groups on a site we first make a call to an OCAPI endpoint we've extended with a hook:
+
+![OCAPI Hook Request](./media/folders-hook.png)
+
+In order for this part of the toolbar to work you'll also need to install our [Amplience Hooks Bridge](https://github.com/amplience/amplience-sfcc-hooksbridge) cartridge in your SFCC envrionment. When installed your preview toolbar should have your site's customer groups. Below is an example of what it will look like. 
 
 ![Amplience Personalisation Toolbar](./media/personalisation-toolbar.png)
 
@@ -62,7 +66,19 @@ Each piece of content will indicate the number of matches based on groups
 
 ## Technical Behaviour
 
-When content is fetched, it is scanned using a generalized "enrich" method that looks for certain patterns, then runs handlers to enrich that data. The combination of pattern and handler is called an "Enrich Strategy", and one is enabled by default for personalised content.
+### Guest v. Logged in View
+
+When the site is first loaded, the customer will be a guest as they are not logged. In this case the default content of any personalised content will be visible.
+
+When the customer logs in or creates an account, we make an OCAPI call to `customer/{customer_id}` which we've enhanced with a hook (that hook can be found and included in your setup [here](https://github.com/amplience/amplience-sfcc-hooksbridge))
+
+![Ocapi Call](./media/customers-hook.png)
+
+The hook appends a customer's groups to the response where we then store in in cookies to reference against fetched content.
+
+### Fetch & Filter
+
+When content then is fetched, it is scanned using a generalized "enrich" method that looks for certain patterns, then runs handlers to enrich that data. The combination of pattern and handler is called an "Enrich Strategy", and one is enabled by default for personalised content.
 
 This enrich strategy searches for the appearance of personalised containers, and then either filters existing content or fetches it based on the groups currently assigned to the content client. This content then replaces the `content` property of the container, so that it can be rendered directly. The matching variants are also placed into `variants` with their content embedded, if you wish to see all matching variants separately.
 
@@ -99,5 +115,7 @@ The selected customer groups are then stored in the content so thqt they can be 
     "genZ"
 ]
 ```
+
+
 
 
