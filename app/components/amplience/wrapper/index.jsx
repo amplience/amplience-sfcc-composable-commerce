@@ -22,6 +22,7 @@ const componentsMapping = {
     'https://sfcc.com/components/curated-product': CuratedProductList,
     'https://sfcc.com/components/card-enhanced': CardEnhanced,
     'https://sfcc.com/components/personalised-component': PersonalisedComponent,
+    'https://sfcc.com/components/personalised-ingrid-component': PersonalisedComponent,
     'https://sfcc.com/components/personalised-container': PersonalisedContainer,
     'https://sfcc.com/slots/flexible-list': flexibleListSlot,
     'https://sfcc.com/slots/personalised-slot': PersonalisedComponent,

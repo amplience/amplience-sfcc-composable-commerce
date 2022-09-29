@@ -8,6 +8,7 @@
 | https://sfcc.com/components/curated-product | `./curated-product-list/CuratedProductList` | ![Hero)](./media/components-curated-product-list.png) A list of manually curated products from SFCC |
 | https://sfcc.com/components/personalised-container | `./personalised-container/PersonalisedContainer` | A container that contains variants associated to customer groups to display personalised content |
 | https://sfcc.com/components/personalised-component | `./personalised-component/PersonalisedComponent` | A component that contains variants associated to customer groups to display personalised content |
+| https://sfcc.com/components/personalised-ingrid-component | `./personalised-component/PersonalisedComponent` | A component that contains variants associated to customer groups to display personalised content, but only for grid items |
 | https://sfcc.com/slots/flexible-list | `./flexibleListSlot/flexibleListSlot` | A slot that contains a flexible list of content |
 | https://sfcc.com/slots/personalised-slot | `./personalised-slot/PersonalisedComponent` | A slot that contains variants associated to customer groups to display personalised content |
 

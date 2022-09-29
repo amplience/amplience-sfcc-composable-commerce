@@ -107,6 +107,7 @@ const inGridComponents = {
     'https://sfcc.com/components/hero': GridItemHero,
     'https://sfcc.com/slots/personalised-slot': PersonalisedContainerGridItem,
     'https://sfcc.com/components/personalised-component': PersonalisedComponentGridItem,
+    'https://sfcc.com/components/personalised-ingrid-component': PersonalisedComponentGridItem,
     'https://sfcc.com/components/personalised-container': PersonalisedContainerGridItem
 }
 
