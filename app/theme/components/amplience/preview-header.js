@@ -9,7 +9,6 @@ export default {
             gap: '12px',
             justifyContent: 'space-between',
             alignItems: 'left',
-            position: 'sticky',
             top: '0px',
             zIndex: '100'
         }
