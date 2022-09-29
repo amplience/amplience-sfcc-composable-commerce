@@ -4,11 +4,19 @@ In addition to the base level setup required to run the Salesforce Composable Co
 
 [SFCC - Getting Started with Progressive Web App Kit](https://developer.salesforce.com/docs/commerce/pwa-kit-managed-runtime/guide/getting-started.html#new-project)
 
-Amplience interfaces with Salesforce Commerce Cloud APIs in order to provide a seamless visual management experience on the front end. This includes things like:
+Amplience also interfaces with Salesforce Commerce Cloud APIs in order to provide a seamless visual management experience on the front end. This includes things like:
 * Browsing, selecting and rendering individual products
 * Browsing, selecting and rendering categories to draw products and Product Listing Pages
+* For Content Personalisation, fetching a Site's User Groups & the User Groups a logged in customer belongs to 
 
-When you ready to start pointing to your own SFCC On-Demand Sandbox, there are three main things you’ll need to have ready besides your ODS. A [Client ID & Secret](#client-id-and-secret), the [OCAPI Configuration](#ocapi-configuration) in your ODS Business Manager, and [Localisation](#localisation). All are outlined below.
+When you're ready to start pointing to your own SFCC On-Demand Sandbox, there are four main things you’ll need to have ready for/on your ODS. 
+
+* A [Client ID & Secret](#client-id-and-secret) 
+* The [OCAPI Configuration](#ocapi-configuration) in your ODS Business Manager
+* To enable **Content Personalisation**, install our [Amplience Hooks Bridge Caftridge](https://github.com/amplience/amplience-sfcc-hooksbridge) on your ODS (detailed instructions [Amplience Hooks Bridge Caftridge](https://github.com/amplience/amplience-sfcc-hooksbridge) page) 
+* [Localisation](#localisation). 
+
+All are outlined below. (Instructions for installing our OCAPI hooks is [here](https://github.com/amplience/amplience-sfcc-hooksbridge))
 
 ## Client ID and Secret
 In order to setup a Client ID and Secret, you’ll need Admin Rights in SFCC Account Manager. IF you don’t have this access, contact your account admin. 
