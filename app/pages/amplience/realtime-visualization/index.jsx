@@ -22,8 +22,8 @@ import {useAmpRtv} from '../../../utils/amplience/rtv'
  * The page renders SEO metadata and a few promotion
  * categories and products, data is from local file.
  */
-const AmpRtv = () => {
-    const {contentId, vse} = useParams()
+const AmpRtv = ({vse}) => {
+    const {contentId} = useParams()
     const [formContent, setFormContent] = useState(undefined)
     const {groups} = useContext(AmplienceContext)
 
@@ -60,6 +60,10 @@ AmpRtv.propTypes = {
     isLoading: PropTypes.bool
 }
 
-AmpRtv.getProps = async () => {}
+AmpRtv.getProps = async ({req}) => {
+    const vse = req?.query['vse'];
+
+    return {vse}
+}
 
 export default AmpRtv

@@ -105,7 +105,7 @@ const routes = [
         component: Wishlist
     },
     {
-        path: '/visualization/:hubname/:contentId/:vse',
+        path: '/visualization/:hubname/:contentId',
         component: RealtimeVisualization,
         exact: false
     },
