@@ -353,12 +353,12 @@ export class AmplienceAPI {
             if (Array.isArray(defaultContent)) {
                 allContent = [
                     ...defaultContent.map((el) => {
-                        el.match = 'Default variant'
+                        el.match = `${name} default variant`
                         return el
                     })
                 ]
             } else {
-                allContent = [{...defaultContent, match: 'Default variant'}]
+                allContent = [{...defaultContent, match: `${name} default variant`}]
             }
         }
 
