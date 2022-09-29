@@ -268,7 +268,7 @@ export class AmplienceAPI {
             )
 
             for (let item of items) {
-                const key = item._meta.deliveryKey
+                const key = item._meta?.deliveryKey
                 if (key) {
                     targets
                         .filter((target) => target.item.id === item._meta.deliveryId)
