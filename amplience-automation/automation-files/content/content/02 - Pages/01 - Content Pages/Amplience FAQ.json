@@ -1,7 +1,5 @@
 {
-    "id": "eb196555-d971-4d38-af55-6c1d76bebec9",
-    "contentRepositoryId": "6321ee3f4cedfd0001b5a5e8",
-    "folderId": "632928f4c9e77c0001580da4",
+    "id": "01fcc5a1-54bb-407f-ad19-b837dd4d4a09",
     "body": {
         "_meta": {
             "name": "Amplience FAQ",
@@ -86,5 +84,5 @@
     "lastModifiedDate": "2022-09-26T11:22:42.000Z",
     "lastPublishedVersion": 1,
     "lastPublishedDate": "2022-09-26T11:22:52.116Z",
-    "deliveryId": "eb196555-d971-4d38-af55-6c1d76bebec9"
+    "deliveryId": "01fcc5a1-54bb-407f-ad19-b837dd4d4a09"
 }

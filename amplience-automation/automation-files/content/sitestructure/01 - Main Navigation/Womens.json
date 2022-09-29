@@ -43,7 +43,7 @@
                     "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference"
                 },
                 "contentType": "https://sfcc.com/slots/flexible-list",
-                "id": "23714a04-1755-4a86-8ce3-ea8f17dd43f0"
+                "id": "311b072e-555f-4dc4-b7c5-311c34d50f40"
             }
         ],
         "gridItem": [
@@ -55,8 +55,8 @@
                     "_meta": {
                         "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference"
                     },
-                    "contentType": "https://sfcc.com/components/personalised-component",
-                    "id": "84816706-deb4-4a5b-8bad-6feb48e59f47"
+                    "contentType": "https://sfcc.com/components/personalised-ingrid-component",
+                    "id": "22a10957-b857-4d74-9b36-775779b72d2b"
                 }
             },
             {

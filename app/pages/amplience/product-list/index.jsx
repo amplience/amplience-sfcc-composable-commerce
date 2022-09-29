@@ -91,13 +91,8 @@ import {buildUrlSet} from '../../../utils/url'
 import {useAmpRtv} from '../../../utils/amplience/rtv'
 import {defaultAmpClient} from '../../../amplience-api'
 import GridItemHero from '../../../components/amplience/hero/gridItemHero'
-import PersonalisedContainer from '../../../components/amplience/personalised-container'
 import PersonalisedComponent from '../../../components/amplience/personalised-component'
 import {personalisationChanged} from '../../../amplience-api/utils'
-
-const PersonalisedContainerGridItem = ({...props}) => {
-    return <PersonalisedContainer limit="1" components={inGridComponents} {...props} />
-}
 
 const PersonalisedComponentGridItem = ({...props}) => {
     return <PersonalisedComponent limit="1" components={inGridComponents} {...props} />
@@ -105,10 +100,7 @@ const PersonalisedComponentGridItem = ({...props}) => {
 
 const inGridComponents = {
     'https://sfcc.com/components/hero': GridItemHero,
-    'https://sfcc.com/slots/personalised-slot': PersonalisedContainerGridItem,
-    'https://sfcc.com/components/personalised-component': PersonalisedComponentGridItem,
-    'https://sfcc.com/components/personalised-ingrid-component': PersonalisedComponentGridItem,
-    'https://sfcc.com/components/personalised-container': PersonalisedContainerGridItem
+    'https://sfcc.com/components/personalised-ingrid-component': PersonalisedComponentGridItem
 }
 
 // NOTE: You can ignore certain refinements on a template level by updating the below
