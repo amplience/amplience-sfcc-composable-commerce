@@ -1,5 +1,22 @@
 export default {
     baseStyle: () => ({
+        previewIcon: {
+            left: '10px',
+            top: {base: '40px', lg: '10px'},
+            zIndex: 9999,
+            position: 'fixed',
+            boxShadow: 'lg',
+            backgroundColor: '#e80d8c',
+            color: '#fff',
+            width: 5,
+
+            _hover: {
+                backgroundColor: "#ba0a71"
+            },
+            _focus: {
+                boxShadow: "outline"
+            }
+        },
         container: {
             padding: '20px',
             marginBottom: '20px',

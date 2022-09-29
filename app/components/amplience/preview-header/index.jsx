@@ -18,8 +18,7 @@ import {
     DrawerHeader,
     DrawerBody,
     Wrap,
-    WrapItem,
-    useBreakpointValue
+    WrapItem
 } from '@chakra-ui/react'
 import { SettingsIcon } from '@chakra-ui/icons'
 import { useIntl } from 'react-intl'
@@ -122,24 +121,14 @@ const PreviewHeader = ({ vse, vseTimestamp, customerGroups, ...otherProps }) => 
         navigate()
     }
 
-    const { isOpen, onToggle, onClose } = useDisclosure()
-
-    const isMobile = useBreakpointValue({base: true, lg: false, xl: false, xxl: false, xxxl: false})
-    const iconPos = isMobile ? '40px' : '10px'
+    const {isOpen, onToggle, onClose} = useDisclosure()
 
     return (
         <>
             <IconButton
-                width={5}
-                top={iconPos}
-                left={'10px'}
-                zIndex={10000}
-                position={'fixed'}
-                opacity={1}
-                boxShadow={'lg'}
-                backgroundColor={'#e80d8c'}
                 icon={<SettingsIcon />}
                 onClick={onToggle}
+                {...styles.previewIcon}
             />
 
             <Drawer placement={'left'} onClose={onClose} isOpen={isOpen} trapFocus={false}>
