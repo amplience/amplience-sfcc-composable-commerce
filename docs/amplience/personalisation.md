@@ -6,6 +6,10 @@ Salesforce B2C Commerce has some powerful capabilties for personalisation. Typic
 
 In a headless storefront we can use the same concepts but there are architectural differences as Salesforce is no longer responsible for delivering content and experiences onto the page.
 
+## Hooks Setup
+
+In order for personalised content to fully work you'll need to install our [Amplience Hooks Cartridge](https://github.com/amplience/amplience-sfcc-hooksbridge) into your SFCC instance(s). There are detailed instructions there on how to install and add it to your cartrdge path. 
+
 ## Headless roles
 
 In a headless storefront, teams are no longer required to work with a rigid structure for personalisation.
@@ -33,11 +37,40 @@ For example, if your max matches is 2 AND if you are a user matching 3 groups th
 
 ## New Components/Slots
 
-### Personalized Content
+There are several new content schemas and types that allow for personalised content outlined below.
+
+### Personalized Component
+
+A ***single*** piece of personalised content that accepts any component defined in the `all-definitions#/definitions/anyComponent` schema partial. 
+
+- **Default** content is a content link -- the content data is loaded on first fetch. 
+- **Variant** content is an `Array` of Content References -- the content is loaded via reference ID ***after*** determining the customer's group
+- **maxNumberMatches** - to define how many Content Variants a qualifying custimer will see
+
+### Personalised In-Grid Container
+
+Just like the Personalised Component, but only allowing content for a Product List Grid. A ***single*** piece of personalised content that accepts any component defined in the `all-definitions#/definitions/anyComponent` schema partial. 
+
+- **Default** content is a content link -- the content data is loaded on first fetch. 
+- **Variant** content is an `Array` of Content References -- the content is loaded via reference ID ***after*** determining the customer's group
+- **maxNumberMatches** - to define how many Content Variants a qualifying custimer will see
 
 ### Personalized Container
 
+A ***list*** of personalised content that accepts any component defined in the `all-definitions#/definitions/anyComponent` schema partial.
+
+- **Default** content is an `Array` of content links -- the content data is loaded on first fetch. 
+- **Variant** content is an `Array` of Content References -- the content is loaded via reference ID ***after*** determining the customer's group
+- **maxNumberMatches** - to define how many Content Variants a qualifying custimer will see
+
 ### Personalized Slot Container
+
+A ***list*** of personalised content with a **Delivery Key** that accepts any component defined in the `all-definitions#/definitions/anyComponent` schema partial.
+
+- **Delivery Key** - Container may be fetched with `AmplienceWrapper` using the key you've entered
+- **Default** content is an `Array` of content links -- the content data is loaded on first fetch. 
+- **Variant** content is an `Array` of Content Links -- ***the content data is loaded on first fetch***
+- **maxNumberMatches** - to define how many Content Variants a qualifying custimer will see
 
 ## Toolbar Enhancements
 
@@ -78,7 +111,6 @@ In addition, because we've structured content variants as references in our sche
 
 
 ### Fetching groups and passing through the application
-
 
 Active customer groups are primarily stored on cookies, so that the serverside renderer can use them when initially navigating to a page. Cookies from the client are initially read in `_app`, then passed through as props to the `AmplienceContext` and the Amplience content clients from there.
 
