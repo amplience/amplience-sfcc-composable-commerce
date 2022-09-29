@@ -49,7 +49,7 @@ import {IntlProvider} from 'react-intl'
 // Others
 import {watchOnlineStatus, flatten} from '../../utils/utils'
 import {getTargetLocale, fetchTranslations} from '../../utils/locale'
-import {DEFAULT_SITE_TITLE, HOME_HREF, THEME_COLOR} from '../../constants'
+import {DEFAULT_SITE_TITLE, THEME_COLOR} from '../../constants'
 import {applyRtvToNav, enrichNavigation} from '../../utils/amplience/link'
 
 import Seo from '../seo'
