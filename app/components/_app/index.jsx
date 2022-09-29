@@ -160,7 +160,7 @@ const App = (props) => {
 
     const onLogoClick = () => {
         // Goto the home page.
-        navigate(HOME_HREF)
+        navigate('/')
 
         // Close the drawer.
         onClose()
