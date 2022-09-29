@@ -257,6 +257,16 @@ export const importHandler = async (context: Arguments<Context>): Promise<any> =
             {stdio: 'inherit'}
         )
 
+        console.log(`Re-importing slots...`)
+        execSync(
+            `npx dc-cli content-item import ${context.tempDir}/content/slots \
+                --baseRepo ${context.slotsRepoId} \
+                --publish \
+                --batchPublish \
+                --mapFile ${mappingFile}`, 
+            {stdio: 'inherit'}
+        )
+
         console.log(`Done!`)
     } finally {
         console.log(`Cleaning up templates...`)
