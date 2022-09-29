@@ -71,6 +71,7 @@ const Home = ({isLoading, homeSlotTop}) => {
                 left={{base: '50%', md: 'inherit'}}
                 right={{base: '50%', md: 'inherit'}}
                 marginTop="8"
+                marginBottom="8"
                 marginLeft={{base: '-50vw', md: 'auto'}}
                 marginRight={{base: '-50vw', md: 'auto'}}
             >
