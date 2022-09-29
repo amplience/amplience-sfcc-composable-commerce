@@ -102,7 +102,10 @@ const PreviewHeader = ({ vse, vseTimestamp, customerGroups, ...otherProps }) => 
     }
 
     const updateVseTimestamp = () => {
-        window.location.assign(`/?vse=${vse}&vse-timestamp=${previewTimestamp}`)
+        const regExp = /(.*-.*)-(.*)(\.staging.bigcontent.io)/
+        const matches = vse.match(regExp)
+        const newVse = `${matches[1]}-${previewTimestamp}.staging.bigcontent.io`
+        window.location.assign(`/?vse=${newVse}&vse-timestamp=${previewTimestamp}`)
     }
 
     const clickCustomerGroup = (obj) => {
