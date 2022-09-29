@@ -8,7 +8,7 @@ In a headless storefront we can use the same concepts but there are architectura
 
 ## Hooks Setup
 
-In order for personalised content to fully work you'll need to install our [Amplience Hooks Cartridge](https://github.com/amplience/amplience-sfcc-hooksbridge) into your SFCC instance(s). There are detailed instructions there on how to install and add it to your cartrdge path. 
+In order for personalised content to fully work **in your own SFCC environment/instances** you'll need to install our [Amplience Hooks Cartridge](https://github.com/amplience/amplience-sfcc-hooksbridge) into your SFCC instance(s). There are detailed instructions there on how to install and add it to your cartrdge path. 
 
 ## Headless roles
 
