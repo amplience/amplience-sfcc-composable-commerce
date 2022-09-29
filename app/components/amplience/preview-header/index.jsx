@@ -136,7 +136,7 @@ const PreviewHeader = ({ vse, vseTimestamp, customerGroups, ...otherProps }) => 
                 onClick={onToggle}
             />
 
-            <Drawer placement={'left'} onClose={onClose} isOpen={isOpen}>
+            <Drawer placement={'left'} onClose={onClose} isOpen={isOpen} trapFocus={false}>
                 <DrawerOverlay />
                 <DrawerContent>
                     <DrawerHeader 
