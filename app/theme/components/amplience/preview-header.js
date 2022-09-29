@@ -15,7 +15,8 @@ export default {
             },
             _focus: {
                 boxShadow: "outline"
-            }
+            },
+            _active: {}
         },
         container: {
             padding: '20px',
