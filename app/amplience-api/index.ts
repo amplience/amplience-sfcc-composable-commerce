@@ -193,7 +193,10 @@ export class AmplienceAPI {
             return response.error
         })
 
-        await this.defaultEnrich(items, params)
+        await this.defaultEnrich(
+            items.filter((item) => item._meta),
+            params
+        )
 
         return items
     }
@@ -213,9 +216,7 @@ export class AmplienceAPI {
         }
 
         for (let item of items) {
-            if (item._meta) {
-                await enrichContent(item, strategies)
-            }
+            await enrichContent(item, strategies)
         }
     }
 
