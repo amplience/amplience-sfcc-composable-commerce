@@ -135,9 +135,8 @@ const PreviewHeader = ({ vse, vseTimestamp, customerGroups, ...otherProps }) => 
                 left={'10px'}
                 zIndex={10000}
                 position={'fixed'}
-                opacity={1}
+                opacity={.9}
                 boxShadow={'lg'}
-                backgroundColor={'#e80d8c'}
                 icon={<SettingsIcon />}
                 onClick={onToggle}
             />
