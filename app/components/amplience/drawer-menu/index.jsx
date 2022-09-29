@@ -79,7 +79,7 @@ const STORE_LOCATOR_HREF = '/store-locator'
  * main usage is to navigate from one category to the next, but also homes links to
  * support, log in and out actions, as support links.
  */
-const DrawerMenu = ({isOpen, onClose = noop, onLogoClick = noop, root, footer, logo}) => {
+const DrawerMenu = ({isOpen, onClose = noop, onLogoClick = noop, root, footer, logo, showVse = false}) => {
     const intl = useIntl()
     const customer = useCustomer()
     const navigate = useNavigation()
@@ -101,7 +101,7 @@ const DrawerMenu = ({isOpen, onClose = noop, onLogoClick = noop, root, footer, l
     const showLocaleSelector = supportedLocaleIds?.length > 1
 
     return (
-        <Drawer isOpen={isOpen} onClose={onClose} placement="left" size={drawerSize}>
+        <Drawer isOpen={isOpen} onClose={onClose} placement="left" size={drawerSize} trapFocus={!showVse}>
             <DrawerOverlay>
                 <DrawerContent>
                     {/* Header Content */}

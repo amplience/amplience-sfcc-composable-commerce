@@ -282,6 +282,7 @@ const App = (props) => {
                                                         footer={footerNav}
                                                         locale={locale}
                                                         logo={headerNav.icon}
+                                                        showVse={showVse}
                                                     />
                                                 </HideOnDesktop>
 
