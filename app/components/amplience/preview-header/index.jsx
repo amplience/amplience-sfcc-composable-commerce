@@ -127,7 +127,8 @@ const PreviewHeader = ({ vse, vseTimestamp, customerGroups, ...otherProps }) => 
         <>
             <IconButton
                 width={5}
-                bottom={0}
+                top={'35px'}
+                left={'10px'}
                 zIndex={10000}
                 position={'fixed'}
                 opacity={0.5}
@@ -138,7 +139,11 @@ const PreviewHeader = ({ vse, vseTimestamp, customerGroups, ...otherProps }) => 
             <Drawer placement={'left'} onClose={onClose} isOpen={isOpen}>
                 <DrawerOverlay />
                 <DrawerContent>
-                    <DrawerHeader borderBottomWidth="1px">
+                    <DrawerHeader 
+                        textAlign='center' 
+                        borderBottomWidth="1px" 
+                        paddingTop="40px" 
+                        paddingBottom="40px">
                         Preview Settings
                     </DrawerHeader>
                     <DrawerBody padding={3}>
