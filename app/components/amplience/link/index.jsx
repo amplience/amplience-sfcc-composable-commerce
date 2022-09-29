@@ -1,4 +1,3 @@
-
 import React from 'react'
 import PropTypes from 'prop-types'
 import {Link as ChakraLink} from '@chakra-ui/react'
@@ -6,21 +5,9 @@ import {Link as SPALink, NavLink as NavSPALink, useLocation} from 'react-router-
 import {buildPathWithUrlConfig} from '../../../utils/url'
 import useSite from '../../../hooks/use-site'
 import useLocale from '../../../hooks/use-locale'
-const QUERY_PARAMS = ['pagevse', 'vse'];
+import {keepVse} from '../../../hooks/use-navigation'
 
-const enrichWithQuery = (to, queryParams, location) => {
-    const url = new URL('', `http://localhost/${location.search}`)
-    const newUrl = new URL(to, 'http://localhost')
-
-    queryParams.map((key) => {
-        const value = url.searchParams.get(key);
-        value && newUrl.searchParams.set(key, value)
-    })
-
-    return `${newUrl.pathname}${newUrl.search}`;
-}
-
-const AmplienceLink = React.forwardRef(({href, to, queryParams = QUERY_PARAMS, useNavLink = false, ...props}, ref) => {
+const AmplienceLink = React.forwardRef(({href, to, useNavLink = false, ...props}, ref) => {
     const _href = to || href
     const site = useSite()
     const locale = useLocale()
@@ -46,15 +33,15 @@ const AmplienceLink = React.forwardRef(({href, to, queryParams = QUERY_PARAMS, u
         const updatedHref = isExternal
             ? _href.substring(1)
             : buildPathWithUrlConfig(_href, {
-                locale: locale.alias || locale.id,
-                site: site.alias || site.id
-            })
+                  locale: locale.alias || locale.id,
+                  site: site.alias || site.id
+              })
 
         props.to = _href === '/' ? '/' : updatedHref
         props.as = useNavLink ? NavSPALink : SPALink
     }
 
-    props.to = enrichWithQuery(props.to, queryParams, location)
+    props.to = keepVse(location.search, props.to)
 
     return <ChakraLink {...(useNavLink && {exact: true})} {...props} ref={ref} />
 })

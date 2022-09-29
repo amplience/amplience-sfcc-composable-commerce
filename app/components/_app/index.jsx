@@ -7,7 +7,7 @@
 
 import React, {useState, useEffect} from 'react'
 import PropTypes from 'prop-types'
-import {useHistory, useLocation} from 'react-router-dom'
+import {useLocation} from 'react-router-dom'
 import {getAssetUrl} from 'pwa-kit-react-sdk/ssr/universal/utils'
 import {getAppOrigin} from 'pwa-kit-react-sdk/utils/url'
 
@@ -63,6 +63,7 @@ import {useAmpRtvNav} from '../../utils/amplience/rtv'
 
 import OcapiApi from '../../ocapi-api'
 import {app} from '../../../config/default'
+import useNavigation from '../../hooks/use-navigation'
 
 const DEFAULT_NAV_DEPTH = 3
 const DEFAULT_ROOT_CATEGORY = 'root'
@@ -71,8 +72,7 @@ const App = (props) => {
     const {children, targetLocale, messages, categories: allCategories = {}, ampProps} = props
 
     const appOrigin = getAppOrigin()
-
-    const history = useHistory()
+    const navigate = useNavigation()
     const location = useLocation()
     const authModal = useAuthModal()
     const customer = useCustomer()
@@ -160,17 +160,14 @@ const App = (props) => {
 
     const onLogoClick = () => {
         // Goto the home page.
-        const path = buildUrl(HOME_HREF)
-
-        history.push(path)
+        navigate(HOME_HREF)
 
         // Close the drawer.
         onClose()
     }
 
     const onCartClick = () => {
-        const path = buildUrl('/cart')
-        history.push(path)
+        navigate('/cart')
 
         // Close the drawer.
         onClose()
@@ -179,8 +176,7 @@ const App = (props) => {
     const onAccountClick = () => {
         // Link to account page for registered customer, open auth modal otherwise
         if (customer.isRegistered) {
-            const path = buildUrl('/account')
-            history.push(path)
+            navigate('/account')
         } else {
             // if they already are at the login page, do not show login modal
             if (new RegExp(`^/login$`).test(location.pathname)) return
@@ -189,12 +185,10 @@ const App = (props) => {
     }
 
     const onWishlistClick = () => {
-        const path = buildUrl('/account/wishlist')
-        history.push(path)
+        navigate('/account/wishlist')
     }
 
     const headerStyles = {...styles.headerWrapper}
-
 
     if (showVse) {
         Object.assign(headerStyles, styles.headerAmpPreview)
