@@ -127,6 +127,7 @@ const PreviewHeader = ({ vse, vseTimestamp, customerGroups, ...otherProps }) => 
         <>
             <IconButton
                 width={5}
+                bottom={0}
                 zIndex={10000}
                 position={'fixed'}
                 opacity={0.5}
