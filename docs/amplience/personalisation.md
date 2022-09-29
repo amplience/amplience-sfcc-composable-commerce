@@ -44,7 +44,7 @@ There are several new content schemas and types that allow for personalised cont
 A ***single*** piece of personalised content that accepts any component defined in the `all-definitions#/definitions/anyComponent` schema partial. 
 
 - **Default** content is a content link -- the content data is loaded on first fetch. 
-- **Variant** content is an `Array` of Content References -- the content is loaded via reference ID ***after*** determining the customer's group
+- **Variant** content is an `Array` of Content References -- the content is loaded via reference ID ***after*** determining the customer's qualifying group(s)
 - **maxNumberMatches** - to define how many Content Variants a qualifying custimer will see
 
 ### Personalised In-Grid Container
@@ -52,7 +52,7 @@ A ***single*** piece of personalised content that accepts any component defined 
 Just like the Personalised Component, but only allowing content for a Product List Grid. A ***single*** piece of personalised content that accepts any component defined in the `all-definitions#/definitions/anyComponent` schema partial. 
 
 - **Default** content is a content link -- the content data is loaded on first fetch. 
-- **Variant** content is an `Array` of Content References -- the content is loaded via reference ID ***after*** determining the customer's group
+- **Variant** content is an `Array` of Content References -- the content is loaded via reference ID ***after*** determining the customer's qualifying group(s)
 - **maxNumberMatches** - to define how many Content Variants a qualifying custimer will see
 
 ### Personalized Container
@@ -60,7 +60,7 @@ Just like the Personalised Component, but only allowing content for a Product Li
 A ***list*** of personalised content that accepts any component defined in the `all-definitions#/definitions/anyComponent` schema partial.
 
 - **Default** content is an `Array` of content links -- the content data is loaded on first fetch. 
-- **Variant** content is an `Array` of Content References -- the content is loaded via reference ID ***after*** determining the customer's group
+- **Variant** content is an `Array` of Content References -- the content is loaded via reference ID ***after*** determining the customer's qualifying group(s)
 - **maxNumberMatches** - to define how many Content Variants a qualifying custimer will see
 
 ### Personalized Slot Container
