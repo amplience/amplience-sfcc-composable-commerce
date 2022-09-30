@@ -9,6 +9,7 @@ import {getAppOrigin} from 'pwa-kit-react-sdk/utils/url'
 import {getLocaleByReference, getParamsFromPath, getUrlConfig} from './utils'
 import {getDefaultSite, getSites} from './site-utils'
 import {HOME_HREF, urlPartPositions} from '../constants'
+import {keepVse} from '../hooks/use-navigation'
 
 /**
  * A function that takes a path and qualifies it with the current host and protocol.
@@ -108,6 +109,17 @@ export const categoryUrlBuilder = (category) => encodeURI(`/category/${category.
  * @returns {string}
  */
 export const productUrlBuilder = (product) => encodeURI(`/product/${product.id}`)
+/**
+ * Given a product and the current locale returns an href to the product detail page.
+ *
+ * @param {Object} product
+ * @returns {string}
+ */
+export const productUrlBuilderAndQuery = (product, locale, baseLocation) => {
+    const location = baseLocation || (window && window.location) || {}
+    const {search = ''} = location
+    return keepVse(search, `/product/${product.id}`)
+}
 
 /**
  * Given a search term, constructs a search url.
