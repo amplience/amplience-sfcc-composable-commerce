@@ -8,7 +8,7 @@ import React, {forwardRef, useRef} from 'react'
 import PropTypes from 'prop-types'
 import {AspectRatio, Box, Heading, IconButton, Skeleton, Stack} from '@chakra-ui/react'
 import ProductTile from '../product-tile'
-import {ChevronLeftIcon, ChevronRightIcon} from '../icons'
+import {ChevronLeftIcon, ChevronRightIcon} from '../../icons'
 
 /**
  * Renders a scrollable, horizontal container of products with native scroll
