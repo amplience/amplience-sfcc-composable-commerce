@@ -181,7 +181,12 @@ const CardEnhanced = ({
                           ? {x: img?.poi.x, y: img?.poi.y}
                           : undefined
               }
-            : {...img}
+            : {
+                ...img,
+                width: 1200,
+                quality: 80,
+                upscale: false
+              }
 
     const content = (
         <>
