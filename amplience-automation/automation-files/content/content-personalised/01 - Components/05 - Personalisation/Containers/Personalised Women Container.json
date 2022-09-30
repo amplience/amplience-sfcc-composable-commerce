@@ -45,7 +45,8 @@
           }
         ]
       }
-    ]
+    ],
+    "enrichType": "PERSONALISED"
   },
   "version": 1,
   "label": "Personalised Women Container",

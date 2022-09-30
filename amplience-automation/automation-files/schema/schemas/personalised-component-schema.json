@@ -45,6 +45,11 @@
                     }
                 ]
             }
+        },
+        "enrichType": {
+            "title": "Type",
+            "type": "string",
+            "const": "PERSONALISED"
         }
     },
     "propertyOrder": []
