@@ -133,7 +133,6 @@ export const generateVseProps = ({req, res, query}) => {
         let vse = null
         let vseTimestamp = 0
 
-        // why if (res)? we don't use res anywhere here?
         if (res) {
             vse = query.vse
             vseTimestamp = query['vse-timestamp']
