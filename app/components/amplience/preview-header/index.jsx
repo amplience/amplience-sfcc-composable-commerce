@@ -28,6 +28,8 @@ import { useContext } from 'react'
 import { AmplienceContext } from '../../../contexts/amplience'
 import useNavigation from '../../../hooks/use-navigation'
 
+const amplience = require('../../../../config/amplience/default.js')
+
 const timestampToString = (intl, timestamp) => {
     if (timestamp == 0) {
         return intl.formatMessage({
@@ -131,7 +133,12 @@ const PreviewHeader = ({ vse, vseTimestamp, customerGroups, ...otherProps }) => 
                 {...styles.previewIcon}
             />
 
-            <Drawer placement={'left'} onClose={onClose} isOpen={isOpen} trapFocus={false}>
+            <Drawer 
+                placement={'left'}
+                onClose={onClose} 
+                isOpen={isOpen} 
+                size={'sm'}
+                trapFocus={false}>
                 <DrawerOverlay />
                 <DrawerContent>
                     <DrawerHeader 
@@ -200,16 +207,16 @@ const PreviewHeader = ({ vse, vseTimestamp, customerGroups, ...otherProps }) => 
                             }}
                         >
                             <p>
-                                <b>Hub Name:</b> {otherProps.hubname}
+                                <b>Hub Name</b><br/>{otherProps.hubname || amplience.hub}
                             </p>
                             <p>
-                                <b>VSE:</b> {vse}
+                                <b>VSE</b><br/> {vse}
                             </p>
                             <p>
-                                <b>Locale:</b> {otherProps.locale || intl.locale}
+                                <b>Locale</b><br/>{otherProps.locale || intl.locale}
                             </p>
                             <p>
-                                <b>Content ID:</b> {otherProps.contentId}
+                                <b>Content ID</b><br/>{otherProps.contentId}
                             </p>
                         </Box>
 
