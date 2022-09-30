@@ -5,7 +5,7 @@
             "name": "About Us",
             "schema": "https://sfcc.com/site/navigation/external",
             "hierarchy": {
-                "parentId": "388e47b3-0c2f-495c-8e2a-2bf94a59ee84",
+                "parentId": "9f936991-381e-4695-895e-be814de1ce9c",
                 "root": false
             }
         },
@@ -20,13 +20,25 @@
                     {
                         "locale": "fr-FR",
                         "value": "À propos"
+                    },
+                    {
+                        "locale": "de-DE",
+                        "value": "Über uns"
+                    },
+                    {
+                        "locale": "es-ES",
+                        "value": "Sobre nosotros"
+                    },
+                    {
+                        "locale": "it-IT",
+                        "value": "Chi siamo"
                     }
                 ],
                 "_meta": {
                     "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
                 }
             },
-            "priority": 2
+            "priority": 1
         },
         "externalUrl": {
             "values": [
@@ -40,17 +52,17 @@
             }
         }
     },
-    "version": 2,
+    "version": 3,
     "label": "About Us",
     "status": "ACTIVE",
     "createdBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
     "createdDate": "2022-08-22T09:57:11.535Z",
     "lastModifiedBy": "b5b7704b-34ca-4424-a7dc-f6880734c30e",
     "lastModifiedDate": "2022-08-22T11:07:50.544Z",
-    "lastPublishedVersion": 2,
+    "lastPublishedVersion": 1,
     "lastPublishedDate": "2022-08-24T16:19:53.872Z",
     "hierarchy": {
-        "parentId": "388e47b3-0c2f-495c-8e2a-2bf94a59ee84",
+        "parentId": "9f936991-381e-4695-895e-be814de1ce9c",
         "root": false
     },
     "deliveryId": "35a5145a-e99a-4554-a754-5e358f401182"

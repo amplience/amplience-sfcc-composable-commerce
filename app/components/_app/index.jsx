@@ -7,12 +7,12 @@
 
 import React, {useState, useEffect} from 'react'
 import PropTypes from 'prop-types'
-import {useHistory, useLocation} from 'react-router-dom'
+import {useLocation} from 'react-router-dom'
 import {getAssetUrl} from 'pwa-kit-react-sdk/ssr/universal/utils'
 import {getAppOrigin} from 'pwa-kit-react-sdk/utils/url'
 
 // Chakra
-import {Box, useDisclosure, useStyleConfig} from '@chakra-ui/react'
+import {Box, useDisclosure, useMultiStyleConfig, useStyleConfig} from '@chakra-ui/react'
 import {SkipNavLink, SkipNavContent} from '@chakra-ui/skip-nav'
 
 // Contexts
@@ -20,7 +20,8 @@ import {CategoriesProvider, CurrencyProvider} from '../../contexts'
 import {
     generateVseProps,
     RealtimeVisualization,
-    AmplienceContextProvider
+    AmplienceContextProvider,
+    getGroupsFromLocalStorage
 } from '../../contexts/amplience'
 
 // Local Project Components
@@ -48,7 +49,7 @@ import {IntlProvider} from 'react-intl'
 // Others
 import {watchOnlineStatus, flatten} from '../../utils/utils'
 import {getTargetLocale, fetchTranslations} from '../../utils/locale'
-import {DEFAULT_SITE_TITLE, HOME_HREF, THEME_COLOR} from '../../constants'
+import {DEFAULT_SITE_TITLE, THEME_COLOR} from '../../constants'
 import {applyRtvToNav, enrichNavigation} from '../../utils/amplience/link'
 
 import Seo from '../seo'
@@ -60,15 +61,18 @@ import PreviewHeader from '../amplience/preview-header'
 import {defaultAmpClient} from '../../amplience-api'
 import {useAmpRtvNav} from '../../utils/amplience/rtv'
 
+import OcapiApi from '../../ocapi-api'
+import {app} from '../../../config/default'
+import useNavigation from '../../hooks/use-navigation'
+
 const DEFAULT_NAV_DEPTH = 3
 const DEFAULT_ROOT_CATEGORY = 'root'
 
 const App = (props) => {
-    const {children, targetLocale, messages, categories: allCategories = {}, vseProps} = props
+    const {children, targetLocale, messages, categories: allCategories = {}, ampProps} = props
 
     const appOrigin = getAppOrigin()
-
-    const history = useHistory()
+    const navigate = useNavigation()
     const location = useLocation()
     const authModal = useAuthModal()
     const customer = useCustomer()
@@ -80,6 +84,7 @@ const App = (props) => {
     const [headerNav, setHeaderNav] = useState(props.headerNav)
     const [footerNav, setFooterNav] = useState(props.footerNav)
     const {isOpen, onOpen, onClose} = useDisclosure()
+    const [showVse, setShowVse] = useState(ampProps.showVse)
 
     // Used to conditionally render header/footer for checkout page
     const isCheckout = /\/checkout$/.test(location?.pathname)
@@ -140,28 +145,29 @@ const App = (props) => {
         // Lets automatically close the mobile navigation when the
         // location path is changed.
         onClose()
+        
+        const showPreview = (location.search && (location.search.includes('vse=') || location.search.includes('pagevse='))) || location.pathname.includes('visualization')
+        setShowVse(showPreview)
     }, [location])
 
     if (typeof window !== 'undefined') {
         // On the clientside, make sure the default Amplience client has the vse set up.
         useEffect(() => {
-            defaultAmpClient.setVse(vseProps.vse)
-        }, [vseProps])
+            defaultAmpClient.setVse(ampProps.vse)
+            defaultAmpClient.setGroups(ampProps.groups)
+        }, [ampProps])
     }
 
     const onLogoClick = () => {
         // Goto the home page.
-        const path = buildUrl(HOME_HREF)
-
-        history.push(path)
+        navigate('/')
 
         // Close the drawer.
         onClose()
     }
 
     const onCartClick = () => {
-        const path = buildUrl('/cart')
-        history.push(path)
+        navigate('/cart')
 
         // Close the drawer.
         onClose()
@@ -170,8 +176,7 @@ const App = (props) => {
     const onAccountClick = () => {
         // Link to account page for registered customer, open auth modal otherwise
         if (customer.isRegistered) {
-            const path = buildUrl('/account')
-            history.push(path)
+            navigate('/account')
         } else {
             // if they already are at the login page, do not show login modal
             if (new RegExp(`^/login$`).test(location.pathname)) return
@@ -180,13 +185,10 @@ const App = (props) => {
     }
 
     const onWishlistClick = () => {
-        const path = buildUrl('/account/wishlist')
-        history.push(path)
+        navigate('/account/wishlist')
     }
 
     const headerStyles = {...styles.headerWrapper}
-
-    const showVse = vseProps.vse && !isNaN(vseProps.vseTimestamp) && vseProps.vseTimestamp != null
 
     if (showVse) {
         Object.assign(headerStyles, styles.headerAmpPreview)
@@ -214,102 +216,118 @@ const App = (props) => {
             >
                 <CategoriesProvider categories={allCategories}>
                     <CurrencyProvider currency={currency}>
-                        <AmplienceContextProvider {...vseProps}>
-                            {showVse && <PreviewHeader {...vseProps} />}
+                        <AmplienceContextProvider {...ampProps} showVse={showVse}>
+                            {showVse && <PreviewHeader {...ampProps} showVse={showVse} />}
                             <RealtimeVisualization.Provider value={{ampVizSdk, status}}>
-                        <Seo>
-                            <meta name="theme-color" content={THEME_COLOR} />
-                            <meta name="apple-mobile-web-app-title" content={DEFAULT_SITE_TITLE} />
-                            <link
-                                rel="apple-touch-icon"
-                                href={getAssetUrl('static/img/global/apple-touch-icon.png')}
-                            />
-                            <link rel="manifest" href={getAssetUrl('static/manifest.json')} />
+                                <Seo>
+                                    <meta name="theme-color" content={THEME_COLOR} />
+                                    <meta
+                                        name="apple-mobile-web-app-title"
+                                        content={DEFAULT_SITE_TITLE}
+                                    />
+                                    <link
+                                        rel="apple-touch-icon"
+                                        href={getAssetUrl('static/img/global/apple-touch-icon.png')}
+                                    />
+                                    <link
+                                        rel="manifest"
+                                        href={getAssetUrl('static/manifest.json')}
+                                    />
 
-                            {/* Urls for all localized versions of this page (including current page)
+                                    {/* Urls for all localized versions of this page (including current page)
                             For more details on hrefLang, see https://developers.google.com/search/docs/advanced/crawling/localized-versions */}
-                            {site.l10n?.supportedLocales.map((locale) => (
-                                <link
-                                    rel="alternate"
-                                    hrefLang={locale.id.toLowerCase()}
-                                    href={`${appOrigin}${buildUrl(location.pathname)}`}
-                                    key={locale.id}
-                                />
-                            ))}
-                            {/* A general locale as fallback. For example: "en" if default locale is "en-GB" */}
-                            <link
-                                rel="alternate"
-                                hrefLang={site.l10n.defaultLocale.slice(0, 2)}
-                                href={`${appOrigin}${buildUrl(location.pathname)}`}
-                            />
-                            {/* A wider fallback for user locales that the app does not support */}
-                            <link rel="alternate" hrefLang="x-default" href={`${appOrigin}/`} />
-                        </Seo>
+                                    {site.l10n?.supportedLocales.map((locale) => (
+                                        <link
+                                            rel="alternate"
+                                            hrefLang={locale.id.toLowerCase()}
+                                            href={`${appOrigin}${buildUrl(location.pathname)}`}
+                                            key={locale.id}
+                                        />
+                                    ))}
+                                    {/* A general locale as fallback. For example: "en" if default locale is "en-GB" */}
+                                    <link
+                                        rel="alternate"
+                                        hrefLang={site.l10n.defaultLocale.slice(0, 2)}
+                                        href={`${appOrigin}${buildUrl(location.pathname)}`}
+                                    />
+                                    {/* A wider fallback for user locales that the app does not support */}
+                                    <link
+                                        rel="alternate"
+                                        hrefLang="x-default"
+                                        href={`${appOrigin}/`}
+                                    />
+                                </Seo>
 
-                        <ScrollToTop />
+                                <ScrollToTop />
 
-                        <Box id="app" display="flex" flexDirection="column" flex={1}>
-                            <SkipNavLink zIndex="skipLink">Skip to Content</SkipNavLink>
+                                <Box id="app" display="flex" flexDirection="column" flex={1}>
+                                    <SkipNavLink zIndex="skipLink">Skip to Content</SkipNavLink>
 
-                            <Box {...styles.headerWrapper}>
-                                {!isCheckout ? (
-                                    <Header
-                                        onMenuClick={onOpen}
-                                        onLogoClick={onLogoClick}
-                                        onMyCartClick={onCartClick}
-                                        onMyAccountClick={onAccountClick}
-                                        onWishlistClick={onWishlistClick}
-                                                logo={headerNav.icon}
-                                    >
-                                        <HideOnDesktop>
-                                            <DrawerMenu
-                                                isOpen={isOpen}
-                                                onClose={onClose}
+                                    <Box {...styles.headerWrapper}>
+                                        {!isCheckout ? (
+                                            <Header
+                                                onMenuClick={onOpen}
                                                 onLogoClick={onLogoClick}
-                                                root={headerNav}
-                                                footer={footerNav}
-                                                locale={locale}
-                                            />
-                                        </HideOnDesktop>
+                                                onMyCartClick={onCartClick}
+                                                onMyAccountClick={onAccountClick}
+                                                onWishlistClick={onWishlistClick}
+                                                logo={headerNav.icon}
+                                            >
+                                                <HideOnDesktop>
+                                                    <DrawerMenu
+                                                        isOpen={isOpen}
+                                                        onClose={onClose}
+                                                        onLogoClick={onLogoClick}
+                                                        root={headerNav}
+                                                        footer={footerNav}
+                                                        locale={locale}
+                                                        logo={headerNav.icon}
+                                                        showVse={showVse}
+                                                    />
+                                                </HideOnDesktop>
 
-                                        <HideOnMobile>
+                                                <HideOnMobile>
                                                     <AmplienceListMenu root={headerNav} />
-                                        </HideOnMobile>
-                                    </Header>
-                                ) : (
-                                    <CheckoutHeader />
-                                )}
-                            </Box>
-
-                            {!isOnline && <OfflineBanner />}
-                            <AddToCartModalProvider>
-                                <SkipNavContent
-                                    style={{
-                                        display: 'flex',
-                                        flexDirection: 'column',
-                                        flex: 1,
-                                        outline: 0
-                                    }}
-                                >
-                                    <Box
-                                        as="main"
-                                        id="app-main"
-                                        role="main"
-                                        display="flex"
-                                        flexDirection="column"
-                                        flex="1"
-                                    >
-                                        <OfflineBoundary isOnline={false}>
-                                            {children}
-                                        </OfflineBoundary>
+                                                </HideOnMobile>
+                                            </Header>
+                                        ) : (
+                                            <CheckoutHeader />
+                                        )}
                                     </Box>
-                                </SkipNavContent>
 
-                                {!isCheckout ? <Footer root={footerNav} /> : <CheckoutFooter />}
+                                    {!isOnline && <OfflineBanner />}
+                                    <AddToCartModalProvider>
+                                        <SkipNavContent
+                                            style={{
+                                                display: 'flex',
+                                                flexDirection: 'column',
+                                                flex: 1,
+                                                outline: 0
+                                            }}
+                                        >
+                                            <Box
+                                                as="main"
+                                                id="app-main"
+                                                role="main"
+                                                display="flex"
+                                                flexDirection="column"
+                                                flex="1"
+                                            >
+                                                <OfflineBoundary isOnline={false}>
+                                                    {children}
+                                                </OfflineBoundary>
+                                            </Box>
+                                        </SkipNavContent>
 
-                                <AuthModal {...authModal} />
-                            </AddToCartModalProvider>
-                        </Box>
+                                        {!isCheckout ? (
+                                            <Footer root={footerNav} />
+                                        ) : (
+                                            <CheckoutFooter />
+                                        )}
+
+                                        <AuthModal {...authModal} />
+                                    </AddToCartModalProvider>
+                                </Box>
                             </RealtimeVisualization.Provider>
                         </AmplienceContextProvider>
                     </CurrencyProvider>
@@ -380,9 +398,23 @@ App.getProps = async ({api, res, req, ampClient}) => {
     // the application.
     const categories = flatten(rootCategory, 'categories')
 
+    const ocapiApi = new OcapiApi(app.commerceAPI)
+    const groupList = await ocapiApi.getAllGroups()
+    const customerGroups = groupList?.data[0].c_customerGroups || [
+        'Unregistered',
+        'Registered',
+        'Everyone'
+    ]
+
     // The serverside and clientside both have an Amplience client, both should receive the VSE params.
-    const vseProps = generateVseProps({req, res, query: req.query})
-    ampClient.setVse(vseProps.vse)
+    const ampProps = generateVseProps({req, res, query: req.query})
+    const groups = getGroupsFromLocalStorage({req, res, query: req.query})
+    ampClient.setVse(ampProps.vse)
+    ampClient.setGroups(groups)
+
+    ampProps.groups = groups
+    ampProps.customerGroups = customerGroups
+    ampProps.showVse = ampProps.vse != null || req?.query['pagevse'] != null
 
     let headerKey = 'main-nav'
     let footerKey = 'footer-nav'
@@ -413,7 +445,7 @@ App.getProps = async ({api, res, req, ampClient}) => {
     const [headerNav, footerNav] = await Promise.all(
         [headerKey, footerKey].map(async (key) =>
             enrichNavigation(
-                await ampClient.fetchHierarchy({key},  undefined, targetLocale),
+                await ampClient.fetchHierarchy({key}, undefined, targetLocale),
                 categories,
                 targetLocale
             )
@@ -425,9 +457,10 @@ App.getProps = async ({api, res, req, ampClient}) => {
         messages,
         categories,
         config: res?.locals?.config,
-        vseProps,
+        ampProps,
         headerNav,
-        footerNav
+        footerNav,
+        customerGroups
     }
 }
 
@@ -437,7 +470,7 @@ App.propTypes = {
     messages: PropTypes.object,
     categories: PropTypes.object,
     config: PropTypes.object,
-    vseProps: PropTypes.object,
+    ampProps: PropTypes.object,
     headerNav: PropTypes.object,
     footerNav: PropTypes.object
 }

@@ -122,14 +122,14 @@
     "blend": "normal",
     "color": "rgb(0, 0, 0)"
   },
-  "version": 2,
+  "version": 1,
   "label": "Stylish Design",
   "status": "ACTIVE",
   "createdBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
   "createdDate": "2022-09-12T15:10:47.140Z",
   "lastModifiedBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
   "lastModifiedDate": "2022-09-12T15:10:54.613Z",
-  "lastPublishedVersion": 2,
+  "lastPublishedVersion": 1,
   "lastPublishedDate": "2022-09-12T16:40:45.162Z",
   "deliveryId": "3428271d-ae0f-4d3c-9174-8118be534cad"
 }

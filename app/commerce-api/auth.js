@@ -34,6 +34,7 @@ const refreshTokenRegisteredStorageKey = 'cc-nx'
 const refreshTokenGuestStorageKey = 'cc-nx-g'
 const oidStorageKey = 'oid'
 const dwSessionIdKey = 'dwsid'
+const customerGroups = 'customer_groups'
 const REFRESH_TOKEN_COOKIE_AGE = 90 // 90 days. This value matches SLAS cartridge.
 
 const EXPIRED_TOKEN = 'EXPIRED_TOKEN'
@@ -459,6 +460,7 @@ class Auth {
         this._storage.delete(cidStorageKey)
         this._storage.delete(encUserIdStorageKey)
         this._storage.delete(dwSessionIdKey)
+        this._storage.set(customerGroups, [])
     }
 }
 

@@ -1,0 +1,136 @@
+{
+  "id": "bbe17cee-564e-46ee-a3a5-f912c37d2643",
+  "body": {
+    "_meta": {
+      "name": "New Season",
+      "schema": "https://sfcc.com/components/card-enhanced"
+    },
+    "image": {
+      "image": {
+        "crop": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "rot": 0,
+        "hue": 0,
+        "sat": 0,
+        "bri": 0,
+        "fliph": false,
+        "flipv": false,
+        "poi": {
+          "x": 0.5487062404870624,
+          "y": 0.3812785388127854
+        },
+        "aspectLock": "poi",
+        "image": {
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+          },
+          "id": "ab65c9ce-47ee-4e51-a1f6-0f4ac2c33c3f",
+          "name": "tamara-bellis-uN1m9Ca0aqo-unsplash",
+          "endpoint": "sfcccompdev",
+          "defaultHost": "cdn.media.amplience.net"
+        },
+        "query": "poi=0.5487,0.3813,0,0&scaleFit=poi"
+      },
+      "imageAltText": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "Red dress"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "Robe rouge"
+          },
+          {
+            "locale": "de-DE",
+            "value": "Rotes Kleid"
+          },
+          {
+            "locale": "es-ES",
+            "value": "Vestido rojo"
+          },
+          {
+            "locale": "it-IT",
+            "value": "Vestito rosso"
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      }
+    },
+    "mainText": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "New Season"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Nouvelle saison"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Neue Season"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Nueva temporada"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Nuova stagione"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "subText": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Autumn/Winter Fashion Trends"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Tendances mode automne/hiver"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Modetrends Herbst/Winter"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Tendencias de la moda otoño/invierno"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Tendenze Moda Autunno/Inverno"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "textAlignment": "right",
+    "verticalAlignment": "bottom",
+    "linkPosition": "withtext",
+    "blend": "normal",
+    "color": "rgb(0, 0, 0)"
+  },
+  "version": 1,
+  "label": "New Season [Default]",
+  "status": "ACTIVE",
+  "createdBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
+  "createdDate": "2022-09-12T15:00:02.316Z",
+  "lastModifiedBy": "b5b7704b-34ca-4424-a7dc-f6880734c30e",
+  "lastModifiedDate": "2022-09-12T16:38:19.371Z",
+  "lastPublishedVersion": 1,
+  "lastPublishedDate": "2022-09-12T16:40:41.683Z",
+  "deliveryId": "bbe17cee-564e-46ee-a3a5-f912c37d2643"
+}

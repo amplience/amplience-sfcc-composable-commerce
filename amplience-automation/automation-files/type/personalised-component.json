@@ -1,0 +1,34 @@
+{
+    "contentTypeUri": "https://sfcc.com/components/personalised-component",
+    "status": "ACTIVE",
+    "settings": {
+        "label": "Personalised Component",
+        "icons": [
+            {
+                "size": 256,
+                "url": "https://sfcccomposable.a.bigcontent.io/v1/static/icon-component-personalised-container"
+            }
+        ],
+        "visualizations": [
+            {
+                "label": "Localhost",
+                "templatedUri": "http://localhost:3000/{{locales}}/visualization/{{hub.name}}/{{content.sys.id}}?vse={{vse.domain}}",
+                "default": true
+            },
+            {
+                "label": "Live (Amplience MRT)",
+                "templatedUri": "https://ascc-production.mobify-storefront.com/{{locales}}/visualization/{{hub.name}}/{{content.sys.id}}?vse={{vse.domain}}",
+                "default": false
+            },
+            {
+                "label": "JSON",
+                "templatedUri": "https://delivery-preview.visualizations.content.amplience.net?id={{content.sys.id}}&vse={{vse.domain}}&locale={{locales}}&hub={{cms.hub}}&realtime=true",
+                "default": false
+            }
+        ],
+        "cards": []
+    },
+    "repositories": [
+        "content"
+    ]
+}

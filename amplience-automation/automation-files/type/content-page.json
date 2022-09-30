@@ -9,11 +9,16 @@
                 "url": "https://sfcccomposable.a.bigcontent.io/v1/static/icon-component-content-page"
             }
         ],
-        "visualizations": [
+        "visualizations": [ 
             {
                 "label": "Localhost",
                 "templatedUri": "http://localhost:3000/{{locales}}/page/{{delivery.key}}?pagevse={{vse.domain}}",
                 "default": true
+            },
+            {
+                "label": "Live (Amplience MRT)",
+                "templatedUri": "https://ascc-production.mobify-storefront.com/{{locales}}/page/{{delivery.key}}?pagevse={{vse.domain}}",
+                "default": false
             },
             {
                 "label": "JSON",

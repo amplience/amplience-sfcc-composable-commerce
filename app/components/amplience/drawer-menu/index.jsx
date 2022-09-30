@@ -41,7 +41,7 @@ import {
     useBreakpointValue,
     useMultiStyleConfig
 } from '@chakra-ui/react'
-import Link from '../../link'
+import Link from '../link'
 // Icons
 import {BrandLogo, LocationIcon, SignoutIcon, UserIcon} from '../../icons'
 
@@ -54,6 +54,7 @@ import {getLinkUrl} from '../../../utils/amplience/link'
 
 import useNavigation from '../../../hooks/use-navigation'
 import useMultiSite from '../../../hooks/use-multi-site'
+import {getImageUrl} from '../../../utils/amplience/image'
 
 // The FONT_SIZES and FONT_WEIGHTS constants are used to control the styling for
 // the accordion buttons as their current depth. In the below definition we assign
@@ -64,7 +65,7 @@ const PHONE_DRAWER_SIZE = 'xs'
 const TABLET_DRAWER_SIZE = 'lg'
 
 const DrawerSeparator = () => (
-    <Box paddingTop='6' paddingBottom='6'>
+    <Box paddingTop="6" paddingBottom="6">
         <Divider />
     </Box>
 )
@@ -78,11 +79,12 @@ const STORE_LOCATOR_HREF = '/store-locator'
  * main usage is to navigate from one category to the next, but also homes links to
  * support, log in and out actions, as support links.
  */
-const DrawerMenu = ({isOpen, onClose = noop, onLogoClick = noop, root, footer}) => {
+const DrawerMenu = ({isOpen, onClose = noop, onLogoClick = noop, root, footer, logo, showVse = false}) => {
     const intl = useIntl()
     const customer = useCustomer()
     const navigate = useNavigation()
     const styles = useMultiStyleConfig('DrawerMenu')
+    const ampStyles = useMultiStyleConfig('AmplienceHeader')
     const drawerSize = useBreakpointValue({sm: PHONE_DRAWER_SIZE, md: TABLET_DRAWER_SIZE})
     const socialIconVariant = useBreakpointValue({base: 'flex', md: 'flex-start'})
     const {site, buildUrl} = useMultiSite()
@@ -90,25 +92,30 @@ const DrawerMenu = ({isOpen, onClose = noop, onLogoClick = noop, root, footer}) 
     const [showLoading, setShowLoading] = useState(false)
     const onSignoutClick = async () => {
         setShowLoading(true)
-        await customer.logout()
-        navigate('/login')
+        await customer.logout(navigate)
         setShowLoading(false)
     }
+    const url = getImageUrl(logo)
 
     const supportedLocaleIds = l10n?.supportedLocales.map((locale) => locale.id)
     const showLocaleSelector = supportedLocaleIds?.length > 1
 
     return (
-        <Drawer isOpen={isOpen} onClose={onClose} placement='left' size={drawerSize}>
+        <Drawer isOpen={isOpen} onClose={onClose} placement="left" size={drawerSize} trapFocus={!showVse}>
             <DrawerOverlay>
                 <DrawerContent>
                     {/* Header Content */}
                     <DrawerHeader>
-                        <IconButton
-                            icon={<BrandLogo {...styles.logo} />}
-                            variant='unstyled'
+                        {url && (<IconButton
+                            icon={<img
+                                {...styles.logo}
+                                style={{...ampStyles.logo}}
+                                alt={'logo'}
+                                src={`${url}?w=192&fmt=auto`}
+                            />}
+                            variant="unstyled"
                             onClick={onLogoClick}
-                        />
+                        />)}
 
                         <DrawerCloseButton />
                     </DrawerHeader>
@@ -126,13 +133,13 @@ const DrawerMenu = ({isOpen, onClose = noop, onLogoClick = noop, root, footer}) 
                                 />
                             </Fade>
                         ) : (
-                            <Center p='8'>
-                                <Spinner size='xl' />
+                            <Center p="8">
+                                <Spinner size="xl" />
                             </Center>
                         )}
                         <DrawerSeparator />
                         Application Actions
-                        <VStack align='stretch' spacing={0} {...styles.actions} px={0}>
+                        <VStack align="stretch" spacing={0} {...styles.actions} px={0}>
                             <Box {...styles.actionsItem}>
                                 {customer.isRegistered ? (
                                     <NestedAccordion
@@ -143,12 +150,12 @@ const DrawerMenu = ({isOpen, onClose = noop, onLogoClick = noop, root, footer}) 
                                             depth === 1 && (
                                                 <Button
                                                     {...styles.signout}
-                                                    variant='unstyled'
+                                                    variant="unstyled"
                                                     onClick={onSignoutClick}
                                                 >
                                                     <Flex align={'center'}>
                                                         <SignoutIcon boxSize={5} />
-                                                        <Text {...styles.signoutText} as='span'>
+                                                        <Text {...styles.signoutText} as="span">
                                                             {intl.formatMessage({
                                                                 id: 'drawer_menu.button.log_out',
                                                                 defaultMessage: 'Log Out'

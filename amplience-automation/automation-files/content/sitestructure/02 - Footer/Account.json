@@ -29,14 +29,14 @@
             "priority": 1
         }
     },
-    "version": 5,
+    "version": 1,
     "label": "Account",
     "status": "ACTIVE",
     "createdBy": "fb90fd96-dcaf-4d67-9747-b9676282f661",
     "createdDate": "2022-08-18T14:32:36.482Z",
     "lastModifiedBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
     "lastModifiedDate": "2022-08-24T21:04:49.248Z",
-    "lastPublishedVersion": 5,
+    "lastPublishedVersion": 1,
     "lastPublishedDate": "2022-08-24T21:05:57.663Z",
     "hierarchy": {
         "parentId": "9123481a-0979-4d83-811b-c778e3613236",

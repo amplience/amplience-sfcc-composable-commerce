@@ -63,7 +63,7 @@
         "maxWidth": "md",
         "background": "gray.50"
     },
-    "version": 4,
+    "version": 1,
     "label": "Section",
     "status": "ACTIVE",
     "createdBy": "80d6035b-48f7-49d0-b4f4-feed71fe7bf8",
@@ -71,7 +71,7 @@
     "createdDate": "2022-08-04T09:18:17.824Z",
     "lastModifiedBy": "80d6035b-48f7-49d0-b4f4-feed71fe7bf8",
     "lastModifiedDate": "2022-08-04T10:37:45.882Z",
-    "lastPublishedVersion": 4,
+    "lastPublishedVersion": 1,
     "lastPublishedDate": "2022-08-04T10:38:45.544Z",
     "deliveryId": "164c1306-4c74-49cf-90b8-011872158370"
 }

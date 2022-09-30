@@ -1,0 +1,107 @@
+{
+  "id": "fb67ce00-be2e-44fb-9a17-e40023f27713",
+  "body": {
+    "_meta": {
+      "name": "Shop on your mobile",
+      "schema": "https://sfcc.com/components/section"
+    },
+    "title": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Shop on your mobile"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Achetez sur votre mobile"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Kaufen Sie auf Ihrem Handy ein"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Compra en tu móvil"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Acquista sul tuo telefonino"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "subtitle": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Do not forget to download our app now to take advantage of special discounts for mobile applications. Discounts for the mobile application are updated weekly. First one to be notified, turn on your notifications to not miss the LIMITED OFFERS!!"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "N'oubliez pas de télécharger notre application dès maintenant pour profiter de remises spéciales pour les applications mobiles. Les réductions pour l'application mobile sont mises à jour chaque semaine. Premier à être averti, activez vos notifications pour ne pas rater les OFFRES LIMITÉES !!"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Vergessen Sie nicht, jetzt unsere App herunterzuladen, um von Sonderrabatten für mobile Anwendungen zu profitieren. Rabatte für die mobile Anwendung werden wöchentlich aktualisiert. Schalten Sie als Erster Ihre Benachrichtigungen ein, um die BEGRENZTEN ANGEBOTE nicht zu verpassen!!"
+        },
+        {
+          "locale": "es-ES",
+          "value": "No olvide descargar nuestra aplicación ahora para aprovechar los descuentos especiales para aplicaciones móviles. Los descuentos para la aplicación móvil se actualizan semanalmente. El primero en ser notificado, activa tus notificaciones para no perderte las OFERTAS LIMITADAS!!"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Non dimenticare di scaricare subito la nostra app per usufruire di sconti speciali per le applicazioni mobili. Gli sconti per l'applicazione mobile vengono aggiornati settimanalmente. Primo ad essere avvisato, attiva le tue notifiche per non perdere le OFFERTE LIMITATE!!"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "actions": [
+      {
+        "label": {
+          "values": [
+            {
+              "locale": "en-US",
+              "value": "Click to Shop"
+            },
+            {
+              "locale": "fr-FR",
+              "value": "Cliquez pour magasiner"
+            },
+            {
+              "locale": "de-DE",
+              "value": "Klicken Sie zum Shoppen"
+            },
+            {
+              "locale": "es-ES",
+              "value": "Haga clic para comprar"
+            },
+            {
+              "locale": "it-IT",
+              "value": "Fare clic per acquistare"
+            }
+          ],
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+          }
+        },
+        "url": "/category/newarrivals-men"
+      }
+    ],
+    "maxWidth": "lg",
+    "background": "gray.50"
+  },
+  "version": 1,
+  "label": "Shop on your mobile",
+  "status": "ACTIVE",
+  "createdBy": "755e6f44-78bf-47f8-a567-bd950719e817",
+  "createdDate": "2022-09-21T09:13:43.055Z",
+  "lastModifiedBy": "755e6f44-78bf-47f8-a567-bd950719e817",
+  "lastModifiedDate": "2022-09-21T09:16:24.363Z",
+  "lastPublishedVersion": 1,
+  "lastPublishedDate": "2022-09-21T09:52:43.263Z",
+  "deliveryId": "fb67ce00-be2e-44fb-9a17-e40023f27713"
+}

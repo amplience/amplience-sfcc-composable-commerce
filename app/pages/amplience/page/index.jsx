@@ -24,6 +24,7 @@ import {MAX_CACHE_AGE} from '../../../constants'
 import {useAmpRtv} from '../../../utils/amplience/rtv'
 import {AmplienceContextProvider} from '../../../contexts/amplience'
 import {AmplienceAPI} from '../../../amplience-api'
+import {personalisationChanged} from '../../../amplience-api/utils'
 
 /**
  * This is an example content page for Retail React App.
@@ -33,6 +34,7 @@ import {AmplienceAPI} from '../../../amplience-api'
  */
 const ContentPage = ({page, pageVse}) => {
     const [pageModel, setPageModel] = useState(undefined)
+    const [rtvActive, setRtvActive] = useState(false)
 
     useEffect(() => {
         setPageModel(page)
@@ -41,6 +43,7 @@ const ContentPage = ({page, pageVse}) => {
     useAmpRtv((model) => {
         // handle form model change
         setPageModel(model.content)
+        setRtvActive(true)
     })
 
     const pageBody = (
@@ -69,7 +72,7 @@ const ContentPage = ({page, pageVse}) => {
             ) : (
                 <>
                     {pageModel.content?.map((item) => {
-                        return <AmplienceWrapper key={item._meta.deliveryId} content={item} />
+                        return <AmplienceWrapper key={item._meta.deliveryId} content={item} rtvActive={rtvActive}  />
                     })}
                 </>
             )}
@@ -86,7 +89,9 @@ const ContentPage = ({page, pageVse}) => {
 ContentPage.getTemplateName = () => 'contentpage'
 
 ContentPage.shouldGetProps = ({previousLocation, location}) =>
-    !previousLocation || previousLocation.pathname !== location.pathname
+    !previousLocation ||
+    previousLocation.pathname !== location.pathname ||
+    personalisationChanged(true)
 
 ContentPage.getProps = async ({req, res, params, location, api, ampClient}) => {
     const {pageId} = params

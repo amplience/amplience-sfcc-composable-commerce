@@ -1,7 +1,7 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import PropTypes from 'prop-types'
 import * as cookie from 'cookie'
-import {AmplienceAPI} from '../../amplience-api'
+import {AmplienceAPI, defaultAmpClient} from '../../amplience-api'
 
 /**
  * This is the global Amplience Realtime Visualization Context on Non-category pages
@@ -20,6 +20,7 @@ import {AmplienceAPI} from '../../amplience-api'
  * }
  */
 import {init} from 'dc-visualization-sdk'
+import {signalPersonalisationChanged} from '../../amplience-api/utils'
 
 export const RealtimeVisualization = React.createContext()
 
@@ -30,7 +31,7 @@ export const RealtimeVisualizationProvider = ({status: initState, ampViz}) => {
     const [status, setStatus] = useState(initState)
     const [ampVizSdk, setAmpVizSdk] = useState(ampViz)
 
-    ;async () => {
+    async () => {
         const sdk = await init({debug: true})
 
         setAmpVizSdk(sdk)
@@ -66,15 +67,29 @@ RealtimeVisualizationProvider.propTypes = {
 
 export const AmplienceContext = React.createContext()
 
-export const AmplienceContextProvider = ({vse, vseTimestamp, children}) => {
+export const AmplienceContextProvider = ({vse, vseTimestamp, groups: initialGroups, children}) => {
     // Init client using VSE
     const [client] = useState(new AmplienceAPI())
+    const [groups, setGroups] = useState(initialGroups)
+
+    useEffect(() => {
+        if (groups !== initialGroups) {
+            setGroups(initialGroups)
+        }
+    }, [initialGroups])
 
     // Switch the API to use the provided VSE, if present.
+    client.setGroups(groups)
     client.setVse(vse)
 
+    const updateGroups = (groups) => {
+        defaultAmpClient.setGroups(groups)
+        signalPersonalisationChanged()
+        setGroups(groups)
+    }
+
     return (
-        <AmplienceContext.Provider value={{vse, vseTimestamp, client}}>
+        <AmplienceContext.Provider value={{vse, vseTimestamp, groups, updateGroups, client}}>
             {children}
         </AmplienceContext.Provider>
     )
@@ -90,29 +105,55 @@ const getCookies = (headers) => {
     return {}
 }
 
-export const generateVseProps = ({req, res, query}) => {
-    let vse = null
-    let vseTimestamp = 0
+export const getGroupsFromLocalStorage = ({req, res}) => {
+    let groups = []
 
     if (res) {
-        vse = query.vse
-        vseTimestamp = query['vse-timestamp']
-        vseTimestamp = vseTimestamp == 'null' ? 0 : Number(vseTimestamp)
+        const cookies = getCookies(req.rawHeaders)
+        groups = cookies['customerGroups']
 
-        if (vse == null) {
-            const cookies = getCookies(req.rawHeaders)
-            vse = cookies['vse']
-            vseTimestamp = cookies['vse-timestamp']
-            vseTimestamp = vseTimestamp != null ? Number(vseTimestamp) : undefined
+        try {
+            groups = JSON.parse(groups)
+        } catch (e) {
+            console.error(`No customer groups found in cookies`)
         }
     }
 
-    return {vse, vseTimestamp}
+    return groups
+}
+
+export const generateVseProps = ({req, res, query}) => {
+    // '/:locale/visualization/:hubname/:contentId/:vse'
+    const vizRegEx = /\/(.*)\/visualization\/(.*)\/(.*)\/(.*)/
+    if (req.originalUrl.match(vizRegEx)) {
+        const url = req.originalUrl.split('?')[0]
+        const [match, locale, hubname, contentId, vse] = url.match(vizRegEx)
+        return {vse, hubname, contentId, locale}
+    } else if (query['vse'] || query['vse-timestamp']) {
+        let vse = null
+        let vseTimestamp = 0
+
+        if (res) {
+            vse = query.vse
+            vseTimestamp = query['vse-timestamp']
+            vseTimestamp = vseTimestamp == 'null' ? 0 : Number(vseTimestamp)
+
+            if (vse == null) {
+                const cookies = getCookies(req.rawHeaders)
+                vse = cookies['vse']
+                vseTimestamp = cookies['vse-timestamp']
+                vseTimestamp = vseTimestamp != null ? Number(vseTimestamp) : undefined
+            }
+        }
+        return {vse, vseTimestamp}
+    }
+    return {vse: undefined, vseTimestamp: undefined}
 }
 
 AmplienceContextProvider.propTypes = {
     vse: PropTypes.string,
     vseTimestamp: PropTypes.number,
+    groups: PropTypes.array,
 
     children: PropTypes.node.isRequired
 }

@@ -33,14 +33,14 @@
         },
         "includeSFCC": false
     },
-    "version": 3,
+    "version": 1,
     "label": "Our Ties",
     "status": "ACTIVE",
     "createdBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
     "createdDate": "2022-08-24T19:30:14.780Z",
     "lastModifiedBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
     "lastModifiedDate": "2022-08-24T21:05:43.628Z",
-    "lastPublishedVersion": 3,
+    "lastPublishedVersion": 1,
     "lastPublishedDate": "2022-08-24T21:05:57.663Z",
     "hierarchy": {
         "parentId": "541cc290-96b5-4f61-9685-e323927efb89",

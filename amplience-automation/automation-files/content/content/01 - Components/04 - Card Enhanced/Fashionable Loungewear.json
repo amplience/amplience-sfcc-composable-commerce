@@ -185,14 +185,14 @@
       }
     ]
   },
-  "version": 2,
+  "version": 1,
   "label": "Fashionable Loungewear",
   "status": "ACTIVE",
   "createdBy": "b5b7704b-34ca-4424-a7dc-f6880734c30e",
   "createdDate": "2022-09-12T16:50:13.427Z",
   "lastModifiedBy": "b5b7704b-34ca-4424-a7dc-f6880734c30e",
   "lastModifiedDate": "2022-09-12T16:53:41.751Z",
-  "lastPublishedVersion": 2,
+  "lastPublishedVersion": 1,
   "lastPublishedDate": "2022-09-12T17:04:15.613Z",
   "deliveryId": "60ebf6e7-d821-4769-ab1a-49d0ef4dbba9"
 }

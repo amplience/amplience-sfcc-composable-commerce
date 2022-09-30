@@ -37,6 +37,7 @@ const ProductList = loadable(() => import('./pages/product-list'), {fallback})
 const AmpProductList = loadable(() => import('./pages/amplience/product-list'), {fallback})
 const Wishlist = loadable(() => import('./pages/account/wishlist'), {fallback})
 const PageNotFound = loadable(() => import('./pages/page-not-found'))
+const Developers = loadable(() => import('./pages/amplience/developers'), {fallback})
 
 //Amplience Pages
 const RealtimeVisualization = loadable(() => import('./pages/amplience/realtime-visualization'))
@@ -104,13 +105,17 @@ const routes = [
         component: Wishlist
     },
     {
-        path: '/visualization/:hubname/:contentId/:vse',
+        path: '/visualization/:hubname/:contentId',
         component: RealtimeVisualization,
         exact: false
     },
     {
         path: '/page/:pageId',
         component: ContentPage
+    },
+    {
+        path: '/developers',
+        component: Developers
     },
     {
         path: '*',

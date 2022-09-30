@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {Box, Flex, Heading, Stack, Image} from '@chakra-ui/react'
+import {Box, Flex, Stack, Image} from '@chakra-ui/react'
 import Button from '../button'
 import {getImageUrl} from '../../../utils/amplience/image'
 
-const NavigationHero = ({title, img, actions, ...props}) => {
+const NavigationHero = ({title, img, actions, fullWidth, ...props}) => {
     let src = ''
     let alt = ''
     if (img) {
@@ -90,7 +90,11 @@ NavigationHero.propTypes = {
             label: PropTypes.string,
             url: PropTypes.string
         })
-    )
+    ),
+    /**
+     * Hero fullWidth property
+     */
+    fullWidth: PropTypes.bool
 }
 
 export default NavigationHero

@@ -112,7 +112,9 @@
         "dc-management-sdk-js": "^1.17.1",
         "dc-visualization-sdk": "^1.1.0",
         "express-urlrewrite": "^2.0.0",
+        "headers-polyfill": "^3.1.0",
         "lodash": "^4.17.21",
+        "moment": "^2.29.4",
         "react-json-tree": "^0.17.0",
         "yargs": "^15.4.1"
     }

@@ -1,0 +1,61 @@
+{
+  "id": "b9fbfa9b-f44b-4d5e-a11c-cd4c118ecf64",
+  "body": {
+    "title": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Discover our luxury collection"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Découvrez notre collection de luxe"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Entdecken Sie unsere Luxuskollektion"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Descubre nuestra colección de lujo"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Scopri la nostra collezione di lusso"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "img": {
+      "image": {
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+        },
+        "id": "b2943a4f-ccdf-4e35-9faa-d2a6ef7dfb24",
+        "name": "jonathan-francisca-YHbcum51JB0-unsplash",
+        "endpoint": "sfcccompdev2",
+        "defaultHost": "cdn.media.amplience.net"
+      }
+    },
+    "fullWidth": true,
+    "textAlign": "Left",
+    "justifyContent": "Left",
+    "alignItems": "End",
+    "_meta": {
+      "name": "Discover our luxury collection",
+      "schema": "https://sfcc.com/components/hero"
+    }
+  },
+  "version": 1,
+  "label": "Discover our luxury collection [Everyone]",
+  "status": "ACTIVE",
+  "createdBy": "b5b7704b-34ca-4424-a7dc-f6880734c30e",
+  "createdDate": "2022-09-12T11:19:15.690Z",
+  "lastModifiedBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
+  "lastModifiedDate": "2022-09-13T11:34:41.544Z",
+  "lastPublishedVersion": 1,
+  "lastPublishedDate": "2022-09-13T11:34:52.741Z",
+  "deliveryId": "b9fbfa9b-f44b-4d5e-a11c-cd4c118ecf64"
+}

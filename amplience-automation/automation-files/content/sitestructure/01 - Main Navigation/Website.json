@@ -5,7 +5,7 @@
             "name": "Amplience",
             "schema": "https://sfcc.com/site/navigation/external",
             "hierarchy": {
-                "parentId": "388e47b3-0c2f-495c-8e2a-2bf94a59ee84",
+                "parentId": "9f936991-381e-4695-895e-be814de1ce9c",
                 "root": false
             }
         },
@@ -20,13 +20,25 @@
                     {
                         "locale": "fr-FR",
                         "value": "Site Internet"
+                    },
+                    {
+                        "locale": "de-DE",
+                        "value": "Webseite"
+                    },
+                    {
+                        "locale": "es-ES",
+                        "value": "Sitio de Internet"
+                    },
+                    {
+                        "locale": "it-IT",
+                        "value": "Sito web"
                     }
                 ],
                 "_meta": {
                     "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
                 }
             },
-            "priority": 1
+            "priority": 0
         },
         "externalUrl": {
             "values": [
@@ -40,17 +52,17 @@
             }
         }
     },
-    "version": 6,
+    "version": 1,
     "label": "Website",
     "status": "ACTIVE",
     "createdBy": "fb90fd96-dcaf-4d67-9747-b9676282f661",
     "createdDate": "2022-08-18T16:12:08.253Z",
     "lastModifiedBy": "b5b7704b-34ca-4424-a7dc-f6880734c30e",
     "lastModifiedDate": "2022-08-22T11:07:32.135Z",
-    "lastPublishedVersion": 6,
+    "lastPublishedVersion": 1,
     "lastPublishedDate": "2022-08-24T16:19:53.872Z",
     "hierarchy": {
-        "parentId": "388e47b3-0c2f-495c-8e2a-2bf94a59ee84",
+        "parentId": "9f936991-381e-4695-895e-be814de1ce9c",
         "root": false
     },
     "deliveryId": "bf55e749-7b01-4155-b4a3-600dcd28db1d"

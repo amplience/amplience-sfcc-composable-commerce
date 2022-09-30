@@ -1,5 +1,5 @@
 import {useContext, useEffect} from 'react'
-import {RealtimeVisualization} from '../../contexts/amplience'
+import {AmplienceContext, RealtimeVisualization} from '../../contexts/amplience'
 import {EnrichConfigMap} from './enrich'
 import {enrichNavigation} from './link'
 
@@ -104,25 +104,33 @@ export const useAmpRtv = (method, ampVizSdk, captures = []) => {
         ampVizSdk = useContext(RealtimeVisualization).ampVizSdk
     }
 
+    const client = useContext(AmplienceContext)?.client
+
     useEffect(() => {
         let removeChangedSubscription
         let cancelled = false
 
         if (ampVizSdk !== null) {
+            const enrichAndSignal = async (model) => {
+                if (client) {
+                    await client.defaultEnrich([model], {personalised: true})
+                }
+
+                if (!cancelled) {
+                    method(model)
+                }
+            }
+
             ampVizSdk.form.saved(() => {
                 window.location.reload()
             })
 
             ampVizSdk.form.get().then((model) => {
-                if (!cancelled) {
-                    method(model)
-                }
+                enrichAndSignal(model)
             })
 
             removeChangedSubscription = ampVizSdk.form.changed((model) => {
-                if (!cancelled) {
-                    method(model)
-                }
+                enrichAndSignal(model)
             })
         }
 

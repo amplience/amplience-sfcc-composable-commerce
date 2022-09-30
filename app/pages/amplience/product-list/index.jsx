@@ -91,9 +91,16 @@ import {buildUrlSet} from '../../../utils/url'
 import {useAmpRtv} from '../../../utils/amplience/rtv'
 import {defaultAmpClient} from '../../../amplience-api'
 import GridItemHero from '../../../components/amplience/hero/gridItemHero'
+import PersonalisedComponent from '../../../components/amplience/personalised-component'
+import {personalisationChanged} from '../../../amplience-api/utils'
+
+const PersonalisedComponentGridItem = ({...props}) => {
+    return <PersonalisedComponent limit="1" components={inGridComponents} {...props} />
+}
 
 const inGridComponents = {
-    'https://sfcc.com/components/hero': GridItemHero
+    'https://sfcc.com/components/hero': GridItemHero,
+    'https://sfcc.com/components/personalised-ingrid-component': PersonalisedComponentGridItem
 }
 
 // NOTE: You can ignore certain refinements on a template level by updating the below
@@ -917,7 +924,8 @@ ProductList.getTemplateName = () => 'product-list'
 ProductList.shouldGetProps = ({previousLocation, location}) =>
     !previousLocation ||
     previousLocation.pathname !== location.pathname ||
-    previousLocation.search !== location.search
+    previousLocation.search !== location.search ||
+    personalisationChanged(true)
 
 ProductList.getProps = async ({res, params, location, api, ampClient}) => {
     const {categoryId} = params

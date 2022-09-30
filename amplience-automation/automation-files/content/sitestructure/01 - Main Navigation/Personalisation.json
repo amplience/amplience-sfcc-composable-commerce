@@ -1,0 +1,65 @@
+{
+  "id": "17d606d9-75f9-4bca-aab5-dd674805b5c2",
+  "body": {
+    "_meta": {
+      "name": "Personalisation",
+      "schema": "https://sfcc.com/site/navigation/content-page",
+      "hierarchy": {
+        "parentId": "dbc534ae-6336-49dc-8da0-d6f9a1dfd920",
+        "root": false
+      }
+    },
+    "common": {
+      "visible": true,
+      "title": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "Personalisation"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "Personnalisation"
+          },
+          {
+            "locale": "de-DE",
+            "value": "Personalisierung"
+          },
+          {
+            "locale": "es-ES",
+            "value": "Personalización"
+          },
+          {
+            "locale": "it-IT",
+            "value": "Personalizzazione"
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      },
+      "priority": 1
+    },
+    "contentpage": {
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference"
+      },
+      "contentType": "https://sfcc.com/site/pages/content-page",
+      "id": "65b2a677-2681-452b-a416-1f5cfe4a3878"
+    }
+  },
+  "version": 1,
+  "label": "Personalisation",
+  "status": "ACTIVE",
+  "createdBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+  "createdDate": "2022-09-26T11:37:09.649Z",
+  "lastModifiedBy": "918ec612-377d-4c6a-94e4-9d4fcf8a25b0",
+  "lastModifiedDate": "2022-09-26T12:08:33.967Z",
+  "lastPublishedVersion": 1,
+  "lastPublishedDate": "2022-09-26T11:37:35.249Z",
+  "hierarchy": {
+    "parentId": "dbc534ae-6336-49dc-8da0-d6f9a1dfd920",
+    "root": false
+  },
+  "deliveryId": "17d606d9-75f9-4bca-aab5-dd674805b5c2"
+}

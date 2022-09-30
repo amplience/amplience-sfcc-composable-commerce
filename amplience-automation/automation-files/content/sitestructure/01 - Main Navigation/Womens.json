@@ -55,8 +55,8 @@
                     "_meta": {
                         "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference"
                     },
-                    "contentType": "https://sfcc.com/components/card-enhanced",
-                    "id": "bbe17cee-564e-46ee-a3a5-f912c37d2643"
+                    "contentType": "https://sfcc.com/components/personalised-ingrid-component",
+                    "id": "22a10957-b857-4d74-9b36-775779b72d2b"
                 }
             },
             {
@@ -118,14 +118,14 @@
             }
         ]
     },
-    "version": 8,
+    "version": 1,
     "label": "Womens",
     "status": "ACTIVE",
     "createdBy": "fb90fd96-dcaf-4d67-9747-b9676282f661",
     "createdDate": "2022-08-18T15:56:20.191Z",
     "lastModifiedBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
     "lastModifiedDate": "2022-08-23T08:31:31.026Z",
-    "lastPublishedVersion": 8,
+    "lastPublishedVersion": 1,
     "lastPublishedDate": "2022-08-24T16:19:53.872Z",
     "hierarchy": {
         "parentId": "250114dd-abbe-481c-80d8-4080537c40c4",

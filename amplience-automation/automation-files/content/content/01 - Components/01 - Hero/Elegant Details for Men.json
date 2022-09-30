@@ -1,0 +1,61 @@
+{
+  "id": "0ea31cea-7312-4323-9e7c-24c456a72623",
+  "body": {
+    "_meta": {
+      "name": "Elegant Details for Men",
+      "schema": "https://sfcc.com/components/hero"
+    },
+    "title": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Elegant Details"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Détails élégants"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Elegante Details"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Detalles elegantes"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Dettagli eleganti"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "img": {
+      "image": {
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+        },
+        "id": "49b6d136-5ac9-4394-ba6d-118798c4c0c3",
+        "name": "noah-smith-wh2udxkVPWA-unsplash",
+        "endpoint": "sfcccompdev2",
+        "defaultHost": "cdn.media.amplience.net"
+      }
+    },
+    "fullWidth": true,
+    "textAlign": "Left",
+    "justifyContent": "Left",
+    "alignItems": "Center"
+  },
+  "version": 1,
+  "label": "Elegant Details for Men",
+  "status": "ACTIVE",
+  "createdBy": "755e6f44-78bf-47f8-a567-bd950719e817",
+  "createdDate": "2022-09-21T14:02:32.567Z",
+  "lastModifiedBy": "755e6f44-78bf-47f8-a567-bd950719e817",
+  "lastModifiedDate": "2022-09-21T14:02:32.567Z",
+  "lastPublishedVersion": 1,
+  "lastPublishedDate": "2022-09-21T14:03:58.312Z",
+  "deliveryId": "0ea31cea-7312-4323-9e7c-24c456a72623"
+}

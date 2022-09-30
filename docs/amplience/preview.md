@@ -1,4 +1,7 @@
 # Preview
+
+![Amplience Preview Toolbar](./media/amplience-preview-toolbar.png)
+
 Amplience has powerful capabilities which allow you to view your scheduled content in advance through time.
 
 [Preview Documentation](https://amplience.com/docs/planning/readme.html)

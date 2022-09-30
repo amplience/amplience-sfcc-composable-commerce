@@ -31,7 +31,7 @@ import {
 import useBasket from '../../../commerce-api/hooks/useBasket'
 import useCustomer from '../../../commerce-api/hooks/useCustomer'
 
-import Link from '../../link'
+import Link from '../link'
 import Search from '../../search'
 import withRegistration from '../../../hoc/with-registration'
 import {
@@ -99,8 +99,7 @@ const Header = ({
 
     const onSignoutClick = async () => {
         setShowLoading(true)
-        await customer.logout()
-        navigate('/login')
+        await customer.logout(navigate)
         setShowLoading(false)
     }
 
@@ -142,7 +141,7 @@ const Header = ({
                                 {...styles.logo}
                                 style={{...ampStyles.logo}}
                                 alt={'logo'}
-                                src={url}
+                                src={`${url}?w=192&fmt=auto`}
                             />
                         }
                         {...styles.icons}

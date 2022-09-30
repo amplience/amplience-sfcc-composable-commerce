@@ -127,14 +127,14 @@
         "type" : "URL"
       } ]
     },
-    "version" : 3,
+    "version" : 1,
     "label" : "Example In-Grid Card",
     "status" : "ACTIVE",
     "createdBy" : "fb90fd96-dcaf-4d67-9747-b9676282f661",
     "createdDate" : "2022-09-09T14:17:38.708Z",
     "lastModifiedBy" : "b5b7704b-34ca-4424-a7dc-f6880734c30e",
     "lastModifiedDate" : "2022-09-09T18:10:41.646Z",
-    "lastPublishedVersion" : 3,
+    "lastPublishedVersion" : 1,
     "lastPublishedDate" : "2022-09-09T18:11:19.985Z",
     "deliveryId" : "f5d217a8-8e50-4c35-b564-1d51f92226d9"
   }

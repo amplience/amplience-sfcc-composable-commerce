@@ -1,22 +1,53 @@
-import {ContentClient} from 'dc-delivery-sdk-js'
-import {chunk, flatten} from 'lodash'
+import {ContentClient, ContentMeta, ContentReference} from 'dc-delivery-sdk-js'
+import {chunk, flatten, intersection, compact} from 'lodash'
 import {app} from '../../config/default'
+import {
+    EnrichTarget,
+    isContentReference,
+    enrichContent,
+    isPersonalised,
+    EnrichStrategy
+} from './enrich'
 
 export type IdOrKey = {id: string} | {key: string}
 export type FilterType = ((item: any) => boolean) | undefined
 
+/**
+ * Personalisation variant.
+ */
+export type Variant = {
+    segment: String[];
+    content: ContentReference[] | ContentReference;
+    match?: string;
+    matchMode: 'Any' | 'All';
+}
+
+/**
+ * Personalised content before enrich.
+ */
+export type PersonalisedContent = {
+    _meta: ContentMeta;
+    defaultContent: any[] | any;
+    maxNumberMatches: number;
+    variants?: Variant[];
+}
+
+/**
+ * Parameters for fetching content.
+ */
 export type FetchParams = {
     locale?: string;
     depth?: 'all' | 'root';
     format?: 'inlined';
     client?: ContentClient;
+    personalised?: boolean;
 }
 
-const referenceTypes = [
-    'http://bigcontent.io/cms/schema/v1/core#/definitions/content-link',
-    'http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference'
-]
-
+/**
+ * Determine if the given vse has time machine active.
+ * @param vse VSE to check.
+ * @returns True if time machine is active, false otherwise.
+ */
 const isTimeMachineVse = (vse: string): boolean => {
     if (vse == null || vse.length === 0) {
         return false
@@ -28,6 +59,11 @@ const isTimeMachineVse = (vse: string): boolean => {
     return dashSplit.length > 1
 }
 
+/**
+ * Converts a VSE with time machine active into a regular one.
+ * @param vse VSE to convert.
+ * @returns A version of the VSE URL without time machine active.
+ */
 const clearTimeMachine = (vse: string): string => {
     const dotSplit = vse.split('.')
     const dashSplit = dotSplit[0].split('-')
@@ -35,20 +71,78 @@ const clearTimeMachine = (vse: string): string => {
     return [dashSplit[0], ...dotSplit.slice(1)].join('.')
 }
 
+/**
+ * Default fetch params.
+ */
+const defaultParams: FetchParams = {
+    personalised: true
+}
+
+/**
+ * Combine the given fetch params with the defaults.
+ * @param params Options provided by the user.
+ * @returns Options for fetch with fallback to defaults.
+ */
+const addDefaultParams = (params: FetchParams = {}): FetchParams => {
+    if (params) {
+        return {
+            ...defaultParams,
+            locale: 'en-US',
+            ...params
+        }
+    } else {
+        return {
+            ...defaultParams
+        }
+    }
+}
+
+/**
+ * Get content client fetch params from our fetch params.
+ */
+const getClientParams = (params: FetchParams): FetchParams => {
+    const result: FetchParams = {}
+
+    if (params.locale != null) result.locale = params.locale
+    if (params.depth != null) result.depth = params.depth
+    if (params.format != null) result.format = params.format
+
+    return result
+}
+
+/**
+ * Amplience API for fetching content. Supports setting a custom VSE,
+ * Hierarchy fetch, personalisation and other helpful features.
+ */
 export class AmplienceAPI {
     client: ContentClient
     hierarchyClient: ContentClient
     vse: string
+    groups: string[]
 
     clientReady: Promise<void>
     clientReadyResolve
 
+    /**
+     * Create the Amplience API.
+     */
     constructor() {
         this.clientReady = new Promise((resolve) => (this.clientReadyResolve = resolve))
         this.client = new ContentClient({hubName: app.amplience.hub})
         this.hierarchyClient = this.client
     }
 
+    /**
+     * Set the personalisation groups for enriching content.
+     */
+    setGroups(groups) {
+        this.groups = groups
+    }
+
+    /**
+     * Set the vse for fetching content. Must be called before fetch.
+     * @param vse Vse URL to use.
+     */
     setVse(vse) {
         if (this.vse != vse) {
             this.client = new ContentClient({
@@ -71,28 +165,66 @@ export class AmplienceAPI {
         this.clientReadyResolve()
     }
 
+    /**
+     * Fetch content from Dynamic Content in batch.
+     * @param args A list of IDs or keys to fetch.
+     * @param params Options for fetch.
+     * @returns Content or errors returned from Dynamic Content.
+     */
     async fetchContent(args: IdOrKey[], params: FetchParams = {}) {
         await this.clientReady
 
-        if (params && !params.locale) {
-            params.locale = 'en-US'
-        }
+        params = addDefaultParams(params)
 
         const client = params?.client ?? this.client
-
-        delete params.client
         const chunks = chunk(args, 12)
 
-        let responses = await Promise.all(chunks.map(async (arg) => (await client.getContentItems(arg, params)).responses))
+        let responses = await Promise.all(
+            chunks.map(
+                async (arg: IdOrKey[]) =>
+                    (await client.getContentItems(arg, getClientParams(params))).responses
+            )
+        )
 
-        return flatten(responses).map((response) => {
+        const items = flatten(responses).map((response) => {
             if ('content' in response) {
                 return response.content
             }
             return response.error
         })
+
+        await this.defaultEnrich(
+            items.filter((item) => item._meta),
+            params
+        )
+
+        return items
     }
 
+    /**
+     * Enrich content using default enrich strategies.
+     * @param items Content items to enrich.
+     * @param params Options for fetch.
+     */
+    async defaultEnrich(items: any[], params: FetchParams = {}) {
+        params = addDefaultParams(params)
+
+        const strategies: EnrichStrategy[] = []
+
+        if (params.personalised) {
+            strategies.push(this.enrichVariantsStrategy(params.locale))
+        }
+
+        for (let item of items) {
+            await enrichContent(item, strategies)
+        }
+    }
+
+    /**
+     * Recursively get children of a hierarchy node.
+     * @param parent Hierarchy node to get children of.
+     * @param filter A method to filter out content.
+     */
     async getChildren(parent: any, filter: FilterType) {
         const id = parent._meta.deliveryId
 
@@ -116,66 +248,192 @@ export class AmplienceAPI {
         await Promise.all(items.map((item) => this.getChildren(item, filter)))
     }
 
-    getReferences(item: any, refs: Map<string, any>) {
-        if (Array.isArray(item)) {
-            item.forEach((contained) => {
-                this.getReferences(contained, refs)
-            })
-        } else if (item != null && typeof item === 'object') {
-            const allPropertyNames = Object.getOwnPropertyNames(item)
-            // Does this object match the pattern expected for a content item or reference?
-            if (
-                item._meta &&
-                referenceTypes.indexOf(item._meta.schema) !== -1 &&
-                typeof item.contentType === 'string' &&
-                typeof item.id === 'string'
-            ) {
-                if (!refs.get(item.id)) {
-                    refs.set(item.id, [])
+    /**
+     * Enrich content item references with their delivery keys.
+     * @param targets Matching content items.
+     * @param locale The locale to fetch with.
+     */
+    async enrichReferenceDeliveryKeysInternal(targets: EnrichTarget[], locale: string) {
+        const ids = new Set<string>(targets.map((target) => target.item.id))
+
+        if (ids.size > 0) {
+            const items = await this.fetchContent(
+                Array.from(ids).map((id) => ({
+                    id
+                })),
+                {
+                    locale,
+                    depth: 'root',
+                    client: this.hierarchyClient
                 }
-                refs.set(item.id, [...refs.get(item.id), item])
-                return
-            }
-
-            allPropertyNames.forEach((propName) => {
-                const prop = item[propName]
-                if (typeof prop === 'object') {
-                    this.getReferences(prop, refs)
-                }
-            })
-        }
-    }
-
-    async enrichReferenceDeliveryKeys(item: any, locale = 'en-US') {
-        const refs = new Map<string, any>()
-
-        this.getReferences(item, refs)
-
-        const ids = Array.from(refs.keys()).map((id) => ({id}))
-
-        if (ids.length > 0) {
-            const items = await this.fetchContent(ids, {
-                locale,
-                depth: 'root',
-                client: this.hierarchyClient
-            })
+            )
 
             for (let item of items) {
-                const key = item._meta.deliveryKey
+                const key = item._meta?.deliveryKey
                 if (key) {
-                    refs.get(item._meta.deliveryId).map((el) => {
-                        el.deliveryKey = key
-                        return el
-                    })
+                    targets
+                        .filter((target) => target.item.id === item._meta.deliveryId)
+                        .forEach((target) => (target.item.deliveryKey = key))
                 }
             }
         }
     }
 
+    /**
+     * Fetch content for a personalised container based on the active groups.
+     * @param props Personalised container with variants.
+     * @param params Fetch params.
+     * @returns Matching content and variants.
+     */
+    async getVariantsContent(props: PersonalisedContent, params) {
+        const {
+            variants = [],
+            maxNumberMatches = 1,
+            defaultContent,
+            _meta: {name}
+        } = props
+
+        const matches = compact(
+            variants.map((arg: Variant, ind: number) => {
+                const similar = intersection(arg.segment, this.groups)
+                if (
+                    arg.matchMode == 'Any'
+                        ? similar.length == 0
+                        : similar.length < arg.segment.length
+                ) {
+                    return null
+                }
+                arg.match = `${name} match on variant ${ind + 1} (${arg.matchMode}), ${similar.join(
+                    ', '
+                )} segment${similar.length > 1 ? 's' : ''}`
+                return arg
+            })
+        )
+
+        let responses = await Promise.all(
+            matches.slice(0, maxNumberMatches).map(async (arg: Variant) => {
+                let rawIds: ('' | {id: string})[]
+                
+                if (arg.content == null) {
+                    arg.content = []
+                }
+
+                if (Array.isArray(arg.content)) {
+                    arg.content = arg.content.map((el) => ({
+                        ...el,
+                        match: arg.match
+                    })) as any[]
+                    rawIds = arg.content.map(({id}) => id && {id})
+                } else {
+                    rawIds = [arg.content.id && {id: arg.content.id}]
+                }
+
+                const ids = compact(rawIds)
+
+                if (!ids || !ids.length) {
+                    return Promise.resolve(arg)
+                }
+
+                const content = (await this.client.getContentItems(ids, params)).responses
+                const mappedContent: any = content.map((response) => {
+                    if ('content' in response) {
+                        return {
+                            ...response.content,
+                            match: arg.match
+                        }
+                    }
+                    return response.error
+                })
+
+                return {
+                    ...arg,
+                    content: mappedContent
+                }
+            })
+        )
+
+        let allContent = flatten(responses.map((response) => response.content))
+
+        if (allContent.length === 0) {
+            if (defaultContent == null) {
+                allContent = []
+            } else if (Array.isArray(defaultContent)) {
+                allContent = [
+                    ...defaultContent.map((el) => {
+                        el.match = `${name} default variant`
+                        return el
+                    })
+                ]
+            } else {
+                allContent = [{...defaultContent, match: `${name} default variant`}]
+            }
+        }
+
+        return {
+            ...props,
+            variants: responses,
+            content: allContent
+        }
+    }
+
+    /**
+     * Enrich personalised containers with matching content based on active groups.
+     * @param targets Matching objects in content items.
+     * @param locale The locale to fetch with.
+     */
+    async enrichVariantsInternal(targets: EnrichTarget[], locale: string) {
+        for (let target of targets) {
+            const item = target.item
+            Object.assign(item, await this.getVariantsContent(item, {locale}))
+        }
+    }
+
+    /**
+     * Get an enrich strategy for personalisation.
+     * @param locale Locale to fetch with.
+     * @returns An enrich strategy for personalisation.
+     */
+    enrichVariantsStrategy(locale = 'en-US') {
+        return {
+            trigger: isPersonalised,
+            enrich: (targets: EnrichTarget[]) => this.enrichVariantsInternal(targets, locale)
+        }
+    }
+
+    /**
+     * Enrich content item references with their delivery keys.
+     * @param item Item to search for missing delivery keys.
+     * @param locale Locale to fetch with.
+     */
+    async enrichReferenceDeliveryKeys(item: any, locale = 'en-US') {
+        await enrichContent(item, [
+            {
+                trigger: isContentReference,
+                enrich: (targets: EnrichTarget[]) =>
+                    this.enrichReferenceDeliveryKeysInternal(targets, locale)
+            }
+        ])
+    }
+
+    /**
+     * Fetch all items of a content hierarchy.
+     * @param parent Id or Key of a root node in a hierarchy.
+     * @param filter A method to filter out content.
+     * @param locale Locale to fetch with.
+     * @returns The hierarchy with child nodes stored in `children`.
+     */
     async fetchHierarchy(parent: IdOrKey, filter: FilterType, locale = 'en-US') {
         await this.clientReady
 
         const root = (await this.fetchContent([parent], {locale, client: this.hierarchyClient}))[0]
+
+        if (!root._meta) {
+            // Root node is missing. Return the error with an empty children array.
+
+            root.children = []
+
+            return root
+        }
 
         await this.getChildren(root, filter)
 
@@ -184,6 +442,12 @@ export class AmplienceAPI {
         return root
     }
 
+    /**
+     * Fetch the hierarchy root content item given an id of a hierarchy node.
+     * @param childId A hierarchy node ID.
+     * @param locale Locale to fetch with.
+     * @returns The hierarchy root content item.
+     */
     async fetchHierarchyRootFromChild(childId: string, locale = 'en-US') {
         await this.clientReady
 
@@ -201,4 +465,7 @@ export class AmplienceAPI {
     }
 }
 
+/**
+ * The default Amplience client.
+ */
 export const defaultAmpClient = new AmplienceAPI()

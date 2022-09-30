@@ -165,6 +165,7 @@ export const CheckoutProvider = ({children}) => {
                     await basket.updateCustomerInfo({email})
                 } else {
                     await customer.login({email, password})
+                    navigate()
                 }
             },
 

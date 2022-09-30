@@ -1,0 +1,43 @@
+{
+  "id": "e490aca6-05c4-4829-b3cf-30244b57abd8",
+  "body": {
+    "_meta": {
+      "name": "Personalised Christmas Sales Women Hero",
+      "schema": "https://sfcc.com/components/personalised-component"
+    },
+    "defaultContent": {
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+      },
+      "contentType": "https://sfcc.com/components/hero",
+      "id": "2da1ae67-149f-423b-86c0-f84b45ea60c0"
+    },
+    "maxNumberMatches": 1,
+    "variants": [
+      {
+        "matchMode": "Any",
+        "segment": [
+          "Everyone"
+        ],
+        "content": {
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference"
+          },
+          "contentType": "https://sfcc.com/components/hero",
+          "id": "6597390a-3731-44e9-9eb2-830ef7102396"
+        }
+      }
+    ],
+    "enrichType": "PERSONALISED"
+  },
+  "version": 1,
+  "label": "Personalised Christmas Sales Women Hero",
+  "status": "ACTIVE",
+  "createdBy": "755e6f44-78bf-47f8-a567-bd950719e817",
+  "createdDate": "2022-09-22T15:51:41.412Z",
+  "lastModifiedBy": "755e6f44-78bf-47f8-a567-bd950719e817",
+  "lastModifiedDate": "2022-09-22T15:51:41.412Z",
+  "lastPublishedVersion": 1,
+  "lastPublishedDate": "2022-09-22T15:52:47.771Z",
+  "deliveryId": "e490aca6-05c4-4829-b3cf-30244b57abd8"
+}

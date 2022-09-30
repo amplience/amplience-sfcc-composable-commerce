@@ -1,0 +1,58 @@
+{
+    "id": "dbc534ae-6336-49dc-8da0-d6f9a1dfd920",
+    "body": {
+        "_meta": {
+            "name": "Pages",
+            "schema": "https://sfcc.com/site/navigation/group",
+            "hierarchy": {
+                "parentId": "388e47b3-0c2f-495c-8e2a-2bf94a59ee84",
+                "root": false
+            }
+        },
+        "common": {
+            "visible": true,
+            "title": {
+                "values": [
+                    {
+                        "locale": "en-US",
+                        "value": "Pages"
+                    },
+                    {
+                        "locale": "fr-FR",
+                        "value": "Pages"
+                    },
+                    {
+                        "locale": "de-DE",
+                        "value": "Seiten"
+                    },
+                    {
+                        "locale": "es-ES",
+                        "value": "Paginas"
+                    },
+                    {
+                        "locale": "it-IT",
+                        "value": "Pagine"
+                    }
+                ],
+                "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+                }
+            },
+            "priority": 0
+        }
+    },
+    "version": 1,
+    "label": "Pages",
+    "status": "ACTIVE",
+    "createdBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+    "createdDate": "2022-09-28T07:55:51.990Z",
+    "lastModifiedBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+    "lastModifiedDate": "2022-09-28T07:55:51.990Z",
+    "lastPublishedVersion": 1,
+    "lastPublishedDate": "2022-09-28T07:56:12.957Z",
+    "hierarchy": {
+        "parentId": "388e47b3-0c2f-495c-8e2a-2bf94a59ee84",
+        "root": false
+    },
+    "deliveryId": "dbc534ae-6336-49dc-8da0-d6f9a1dfd920"
+}

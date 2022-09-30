@@ -1,0 +1,137 @@
+{
+  "id": "80f1a841-1cfb-4859-b74a-d8a955d38823",
+  "body": {
+    "_meta": {
+      "name": "Personalisation Page Section",
+      "schema": "https://sfcc.com/components/section"
+    },
+    "title": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Personalisation in Amplience"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Personnalisation en Amplience"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Personalisierung in Amplience"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Personalización en Amplience"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Personalizzazione in Amplience"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "subtitle": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "This page showcases how to personalise content using Amplience and Customer Groups in Salesforce"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Cette page explique comment personnaliser le contenu à l'aide d'Amplience et des groupes de clients dans Salesforce"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Auf dieser Seite wird gezeigt, wie Inhalte mithilfe von Amplience und Kundengruppen in Salesforce personalisiert werden"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Esta página muestra cómo personalizar contenido usando Amplience y Grupos de clientes en Salesforce"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Questa pagina mostra come personalizzare i contenuti utilizzando Amplience e Gruppi di clienti in Salesforce"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "actions": [
+      {
+        "label": {
+          "values": [
+            {
+              "locale": "en-US",
+              "value": "Concepts"
+            },
+            {
+              "locale": "fr-FR",
+              "value": "Notions"
+            },
+            {
+              "locale": "de-DE",
+              "value": "Konzepte"
+            },
+            {
+              "locale": "es-ES",
+              "value": "Conceptos"
+            },
+            {
+              "locale": "it-IT",
+              "value": "Concetti"
+            }
+          ],
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+          }
+        },
+        "url": "https://github.com/amplience/amplience-sfcc-composable-commerce/blob/main/docs/amplience/personalisation.md"
+      },
+      {
+        "label": {
+          "values": [
+            {
+              "locale": "en-US",
+              "value": "User Group Association"
+            },
+            {
+              "locale": "fr-FR",
+              "value": "Association de groupes de clients"
+            },
+            {
+              "locale": "de-DE",
+              "value": "Kundengruppenverband"
+            },
+            {
+              "locale": "es-ES",
+              "value": "Asociación de grupos de clientes"
+            },
+            {
+              "locale": "it-IT",
+              "value": "Associazione dei gruppi di clienti"
+            }
+          ],
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+          }
+        },
+        "url": "https://github.com/amplience/dc-extension-ecomm-toolkit#user-segments---multi-select---object"
+      }
+    ],
+    "maxWidth": "3xl",
+    "background": "gray.50"
+  },
+  "version": 1,
+  "label": "Personalisation Page Section",
+  "status": "ACTIVE",
+  "createdBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+  "createdDate": "2022-09-26T11:24:23.621Z",
+  "lastModifiedBy": "918ec612-377d-4c6a-94e4-9d4fcf8a25b0",
+  "lastModifiedDate": "2022-09-26T12:07:34.428Z",
+  "lastPublishedVersion": 1,
+  "lastPublishedDate": "2022-09-26T12:07:53.333Z",
+  "deliveryId": "80f1a841-1cfb-4859-b74a-d8a955d38823"
+}

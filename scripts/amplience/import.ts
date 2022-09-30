@@ -52,6 +52,7 @@ const clearTemplates = async (dir: string) => {
 }
 
 const createTempDir = (context: Context) => {
+    console.log(`Creating temporary directory ${context.tempDir}`)
     rmSync(context.tempDir, {recursive: true, force: true})
     mkdirSync(context.tempDir, {recursive: true})
 }
@@ -143,6 +144,25 @@ export const importHandler = async (context: Arguments<Context>): Promise<any> =
         console.warn(`Missing SFCC configuration, product selector extension will not be usable.`)
     }
 
+    // Computing all Editions start and end dates
+    // Starting from the next Monday, one week per Edition
+    const now = new Date()
+    now.setHours(0,1,0,0)
+    const nextMonday = new Date(now)
+    nextMonday.setDate(now.getDate() + (((8 - now.getDay()) % 7)))
+    const editions = [...new Array(4)].map((_,i) => {
+        let editionStartDate = new Date(nextMonday)
+        editionStartDate.setDate(nextMonday.getDate() + 7*i)
+        let editionEndDate = new Date(nextMonday)
+        editionEndDate.setDate(nextMonday.getDate() + 6+7*i)
+        editionEndDate.setHours(23,59,59,0) 
+        return {
+            editionStartDate: editionStartDate.toISOString(),
+            editionEndDate: editionEndDate.toISOString()
+        }
+    })
+    context.editions = editions
+
     console.log(`Compiling templates and copying files...`)
     await compileTemplates(context.automationDir, context.tempDir, context)
     const mappingFile = context.mapFile || join(process.env[process.platform == 'win32' ? 'USERPROFILE' : 'HOME'] || __dirname, '.amplience', 'imports', `sfcc-${context.hubId}.json`)
@@ -194,6 +214,17 @@ export const importHandler = async (context: Arguments<Context>): Promise<any> =
             {stdio: 'inherit'}
         )
 
+        console.log(`Importing personalised content...`)
+        execSync(
+            `npx dc-cli content-item import ${context.tempDir}/content/content-personalised \
+                --baseRepo ${context.contentRepoId} \
+                --media true \
+                --publish \
+                --batchPublish \
+                --mapFile ${mappingFile}`,
+            {stdio: 'inherit'}
+        )
+
         console.log(`Importing slots...`)
         execSync(
             `npx dc-cli content-item import ${context.tempDir}/content/slots \
@@ -223,6 +254,16 @@ export const importHandler = async (context: Arguments<Context>): Promise<any> =
                 --schedule true \
                 --catchup true \
                 --mapFile ${mappingFile}`,
+            {stdio: 'inherit'}
+        )
+
+        console.log(`Re-importing slots...`)
+        execSync(
+            `npx dc-cli content-item import ${context.tempDir}/content/slots \
+                --baseRepo ${context.slotsRepoId} \
+                --publish \
+                --batchPublish \
+                --mapFile ${mappingFile}`, 
             {stdio: 'inherit'}
         )
 

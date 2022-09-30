@@ -1,0 +1,61 @@
+{
+  "id": "a062b293-408f-4b1d-8404-3f32d972e5bc",
+  "body": {
+    "title": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Shop on your mobile"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Achetez sur votre mobile"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Kaufen Sie auf Ihrem Handy ein"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Compra en tu móvil"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Acquista sul tuo telefonino"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "img": {
+      "image": {
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+        },
+        "id": "359efee2-5306-4439-a5fd-6f66f3f7dfe3",
+        "name": "thom-holmes-J2e34-1CVVs-unsplash",
+        "endpoint": "sfcccompdev2",
+        "defaultHost": "cdn.media.amplience.net"
+      }
+    },
+    "fullWidth": true,
+    "textAlign": "Left",
+    "justifyContent": "Left",
+    "alignItems": "Start",
+    "_meta": {
+      "name": "Shop on your mobile",
+      "schema": "https://sfcc.com/components/hero"
+    }
+  },
+  "version": 1,
+  "label": "Shop on your mobile",
+  "status": "ACTIVE",
+  "createdBy": "b5b7704b-34ca-4424-a7dc-f6880734c30e",
+  "createdDate": "2022-09-12T11:19:15.690Z",
+  "lastModifiedBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
+  "lastModifiedDate": "2022-09-13T11:34:41.544Z",
+  "lastPublishedVersion": 1,
+  "lastPublishedDate": "2022-09-13T11:34:52.741Z",
+  "deliveryId": "a062b293-408f-4b1d-8404-3f32d972e5bc"
+}

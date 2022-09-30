@@ -1,0 +1,56 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://sfcc.com/components/personalised-component",
+    "title": "Personalised Component",
+    "description": "",
+    "allOf": [
+        {
+            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+        }
+    ],
+    "type": "object",
+    "properties": {
+        "defaultContent": {
+            "title": "Default",
+            "allOf": [
+                {
+                    "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                },
+                {
+                    "properties": {
+                        "contentType": {
+                            "$ref": "https://sfcc.com/libs/all-definitions#/definitions/anyComponent"
+                        }
+                    }
+                }
+            ]
+        },
+        "maxNumberMatches": {
+            "title": "Max number of matches",
+            "description": "",
+            "type": "number",
+            "minimum": 0,
+            "maximum": 10,
+            "default": 1
+        },
+        "variants": {
+            "title": "Variants",
+            "type": "array",
+            "minItems": 0,
+            "maxItems": 10,
+            "items": {
+                "allOf": [
+                    {
+                        "$ref": "https://sfcc.com/libs/all-definitions#/definitions/variantRef"
+                    }
+                ]
+            }
+        },
+        "enrichType": {
+            "title": "Type",
+            "type": "string",
+            "const": "PERSONALISED"
+        }
+    },
+    "propertyOrder": []
+}

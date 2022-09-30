@@ -12,18 +12,18 @@
                     "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
                 },
                 "contentType": "https://sfcc.com/components/hero",
-                "id": "af9803be-e9b7-456c-89e3-267a90e726cc"
+                "id": "8a08a479-efc0-4d3b-9cdd-0a7c14b36d16"
             }
         ]
     },
-    "version": 8,
+    "version": 1,
     "label": "Home / Slot / Top",
     "status": "ACTIVE",
     "createdBy": "9afdef5b-e35e-472a-8265-f37d29ff1154",
     "createdDate": "2022-08-04T09:25:08.509Z",
     "lastModifiedBy": "9afdef5b-e35e-472a-8265-f37d29ff1154",
     "lastModifiedDate": "2022-08-04T09:38:23.005Z",
-    "lastPublishedVersion": 5,
+    "lastPublishedVersion": 1,
     "lastPublishedDate": "2022-08-04T10:00:09.491Z",
     "deliveryId": "efd4fdec-3586-4bfd-9dc4-602e8b198ef6"
 }

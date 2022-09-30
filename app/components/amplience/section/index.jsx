@@ -32,9 +32,9 @@ const Section = ({title, subtitle, actions, maxWidth, children, ...props}) => {
                 )}
 
                 {actions && (
-                    <Box paddingTop="2" width={{base: 'full', md: 'auto'}}>
+                    <Box width={{base: 'full', md: 'auto'}}>
                         {actions.map((props, ind) => (
-                            <Button key={ind} label={props.label} url={props.url} />
+                            <Button margin="1" key={ind} label={props.label} url={props.url} />
                         ))}
                     </Box>
                 )}

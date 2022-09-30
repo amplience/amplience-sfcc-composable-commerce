@@ -7,11 +7,18 @@
 import {useContext, useMemo} from 'react'
 import {nanoid} from 'nanoid'
 import {useCommerceAPI, CustomerContext} from '../contexts'
+import {app} from '../../../config/default'
+import {createOcapiFetch} from '../../amplience-api/utils'
+import {AmplienceContext} from '../../contexts/amplience'
+import useNavigation from '../../hooks/use-navigation'
 
 const AuthTypes = Object.freeze({GUEST: 'guest', REGISTERED: 'registered'})
 
+const ocapiFetch = createOcapiFetch(app.commerceAPI)
+
 export default function useCustomer() {
     const api = useCommerceAPI()
+    const ampContext = useContext(AmplienceContext)
     const {customer, setCustomer} = useContext(CustomerContext)
 
     const self = useMemo(() => {
@@ -63,6 +70,7 @@ export default function useCustomer() {
              */
             async login(credentials) {
                 const skeletonCustomer = await api.auth.login(credentials)
+                let groups = []
                 if (skeletonCustomer.authType === 'guest') {
                     setCustomer(skeletonCustomer)
                 } else {
@@ -70,6 +78,24 @@ export default function useCustomer() {
                         parameters: {customerId: skeletonCustomer.customerId}
                     })
                     setCustomer(customer)
+                    groups = await self.getUserGroups()
+                }
+
+                if (ampContext && ampContext.updateGroups) {
+                    ampContext.updateGroups(groups)
+                }
+                api.auth._storage.set('customerGroups', JSON.stringify(groups))
+                document.cookie = `customerGroups=${JSON.stringify(groups)};`
+            },
+
+            async getUserGroups() {
+                const data = await ocapiFetch('customers/' + api.auth._storage.get('cid'), 'GET', [
+                    {headers: {Authorization: api.auth._storage.get('token')}}
+                ])
+                if ( data.c_customerGroups ) {
+                    return data.c_customerGroups
+                } else {
+                    return api.auth._storage.get('cid') ? ['Everyone', 'Registered'] : []
                 }
             },
 
@@ -77,8 +103,14 @@ export default function useCustomer() {
              * Log out current customer.
              * and retrive a guest access token
              */
-            async logout() {
+            async logout(navigate) {
                 const customer = await api.auth.logout()
+                api.auth._storage.set('customerGroups', '[]')
+                document.cookie = `customerGroups=[];`
+                if (ampContext && ampContext.updateGroups) {
+                    ampContext.updateGroups([])
+                }
+                navigate()
                 setCustomer(customer)
             },
 

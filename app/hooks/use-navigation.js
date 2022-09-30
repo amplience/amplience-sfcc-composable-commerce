@@ -8,6 +8,35 @@ import {useCallback} from 'react'
 import {useHistory} from 'react-router'
 import useMultiSite from './use-multi-site'
 
+const keepParams = ['vse', 'pagevse', 'vse-timestamp']
+
+export const keepVse = (search, url) => {
+    // Break down the given path and try to keep vse params.
+    if (url == null) {
+        return url
+    }
+
+    const paramIndex = url.indexOf('?')
+    const activeParams = new URLSearchParams(search)
+
+    const params =
+        paramIndex === -1 ? new URLSearchParams() : new URLSearchParams(url.substring(paramIndex))
+
+    let changedAny = false
+    for (let key of keepParams) {
+        if (!params.has(key) && activeParams.has(key)) {
+            params.set(key, activeParams.get(key))
+            changedAny = true
+        }
+    }
+
+    if (!changedAny) {
+        return url
+    }
+
+    return (paramIndex === -1 ? url : url.substring(0, paramIndex)) + '?' + params.toString()
+}
+
 /**
  * A convenience hook for programmatic navigation uses history's `push` or `replace`. The proper locale
  * is automatically prepended to the provided path. Additional args are passed through to `history`.
@@ -26,8 +55,12 @@ const useNavigation = () => {
          * @param  {...any} args - additional args passed to `.push` or `.replace`
          */
         (path, action = 'push', ...args) => {
-            const updatedHref = buildUrl(path)
-            history[action](path === '/' ? '/' : updatedHref, ...args)
+            if (path == null) {
+                history[action](history.location.pathname + history.location.search, ...args)
+            } else {
+                const dest = keepVse(history.location.search, path === '/' ? '/' : buildUrl(path))
+                history[action](dest, ...args)
+            }
         },
         [localeShortCode, site]
     )

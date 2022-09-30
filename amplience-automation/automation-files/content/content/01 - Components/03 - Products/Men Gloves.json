@@ -1,0 +1,52 @@
+{
+  "id": "93c47f44-5a43-4709-a556-498cc9ccac75",
+  "body": {
+    "_meta": {
+      "name": "Men Gloves",
+      "schema": "https://sfcc.com/components/curated-product"
+    },
+    "title": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Men Gloves"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Hommes Gants"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Herren Handschuhe"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Guantes de hombre"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Guanti da uomo"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "products": [
+      "TG786M",
+      "TG250M",
+      "TG508M",
+      "TG733M"
+    ]
+  },
+  "version": 1,
+  "label": "Men Gloves",
+  "status": "ACTIVE",
+  "createdBy": "755e6f44-78bf-47f8-a567-bd950719e817",
+  "createdDate": "2022-09-21T12:23:44.953Z",
+  "lastModifiedBy": "755e6f44-78bf-47f8-a567-bd950719e817",
+  "lastModifiedDate": "2022-09-22T09:29:52.089Z",
+  "lastPublishedVersion": 1,
+  "lastPublishedDate": "2022-09-21T14:12:52.342Z",
+  "deliveryId": "93c47f44-5a43-4709-a556-498cc9ccac75"
+}

@@ -1,0 +1,59 @@
+{
+    "id": "a7c27828-0684-4027-85a4-bc6b1c4377cd",
+    "body": {
+        "_meta": {
+            "name": "Developers",
+            "schema": "https://sfcc.com/site/navigation/internal",
+            "hierarchy": {
+                "parentId": "442a88ab-629b-4c4f-a88e-8586e48ae93e",
+                "root": false
+            }
+        },
+        "common": {
+            "visible": true,
+            "title": {
+              "values": [
+                {
+                  "locale": "en-US",
+                  "value": "Developers"
+                },
+                {
+                  "locale": "fr-FR",
+                  "value": "Développeur"
+                },
+                {
+                  "locale": "de-DE",
+                  "value": "Entwickler"
+                },
+                {
+                  "locale": "es-ES",
+                  "value": "Desarrollador"
+                },
+                {
+                  "locale": "it-IT",
+                  "value": "Sviluppatore"
+                }
+              ],
+              "_meta": {
+                "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+              }
+            },
+            "priority": 0
+          },
+          "internalUrl": "/developers"
+    },
+    "version": 1,
+    "label": "FAQ",
+    "status": "ACTIVE",
+    "createdBy": "fb90fd96-dcaf-4d67-9747-b9676282f661",
+    "createdDate": "2022-08-18T16:10:01.610Z",
+    "lastModifiedBy": "04347f6a-b3ae-44d5-b7be-e238143472b0",
+    "lastModifiedDate": "2022-08-24T21:22:10.960Z",
+    "lastPublishedVersion": 1,
+    "lastPublishedDate": "2022-08-24T21:22:22.440Z",
+    "hierarchy": {
+        "parentId": "442a88ab-629b-4c4f-a88e-8586e48ae93e",
+        "root": false
+    },
+    "deliveryId": "a7c27828-0684-4027-85a4-bc6b1c4377cd"
+}

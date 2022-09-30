@@ -41,14 +41,14 @@
             "78916783M"
         ]
     },
-    "version": 4,
+    "version": 1,
     "label": "Simple Product List",
     "status": "ACTIVE",
     "createdBy": "4635dbc4-416a-445c-8b51-7969626b077d",
     "createdDate": "2022-08-09T11:16:21.978Z",
     "lastModifiedBy": "4635dbc4-416a-445c-8b51-7969626b077d",
     "lastModifiedDate": "2022-08-10T12:08:54.859Z",
-    "lastPublishedVersion": 4,
+    "lastPublishedVersion": 1,
     "lastPublishedDate": "2022-08-11T14:34:12.316Z",
     "deliveryId": "bf8b5951-a9e5-4e56-a70c-a4d0e369a221"
 }

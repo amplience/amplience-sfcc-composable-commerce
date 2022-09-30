@@ -18,15 +18,15 @@ const RealtimeVisualization = loadable(() => import('./pages/amplience/realtime-
 
 Additional Route:
 
-```json
+``` js
 {
-  path: '/visualization/:hubname/:contentId/:vse/:locale',
+  path: '/visualization/:hubname/:contentId',
   component: RealtimeVisualization,
   exact: false
 }
 ```
 
-This route is added to the Visualisations in your Amplience Content Type: `http://localhost:3000/visualization/{{hub.name}}/{{content.sys.id}}/{{vse.domain}}/{{locales}}`
+This route is added to the Visualisations in your Amplience Content Type: `http://localhost:3000/{{locales}}/visualization/{{hub.name}}/{{content.sys.id}}?vse={{vse.domain}}`
 
 ## Real Time Visualisation
 
