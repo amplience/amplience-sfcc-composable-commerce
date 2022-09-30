@@ -317,7 +317,7 @@ export class AmplienceAPI {
                     arg.content = arg.content.map((el) => ({
                         ...el,
                         match: arg.match
-                    }))
+                    })) as any[]
                     rawIds = arg.content.map(({id}) => id && {id})
                 } else {
                     rawIds = [arg.content.id && {id: arg.content.id}]
