@@ -93,7 +93,8 @@
           }
         ]
       }
-    ]
+    ],
+    "enrichType": "PERSONALISED"
   },
   "version": 1,
   "label": "Personalised Hero and Section",
