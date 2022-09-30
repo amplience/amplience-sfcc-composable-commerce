@@ -30,10 +30,7 @@ export interface EnrichStrategy {
  * @returns True if personalised, false otherwise.
  */
 export const isPersonalised = (item: any): boolean => {
-    return (
-        (Array.isArray(item.defaultContent) || typeof item.defaultContent === 'object') &&
-        (item.maxNumberMatches == null || typeof item.maxNumberMatches === 'number')
-    )
+    return item.enrichType === 'PERSONALISED'
 }
 
 /**
