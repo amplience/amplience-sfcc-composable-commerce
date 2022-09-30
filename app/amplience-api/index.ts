@@ -355,7 +355,9 @@ export class AmplienceAPI {
         let allContent = flatten(responses.map((response) => response.content))
 
         if (allContent.length === 0) {
-            if (Array.isArray(defaultContent)) {
+            if (defaultContent == null) {
+                allContent = []
+            } else if (Array.isArray(defaultContent)) {
                 allContent = [
                     ...defaultContent.map((el) => {
                         el.match = `${name} default variant`
