@@ -71,7 +71,8 @@
                     }
                 ]
             }
-        ]
+        ],
+        "enrichType": "PERSONALISED"
     },
     "version": 1,
     "label": "Home / Slot / Top Personalised",
