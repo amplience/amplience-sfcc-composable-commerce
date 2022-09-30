@@ -26,10 +26,11 @@ import DynamicImage from '../../dynamic-image'
 import {useIntl} from 'react-intl'
 
 // Other
-import {productUrlBuilder} from '../../../utils/url'
+import {productUrlBuilderAndQuery} from '../../../utils/url'
 import Link from '../link'
 import withRegistration from '../../../hoc/with-registration'
 import {useCurrency} from '../../../hooks'
+import {useLocation} from 'react-router-dom'
 
 const IconButtonWithRegistration = withRegistration(IconButton)
 
@@ -116,12 +117,13 @@ const AmplienceProductTile = (props) => {
     const {currency: activeCurrency} = useCurrency()
     const [isFavouriteLoading, setFavouriteLoading] = useState(false)
     const styles = useMultiStyleConfig('AmplienceProductTile')
+    const location = useLocation();
 
     return (
         <Contain
             data-testid="product-tile"
             {...styles.container}
-            to={productUrlBuilder({id: productId}, intl.local)}
+            to={productUrlBuilderAndQuery({id: productId}, intl.local, location)}
             {...rest}
         >
             {children}
