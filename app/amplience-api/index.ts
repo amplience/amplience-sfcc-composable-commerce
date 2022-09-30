@@ -313,6 +313,11 @@ export class AmplienceAPI {
         let responses = await Promise.all(
             matches.slice(0, maxNumberMatches).map(async (arg: Variant) => {
                 let rawIds: ('' | {id: string})[]
+                
+                if (arg.content == null) {
+                    arg.content = []
+                }
+
                 if (Array.isArray(arg.content)) {
                     arg.content = arg.content.map((el) => ({
                         ...el,

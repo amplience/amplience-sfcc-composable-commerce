@@ -95,7 +95,7 @@ export default function useCustomer() {
                 if ( data.c_customerGroups ) {
                     return data.c_customerGroups
                 } else {
-                    return []
+                    return api.auth._storage.get('cid') ? ['Everyone', 'Registered'] : []
                 }
             },
 
