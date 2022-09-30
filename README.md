@@ -40,8 +40,8 @@ If you are using a v2.1.0, either upgrade using this code base or use a previous
 ### Localisation
 By default we point to the same SFCC instance as the vanilla Retail React app. If you are pointing to your own SFCC sandbox, you should ensure that you have localisation enabled. See guide at [Localization README.md](./app/translations/README.md), [Overview](./docs/amplience/overview.md) and  [Salesforce Commerce Cloud Setup](./docs/amplience/sfcc-setup.md).
 
-### Customer Groups API
-There is currently no 'out of the box' API available that enabled you to see which customer groups a user is associated to for personalisation. When pointing to your own sandbox and wanting to showcase personalisation, please follow the steps to install a cartridge which enables a hook to get the required information via the API.
+### Customer Groups API & Content Personalisation
+There is currently no 'out of the box' API available that enables you to see which customer groups a user is associated to for Content Personalisation. To enable Content Personalisation on your own sandbox, please follow the steps to install our cartridge which enables a hook to get the required information via OCAPI.
 
 Please ensure that your SFCC sandbox has the [Amplience Hooks Bridge Cartridge](https://github.com/amplience/amplience-sfcc-hooksbridge) installed with the correct OCAPI permissions as per the documentation.
 
