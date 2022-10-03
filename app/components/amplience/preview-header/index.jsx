@@ -28,8 +28,6 @@ import { useContext } from 'react'
 import { AmplienceContext } from '../../../contexts/amplience'
 import useNavigation from '../../../hooks/use-navigation'
 
-const amplience = require('../../../../config/amplience/default.js')
-
 const timestampToString = (intl, timestamp) => {
     if (timestamp == 0) {
         return intl.formatMessage({
@@ -47,6 +45,8 @@ const PreviewHeader = ({ vse, vseTimestamp, customerGroups, ...otherProps }) => 
     const styles = useMultiStyleConfig('PreviewHeader')
 
     const { groups, updateGroups } = useContext(AmplienceContext)
+    const { currentEnv, setNewCurrentEnv } = useContext(AmplienceContext)
+    const { envs } = useContext(AmplienceContext)
 
     const [previewDate, setPreviewDate] = useState(moment(vseTimestamp).format('YYYY-MM-DD'))
     const [previewTime, setPreviewTime] = useState(moment(vseTimestamp).format('HH:mm:ss'))
@@ -121,6 +121,15 @@ const PreviewHeader = ({ vse, vseTimestamp, customerGroups, ...otherProps }) => 
         setPreviewCustomerGroups(groups)
         updateGroups(groups)
         navigate()
+    }
+
+    const handleNewCurrentEnv = (e) => {
+        const env = JSON.parse(decodeURIComponent(e.target.dataset.env))
+        setNewCurrentEnv(env)
+        vse = env.vse
+        navigate(`/?vse=${env.vse}`)
+        onClose()
+        window.location.reload()
     }
 
     const {isOpen, onToggle, onClose} = useDisclosure()
@@ -206,11 +215,39 @@ const PreviewHeader = ({ vse, vseTimestamp, customerGroups, ...otherProps }) => 
                                 border: '1px solid #fba9ed'
                             }}
                         >
+                            <p><b>Environments</b></p>
                             <p>
-                                <b>Hub Name</b><br/>{otherProps.hubname || amplience.hub}
+                                {
+                                    vse && envs.map(env => {
+                                        if (env.vse == vse) {
+                                            return <><b>{env.name} ({env.hub})</b><br/></>
+                                        } else {
+                                            return <>
+                                                <Button variant="link" 
+                                                    onClick={handleNewCurrentEnv} 
+                                                    data-env={encodeURIComponent(JSON.stringify(env))}>
+                                                        {env.name} ({env.hub})
+                                                </Button>
+                                                <br/>
+                                            </>
+                                        }
+                                    })
+                                }
+                            </p>
+                        </Box>
+
+                        <Box
+                            style={{
+                                padding: 20,
+                                marginBottom: 20,
+                                border: '1px solid #fba9ed'
+                            }}
+                        >
+                            <p>
+                                <b>Hub Name</b><br/>{otherProps.hub || currentEnv.hub}
                             </p>
                             <p>
-                                <b>VSE</b><br/> {vse}
+                                <b>VSE</b><br/> {vse || currentEnv.vse}
                             </p>
                             <p>
                                 <b>Locale</b><br/>{otherProps.locale || intl.locale}

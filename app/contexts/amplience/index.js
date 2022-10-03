@@ -86,6 +86,7 @@ export const AmplienceContextProvider = ({vse, vseTimestamp, groups: initialGrou
     client.setVse(vse)
     
     const setNewCurrentEnv = (env) => {
+        client.setVse(env.vse)
         setCurrentEnv(env)
     }
 
