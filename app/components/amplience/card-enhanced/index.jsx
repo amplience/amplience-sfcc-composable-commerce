@@ -276,6 +276,7 @@ const CardEnhanced = ({
     )
 }
 
+CardEnhanced.displayName = 'Card Enhanced'
 CardEnhanced.propTypes = {
     blend: PropTypes.string,
     color: PropTypes.string,

@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import PropTypes from 'prop-types'
 import * as cookie from 'cookie'
 import {AmplienceAPI, defaultAmpClient} from '../../amplience-api'
+import { default as amplience } from '../../../config/amplience/default.js'
 
 /**
  * This is the global Amplience Realtime Visualization Context on Non-category pages
@@ -71,6 +72,8 @@ export const AmplienceContextProvider = ({vse, vseTimestamp, groups: initialGrou
     // Init client using VSE
     const [client] = useState(new AmplienceAPI())
     const [groups, setGroups] = useState(initialGroups)
+    const [envs, setEnvs] = useState(amplience.envs)
+    const [currentEnv, setCurrentEnv] = useState(amplience.default)
 
     useEffect(() => {
         if (groups !== initialGroups) {
@@ -89,7 +92,17 @@ export const AmplienceContextProvider = ({vse, vseTimestamp, groups: initialGrou
     }
 
     return (
-        <AmplienceContext.Provider value={{vse, vseTimestamp, groups, updateGroups, client}}>
+        <AmplienceContext.Provider value={
+            {
+                vse, 
+                vseTimestamp, 
+                envs, 
+                currentEnv, 
+                groups, 
+                updateGroups, 
+                client
+                }
+        }>
             {children}
         </AmplienceContext.Provider>
     )
@@ -154,6 +167,7 @@ AmplienceContextProvider.propTypes = {
     vse: PropTypes.string,
     vseTimestamp: PropTypes.number,
     groups: PropTypes.array,
-
+    currentEnv: PropTypes.any,
+    envs: PropTypes.array,
     children: PropTypes.node.isRequired
 }

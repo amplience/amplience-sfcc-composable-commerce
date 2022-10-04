@@ -18,7 +18,8 @@ import {
     DrawerHeader,
     DrawerBody,
     Wrap,
-    WrapItem
+    WrapItem,
+    Text
 } from '@chakra-ui/react'
 import { SettingsIcon } from '@chakra-ui/icons'
 import { useIntl } from 'react-intl'
@@ -27,8 +28,6 @@ import moment from 'moment'
 import { useContext } from 'react'
 import { AmplienceContext } from '../../../contexts/amplience'
 import useNavigation from '../../../hooks/use-navigation'
-
-const amplience = require('../../../../config/amplience/default.js')
 
 const timestampToString = (intl, timestamp) => {
     if (timestamp == 0) {
@@ -47,6 +46,8 @@ const PreviewHeader = ({ vse, vseTimestamp, customerGroups, ...otherProps }) => 
     const styles = useMultiStyleConfig('PreviewHeader')
 
     const { groups, updateGroups } = useContext(AmplienceContext)
+    const { currentEnv, setNewCurrentEnv } = useContext(AmplienceContext)
+    const { envs } = useContext(AmplienceContext)
 
     const [previewDate, setPreviewDate] = useState(moment(vseTimestamp).format('YYYY-MM-DD'))
     const [previewTime, setPreviewTime] = useState(moment(vseTimestamp).format('HH:mm:ss'))
@@ -123,7 +124,26 @@ const PreviewHeader = ({ vse, vseTimestamp, customerGroups, ...otherProps }) => 
         navigate()
     }
 
+    const handleNewCurrentEnv = (e) => {
+        const env = JSON.parse(decodeURIComponent(e.target.dataset.env))
+        navigate(`/?vse=${env.vse}&vse-timestamp=null`)
+        onClose()
+        window.location.reload()
+    }
+
     const {isOpen, onToggle, onClose} = useDisclosure()
+
+    const currentHub = envs.find(item => {
+        const regExp = /(.*)-(.*)-(.*)(\.staging.bigcontent.io)/
+        const matches = vse.match(regExp)
+        if (matches) {
+            const originalVse = `${matches[1]}.staging.bigcontent.io`
+            return item.vse === originalVse
+        } else {
+            return item.vse === vse
+        }
+    }).hub
+
 
     return (
         <>
@@ -137,7 +157,7 @@ const PreviewHeader = ({ vse, vseTimestamp, customerGroups, ...otherProps }) => 
                 placement={'left'}
                 onClose={onClose} 
                 isOpen={isOpen} 
-                size={'sm'}
+                size={'xs'}
                 trapFocus={false}>
                 <DrawerOverlay />
                 <DrawerContent>
@@ -151,13 +171,13 @@ const PreviewHeader = ({ vse, vseTimestamp, customerGroups, ...otherProps }) => 
                     <DrawerBody padding={3}>
                         {vseTimestamp ? (
                             <Box {...styles.container} {...otherProps}>
-                                <p style={{fontWeight: 700, color: 'red'}}>
+                                <Text style={{fontWeight: 700, color: 'red'}}>
                                     {intl.formatMessage({
                                         id: 'amplience.preview.active',
                                         defaultMessage: 'Preview Active'
                                     })}
-                                </p>
-                                <p>
+                                </Text>
+                                <Text style={{fontSize: '13px'}}>
                                     Date: <input
                                         id="preview-date"
                                         type="date"
@@ -169,8 +189,8 @@ const PreviewHeader = ({ vse, vseTimestamp, customerGroups, ...otherProps }) => 
                                             'YYYY-MM-DD'
                                         )}
                                     />
-                                </p>
-                                <p>
+                                </Text>
+                                <Text style={{fontSize: '13px'}}>
                                     Time: <input
                                         id="preview-time"
                                         type="time"
@@ -179,23 +199,26 @@ const PreviewHeader = ({ vse, vseTimestamp, customerGroups, ...otherProps }) => 
                                             setPreviewTime(x.target.value)
                                         }
                                     />
-                                </p>
-                                <p>
+                                </Text>
+                                <Text>
                                     {previewTimestamp !== vseTimestamp && (
                                         <Button
+                                            size='xs'
                                             style={{marginRight: 10}}
                                             onClick={updateVseTimestamp}
                                         >
                                             Update
                                         </Button>
                                     )}
-                                    <Button onClick={clearVse}>
+                                    <Button 
+                                        size='xs'
+                                        onClick={clearVse}>
                                         {intl.formatMessage({
                                             id: 'amplience.preview.cancel',
                                             defaultMessage: 'Cancel'
                                         })}
                                     </Button>
-                                </p>
+                                </Text>
                             </Box>
                         ) : <></>}
 
@@ -206,18 +229,58 @@ const PreviewHeader = ({ vse, vseTimestamp, customerGroups, ...otherProps }) => 
                                 border: '1px solid #fba9ed'
                             }}
                         >
+                            <p><b>Environments</b></p>
                             <p>
-                                <b>Hub Name</b><br/>{otherProps.hubname || amplience.hub}
+                                {
+                                    vse && envs.map(env => {
+                                        if (env.hub == currentHub) {
+                                            return <Text style={{fontSize: '13px'}}>
+                                                    <b>{env.name} ({env.hub})</b><br/>
+                                                </Text>
+                                        } else {
+                                            return <>
+                                                <Button 
+                                                    style={{fontSize: '13px'}}
+                                                    variant="link" 
+                                                    onClick={handleNewCurrentEnv} 
+                                                    data-env={encodeURIComponent(JSON.stringify(env))}>
+                                                        {env.name} ({env.hub})
+                                                </Button>
+                                                <br/>
+                                            </>
+                                        }
+                                    })
+                                }
                             </p>
-                            <p>
-                                <b>VSE</b><br/> {vse}
-                            </p>
-                            <p>
-                                <b>Locale</b><br/>{otherProps.locale || intl.locale}
-                            </p>
-                            <p>
-                                <b>Content ID</b><br/>{otherProps.contentId}
-                            </p>
+                        </Box>
+
+                        <Box
+                            style={{
+                                padding: 20,
+                                marginBottom: 20,
+                                border: '1px solid #fba9ed'
+                            }}
+                        >
+                            { 
+                                vse && envs &&
+                                <>
+                                    <Text>
+                                        <b>Visualisation Details</b>
+                                    </Text>
+                                    <Text style={{fontSize: '13px'}}>
+                                        <b>Hub Name</b><br/>{currentHub}
+                                    </Text>
+                                    <Text style={{fontSize: '13px'}}>
+                                        <b>VSE</b><br/> {vse}
+                                    </Text>
+                                    <Text style={{fontSize: '13px'}}>
+                                        <b>Locale</b><br/>{otherProps.locale || intl.locale}
+                                    </Text>
+                                    <Text style={{fontSize: '13px'}}>
+                                        <b>Content ID</b><br/>{otherProps.contentId}
+                                    </Text>
+                                </>
+                            }
                         </Box>
 
                         <Box
@@ -231,6 +294,7 @@ const PreviewHeader = ({ vse, vseTimestamp, customerGroups, ...otherProps }) => 
                                 <b>Personalisation</b>
                             </p>
                             <Button
+                                size='xs'
                                 onClick={() => setMatchVisible(!matchVisible)}
                                 margin={'10px 0'}
                             >
@@ -242,9 +306,9 @@ const PreviewHeader = ({ vse, vseTimestamp, customerGroups, ...otherProps }) => 
                                     defaultMessage: 'Show matches'
                                 })}
                             </Button>
-                            <p>
+                            <Text style={{fontSize: '13px'}}>
                                 <b>Customer groups</b>
-                            </p>
+                            </Text>
                             <Wrap spacing={2} paddingTop={4}>
                                 {customerGroups.sort().map((group, index) => {
                                     const groupColor = previewCustomerGroups.includes(group)
