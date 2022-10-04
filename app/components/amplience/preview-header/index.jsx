@@ -280,6 +280,7 @@ const PreviewHeader = ({ vse, vseTimestamp, customerGroups, ...otherProps }) => 
                                 <b>Personalisation</b>
                             </p>
                             <Button
+                                size='xs'
                                 onClick={() => setMatchVisible(!matchVisible)}
                                 margin={'10px 0'}
                             >
@@ -291,9 +292,9 @@ const PreviewHeader = ({ vse, vseTimestamp, customerGroups, ...otherProps }) => 
                                     defaultMessage: 'Show matches'
                                 })}
                             </Button>
-                            <p>
+                            <Text style={{fontSize: '13px'}}>
                                 <b>Customer groups</b>
-                            </p>
+                            </Text>
                             <Wrap spacing={2} paddingTop={4}>
                                 {customerGroups.sort().map((group, index) => {
                                     const groupColor = previewCustomerGroups.includes(group)
