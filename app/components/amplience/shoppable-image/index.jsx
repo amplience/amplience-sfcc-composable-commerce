@@ -136,7 +136,18 @@ const getBounds = (points) => {
     }
 }
 
-const ShoppableImage = ({shoppableImage, imageAltText, seoText, tooltips, ...props}) => {
+const ShoppableImage = ({
+    shoppableImage,
+    imageAltText,
+    seoText,
+    tooltips,
+    width,
+    height,
+    rows,
+    cols,
+    gap,
+    ...props
+}) => {
     const target = useRef(null)
     const [size, setSize] = useState()
     const [imageSize, setImageSize] = useState()
@@ -199,10 +210,7 @@ const ShoppableImage = ({shoppableImage, imageAltText, seoText, tooltips, ...pro
 
         // Attempt to center the image with respect to POI.
 
-        const poi =
-            shoppableImage.poi == null || shoppableImage.poi.x === -1
-                ? {x: 0.5, y: 0.5}
-                : shoppableImage.poi
+        const poi = scaleToFit ? {x: 0.5, y: 0.5} : shoppableImage.poi
 
         let imgPosition
 
@@ -325,8 +333,16 @@ const ShoppableImage = ({shoppableImage, imageAltText, seoText, tooltips, ...pro
         upscale: false
     }
 
-    props.width = '100%'
-    props.minHeight = '600px'
+    props.width = width ?? '100%'
+
+    if (cols && rows && gap && size) {
+        // Force the height to a fraction of the width (minus gap)
+        props.height = (rows * (size.width - gap * (cols - 1))) / cols + (rows - 1) * gap + 'px'
+    } else if (height) {
+        props.height = height
+    } else {
+        props.minHeight = '600px'
+    }
 
     // Determine a transformation to use given the current image scale.
 
@@ -346,7 +362,13 @@ ShoppableImage.propTypes = {
     shoppableImage: PropTypes.object,
     imageAltText: PropTypes.string,
     seoText: PropTypes.string,
-    tooltips: PropTypes.array
+    tooltips: PropTypes.array,
+
+    width: PropTypes.string,
+    height: PropTypes.string,
+    rows: PropTypes.number,
+    cols: PropTypes.number,
+    gap: PropTypes.number
 }
 
 export default ShoppableImage
