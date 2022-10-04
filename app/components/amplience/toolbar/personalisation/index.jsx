@@ -1,4 +1,4 @@
-import {Box, Button, useMultiStyleConfig, Wrap, WrapItem} from '@chakra-ui/react'
+import {Box, Button, useMultiStyleConfig, Wrap, WrapItem, Switch, Text} from '@chakra-ui/react'
 import React, {useContext, useEffect, useState} from 'react'
 import {useIntl} from 'react-intl'
 import {AmplienceContext} from '../../../../contexts/amplience'
@@ -56,20 +56,21 @@ const PersonalisationPanel = ({customerGroups}) => {
         <p>
             <b>Fired Rules</b>
         </p>
-        <Button
-            size='xs'
-            onClick={() => setMatchVisible(!matchVisible)}
-            margin={'10px 0'}
-            colorScheme={'ampliencePink'} 
-        >
-            {matchVisible ? intl.formatMessage({
-                id: 'amplience.preview.hideMatches',
-                defaultMessage: 'Hide matches'
-            }) : intl.formatMessage({
-                id: 'amplience.preview.showMatches',
-                defaultMessage: 'Show matches'
-            })}
-        </Button>
+        <Wrap spacing={2} paddingTop={4}>
+            <Switch
+                onChange={() => setMatchVisible(!matchVisible)}
+                colorScheme={'ampliencePink'} isChecked={matchVisible}
+            />
+            <Text>
+                {
+                    intl.formatMessage({
+                        id: 'amplience.preview.showMatches',
+                        defaultMessage: 'Show matches'
+                    })
+                }
+            </Text>
+        </Wrap>
+        
         <p>
             <b>Customer groups</b>
         </p>
