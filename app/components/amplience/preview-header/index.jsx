@@ -18,7 +18,8 @@ import {
     DrawerHeader,
     DrawerBody,
     Wrap,
-    WrapItem
+    WrapItem,
+    Text
 } from '@chakra-ui/react'
 import { SettingsIcon } from '@chakra-ui/icons'
 import { useIntl } from 'react-intl'
@@ -160,13 +161,13 @@ const PreviewHeader = ({ vse, vseTimestamp, customerGroups, ...otherProps }) => 
                     <DrawerBody padding={3}>
                         {vseTimestamp ? (
                             <Box {...styles.container} {...otherProps}>
-                                <p style={{fontWeight: 700, color: 'red'}}>
+                                <Text style={{fontWeight: 700, color: 'red'}}>
                                     {intl.formatMessage({
                                         id: 'amplience.preview.active',
                                         defaultMessage: 'Preview Active'
                                     })}
-                                </p>
-                                <p>
+                                </Text>
+                                <Text>
                                     Date: <input
                                         id="preview-date"
                                         type="date"
@@ -178,8 +179,8 @@ const PreviewHeader = ({ vse, vseTimestamp, customerGroups, ...otherProps }) => 
                                             'YYYY-MM-DD'
                                         )}
                                     />
-                                </p>
-                                <p>
+                                </Text>
+                                <Text>
                                     Time: <input
                                         id="preview-time"
                                         type="time"
@@ -188,8 +189,8 @@ const PreviewHeader = ({ vse, vseTimestamp, customerGroups, ...otherProps }) => 
                                             setPreviewTime(x.target.value)
                                         }
                                     />
-                                </p>
-                                <p>
+                                </Text>
+                                <Text>
                                     {previewTimestamp !== vseTimestamp && (
                                         <Button
                                             style={{marginRight: 10}}
@@ -204,7 +205,7 @@ const PreviewHeader = ({ vse, vseTimestamp, customerGroups, ...otherProps }) => 
                                             defaultMessage: 'Cancel'
                                         })}
                                     </Button>
-                                </p>
+                                </Text>
                             </Box>
                         ) : <></>}
 
@@ -220,10 +221,14 @@ const PreviewHeader = ({ vse, vseTimestamp, customerGroups, ...otherProps }) => 
                                 {
                                     vse && envs.map(env => {
                                         if (env.vse == vse) {
-                                            return <><b>{env.name} ({env.hub})</b><br/></>
+                                            return <Text style={{fontSize: '13px'}}>
+                                                    <b>{env.name} ({env.hub})</b><br/>
+                                                </Text>
                                         } else {
                                             return <>
-                                                <Button variant="link" 
+                                                <Button 
+                                                    style={{fontSize: '13px'}}
+                                                    variant="link" 
                                                     onClick={handleNewCurrentEnv} 
                                                     data-env={encodeURIComponent(JSON.stringify(env))}>
                                                         {env.name} ({env.hub})
@@ -243,18 +248,25 @@ const PreviewHeader = ({ vse, vseTimestamp, customerGroups, ...otherProps }) => 
                                 border: '1px solid #fba9ed'
                             }}
                         >
-                            <p>
-                                <b>Hub Name</b><br/>{otherProps.hub || currentEnv.hub}
-                            </p>
-                            <p>
-                                <b>VSE</b><br/> {vse || currentEnv.vse}
-                            </p>
-                            <p>
-                                <b>Locale</b><br/>{otherProps.locale || intl.locale}
-                            </p>
-                            <p>
-                                <b>Content ID</b><br/>{otherProps.contentId}
-                            </p>
+                            { vse && envs &&
+                                <>
+                                    <Text>
+                                        <b>Visualisation Details</b>
+                                    </Text>
+                                    <Text style={{fontSize: '13px'}}>
+                                        <b>Hub Name</b><br/>{envs.find(item => item.vse === vse).hub}
+                                    </Text>
+                                    <Text style={{fontSize: '13px'}}>
+                                        <b>VSE</b><br/> {vse}
+                                    </Text>
+                                    <Text style={{fontSize: '13px'}}>
+                                        <b>Locale</b><br/>{otherProps.locale || intl.locale}
+                                    </Text>
+                                    <Text style={{fontSize: '13px'}}>
+                                        <b>Content ID</b><br/>{otherProps.contentId}
+                                    </Text>
+                                </>
+                            }
                         </Box>
 
                         <Box
