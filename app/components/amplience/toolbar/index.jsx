@@ -37,6 +37,7 @@ import { AmplienceLogo } from '../../icons'
 
 import { useContext } from 'react'
 import { AmplienceContext } from '../../../contexts/amplience'
+import { useState } from 'react'
 
 const AccordionItemRender = ({ title, Component, ...otherProps }) => {
     const styles = useMultiStyleConfig('PreviewHeader')
@@ -97,6 +98,8 @@ const Toolbar = (props) => {
         window.location.assign('/')
     }
 
+    const [toolbarOpacity, setToolbarOpacity] = useState(0.8)
+
     return (
         <>
             <IconButton
@@ -135,7 +138,9 @@ const Toolbar = (props) => {
                     />
                 </div>
 
-                <DrawerContent>
+                <DrawerContent
+                    opacity={toolbarOpacity}
+                    >
                     <DrawerHeader {...styles.header} mt={10}>
                         <AmplienceLogo color={"#000000"} width={'unset'} height={'unset'}  mb={10}/>
                     </DrawerHeader>
