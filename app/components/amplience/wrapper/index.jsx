@@ -13,6 +13,7 @@ import {AmplienceContext} from '../../../contexts/amplience'
 import {Skeleton} from '@chakra-ui/react'
 import PersonalisedContainer from '../personalised-container'
 import PersonalisedComponent from '../personalised-component'
+import ShoppableImage from '../shoppable-image'
 
 const Blank = () => <></>
 
@@ -24,6 +25,7 @@ const componentsMapping = {
     'https://sfcc.com/components/personalised-component': PersonalisedComponent,
     'https://sfcc.com/components/personalised-ingrid-component': PersonalisedComponent,
     'https://sfcc.com/components/personalised-container': PersonalisedContainer,
+    'https://sfcc.com/components/shoppable-image': ShoppableImage,
     'https://sfcc.com/slots/flexible-list': flexibleListSlot,
     'https://sfcc.com/slots/personalised-slot': PersonalisedComponent,
 
