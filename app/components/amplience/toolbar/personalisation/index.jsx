@@ -54,7 +54,7 @@ const PersonalisationPanel = ({customerGroups}) => {
 
     return (<Box {...styles.box}>
         <p>
-            <b>Fired Rules</b>
+            <b>Personalisation Rules</b>
         </p>
         <Wrap spacing={2} paddingTop={4} marginBottom={6}>
             <Switch
