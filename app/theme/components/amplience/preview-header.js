@@ -40,12 +40,13 @@ export default {
         section: {
             borderTop: 'none',
             cursor: 'pointer',
+            borderBottomWidth: '1px'
         },
         sectionTitle: {
             fontSize: 'lg',
             margin: '20px 0',
             marginLeft: '20px',
-            fontWeight: 'bold'
+            fontWeight: 'bold',
         },
         button: {
             background: 'gray.50',

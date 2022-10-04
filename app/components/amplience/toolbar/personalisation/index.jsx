@@ -56,7 +56,7 @@ const PersonalisationPanel = ({customerGroups}) => {
         <p>
             <b>Fired Rules</b>
         </p>
-        <Wrap spacing={2} paddingTop={4}>
+        <Wrap spacing={2} paddingTop={4} marginBottom={6}>
             <Switch
                 onChange={() => setMatchVisible(!matchVisible)}
                 colorScheme={'ampliencePink'} isChecked={matchVisible}

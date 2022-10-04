@@ -37,12 +37,12 @@ const items = [
         visibility: ({ vseTimestamp }) => !!vseTimestamp
     }, 
     {
-        title: 'Environments',
-        Component: EnvironmentsPanel
-    }, 
-    {
         title: 'Visualisation',
         Component: VisualisationPanel
+    }, 
+    {
+        title: 'Environments',
+        Component: EnvironmentsPanel
     }, 
     {
         title: 'Personalisation',
