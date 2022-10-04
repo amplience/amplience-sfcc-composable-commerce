@@ -4,7 +4,7 @@ import React, {useEffect, useState} from 'react'
 import PropTypes from 'prop-types'
 import {useIntl} from 'react-intl'
 
-const Preview = ({vseTimestamp, vse,  ...otherProps}) => {
+const PreviewPanel = ({vseTimestamp, vse,  ...otherProps}) => {
     const intl = useIntl()
     const styles = useMultiStyleConfig('PreviewHeader')
     const [previewDate, setPreviewDate] = useState(moment(vseTimestamp).format('YYYY-MM-DD'))
@@ -85,9 +85,9 @@ const Preview = ({vseTimestamp, vse,  ...otherProps}) => {
     ) : (<></>)
 }
 
-Preview.propTypes = {
+PreviewPanel.propTypes = {
     vseTimestamp: PropTypes.number,
     vse: PropTypes.string
 }
 
-export default Preview
+export default PreviewPanel

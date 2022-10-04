@@ -1,10 +1,10 @@
-import amplience from '../../../../config/amplience/default.js'
+import amplience from '../../../../../config/amplience/default.js'
 import {Box, useMultiStyleConfig} from '@chakra-ui/react'
 import React from 'react'
 import {useIntl} from 'react-intl'
 import PropTypes from 'prop-types'
 
-const Configuration = ({vse, hubname, locale, contentId}) => {
+const VisualisationPanel = ({vse, hubname, locale, contentId}) => {
     const intl = useIntl()
     const styles = useMultiStyleConfig('PreviewHeader')
 
@@ -26,11 +26,11 @@ const Configuration = ({vse, hubname, locale, contentId}) => {
     )
 }
 
-Configuration.propTypes = {
+VisualisationPanel.propTypes = {
     vse: PropTypes.string,
     hubname: PropTypes.string,
     locale: PropTypes.string,
     contentId: PropTypes.string
 }
 
-export default Configuration;
+export default VisualisationPanel;

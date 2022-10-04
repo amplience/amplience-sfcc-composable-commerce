@@ -24,21 +24,21 @@ import {
     AccordionPanel
 } from '@chakra-ui/react'
 import {SettingsIcon, CloseIcon, ArrowBack} from '@chakra-ui/icons'
-import Configuration from './Configuration'
-import Personalisation from './Personalisation'
-import Preview from './Preview'
+import VisualisationPanel from './visualisation'
+import PersonalisationPanel from './personalisation'
+import PreviewPanel from './preview'
 import {AmplienceLogo} from '../../icons'
 
 const items = [{
     title: 'Preview',
-    Component: Preview,
+    Component: PreviewPanel,
     visibility: ({vseTimestamp}) => !!vseTimestamp
 }, {
-    title: 'Configuration',
-    Component: Configuration
+    title: 'Visualisation',
+    Component: VisualisationPanel
 }, {
     title: 'Personalisation',
-    Component: Personalisation
+    Component: PersonalisationPanel
 }]
 
 const AccordionItemRender = ({title, Component, ...otherProps}) => {

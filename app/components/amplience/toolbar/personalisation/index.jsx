@@ -1,11 +1,11 @@
 import {Box, Button, useMultiStyleConfig, Wrap, WrapItem} from '@chakra-ui/react'
 import React, {useContext, useEffect, useState} from 'react'
 import {useIntl} from 'react-intl'
-import {AmplienceContext} from '../../../contexts/amplience'
-import useNavigation from '../../../hooks/use-navigation'
+import {AmplienceContext} from '../../../../contexts/amplience'
+import useNavigation from '../../../../hooks/use-navigation'
 import PropTypes from 'prop-types'
 
-const Personalisation = ({customerGroups}) => {
+const PersonalisationPanel = ({customerGroups}) => {
     const styles = useMultiStyleConfig('PreviewHeader')
     const { groups, updateGroups } = useContext(AmplienceContext)
     const [previewCustomerGroups, setPreviewCustomerGroups] = useState(groups || [])
@@ -95,8 +95,8 @@ const Personalisation = ({customerGroups}) => {
     </Box>)
 }
 
-Personalisation.propTypes = {
+PersonalisationPanel.propTypes = {
     customerGroups: PropTypes.array
 }
 
-export default Personalisation;
+export default PersonalisationPanel;
