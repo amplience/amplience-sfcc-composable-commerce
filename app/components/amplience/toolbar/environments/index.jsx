@@ -46,7 +46,7 @@ const EnvironmentsPanel = ({vse, hubname, locale, contentId}) => {
                     } else {
                         return <>
                             <Button 
-                                style={{fontSize: '13px'}}
+                                style={{fontSize: '13px', color: '#E80D8C'}}
                                 variant="link" 
                                 onClick={handleNewCurrentEnv} 
                                 data-env={encodeURIComponent(JSON.stringify(env))}>

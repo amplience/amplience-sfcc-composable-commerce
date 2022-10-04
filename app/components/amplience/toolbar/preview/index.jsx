@@ -70,6 +70,7 @@ const PreviewPanel = ({vseTimestamp, vse,  ...otherProps}) => {
                     <Button
                         size='xs'
                         style={{marginRight: 10}}
+                        colorScheme={'ampliencePink'}
                         onClick={updateVseTimestamp}
                     >
                         Update
@@ -77,6 +78,7 @@ const PreviewPanel = ({vseTimestamp, vse,  ...otherProps}) => {
                 )}
                 <Button 
                     size='xs'
+                    colorScheme={'ampliencePink'}
                     onClick={clearVse}>
                     {intl.formatMessage({
                         id: 'amplience.preview.cancel',

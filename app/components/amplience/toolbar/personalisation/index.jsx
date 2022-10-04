@@ -60,6 +60,7 @@ const PersonalisationPanel = ({customerGroups}) => {
             size='xs'
             onClick={() => setMatchVisible(!matchVisible)}
             margin={'10px 0'}
+            colorScheme={'ampliencePink'} 
         >
             {matchVisible ? intl.formatMessage({
                 id: 'amplience.preview.hideMatches',
@@ -75,7 +76,7 @@ const PersonalisationPanel = ({customerGroups}) => {
         <Wrap spacing={2} paddingTop={4}>
             {customerGroups.sort().map((group, index) => {
                 const groupColor = previewCustomerGroups.includes(group)
-                    ? 'blue'
+                    ? 'ampliencePink'
                     : 'gray'
                 return (
                     <WrapItem key={index}>
