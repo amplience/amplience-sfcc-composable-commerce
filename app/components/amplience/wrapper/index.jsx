@@ -1,5 +1,6 @@
 import React, {useContext, useEffect, useState} from 'react'
 import PropTypes from 'prop-types'
+import {useLocation} from 'react-router-dom'
 
 //Amplience Rendering Templates
 import Hero from '../hero'
@@ -10,9 +11,10 @@ import CardEnhanced from '../card-enhanced'
 import flexibleListSlot from '../flexibleListSlot'
 import {useIntl} from 'react-intl'
 import {AmplienceContext} from '../../../contexts/amplience'
-import {Skeleton} from '@chakra-ui/react'
+import {Box, Skeleton} from '@chakra-ui/react'
 import PersonalisedContainer from '../personalised-container'
 import PersonalisedComponent from '../personalised-component'
+import {indexStyle} from '../personalised-container'
 
 const Blank = () => <></>
 
@@ -62,8 +64,23 @@ const AmplienceWrapper = ({fetch, content, components, skeleton, ...rest}) => {
 
     const Component = mapping[fetchedContent?._meta?.schema]
 
+    const isSlot = (fetchedContent?._meta?.schema.indexOf("/slots/") > 0) || false
+    const isPersonalised = (fetchedContent?._meta?.schema.indexOf("/personalised-") > 0) || false
+
+    const location = useLocation()
+    const showInfo = !isSlot && !isPersonalised && ((location.search && (location.search.includes('vse=') || location.search.includes('pagevse='))))
+    const infoMargin = "55px"
+    
     const result = Component ? (
-        <Component {...fetchedContent} {...rest} />
+        <>
+            {
+                showInfo && 
+                <Box className={"matchInfo"} {...indexStyle} style={{marginTop: infoMargin}}>
+                    {Component.displayName} - {fetchedContent?._meta?.name}
+                </Box>
+            }
+            <Component {...fetchedContent} {...rest} />
+        </>
     ) : (
         <>{JSON.stringify(fetchedContent)}</>
     )

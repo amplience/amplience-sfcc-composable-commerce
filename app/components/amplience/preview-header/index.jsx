@@ -128,7 +128,7 @@ const PreviewHeader = ({ vse, vseTimestamp, customerGroups, ...otherProps }) => 
         const env = JSON.parse(decodeURIComponent(e.target.dataset.env))
         setNewCurrentEnv(env)
         vse = env.vse
-        navigate(`/?vse=${env.vse}`)
+        navigate(`/?vse=${env.vse}&vse-timestamp=null`)
         onClose()
         window.location.reload()
     }
