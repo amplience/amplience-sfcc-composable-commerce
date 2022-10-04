@@ -1,4 +1,4 @@
-import {Box, Button, Text, useMultiStyleConfig} from '@chakra-ui/react'
+import {Box, Button, Heading, Input, Text, useMultiStyleConfig} from '@chakra-ui/react'
 import moment from 'moment'
 import React, {useEffect, useState} from 'react'
 import PropTypes from 'prop-types'
@@ -42,8 +42,9 @@ const PreviewPanel = ({vseTimestamp, vse,  ...otherProps}) => {
 
     return vseTimestamp ? (
         <Box {...styles.container} {...otherProps}>
-            <Text style={{fontSize: '13px'}}>
-                <b>Date:</b> <input
+            <Heading as='h3' size='xs'>Date:</Heading>
+            <Input
+                size='xs'
                 id="preview-date"
                 type="date"
                 value={previewDate}
@@ -54,9 +55,9 @@ const PreviewPanel = ({vseTimestamp, vse,  ...otherProps}) => {
                     'YYYY-MM-DD'
                 )}
             />
-            </Text>
-            <Text style={{fontSize: '13px'}}>
-                <b>Time:</b> <input
+            <Heading as='h3' size='xs'>Time:</Heading>
+            <Input
+                size='xs'
                 id="preview-time"
                 type="time"
                 value={previewTime}
@@ -64,20 +65,23 @@ const PreviewPanel = ({vseTimestamp, vse,  ...otherProps}) => {
                     setPreviewTime(x.target.value)
                 }
             />
-            </Text>
-            <Text style={{fontSize: '13px'}}>
-                {previewTimestamp !== vseTimestamp && (
-                    <Button
-                        size='xs'
-                        style={{marginRight: 10}}
-                        colorScheme={'ampliencePink'}
-                        onClick={updateVseTimestamp}
-                    >
-                        Update
-                    </Button>
-                )}
+            <Text fontSize='xs'>
+                {
+                    previewTimestamp !== vseTimestamp && (
+                        <Button
+                            size='xs'
+                            mr={2}
+                            mt={2}
+                            colorScheme={'ampliencePink'}
+                            onClick={updateVseTimestamp}
+                        >
+                            Update
+                        </Button>
+                    )
+                }
                 <Button 
                     size='xs'
+                    mt={2}
                     colorScheme={'ampliencePink'}
                     onClick={clearVse}>
                     {intl.formatMessage({

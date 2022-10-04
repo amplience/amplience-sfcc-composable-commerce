@@ -1,7 +1,8 @@
-import {Box, Text, useMultiStyleConfig} from '@chakra-ui/react'
+import {Box, Heading, Input, IconButton, useClipboard, useMultiStyleConfig, Wrap, Text, HStack} from '@chakra-ui/react'
 import React from 'react'
 import {useIntl} from 'react-intl'
 import PropTypes from 'prop-types'
+import { CopyIcon } from '@chakra-ui/icons'
 
 import { useContext } from 'react'
 import { AmplienceContext } from '../../../../contexts/amplience'
@@ -22,25 +23,72 @@ const VisualisationPanel = ({vse, locale, contentId}) => {
         }
     })?.hub || defaultEnv.hub
 
+    const [hubValue, setHubValue] = React.useState(currentHub)
+    const { hasCopied: hasCopiedHub, onCopy: onCopyHub } = useClipboard(hubValue)
+
+    const [vseValue, setVseValue] = React.useState(vse)
+    const { hasCopied: hasCopiedVse, onCopy: onCopyVse } = useClipboard(vseValue)
+
+    const [localeValue, setLocaleValue] = React.useState(locale || intl.locale)
+    const { hasCopied: hasCopiedLocale, onCopy: onCopyLocale } = useClipboard(localeValue)
+
+    const [contentIdValue, setContentIdValue] = React.useState(contentId || null)
+    const { hasCopied: hasCopiedContentId, onCopy: onCopyContentId } = useClipboard(localeValue)
+
     return (
         <Box {...styles.box}>
             { 
                 vse && ( envs || defaultEnv ) &&
                 <>
-                    <Text style={{fontSize: '13px', paddingBottom: 8}}>
-                        <b>Hub Name</b><br/>{currentHub}
-                    </Text>
-                    <Text style={{fontSize: '13px', paddingBottom: 8}}>
-                        <b>VSE</b><br/> {vse}
-                    </Text>
-                    <Text style={{fontSize: '13px', paddingBottom: 8}}>
-                        <b>Locale</b><br/>{locale || intl.locale}
-                    </Text>
+                    <Heading as='h4' mb={2} size='xs'>Hub Name</Heading>
+                    <HStack>
+                        <Input size='xs' isReadonly={true} value={hubValue} />
+                        <IconButton 
+                            size='xs' 
+                            colorScheme={'ampliencePink'}
+                            bgColor={hasCopiedHub ? 'gray.500' : 'ampliencePink.500'} 
+                            onClick={onCopyHub} 
+                            aria-label='Copy' 
+                            icon={<CopyIcon />} />
+                    </HStack>
+                    <Heading as='h4' size='xs' mt={4} mb={2}>VSE</Heading>
+                    <HStack>
+                        <Input size='xs' isReadonly={true} value={vse} />
+                        <IconButton 
+                            size='xs' 
+                            colorScheme={'ampliencePink'}
+                            bgColor={hasCopiedVse ? 'gray.500' : 'ampliencePink.500'} 
+                            onClick={onCopyVse} 
+                            aria-label='Copy' 
+                            icon={<CopyIcon />} />
+                    </HStack>
+                    <Heading as='h4' size='xs' mt={4} mb={2}>Locale</Heading>
+                    <HStack>
+                        <Input size='xs'isReadonly={true} value={locale || intl.locale} />
+                        <IconButton 
+                            colorScheme={'ampliencePink'}
+                            size='xs' 
+                            bgColor={hasCopiedLocale ? 'gray.500' : 'ampliencePink.500'} 
+                            onClick={onCopyLocale} 
+                            aria-label='Copy' 
+                            icon={<CopyIcon />} />
+                    </HStack>
                     {
-                        contentId && 
-                        <Text style={{fontSize: '13px', paddingBottom: 8}}>
-                            <b>Content ID</b><br/>{contentId}
-                        </Text>
+                        contentId && ( 
+                            <>
+                                <Heading as='h4' size='xs' mt={4} mb={2}>Content ID</Heading>
+                                <HStack>
+                                    <IconButton 
+                                        colorScheme={'ampliencePink'}
+                                        size='xs' 
+                                        bgColor={hasCopiedContentId ? 'gray.500' : 'ampliencePink.500'} 
+                                        onClick={onCopyContentId} 
+                                        aria-label='Copy' 
+                                        icon={<CopyIcon />} />
+                                    <Input size='xs' isReadonly={true} value={contentId} />
+                                </HStack>
+                            </>
+                         )
                     }
                 </>
             }

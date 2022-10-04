@@ -1,4 +1,4 @@
-import {Box, Button, Text, useMultiStyleConfig} from '@chakra-ui/react'
+import {Box, Button, Heading, useMultiStyleConfig, VStack} from '@chakra-ui/react'
 import React, {useState, useEffect} from 'react'
 import PropTypes from 'prop-types'
 
@@ -35,26 +35,28 @@ const EnvironmentsPanel = ({vse}) => {
 
     return (
         <Box {...styles.box}>
+            <VStack spacing={4} align='flex-start'>
             {
                 vse && envs.map(env => {
                     if (env.hub == currentHub) {
-                        return <Text style={{fontSize: '13px'}}>
-                                <b>{env.name} ({env.hub})</b><br/>
-                            </Text>
+                        return <Heading as='h4' size='xs' fontSize='xs'>
+                                <b>{env.name} ({env.hub})</b>
+                            </Heading>
                     } else {
                         return <>
                             <Button 
-                                style={{fontSize: '13px', color: '#E80D8C'}}
+                                fontSize='xs'
+                                style={{display: 'inline', color: '#E80D8C'}}
                                 variant="link" 
                                 onClick={handleNewCurrentEnv} 
                                 data-env={encodeURIComponent(JSON.stringify(env))}>
                                     {env.name} ({env.hub})
                             </Button>
-                            <br/>
                         </>
                     }
                 })
             }
+            </VStack>
         </Box>
     )
 }

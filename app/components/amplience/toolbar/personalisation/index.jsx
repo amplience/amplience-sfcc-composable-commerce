@@ -1,4 +1,4 @@
-import {Box, Button, useMultiStyleConfig, Wrap, WrapItem, Switch, Text} from '@chakra-ui/react'
+import {Box, Button, useMultiStyleConfig, Wrap, WrapItem, Switch, Text, Heading} from '@chakra-ui/react'
 import React, {useContext, useEffect, useState} from 'react'
 import {useIntl} from 'react-intl'
 import {AmplienceContext} from '../../../../contexts/amplience'
@@ -52,53 +52,54 @@ const PersonalisationPanel = ({customerGroups}) => {
         navigate()
     }
 
-    return (<Box {...styles.box}>
-        <p>
-            <b>Personalisation Rules</b>
-        </p>
-        <Wrap spacing={2} paddingTop={4} marginBottom={6}>
-            <Switch
-                onChange={() => setMatchVisible(!matchVisible)}
-                colorScheme={'ampliencePink'} isChecked={matchVisible}
-            />
-            <Text>
-                {
-                    intl.formatMessage({
-                        id: 'amplience.preview.showMatches',
-                        defaultMessage: 'Show matches'
-                    })
-                }
-            </Text>
-        </Wrap>
-        
-        <p>
-            <b>Customer groups</b>
-        </p>
-        <Wrap spacing={2} paddingTop={4}>
-            {customerGroups.sort().map((group, index) => {
-                const groupColor = previewCustomerGroups.includes(group)
-                    ? 'ampliencePink'
-                    : 'gray'
-                return (
-                    <WrapItem key={index}>
-                        <Button
-                            size='xs'
-                            height={`${group.length > 30 ? "60px" : "30px"}`}
-                            style={{
-                                whiteSpace: "normal",
-                                wordWrap: "break-word"
-                            }}
-                            value={group}
-                            colorScheme={groupColor}
-                            onClick={clickCustomerGroup}
-                        >
-                            {group}
-                        </Button>
-                    </WrapItem>
-                )
-            })}
-        </Wrap>
-    </Box>)
+    return (
+        <Box {...styles.box}>
+            <Heading as='h2' size='xs'>Personalisation Rules</Heading>
+            <Wrap spacing={2} paddingTop={4} marginBottom={6}>
+                <Switch
+                    size='sm'
+                    onChange={() => setMatchVisible(!matchVisible)}
+                    colorScheme={'ampliencePink'} 
+                    isChecked={matchVisible}
+                />
+                <Text 
+                    onClick={() => setMatchVisible(!matchVisible)}
+                    fontSize='xs'>
+                    {
+                        intl.formatMessage({
+                            id: 'amplience.preview.showMatches',
+                            defaultMessage: 'Show matches'
+                        })
+                    }
+                </Text>
+            </Wrap>
+            <Heading as='h2' size='xs'>Customer groups</Heading>
+            <Wrap spacing={2} paddingTop={4}>
+                {customerGroups.sort().map((group, index) => {
+                    const groupColor = previewCustomerGroups.includes(group)
+                        ? 'ampliencePink'
+                        : 'gray'
+                    return (
+                        <WrapItem key={index}>
+                            <Button
+                                size='xs'
+                                height={`${group.length > 30 ? "60px" : "30px"}`}
+                                style={{
+                                    whiteSpace: "normal",
+                                    wordWrap: "break-word"
+                                }}
+                                value={group}
+                                colorScheme={groupColor}
+                                onClick={clickCustomerGroup}
+                            >
+                                {group}
+                            </Button>
+                        </WrapItem>
+                    )
+                })}
+            </Wrap>
+        </Box>
+    )
 }
 
 PersonalisationPanel.propTypes = {

@@ -21,7 +21,9 @@ import {
     AccordionItem,
     AccordionButton,
     AccordionIcon,
-    AccordionPanel
+    AccordionPanel,
+    Heading,
+    Text
 } from '@chakra-ui/react'
 import { SettingsIcon, CloseIcon, ArrowBack } from '@chakra-ui/icons'
 import VisualisationPanel from './visualisation'
@@ -40,7 +42,9 @@ const AccordionItemRender = ({ title, Component, ...otherProps }) => {
     return (<AccordionItem {...styles.section}>
         <AccordionButton {...styles.button}>
             <Box flex="1" textAlign="left" {...styles.sectionTitle}>
-                <h2>{title}</h2>
+                <Heading as='h2' size='xs'>
+                    <Text casing='uppercase'>{title}</Text>
+                </Heading>
             </Box>
             <AccordionIcon />
         </AccordionButton>
@@ -104,11 +108,12 @@ const Toolbar = (props) => {
                 onClose={onClose}
                 isOpen={isOpen}
                 size={'sm'}
+                blockScrollOnMount={false}
                 trapFocus={false}>
                 <DrawerOverlay />
                 <DrawerContent>
-                    <DrawerHeader {...styles.header}>
-                        <AmplienceLogo color={"#000000"} width={'unset'} height={'unset'} />
+                    <DrawerHeader {...styles.header} mt={10}>
+                        <AmplienceLogo color={"#000000"} width={'unset'} height={'unset'}  mb={10}/>
                     </DrawerHeader>
                     <DrawerBody padding={0}>
                         <Accordion allowToggle={true} defaultIndex={[0]} allowMultiple={true}>
