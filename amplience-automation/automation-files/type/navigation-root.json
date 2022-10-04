@@ -17,12 +17,12 @@
             },
             {
                 "label": "Header - Localhost",
-                "templatedUri": "http://localhost:3000/{{locales}}/visualization/{{hub.name}}/{{content.sys.id}}?navvis=header&navroot={{delivery.key}}&vse={{vse.domain}}",
+                "templatedUri": "http://localhost:3000/{{locales}}/visualization/{{hub.name}}?navvis=header&navroot={{delivery.key}}&vse={{vse.domain}}&contentId={{content.sys.id}}",
                 "default": false
             },
             {
                 "label": "Footer - Localhost",
-                "templatedUri": "http://localhost:3000/{{locales}}/visualization/{{hub.name}}/{{content.sys.id}}?navvis=footer&navroot={{delivery.key}}&vse={{vse.domain}}",
+                "templatedUri": "http://localhost:3000/{{locales}}/visualization/{{hub.name}}?navvis=footer&navroot={{delivery.key}}&vse={{vse.domain}}&contentId={{content.sys.id}}",
                 "default": false
             },
             {
@@ -32,12 +32,12 @@
             },
             {
                 "label": "Header - Live (Amplience MRT)",
-                "templatedUri": "https://ascc-production.mobify-storefront.com/{{locales}}/visualization/{{hub.name}}/{{content.sys.id}}?navvis=header&navroot={{delivery.key}}&vse={{vse.domain}}",
+                "templatedUri": "https://ascc-production.mobify-storefront.com/{{locales}}/visualization/{{hub.name}}?navvis=header&navroot={{delivery.key}}&vse={{vse.domain}}&contentId={{content.sys.id}}",
                 "default": false
             },
             {
                 "label": "Footer - Live (Amplience MRT)",
-                "templatedUri": "https://ascc-production.mobify-storefront.com/{{locales}}/visualization/{{hub.name}}/{{content.sys.id}}?navvis=footer&navroot={{delivery.key}}&vse={{vse.domain}}",
+                "templatedUri": "https://ascc-production.mobify-storefront.com/{{locales}}/visualization/{{hub.name}}?navvis=footer&navroot={{delivery.key}}&vse={{vse.domain}}&contentId={{content.sys.id}}",
                 "default": false
             },
             {
