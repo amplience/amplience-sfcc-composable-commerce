@@ -1,13 +1,12 @@
-import amplience from '../../../../../config/amplience/default.js'
 import {Box, Text, useMultiStyleConfig} from '@chakra-ui/react'
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import {useIntl} from 'react-intl'
 import PropTypes from 'prop-types'
 
 import { useContext } from 'react'
 import { AmplienceContext } from '../../../../contexts/amplience'
 
-const VisualisationPanel = ({vse, hubname, locale, contentId}) => {
+const VisualisationPanel = ({vse, locale, contentId}) => {
     const intl = useIntl()
     const styles = useMultiStyleConfig('PreviewHeader')
     const { envs } = useContext(AmplienceContext)

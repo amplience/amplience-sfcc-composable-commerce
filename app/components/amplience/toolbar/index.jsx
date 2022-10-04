@@ -28,6 +28,7 @@ import VisualisationPanel from './visualisation'
 import PersonalisationPanel from './personalisation'
 import PreviewPanel from './preview'
 import EnvironmentsPanel from './environments'
+import AboutPanel from './about'
 import { AmplienceLogo } from '../../icons'
 
 const items = [
@@ -47,6 +48,10 @@ const items = [
     {
         title: 'Personalisation',
         Component: PersonalisationPanel
+    }, 
+    {
+        title: 'About The Toolbar',
+        Component: AboutPanel
     }
 ]
 

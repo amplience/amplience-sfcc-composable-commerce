@@ -1,14 +1,12 @@
 import {Box, Button, Text, useMultiStyleConfig} from '@chakra-ui/react'
 import React, {useState, useEffect} from 'react'
-import {useIntl} from 'react-intl'
 import PropTypes from 'prop-types'
 
 import { useContext } from 'react'
 import { AmplienceContext } from '../../../../contexts/amplience'
 import useNavigation from '../../../../hooks/use-navigation'
 
-const EnvironmentsPanel = ({vse, hubname, locale, contentId}) => {
-    const intl = useIntl()
+const EnvironmentsPanel = ({vse}) => {
     const styles = useMultiStyleConfig('PreviewHeader')
     const navigate = useNavigation()
     const { envs } = useContext(AmplienceContext)
