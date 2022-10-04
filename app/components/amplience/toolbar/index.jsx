@@ -62,12 +62,13 @@ const Toolbar = (props) => {
         },
         {
             title: 'Visualisation',
-            Component: VisualisationPanel
+            Component: VisualisationPanel,
+            visibility: ( ) => !!props.vse
         },
         {
             title: 'Environments',
             Component: EnvironmentsPanel,
-            visibility: () => envs && envs.length > 0
+            visibility: () => !!props.vse && envs && envs.length > 0
         },
         {
             title: 'Personalisation',
