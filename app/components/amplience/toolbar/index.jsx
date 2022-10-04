@@ -31,29 +31,8 @@ import EnvironmentsPanel from './environments'
 import AboutPanel from './about'
 import { AmplienceLogo } from '../../icons'
 
-const items = [
-    {
-        title: 'Preview',
-        Component: PreviewPanel,
-        visibility: ({ vseTimestamp }) => !!vseTimestamp
-    }, 
-    {
-        title: 'Visualisation',
-        Component: VisualisationPanel
-    }, 
-    {
-        title: 'Environments',
-        Component: EnvironmentsPanel
-    }, 
-    {
-        title: 'Personalisation',
-        Component: PersonalisationPanel
-    }, 
-    {
-        title: 'About The Toolbar',
-        Component: AboutPanel
-    }
-]
+import { useContext } from 'react'
+import { AmplienceContext } from '../../../contexts/amplience'
 
 const AccordionItemRender = ({ title, Component, ...otherProps }) => {
     const styles = useMultiStyleConfig('PreviewHeader')
@@ -72,8 +51,33 @@ const AccordionItemRender = ({ title, Component, ...otherProps }) => {
 }
 
 const Toolbar = (props) => {
-    const styles = useMultiStyleConfig('PreviewHeader')
+    const { envs } = useContext(AmplienceContext)
 
+    const items = [
+        {
+            title: 'Preview',
+            Component: PreviewPanel,
+            visibility: ({ vseTimestamp }) => !!vseTimestamp
+        }, 
+        {
+            title: 'Visualisation',
+            Component: VisualisationPanel
+        }, 
+        {
+            title: 'Environments',
+            Component: EnvironmentsPanel,
+            visibility: () => envs && envs.length > 0
+        }, 
+        {
+            title: 'Personalisation',
+            Component: PersonalisationPanel
+        }, 
+        {
+            title: 'About The Toolbar',
+            Component: AboutPanel
+        }
+    ]
+    const styles = useMultiStyleConfig('PreviewHeader')
     const { isOpen, onToggle, onClose } = useDisclosure()
 
     return (

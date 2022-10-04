@@ -73,7 +73,7 @@ export const AmplienceContextProvider = ({vse, vseTimestamp, groups: initialGrou
     const [client] = useState(new AmplienceAPI())
     const [groups, setGroups] = useState(initialGroups)
     const [envs, setEnvs] = useState(amplience.envs)
-    const [currentEnv, setCurrentEnv] = useState(amplience.default)
+    const [defaultEnv, setDefaultEnv] = useState(amplience.default)
 
     useEffect(() => {
         if (groups !== initialGroups) {
@@ -97,7 +97,7 @@ export const AmplienceContextProvider = ({vse, vseTimestamp, groups: initialGrou
                 vse, 
                 vseTimestamp, 
                 envs, 
-                currentEnv, 
+                defaultEnv, 
                 groups, 
                 updateGroups, 
                 client
@@ -167,7 +167,7 @@ AmplienceContextProvider.propTypes = {
     vse: PropTypes.string,
     vseTimestamp: PropTypes.number,
     groups: PropTypes.array,
-    currentEnv: PropTypes.any,
+    defaultEnv: PropTypes.any,
     envs: PropTypes.array,
     children: PropTypes.node.isRequired
 }

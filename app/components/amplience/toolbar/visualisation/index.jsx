@@ -9,9 +9,9 @@ import { AmplienceContext } from '../../../../contexts/amplience'
 const VisualisationPanel = ({vse, locale, contentId}) => {
     const intl = useIntl()
     const styles = useMultiStyleConfig('PreviewHeader')
-    const { envs } = useContext(AmplienceContext)
+    const { defaultEnv, envs } = useContext(AmplienceContext)
 
-    const currentHub = envs.find(item => {
+    const currentHub = envs?.find(item => {
         const regExp = /(.*)-(.*)-(.*)(\.staging.bigcontent.io)/
         const matches = vse.match(regExp)
         if (matches) {
@@ -20,12 +20,12 @@ const VisualisationPanel = ({vse, locale, contentId}) => {
         } else {
             return item.vse === vse
         }
-    }).hub
+    })?.hub || defaultEnv.hub
 
     return (
         <Box {...styles.box}>
             { 
-                vse && envs &&
+                vse && ( envs || defaultEnv ) &&
                 <>
                     <Text style={{fontSize: '13px', paddingBottom: 8}}>
                         <b>Hub Name</b><br/>{currentHub}
