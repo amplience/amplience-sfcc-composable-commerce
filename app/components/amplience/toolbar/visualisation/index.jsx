@@ -33,7 +33,7 @@ const VisualisationPanel = ({vse, locale, contentId}) => {
     const { hasCopied: hasCopiedLocale, onCopy: onCopyLocale } = useClipboard(localeValue)
 
     const [contentIdValue, setContentIdValue] = React.useState(contentId || null)
-    const { hasCopied: hasCopiedContentId, onCopy: onCopyContentId } = useClipboard(localeValue)
+    const { hasCopied: hasCopiedContentId, onCopy: onCopyContentId } = useClipboard(contentIdValue)
 
     return (
         <Box {...styles.box}>
@@ -78,6 +78,7 @@ const VisualisationPanel = ({vse, locale, contentId}) => {
                             <>
                                 <Heading as='h4' size='xs' mt={4} mb={2}>Content ID</Heading>
                                 <HStack>
+                                    <Input size='xs' isReadonly={true} value={contentId} />
                                     <IconButton 
                                         colorScheme={'ampliencePink'}
                                         size='xs' 
@@ -85,7 +86,6 @@ const VisualisationPanel = ({vse, locale, contentId}) => {
                                         onClick={onCopyContentId} 
                                         aria-label='Copy' 
                                         icon={<CopyIcon />} />
-                                    <Input size='xs' isReadonly={true} value={contentId} />
                                 </HStack>
                             </>
                          )
