@@ -248,7 +248,9 @@ const PreviewHeader = ({ vse, vseTimestamp, customerGroups, ...otherProps }) => 
                                 border: '1px solid #fba9ed'
                             }}
                         >
-                            { vse && envs &&
+                            { 
+                                // TODO: need to recognise Time Travel VSE
+                                vse && envs &&
                                 <>
                                     <Text>
                                         <b>Visualisation Details</b>
