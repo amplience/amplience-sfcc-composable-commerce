@@ -98,7 +98,7 @@ const Toolbar = (props) => {
                 trapFocus={false}>
                 <DrawerOverlay />
                 <DrawerContent>
-                    <DrawerHeader{...styles.header}>
+                    <DrawerHeader {...styles.header}>
                         <AmplienceLogo color={"#000000"} width={'unset'} height={'unset'} />
                     </DrawerHeader>
                     <DrawerBody padding={0}>
