@@ -84,11 +84,6 @@ export const AmplienceContextProvider = ({vse, vseTimestamp, groups: initialGrou
     // Switch the API to use the provided VSE, if present.
     client.setGroups(groups)
     client.setVse(vse)
-    
-    const setNewCurrentEnv = (env) => {
-        client.setVse(env.vse)
-        setCurrentEnv(env)
-    }
 
     const updateGroups = (groups) => {
         defaultAmpClient.setGroups(groups)
@@ -104,7 +99,6 @@ export const AmplienceContextProvider = ({vse, vseTimestamp, groups: initialGrou
                 envs, 
                 currentEnv, 
                 groups, 
-                setNewCurrentEnv, 
                 updateGroups, 
                 client
                 }
