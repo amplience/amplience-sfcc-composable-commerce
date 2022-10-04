@@ -135,6 +135,18 @@ const PreviewHeader = ({ vse, vseTimestamp, customerGroups, ...otherProps }) => 
 
     const {isOpen, onToggle, onClose} = useDisclosure()
 
+    const currentHub = envs.find(item => {
+        if ( !vseTimestamp) {
+            return item.vse === vse
+        } else {
+            const regExp = /(.*)-(.*)-(.*)(\.staging.bigcontent.io)/
+            const matches = vse.match(regExp)
+            const originalVse = `${matches[1]}.staging.bigcontent.io`
+            return item.vse === originalVse
+        }
+    }).hub
+
+
     return (
         <>
             <IconButton
@@ -220,7 +232,7 @@ const PreviewHeader = ({ vse, vseTimestamp, customerGroups, ...otherProps }) => 
                             <p>
                                 {
                                     vse && envs.map(env => {
-                                        if (env.vse == vse) {
+                                        if (env.hub == currentHub) {
                                             return <Text style={{fontSize: '13px'}}>
                                                     <b>{env.name} ({env.hub})</b><br/>
                                                 </Text>
@@ -249,14 +261,13 @@ const PreviewHeader = ({ vse, vseTimestamp, customerGroups, ...otherProps }) => 
                             }}
                         >
                             { 
-                                // TODO: need to recognise Time Travel VSE
                                 vse && envs &&
                                 <>
                                     <Text>
                                         <b>Visualisation Details</b>
                                     </Text>
                                     <Text style={{fontSize: '13px'}}>
-                                        <b>Hub Name</b><br/>{envs.find(item => item.vse === vse).hub}
+                                        <b>Hub Name</b><br/>{currentHub}
                                     </Text>
                                     <Text style={{fontSize: '13px'}}>
                                         <b>VSE</b><br/> {vse}
