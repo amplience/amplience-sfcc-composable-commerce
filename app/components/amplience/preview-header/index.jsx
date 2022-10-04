@@ -136,13 +136,13 @@ const PreviewHeader = ({ vse, vseTimestamp, customerGroups, ...otherProps }) => 
     const {isOpen, onToggle, onClose} = useDisclosure()
 
     const currentHub = envs.find(item => {
-        if ( !vseTimestamp) {
-            return item.vse === vse
-        } else {
-            const regExp = /(.*)-(.*)-(.*)(\.staging.bigcontent.io)/
-            const matches = vse.match(regExp)
+        const regExp = /(.*)-(.*)-(.*)(\.staging.bigcontent.io)/
+        const matches = vse.match(regExp)
+        if (matches) {
             const originalVse = `${matches[1]}.staging.bigcontent.io`
             return item.vse === originalVse
+        } else {
+            return item.vse === vse
         }
     }).hub
 
