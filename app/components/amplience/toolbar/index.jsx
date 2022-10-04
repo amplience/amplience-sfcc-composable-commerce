@@ -25,7 +25,12 @@ import {
     Heading,
     Text,
     Fade, 
-    Button
+    Button,
+    Slider,
+    SliderMark,
+    SliderTrack,
+    SliderFilledTrack,
+    SliderThumb
 } from '@chakra-ui/react'
 import {SettingsIcon, CloseIcon, ChevronLeftIcon} from '@chakra-ui/icons'
 import VisualisationPanel from './visualisation'
@@ -98,7 +103,7 @@ const Toolbar = (props) => {
         window.location.assign('/')
     }
 
-    const [toolbarOpacity, setToolbarOpacity] = useState(0.8)
+    const [toolbarOpacity, setToolbarOpacity] = useState(100)
 
     return (
         <>
@@ -149,7 +154,7 @@ const Toolbar = (props) => {
                             {items.map((data, index) => {
                                 data.visibility = data.visibility || (() => true)
                                 if (data.visibility && typeof data.visibility === 'function' && data.visibility({ ...props })) {
-                                    return (<AccordionItemRender key={index} {...data} {...props} />)
+                                    return (<AccordionItemRender key={index} {...data} {...props} toolbarOpacity={toolbarOpacity} setToolbarOpacity={setToolbarOpacity} />)
                                 }
                             })}
                         </Accordion>
