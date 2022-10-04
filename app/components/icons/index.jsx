@@ -80,7 +80,7 @@ MastercardSymbol.viewBox = MastercardSymbol.viewBox || '0 0 38 22'
 PaypalSymbol.viewBox = PaypalSymbol.viewBox || '0 0 80 20'
 SocialPinterestSymbol.viewBox = SocialPinterestSymbol.viewBox || '0 0 21 20'
 VisaSymbol.viewBox = VisaSymbol.viewBox || '0 0 38 22'
-AmplienceSymbol.viewBox = AmplienceSymbol.viewBox || '0 0 448 67'
+AmplienceSymbol.viewBox = AmplienceSymbol.viewBox || '0 0 448 51'
 
 /**
  * A helper for creating a Chakra-wrapped icon from our own SVG imports via sprite sheet.

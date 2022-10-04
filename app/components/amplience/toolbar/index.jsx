@@ -23,9 +23,11 @@ import {
     AccordionIcon,
     AccordionPanel,
     Heading,
-    Text
+    Text,
+    Fade, 
+    Button
 } from '@chakra-ui/react'
-import { SettingsIcon, CloseIcon, ArrowBack } from '@chakra-ui/icons'
+import {SettingsIcon, CloseIcon, ChevronLeftIcon} from '@chakra-ui/icons'
 import VisualisationPanel from './visualisation'
 import PersonalisationPanel from './personalisation'
 import PreviewPanel from './preview'
@@ -62,47 +64,51 @@ const Toolbar = (props) => {
             title: 'Preview',
             Component: PreviewPanel,
             visibility: ({ vseTimestamp }) => !!vseTimestamp
-        }, 
+        },
         {
             title: 'Visualisation',
-            Component: VisualisationPanel
-        }, 
+            Component: VisualisationPanel,
+            visibility: ( ) => !!props.vse
+        },
         {
             title: 'Environments',
             Component: EnvironmentsPanel,
-            visibility: () => envs && envs.length > 0
-        }, 
+            visibility: () => !!props.vse && envs && envs.length > 0
+        },
         {
             title: 'Personalisation',
             Component: PersonalisationPanel
-        }, 
+        },
         {
             title: 'About The Toolbar',
             Component: AboutPanel
         }
     ]
     const styles = useMultiStyleConfig('PreviewHeader')
-    const { isOpen, onToggle, onClose } = useDisclosure()
+
+    const {isOpen, onToggle, onClose} = useDisclosure()
+    const deleteCookie = (name) => {
+        document.cookie = name + '=; max-age=0;'
+    }
+
+    const clearVse = () => {
+        deleteCookie('vse')
+        deleteCookie('vse-timestamp')
+        window.location.assign('/')
+    }
 
     return (
         <>
             <IconButton
-                icon={<SettingsIcon />}
+                icon={<SettingsIcon title={'Open'} />}
                 onClick={onToggle}
                 style={{
-                    display: isOpen ? 'none' : 'block'
+                    opacity: isOpen ? 0 : 1,
                 }}
                 {...styles.previewIcon}
+                {...styles.previewIconInitial}
+                zIndex={1200}
             />
-            <Slide direction={'left'} in={isOpen} style={{ zIndex: 1400 }}>
-                <IconButton
-                    icon={<CloseIcon />}
-                    onClick={onToggle}
-                    {...styles.previewIcon}
-                    {...styles.previewIconClose}
-                    left={{ base: 'calc(100vw - 50px)', lg: '460px' }}
-                />
-            </Slide>
             <Drawer
                 placement={'left'}
                 onClose={onClose}
@@ -111,6 +117,24 @@ const Toolbar = (props) => {
                 blockScrollOnMount={false}
                 trapFocus={false}>
                 <DrawerOverlay />
+                <div>
+                    <IconButton
+                        icon={<ChevronLeftIcon {...styles.backIcon} />}
+                        onClick={onToggle}
+                        title={'Close'}
+                        {...styles.previewIcon}
+                        left={{base: 'calc(100vw - 50px)', sm: '460px'}}
+                    />
+                    <IconButton
+                        icon={<CloseIcon />}
+                        onClick={clearVse}
+                        title={'Exit'}
+                        {...styles.previewIcon}
+                        {...styles.previewIconClose}
+                        left={{base: 'calc(100vw - 50px)', sm: '460px'}}
+                    />
+                </div>
+
                 <DrawerContent>
                     <DrawerHeader {...styles.header} mt={10}>
                         <AmplienceLogo color={"#000000"} width={'unset'} height={'unset'}  mb={10}/>

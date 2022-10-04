@@ -68,7 +68,7 @@ RealtimeVisualizationProvider.propTypes = {
 
 export const AmplienceContext = React.createContext()
 
-export const AmplienceContextProvider = ({vse, vseTimestamp, groups: initialGroups, children}) => {
+export const AmplienceContextProvider = ({vse, contentId, vseTimestamp, groups: initialGroups, children}) => {
     // Init client using VSE
     const [client] = useState(new AmplienceAPI())
     const [groups, setGroups] = useState(initialGroups)
@@ -94,7 +94,8 @@ export const AmplienceContextProvider = ({vse, vseTimestamp, groups: initialGrou
     return (
         <AmplienceContext.Provider value={
             {
-                vse, 
+                vse,
+                contentId,
                 vseTimestamp, 
                 envs, 
                 defaultEnv, 
@@ -137,11 +138,11 @@ export const getGroupsFromLocalStorage = ({req, res}) => {
 
 export const generateVseProps = ({req, res, query}) => {
     // '/:locale/visualization/:hubname/:contentId/:vse'
-    const vizRegEx = /\/(.*)\/visualization\/(.*)\/(.*)\/(.*)/
+    const vizRegEx = /\/(.*)\/visualization\/(.*)/
     if (req.originalUrl.match(vizRegEx)) {
         const url = req.originalUrl.split('?')[0]
-        const [match, locale, hubname, contentId, vse] = url.match(vizRegEx)
-        return {vse, hubname, contentId, locale}
+        const [match, locale, hubname] = url.match(vizRegEx)
+        return {vse: query.vse, hubname, contentId: query.contentId, locale}
     } else if (query['vse'] || query['vse-timestamp']) {
         let vse = null
         let vseTimestamp = 0
