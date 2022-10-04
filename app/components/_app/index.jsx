@@ -57,7 +57,7 @@ import {resolveSiteFromUrl} from '../../utils/site-utils'
 import useMultiSite from '../../hooks/use-multi-site'
 
 import {init} from 'dc-visualization-sdk'
-import PreviewHeader from '../amplience/preview-header'
+import Toolbar from '../amplience/toolbar'
 import {defaultAmpClient} from '../../amplience-api'
 import {useAmpRtvNav} from '../../utils/amplience/rtv'
 
@@ -217,7 +217,7 @@ const App = (props) => {
                 <CategoriesProvider categories={allCategories}>
                     <CurrencyProvider currency={currency}>
                         <AmplienceContextProvider {...ampProps} showVse={showVse}>
-                            {showVse && <PreviewHeader {...ampProps} showVse={showVse} />}
+                            {showVse && <Toolbar {...ampProps} showVse={showVse} />}
                             <RealtimeVisualization.Provider value={{ampVizSdk, status}}>
                                 <Seo>
                                     <meta name="theme-color" content={THEME_COLOR} />
