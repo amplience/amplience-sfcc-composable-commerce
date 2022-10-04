@@ -13,7 +13,7 @@ When you're ready to start pointing to your own SFCC On-Demand Sandbox, there ar
 
 * A [Client ID & Secret](#client-id-and-secret) 
 * The [OCAPI Configuration](#ocapi-configuration) in your ODS Business Manager
-* To enable **Content Personalisation**, install our [Amplience Hooks Bridge Caftridge](https://github.com/amplience/amplience-sfcc-hooksbridge) on your ODS (detailed instructions [Amplience Hooks Bridge Caftridge](https://github.com/amplience/amplience-sfcc-hooksbridge) page) 
+* To enable **Content Personalisation**, install our [Amplience Hooks Bridge Cartridge](https://github.com/amplience/amplience-sfcc-hooksbridge) on your ODS (detailed instructions [Amplience Hooks Bridge Cartridge](https://github.com/amplience/amplience-sfcc-hooksbridge) page) 
 * [Localisation](#localisation). 
 
 All are outlined below. (Instructions for installing our OCAPI hooks is [here](https://github.com/amplience/amplience-sfcc-hooksbridge))
