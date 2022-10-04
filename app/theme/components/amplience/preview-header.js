@@ -1,18 +1,37 @@
 export default {
     baseStyle: () => ({
+        backIcon: {
+            width: '2em',
+            height: '2em'
+        },
+        icons: {
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
+            height: '60px',
+            alignItems: 'center'
+        },
+        previewIconClose: {
+            top: {base: '45px', sm: '65px'},
+        },
         slide: {
             zIndex: {base: 9999, lg: 1300}
         },
+        previewIconInitial: {
+            top: {base: '52px', sm: '52px', md: '60px', lg: '15px'},
+            transition: 'opacity .8s ease-out'
+        },
         previewIcon: {
-            left: {base: '15px', lg: '10px'},
-            top: {base: '51px', md: '60px', lg: '15px'},
-            zIndex: 1300,
+            left: {base: 4, md: 6, lg: 4 },
+            top: {base: '5px', sm: '15px'},
             position: 'fixed',
             boxShadow: 'lg',
             backgroundColor: '#e80d8c',
             color: '#fff',
-            width: 5,
+            minWidth: [9, 11],
+            height: [9, 11],
             cursor: 'pointer',
+            zIndex: 1600,
 
             _hover: {
                 backgroundColor: '#ba0a71'
@@ -35,7 +54,11 @@ export default {
         header: {
             textAlign: 'center',
             borderBottomWidth: '1px',
-            padding: {base: '30px 0', lg: '5px 0'}
+            //padding: {base: '30px 0', lg: '5px 0'},
+            paddingLeft: [6, 8],
+            paddingRight: [6, 8],
+            paddingTop: [6],
+            paddingBottom: [6]
         },
         section: {
             borderTop: 'none',
@@ -51,14 +74,16 @@ export default {
         button: {
             background: 'gray.50',
             cursor: 'pointer',
-            _hover: {
-
-            }
+            paddingLeft: [4, 4],
+            paddingRight: [3, 4],
+            paddingTop: [1, 2],
+            paddingBottom: [1, 2],
+            _hover: {}
         },
         pannel: {
             paddingInlineStart: 0,
             paddingInlineEnd: 0,
-            padding: '0 20px 20px 20px',
+            padding: '0 20px 20px 20px'
         },
         box: {
             padding: '20px'
