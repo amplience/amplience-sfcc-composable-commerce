@@ -54,6 +54,22 @@ const PersonalisationPanel = ({customerGroups}) => {
 
     return (<Box {...styles.box}>
         <p>
+            <b>Fired Rules</b>
+        </p>
+        <Button
+            size='xs'
+            onClick={() => setMatchVisible(!matchVisible)}
+            margin={'10px 0'}
+        >
+            {matchVisible ? intl.formatMessage({
+                id: 'amplience.preview.hideMatches',
+                defaultMessage: 'Hide matches'
+            }) : intl.formatMessage({
+                id: 'amplience.preview.showMatches',
+                defaultMessage: 'Show matches'
+            })}
+        </Button>
+        <p>
             <b>Customer groups</b>
         </p>
         <Wrap spacing={2} paddingTop={4}>
@@ -80,18 +96,6 @@ const PersonalisationPanel = ({customerGroups}) => {
                 )
             })}
         </Wrap>
-        <Button
-            onClick={() => setMatchVisible(!matchVisible)}
-            margin={'10px 0'}
-        >
-            {matchVisible ? intl.formatMessage({
-                id: 'amplience.preview.hideMatches',
-                defaultMessage: 'Hide matches'
-            }) : intl.formatMessage({
-                id: 'amplience.preview.showMatches',
-                defaultMessage: 'Show matches'
-            })}
-        </Button>
     </Box>)
 }
 

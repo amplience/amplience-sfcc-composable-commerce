@@ -1,27 +1,50 @@
 import amplience from '../../../../../config/amplience/default.js'
-import {Box, useMultiStyleConfig} from '@chakra-ui/react'
-import React from 'react'
+import {Box, Text, useMultiStyleConfig} from '@chakra-ui/react'
+import React, {useState, useEffect} from 'react'
 import {useIntl} from 'react-intl'
 import PropTypes from 'prop-types'
+
+import { useContext } from 'react'
+import { AmplienceContext } from '../../../../contexts/amplience'
 
 const VisualisationPanel = ({vse, hubname, locale, contentId}) => {
     const intl = useIntl()
     const styles = useMultiStyleConfig('PreviewHeader')
+    const { envs } = useContext(AmplienceContext)
+
+    const currentHub = envs.find(item => {
+        const regExp = /(.*)-(.*)-(.*)(\.staging.bigcontent.io)/
+        const matches = vse.match(regExp)
+        if (matches) {
+            const originalVse = `${matches[1]}.staging.bigcontent.io`
+            return item.vse === originalVse
+        } else {
+            return item.vse === vse
+        }
+    }).hub
 
     return (
         <Box {...styles.box}>
-            <p>
-                <b>Hub Name</b><br />{hubname || amplience.hub}
-            </p>
-            <p>
-                <b>VSE</b><br /> {vse}
-            </p>
-            <p>
-                <b>Locale</b><br />{locale || intl.locale}
-            </p>
-            <p>
-                <b>Content ID</b><br />{contentId}
-            </p>
+            { 
+                vse && envs &&
+                <>
+                    <Text style={{fontSize: '13px', paddingBottom: 8}}>
+                        <b>Hub Name</b><br/>{currentHub}
+                    </Text>
+                    <Text style={{fontSize: '13px', paddingBottom: 8}}>
+                        <b>VSE</b><br/> {vse}
+                    </Text>
+                    <Text style={{fontSize: '13px', paddingBottom: 8}}>
+                        <b>Locale</b><br/>{locale || intl.locale}
+                    </Text>
+                    {
+                        contentId && 
+                        <Text style={{fontSize: '13px', paddingBottom: 8}}>
+                            <b>Content ID</b><br/>{contentId}
+                        </Text>
+                    }
+                </>
+            }
         </Box>
     )
 }

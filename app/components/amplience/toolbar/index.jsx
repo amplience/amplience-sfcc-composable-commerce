@@ -94,7 +94,7 @@ const Toolbar = (props) => {
                 placement={'left'}
                 onClose={onClose}
                 isOpen={isOpen}
-                size={'sm'}
+                size={'xs'}
                 trapFocus={false}>
                 <DrawerOverlay />
                 <DrawerContent>

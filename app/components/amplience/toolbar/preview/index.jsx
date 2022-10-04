@@ -1,4 +1,4 @@
-import {Box, Button, useMultiStyleConfig} from '@chakra-ui/react'
+import {Box, Button, Text, useMultiStyleConfig} from '@chakra-ui/react'
 import moment from 'moment'
 import React, {useEffect, useState} from 'react'
 import PropTypes from 'prop-types'
@@ -42,7 +42,7 @@ const PreviewPanel = ({vseTimestamp, vse,  ...otherProps}) => {
 
     return vseTimestamp ? (
         <Box {...styles.container} {...otherProps}>
-            <p>
+            <Text style={{fontSize: '13px'}}>
                 <b>Date:</b> <input
                 id="preview-date"
                 type="date"
@@ -54,8 +54,8 @@ const PreviewPanel = ({vseTimestamp, vse,  ...otherProps}) => {
                     'YYYY-MM-DD'
                 )}
             />
-            </p>
-            <p>
+            </Text>
+            <Text style={{fontSize: '13px'}}>
                 <b>Time:</b> <input
                 id="preview-time"
                 type="time"
@@ -64,23 +64,26 @@ const PreviewPanel = ({vseTimestamp, vse,  ...otherProps}) => {
                     setPreviewTime(x.target.value)
                 }
             />
-            </p>
-            <p>
+            </Text>
+            <Text style={{fontSize: '13px'}}>
                 {previewTimestamp !== vseTimestamp && (
                     <Button
+                        size='xs'
                         style={{marginRight: 10}}
                         onClick={updateVseTimestamp}
                     >
                         Update
                     </Button>
                 )}
-                <Button onClick={clearVse}>
+                <Button 
+                    size='xs'
+                    onClick={clearVse}>
                     {intl.formatMessage({
                         id: 'amplience.preview.cancel',
                         defaultMessage: 'Cancel'
                     })}
                 </Button>
-            </p>
+            </Text>
         </Box>
     ) : (<></>)
 }

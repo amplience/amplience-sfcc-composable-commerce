@@ -10,8 +10,8 @@ import useNavigation from '../../../../hooks/use-navigation'
 const EnvironmentsPanel = ({vse, hubname, locale, contentId}) => {
     const intl = useIntl()
     const styles = useMultiStyleConfig('PreviewHeader')
-    const { envs } = useContext(AmplienceContext)
     const navigate = useNavigation()
+    const { envs } = useContext(AmplienceContext)
     const [currentHub, setCurrentHub] = useState({})
 
     const handleNewCurrentEnv = (e) => {
