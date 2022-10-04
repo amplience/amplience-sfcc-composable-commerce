@@ -23,25 +23,34 @@ import {
     AccordionIcon,
     AccordionPanel
 } from '@chakra-ui/react'
-import {SettingsIcon, CloseIcon, ArrowBack} from '@chakra-ui/icons'
+import { SettingsIcon, CloseIcon, ArrowBack } from '@chakra-ui/icons'
 import VisualisationPanel from './visualisation'
 import PersonalisationPanel from './personalisation'
 import PreviewPanel from './preview'
-import {AmplienceLogo} from '../../icons'
+import EnvironmentsPanel from './environments'
+import { AmplienceLogo } from '../../icons'
 
-const items = [{
-    title: 'Preview',
-    Component: PreviewPanel,
-    visibility: ({vseTimestamp}) => !!vseTimestamp
-}, {
-    title: 'Visualisation',
-    Component: VisualisationPanel
-}, {
-    title: 'Personalisation',
-    Component: PersonalisationPanel
-}]
+const items = [
+    {
+        title: 'Preview',
+        Component: PreviewPanel,
+        visibility: ({ vseTimestamp }) => !!vseTimestamp
+    }, 
+    {
+        title: 'Environments',
+        Component: EnvironmentsPanel
+    }, 
+    {
+        title: 'Visualisation',
+        Component: VisualisationPanel
+    }, 
+    {
+        title: 'Personalisation',
+        Component: PersonalisationPanel
+    }
+]
 
-const AccordionItemRender = ({title, Component, ...otherProps}) => {
+const AccordionItemRender = ({ title, Component, ...otherProps }) => {
     const styles = useMultiStyleConfig('PreviewHeader')
 
     return (<AccordionItem {...styles.section}>
@@ -60,7 +69,7 @@ const AccordionItemRender = ({title, Component, ...otherProps}) => {
 const Toolbar = (props) => {
     const styles = useMultiStyleConfig('PreviewHeader')
 
-    const {isOpen, onToggle, onClose} = useDisclosure()
+    const { isOpen, onToggle, onClose } = useDisclosure()
 
     return (
         <>
@@ -72,13 +81,13 @@ const Toolbar = (props) => {
                 }}
                 {...styles.previewIcon}
             />
-            <Slide direction={'left'} in={isOpen} style={{zIndex: 1400}}>
+            <Slide direction={'left'} in={isOpen} style={{ zIndex: 1400 }}>
                 <IconButton
                     icon={<CloseIcon />}
                     onClick={onToggle}
                     {...styles.previewIcon}
                     {...styles.previewIconClose}
-                    left={{base: 'calc(100vw - 50px)', lg: '460px'}}
+                    left={{ base: 'calc(100vw - 50px)', lg: '460px' }}
                 />
             </Slide>
             <Drawer
@@ -96,7 +105,7 @@ const Toolbar = (props) => {
                         <Accordion allowToggle={true} defaultIndex={[0]} allowMultiple={true}>
                             {items.map((data, index) => {
                                 data.visibility = data.visibility || (() => true)
-                                if (data.visibility && typeof data.visibility === 'function' && data.visibility({...props})) {
+                                if (data.visibility && typeof data.visibility === 'function' && data.visibility({ ...props })) {
                                     return (<AccordionItemRender key={index} {...data} {...props} />)
                                 }
                             })}

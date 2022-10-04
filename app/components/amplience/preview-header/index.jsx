@@ -46,7 +46,6 @@ const PreviewHeader = ({ vse, vseTimestamp, customerGroups, ...otherProps }) => 
     const styles = useMultiStyleConfig('PreviewHeader')
 
     const { groups, updateGroups } = useContext(AmplienceContext)
-    const { currentEnv, setNewCurrentEnv } = useContext(AmplienceContext)
     const { envs } = useContext(AmplienceContext)
 
     const [previewDate, setPreviewDate] = useState(moment(vseTimestamp).format('YYYY-MM-DD'))
