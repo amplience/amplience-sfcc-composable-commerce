@@ -159,7 +159,7 @@ const PreviewHeader = ({ vse, vseTimestamp, customerGroups, ...otherProps }) => 
                 placement={'left'}
                 onClose={onClose} 
                 isOpen={isOpen} 
-                size={'sm'}
+                size={'xs'}
                 trapFocus={false}>
                 <DrawerOverlay />
                 <DrawerContent>
@@ -179,7 +179,7 @@ const PreviewHeader = ({ vse, vseTimestamp, customerGroups, ...otherProps }) => 
                                         defaultMessage: 'Preview Active'
                                     })}
                                 </Text>
-                                <Text>
+                                <Text style={{fontSize: '13px'}}>
                                     Date: <input
                                         id="preview-date"
                                         type="date"
@@ -192,7 +192,7 @@ const PreviewHeader = ({ vse, vseTimestamp, customerGroups, ...otherProps }) => 
                                         )}
                                     />
                                 </Text>
-                                <Text>
+                                <Text style={{fontSize: '13px'}}>
                                     Time: <input
                                         id="preview-time"
                                         type="time"
@@ -205,13 +205,16 @@ const PreviewHeader = ({ vse, vseTimestamp, customerGroups, ...otherProps }) => 
                                 <Text>
                                     {previewTimestamp !== vseTimestamp && (
                                         <Button
+                                            size='xs'
                                             style={{marginRight: 10}}
                                             onClick={updateVseTimestamp}
                                         >
                                             Update
                                         </Button>
                                     )}
-                                    <Button onClick={clearVse}>
+                                    <Button 
+                                        size='xs'
+                                        onClick={clearVse}>
                                         {intl.formatMessage({
                                             id: 'amplience.preview.cancel',
                                             defaultMessage: 'Cancel'
