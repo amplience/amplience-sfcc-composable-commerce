@@ -115,7 +115,7 @@ const Toolbar = (props) => {
     }
 
     const [toolbarOpacity, setToolbarOpacity] = useState(100)
-    const [openedPanels, setOpenedPanels] = useState([0])
+    const [openedPanels, setOpenedPanels] = useState(props.vseTimestamp ? [0,1] : [0])
     const [panelsState, setPanelsState] = useState({})
 
     return (
@@ -174,10 +174,10 @@ const Toolbar = (props) => {
                                         <AccordionItemRender
                                             key={index}
                                             onClick={()=> {
-                                                if (openedPanels.includes(index)) {
-                                                    setOpenedPanels(openedPanels.filter(item => item != index))
+                                                if (openedPanels.includes(index - 1)) {
+                                                    setOpenedPanels(openedPanels.filter(item => item != index - 1))
                                                 } else {
-                                                    openedPanels.push(index)
+                                                    openedPanels.push(index - 1)
                                                 }
                                             }} 
                                             {...data} 
