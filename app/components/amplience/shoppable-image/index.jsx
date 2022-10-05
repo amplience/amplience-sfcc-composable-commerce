@@ -53,7 +53,7 @@ const Polygon = styled(Box)`
 `
 
 const ShoppableImageInteractable = ({target, selector, tooltips, children}) => {
-    const matchTooltip = tooltips.find((tooltip) => tooltip.key === target)
+    const matchTooltip = tooltips?.find((tooltip) => tooltip.key === target)
 
     switch (selector) {
         case 'product':
