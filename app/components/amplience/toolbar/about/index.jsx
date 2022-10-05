@@ -16,6 +16,9 @@ const AboutPanel = ({vse, hubname, locale, contentId, toolbarOpacity, setToolbar
                 The Preview Panel allows you to do time travel in your events and editions.
             </Text>
             <Text fontSize='xs' style={{paddingBottom: 8}}>
+                The Visualisation Panel shows the current visualisation parameters such as VSE, hub name, locale and content ID. You can easily copy/paste any of these value using the copy icon.
+            </Text>
+            <Text fontSize='xs' style={{paddingBottom: 8}}>
                 The Environments Panel allows you to switch from your default environment to additional ones (for instance UAT, Test, etc.).
             </Text>
             <Text fontSize='xs' style={{paddingBottom: 8}}>
