@@ -117,7 +117,7 @@ const Toolbar = (props) => {
     }
 
     const [toolbarOpacity, setToolbarOpacity] = useState(100)
-    const [openedPanels, setOpenedPanels] = useState([])
+    const [openedPanels, setOpenedPanels] = useState(props.vseTimestamp ? [0,1] : [0])
     const [toolbarState, setToolbarState] = useState({})
 
     return (
