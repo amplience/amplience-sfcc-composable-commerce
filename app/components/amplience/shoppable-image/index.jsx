@@ -53,19 +53,23 @@ const Polygon = styled(Box)`
 `
 
 const ShoppableImageInteractable = ({target, selector, tooltips, children}) => {
+    const matchTooltip = tooltips.find((tooltip) => tooltip.key === target)
+
     switch (selector) {
         case 'product':
             // TODO: fetch and show product info?
             return (
                 <Link to={productUrlBuilder({id: target})}>
-                    <Tooltip label={'Go to Product...'}>{children}</Tooltip>
+                    <Tooltip label={matchTooltip?.value ?? 'Go to Product...'}>{children}</Tooltip>
                 </Link>
             )
         case 'category': {
             const {categories} = useCategories()
             return (
                 <Link to={categoryUrlBuilder({id: target})}>
-                    <Tooltip label={categories[target]?.name}>{children}</Tooltip>
+                    <Tooltip label={matchTooltip?.value ?? categories[target]?.name}>
+                        {children}
+                    </Tooltip>
                 </Link>
             )
         }
@@ -78,7 +82,7 @@ const ShoppableImageInteractable = ({target, selector, tooltips, children}) => {
             }
             return (
                 <Link to={link}>
-                    <Tooltip label={target}>{children}</Tooltip>
+                    <Tooltip label={matchTooltip?.value ?? target}>{children}</Tooltip>
                 </Link>
             )
         }
@@ -86,12 +90,10 @@ const ShoppableImageInteractable = ({target, selector, tooltips, children}) => {
             // TODO: get page name?
             return (
                 <Link to={'/page/' + target}>
-                    <Tooltip label={target}>{children}</Tooltip>
+                    <Tooltip label={matchTooltip?.value ?? target}>{children}</Tooltip>
                 </Link>
             )
         case 'tooltip': {
-            const matchTooltip = tooltips.find((tooltip) => tooltip.key === target)
-
             if (matchTooltip) {
                 return <Tooltip label={matchTooltip.value}>{children}</Tooltip>
             }
