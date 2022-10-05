@@ -15,6 +15,7 @@ import PersonalisedContainer from '../personalised-container'
 import PersonalisedComponent from '../personalised-component'
 import ShoppableImage from '../shoppable-image'
 import AdditionalInformation from '../toolbar/additionalInformation'
+import {useLocation} from 'react-router-dom'
 
 const Blank = () => <></>
 
@@ -38,10 +39,12 @@ const componentsMapping = {
     'https://sfcc.com/site/navigation/group': Blank
 }
 
-const AmplienceWrapper = ({fetch, content, components, skeleton, ...rest}) => {
+const AmplienceWrapper = ({fetch, content, components, skeleton, rtvActive, ...rest}) => {
     const {client, groups} = useContext(AmplienceContext)
     const [fetchedContent, setFetchedContent] = useState(content)
     const {locale} = useIntl()
+    const location = useLocation()
+    const showInfo = (location.search && (location.search.includes('vse=') || location.search.includes('pagevse='))) || rtvActive
 
     const mapping = components ? {...componentsMapping, ...components} : componentsMapping
 
@@ -67,8 +70,7 @@ const AmplienceWrapper = ({fetch, content, components, skeleton, ...rest}) => {
 
     const result = Component ? (
         <div style={{position: 'relative'}}>
-            <AdditionalInformation {...fetchedContent}/>
-            {console.log(fetchedContent)}
+            {showInfo ? (<AdditionalInformation {...fetchedContent} />) : ''}
             <Component {...fetchedContent} {...rest} />
         </div>
 
