@@ -23,6 +23,8 @@ import useResizeObserver from '@react-hook/resize-observer'
 import {useLayoutEffect} from 'react'
 import styled from '@emotion/styled'
 import AmplienceWrapper from '../wrapper'
+import {useCommerceAPI} from '../../../commerce-api/contexts'
+import {useIntl} from 'react-intl'
 
 const Contain = styled(Box)`
     .interactive {
@@ -70,21 +72,66 @@ const ShoppableImageInteractable = ({target, selector, tooltips, tooltipPlacemen
     const {isOpen, onOpen, onClose} = useDisclosure()
     const tProps = {placement: tooltipPlacement ?? 'bottom'}
 
+    let defaultTooltip = target
     switch (selector) {
         case 'product':
-            // TODO: fetch and show product info?
+            defaultTooltip = 'Loading...'
+            break
+        case 'category': {
+            const {categories} = useCategories()
+            defaultTooltip = categories[target]?.name ?? target
+            break
+        }
+        case 'contentKey':
+            defaultTooltip = 'Click to open...'
+            break
+    }
+
+    const [tooltip, setTooltip] = useState(defaultTooltip)
+
+    const label = matchTooltip?.value ?? tooltip
+
+    switch (selector) {
+        case 'product': {
+            const api = useCommerceAPI()
+            const intl = useIntl()
+
+            useEffect(() => {
+                let useResult = true
+
+                api.shopperProducts
+                    .getProduct({
+                        parameters: {
+                            id: target,
+                            allImages: true
+                        }
+                    })
+                    .then((product) => {
+                        if (useResult) {
+                            setTooltip(
+                                `${product.name} - ${intl.formatNumber(product.price, {
+                                    style: 'currency',
+                                    currency: product.currency
+                                })}`
+                            )
+                        }
+                    })
+
+                return () => (useResult = false)
+            }, [target])
+
             return (
                 <Link to={productUrlBuilder({id: target})}>
-                    <Tooltip label={matchTooltip?.value ?? 'Go to Product...'} {...tProps}>
+                    <Tooltip label={label} {...tProps}>
                         {children}
                     </Tooltip>
                 </Link>
             )
+        }
         case 'category': {
-            const {categories} = useCategories()
             return (
                 <Link to={categoryUrlBuilder({id: target})}>
-                    <Tooltip label={matchTooltip?.value ?? categories[target]?.name} {...tProps}>
+                    <Tooltip label={label} {...tProps}>
                         {children}
                     </Tooltip>
                 </Link>
@@ -99,7 +146,7 @@ const ShoppableImageInteractable = ({target, selector, tooltips, tooltipPlacemen
             }
             return (
                 <Link to={link}>
-                    <Tooltip label={matchTooltip?.value ?? target} {...tProps}>
+                    <Tooltip label={label} {...tProps}>
                         {children}
                     </Tooltip>
                 </Link>
@@ -109,7 +156,7 @@ const ShoppableImageInteractable = ({target, selector, tooltips, tooltipPlacemen
             // TODO: get page name?
             return (
                 <Link to={'/page/' + target}>
-                    <Tooltip label={matchTooltip?.value ?? target} {...tProps}>
+                    <Tooltip label={label} {...tProps}>
                         {children}
                     </Tooltip>
                 </Link>
@@ -418,7 +465,7 @@ const ShoppableImage = ({
 
     return (
         <Contain {...props} ref={target} overflow="hidden" position="relative">
-            <Image src={imageUrl} {...imageStyle}></Image>
+            <Image src={imageUrl} {...imageStyle} alt={imageAltText}></Image>
             {elements}
         </Contain>
     )
