@@ -160,7 +160,6 @@ const Toolbar = (props) => {
                 <DrawerContent
                     opacity={toolbarOpacity}
                     >
-                    {JSON.stringify(openedPanels)}
                     <DrawerHeader {...styles.header} mt={10}>
                         <AmplienceLogo color={"#000000"} width={'unset'} height={'unset'}  mb={10}/>
                     </DrawerHeader>
