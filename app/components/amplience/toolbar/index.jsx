@@ -50,7 +50,9 @@ const AccordionItemRender = ({ title, Icon, Component, onClick, ...otherProps })
 
     return (
         <AccordionItem {...styles.section}>
-            <AccordionButton  onClick={onClick} {...styles.button}>
+            <AccordionButton 
+                onClick={onClick} 
+                {...styles.button}>
                 <Box flex="1" textAlign="left" {...styles.sectionTitle}>
                     <Heading as='h2' size='xs'>
                         <HStack>
@@ -73,29 +75,34 @@ const Toolbar = (props) => {
 
     const items = [
         {
+            id: 0,
             title: 'Preview',
             Icon: CalendarIcon,
             Component: PreviewPanel,
             visibility: ({ vseTimestamp }) => !!vseTimestamp
         },
         {
+            id: 1,
             title: 'Visualisation',
             Icon: ViewIcon,
             Component: VisualisationPanel,
             visibility: ( ) => !!props.vse
         },
         {
+            id: 2,
             title: 'Environments',
             Icon: ExternalLinkIcon,
             Component: EnvironmentsPanel,
             visibility: () => !!props.vse && envs && envs.length > 0
         },
         {
+            id: 3,
             title: 'Personalisation',
             Icon: SettingsIcon,
             Component: PersonalisationPanel
         },
         {
+            id: 4,
             title: 'About The Toolbar',
             Icon: InfoOutlineIcon,
             Component: AboutPanel
@@ -116,7 +123,7 @@ const Toolbar = (props) => {
 
     const [toolbarOpacity, setToolbarOpacity] = useState(100)
     const [openedPanels, setOpenedPanels] = useState(props.vseTimestamp ? [0,1] : [0])
-    const [panelsState, setPanelsState] = useState({})
+    const [toolbarState, setToolbarState] = useState({})
 
     return (
         <>
@@ -167,23 +174,25 @@ const Toolbar = (props) => {
                             allowToggle={true} 
                             defaultIndex={openedPanels} 
                             allowMultiple={true}>
-                            {items.map((data, index) => {
+                            {items.sort(function(a, b) {
+                                    return (a.id - b.id);
+                                }).map((data) => {
                                 data.visibility = data.visibility || (() => true)
                                 if (data.visibility && typeof data.visibility === 'function' && data.visibility({ ...props })) {
                                     return (
                                         <AccordionItemRender
-                                            key={index}
+                                            key={data.id}
                                             onClick={()=> {
-                                                if (openedPanels.includes(index - 1)) {
-                                                    setOpenedPanels(openedPanels.filter(item => item != index - 1))
+                                                console.log(data.id)
+                                                if (openedPanels.includes(data.id)) {
+                                                    setOpenedPanels(openedPanels.filter(item => item != data.id))
                                                 } else {
-                                                    openedPanels.push(index - 1)
+                                                    openedPanels.push(data.id)
                                                 }
                                             }} 
                                             {...data} 
                                             {...props} 
-                                            panelsState={panelsState}
-                                            setPanelsState={setPanelsState}
+                                            toolbarState={toolbarState}
                                             toolbarOpacity={toolbarOpacity} 
                                             setToolbarOpacity={setToolbarOpacity} 
                                         />
