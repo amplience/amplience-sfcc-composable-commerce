@@ -117,7 +117,7 @@ const Toolbar = (props) => {
     }
 
     const [toolbarOpacity, setToolbarOpacity] = useState(100)
-    const [openedPanels, setOpenedPanels] = useState(props.vseTimestamp ? [0,1] : [0])
+    const [openedPanels, setOpenedPanels] = useState([])
     const [toolbarState, setToolbarState] = useState({})
 
     return (
@@ -160,6 +160,7 @@ const Toolbar = (props) => {
                 <DrawerContent
                     opacity={toolbarOpacity}
                     >
+                    {JSON.stringify(openedPanels)}
                     <DrawerHeader {...styles.header} mt={10}>
                         <AmplienceLogo color={"#000000"} width={'unset'} height={'unset'}  mb={10}/>
                     </DrawerHeader>
@@ -168,9 +169,12 @@ const Toolbar = (props) => {
                             allowToggle={true} 
                             defaultIndex={openedPanels} 
                             allowMultiple={true}>
-                            {items.map((data, index) => {
-                                data.visibility = data.visibility || (() => true)
-                                if (data.visibility && typeof data.visibility === 'function' && data.visibility({ ...props })) {
+                            {items
+                                .filter(data => {
+                                    data.visibility = data.visibility || (() => true)
+                                    return data.visibility && typeof data.visibility === 'function' && data.visibility({ ...props })
+                                })
+                                .map((data, index) => {
                                     return (
                                         <AccordionItemRender
                                             key={index}
@@ -188,8 +192,8 @@ const Toolbar = (props) => {
                                             setToolbarOpacity={setToolbarOpacity} 
                                         />
                                     )
-                                }
-                            })}
+                                })
+                            }
                         </Accordion>
                     </DrawerBody>
                 </DrawerContent>
