@@ -1,7 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Link from '../link'
-import {Box, Image, Tooltip} from '@chakra-ui/react'
+import {
+    Box,
+    Drawer,
+    DrawerOverlay,
+    DrawerContent,
+    DrawerCloseButton,
+    DrawerHeader,
+    DrawerBody,
+    Image,
+    Tooltip,
+    useDisclosure
+} from '@chakra-ui/react'
 import {categoryUrlBuilder, productUrlBuilder} from '../../../utils/url'
 import {getImageUrl} from '../../../utils/amplience/image'
 import {useCategories} from '../../../hooks/use-categories'
@@ -11,6 +22,7 @@ import {useEffect} from 'react'
 import useResizeObserver from '@react-hook/resize-observer'
 import {useLayoutEffect} from 'react'
 import styled from '@emotion/styled'
+import AmplienceWrapper from '../wrapper'
 
 const Contain = styled(Box)`
     .interactive {
@@ -54,6 +66,8 @@ const Polygon = styled(Box)`
 
 const ShoppableImageInteractable = ({target, selector, tooltips, children}) => {
     const matchTooltip = tooltips?.find((tooltip) => tooltip.key === target)
+
+    const {isOpen, onOpen, onClose} = useDisclosure()
 
     switch (selector) {
         case 'product':
@@ -101,8 +115,34 @@ const ShoppableImageInteractable = ({target, selector, tooltips, children}) => {
             return <>{children}</>
         }
         case 'contentKey':
-            // TODO
-            return <>{children}</>
+            return (
+                <>
+                    <Link
+                        to="#"
+                        onClick={(evt) => {
+                            onOpen()
+                            evt.preventDefault()
+                            return false
+                        }}
+                    >
+                        <Tooltip label={matchTooltip?.value ?? 'Click to open...'}>
+                            {children}
+                        </Tooltip>
+                    </Link>
+                    <Drawer onClose={onClose} isOpen={isOpen} size="xl">
+                        <DrawerOverlay />
+                        <DrawerContent>
+                            <DrawerBody>
+                                <DrawerCloseButton />
+                                {matchTooltip?.value && (
+                                    <DrawerHeader>{matchTooltip?.value}</DrawerHeader>
+                                )}
+                                <AmplienceWrapper fetch={{key: target}}></AmplienceWrapper>
+                            </DrawerBody>
+                        </DrawerContent>
+                    </Drawer>
+                </>
+            )
         default:
             return <>{children}</>
     }
