@@ -16,7 +16,6 @@ import {
     DrawerContent,
     DrawerHeader,
     DrawerBody,
-    Slide,
     Accordion,
     AccordionItem,
     AccordionButton,
@@ -24,15 +23,17 @@ import {
     AccordionPanel,
     Heading,
     Text,
-    Fade, 
-    Button,
-    Slider,
-    SliderMark,
-    SliderTrack,
-    SliderFilledTrack,
-    SliderThumb
+    HStack
 } from '@chakra-ui/react'
-import {SettingsIcon, CloseIcon, ChevronLeftIcon} from '@chakra-ui/icons'
+import {
+    SettingsIcon, 
+    CloseIcon, 
+    ChevronLeftIcon,
+    CalendarIcon,
+    ViewIcon,
+    ExternalLinkIcon,
+    InfoOutlineIcon
+} from '@chakra-ui/icons'
 import VisualisationPanel from './visualisation'
 import PersonalisationPanel from './personalisation'
 import PreviewPanel from './preview'
@@ -44,14 +45,17 @@ import { useContext } from 'react'
 import { AmplienceContext } from '../../../contexts/amplience'
 import { useState } from 'react'
 
-const AccordionItemRender = ({ title, Component, ...otherProps }) => {
+const AccordionItemRender = ({ title, Icon, Component, ...otherProps }) => {
     const styles = useMultiStyleConfig('PreviewHeader')
 
     return (<AccordionItem {...styles.section}>
         <AccordionButton {...styles.button}>
             <Box flex="1" textAlign="left" {...styles.sectionTitle}>
                 <Heading as='h2' size='xs'>
-                    <Text casing='uppercase'>{title}</Text>
+                    <HStack>
+                        { Icon && <Icon /> }
+                        <Text casing='uppercase'>{title}</Text>
+                    </HStack>
                 </Heading>
             </Box>
             <AccordionIcon />
@@ -68,25 +72,30 @@ const Toolbar = (props) => {
     const items = [
         {
             title: 'Preview',
+            Icon: CalendarIcon,
             Component: PreviewPanel,
             visibility: ({ vseTimestamp }) => !!vseTimestamp
         },
         {
             title: 'Visualisation',
+            Icon: ViewIcon,
             Component: VisualisationPanel,
             visibility: ( ) => !!props.vse
         },
         {
             title: 'Environments',
+            Icon: ExternalLinkIcon,
             Component: EnvironmentsPanel,
             visibility: () => !!props.vse && envs && envs.length > 0
         },
         {
             title: 'Personalisation',
+            Icon: SettingsIcon,
             Component: PersonalisationPanel
         },
         {
             title: 'About The Toolbar',
+            Icon: InfoOutlineIcon,
             Component: AboutPanel
         }
     ]
