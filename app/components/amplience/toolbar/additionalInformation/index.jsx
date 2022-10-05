@@ -9,6 +9,8 @@ import {
     useMultiStyleConfig,
     PopoverTrigger,
     Link,
+    Text,
+    Heading,
 } from '@chakra-ui/react'
 import {AmplienceContext} from '../../../../contexts/amplience'
 
@@ -33,12 +35,27 @@ const AdditionalInformation = ({_meta, match}) => {
     const items = [{
         color: 'teal',
         icon: (<p>P</p>),
-        content: (<p>{match}</p>),
+        content: (<Text fontSize='xs'>{match}</Text>),
         visibility: () => !!match
     }, {
         color: 'blue',
         icon: (<p>C</p>),
-        content: (<Link target={'_blank'} href={combineContentLink()}>{_meta.name}</Link>),
+        content: (
+            <>
+                <Heading as='h2' size='xs'>
+                    <Link 
+                        color={'ampliencePink.500'} 
+                        target={'_blank'} 
+                        href={combineContentLink()}>{_meta.name}</Link>
+                </Heading>
+                <Text fontSize='xs' fontWeight={'bold'}>{_meta.schema}</Text>
+                <Text fontSize='xs' fontStyle={'italic'}>{_meta.deliveryId}</Text>
+                {
+                    _meta?.deliveryKey &&
+                    <Text fontSize='xs' fontStyle={'italic'}>{_meta.deliveryKey}</Text>
+                }
+            </>
+        ),
     }]
 
     return (
