@@ -64,24 +64,27 @@ const Polygon = styled(Box)`
     animation: gradient 7s ease infinite;
 `
 
-const ShoppableImageInteractable = ({target, selector, tooltips, children}) => {
+const ShoppableImageInteractable = ({target, selector, tooltips, tooltipPlacement, children}) => {
     const matchTooltip = tooltips?.find((tooltip) => tooltip.key === target)
 
     const {isOpen, onOpen, onClose} = useDisclosure()
+    const tProps = {placement: tooltipPlacement ?? 'bottom'}
 
     switch (selector) {
         case 'product':
             // TODO: fetch and show product info?
             return (
                 <Link to={productUrlBuilder({id: target})}>
-                    <Tooltip label={matchTooltip?.value ?? 'Go to Product...'}>{children}</Tooltip>
+                    <Tooltip label={matchTooltip?.value ?? 'Go to Product...'} {...tProps}>
+                        {children}
+                    </Tooltip>
                 </Link>
             )
         case 'category': {
             const {categories} = useCategories()
             return (
                 <Link to={categoryUrlBuilder({id: target})}>
-                    <Tooltip label={matchTooltip?.value ?? categories[target]?.name}>
+                    <Tooltip label={matchTooltip?.value ?? categories[target]?.name} {...tProps}>
                         {children}
                     </Tooltip>
                 </Link>
@@ -96,7 +99,9 @@ const ShoppableImageInteractable = ({target, selector, tooltips, children}) => {
             }
             return (
                 <Link to={link}>
-                    <Tooltip label={matchTooltip?.value ?? target}>{children}</Tooltip>
+                    <Tooltip label={matchTooltip?.value ?? target} {...tProps}>
+                        {children}
+                    </Tooltip>
                 </Link>
             )
         }
@@ -104,12 +109,18 @@ const ShoppableImageInteractable = ({target, selector, tooltips, children}) => {
             // TODO: get page name?
             return (
                 <Link to={'/page/' + target}>
-                    <Tooltip label={matchTooltip?.value ?? target}>{children}</Tooltip>
+                    <Tooltip label={matchTooltip?.value ?? target} {...tProps}>
+                        {children}
+                    </Tooltip>
                 </Link>
             )
         case 'tooltip': {
             if (matchTooltip) {
-                return <Tooltip label={matchTooltip.value}>{children}</Tooltip>
+                return (
+                    <Tooltip label={matchTooltip.value} {...tProps}>
+                        {children}
+                    </Tooltip>
+                )
             }
 
             return <>{children}</>
@@ -125,7 +136,7 @@ const ShoppableImageInteractable = ({target, selector, tooltips, children}) => {
                             return false
                         }}
                     >
-                        <Tooltip label={matchTooltip?.value ?? 'Click to open...'}>
+                        <Tooltip label={matchTooltip?.value ?? 'Click to open...'} {...tProps}>
                             {children}
                         </Tooltip>
                     </Link>
@@ -152,6 +163,7 @@ ShoppableImageInteractable.propTypes = {
     target: PropTypes.string,
     selector: PropTypes.string,
     tooltips: PropTypes.array,
+    tooltipPlacement: PropTypes.string,
     children: PropTypes.node
 }
 
@@ -273,6 +285,13 @@ const ShoppableImage = ({
         const tX = (x) => x * imgSize[0] + imgPosition[0]
         const tY = (y) => y * imgSize[1] + imgPosition[1]
 
+        const transformBounds = (bounds) => ({
+            x: tX(bounds.x),
+            y: tY(bounds.y),
+            w: sX(bounds.w),
+            h: sY(bounds.h)
+        })
+
         imageStyle.transform = `translate(${imgPosition[0]}px, ${imgPosition[1]}px)`
         const minDim = Math.min(size.width, size.height)
 
@@ -296,20 +315,27 @@ const ShoppableImage = ({
 
         if (shoppableImage.polygons) {
             for (let poly of shoppableImage.polygons) {
-                const bounds = getBounds(poly.points)
+                const bounds = transformBounds(getBounds(poly.points))
 
                 const style = {
-                    width: `${sX(bounds.w)}px`,
-                    height: `${sY(bounds.h)}px`,
-                    transform: `translate(${tX(bounds.x)}px, ${tY(bounds.y)}px)`
+                    width: `${bounds.w}px`,
+                    height: `${bounds.h}px`,
+                    transform: `translate(${bounds.x}px, ${bounds.y}px)`
                 }
 
                 if (poly.points.length > 5) {
                     style.borderRadius = '100%'
                 }
 
+                const tooltipPlacement = bounds.y + bounds.h > size.height ? 'top' : 'bottom'
+
                 elements.push(
-                    <ShoppableImageInteractable {...poly} tooltips={tooltips} key={poly.id}>
+                    <ShoppableImageInteractable
+                        {...poly}
+                        tooltips={tooltips}
+                        tooltipPlacement={tooltipPlacement}
+                        key={poly.id}
+                    >
                         <Polygon
                             {...polyStyle}
                             {...style}
