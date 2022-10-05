@@ -5,11 +5,11 @@ import {AmplienceContext} from '../../../../contexts/amplience'
 import useNavigation from '../../../../hooks/use-navigation'
 import PropTypes from 'prop-types'
 
-const PersonalisationPanel = ({customerGroups}) => {
+const PersonalisationPanel = ({customerGroups, toolbarState}) => {
     const styles = useMultiStyleConfig('PreviewHeader')
     const { groups, updateGroups } = useContext(AmplienceContext)
     const [previewCustomerGroups, setPreviewCustomerGroups] = useState(groups || [])
-    const [matchVisible, setMatchVisible] = useState(true)
+    const [matchVisible, setMatchVisible] = useState(toolbarState.matchVisible)
     const intl = useIntl()
     const navigate = useNavigation()
 
@@ -57,13 +57,20 @@ const PersonalisationPanel = ({customerGroups}) => {
             <Heading as='h2' size='xs'>Personalisation Rules</Heading>
             <Wrap spacing={2} paddingTop={4} marginBottom={6}>
                 <Switch
+                    defaultChecked={toolbarState.matchVisible}
                     size='sm'
-                    onChange={() => setMatchVisible(!matchVisible)}
+                    onChange={() => { 
+                        toolbarState.matchVisible = !matchVisible
+                        setMatchVisible(!matchVisible)
+                    }}
                     colorScheme={'ampliencePink'} 
                     isChecked={matchVisible}
                 />
                 <Text 
-                    onClick={() => setMatchVisible(!matchVisible)}
+                    onClick={() => {
+                        toolbarState.matchVisible = !matchVisible
+                        setMatchVisible(!matchVisible)
+                    }}
                     fontSize='xs'>
                     {
                         intl.formatMessage({
