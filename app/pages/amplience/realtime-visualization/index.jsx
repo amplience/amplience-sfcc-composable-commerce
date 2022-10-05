@@ -22,7 +22,7 @@ import {useAmpRtv} from '../../../utils/amplience/rtv'
  * The page renders SEO metadata and a few promotion
  * categories and products, data is from local file.
  */
-const AmpRtv = ({vse, contentId}) => {
+const AmpRtv = ({vse, contentId, hubname}) => {
     const [formContent, setFormContent] = useState(undefined)
     const {groups} = useContext(AmplienceContext)
 
@@ -40,7 +40,7 @@ const AmpRtv = ({vse, contentId}) => {
 
     return (
         <Box data-testid="real-viz" layerStyle="page">
-            <AmplienceContextProvider vse={vse} contentId={contentId} groups={groups}>
+            <AmplienceContextProvider hubname={hubname} vse={vse} contentId={contentId} groups={groups}>
                 <Seo
                     title="Home Page"
                     description="Commerce Cloud Retail React App"
@@ -62,8 +62,9 @@ AmpRtv.propTypes = {
 AmpRtv.getProps = async ({req}) => {
     const vse = req?.query['vse'];
     const contentId = req?.query['contentId'];
+    const hubname = req?.query['hub'];
 
-    return {vse, contentId}
+    return {vse, contentId, hubname}
 }
 
 export default AmpRtv
