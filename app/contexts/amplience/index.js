@@ -138,7 +138,7 @@ export const getGroupsFromLocalStorage = ({req, res}) => {
 
 export const generateVseProps = ({req, res, query}) => {
     // '/:locale/visualization'
-    const vizRegEx = /\/(.*)\/visualization\//
+    const vizRegEx = /\/(.*)\/visualization/
     if (req.originalUrl.match(vizRegEx)) {
         const url = req.originalUrl.split('?')[0]
         const [match, locale] = url.match(vizRegEx)
