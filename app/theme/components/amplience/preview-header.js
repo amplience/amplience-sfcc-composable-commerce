@@ -97,6 +97,11 @@ export default {
         },
         infoIcon: {
             marginLeft: '5px'
+        },
+        popoverBody: {
+            margin: 2,
+            paddingInlineStart: 0,
+            paddingInlineEnd: 0,
         }
     }),
     parts: ['container']

@@ -29,7 +29,7 @@ const componentsMapping = {
     'https://sfcc.com/components/personalised-container': PersonalisedContainer,
     'https://sfcc.com/components/shoppable-image': ShoppableImage,
     'https://sfcc.com/slots/flexible-list': flexibleListSlot,
-    'https://sfcc.com/slots/personalised-slot': PersonalisedComponent,
+    'https://sfcc.com/slots/personalised-slot': flexibleListSlot,
 
     'https://sfcc.com/site/navigation/root': Blank,
     'https://sfcc.com/site/navigation/external': Blank,
@@ -71,6 +71,7 @@ const AmplienceWrapper = ({fetch, content, components, skeleton, rtvActive, ...r
     const result = Component ? (
         <div style={{position: 'relative'}}>
             {showInfo ? (<AdditionalInformation {...fetchedContent} />) : ''}
+            {console.log(fetchedContent)}
             <Component {...fetchedContent} {...rest} />
         </div>
 

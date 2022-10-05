@@ -10,13 +10,13 @@ import {
     PopoverTrigger,
     Link,
     Text,
-    Heading,
+    Heading
 } from '@chakra-ui/react'
 import {AmplienceContext} from '../../../../contexts/amplience'
 
-const AdditionalInformation = ({_meta, match}) => {
+const AdditionalInformation = ({_meta, match, slot}) => {
     const styles = useMultiStyleConfig('PreviewHeader')
-    const { defaultEnv, envs, vse = '' } = useContext(AmplienceContext)
+    const {defaultEnv, envs, vse = ''} = useContext(AmplienceContext)
     const currentHub = envs?.find(item => {
         const regExp = /(.*)-(.*)-(.*)(\.staging.bigcontent.io)/
         const matches = vse.match(regExp)
@@ -28,38 +28,45 @@ const AdditionalInformation = ({_meta, match}) => {
         }
     })?.hub || defaultEnv.hub
 
-    const combineContentLink = () => {
-        return `https://content.amplience.net/#!/${currentHub}/authoring/content-item/edit/${_meta.deliveryId}`
+    const combineContentLink = (deliveryId) => {
+        return `https://content.amplience.net/#!/${currentHub}/authoring/content-item/edit/${deliveryId}`
     }
+
+    const SlotContentRender = ({deliveryId, name, schema, deliveryKey}) => (
+        <>
+            <Heading as="h2" size="xs">
+                <Link
+                    color={'ampliencePink.500'}
+                    target={'_blank'}
+                    href={`https://content.amplience.net/#!/${currentHub}/authoring/content-item/edit/${deliveryId}`}>{name}</Link>
+            </Heading>
+            <Text fontSize="xs" fontWeight={'bold'}>{schema}</Text>
+            <Text fontSize="xs" fontStyle={'italic'}>{deliveryId}</Text>
+            {
+                deliveryKey &&
+                <Text fontSize="xs" fontStyle={'italic'}>{deliveryKey}</Text>
+            }
+        </>
+    )
 
     const items = [{
         color: 'teal',
         icon: (<p>P</p>),
-        content: (<Text fontSize='xs'>{match}</Text>),
+        content: (<Text fontSize="xs">{match}</Text>),
         visibility: () => !!match
+    }, {
+        color: 'orange',
+        icon: (<p>S</p>),
+        content: (<SlotContentRender {...slot} />),
+        visibility: () => !!slot
     }, {
         color: 'blue',
         icon: (<p>C</p>),
-        content: (
-            <>
-                <Heading as='h2' size='xs'>
-                    <Link 
-                        color={'ampliencePink.500'} 
-                        target={'_blank'} 
-                        href={combineContentLink()}>{_meta.name}</Link>
-                </Heading>
-                <Text fontSize='xs' fontWeight={'bold'}>{_meta.schema}</Text>
-                <Text fontSize='xs' fontStyle={'italic'}>{_meta.deliveryId}</Text>
-                {
-                    _meta?.deliveryKey &&
-                    <Text fontSize='xs' fontStyle={'italic'}>{_meta.deliveryKey}</Text>
-                }
-            </>
-        ),
+        content: <SlotContentRender {..._meta} />
     }]
 
     return (
-        <div className={"matchInfo"} style={styles.infoContainer}>
+        <div className={'matchInfo'} style={styles.infoContainer}>
             {items
                 .filter(data => {
                     data.visibility = data.visibility || (() => true)
@@ -71,7 +78,6 @@ const AdditionalInformation = ({_meta, match}) => {
                     return (
                         <React.Fragment key={index}>
                             <Popover
-                                returnFocusOnClose={false}
                                 isOpen={isOpen}
                                 onClose={onClose}
                                 closeOnBlur={true}
@@ -89,7 +95,7 @@ const AdditionalInformation = ({_meta, match}) => {
                                 </PopoverTrigger>
                                 <PopoverContent>
                                     <PopoverArrow />
-                                    <PopoverBody>{content}</PopoverBody>
+                                    <PopoverBody  {...styles.popoverBody}>{content}</PopoverBody>
                                 </PopoverContent>
                             </Popover>
                         </React.Fragment>)
