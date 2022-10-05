@@ -24,7 +24,7 @@ const AboutPanel = ({vse, hubname, locale, contentId, toolbarOpacity, setToolbar
             <Heading mt={4} mb={2} as='h2' size='xs'>Toolbar Opacity</Heading>
             <Slider 
                 aria-label='Toolbar Opacity' 
-                defaultValue={100} 
+                defaultValue={toolbarOpacity * 200 - 100} 
                 step={1} 
                 colorScheme={'ampliencePink'}
                 onChange={(val) => setToolbarOpacity(0.5 + val/200.0)}>
