@@ -75,34 +75,29 @@ const Toolbar = (props) => {
 
     const items = [
         {
-            id: 0,
             title: 'Preview',
             Icon: CalendarIcon,
             Component: PreviewPanel,
             visibility: ({ vseTimestamp }) => !!vseTimestamp
         },
         {
-            id: 1,
             title: 'Visualisation',
             Icon: ViewIcon,
             Component: VisualisationPanel,
             visibility: ( ) => !!props.vse
         },
         {
-            id: 2,
             title: 'Environments',
             Icon: ExternalLinkIcon,
             Component: EnvironmentsPanel,
             visibility: () => !!props.vse && envs && envs.length > 0
         },
         {
-            id: 3,
             title: 'Personalisation',
             Icon: SettingsIcon,
             Component: PersonalisationPanel
         },
         {
-            id: 4,
             title: 'About The Toolbar',
             Icon: InfoOutlineIcon,
             Component: AboutPanel
@@ -162,7 +157,6 @@ const Toolbar = (props) => {
                         left={{base: 'calc(100vw - 50px)', sm: '460px'}}
                     />
                 </div>
-
                 <DrawerContent
                     opacity={toolbarOpacity}
                     >
@@ -174,20 +168,17 @@ const Toolbar = (props) => {
                             allowToggle={true} 
                             defaultIndex={openedPanels} 
                             allowMultiple={true}>
-                            {items.sort(function(a, b) {
-                                    return (a.id - b.id);
-                                }).map((data) => {
+                            {items.map((data, index) => {
                                 data.visibility = data.visibility || (() => true)
                                 if (data.visibility && typeof data.visibility === 'function' && data.visibility({ ...props })) {
                                     return (
                                         <AccordionItemRender
-                                            key={data.id}
+                                            key={index}
                                             onClick={()=> {
-                                                console.log(data.id)
-                                                if (openedPanels.includes(data.id)) {
-                                                    setOpenedPanels(openedPanels.filter(item => item != data.id))
+                                                if (openedPanels.includes(index)) {
+                                                    setOpenedPanels((prevState) => prevState.filter(item => item != index))
                                                 } else {
-                                                    openedPanels.push(data.id)
+                                                    setOpenedPanels((prevState) => [...prevState, index])
                                                 }
                                             }} 
                                             {...data} 
