@@ -137,12 +137,12 @@ export const getGroupsFromLocalStorage = ({req, res}) => {
 }
 
 export const generateVseProps = ({req, res, query}) => {
-    // '/:locale/visualization/:hubname/:contentId/:vse'
-    const vizRegEx = /\/(.*)\/visualization\/(.*)/
+    // '/:locale/visualization'
+    const vizRegEx = /\/(.*)\/visualization\//
     if (req.originalUrl.match(vizRegEx)) {
         const url = req.originalUrl.split('?')[0]
-        const [match, locale, hubname] = url.match(vizRegEx)
-        return {vse: query.vse, hubname, contentId: query.contentId, locale}
+        const [match, locale] = url.match(vizRegEx)
+        return {vse: query.vse, hubname: query.hub, contentId: query.contentId, locale}
     } else if (query['vse'] || query['vse-timestamp']) {
         let vse = null
         let vseTimestamp = 0

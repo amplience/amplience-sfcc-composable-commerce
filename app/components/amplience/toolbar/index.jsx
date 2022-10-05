@@ -73,6 +73,13 @@ const AccordionItemRender = ({ title, Icon, Component, onClick, ...otherProps })
 const Toolbar = (props) => {
     const { envs } = useContext(AmplienceContext)
 
+    function inIframe () {
+        try {
+            return window.self !== window.top;
+        } catch (e) {
+            return true;
+        }
+    }
     const items = [
         {
             id: 0,
@@ -160,6 +167,7 @@ const Toolbar = (props) => {
                         {...styles.previewIcon}
                         {...styles.previewIconClose}
                         left={{base: 'calc(100vw - 50px)', sm: '460px'}}
+                        display={inIframe() ? 'none': 'block'}
                     />
                 </div>
 
