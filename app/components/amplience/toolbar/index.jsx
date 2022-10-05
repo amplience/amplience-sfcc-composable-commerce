@@ -45,25 +45,27 @@ import { useContext } from 'react'
 import { AmplienceContext } from '../../../contexts/amplience'
 import { useState } from 'react'
 
-const AccordionItemRender = ({ title, Icon, Component, ...otherProps }) => {
+const AccordionItemRender = ({ title, Icon, Component, onClick, ...otherProps }) => {
     const styles = useMultiStyleConfig('PreviewHeader')
 
-    return (<AccordionItem {...styles.section}>
-        <AccordionButton {...styles.button}>
-            <Box flex="1" textAlign="left" {...styles.sectionTitle}>
-                <Heading as='h2' size='xs'>
-                    <HStack>
-                        { Icon && <Icon /> }
-                        <Text casing='uppercase'>{title}</Text>
-                    </HStack>
-                </Heading>
-            </Box>
-            <AccordionIcon />
-        </AccordionButton>
-        <AccordionPanel {...styles.pannel}>
-            <Component {...otherProps} />
-        </AccordionPanel>
-    </AccordionItem>)
+    return (
+        <AccordionItem {...styles.section}>
+            <AccordionButton  onClick={onClick} {...styles.button}>
+                <Box flex="1" textAlign="left" {...styles.sectionTitle}>
+                    <Heading as='h2' size='xs'>
+                        <HStack>
+                            { Icon && <Icon /> }
+                            <Text casing='uppercase'>{title}</Text>
+                        </HStack>
+                    </Heading>
+                </Box>
+                <AccordionIcon />
+            </AccordionButton>
+            <AccordionPanel {...styles.pannel}>
+                <Component {...otherProps} />
+            </AccordionPanel>
+        </AccordionItem>
+    )
 }
 
 const Toolbar = (props) => {
@@ -113,6 +115,8 @@ const Toolbar = (props) => {
     }
 
     const [toolbarOpacity, setToolbarOpacity] = useState(100)
+    const [openedPanels, setOpenedPanels] = useState([0])
+    const [panelsState, setPanelsState] = useState({})
 
     return (
         <>
@@ -159,11 +163,31 @@ const Toolbar = (props) => {
                         <AmplienceLogo color={"#000000"} width={'unset'} height={'unset'}  mb={10}/>
                     </DrawerHeader>
                     <DrawerBody padding={0}>
-                        <Accordion allowToggle={true} defaultIndex={[0]} allowMultiple={true}>
+                        <Accordion 
+                            allowToggle={true} 
+                            defaultIndex={openedPanels} 
+                            allowMultiple={true}>
                             {items.map((data, index) => {
                                 data.visibility = data.visibility || (() => true)
                                 if (data.visibility && typeof data.visibility === 'function' && data.visibility({ ...props })) {
-                                    return (<AccordionItemRender key={index} {...data} {...props} toolbarOpacity={toolbarOpacity} setToolbarOpacity={setToolbarOpacity} />)
+                                    return (
+                                        <AccordionItemRender
+                                            key={index}
+                                            onClick={()=> {
+                                                if (openedPanels.includes(index)) {
+                                                    setOpenedPanels(openedPanels.filter(item => item != index))
+                                                } else {
+                                                    openedPanels.push(index)
+                                                }
+                                            }} 
+                                            {...data} 
+                                            {...props} 
+                                            panelsState={panelsState}
+                                            setPanelsState={setPanelsState}
+                                            toolbarOpacity={toolbarOpacity} 
+                                            setToolbarOpacity={setToolbarOpacity} 
+                                        />
+                                    )
                                 }
                             })}
                         </Accordion>
