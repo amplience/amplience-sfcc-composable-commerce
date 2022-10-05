@@ -14,6 +14,7 @@ import {Skeleton} from '@chakra-ui/react'
 import PersonalisedContainer from '../personalised-container'
 import PersonalisedComponent from '../personalised-component'
 import ShoppableImage from '../shoppable-image'
+import AdditionalInformation from '../toolbar/additionalInformation'
 
 const Blank = () => <></>
 
@@ -65,7 +66,12 @@ const AmplienceWrapper = ({fetch, content, components, skeleton, ...rest}) => {
     const Component = mapping[fetchedContent?._meta?.schema]
 
     const result = Component ? (
-        <Component {...fetchedContent} {...rest} />
+        <div style={{position: 'relative'}}>
+            <AdditionalInformation {...fetchedContent}/>
+            {console.log(fetchedContent)}
+            <Component {...fetchedContent} {...rest} />
+        </div>
+
     ) : (
         <>{JSON.stringify(fetchedContent)}</>
     )
