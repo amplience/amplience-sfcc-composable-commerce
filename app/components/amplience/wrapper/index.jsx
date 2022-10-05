@@ -69,9 +69,8 @@ const AmplienceWrapper = ({fetch, content, components, skeleton, rtvActive, ...r
     const Component = mapping[fetchedContent?._meta?.schema]
 
     const result = Component ? (
-        <div style={{position: 'relative'}}>
+        <div style={{position: 'relative', width: '100%'}}>
             {showInfo ? (<AdditionalInformation {...fetchedContent} />) : ''}
-            {console.log(fetchedContent)}
             <Component {...fetchedContent} {...rest} />
         </div>
 
