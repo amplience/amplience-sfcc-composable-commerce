@@ -362,7 +362,8 @@ const ShoppableImage = ({
 
         if (shoppableImage.polygons) {
             for (let poly of shoppableImage.polygons) {
-                const bounds = transformBounds(getBounds(poly.points))
+                const nBounds = getBounds(poly.points)
+                const bounds = transformBounds(nBounds)
 
                 const style = {
                     width: `${bounds.w}px`,
@@ -387,7 +388,11 @@ const ShoppableImage = ({
                             {...polyStyle}
                             {...style}
                             className="interactive"
-                            style={{animationDelay: `${(bounds.x + bounds.y) * 0.3}s`}}
+                            style={{
+                                animationDelay: `${Math.sqrt(
+                                    nBounds.x * nBounds.x + nBounds.y * nBounds.y
+                                ) * 0.5}s`
+                            }}
                         />
                     </ShoppableImageInteractable>
                 )
