@@ -17,12 +17,12 @@
             },
             {
                 "label": "Header - Localhost",
-                "templatedUri": "http://localhost:3000/{{locales}}/visualization/{{hub.name}}?navvis=header&navroot={{delivery.key}}&vse={{vse.domain}}&contentId={{content.sys.id}}",
+                "templatedUri": "http://localhost:3000/{{locales}}/visualization?navvis=header&navroot={{delivery.key}}&vse={{vse.domain}}&contentId={{content.sys.id}}&hub={{hub.name}}",
                 "default": false
             },
             {
                 "label": "Footer - Localhost",
-                "templatedUri": "http://localhost:3000/{{locales}}/visualization/{{hub.name}}?navvis=footer&navroot={{delivery.key}}&vse={{vse.domain}}&contentId={{content.sys.id}}",
+                "templatedUri": "http://localhost:3000/{{locales}}/visualization?navvis=footer&navroot={{delivery.key}}&vse={{vse.domain}}&contentId={{content.sys.id}}&hub={{hub.name}}",
                 "default": false
             },
             {
@@ -32,12 +32,12 @@
             },
             {
                 "label": "Header - Live (Amplience MRT)",
-                "templatedUri": "https://ascc-production.mobify-storefront.com/{{locales}}/visualization/{{hub.name}}?navvis=header&navroot={{delivery.key}}&vse={{vse.domain}}&contentId={{content.sys.id}}",
+                "templatedUri": "https://ascc-production.mobify-storefront.com/{{locales}}/visualization?navvis=header&navroot={{delivery.key}}&vse={{vse.domain}}&contentId={{content.sys.id}}&hub={{hub.name}}",
                 "default": false
             },
             {
                 "label": "Footer - Live (Amplience MRT)",
-                "templatedUri": "https://ascc-production.mobify-storefront.com/{{locales}}/visualization/{{hub.name}}?navvis=footer&navroot={{delivery.key}}&vse={{vse.domain}}&contentId={{content.sys.id}}",
+                "templatedUri": "https://ascc-production.mobify-storefront.com/{{locales}}/visualization?navvis=footer&navroot={{delivery.key}}&vse={{vse.domain}}&contentId={{content.sys.id}}&hub={{hub.name}}",
                 "default": false
             },
             {
