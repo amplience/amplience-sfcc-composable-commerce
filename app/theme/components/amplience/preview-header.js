@@ -89,6 +89,7 @@ export default {
             padding: '20px'
         },
         infoContainer: {
+            zIndex: 1000,
             position: 'absolute',
             right: '10px',
             top: '10px',
