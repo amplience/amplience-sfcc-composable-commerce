@@ -1,8 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import AmplienceWrapper from '../wrapper'
-import {Box} from '@chakra-ui/react'
-import {useLocation} from 'react-router-dom'
 
 export const indexStyle = {
     position: 'absolute',
@@ -22,12 +20,8 @@ const PersonalisedContainer = ({
                                    defaultContent,
                                    maxNumberMatches,
                                    variants,
-                                   rtvActive,
                                    ...props
                                }) => {
-    const location = useLocation()
-    const showInfo = (location.search && (location.search.includes('vse=') || location.search.includes('pagevse='))) || rtvActive;
-
     if (content) {
         if (limit) {
             content = content.slice(0, limit)
@@ -35,11 +29,6 @@ const PersonalisedContainer = ({
 
         return content.map((contentItem, index) => (
             <>
-                {showInfo && contentItem.match && (
-                    <Box className={"matchInfo"} {...indexStyle}>
-                        {contentItem.match}
-                    </Box>
-                )}
                 <AmplienceWrapper
                     content={contentItem}
                     components={components}

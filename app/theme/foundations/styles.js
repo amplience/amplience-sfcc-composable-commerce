@@ -11,7 +11,8 @@ export default {
             color: 'gray.900'
         },
         body: {
-            minHeight: '100vh'
+            minHeight: '100vh',
+            overflowX: 'hidden'
         },
         '.react-target': {
             display: 'flex',

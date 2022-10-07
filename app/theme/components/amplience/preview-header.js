@@ -12,7 +12,7 @@ export default {
             alignItems: 'center'
         },
         previewIconClose: {
-            top: {base: '45px', sm: '65px'},
+            top: {base: '45px', sm: '65px'}
         },
         slide: {
             zIndex: {base: 9999, lg: 1300}
@@ -22,7 +22,7 @@ export default {
             transition: 'opacity .8s ease-out'
         },
         previewIcon: {
-            left: {base: 4, md: 6, lg: 4 },
+            left: {base: 4, md: 6, lg: 4},
             top: {base: '5px', sm: '15px'},
             position: 'fixed',
             boxShadow: 'lg',
@@ -69,7 +69,7 @@ export default {
             fontSize: 'lg',
             margin: '20px 0',
             marginLeft: '20px',
-            fontWeight: 'bold',
+            fontWeight: 'bold'
         },
         button: {
             background: 'gray.50',
@@ -87,8 +87,22 @@ export default {
         },
         box: {
             padding: '20px'
+        },
+        infoContainer: {
+            zIndex: 1000,
+            position: 'absolute',
+            right: '10px',
+            top: '10px',
+            display: 'flex'
+        },
+        infoIcon: {
+            marginLeft: '5px'
+        },
+        popoverBody: {
+            margin: 2,
+            paddingInlineStart: 0,
+            paddingInlineEnd: 0,
         }
-
     }),
     parts: ['container']
 }

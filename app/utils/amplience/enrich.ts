@@ -7,7 +7,7 @@ export interface EnrichConfig {
 export type EnrichConfigMap = {[key: string]: EnrichConfig}
 
 export const processHierarchy = (node: any, configs: EnrichConfigMap) => {
-    const relevantConfig = configs[node._meta.schema]
+    const relevantConfig = configs[node._meta?.schema]
 
     if (node.children) {
         for (let child of node.children) {

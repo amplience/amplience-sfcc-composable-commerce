@@ -14,6 +14,8 @@ import {Skeleton} from '@chakra-ui/react'
 import PersonalisedContainer from '../personalised-container'
 import PersonalisedComponent from '../personalised-component'
 import ShoppableImage from '../shoppable-image'
+import AdditionalInformation from '../toolbar/additionalInformation'
+import {useLocation} from 'react-router-dom'
 
 const Blank = () => <></>
 
@@ -27,7 +29,7 @@ const componentsMapping = {
     'https://sfcc.com/components/personalised-container': PersonalisedContainer,
     'https://sfcc.com/components/shoppable-image': ShoppableImage,
     'https://sfcc.com/slots/flexible-list': flexibleListSlot,
-    'https://sfcc.com/slots/personalised-slot': PersonalisedComponent,
+    'https://sfcc.com/slots/personalised-slot': flexibleListSlot,
 
     'https://sfcc.com/site/navigation/root': Blank,
     'https://sfcc.com/site/navigation/external': Blank,
@@ -37,10 +39,12 @@ const componentsMapping = {
     'https://sfcc.com/site/navigation/group': Blank
 }
 
-const AmplienceWrapper = ({fetch, content, components, skeleton, ...rest}) => {
+const AmplienceWrapper = ({fetch, content, components, skeleton, rtvActive, ...rest}) => {
     const {client, groups} = useContext(AmplienceContext)
     const [fetchedContent, setFetchedContent] = useState(content)
     const {locale} = useIntl()
+    const location = useLocation()
+    const showInfo = (location.search && (location.search.includes('vse=') || location.search.includes('pagevse='))) || rtvActive
 
     const mapping = components ? {...componentsMapping, ...components} : componentsMapping
 
@@ -65,7 +69,11 @@ const AmplienceWrapper = ({fetch, content, components, skeleton, ...rest}) => {
     const Component = mapping[fetchedContent?._meta?.schema]
 
     const result = Component ? (
-        <Component {...fetchedContent} {...rest} />
+        <div style={{position: 'relative', width: '100%'}}>
+            {showInfo ? (<AdditionalInformation {...fetchedContent} />) : ''}
+            <Component {...fetchedContent} {...rest} />
+        </div>
+
     ) : (
         <>{JSON.stringify(fetchedContent)}</>
     )
