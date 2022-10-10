@@ -14,7 +14,6 @@ import {
     useDisclosure
 } from '@chakra-ui/react'
 import {categoryUrlBuilder, productUrlBuilder} from '../../../utils/url'
-import {getImageUrl} from '../../../utils/amplience/image'
 import {useCategories} from '../../../hooks/use-categories'
 import {useRef} from 'react'
 import {useState} from 'react'
@@ -25,6 +24,8 @@ import styled from '@emotion/styled'
 import AmplienceWrapper from '../wrapper'
 import {useCommerceAPI} from '../../../commerce-api/contexts'
 import {useIntl} from 'react-intl'
+import {getImageURL} from '../utils/getImageURL'
+import {getImageUrl} from '../../../utils/amplience/image'
 
 const Contain = styled(Box)`
     .interactive {
@@ -249,9 +250,22 @@ const ShoppableImage = ({
     gap,
     ...props
 }) => {
+    const SelectedWidthIncrement = 1.25
+
     const target = useRef(null)
     const [size, setSize] = useState()
     const [imageSize, setImageSize] = useState()
+    const [selectedWidth, setSelectedWidth] = useState(0)
+
+    const considerSelectedWidth = (width) => {
+        if (width > selectedWidth * SelectedWidthIncrement) {
+            setSelectedWidth(width)
+        }
+    }
+
+    if (size) {
+        considerSelectedWidth(size.width)
+    }
 
     useLayoutEffect(() => {
         setSize(target.current.getBoundingClientRect())
@@ -304,6 +318,7 @@ const ShoppableImage = ({
             imgSize = [size.width, size.width / imageAspect]
         } else {
             imgSize = [size.height * imageAspect, size.height]
+            considerSelectedWidth(imgSize[0])
         }
 
         imageStyle.width = `${imgSize[0]}px`
@@ -447,12 +462,6 @@ const ShoppableImage = ({
         }
     }
 
-    const cardtransformations = {
-        width: 1200,
-        quality: 80,
-        upscale: false
-    }
-
     props.width = width ?? '100%'
 
     if (cols && rows && gap && size) {
@@ -466,11 +475,17 @@ const ShoppableImage = ({
 
     // Determine a transformation to use given the current image scale.
 
-    const imageUrl = getImageUrl(shoppableImage.image)
+    const transformations = {
+        width: selectedWidth * devicePixelRatio,
+        quality: 80,
+        upscale: false
+    }
+
+    const imageUrl = getImageURL(shoppableImage.image, transformations)
 
     return (
         <Contain {...props} ref={target} overflow="hidden" position="relative">
-            <Image src={imageUrl} {...imageStyle} alt={imageAltText}></Image>
+            {selectedWidth && <Image src={imageUrl} {...imageStyle} alt={imageAltText}></Image>}
             {elements}
         </Contain>
     )
