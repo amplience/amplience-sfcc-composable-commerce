@@ -4,7 +4,9 @@ In order to save manual entry to use this starting point we have included an aut
 
 ## Media
 
-Take the media from `amplience/media` and upload to your Amplience Content Hub and publish.
+Take the media from `amplience/media` and upload to your [Amplience Media Hub](https://ondemand.amplience.com) and publish.
+
+> WARNING! If this is not done before importing content, you'll get errors when running the application
 
 ## Content import
 
