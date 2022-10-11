@@ -18,12 +18,13 @@ This version of the SF Retail React app integrates Amplience as the Content CMS 
  - real-time visualisationof all content
  - real-time visualisation of content sizing & placement ***within*** product listing grids
  - content personalisation based on a user's groups 
+ - automation scripts to load required content schemas and types to your Content HUB 
  
  The documentation [starting here below](#the-retail-react-app) is 'as-is' from Salesforce. For Amplience specifics please see the docs listed under [Amplience Contents](#amplience-contents).
  
 ## Amplience Contents
-* [Overview/Getting Started](./docs/amplience/getting-started.md)
-* [Salesforce Commerce Cloud Setup](./docs/amplience/sfcc-setup.md)
+* [Getting Started](./docs/amplience/getting-started.md)
+* [SFCC Setup for Amplience](./docs/amplience/sfcc-setup.md)
 * [Security Updates](./docs/amplience/security-updates.md) 
 * [Amplience API](./docs/amplience/amplience-api.md)
 * [Amplience Components List](./docs/amplience/amplience-components-list.md)
