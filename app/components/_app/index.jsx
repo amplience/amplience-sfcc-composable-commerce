@@ -145,8 +145,8 @@ const App = (props) => {
         // Lets automatically close the mobile navigation when the
         // location path is changed.
         onClose()
-        
-        const showPreview = (location.search && (location.search.includes('vse=') || location.search.includes('pagevse='))) || location.pathname.includes('visualization')
+        const activeParams = new URLSearchParams(location.search || '')
+        const showPreview = activeParams && ((activeParams.has('vse') && activeParams.get('vse')) || (activeParams.has('pagevse') && activeParams.get('pagevse')));
         setShowVse(showPreview)
     }, [location])
 
@@ -193,6 +193,9 @@ const App = (props) => {
     if (showVse) {
         Object.assign(headerStyles, styles.headerAmpPreview)
     }
+
+    console.log(showVse)
+    console.log(typeof showVse)
 
     return (
         <Box className="sf-app" {...styles.container}>

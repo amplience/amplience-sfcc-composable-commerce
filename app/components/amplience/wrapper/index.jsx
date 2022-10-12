@@ -46,7 +46,8 @@ const AmplienceWrapper = ({fetch, content, components, skeleton, rtvActive, ...r
     const [fetchedContent, setFetchedContent] = useState(content)
     const {locale} = useIntl()
     const location = useLocation()
-    const showInfo = (location.search && (location.search.includes('vse=') || location.search.includes('pagevse='))) || rtvActive
+    const activeParams = new URLSearchParams(location.search || '')
+    const showInfo = (activeParams && ((activeParams.has('vse') && activeParams.get('vse')) || (activeParams.has('pagevse') && activeParams.get('pagevse')))) || rtvActive;
 
     const mapping = components ? {...componentsMapping, ...components} : componentsMapping
 
