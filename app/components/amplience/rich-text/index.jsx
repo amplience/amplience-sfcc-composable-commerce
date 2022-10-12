@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import AmplienceWrapper from '../wrapper'
 import AmplienceMarkdown from '../markdown'
-import {Box} from '@chakra-ui/react'
+import {Box, Heading} from '@chakra-ui/react'
 
 import {getImageUrl} from '../../../utils/amplience/image'
 
@@ -11,10 +11,16 @@ import {getImageUrl} from '../../../utils/amplience/image'
  * Renders content authored by the Rich Text Extension.
  * Blocks of markdown text interspersed with content blocks.
  */
-const AmplienceRichText = ({content}) => {
+const AmplienceRichText = ({header, content}) => {
     return (
         <>
             <Box>
+                {
+                    header &&
+                    <Heading pb="8" as="h2">
+                        {header}
+                    </Heading>
+                }
                 {content?.richText?.map((item, index) => {
                     switch (item.type) {
                         case 'markdown':
