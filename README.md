@@ -1,28 +1,30 @@
 <div align="center">
-<h1>The Progressive Web App (PWA) Kit with Amplience</h1>
+<h1>Amplience Salesforce Composable Commerce</h1>
 </div>
 
 [🏖️ View Amplience Demo](https://ascc-production.mobify-storefront.com/)
 
-The Amplience PWA Kit is a storefront technology for headless commerce using [Amplience APIs](https://amplience.com/docs/integration/reference.html), Salesforce Commerce APIs and React. It provides front-end developers with a more flexible and agile approach to build and maintain modern eCommerce experiences with the use of [Amplience](https://amplience.com/).
+The ***A***mplience ***S***alesforce ***C***omposable ***C***ommerce app is a storefront technology for headless commerce using [Amplience APIs](https://amplience.com/docs/integration/reference.html), Salesforce Commerce and OCAPI APIs, and React. It provides front-end developers with a more flexible and agile approach to build and maintain modern eCommerce experiences with the use of [Amplience](https://amplience.com/).
 
-![Amplience PWA Kit Banner)](./amplience-automation/media/hero.png)
+![Amplience PWA Kit Banner)](./docs/amplience/media/amplience-sfcc-composable.png)
 
 ___
 
 # Amplience Specifics
 
-![Amplience SFCC Composable](./docs/amplience/media/amplience-sfcc-composable.png)
-
-This is a version of the Retail React app with a starting point for Amplience fundamentals. The documentation below is 'as-is' from Salesforce. For Amplience specifics please see the following.
-
-> Note: This code is built against the code version @latest at the time which was PWAKit v2.2.0 released on August 27th 2022: https://github.com/SalesforceCommerceCloud/pwa-kit/releases/tag/v2.2.0
-
-If you are using a v2.1.0, either upgrade using this code base or use a previous Amplience version [v1.2.0](https://github.com/amplience/amplience-sfcc-composable-commerce/releases/tag/v1.2.0) with the capabilities at that time.
-
+This version of the SF Retail React app integrates Amplience as the Content CMS to:
+ - drive all site content, in-grid content, site navigation, and footer links
+ - schedule & preview all content
+ - real-time visualisationof all content
+ - real-time visualisation of content sizing & placement ***within*** product listing grids
+ - content personalisation based on a user's groups 
+ - automation scripts to load required content schemas and types to your Content HUB 
+ 
+ The documentation [starting here below](#the-retail-react-app) is 'as-is' from Salesforce. For Amplience specifics please see the docs listed under [Amplience Contents](#amplience-contents).
+ 
 ## Amplience Contents
-* [Overview](./docs/amplience/overview.md)
-* [Salesforce Commerce Cloud Setup](./docs/amplience/sfcc-setup.md)
+* [Getting Started](./docs/amplience/getting-started.md)
+* [SFCC Setup for Amplience](./docs/amplience/sfcc-setup.md)
 * [Security Updates](./docs/amplience/security-updates.md) 
 * [Amplience API](./docs/amplience/amplience-api.md)
 * [Amplience Components List](./docs/amplience/amplience-components-list.md)
@@ -33,12 +35,16 @@ If you are using a v2.1.0, either upgrade using this code base or use a previous
 * [Preview](docs/amplience/preview.md)
 * [Amplience Account](docs/amplience/amplience-account.md)
 * [Automation](docs/amplience/automation.md)
-* [Personalisation (Customer Groups)](docs/amplience/personalisation.md)  
+* [Personalisation (Customer Groups)](docs/amplience/personalisation.md) 
+
+> Note: This code is built against the code version @latest at the time which was PWAKit v2.2.0 released on August 27th 2022: https://github.com/SalesforceCommerceCloud/pwa-kit/releases/tag/v2.2.0
+
+If you are using a v2.1.0, either upgrade using this code base or use a previous Amplience version [v1.2.0](https://github.com/amplience/amplience-sfcc-composable-commerce/releases/tag/v1.2.0) with the capabilities at that time.
 
 ## Known Limitations
 
 ### Localisation
-By default we point to the same SFCC instance as the vanilla Retail React app. If you are pointing to your own SFCC sandbox, you should ensure that you have localisation enabled. See guide at [Localization README.md](./app/translations/README.md), [Overview](./docs/amplience/overview.md) and  [Salesforce Commerce Cloud Setup](./docs/amplience/sfcc-setup.md).
+By default we point to the same SFCC instance as the vanilla Retail React app. If you are pointing to your own SFCC sandbox, you should ensure that you have localisation enabled. See guide at [Localization README.md](./app/translations/README.md), [Overview](./docs/amplience/getting-started.md) and  [Salesforce Commerce Cloud Setup](./docs/amplience/sfcc-setup.md).
 
 ### Customer Groups API & Content Personalisation
 There is currently no 'out of the box' API available that enables you to see which customer groups a user is associated to for Content Personalisation. To enable Content Personalisation on your own sandbox, please follow the steps to install our cartridge which enables a hook to get the required information via OCAPI.

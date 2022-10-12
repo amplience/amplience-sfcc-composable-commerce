@@ -13,12 +13,15 @@ When you're ready to start pointing to your own SFCC On-Demand Sandbox, there ar
 
 * A [Client ID & Secret](#client-id-and-secret) 
 * The [OCAPI Configuration](#ocapi-configuration) in your ODS Business Manager
-* To enable **Content Personalisation**, install our [Amplience Hooks Bridge Caftridge](https://github.com/amplience/amplience-sfcc-hooksbridge) on your ODS (detailed instructions [Amplience Hooks Bridge Caftridge](https://github.com/amplience/amplience-sfcc-hooksbridge) page) 
+* To enable **Content Personalisation**, install our [Amplience Hooks Bridge Cartridge](https://github.com/amplience/amplience-sfcc-hooksbridge) on your ODS (detailed instructions at the [Amplience Hooks Bridge Caftridge](https://github.com/amplience/amplience-sfcc-hooksbridge) page) 
 * [Localisation](#localisation). 
 
-All are outlined below. (Instructions for installing our OCAPI hooks is [here](https://github.com/amplience/amplience-sfcc-hooksbridge))
+All are outlined below, while instructions for installing our OCAPI hooks cartridge can be found [here](https://github.com/amplience/amplience-sfcc-hooksbridge))
 
 ## Client ID and Secret
+
+>***NOTE***: If you have already done this during your main SFCC setup, skip to the [OCAPI section](#ocapi-configuration).
+
 In order to setup a Client ID and Secret, you’ll need Admin Rights in SFCC Account Manager. IF you don’t have this access, contact your account admin. 
 
 1. Sign in to Account Manager
@@ -114,7 +117,6 @@ You’ll need to configure access for both Shop & Data endpoints:
     ]
 }
 ```
-> Note: We have included the customer_groups endpoint as that will be used in future releases.
 
 ## Localisation
 If you are pointing to your own SFCC ODS (On-demand Sandbox), you’ll need to setup localization in both your SFCC ODS and your FE Application.
