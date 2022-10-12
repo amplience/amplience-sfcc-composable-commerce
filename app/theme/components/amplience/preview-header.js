@@ -109,7 +109,6 @@ export default {
             minWidth: '14px'
         },
         panelText: {
-            fontSize: 'xs',
             p: {
                 fontSize: 'xs'
             },
