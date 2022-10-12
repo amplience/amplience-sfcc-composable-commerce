@@ -1,13 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
-const md = require('markdown-it')('commonmark', {html: true, breaks: true})
+import markdownIt from 'markdown-it';
+import highlightjs from 'markdown-it-highlightjs';
 
 /**
  * Amplience Markdown Component
  * Renders markdown as HTML.
  */
 const AmplienceMarkdown = ({content, ...otherProps}) => {
+    const md = markdownIt().use(highlightjs);
     const html = md.render(content ?? '')
 
     return <div dangerouslySetInnerHTML={{__html: html}} {...otherProps}></div>
