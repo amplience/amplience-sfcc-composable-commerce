@@ -107,6 +107,15 @@ export default {
             marginRight: '5px',
             width: '14px',
             minWidth: '14px'
+        },
+        panelText: {
+            fontSize: 'xs',
+            p: {
+                fontSize: 'xs'
+            },
+            h2: {
+                fontSize: 'xs'
+            }
         }
     }),
     parts: ['container']

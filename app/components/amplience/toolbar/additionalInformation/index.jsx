@@ -46,7 +46,7 @@ const AdditionalInformation = ({_meta, slot, matchesList}) => {
                 <Link
                     color={'ampliencePink.500'}
                     target={'_blank'}
-                    href={`https://content.amplience.net/#!/${currentHub}/authoring/content-item/edit/${content.deliveryId}`}> > {content.name}</Link>
+                    href={`https://content.amplience.net/#!/${currentHub}/authoring/content-item/edit/${content.deliveryId}`}> {'>'} {content.name}</Link>
             </Heading>}
             <Text fontSize="xs" fontWeight={'bold'}>{schema}</Text>
             <Text fontSize="xs" fontStyle={'italic'}>{deliveryId}</Text>
