@@ -1,0 +1,5 @@
+{
+  "body": "./schemas/rich-text-schema.json",
+  "schemaId": "https://sfcc.com/components/rich-text",
+  "validationLevel": "CONTENT_TYPE"
+}

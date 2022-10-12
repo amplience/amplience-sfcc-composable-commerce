@@ -30,6 +30,24 @@ module.exports = {
             hub: 'sfcccompdev',
             vse: '11pas6cl3x9ck1bbgcbsl1e6tk.staging.bigcontent.io',
             url: 'https://ascc-development.mobify-storefront.com'
+        },
+        {
+            name: 'Automation Test 01 - Réza',
+            hub: 'automation01',
+            vse: '1dpf8i5xxl3cn1xccm0grjyowp.staging.bigcontent.io',
+            url: ''
+        },
+        {
+            name: 'Automation Test 02 - Réza',
+            hub: 'automation02',
+            vse: 'jf7r926acbou18fx7sz7374ij.staging.bigcontent.io',
+            url: ''
+        },
+        {
+            name: 'Automation Test 03 - Réza',
+            hub: 'automation03',
+            vse: 'uydimqk8ysu21nh1pqhm0w8ry.staging.bigcontent.io',
+            url: ''
         }
     ]
 }

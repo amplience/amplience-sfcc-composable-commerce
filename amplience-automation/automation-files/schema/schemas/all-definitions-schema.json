@@ -9,13 +9,15 @@
                 "https://sfcc.com/components/curated-product",
                 "https://sfcc.com/components/card-enhanced",
                 "https://sfcc.com/components/personalised-container",
-                "https://sfcc.com/components/personalised-component"
+                "https://sfcc.com/components/personalised-component",
+                "https://sfcc.com/components/shoppable-image"
             ]
         },
         "anyInGridComponent": {
             "enum": [
                 "https://sfcc.com/components/hero",
-                "https://sfcc.com/components/card-enhanced"
+                "https://sfcc.com/components/card-enhanced",
+                "https://sfcc.com/components/shoppable-image"
             ]
         },
         "anyPage": {
@@ -31,7 +33,8 @@
                 "https://sfcc.com/components/personalised-container",
                 "https://sfcc.com/components/personalised-component",
                 "https://sfcc.com/site/pages/content-page",
-                "https://sfcc.com/components/card-enhanced"
+                "https://sfcc.com/components/card-enhanced",
+                "https://sfcc.com/components/shoppable-image"
             ]
         },
         "anySlot": {
@@ -48,7 +51,8 @@
                 "https://sfcc.com/components/personalised-component",
                 "https://sfcc.com/site/pages/content-page",
                 "https://sfcc.com/slots/flexible-list",
-                "https://sfcc.com/components/card-enhanced"
+                "https://sfcc.com/components/card-enhanced",
+                "https://sfcc.com/components/shoppable-image"
             ]
         },
         "diImage": {
@@ -190,6 +194,149 @@
                 }
             }
         },
+        "richText": {
+            "type": "array",
+            "ui:extension": {
+                "name": "rich-text",
+                "params": {
+                    "language": "json",
+                    "styles": "",
+                    "tools": {
+                        "blacklist": [],
+                        "dc-content-link": {
+                            "contentTypes": [
+                                "https://sfcc.com/components/section",
+                                "https://sfcc.com/components/hero",
+                                "https://sfcc.com/components/curated-product",
+                                "https://sfcc.com/components/blogList"
+                            ],
+                            "contentTypeSettings": [
+                                {
+                                    "id": "https://sfcc.com/components/section",
+                                    "icon": "https://sfcccomposable.a.bigcontent.io/v1/static/icon-component-section"
+                                },
+                                {
+                                    "id": "https://sfcc.com/components/hero",
+                                    "icon": "https://sfcccomposable.a.bigcontent.io/v1/static/icon-component-hero",
+                                    "card": "https://bigcontent.io/cms/cards/summary-photo/index.html?headline=/title&image=/img/image&imageAlt=/img/alt&src=%2F%2F{{vse.domain}}%2Fcms%2Fcontent%2Fquery%3FfullBodyObject%3Dtrue%26query%3D%257B%2522sys.iri%2522%253A%2522http%253A%252F%252Fcontent.cms.amplience.com%252F{{content.sys.id}}%2522%257D%26scope%3Dtree%26store%3Dstaging"
+                                },
+                                {
+                                    "id": "https://sfcc.com/components/curated-product",
+                                    "icon": "https://sfcccomposable.a.bigcontent.io/v1/static/icon-component-curated-product"
+                                }
+                            ]
+                        },
+                        "inline_styles": {
+                            "classNames": [
+                                {
+                                    "className": "was-price",
+                                    "label": "Was Price"
+                                }
+                            ]
+                        }
+                    },
+                    "toolbar": {
+                        "layout": [
+                            {
+                                "type": "group",
+                                "children": [
+                                    {
+                                        "type": "button",
+                                        "toolName": "undo"
+                                    },
+                                    {
+                                        "type": "button",
+                                        "toolName": "redo"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "dropdown",
+                                "label": "Styles",
+                                "toolNames": [
+                                    "paragraph",
+                                    "heading_1",
+                                    "heading_2",
+                                    "heading_3",
+                                    "heading_4",
+                                    "heading_5",
+                                    "heading_6",
+                                    "inline_styles_className_was-price"
+                                ]
+                            },
+                            {
+                                "type": "group",
+                                "children": [
+                                    {
+                                        "type": "button",
+                                        "toolName": "strong"
+                                    },
+                                    {
+                                        "type": "button",
+                                        "toolName": "em"
+                                    },
+                                    {
+                                        "type": "button",
+                                        "toolName": "link"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "group",
+                                "children": [
+                                    {
+                                        "type": "button",
+                                        "toolName": "bullet_list"
+                                    },
+                                    {
+                                        "type": "button",
+                                        "toolName": "ordered_list"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "group",
+                                "children": [
+                                    {
+                                        "type": "button",
+                                        "toolName": "dc-image-link"
+                                    },
+                                    {
+                                        "type": "button",
+                                        "toolName": "image"
+                                    },
+                                    {
+                                        "type": "button",
+                                        "toolName": "dc-content-link"
+                                    },
+                                    {
+                                        "type": "button",
+                                        "toolName": "blockquote"
+                                    },
+                                    {
+                                        "type": "button",
+                                        "toolName": "code_block"
+                                    },
+                                    {
+                                        "type": "button",
+                                        "toolName": "horizontal_rule"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "group",
+                                "children": [
+                                    {
+                                        "type": "button",
+                                        "toolName": "clear_formatting"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            }
+        },
         "gridItem": {
             "title": "In-Grid Content",
             "description": "",
@@ -238,7 +385,8 @@
                                     "enum": [
                                         "https://sfcc.com/components/card-enhanced",
                                         "https://sfcc.com/components/hero",
-                                        "https://sfcc.com/components/personalised-ingrid-component"
+                                        "https://sfcc.com/components/personalised-ingrid-component",
+                                        "https://sfcc.com/components/shoppable-image"
                                     ]
                                 }
                             }
@@ -537,6 +685,119 @@
                 "segment",
                 "content"
             ]
+        },
+        "shoppableImage": {
+            "type": "object",
+            "properties": {
+                "image": {
+                    "title": "Image",
+                    "description": "The base image that the shoppable image elements are for.",
+                    "allOf": [
+                        { "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link" }
+                    ]
+                },
+                "poi": {
+                    "title": "Focal Point",
+                    "description": "The focal point defined on the image. Coordinates are normalized 0-1 based on image size.",
+                    "type": "object",
+                    "properties": {
+                        "x": {
+                            "type": "number"
+                        },
+                        "y": {
+                            "type": "number"
+                        },
+                        "w": {
+                            "type": "number"
+                        },
+                        "h": {
+                            "type": "number"
+                        }
+                    }
+                },
+                "hotspots": {
+                    "title": "Hotspots",
+                    "description": "Interactable hotspots defined on the image. Coordinates are normalized 0-1 based on image size.",
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "points": {
+                                "title": "Point",
+                                "description": "The location of this hotspot on the image.",
+                                "type": "object",
+                                "properties": {
+                                    "x": {
+                                        "type": "number"
+                                    },
+                                    "y": {
+                                        "type": "number"
+                                    }
+                                }
+                            },
+                            "id": {
+                                "title": "ID",
+                                "description": "Unique idendifier for this hotspot.",
+                                "type": "string"
+                            },
+                            "selector": {
+                                "title": "Selector",
+                                "description": "The selector associated with this hotspot.",
+                                "type": "string"
+                            },
+                            "target": {
+                                "title": "Target",
+                                "description": "The target associated with this hotspot.",
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "polygons": {
+                    "title": "Polygons",
+                    "description": "Interactable polygonal regions defined on the image. Coordinates are normalized 0-1 based on image size.",
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "points": {
+                                "title": "Polygon Points",
+                                "description": "The points that define this polygon. The polygon edge is drawn between all points in order, and closed at the end by drawing an edge from the last to the first point.",
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "x": {
+                                            "type": "number"
+                                        },
+                                        "y": {
+                                            "type": "number"
+                                        }
+                                    }
+                                }
+                            },
+                            "id": {
+                                "title": "ID",
+                                "description": "Unique idendifier for this polygon.",
+                                "type": "string"
+                            },
+                            "selector": {
+                                "title": "Selector",
+                                "description": "The selector associated with this polygon.",
+                                "type": "string"
+                            },
+                            "target": {
+                                "title": "Target",
+                                "description": "The target associated with this polygon.",
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "ui:extension": {
+                "name": "shoppable-image"
+            }
         }
     }
 }
