@@ -1,10 +1,10 @@
 module.exports = {
-    hub: 'sfcccomposable',
+    hub: 'sfcccompdev2',
     default: {
-        name: 'Live',
-        hub: 'sfcccomposable',
-        vse: '1pqebtas9axy7zeeiy96389op.staging.bigcontent.io',
-        url: 'https://ascc-production.mobify-storefront.com'
+        name: 'Development 2',
+        hub: 'sfcccompdev2',
+        vse: '1jade04tmvsq21rjusvaue8p27.staging.bigcontent.io',
+        url: 'https://ascc-development-2.mobify-storefront.com'
     },
     envs: [
         {
