@@ -40,7 +40,6 @@ const PersonalisationPanel = ({customerGroups}) => {
 
     return (
         <Box {...styles.box}>
-            <Heading as='h2' size='xs'>Personalisation Rules</Heading>
             <Heading as='h2' size='xs'>Customer groups</Heading>
             <Wrap spacing={2} paddingTop={4}>
                 {customerGroups.sort().map((group, index) => {
