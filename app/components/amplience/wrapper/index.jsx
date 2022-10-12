@@ -15,6 +15,7 @@ import PersonalisedContainer from '../personalised-container'
 import PersonalisedComponent from '../personalised-component'
 import ShoppableImage from '../shoppable-image'
 import AdditionalInformation from '../toolbar/additionalInformation'
+import AmplienceRichText from '../rich-text'
 import {useLocation} from 'react-router-dom'
 
 const Blank = () => <></>
@@ -22,6 +23,7 @@ const Blank = () => <></>
 const componentsMapping = {
     'https://sfcc.com/components/hero': Hero,
     'https://sfcc.com/components/section': Section,
+    'https://sfcc.com/components/rich-text': AmplienceRichText,
     'https://sfcc.com/components/curated-product': CuratedProductList,
     'https://sfcc.com/components/card-enhanced': CardEnhanced,
     'https://sfcc.com/components/personalised-component': PersonalisedComponent,
