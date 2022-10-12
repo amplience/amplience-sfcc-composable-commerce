@@ -11,10 +11,13 @@ import {
     Link,
     Text,
     Heading,
-    Box, Divider, Spacer
+    Box,
+    Divider,
+    Spacer
 } from '@chakra-ui/react'
 import {
     CheckIcon,
+    CheckCircleIcon,
     CloseIcon
 } from '@chakra-ui/icons'
 import {AmplienceContext} from '../../../../contexts/amplience'
@@ -83,14 +86,15 @@ const AdditionalInformation = ({_meta, slot, matchesList}) => {
                     href={`https://content.amplience.net/#!/${currentHub}/authoring/content-item/edit/${deliveryId}`}>{name}</Link>
             </Heading>
             {matchesList.map(({title, match, maxReached}) => (<Box>
-                {match ? <CheckIcon {...styles.infoBox} color={maxReached ? 'grey': 'green'} /> : <CloseIcon {...styles.infoBox} color={'red'} />}
+                {match ? <CheckCircleIcon {...styles.infoBox} color={'green'} width={"14px"} /> : maxReached ?
+                    <CheckIcon {...styles.infoBox} color={'grey'} /> : <CloseIcon {...styles.infoBox} color={'red'} />}
                 <Text fontSize="xs" as={'span'}>{title}</Text>
             </Box>))}
             <Spacer h={6} />
-            <Divider/>
+            <Divider />
             <Box>
                 <Box>
-                    <CheckIcon {...styles.infoBox} color={'green'} />
+                    <CheckCircleIcon {...styles.infoBox} color={'green'} width={"14px"} />
                     <Text fontSize="xs" as={'span'}>Match on default or variant</Text>
                 </Box>
                 <Box>

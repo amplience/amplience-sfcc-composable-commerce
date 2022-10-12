@@ -105,8 +105,7 @@ export default {
         },
         infoBox: {
             marginRight: '5px',
-            width: '14px',
-            minWidth: '14px'
+            width: '12px',
         }
     }),
     parts: ['container']
