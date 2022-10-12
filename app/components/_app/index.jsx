@@ -194,9 +194,6 @@ const App = (props) => {
         Object.assign(headerStyles, styles.headerAmpPreview)
     }
 
-    console.log(showVse)
-    console.log(typeof showVse)
-
     return (
         <Box className="sf-app" {...styles.container}>
             <IntlProvider
