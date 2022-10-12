@@ -101,7 +101,12 @@ export default {
         popoverBody: {
             margin: 2,
             paddingInlineStart: 0,
-            paddingInlineEnd: 0,
+            paddingInlineEnd: 0
+        },
+        infoBox: {
+            marginRight: '5px',
+            width: '14px',
+            minWidth: '14px'
         }
     }),
     parts: ['container']

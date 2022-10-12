@@ -1,5 +1,16 @@
-import {Box, Heading, Input, IconButton, useClipboard, useMultiStyleConfig, Wrap, Text, HStack} from '@chakra-ui/react'
-import React from 'react'
+import {
+    Box,
+    Heading,
+    Input,
+    IconButton,
+    useClipboard,
+    useMultiStyleConfig,
+    Wrap,
+    Text,
+    HStack,
+    Switch
+} from '@chakra-ui/react'
+import React, {useEffect, useState} from 'react'
 import {useIntl} from 'react-intl'
 import PropTypes from 'prop-types'
 import { CopyIcon } from '@chakra-ui/icons'
@@ -7,7 +18,7 @@ import { CopyIcon } from '@chakra-ui/icons'
 import { useContext } from 'react'
 import { AmplienceContext } from '../../../../contexts/amplience'
 
-const VisualisationPanel = ({vse, locale, contentId}) => {
+const VisualisationPanel = ({vse, locale, contentId, toolbarState}) => {
     const intl = useIntl()
     const styles = useMultiStyleConfig('PreviewHeader')
     const { defaultEnv, envs } = useContext(AmplienceContext)
@@ -34,6 +45,20 @@ const VisualisationPanel = ({vse, locale, contentId}) => {
 
     const [contentIdValue, setContentIdValue] = React.useState(contentId || null)
     const { hasCopied: hasCopiedContentId, onCopy: onCopyContentId } = useClipboard(contentIdValue)
+    const [matchVisible, setMatchVisible] = useState(toolbarState.matchVisible)
+
+    useEffect(() => {
+        if (document) {
+            const body = document.getElementsByTagName('body')
+
+            if (body && !matchVisible) {
+                body[0].classList.add('matchVisible')
+            } else if (body && matchVisible) {
+                body[0].classList.remove('matchVisible')
+            }
+        }
+
+    }, [matchVisible])
 
     return (
         <Box {...styles.box}>
@@ -90,6 +115,31 @@ const VisualisationPanel = ({vse, locale, contentId}) => {
                             </>
                          )
                     }
+                    <Wrap spacing={2} paddingTop={6} marginBottom={6}>
+                        <Switch
+                            defaultChecked={toolbarState.matchVisible}
+                            size='sm'
+                            onChange={() => {
+                                toolbarState.matchVisible = !matchVisible
+                                setMatchVisible(!matchVisible)
+                            }}
+                            colorScheme={'ampliencePink'}
+                            isChecked={matchVisible}
+                        />
+                        <Text
+                            onClick={() => {
+                                toolbarState.matchVisible = !matchVisible
+                                setMatchVisible(!matchVisible)
+                            }}
+                            fontSize='xs'>
+                            {
+                                intl.formatMessage({
+                                    id: 'amplience.preview.showMatches',
+                                    defaultMessage: 'Show information'
+                                })
+                            }
+                        </Text>
+                    </Wrap>
                 </>
             }
         </Box>

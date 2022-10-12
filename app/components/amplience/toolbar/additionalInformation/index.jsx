@@ -10,11 +10,17 @@ import {
     PopoverTrigger,
     Link,
     Text,
-    Heading
+    Heading,
+    Box, Divider, Spacer
 } from '@chakra-ui/react'
+import {
+    CheckIcon,
+    CloseIcon
+} from '@chakra-ui/icons'
 import {AmplienceContext} from '../../../../contexts/amplience'
+import moment from 'moment'
 
-const AdditionalInformation = ({_meta, match, slot}) => {
+const AdditionalInformation = ({_meta, slot, matchesList}) => {
     const styles = useMultiStyleConfig('PreviewHeader')
     const {defaultEnv, envs, vse = ''} = useContext(AmplienceContext)
     const currentHub = envs?.find(item => {
@@ -28,11 +34,7 @@ const AdditionalInformation = ({_meta, match, slot}) => {
         }
     })?.hub || defaultEnv.hub
 
-    const combineContentLink = (deliveryId) => {
-        return `https://content.amplience.net/#!/${currentHub}/authoring/content-item/edit/${deliveryId}`
-    }
-
-    const SlotContentRender = ({deliveryId, name, schema, deliveryKey}) => (
+    const SlotContentRender = ({deliveryId, name, schema, deliveryKey, content}) => (
         <>
             <Heading as="h2" size="xs">
                 <Link
@@ -40,6 +42,12 @@ const AdditionalInformation = ({_meta, match, slot}) => {
                     target={'_blank'}
                     href={`https://content.amplience.net/#!/${currentHub}/authoring/content-item/edit/${deliveryId}`}>{name}</Link>
             </Heading>
+            {content && <Heading as="h2" size="xs">
+                <Link
+                    color={'ampliencePink.500'}
+                    target={'_blank'}
+                    href={`https://content.amplience.net/#!/${currentHub}/authoring/content-item/edit/${content.deliveryId}`}> > {content.name}</Link>
+            </Heading>}
             <Text fontSize="xs" fontWeight={'bold'}>{schema}</Text>
             <Text fontSize="xs" fontStyle={'italic'}>{deliveryId}</Text>
             {
@@ -49,24 +57,78 @@ const AdditionalInformation = ({_meta, match, slot}) => {
         </>
     )
 
+    const EditionRender = ({deliveryId, name, edition: {id, start, end}}) => (
+        <>
+            <Heading as="h2" size="xs">
+                <Link
+                    color={'ampliencePink.500'}
+                    target={'_blank'}
+                    href={`https://content.amplience.net/#!/${currentHub}/authoring/content-item/edit/${deliveryId}`}>{name}</Link>
+            </Heading>
+            <Text fontSize="xs" fontWeight={'bold'}>{moment(start).format(`DD/MM/YYYY HH:mm:ss`)}</Text>
+            <Text fontSize="xs" fontWeight={'bold'}>{moment(end).format(`DD/MM/YYYY HH:mm:ss`)}</Text>
+            {
+                id &&
+                <Text fontSize="xs" fontStyle={'italic'}>{id}</Text>
+            }
+        </>
+    )
+
+    const PersonalisationRender = ({deliveryId, name, matchesList}) => (
+        <>
+            <Heading as="h2" size="xs">
+                <Link
+                    color={'ampliencePink.500'}
+                    target={'_blank'}
+                    href={`https://content.amplience.net/#!/${currentHub}/authoring/content-item/edit/${deliveryId}`}>{name}</Link>
+            </Heading>
+            {matchesList.map(({title, match, maxReached}) => (<Box>
+                {match ? <CheckIcon {...styles.infoBox} color={maxReached ? 'grey': 'green'} /> : <CloseIcon {...styles.infoBox} color={'red'} />}
+                <Text fontSize="xs" as={'span'}>{title}</Text>
+            </Box>))}
+            <Spacer h={6} />
+            <Divider/>
+            <Box>
+                <Box>
+                    <CheckIcon {...styles.infoBox} color={'green'} />
+                    <Text fontSize="xs" as={'span'}>Match on default or variant</Text>
+                </Box>
+                <Box>
+                    <CloseIcon {...styles.infoBox} color={'red'} />
+                    <Text fontSize="xs" as={'span'}>No match on default or variant</Text>
+                </Box>
+                <Box>
+                    <CheckIcon {...styles.infoBox} color={'grey'} />
+                    <Text fontSize="xs" as={'span'}>Match on variant, but ignored (max items number)</Text>
+                </Box>
+            </Box>
+        </>
+    )
+
     const items = [{
         color: 'teal',
         icon: (<p>P</p>),
-        content: (<Text fontSize="xs">{match}</Text>),
-        visibility: () => !!match
+        content: (<PersonalisationRender matchesList={matchesList} {..._meta} />),
+        visibility: () => matchesList && matchesList.length
     }, {
         color: 'orange',
         icon: (<p>S</p>),
-        content: (<SlotContentRender {...slot} />),
+        content: (<SlotContentRender {...slot} content={_meta} />),
         visibility: () => !!slot
     }, {
         color: 'blue',
         icon: (<p>C</p>),
         content: <SlotContentRender {..._meta} />
-    }]
+    }, {
+        color: 'pink',
+        icon: (<p>E</p>),
+        content: <EditionRender {...slot} />,
+        visibility: () => slot && !!slot.edition
+    }
+    ]
 
     return (
-        <div className={'matchInfo'} style={styles.infoContainer}>
+        <div style={styles.infoContainer} className={'matchInfo'}>
             {items
                 .filter(data => {
                     data.visibility = data.visibility || (() => true)

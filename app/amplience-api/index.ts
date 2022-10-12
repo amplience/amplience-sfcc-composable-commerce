@@ -290,22 +290,41 @@ export class AmplienceAPI {
             variants = [],
             maxNumberMatches = 1,
             defaultContent,
-            _meta: {name}
         } = props
+        const matchesList = [{
+            title: 'Default variant',
+            match: false
+        }]
+        let maxNumberCounter = 0;
 
         const matches = compact(
             variants.map((arg: Variant, ind: number) => {
                 const similar = intersection(arg.segment, this.groups)
+                const matchObj = {
+                    title: `Variant ${ind + 1} - (${arg.matchMode}) ${similar.join(
+                        ', '
+                    )} segment${similar.length > 1 ? 's' : ''}`,
+                    match: true,
+                    maxReached: false
+                }
                 if (
                     arg.matchMode == 'Any'
                         ? similar.length == 0
                         : similar.length < arg.segment.length
                 ) {
+                    matchObj.title = `Variant ${ind + 1} - (${arg.matchMode}) ${arg.segment.join(
+                        ', '
+                    )} segment${arg.segment.length > 1 ? 's' : ''}`;
+                    matchObj.match = false
+                    matchesList.push(matchObj)
                     return null
                 }
-                arg.match = `${name} match on variant ${ind + 1} (${arg.matchMode}), ${similar.join(
-                    ', '
-                )} segment${similar.length > 1 ? 's' : ''}`
+
+                maxNumberCounter += 1;
+                if (maxNumberCounter > maxNumberMatches){
+                    matchObj.maxReached = true;
+                }
+                matchesList.push(matchObj)
                 return arg
             })
         )
@@ -313,7 +332,7 @@ export class AmplienceAPI {
         let responses = await Promise.all(
             matches.slice(0, maxNumberMatches).map(async (arg: Variant) => {
                 let rawIds: ('' | {id: string})[]
-                
+
                 if (arg.content == null) {
                     arg.content = []
                 }
@@ -321,7 +340,7 @@ export class AmplienceAPI {
                 if (Array.isArray(arg.content)) {
                     arg.content = arg.content.map((el) => ({
                         ...el,
-                        match: arg.match
+                        matchesList
                     })) as any[]
                     rawIds = arg.content.map(({id}) => id && {id})
                 } else {
@@ -339,7 +358,7 @@ export class AmplienceAPI {
                     if ('content' in response) {
                         return {
                             ...response.content,
-                            match: arg.match
+                            matchesList
                         }
                     }
                     return response.error
@@ -360,12 +379,14 @@ export class AmplienceAPI {
             } else if (Array.isArray(defaultContent)) {
                 allContent = [
                     ...defaultContent.map((el) => {
-                        el.match = `${name} default variant`
+                        matchesList[0].match = true
+                        el.matchesList = matchesList
                         return el
                     })
                 ]
             } else {
-                allContent = [{...defaultContent, match: `${name} default variant`}]
+                matchesList[0].match = true
+                allContent = [{...defaultContent, matchesList}]
             }
         }
 
@@ -462,6 +483,20 @@ export class AmplienceAPI {
         } while (childId != null)
 
         return root
+    }
+
+    /**
+     * Fetch the hierarchy root content item given an id of a hierarchy node.
+     * @param eritionId A hierarchy node ID.
+     * @param locale Locale to fetch with.
+     * @returns The hierarchy root content item.
+     */
+    async getEventId(eritionId: string) {
+        await this.clientReady
+
+        const edition = this.client.getE
+
+        return edition
     }
 }
 

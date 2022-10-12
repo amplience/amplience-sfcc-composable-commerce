@@ -19,7 +19,7 @@ export default {
             minHeight: '100vh'
         },
         '.matchVisible .matchInfo': {
-            display: 'none'
+            display: 'none !important'
         }
     }
 }
