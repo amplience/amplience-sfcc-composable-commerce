@@ -1,29 +1,16 @@
 import {Box, Heading, Slider, SliderFilledTrack, SliderMark, SliderThumb, SliderTrack, Text, useMultiStyleConfig} from '@chakra-ui/react'
 import React from 'react'
 import PropTypes from 'prop-types'
+import AmplienceWrapper from '../../wrapper'
 
 
 const AboutPanel = ({vse, hubname, locale, contentId, toolbarOpacity, setToolbarOpacity}) => {
     const styles = useMultiStyleConfig('PreviewHeader')
 
     return (
-        <Box {...styles.box}>
+        <Box {...styles.box} fontSize='xs'>
             <Heading mb={4} as='h2' size='xs'>Details</Heading>
-            <Text fontSize='xs' style={{paddingBottom: 8}}>
-                The Amplience Toolbar alllows you to easily navigate preview and visualisation using the different panels available.
-            </Text>
-            <Text fontSize='xs' style={{paddingBottom: 8}}>
-                The Preview Panel allows you to do time travel in your events and editions.
-            </Text>
-            <Text fontSize='xs' style={{paddingBottom: 8}}>
-                The Visualisation Panel shows the current visualisation parameters such as VSE, hub name, locale and content ID. You can easily copy/paste any of these value using the copy icon.
-            </Text>
-            <Text fontSize='xs' style={{paddingBottom: 8}}>
-                The Environments Panel allows you to switch from your default environment to additional ones (for instance UAT, Test, etc.).
-            </Text>
-            <Text fontSize='xs' style={{paddingBottom: 8}}>
-                The Personalisation Panel allows you to show personalisation rules match, and simulate customer groups to test your rules.
-            </Text>
+            <AmplienceWrapper fetch={{key: 'rich-text/amplience-toolbar'}}></AmplienceWrapper>
             <Heading mt={4} mb={2} as='h2' size='xs'>Toolbar Opacity</Heading>
             <Slider 
                 aria-label='Toolbar Opacity' 

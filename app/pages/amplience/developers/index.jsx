@@ -60,9 +60,10 @@ const Developers = ({isLoading, homeSlotTop}) => {
                 marginLeft={{base: '-50vw', md: 'auto'}}
                 marginRight={{base: '-50vw', md: 'auto'}}
             >
-                <Heading as="h3">Personalised Slot - Amplience Wrapper by key</Heading>
-                <Text>Getting content from slot <i>home/slot/top-personalised</i></Text>
+                <AmplienceWrapper fetch={{key: 'rich-text/dev-by-key1'}}></AmplienceWrapper>
             </Section>
+            
+            
             <AmplienceWrapper fetch={{key: 'home/slot/top-personalised'}}></AmplienceWrapper>
             
             <Section
@@ -80,8 +81,7 @@ const Developers = ({isLoading, homeSlotTop}) => {
                 marginLeft={{base: '-50vw', md: 'auto'}}
                 marginRight={{base: '-50vw', md: 'auto'}}
             >
-                <Heading as="h3">Slot - Amplience Wrapper by content</Heading>
-                <Text>Getting content from slot <i>home/slot/top</i></Text>
+                <AmplienceWrapper fetch={{key: 'rich-text/dev-by-content'}}></AmplienceWrapper>
             </Section>
             <AmplienceWrapper content={homeSlotTop}></AmplienceWrapper>
 
@@ -100,8 +100,7 @@ const Developers = ({isLoading, homeSlotTop}) => {
                 marginLeft={{base: '-50vw', md: 'auto'}}
                 marginRight={{base: '-50vw', md: 'auto'}}
             >
-                <Heading as="h3">Content - Amplience Wrapper by key</Heading>
-                <Text>Getting content from content item <i>simple-product-list</i></Text>
+                <AmplienceWrapper fetch={{key: 'rich-text/dev-by-key2'}}></AmplienceWrapper>
             </Section>
             <AmplienceWrapper fetch={{key: 'simple-product-list'}}></AmplienceWrapper>
         </Box>
