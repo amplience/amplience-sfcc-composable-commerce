@@ -70,6 +70,7 @@ const AmplienceWrapper = ({fetch, content, components, skeleton, rtvActive, ...r
 
     const result = Component ? (
         <div style={{position: 'relative', width: '100%'}}>
+            {console.log(fetchedContent)}
             {showInfo ? (<AdditionalInformation {...fetchedContent} />) : ''}
             <Component {...fetchedContent} {...rest} />
         </div>

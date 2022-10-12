@@ -1,15 +1,14 @@
-import {Box, Button, useMultiStyleConfig, Wrap, WrapItem, Switch, Text, Heading} from '@chakra-ui/react'
+import {Box, Button, useMultiStyleConfig, Wrap, WrapItem, Heading} from '@chakra-ui/react'
 import React, {useContext, useEffect, useState} from 'react'
 import {useIntl} from 'react-intl'
 import {AmplienceContext} from '../../../../contexts/amplience'
 import useNavigation from '../../../../hooks/use-navigation'
 import PropTypes from 'prop-types'
 
-const PersonalisationPanel = ({customerGroups, toolbarState}) => {
+const PersonalisationPanel = ({customerGroups}) => {
     const styles = useMultiStyleConfig('PreviewHeader')
     const { groups, updateGroups } = useContext(AmplienceContext)
     const [previewCustomerGroups, setPreviewCustomerGroups] = useState(groups || [])
-    const [matchVisible, setMatchVisible] = useState(toolbarState.matchVisible)
     const intl = useIntl()
     const navigate = useNavigation()
 
@@ -21,19 +20,6 @@ const PersonalisationPanel = ({customerGroups, toolbarState}) => {
             }
         }
     }, [])
-
-    useEffect(() => {
-        if (document) {
-            const body = document.getElementsByTagName('body')
-
-            if (body && !matchVisible) {
-                body[0].classList.add('matchVisible')
-            } else if (body && matchVisible) {
-                body[0].classList.remove('matchVisible')
-            }
-        }
-
-    }, [matchVisible])
 
     useEffect(() => {
         setPreviewCustomerGroups(groups || [])
@@ -55,31 +41,6 @@ const PersonalisationPanel = ({customerGroups, toolbarState}) => {
     return (
         <Box {...styles.box}>
             <Heading as='h2' size='xs'>Personalisation Rules</Heading>
-            <Wrap spacing={2} paddingTop={4} marginBottom={6}>
-                <Switch
-                    defaultChecked={toolbarState.matchVisible}
-                    size='sm'
-                    onChange={() => { 
-                        toolbarState.matchVisible = !matchVisible
-                        setMatchVisible(!matchVisible)
-                    }}
-                    colorScheme={'ampliencePink'} 
-                    isChecked={matchVisible}
-                />
-                <Text 
-                    onClick={() => {
-                        toolbarState.matchVisible = !matchVisible
-                        setMatchVisible(!matchVisible)
-                    }}
-                    fontSize='xs'>
-                    {
-                        intl.formatMessage({
-                            id: 'amplience.preview.showMatches',
-                            defaultMessage: 'Show matches'
-                        })
-                    }
-                </Text>
-            </Wrap>
             <Heading as='h2' size='xs'>Customer groups</Heading>
             <Wrap spacing={2} paddingTop={4}>
                 {customerGroups.sort().map((group, index) => {

@@ -143,6 +143,9 @@ export function getImageURL(image, transformations) {
         query.push(`crop=${crop[0]},${crop[1]},${crop[2]},${crop[3]}`)
     }
 
+    // Force to use autoformat
+    query.push('fmt=auto')
+
     if (templates) {
         for (let template of templates) {
             query.push(`$${template}$`)
