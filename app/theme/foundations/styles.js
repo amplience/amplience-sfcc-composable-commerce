@@ -24,13 +24,19 @@ export default {
         'pre code.hljs': {
             display: 'block',
             overflowX: 'auto',
-            padding: '1em'
+            padding: '1em',
+            background: '#FFDDE6',
+            fontSize: 'sm',
+            border: '1px solid #ffccc6',
+            width: '80%',
+            minWidth: '440px',
+            marginTop: 8,
+            marginBottom: 8
         },
         'code.hljs': {
             padding: '3px 5px'
         },
         '.hljs': {
-            // background: '#F3F3F3',
             color: '#444'
         },
         '.hljs-subst': {
