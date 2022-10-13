@@ -1,0 +1,49 @@
+{
+  "id": "889c525e-5bb6-40f9-9457-e0498ff353db",
+  "body": {
+    "_meta": {
+      "name": "Content - Amplience Wrapper by key",
+      "schema": "https://sfcc.com/components/rich-text",
+      "deliveryKey": "rich-text/dev-by-key2"
+    },
+    "header": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Content - Amplience Wrapper by key"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "content": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Using the `AmplienceWrapper`Component you can get content from content item `simple-product-list`:\n\n```javascript\n<AmplienceWrapper fetch={{key: 'simple-product-list'}} />\n```"
+              }
+            ]
+          }
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    }
+  },
+  "version": 8,
+  "label": "Content - Amplience Wrapper by key",
+  "status": "ACTIVE",
+  "createdBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+  "createdDate": "2022-10-12T11:08:24.901Z",
+  "lastModifiedBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+  "lastModifiedDate": "2022-10-12T21:52:08.635Z",
+  "lastPublishedVersion": 8,
+  "lastPublishedDate": "2022-10-12T21:52:13.685Z",
+  "deliveryId": "889c525e-5bb6-40f9-9457-e0498ff353db"
+}

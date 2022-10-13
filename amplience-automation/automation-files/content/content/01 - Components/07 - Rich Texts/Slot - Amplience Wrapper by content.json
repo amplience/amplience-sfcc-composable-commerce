@@ -1,0 +1,49 @@
+{
+  "id": "7bbc9c55-47f4-425e-9b37-8d6e3c4f674e",
+  "body": {
+    "_meta": {
+      "name": "Slot - Amplience Wrapper by content",
+      "schema": "https://sfcc.com/components/rich-text",
+      "deliveryKey": "rich-text/dev-by-content"
+    },
+    "header": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Slot - Amplience Wrapper by content"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "content": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Using the `AmplienceWrapper` Component, you can get content from slot `home/slot/top`:\n\n```jsx\n<AmplienceWrapper content={homeSlotTop} />\n```\n\nYou can use the `fetchContent` method to get the content from Dynamic Content:\n\n```javascript\nconst homeSlotTop = await (\n    await ampClient.fetchContent(\n        [{key: 'home/slot/top'}], \n        {locale: targetLocale}\n    )\n).pop()\n```"
+              }
+            ]
+          }
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    }
+  },
+  "version": 10,
+  "label": "Slot - Amplience Wrapper by content",
+  "status": "ACTIVE",
+  "createdBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+  "createdDate": "2022-10-12T11:04:04.622Z",
+  "lastModifiedBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+  "lastModifiedDate": "2022-10-12T21:51:09.318Z",
+  "lastPublishedVersion": 10,
+  "lastPublishedDate": "2022-10-12T21:51:17.552Z",
+  "deliveryId": "7bbc9c55-47f4-425e-9b37-8d6e3c4f674e"
+}

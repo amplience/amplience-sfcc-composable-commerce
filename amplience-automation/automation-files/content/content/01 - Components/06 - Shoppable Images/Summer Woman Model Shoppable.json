@@ -1,0 +1,162 @@
+{
+  "id": "4acf5d11-6202-4844-8982-fa39f908034d",
+  "body": {
+    "_meta": {
+      "name": "Summer Woman Model Shoppable",
+      "schema": "https://sfcc.com/components/shoppable-image"
+    },
+    "shoppableImage": {
+      "image": {
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+        },
+        "id": "eff7065e-54f0-46d9-886a-745d18da5b2f",
+        "name": "shoppable-look-01-tamara-bellis-IwVRO3TLjLc-unsplash",
+        "endpoint": "sfcccompdev2",
+        "defaultHost": "cdn.media.amplience.net"
+      },
+      "polygons": [
+        {
+          "id": "2743935b-71ac-4642-9891-90ad119211bf",
+          "target": "25593169M",
+          "selector": "product",
+          "points": [
+            {
+              "x": 0.5039912917271407,
+              "y": 0.002183406113537118
+            },
+            {
+              "x": 0.9974600870827286,
+              "y": 0.002183406113537118
+            },
+            {
+              "x": 0.9974600870827286,
+              "y": 0.8733624454148473
+            },
+            {
+              "x": 0.5039912917271407,
+              "y": 0.8733624454148473
+            }
+          ]
+        },
+        {
+          "id": "40f4fce1-f849-461b-9c9d-8d8e35f97a1f",
+          "target": "target",
+          "selector": ".selector",
+          "points": [
+            {
+              "x": 0.2433526850507982,
+              "y": 0.21615720524017468
+            },
+            {
+              "x": 0.3437300435413646,
+              "y": 0.21615720524017468
+            },
+            {
+              "x": 0.43638606676342506,
+              "y": 0.2862663755458524
+            },
+            {
+              "x": 0.4865747460087085,
+              "y": 0.4156986899563317
+            },
+            {
+              "x": 0.4865747460087085,
+              "y": 0.5559170305676852
+            },
+            {
+              "x": 0.43638606676342506,
+              "y": 0.685349344978165
+            },
+            {
+              "x": 0.3437300435413646,
+              "y": 0.7554585152838429
+            },
+            {
+              "x": 0.2433526850507982,
+              "y": 0.7554585152838429
+            },
+            {
+              "x": 0.15069666182873692,
+              "y": 0.685349344978165
+            },
+            {
+              "x": 0.10050798258345428,
+              "y": 0.5559170305676852
+            },
+            {
+              "x": 0.10050798258345428,
+              "y": 0.4156986899563317
+            },
+            {
+              "x": 0.15069666182873692,
+              "y": 0.2862663755458524
+            }
+          ]
+        }
+      ]
+    },
+    "imageAltText": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Women's fashion on wall"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "La mode féminine au mur"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Damenmode an der Wand"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Moda femenina en la pared"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Moda donna a parete"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "seoText": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Women's summer fashion look"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Look mode été femme"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Sommerlicher Mode-Look für Damen"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Look de moda de verano para mujer."
+        },
+        {
+          "locale": "it-IT",
+          "value": "Look alla moda estiva da donna"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    }
+  },
+  "version": 4,
+  "label": "Summer Woman Model Shoppable",
+  "status": "ACTIVE",
+  "createdBy": "918ec612-377d-4c6a-94e4-9d4fcf8a25b0",
+  "createdDate": "2022-10-05T09:50:36.018Z",
+  "lastModifiedBy": "918ec612-377d-4c6a-94e4-9d4fcf8a25b0",
+  "lastModifiedDate": "2022-10-12T12:15:53.410Z",
+  "deliveryId": "4acf5d11-6202-4844-8982-fa39f908034d"
+}
