@@ -128,7 +128,7 @@ export class AmplienceAPI {
      */
     constructor() {
         this.clientReady = new Promise((resolve) => (this.clientReadyResolve = resolve))
-        this.client = new ContentClient({hubName: app.amplience.hub})
+        this.client = new ContentClient({hubName: app.amplience.default.hub})
         this.hierarchyClient = this.client
     }
 
@@ -146,13 +146,13 @@ export class AmplienceAPI {
     setVse(vse) {
         if (this.vse != vse) {
             this.client = new ContentClient({
-                hubName: app.amplience.hub,
+                hubName: app.amplience.default.hub,
                 stagingEnvironment: vse
             })
 
             if (isTimeMachineVse(vse)) {
                 this.hierarchyClient = new ContentClient({
-                    hubName: app.amplience.hub,
+                    hubName: app.amplience.default.hub,
                     stagingEnvironment: clearTimeMachine(vse)
                 })
             } else {
@@ -483,20 +483,6 @@ export class AmplienceAPI {
         } while (childId != null)
 
         return root
-    }
-
-    /**
-     * Fetch the hierarchy root content item given an id of a hierarchy node.
-     * @param eritionId A hierarchy node ID.
-     * @param locale Locale to fetch with.
-     * @returns The hierarchy root content item.
-     */
-    async getEventId(eritionId: string) {
-        await this.clientReady
-
-        const edition = this.client.getE
-
-        return edition
     }
 }
 

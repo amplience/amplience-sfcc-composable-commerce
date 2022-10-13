@@ -122,7 +122,7 @@ import { app } from '../../config/default';
 And uses that to instantiate the client:
 
 ```js
-const client: ContentClient = new ContentClient({ hubName: app.amplience.hub });
+const client: ContentClient = new ContentClient({ hubName: app.amplience.default.hub });
 ```
 
 We then have a fetch content function which allows us to:
