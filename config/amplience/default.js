@@ -1,5 +1,4 @@
 module.exports = {
-    hub: 'sfcccompdev2',
     default: {
         name: 'Development 2',
         hub: 'sfcccompdev2',

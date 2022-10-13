@@ -37,7 +37,7 @@ const AboutPanel = ({toolbarOpacity, setToolbarOpacity}) => {
     return (
         <StyledBox {...styles.box}>
             <AmplienceWrapper fetch={{key: 'rich-text/amplience-toolbar'}}></AmplienceWrapper>
-            <Heading mt={4} mb={2} as="h2" fontSize="xs">
+            <Heading mt={8} mb={2} as="h2" fontSize="xs">
                 {
                     formatMessage({
                         defaultMessage:
