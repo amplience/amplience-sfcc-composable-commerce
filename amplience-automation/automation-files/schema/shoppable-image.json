@@ -1,0 +1,5 @@
+{
+  "body": "./schemas/shoppable-image-schema.json",
+  "schemaId": "https://sfcc.com/components/shoppable-image",
+  "validationLevel": "CONTENT_TYPE"
+}
