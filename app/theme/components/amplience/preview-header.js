@@ -19,7 +19,8 @@ export default {
         },
         previewIconInitial: {
             top: {base: '52px', sm: '52px', md: '60px', lg: '15px'},
-            transition: 'opacity .8s ease-out'
+            transition: 'opacity .8s ease-out',
+            zIndex: 1200
         },
         previewIcon: {
             left: {base: 4, md: 6, lg: 4},

@@ -13,15 +13,15 @@ import {
 import React, {useEffect, useState} from 'react'
 import {useIntl} from 'react-intl'
 import PropTypes from 'prop-types'
-import { CopyIcon } from '@chakra-ui/icons'
+import {CopyIcon} from '@chakra-ui/icons'
 
-import { useContext } from 'react'
-import { AmplienceContext } from '../../../../contexts/amplience'
+import {useContext} from 'react'
+import {AmplienceContext} from '../../../../contexts/amplience'
 
 const VisualisationPanel = ({vse, locale, contentId, toolbarState}) => {
     const intl = useIntl()
     const styles = useMultiStyleConfig('PreviewHeader')
-    const { defaultEnv, envs } = useContext(AmplienceContext)
+    const {defaultEnv, envs} = useContext(AmplienceContext)
 
     const currentHub = envs?.find(item => {
         const regExp = /(.*)-(.*)-(.*)(\.staging.bigcontent.io)/
@@ -35,16 +35,16 @@ const VisualisationPanel = ({vse, locale, contentId, toolbarState}) => {
     })?.hub || defaultEnv.hub
 
     const [hubValue, setHubValue] = React.useState(currentHub)
-    const { hasCopied: hasCopiedHub, onCopy: onCopyHub } = useClipboard(hubValue)
+    const {hasCopied: hasCopiedHub, onCopy: onCopyHub} = useClipboard(hubValue)
 
     const [vseValue, setVseValue] = React.useState(vse)
-    const { hasCopied: hasCopiedVse, onCopy: onCopyVse } = useClipboard(vseValue)
+    const {hasCopied: hasCopiedVse, onCopy: onCopyVse} = useClipboard(vseValue)
 
     const [localeValue, setLocaleValue] = React.useState(locale || intl.locale)
-    const { hasCopied: hasCopiedLocale, onCopy: onCopyLocale } = useClipboard(localeValue)
+    const {hasCopied: hasCopiedLocale, onCopy: onCopyLocale} = useClipboard(localeValue)
 
     const [contentIdValue, setContentIdValue] = React.useState(contentId || null)
-    const { hasCopied: hasCopiedContentId, onCopy: onCopyContentId } = useClipboard(contentIdValue)
+    const {hasCopied: hasCopiedContentId, onCopy: onCopyContentId} = useClipboard(contentIdValue)
     const [matchVisible, setMatchVisible] = useState(toolbarState.matchVisible)
 
     useEffect(() => {
@@ -62,63 +62,78 @@ const VisualisationPanel = ({vse, locale, contentId, toolbarState}) => {
 
     return (
         <Box {...styles.box}>
-            { 
-                vse && ( envs || defaultEnv ) &&
+            {
+                vse && (envs || defaultEnv) &&
                 <>
-                    <Heading as='h4' mb={2} size='xs'>Hub Name</Heading>
+                    <Heading as="h4" mb={2} size="xs">
+                        {intl.formatMessage({
+                            id: 'toolbar.visualisation.title',
+                            defaultMessage: 'Hub Name'
+                        })}
+                    </Heading>
                     <HStack>
-                        <Input size='xs' isReadonly={true} value={hubValue} />
-                        <IconButton 
-                            size='xs' 
+                        <Input size="xs" isReadonly={true} value={hubValue} />
+                        <IconButton
+                            size="xs"
                             colorScheme={'ampliencePink'}
-                            bgColor={hasCopiedHub ? 'gray.500' : 'ampliencePink.500'} 
-                            onClick={onCopyHub} 
-                            aria-label='Copy' 
+                            bgColor={hasCopiedHub ? 'gray.500' : 'ampliencePink.500'}
+                            onClick={onCopyHub}
+                            aria-label="Copy"
                             icon={<CopyIcon />} />
                     </HStack>
-                    <Heading as='h4' size='xs' mt={4} mb={2}>VSE</Heading>
+                    <Heading as="h4" size="xs" mt={4} mb={2}>VSE</Heading>
                     <HStack>
-                        <Input size='xs' isReadonly={true} value={vse} />
-                        <IconButton 
-                            size='xs' 
+                        <Input size="xs" isReadonly={true} value={vse} />
+                        <IconButton
+                            size="xs"
                             colorScheme={'ampliencePink'}
-                            bgColor={hasCopiedVse ? 'gray.500' : 'ampliencePink.500'} 
-                            onClick={onCopyVse} 
-                            aria-label='Copy' 
+                            bgColor={hasCopiedVse ? 'gray.500' : 'ampliencePink.500'}
+                            onClick={onCopyVse}
+                            aria-label="Copy"
                             icon={<CopyIcon />} />
                     </HStack>
-                    <Heading as='h4' size='xs' mt={4} mb={2}>Locale</Heading>
+                    <Heading as="h4" size="xs" mt={4} mb={2}>
+                        {intl.formatMessage({
+                            id: 'toolbar.visualisation.locale',
+                            defaultMessage: 'Locale'
+                        })}
+                    </Heading>
                     <HStack>
-                        <Input size='xs'isReadonly={true} value={locale || intl.locale} />
-                        <IconButton 
+                        <Input size="xs" isReadonly={true} value={locale || intl.locale} />
+                        <IconButton
                             colorScheme={'ampliencePink'}
-                            size='xs' 
-                            bgColor={hasCopiedLocale ? 'gray.500' : 'ampliencePink.500'} 
-                            onClick={onCopyLocale} 
-                            aria-label='Copy' 
+                            size="xs"
+                            bgColor={hasCopiedLocale ? 'gray.500' : 'ampliencePink.500'}
+                            onClick={onCopyLocale}
+                            aria-label="Copy"
                             icon={<CopyIcon />} />
                     </HStack>
                     {
-                        contentId && ( 
+                        contentId && (
                             <>
-                                <Heading as='h4' size='xs' mt={4} mb={2}>Content ID</Heading>
+                                <Heading as="h4" size="xs" mt={4} mb={2}>
+                                    {intl.formatMessage({
+                                        id: 'toolbar.visualisation.content',
+                                        defaultMessage: 'Content ID'
+                                    })}
+                                </Heading>
                                 <HStack>
-                                    <Input size='xs' isReadonly={true} value={contentId} />
-                                    <IconButton 
+                                    <Input size="xs" isReadonly={true} value={contentId} />
+                                    <IconButton
                                         colorScheme={'ampliencePink'}
-                                        size='xs' 
-                                        bgColor={hasCopiedContentId ? 'gray.500' : 'ampliencePink.500'} 
-                                        onClick={onCopyContentId} 
-                                        aria-label='Copy' 
+                                        size="xs"
+                                        bgColor={hasCopiedContentId ? 'gray.500' : 'ampliencePink.500'}
+                                        onClick={onCopyContentId}
+                                        aria-label="Copy"
                                         icon={<CopyIcon />} />
                                 </HStack>
                             </>
-                         )
+                        )
                     }
                     <Wrap spacing={2} paddingTop={6} marginBottom={6}>
                         <Switch
                             defaultChecked={toolbarState.matchVisible}
-                            size='sm'
+                            size="sm"
                             onChange={() => {
                                 toolbarState.matchVisible = !matchVisible
                                 setMatchVisible(!matchVisible)
@@ -131,10 +146,10 @@ const VisualisationPanel = ({vse, locale, contentId, toolbarState}) => {
                                 toolbarState.matchVisible = !matchVisible
                                 setMatchVisible(!matchVisible)
                             }}
-                            fontSize='xs'>
+                            fontSize="xs">
                             {
                                 intl.formatMessage({
-                                    id: 'amplience.preview.showMatches',
+                                    id: 'toolbar.visualisation.showMatches',
                                     defaultMessage: 'Show information'
                                 })
                             }
@@ -153,4 +168,4 @@ VisualisationPanel.propTypes = {
     contentId: PropTypes.string
 }
 
-export default VisualisationPanel;
+export default VisualisationPanel

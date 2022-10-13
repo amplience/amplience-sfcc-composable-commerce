@@ -63,9 +63,6 @@ const EnvironmentsPanel = ({vse}) => {
 
 EnvironmentsPanel.propTypes = {
     vse: PropTypes.string,
-    hubname: PropTypes.string,
-    locale: PropTypes.string,
-    contentId: PropTypes.string
 }
 
 export default EnvironmentsPanel;

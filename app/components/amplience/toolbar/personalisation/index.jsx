@@ -7,9 +7,9 @@ import PropTypes from 'prop-types'
 
 const PersonalisationPanel = ({customerGroups}) => {
     const styles = useMultiStyleConfig('PreviewHeader')
-    const { groups, updateGroups } = useContext(AmplienceContext)
+    const {groups, updateGroups} = useContext(AmplienceContext)
     const [previewCustomerGroups, setPreviewCustomerGroups] = useState(groups || [])
-    const intl = useIntl()
+    const {formatMessage} = useIntl()
     const navigate = useNavigation()
 
     useEffect(() => {
@@ -40,7 +40,15 @@ const PersonalisationPanel = ({customerGroups}) => {
 
     return (
         <Box {...styles.box}>
-            <Heading as='h2' size='xs'>Customer groups</Heading>
+            <Heading as="h2" size="xs">
+                {
+                    formatMessage({
+                        defaultMessage:
+                            'Customer groups',
+                        id: 'toolbar.personalisation.heading'
+                    })
+                }
+            </Heading>
             <Wrap spacing={2} paddingTop={4}>
                 {customerGroups.sort().map((group, index) => {
                     const groupColor = previewCustomerGroups.includes(group)
@@ -49,11 +57,11 @@ const PersonalisationPanel = ({customerGroups}) => {
                     return (
                         <WrapItem key={index}>
                             <Button
-                                size='xs'
-                                height={`${group.length > 30 ? "60px" : "30px"}`}
+                                size="xs"
+                                height={`${group.length > 30 ? '60px' : '30px'}`}
                                 style={{
-                                    whiteSpace: "normal",
-                                    wordWrap: "break-word"
+                                    whiteSpace: 'normal',
+                                    wordWrap: 'break-word'
                                 }}
                                 value={group}
                                 colorScheme={groupColor}
@@ -73,4 +81,4 @@ PersonalisationPanel.propTypes = {
     customerGroups: PropTypes.array
 }
 
-export default PersonalisationPanel;
+export default PersonalisationPanel

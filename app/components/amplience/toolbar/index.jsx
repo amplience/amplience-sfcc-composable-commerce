@@ -26,8 +26,8 @@ import {
     HStack
 } from '@chakra-ui/react'
 import {
-    SettingsIcon, 
-    CloseIcon, 
+    SettingsIcon,
+    CloseIcon,
     ChevronLeftIcon,
     CalendarIcon,
     ViewIcon,
@@ -39,25 +39,26 @@ import PersonalisationPanel from './personalisation'
 import PreviewPanel from './preview'
 import EnvironmentsPanel from './environments'
 import AboutPanel from './about'
-import { AmplienceLogo } from '../../icons'
+import {AmplienceLogo} from '../../icons'
 
-import { useContext } from 'react'
-import { AmplienceContext } from '../../../contexts/amplience'
-import { useState } from 'react'
+import {useContext} from 'react'
+import {AmplienceContext} from '../../../contexts/amplience'
+import {useState} from 'react'
+import {useIntl} from 'react-intl'
 
-const AccordionItemRender = ({ title, Icon, Component, onClick, ...otherProps }) => {
+const AccordionItemRender = ({title, Icon, Component, onClick, ...otherProps}) => {
     const styles = useMultiStyleConfig('PreviewHeader')
 
     return (
         <AccordionItem {...styles.section}>
-            <AccordionButton 
-                onClick={onClick} 
+            <AccordionButton
+                onClick={onClick}
                 {...styles.button}>
                 <Box flex="1" textAlign="left" {...styles.sectionTitle}>
-                    <Heading as='h2' size='xs'>
+                    <Heading as="h2" size="xs">
                         <HStack>
-                            { Icon && <Icon /> }
-                            <Text casing='uppercase'>{title}</Text>
+                            {Icon && <Icon />}
+                            <Text casing="uppercase">{title}</Text>
                         </HStack>
                     </Heading>
                 </Box>
@@ -71,41 +72,63 @@ const AccordionItemRender = ({ title, Icon, Component, onClick, ...otherProps })
 }
 
 const Toolbar = (props) => {
-    const { envs } = useContext(AmplienceContext)
+    const {envs} = useContext(AmplienceContext)
+    const {formatMessage} = useIntl()
 
-    function inIframe () {
+    function inIframe() {
         try {
-            return window.self !== window.top;
+            return window.self !== window.top
         } catch (e) {
-            return true;
+            return true
         }
     }
+
     const items = [
         {
-            title: 'Preview',
+            title: formatMessage({
+                defaultMessage:
+                    'Preview',
+                id: 'toolbar.title.preview'
+            }),
             Icon: CalendarIcon,
             Component: PreviewPanel,
-            visibility: ({ vseTimestamp }) => !!vseTimestamp
+            visibility: ({vseTimestamp}) => !!vseTimestamp
         },
         {
-            title: 'Visualisation',
+            title: formatMessage({
+                defaultMessage:
+                    'Visualisation',
+                id: 'toolbar.title.visualisation'
+            }),
             Icon: ViewIcon,
             Component: VisualisationPanel,
-            visibility: ( ) => !!props.vse
+            visibility: () => !!props.vse
         },
         {
-            title: 'Environments',
+            title: formatMessage({
+                defaultMessage:
+                    'Environments',
+                id: 'toolbar.title.environments'
+            }),
             Icon: ExternalLinkIcon,
             Component: EnvironmentsPanel,
             visibility: () => !!props.vse && envs && envs.length > 0
         },
         {
-            title: 'Personalisation',
+            title: formatMessage({
+                defaultMessage:
+                    'Personalisation',
+                id: 'toolbar.title.personalisation'
+            }),
             Icon: SettingsIcon,
             Component: PersonalisationPanel
         },
         {
-            title: 'About The Toolbar',
+            title: formatMessage({
+                defaultMessage:
+                    'About The Toolbar',
+                id: 'toolbar.title.about'
+            }),
             Icon: InfoOutlineIcon,
             Component: AboutPanel
         }
@@ -124,8 +147,7 @@ const Toolbar = (props) => {
     }
 
     const [toolbarOpacity, setToolbarOpacity] = useState(100)
-    const [openedPanels, setOpenedPanels] = useState(props.vseTimestamp ? [0,1] : [0])
-    const [toolbarState, setToolbarState] = useState({matchVisible: true})
+    const [openedPanels, setOpenedPanels] = useState(props.vseTimestamp ? [0, 1] : [0])
 
     return (
         <>
@@ -133,11 +155,10 @@ const Toolbar = (props) => {
                 icon={<SettingsIcon title={'Open'} />}
                 onClick={onToggle}
                 style={{
-                    opacity: isOpen ? 0 : 1,
+                    opacity: isOpen ? 0 : 1
                 }}
                 {...styles.previewIcon}
                 {...styles.previewIconInitial}
-                zIndex={1200}
             />
             <Drawer
                 placement={'left'}
@@ -162,41 +183,41 @@ const Toolbar = (props) => {
                         {...styles.previewIcon}
                         {...styles.previewIconClose}
                         left={{base: 'calc(100vw - 50px)', sm: '460px'}}
-                        display={inIframe() ? 'none': 'block'}
+                        display={inIframe() ? 'none' : 'block'}
                     />
                 </div>
                 <DrawerContent
                     opacity={toolbarOpacity}
-                    >
+                >
                     <DrawerHeader {...styles.header} mt={10}>
-                        <AmplienceLogo color={"#000000"} width={'unset'} height={'unset'}  mb={10}/>
+                        <AmplienceLogo color={'#000000'} width={'unset'} height={'unset'} mb={10} />
                     </DrawerHeader>
                     <DrawerBody padding={0}>
-                        <Accordion 
-                            allowToggle={true} 
-                            defaultIndex={openedPanels} 
+                        <Accordion
+                            allowToggle={true}
+                            defaultIndex={openedPanels}
                             allowMultiple={true}>
                             {items
                                 .filter(data => {
                                     data.visibility = data.visibility || (() => true)
-                                    return data.visibility && typeof data.visibility === 'function' && data.visibility({ ...props })
+                                    return data.visibility && typeof data.visibility === 'function' && data.visibility({...props})
                                 })
                                 .map((data, index) => {
                                     return (
                                         <AccordionItemRender
                                             key={index}
-                                            onClick={()=> {
+                                            onClick={() => {
                                                 if (openedPanels.includes(index)) {
                                                     setOpenedPanels((prevState) => prevState.filter(item => item != index))
                                                 } else {
                                                     setOpenedPanels((prevState) => [...prevState, index])
                                                 }
-                                            }} 
-                                            {...data} 
-                                            {...props} 
-                                            toolbarState={toolbarState}
-                                            toolbarOpacity={toolbarOpacity} 
-                                            setToolbarOpacity={setToolbarOpacity} 
+                                            }}
+                                            {...data}
+                                            {...props}
+                                            toolbarState={{matchVisible: true}}
+                                            toolbarOpacity={toolbarOpacity}
+                                            setToolbarOpacity={setToolbarOpacity}
                                         />
                                     )
                                 })

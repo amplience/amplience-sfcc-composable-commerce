@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import {useIntl} from 'react-intl'
 
 const PreviewPanel = ({vseTimestamp, vse,  ...otherProps}) => {
-    const intl = useIntl()
+    const {formatMessage} = useIntl()
     const styles = useMultiStyleConfig('PreviewHeader')
     const [previewDate, setPreviewDate] = useState(moment(vseTimestamp).format('YYYY-MM-DD'))
     const [previewTime, setPreviewTime] = useState(moment(vseTimestamp).format('HH:mm:ss'))
@@ -42,7 +42,15 @@ const PreviewPanel = ({vseTimestamp, vse,  ...otherProps}) => {
 
     return vseTimestamp ? (
         <Box {...styles.container} {...otherProps}>
-            <Heading as='h3' size='xs'>Date:</Heading>
+            <Heading as='h3' size='xs'>
+                {
+                    formatMessage({
+                        defaultMessage:
+                            'Date',
+                        id: 'toolbar.preview.date'
+                    })
+                }
+            </Heading>
             <Input
                 size='xs'
                 id="preview-date"
@@ -55,7 +63,15 @@ const PreviewPanel = ({vseTimestamp, vse,  ...otherProps}) => {
                     'YYYY-MM-DD'
                 )}
             />
-            <Heading as='h3' size='xs'>Time:</Heading>
+            <Heading as='h3' size='xs'>
+                {
+                    formatMessage({
+                        defaultMessage:
+                            'Time',
+                        id: 'toolbar.preview.time'
+                    })
+                }
+            </Heading>
             <Input
                 size='xs'
                 id="preview-time"
@@ -75,7 +91,10 @@ const PreviewPanel = ({vseTimestamp, vse,  ...otherProps}) => {
                             colorScheme={'ampliencePink'}
                             onClick={updateVseTimestamp}
                         >
-                            Update
+                            {formatMessage({
+                                id: 'toolbar.preview.update',
+                                defaultMessage: 'Update'
+                            })}
                         </Button>
                     )
                 }
@@ -84,8 +103,8 @@ const PreviewPanel = ({vseTimestamp, vse,  ...otherProps}) => {
                     mt={2}
                     colorScheme={'ampliencePink'}
                     onClick={clearVse}>
-                    {intl.formatMessage({
-                        id: 'amplience.preview.cancel',
+                    {formatMessage({
+                        id: 'toolbar.preview.cancel',
                         defaultMessage: 'Cancel'
                     })}
                 </Button>
