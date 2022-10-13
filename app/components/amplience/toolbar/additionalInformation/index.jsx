@@ -86,7 +86,7 @@ const AdditionalInformation = ({_meta, slot, matchesList}) => {
                     href={`https://content.amplience.net/#!/${currentHub}/authoring/content-item/edit/${deliveryId}`}>{name}</Link>
             </Heading>
             {matchesList.map(({title, match, maxReached}) => (<Box>
-                {match ? <CheckCircleIcon {...styles.infoBox} color={'green'} width={"14px"} /> : maxReached ?
+                {match && ! maxReached ? <CheckCircleIcon {...styles.infoBox} color={'green'} width={"14px"} /> : match && maxReached ?
                     <CheckIcon {...styles.infoBox} color={'grey'} /> : <CloseIcon {...styles.infoBox} color={'red'} />}
                 <Text fontSize="xs" as={'span'}>{title}</Text>
             </Box>))}
