@@ -35,7 +35,7 @@ const AboutPanel = ({vse, hubname, locale, contentId, toolbarOpacity, setToolbar
     return (
         <StyledBox {...styles.box}>
             <AmplienceWrapper fetch={{key: 'rich-text/amplience-toolbar'}}></AmplienceWrapper>
-            <Heading mt={4} mb={2} as="h2" fontSize="xs">Toolbar Opacity</Heading>
+            <Heading mt={8} mb={2} as="h2" fontSize="xs">Toolbar Opacity</Heading>
             <Slider
                 aria-label="Toolbar Opacity"
                 defaultValue={toolbarOpacity * 200 - 100}
