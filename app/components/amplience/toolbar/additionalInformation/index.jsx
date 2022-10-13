@@ -23,6 +23,25 @@ import {
 import {AmplienceContext} from '../../../../contexts/amplience'
 import moment from 'moment'
 
+const Legend = () => {
+    const styles = useMultiStyleConfig('PreviewHeader')
+
+    return (<Box>
+        <Box>
+            <CheckCircleIcon {...styles.infoBox} color={'green'} width={'14px'} />
+            <Text fontSize="xs" as={'span'}>Match on default or variant</Text>
+        </Box>
+        <Box>
+            <CloseIcon {...styles.infoBox} color={'red'} />
+            <Text fontSize="xs" as={'span'}>No match on default or variant</Text>
+        </Box>
+        <Box>
+            <CheckIcon {...styles.infoBox} color={'grey'} />
+            <Text fontSize="xs" as={'span'}>Match on variant, but ignored (max items number)</Text>
+        </Box>
+    </Box>)
+}
+
 const AdditionalInformation = ({_meta, slot, matchesList}) => {
     const styles = useMultiStyleConfig('PreviewHeader')
     const {defaultEnv, envs, vse = ''} = useContext(AmplienceContext)
@@ -86,26 +105,16 @@ const AdditionalInformation = ({_meta, slot, matchesList}) => {
                     href={`https://content.amplience.net/#!/${currentHub}/authoring/content-item/edit/${deliveryId}`}>{name}</Link>
             </Heading>
             {matchesList.map(({title, match, maxReached}) => (<Box>
-                {match && ! maxReached ? <CheckCircleIcon {...styles.infoBox} color={'green'} width={"14px"} /> : match && maxReached ?
-                    <CheckIcon {...styles.infoBox} color={'grey'} /> : <CloseIcon {...styles.infoBox} color={'red'} />}
+                {match && !maxReached ?
+                    <CheckCircleIcon {...styles.infoBox} color={'green'} width={'14px'} /> :
+                    match && maxReached ?
+                        <CheckIcon {...styles.infoBox} color={'grey'} /> :
+                        <CloseIcon {...styles.infoBox} color={'red'} />}
                 <Text fontSize="xs" as={'span'}>{title}</Text>
             </Box>))}
             <Spacer h={6} />
             <Divider />
-            <Box>
-                <Box>
-                    <CheckCircleIcon {...styles.infoBox} color={'green'} width={"14px"} />
-                    <Text fontSize="xs" as={'span'}>Match on default or variant</Text>
-                </Box>
-                <Box>
-                    <CloseIcon {...styles.infoBox} color={'red'} />
-                    <Text fontSize="xs" as={'span'}>No match on default or variant</Text>
-                </Box>
-                <Box>
-                    <CheckIcon {...styles.infoBox} color={'grey'} />
-                    <Text fontSize="xs" as={'span'}>Match on variant, but ignored (max items number)</Text>
-                </Box>
-            </Box>
+            <Legend />
         </>
     )
 
@@ -128,8 +137,7 @@ const AdditionalInformation = ({_meta, slot, matchesList}) => {
         icon: (<p>E</p>),
         content: <EditionRender {...slot} />,
         visibility: () => slot && !!slot.edition
-    }
-    ]
+    }]
 
     return (
         <div style={styles.infoContainer} className={'matchInfo'}>
