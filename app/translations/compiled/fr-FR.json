@@ -2641,6 +2641,96 @@
       "value": "Modifier"
     }
   ],
+  "toolbar.about.heading": [
+    {
+      "type": 0,
+      "value": "Transparence de la barre d'outils"
+    }
+  ],
+  "toolbar.personalisation.heading": [
+    {
+      "type": 0,
+      "value": "Segments clients"
+    }
+  ],
+  "toolbar.preview.cancel": [
+    {
+      "type": 0,
+      "value": "Annuler"
+    }
+  ],
+  "toolbar.preview.date": [
+    {
+      "type": 0,
+      "value": "Date"
+    }
+  ],
+  "toolbar.preview.time": [
+    {
+      "type": 0,
+      "value": "Heure"
+    }
+  ],
+  "toolbar.preview.update": [
+    {
+      "type": 0,
+      "value": "Mettre à jour"
+    }
+  ],
+  "toolbar.title.about": [
+    {
+      "type": 0,
+      "value": "À propos de la barre d'outils"
+    }
+  ],
+  "toolbar.title.environments": [
+    {
+      "type": 0,
+      "value": "Environnements"
+    }
+  ],
+  "toolbar.title.personalisation": [
+    {
+      "type": 0,
+      "value": "Personalisation"
+    }
+  ],
+  "toolbar.title.preview": [
+    {
+      "type": 0,
+      "value": "Pré-visualisation"
+    }
+  ],
+  "toolbar.title.visualisation": [
+    {
+      "type": 0,
+      "value": "Visualisation"
+    }
+  ],
+  "toolbar.visualisation.content": [
+    {
+      "type": 0,
+      "value": "Content ID"
+    }
+  ],
+  "toolbar.visualisation.locale": [
+    {
+      "type": 0,
+      "value": "Locale"
+    }
+  ],
+  "toolbar.visualisation.showMatches": [
+    {
+      "type": 0,
+      "value": "Afficher les informations"
+    }
+  ],
+  "toolbar.visualisation.title": [
+    {
+      "type": 0,
+      "value": "Nom du Hub"
+    }
+  ],
   "update_password_fields.button.forgot_password": [
     {
       "type": 0,

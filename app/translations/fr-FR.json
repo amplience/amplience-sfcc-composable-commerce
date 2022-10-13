@@ -1156,6 +1156,51 @@
   "toggle_card.action.edit": {
     "defaultMessage": "Modifier"
   },
+  "toolbar.about.heading": {
+    "defaultMessage": "Transparence de la barre d'outils"
+  },
+  "toolbar.personalisation.heading": {
+    "defaultMessage": "Segments clients"
+  },
+  "toolbar.preview.cancel": {
+    "defaultMessage": "Annuler"
+  },
+  "toolbar.preview.date": {
+    "defaultMessage": "Date"
+  },
+  "toolbar.preview.time": {
+    "defaultMessage": "Heure"
+  },
+  "toolbar.preview.update": {
+    "defaultMessage": "Mettre à jour"
+  },
+  "toolbar.title.about": {
+    "defaultMessage": "À propos de la barre d'outils"
+  },
+  "toolbar.title.environments": {
+    "defaultMessage": "Environnements"
+  },
+  "toolbar.title.personalisation": {
+    "defaultMessage": "Personalisation"
+  },
+  "toolbar.title.preview": {
+    "defaultMessage": "Pré-visualisation"
+  },
+  "toolbar.title.visualisation": {
+    "defaultMessage": "Visualisation"
+  },
+  "toolbar.visualisation.content": {
+    "defaultMessage": "Content ID"
+  },
+  "toolbar.visualisation.locale": {
+    "defaultMessage": "Locale"
+  },
+  "toolbar.visualisation.showMatches": {
+    "defaultMessage": "Afficher les informations"
+  },
+  "toolbar.visualisation.title": {
+    "defaultMessage": "Nom du Hub"
+  },
   "update_password_fields.button.forgot_password": {
     "defaultMessage": "Mot de passe oublié ?"
   },
