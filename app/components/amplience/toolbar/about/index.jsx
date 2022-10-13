@@ -20,11 +20,12 @@ const StyledBox = styled(Box)`
   p {
     font-size: 0.75rem;
     margin-top: 10px;
-    marging-bottom: 10px;
+    margin-bottom: 10px;
   }
   
   h2 {
     font-size: 0.75rem;
+    padding-bottom: 10px;
   }
 `
 
