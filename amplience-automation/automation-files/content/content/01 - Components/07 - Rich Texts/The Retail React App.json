@@ -28,7 +28,7 @@
               {
                 "type": "dc-content-link",
                 "data": {
-                  "id": "8f361ba5-d7a3-4fc5-a378-bdd50234f176",
+                  "id": "657df3b9-d047-4981-b31b-d6b77bb7528f",
                   "contentType": "https://sfcc.com/components/hero",
                   "_meta": {
                     "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
@@ -42,7 +42,7 @@
               {
                 "type": "dc-content-link",
                 "data": {
-                  "id": "98151b1b-97ff-4af6-a6e4-37ba4a8ec2cc",
+                  "id": "f5ede58e-28ac-40f3-804b-a5c22662eae3",
                   "contentType": "https://sfcc.com/components/section",
                   "_meta": {
                     "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
