@@ -34,18 +34,16 @@ const VisualisationPanel = ({vse, locale, contentId, toolbarState}) => {
         }
     })?.hub || defaultEnv.hub
 
-    const [hubValue, setHubValue] = React.useState(currentHub)
-    const {hasCopied: hasCopiedHub, onCopy: onCopyHub} = useClipboard(hubValue)
+    const {hasCopied: hasCopiedHub, onCopy: onCopyHub} = useClipboard(currentHub)
+    const {hasCopied: hasCopiedVse, onCopy: onCopyVse} = useClipboard(vse)
+    const {hasCopied: hasCopiedLocale, onCopy: onCopyLocale} = useClipboard(locale || intl.locale)
+    const {hasCopied: hasCopiedContentId, onCopy: onCopyContentId} = useClipboard(contentId || null)
 
-    const [vseValue, setVseValue] = React.useState(vse)
-    const {hasCopied: hasCopiedVse, onCopy: onCopyVse} = useClipboard(vseValue)
-
-    const [localeValue, setLocaleValue] = React.useState(locale || intl.locale)
-    const {hasCopied: hasCopiedLocale, onCopy: onCopyLocale} = useClipboard(localeValue)
-
-    const [contentIdValue, setContentIdValue] = React.useState(contentId || null)
-    const {hasCopied: hasCopiedContentId, onCopy: onCopyContentId} = useClipboard(contentIdValue)
     const [matchVisible, setMatchVisible] = useState(toolbarState.matchVisible)
+    const bgColorHub = hasCopiedHub ? 'gray.500' : 'ampliencePink.500'
+    const bgColorVse = hasCopiedVse ? 'gray.500' : 'ampliencePink.500'
+    const bgColorLocale = hasCopiedLocale ? 'gray.500' : 'ampliencePink.500'
+    const bgColorContent = hasCopiedContentId ? 'gray.500' : 'ampliencePink.500'
 
     useEffect(() => {
         if (document) {
@@ -60,6 +58,11 @@ const VisualisationPanel = ({vse, locale, contentId, toolbarState}) => {
 
     }, [matchVisible])
 
+    const switchInfo = () => {
+        toolbarState.matchVisible = !matchVisible
+        setMatchVisible(!matchVisible)
+    }
+
     return (
         <Box {...styles.box}>
             {
@@ -72,11 +75,11 @@ const VisualisationPanel = ({vse, locale, contentId, toolbarState}) => {
                         })}
                     </Heading>
                     <HStack>
-                        <Input size="xs" isReadonly={true} value={hubValue} />
+                        <Input size="xs" isReadonly={true} value={currentHub} />
                         <IconButton
                             size="xs"
                             colorScheme={'ampliencePink'}
-                            bgColor={hasCopiedHub ? 'gray.500' : 'ampliencePink.500'}
+                            bgColor={bgColorHub}
                             onClick={onCopyHub}
                             aria-label="Copy"
                             icon={<CopyIcon />} />
@@ -87,7 +90,7 @@ const VisualisationPanel = ({vse, locale, contentId, toolbarState}) => {
                         <IconButton
                             size="xs"
                             colorScheme={'ampliencePink'}
-                            bgColor={hasCopiedVse ? 'gray.500' : 'ampliencePink.500'}
+                            bgColor={bgColorVse}
                             onClick={onCopyVse}
                             aria-label="Copy"
                             icon={<CopyIcon />} />
@@ -103,7 +106,7 @@ const VisualisationPanel = ({vse, locale, contentId, toolbarState}) => {
                         <IconButton
                             colorScheme={'ampliencePink'}
                             size="xs"
-                            bgColor={hasCopiedLocale ? 'gray.500' : 'ampliencePink.500'}
+                            bgColor={bgColorLocale}
                             onClick={onCopyLocale}
                             aria-label="Copy"
                             icon={<CopyIcon />} />
@@ -122,7 +125,7 @@ const VisualisationPanel = ({vse, locale, contentId, toolbarState}) => {
                                     <IconButton
                                         colorScheme={'ampliencePink'}
                                         size="xs"
-                                        bgColor={hasCopiedContentId ? 'gray.500' : 'ampliencePink.500'}
+                                        bgColor={bgColorContent}
                                         onClick={onCopyContentId}
                                         aria-label="Copy"
                                         icon={<CopyIcon />} />
@@ -134,18 +137,12 @@ const VisualisationPanel = ({vse, locale, contentId, toolbarState}) => {
                         <Switch
                             defaultChecked={toolbarState.matchVisible}
                             size="sm"
-                            onChange={() => {
-                                toolbarState.matchVisible = !matchVisible
-                                setMatchVisible(!matchVisible)
-                            }}
+                            onChange={switchInfo}
                             colorScheme={'ampliencePink'}
                             isChecked={matchVisible}
                         />
                         <Text
-                            onClick={() => {
-                                toolbarState.matchVisible = !matchVisible
-                                setMatchVisible(!matchVisible)
-                            }}
+                            onClick={switchInfo}
                             fontSize="xs">
                             {
                                 intl.formatMessage({
