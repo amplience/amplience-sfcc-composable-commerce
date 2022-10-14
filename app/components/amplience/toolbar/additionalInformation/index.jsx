@@ -123,27 +123,38 @@ const AdditionalInformation = ({_meta, slot, matchesList}) => {
         </>
     )
 
-    const PersonalisationRender = ({deliveryId, name, matchesList}) => (
-        <>
-            <Heading as="h2" size="xs">
-                <Link
-                    color={'ampliencePink.500'}
-                    target={'_blank'}
-                    href={`https://content.amplience.net/#!/${currentHub}/authoring/content-item/edit/${deliveryId}`}>{name}</Link>
-            </Heading>
-            {matchesList.map(({title, match, maxReached}) => (<Box>
-                {match && !maxReached ?
-                    <CheckCircleIcon {...styles.infoBox} color={'green'} width={'14px'} /> :
-                    match && maxReached ?
-                        <CheckIcon {...styles.infoBox} color={'grey'} /> :
-                        <CloseIcon {...styles.infoBox} color={'red'} />}
-                <Text fontSize="xs" as={'span'}>{title}</Text>
-            </Box>))}
-            <Spacer h={6} />
-            <Divider />
-            <Legend />
-        </>
-    )
+    const PersonalisationRender = ({deliveryId, name, matchesList}) => {
+        const {formatMessage} = useIntl()
+        return (
+            <>
+                <Heading as="h2" size="xs">
+                    <Link
+                        color={'ampliencePink.500'}
+                        target={'_blank'}
+                        href={`https://content.amplience.net/#!/${currentHub}/authoring/content-item/edit/${deliveryId}`}>{name}</Link>
+                </Heading>
+                {matchesList.map(({title, isDefault, match, maxReached}) => (<Box>
+                    {match && !maxReached ?
+                        <CheckCircleIcon {...styles.infoBox} color={'green'} width={'14px'} /> :
+                        match && maxReached ?
+                            <CheckIcon {...styles.infoBox} color={'grey'} /> :
+                            <CloseIcon {...styles.infoBox} color={'red'} />}
+                    <Text fontSize="xs" as={'span'}>{
+                        isDefault ? formatMessage({
+                            defaultMessage: 'Default variant',
+                            id: 'toolbar.additional.default'
+                        }) : `${formatMessage({
+                            defaultMessage: 'Variant',
+                            id: 'toolbar.additional.variant'
+                        })} ${title}`
+                    }</Text>
+                </Box>))}
+                <Spacer h={6} />
+                <Divider />
+                <Legend />
+            </>
+        )
+    }
 
     const items = [{
         color: 'teal',

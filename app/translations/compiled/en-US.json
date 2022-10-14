@@ -2569,6 +2569,12 @@
       "value": "Toolbar Opacity"
     }
   ],
+  "toolbar.additional.default": [
+    {
+      "type": 0,
+      "value": "Default variant"
+    }
+  ],
   "toolbar.additional.limit": [
     {
       "type": 0,
@@ -2585,6 +2591,12 @@
     {
       "type": 0,
       "value": "No match on default or variant"
+    }
+  ],
+  "toolbar.additional.variant": [
+    {
+      "type": 0,
+      "value": "Variant"
     }
   ],
   "toolbar.personalisation.heading": [
