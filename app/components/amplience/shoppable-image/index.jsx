@@ -37,6 +37,10 @@ const Contain = styled(Box)`
     .interactive:hover {
         border-width: 3px;
     }
+
+    a:focus .interactive {
+        border-width: 3px;
+    }
 `
 
 const Polygon = styled(Box)`
