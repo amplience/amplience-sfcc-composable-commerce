@@ -5,8 +5,8 @@
  * For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
 
-import React, {useContext, useState} from 'react'
-import {useParams} from 'react-router-dom'
+import React, {useContext, useEffect, useState} from 'react'
+import {useLocation, useParams} from 'react-router-dom'
 import PropTypes from 'prop-types'
 import {Box} from '@chakra-ui/react'
 import Seo from '../../../components/seo'
@@ -24,7 +24,11 @@ import {useAmpRtv} from '../../../utils/amplience/rtv'
  */
 const AmpRtv = ({vse, contentId, hubname}) => {
     const [formContent, setFormContent] = useState(undefined)
+    const [localVse, setLocalVse] = useState(vse)
+    const [localContentId, setLocalContentId] = useState(contentId)
+    const [localHubname, setLocalHubname] = useState(hubname)
     const {groups} = useContext(AmplienceContext)
+    const location = useLocation()
 
     useAmpRtv(
         (model) => {
@@ -34,13 +38,35 @@ const AmpRtv = ({vse, contentId, hubname}) => {
         [groups]
     )
 
+    useEffect(() => {
+        // Lets automatically close the mobile navigation when the
+        // location path is changed.
+        const activeParams = new URLSearchParams(location.search || '')
+        const vse = activeParams.get('vse')
+        const contentId = activeParams.get('contentId')
+        const hub = activeParams.get('hub')
+
+        if (vse) {
+            setLocalVse(vse)
+        }
+
+        if (contentId) {
+            setLocalContentId(contentId)
+        }
+
+        if (hub){
+            setLocalHubname(hub)
+        }
+
+    }, [location])
+
     // Overwrite the context to perform vis from vse.
 
-    const fetch = formContent ? undefined : {id: contentId}
+    const fetch = formContent ? undefined : {id: localContentId}
 
     return (
         <Box data-testid="real-viz" layerStyle="page">
-            <AmplienceContextProvider hubname={hubname} vse={vse} contentId={contentId} groups={groups}>
+            <AmplienceContextProvider hubname={localHubname} vse={localVse} contentId={localContentId} groups={groups}>
                 <Seo
                     title="Home Page"
                     description="Commerce Cloud Retail React App"
@@ -60,9 +86,9 @@ AmpRtv.propTypes = {
 }
 
 AmpRtv.getProps = async ({req}) => {
-    const vse = req?.query['vse'];
-    const contentId = req?.query['contentId'];
-    const hubname = req?.query['hub'];
+    const vse = req?.query['vse']
+    const contentId = req?.query['contentId']
+    const hubname = req?.query['hub']
 
     return {vse, contentId, hubname}
 }

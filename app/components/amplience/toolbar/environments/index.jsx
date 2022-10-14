@@ -10,7 +10,7 @@ const EnvironmentsPanel = ({vse}) => {
     const styles = useMultiStyleConfig('PreviewHeader')
     const navigate = useNavigation()
     const { envs } = useContext(AmplienceContext)
-    const [currentHub, setCurrentHub] = useState({})
+    const [currentHub, setCurrentHub] = useState('')
 
     const handleNewCurrentEnv = (e) => {
         const env = JSON.parse(decodeURIComponent(e.target.dataset.env))
@@ -38,7 +38,7 @@ const EnvironmentsPanel = ({vse}) => {
             <VStack spacing={4} align='flex-start'>
             {
                 vse && envs.map(env => {
-                    if (env.hub == currentHub) {
+                    if (env.hub === currentHub) {
                         return <Heading as='h4' size='xs' fontSize='xs'>
                                 <b>{env.name} ({env.hub})</b>
                             </Heading>
