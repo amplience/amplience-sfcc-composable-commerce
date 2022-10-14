@@ -38,6 +38,10 @@ const Contain = styled(Box)`
         border-width: 3px;
     }
 
+    a:focus {
+        box-shadow: none !important;
+    }
+
     a:focus .interactive {
         border-width: 3px;
     }
@@ -71,7 +75,14 @@ const Polygon = styled(Box)`
     animation: gradient 7s ease infinite;
 `
 
-const ShoppableImageInteractable = ({target, selector, tooltips, tooltipPlacement, children}) => {
+const ShoppableImageInteractable = ({
+    target,
+    selector,
+    tooltips,
+    tooltipPlacement,
+    children,
+    transform
+}) => {
     const matchTooltip = tooltips?.find((tooltip) => tooltip.key === target)
     const api = useCommerceAPI()
     const intl = useIntl()
@@ -146,23 +157,29 @@ const ShoppableImageInteractable = ({target, selector, tooltips, tooltipPlacemen
 
     const label = matchTooltip?.value ?? tooltip
 
+    const style = {
+        position: 'absolute',
+        display: 'block',
+        transform
+    }
+
     switch (selector) {
         case 'product': {
             return (
-                <Link to={productUrlBuilder({id: target})}>
-                    <Tooltip label={label} {...tProps}>
+                <Tooltip label={label} {...tProps}>
+                    <Link to={productUrlBuilder({id: target})} {...style}>
                         {children}
-                    </Tooltip>
-                </Link>
+                    </Link>
+                </Tooltip>
             )
         }
         case 'category': {
             return (
-                <Link to={categoryUrlBuilder({id: target})}>
-                    <Tooltip label={label} {...tProps}>
+                <Tooltip label={label} {...tProps}>
+                    <Link to={categoryUrlBuilder({id: target})} {...style}>
                         {children}
-                    </Tooltip>
-                </Link>
+                    </Link>
+                </Tooltip>
             )
         }
         case 'link': {
@@ -173,27 +190,29 @@ const ShoppableImageInteractable = ({target, selector, tooltips, tooltipPlacemen
                 link = target
             }
             return (
-                <Link to={link}>
-                    <Tooltip label={label} {...tProps}>
+                <Tooltip label={label} {...tProps}>
+                    <Link to={link} {...style}>
                         {children}
-                    </Tooltip>
-                </Link>
+                    </Link>
+                </Tooltip>
             )
         }
         case 'page':
             // TODO: get page name?
             return (
-                <Link to={'/page/' + target}>
-                    <Tooltip label={label} {...tProps}>
+                <Tooltip label={label} {...tProps}>
+                    <Link to={'/page/' + target} {...style}>
                         {children}
-                    </Tooltip>
-                </Link>
+                    </Link>
+                </Tooltip>
             )
         case 'tooltip': {
             if (matchTooltip) {
                 return (
                     <Tooltip label={matchTooltip.value} {...tProps}>
-                        {children}
+                        <Box {...style} tabIndex="0">
+                            {children}
+                        </Box>
                     </Tooltip>
                 )
             }
@@ -203,18 +222,19 @@ const ShoppableImageInteractable = ({target, selector, tooltips, tooltipPlacemen
         case 'contentKey':
             return (
                 <>
-                    <Link
-                        to="#"
-                        onClick={(evt) => {
-                            onOpen()
-                            evt.preventDefault()
-                            return false
-                        }}
-                    >
-                        <Tooltip label={matchTooltip?.value ?? tooltip} {...tProps}>
+                    <Tooltip label={matchTooltip?.value ?? tooltip} {...tProps}>
+                        <Link
+                            to="#"
+                            onClick={(evt) => {
+                                onOpen()
+                                evt.preventDefault()
+                                return false
+                            }}
+                            {...style}
+                        >
                             {children}
-                        </Tooltip>
-                    </Link>
+                        </Link>
+                    </Tooltip>
                     <Drawer onClose={onClose} isOpen={isOpen} size="xl">
                         <DrawerOverlay />
                         <DrawerContent>
@@ -239,7 +259,8 @@ ShoppableImageInteractable.propTypes = {
     selector: PropTypes.string,
     tooltips: PropTypes.array,
     tooltipPlacement: PropTypes.string,
-    children: PropTypes.node
+    children: PropTypes.node,
+    transform: PropTypes.string
 }
 
 const getBounds = (points) => {
@@ -387,12 +408,10 @@ const ShoppableImage = ({
         const hotspotSize = minDim / 8
 
         const polyStyle = {
-            position: 'absolute',
             borderRadius: '10px'
         }
 
         const hotspotStyle = {
-            position: 'absolute',
             width: `${hotspotSize}px`,
             height: `${hotspotSize}px`,
             borderRadius: `${hotspotSize / 2}px`,
@@ -409,8 +428,7 @@ const ShoppableImage = ({
 
                 const style = {
                     width: `${bounds.w}px`,
-                    height: `${bounds.h}px`,
-                    transform: `translate(${bounds.x}px, ${bounds.y}px)`
+                    height: `${bounds.h}px`
                 }
 
                 if (poly.points.length > 5) {
@@ -425,6 +443,7 @@ const ShoppableImage = ({
                         tooltips={tooltips}
                         tooltipPlacement={tooltipPlacement}
                         key={poly.id}
+                        transform={`translate(${bounds.x}px, ${bounds.y}px)`}
                     >
                         <Polygon
                             {...polyStyle}
@@ -461,8 +480,13 @@ const ShoppableImage = ({
                 const transform = `translate(${tX(point.x)}px, ${tY(point.y)}px)`
 
                 elements.push(
-                    <ShoppableImageInteractable {...hotspot} tooltips={tooltips} key={hotspot.id}>
-                        <Box {...hotspotStyle} transform={transform} className="interactive">
+                    <ShoppableImageInteractable
+                        {...hotspot}
+                        tooltips={tooltips}
+                        key={hotspot.id}
+                        transform={transform}
+                    >
+                        <Box {...hotspotStyle} className="interactive">
                             <Svg>
                                 <circle cx="130" cy="130" r="130" fill="rgba(255, 255, 255, 0.5)" />
                                 <path
