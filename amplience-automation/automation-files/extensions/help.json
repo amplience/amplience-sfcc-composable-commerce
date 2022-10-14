@@ -7,7 +7,10 @@
   "enabledForAllContentTypes": false,
   "category": "CONTENT_FIELD",
   "parameters": "{}",
-  "snippets": [],
+  "snippets": [{
+    "label": "Help Block",
+    "body": "{\n    \"type\": \"object\",\n    \"ui:extension\": {\n      \"name\": \"help\",\n      \"params\": {\n          \"title\": \"Help Message Title\",\n          \"message\": \"Markdown message body. Replace with any markdown string.\"\n      }\n    }\n}"
+  }],
   "settings": "{\"API\":{\"READ\":false,\"EDIT\":false},\"SANDBOX\":{\"SAME_ORIGIN\":false,\"MODALS\":false,\"NAVIGATION\":false,\"POPUPS\":false,\"POPUP_ESCAPE_SANDBOX\":false,\"DOWNLOADS\":false,\"FORMS\":false}}",
   "status": "ACTIVE",
   "createdBy": "faf50c60-6d31-48fe-8af3-c52557850527",
