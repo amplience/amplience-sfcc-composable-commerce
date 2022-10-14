@@ -61,7 +61,7 @@ const ContentPage = ({page, pageVse}) => {
                     <Heading
                         as="h1"
                         fontSize={{base: '4xl', md: '5xl', lg: '6xl'}}
-                        maxWidth={{base: '75%', md: '50%', lg: 'md'}}
+                        maxWidth={{base: '75%', md: '50%', lg: 'xl'}}
                     >
                         {pageModel.seo?.title}
                     </Heading>
