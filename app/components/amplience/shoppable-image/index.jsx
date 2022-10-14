@@ -69,6 +69,8 @@ const Polygon = styled(Box)`
 
 const ShoppableImageInteractable = ({target, selector, tooltips, tooltipPlacement, children}) => {
     const matchTooltip = tooltips?.find((tooltip) => tooltip.key === target)
+    const api = useCommerceAPI()
+    const intl = useIntl()
 
     const {isOpen, onOpen, onClose} = useDisclosure()
     const tProps = {placement: tooltipPlacement ?? 'bottom'}
@@ -90,16 +92,12 @@ const ShoppableImageInteractable = ({target, selector, tooltips, tooltipPlacemen
 
     const [tooltip, setTooltip] = useState(defaultTooltip)
 
-    const label = matchTooltip?.value ?? tooltip
+    // Effects which rewrite the tooltip after fetching data.
+    useEffect(() => {
+        let useResult = true
 
-    switch (selector) {
-        case 'product': {
-            const api = useCommerceAPI()
-            const intl = useIntl()
-
-            useEffect(() => {
-                let useResult = true
-
+        switch (selector) {
+            case 'product': {
                 api.shopperProducts
                     .getProduct({
                         parameters: {
@@ -109,18 +107,28 @@ const ShoppableImageInteractable = ({target, selector, tooltips, tooltipPlacemen
                     })
                     .then((product) => {
                         if (useResult) {
-                            setTooltip(
-                                `${product.name} - ${intl.formatNumber(product.price, {
-                                    style: 'currency',
-                                    currency: product.currency
-                                })}`
-                            )
+                            if (product.isError) {
+                                setTooltip('Product not found')
+                            } else {
+                                setTooltip(
+                                    `${product.name} - ${intl.formatNumber(product.price, {
+                                        style: 'currency',
+                                        currency: product.currency
+                                    })}`
+                                )
+                            }
                         }
                     })
+            }
+        }
 
-                return () => (useResult = false)
-            }, [target])
+        return () => (useResult = false)
+    }, [selector, target])
 
+    const label = matchTooltip?.value ?? tooltip
+
+    switch (selector) {
+        case 'product': {
             return (
                 <Link to={productUrlBuilder({id: target})}>
                     <Tooltip label={label} {...tProps}>
