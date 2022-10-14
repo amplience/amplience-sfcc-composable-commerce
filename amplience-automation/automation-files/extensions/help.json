@@ -1,0 +1,17 @@
+{
+  "name": "help",
+  "label": "Help",
+  "description": "Add markdown help text to the content form.",
+  "url": "https://apps.dev-artifacts.adis.ws/dc-extension-help/feature-init/index.html",
+  "height": 68,
+  "enabledForAllContentTypes": false,
+  "category": "CONTENT_FIELD",
+  "parameters": "{}",
+  "snippets": [],
+  "settings": "{\"API\":{\"READ\":false,\"EDIT\":false},\"SANDBOX\":{\"SAME_ORIGIN\":false,\"MODALS\":false,\"NAVIGATION\":false,\"POPUPS\":false,\"POPUP_ESCAPE_SANDBOX\":false,\"DOWNLOADS\":false,\"FORMS\":false}}",
+  "status": "ACTIVE",
+  "createdBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+  "createdDate": "2022-10-10T10:00:27.033Z",
+  "lastModifiedBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+  "lastModifiedDate": "2022-10-10T10:14:09.713Z"
+}
