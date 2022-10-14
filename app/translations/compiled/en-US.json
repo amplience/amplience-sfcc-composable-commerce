@@ -2569,6 +2569,36 @@
       "value": "Toolbar Opacity"
     }
   ],
+  "toolbar.additional.default": [
+    {
+      "type": 0,
+      "value": "Default variant"
+    }
+  ],
+  "toolbar.additional.limit": [
+    {
+      "type": 0,
+      "value": "Match on variant, but ignored (max items number)"
+    }
+  ],
+  "toolbar.additional.match": [
+    {
+      "type": 0,
+      "value": "Match on default or variant"
+    }
+  ],
+  "toolbar.additional.noMatch": [
+    {
+      "type": 0,
+      "value": "No match on default or variant"
+    }
+  ],
+  "toolbar.additional.variant": [
+    {
+      "type": 0,
+      "value": "Variant"
+    }
+  ],
   "toolbar.personalisation.heading": [
     {
       "type": 0,

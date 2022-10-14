@@ -289,22 +289,22 @@ export class AmplienceAPI {
         const {
             variants = [],
             maxNumberMatches = 1,
-            defaultContent,
+            defaultContent
         } = props
         const matchesList = [{
             title: 'Default variant',
+            isDefault: true,
             match: false
         }]
-        let maxNumberCounter = 0;
+        let maxNumberCounter = 0
 
         const matches = compact(
             variants.map((arg: Variant, ind: number) => {
                 const similar = intersection(arg.segment, this.groups)
                 const matchObj = {
-                    title: `Variant ${ind + 1} - (${arg.matchMode}) ${similar.join(
-                        ', '
-                    )} segment${similar.length > 1 ? 's' : ''}`,
+                    title: `${ind + 1} - (${arg.matchMode}) ${similar.join(', ')}`,
                     match: true,
+                    isDefault: false,
                     maxReached: false
                 }
                 if (
@@ -312,17 +312,15 @@ export class AmplienceAPI {
                         ? similar.length == 0
                         : similar.length < arg.segment.length
                 ) {
-                    matchObj.title = `Variant ${ind + 1} - (${arg.matchMode}) ${arg.segment.join(
-                        ', '
-                    )} segment${arg.segment.length > 1 ? 's' : ''}`;
+                    matchObj.title = `${ind + 1} - (${arg.matchMode}) ${arg.segment.join(', ')}`
                     matchObj.match = false
                     matchesList.push(matchObj)
                     return null
                 }
 
-                maxNumberCounter += 1;
-                if (maxNumberCounter > maxNumberMatches){
-                    matchObj.maxReached = true;
+                maxNumberCounter += 1
+                if (maxNumberCounter > maxNumberMatches) {
+                    matchObj.maxReached = true
                 }
                 matchesList.push(matchObj)
                 return arg

@@ -2647,6 +2647,36 @@
       "value": "Transparence de la barre d'outils"
     }
   ],
+  "toolbar.additional.default": [
+    {
+      "type": 0,
+      "value": "Contenu par défault"
+    }
+  ],
+  "toolbar.additional.limit": [
+    {
+      "type": 0,
+      "value": "Correspondance sur la variante, mais ignorée (nombre maximal d'éléments)"
+    }
+  ],
+  "toolbar.additional.match": [
+    {
+      "type": 0,
+      "value": "Correspondance par défaut ou variante"
+    }
+  ],
+  "toolbar.additional.noMatch": [
+    {
+      "type": 0,
+      "value": "Aucune correspondance par défaut ou variante"
+    }
+  ],
+  "toolbar.additional.variant": [
+    {
+      "type": 0,
+      "value": "Variante"
+    }
+  ],
   "toolbar.personalisation.heading": [
     {
       "type": 0,

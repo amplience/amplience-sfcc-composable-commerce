@@ -1125,6 +1125,21 @@
   "toolbar.about.heading": {
     "defaultMessage": "Toolbar Opacity"
   },
+  "toolbar.additional.default": {
+    "defaultMessage": "Default variant"
+  },
+  "toolbar.additional.limit": {
+    "defaultMessage": "Match on variant, but ignored (max items number)"
+  },
+  "toolbar.additional.match": {
+    "defaultMessage": "Match on default or variant"
+  },
+  "toolbar.additional.noMatch": {
+    "defaultMessage": "No match on default or variant"
+  },
+  "toolbar.additional.variant": {
+    "defaultMessage": "Variant"
+  },
   "toolbar.personalisation.heading": {
     "defaultMessage": "Customer groups"
   },
