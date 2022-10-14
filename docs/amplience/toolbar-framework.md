@@ -65,7 +65,7 @@ Toolbar is saving its state in `openedPanels` and `toolbarOpacity` so it appears
 
 The renderer for each Panel is using the `AccordionItem` component from Chakra UI.
 
-```xml
+```jsx
 <AccordionItem {...styles.section}>
     <AccordionButton
         onClick={onClick}
