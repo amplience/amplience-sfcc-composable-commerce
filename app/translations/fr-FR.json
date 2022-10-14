@@ -1159,6 +1159,15 @@
   "toolbar.about.heading": {
     "defaultMessage": "Transparence de la barre d'outils"
   },
+  "toolbar.additional.limit": {
+    "defaultMessage": "Correspondance sur la variante, mais ignorée (nombre maximal d'éléments)"
+  },
+  "toolbar.additional.match": {
+    "defaultMessage": "Correspondance par défaut ou variante"
+  },
+  "toolbar.additional.noMatch": {
+    "defaultMessage": "Aucune correspondance par défaut ou variante"
+  },
   "toolbar.personalisation.heading": {
     "defaultMessage": "Segments clients"
   },
