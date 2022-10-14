@@ -78,7 +78,10 @@ const ShoppableImageInteractable = ({target, selector, tooltips, tooltipPlacemen
     let defaultTooltip = target
     switch (selector) {
         case 'product':
-            defaultTooltip = 'Loading...'
+            defaultTooltip = intl.formatMessage({
+                id: 'amplience.shoppable_image.loading',
+                defaultMessage: 'Loading...'
+            })
             break
         case 'category': {
             const {categories} = useCategories()
@@ -86,7 +89,10 @@ const ShoppableImageInteractable = ({target, selector, tooltips, tooltipPlacemen
             break
         }
         case 'contentKey':
-            defaultTooltip = 'Click to open...'
+            defaultTooltip = intl.formatMessage({
+                id: 'amplience.shoppable_image.content_key',
+                defaultMessage: 'Click to open...'
+            })
             break
     }
 
@@ -97,29 +103,38 @@ const ShoppableImageInteractable = ({target, selector, tooltips, tooltipPlacemen
         let useResult = true
 
         switch (selector) {
-            case 'product': {
-                api.shopperProducts
-                    .getProduct({
-                        parameters: {
-                            id: target,
-                            allImages: true
-                        }
-                    })
-                    .then((product) => {
-                        if (useResult) {
-                            if (product.isError) {
-                                setTooltip('Product not found')
-                            } else {
-                                setTooltip(
-                                    `${product.name} - ${intl.formatNumber(product.price, {
-                                        style: 'currency',
-                                        currency: product.currency
-                                    })}`
-                                )
+            case 'product':
+                {
+                    api.shopperProducts
+                        .getProduct({
+                            parameters: {
+                                id: target,
+                                allImages: true
                             }
-                        }
-                    })
-            }
+                        })
+                        .then((product) => {
+                            if (useResult) {
+                                if (product.isError) {
+                                    setTooltip(
+                                        intl.formatMessage({
+                                            id: 'amplience.shoppable_image.product_404',
+                                            defaultMessage: 'Product not found'
+                                        })
+                                    )
+                                } else {
+                                    setTooltip(
+                                        `${product.name} - ${intl.formatNumber(product.price, {
+                                            style: 'currency',
+                                            currency: product.currency
+                                        })}`
+                                    )
+                                }
+                            }
+                        })
+                }
+                break
+            default:
+                setTooltip(defaultTooltip)
         }
 
         return () => (useResult = false)
@@ -192,7 +207,7 @@ const ShoppableImageInteractable = ({target, selector, tooltips, tooltipPlacemen
                             return false
                         }}
                     >
-                        <Tooltip label={matchTooltip?.value ?? 'Click to open...'} {...tProps}>
+                        <Tooltip label={matchTooltip?.value ?? tooltip} {...tProps}>
                             {children}
                         </Tooltip>
                     </Link>
