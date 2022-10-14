@@ -22,22 +22,49 @@ import {
 } from '@chakra-ui/icons'
 import {AmplienceContext} from '../../../../contexts/amplience'
 import moment from 'moment'
+import {useIntl} from 'react-intl'
 
 const Legend = () => {
     const styles = useMultiStyleConfig('PreviewHeader')
+    const {formatMessage} = useIntl()
 
     return (<Box>
         <Box>
             <CheckCircleIcon {...styles.infoBox} color={'green'} width={'14px'} />
-            <Text fontSize="xs" as={'span'}>Match on default or variant</Text>
+            <Text fontSize="xs" as={'span'}>
+                {
+                    formatMessage({
+                        defaultMessage:
+                            'Match on default or variant',
+                        id: 'toolbar.additional.match'
+                    })
+                }
+            </Text>
         </Box>
         <Box>
             <CloseIcon {...styles.infoBox} color={'red'} />
-            <Text fontSize="xs" as={'span'}>No match on default or variant</Text>
+            <Text fontSize="xs" as={'span'}>
+                {
+                    formatMessage({
+                        defaultMessage:
+                            'No match on default or variant',
+                        id: 'toolbar.additional.noMatch'
+                    })
+                }
+            </Text>
         </Box>
         <Box>
             <CheckIcon {...styles.infoBox} color={'grey'} />
-            <Text fontSize="xs" as={'span'}>Match on variant, but ignored (max items number)</Text>
+            <Text fontSize="xs" as={'span'}>
+                {
+                    formatMessage({
+                        defaultMessage:
+                            'Match on variant, but ignored (max items number)',
+                        id: 'toolbar.additional.limit'
+                    })
+                }
+
+            </Text>
         </Box>
     </Box>)
 }
