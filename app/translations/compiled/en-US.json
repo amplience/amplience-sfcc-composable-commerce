@@ -2584,7 +2584,7 @@
   "toolbar.additional.limit": [
     {
       "type": 0,
-      "value": "Match on variant, but ignored (max items number)"
+      "value": "Match on variant, but ignored (max items reached)"
     }
   ],
   "toolbar.additional.match": [

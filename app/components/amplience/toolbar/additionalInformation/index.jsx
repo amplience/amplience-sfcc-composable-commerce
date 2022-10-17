@@ -68,7 +68,7 @@ const Legend = () => {
                 {
                     formatMessage({
                         defaultMessage:
-                            'Match on variant, but ignored (max items number)',
+                            'Match on variant, but ignored (max items reached)',
                         id: 'toolbar.additional.limit'
                     })
                 }

@@ -1132,7 +1132,7 @@
     "defaultMessage": "Legend"
   },
   "toolbar.additional.limit": {
-    "defaultMessage": "Match on variant, but ignored (max items number)"
+    "defaultMessage": "Match on variant, but ignored (max items reached)"
   },
   "toolbar.additional.match": {
     "defaultMessage": "Match on default or variant"

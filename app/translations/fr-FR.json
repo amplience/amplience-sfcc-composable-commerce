@@ -1166,7 +1166,7 @@
     "defaultMessage": "Légende"
   },
   "toolbar.additional.limit": {
-    "defaultMessage": "Correspondance sur la variante, mais ignorée (nombre maximal d'éléments)"
+    "defaultMessage": "Correspondance sur la variante, mais ignorée (nombre maximal atteint)"
   },
   "toolbar.additional.match": {
     "defaultMessage": "Correspondance par défaut ou variante"

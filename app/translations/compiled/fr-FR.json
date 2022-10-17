@@ -2662,7 +2662,7 @@
   "toolbar.additional.limit": [
     {
       "type": 0,
-      "value": "Correspondance sur la variante, mais ignorée (nombre maximal d'éléments)"
+      "value": "Correspondance sur la variante, mais ignorée (nombre maximal atteint)"
     }
   ],
   "toolbar.additional.match": [
