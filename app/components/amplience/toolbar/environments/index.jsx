@@ -15,8 +15,7 @@ const EnvironmentsPanel = ({vse}) => {
     const handleNewCurrentEnv = (e) => {
         const env = JSON.parse(decodeURIComponent(e.target.dataset.env))
         setCurrentHub(env.hub)
-        navigate(`/?vse=${env.vse}&vse-timestamp=null`)
-        window.location.reload()
+        window.location.href = `/?vse=${env.vse}&vse-timestamp=null`
     }
     
     useEffect(() => {
