@@ -1128,6 +1128,9 @@
   "toolbar.additional.default": {
     "defaultMessage": "Default variant"
   },
+  "toolbar.additional.legend": {
+    "defaultMessage": "Legend"
+  },
   "toolbar.additional.limit": {
     "defaultMessage": "Match on variant, but ignored (max items number)"
   },

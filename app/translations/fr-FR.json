@@ -1162,6 +1162,9 @@
   "toolbar.additional.default": {
     "defaultMessage": "Contenu par défault"
   },
+  "toolbar.additional.legend": {
+    "defaultMessage": "Légende"
+  },
   "toolbar.additional.limit": {
     "defaultMessage": "Correspondance sur la variante, mais ignorée (nombre maximal d'éléments)"
   },

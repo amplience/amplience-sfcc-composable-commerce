@@ -30,6 +30,15 @@ const Legend = () => {
 
     return (<Box>
         <Box>
+            <Heading as="h4" mt={4} mb={2} fontSize={'xs'}>
+                {
+                    formatMessage({
+                        defaultMessage:
+                            'Legend',
+                        id: 'toolbar.additional.legend'
+                    })
+                }
+            </Heading>
             <CheckCircleIcon {...styles.infoBox} color={'green'} width={'14px'} />
             <Text fontSize="xs" as={'span'}>
                 {

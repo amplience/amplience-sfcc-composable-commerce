@@ -2575,6 +2575,12 @@
       "value": "Default variant"
     }
   ],
+  "toolbar.additional.legend": [
+    {
+      "type": 0,
+      "value": "Legend"
+    }
+  ],
   "toolbar.additional.limit": [
     {
       "type": 0,

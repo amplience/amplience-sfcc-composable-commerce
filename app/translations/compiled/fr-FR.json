@@ -2653,6 +2653,12 @@
       "value": "Contenu par défault"
     }
   ],
+  "toolbar.additional.legend": [
+    {
+      "type": 0,
+      "value": "Légende"
+    }
+  ],
   "toolbar.additional.limit": [
     {
       "type": 0,
