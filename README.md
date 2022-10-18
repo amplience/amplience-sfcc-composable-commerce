@@ -23,20 +23,28 @@ This version of the SF Retail React app integrates Amplience as the Content CMS 
  The documentation [starting here below](#the-retail-react-app) is 'as-is' from Salesforce. For Amplience specifics please see the docs listed under [Amplience Contents](#amplience-contents).
  
 ## Amplience Contents
+**Quick Start**
 * [Getting Started](./docs/amplience/getting-started.md)
 * [SFCC Setup for Amplience](./docs/amplience/sfcc-setup.md)
 * [Security Updates](./docs/amplience/security-updates.md) 
+
+**Core Functionalities**
 * [Amplience API](./docs/amplience/amplience-api.md)
-* [Amplience Extensions List](./docs/amplience/amplience-extensions-list.md)
-* [Amplience Components List](./docs/amplience/amplience-components-list.md)
-* [AmplienceWrapper Component](./docs/amplience/ampliencewrapper-component.md)
-* [Navigation](./docs/amplience/navigation.md)
-* [Product Listing Page (PLP) Management](./docs/amplience/product-listing-page-management.md)
 * [Visualization](docs/amplience/visualization.md)
 * [Preview](docs/amplience/preview.md)
 * [Amplience Account](docs/amplience/amplience-account.md)
 * [Automation](docs/amplience/automation.md)
-* [Personalisation (Customer Groups)](docs/amplience/personalisation.md) 
+
+**Experience Management**
+* [Navigation](./docs/amplience/navigation.md)
+* [Product Listing Page (PLP) Management](./docs/amplience/product-listing-page-management.md)
+* [Personalisation (Customer Groups)](docs/amplience/personalisation.md)
+
+**Components & Extensions**
+* [Amplience Extensions List](./docs/amplience/amplience-extensions-list.md)
+* [Amplience Components List](./docs/amplience/amplience-components-list.md)
+  * [AmplienceWrapper Component](./docs/amplience/ampliencewrapper-component.md) specifics
+  * [Shoppable Image](docs/amplience/shoppable-image-component.md) specifics
 * [Toolbar Framework](docs/amplience/toolbar-framework.md)
 
 > Note: This code is built against the code version @latest at the time which was PWAKit v2.2.0 released on August 27th 2022: https://github.com/SalesforceCommerceCloud/pwa-kit/releases/tag/v2.2.0
