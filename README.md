@@ -23,24 +23,24 @@ This version of the SF Retail React app integrates Amplience as the Content CMS 
  The documentation [starting here below](#the-retail-react-app) is 'as-is' from Salesforce. For Amplience specifics please see the docs listed under [Amplience Contents](#amplience-contents).
  
 ## Amplience Contents
-**Quick Start**
+### 🏁 Quick Start
 * [Getting Started](./docs/amplience/getting-started.md)
 * [SFCC Setup for Amplience](./docs/amplience/sfcc-setup.md)
 * [Security Updates](./docs/amplience/security-updates.md) 
 
-**Core Functionalities**
+### ⚙️ Core Functionalities
 * [Amplience API](./docs/amplience/amplience-api.md)
 * [Visualization](docs/amplience/visualization.md)
 * [Preview](docs/amplience/preview.md)
 * [Amplience Account](docs/amplience/amplience-account.md)
 * [Automation](docs/amplience/automation.md)
 
-**Experience Management**
+### 👥 Experience Management
 * [Navigation](./docs/amplience/navigation.md)
 * [Product Listing Page (PLP) Management](./docs/amplience/product-listing-page-management.md)
 * [Personalisation (Customer Groups)](docs/amplience/personalisation.md)
 
-**Components & Extensions**
+### 🧩 Components & Extensions
 * [Amplience Extensions List](./docs/amplience/amplience-extensions-list.md)
 * [Amplience Components List](./docs/amplience/amplience-components-list.md)
   * [AmplienceWrapper Component specifics](./docs/amplience/ampliencewrapper-component.md)
@@ -62,7 +62,6 @@ There is currently no 'out of the box' API available that enables you to see whi
 Please ensure that your SFCC sandbox has the [Amplience Hooks Bridge Cartridge](https://github.com/amplience/amplience-sfcc-hooksbridge) installed with the correct OCAPI permissions as per the documentation.
 
 > Note: When the Salesforce [Shopper Context API](https://developer.salesforce.com/docs/commerce/commerce-api/references/shopper-context) is out of BETA, the code examples may change to make use of this API.
-
 
 # The Retail React App
 
