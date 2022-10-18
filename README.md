@@ -27,6 +27,7 @@ This version of the SF Retail React app integrates Amplience as the Content CMS 
 * [SFCC Setup for Amplience](./docs/amplience/sfcc-setup.md)
 * [Security Updates](./docs/amplience/security-updates.md) 
 * [Amplience API](./docs/amplience/amplience-api.md)
+* [Amplience Extensions List](./docs/amplience/amplience-extensions-list.md)
 * [Amplience Components List](./docs/amplience/amplience-components-list.md)
 * [AmplienceWrapper Component](./docs/amplience/ampliencewrapper-component.md)
 * [Navigation](./docs/amplience/navigation.md)
