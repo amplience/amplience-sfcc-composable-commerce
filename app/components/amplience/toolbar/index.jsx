@@ -74,6 +74,7 @@ const AccordionItemRender = ({title, Icon, Component, onClick, ...otherProps}) =
 const Toolbar = (props) => {
     const {envs} = useContext(AmplienceContext)
     const {formatMessage} = useIntl()
+    const [toolbarState] = useState({matchVisible: true})
 
     function inIframe() {
         try {
@@ -215,7 +216,7 @@ const Toolbar = (props) => {
                                             }}
                                             {...data}
                                             {...props}
-                                            toolbarState={{matchVisible: true}}
+                                            toolbarState={toolbarState}
                                             toolbarOpacity={toolbarOpacity}
                                             setToolbarOpacity={setToolbarOpacity}
                                         />
