@@ -9,6 +9,7 @@
 | https://sfcc.com/components/personalised-container | `./personalised-container/PersonalisedContainer` | A container that contains variants associated to customer groups to display personalised content |
 | https://sfcc.com/components/personalised-component | `./personalised-component/PersonalisedComponent` | A component that contains variants associated to customer groups to display personalised content |
 | https://sfcc.com/components/personalised-ingrid-component | `./personalised-component/PersonalisedComponent` | A component that contains variants associated to customer groups to display personalised content, but only for grid items |
+| https://sfcc.com/components/shoppable-image | `./sgoppable-image/ShoppableImage` | A A component that allows the merchandizer to add hotspot links to an image. Links may point to Commerce products & catagories, as well as simple tooltips and external URLs.  |
 | https://sfcc.com/slots/flexible-list | `./flexibleListSlot/flexibleListSlot` | A slot that contains a flexible list of content |
 | https://sfcc.com/slots/personalised-slot | `./personalised-slot/PersonalisedComponent` | A slot that contains variants associated to customer groups to display personalised content |
 
