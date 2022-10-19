@@ -361,6 +361,24 @@
       "value": "Vous aimerez peut-être aussi"
     }
   ],
+  "amplience.shoppable_image.content_key": [
+    {
+      "type": 0,
+      "value": "Cliquer pour ouvrir..."
+    }
+  ],
+  "amplience.shoppable_image.loading": [
+    {
+      "type": 0,
+      "value": "Chargement..."
+    }
+  ],
+  "amplience.shoppable_image.product_404": [
+    {
+      "type": 0,
+      "value": "Impossible de trouver le produit"
+    }
+  ],
   "auth_modal.description.now_signed_in": [
     {
       "type": 0,
