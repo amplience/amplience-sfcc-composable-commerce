@@ -14,17 +14,85 @@
         "name": "shoppable-accessories-vadim-sherbakov-tCICLJ5ktBE-unsplash",
         "endpoint": "sfcccompdev2",
         "defaultHost": "cdn.media.amplience.net"
+      },
+      "hotspots": [
+        {
+          "id": "4a96d429-1811-4da4-b5ce-30bcc2265f94",
+          "target": "tooltip/watch",
+          "selector": "tooltip",
+          "points": {
+            "x": 0.4482758620689655,
+            "y": 0.7270742358078602
+          }
+        }
+      ],
+      "polygons": [
+        {
+          "id": "149b751a-f307-430b-b612-49f806d3bb35",
+          "target": "content/information/sunglasses",
+          "selector": "contentKey",
+          "points": [
+            {
+              "x": 0.2672413793103448,
+              "y": 0.15065502183406113
+            },
+            {
+              "x": 0.3735632183908046,
+              "y": 0.15065502183406113
+            },
+            {
+              "x": 0.3735632183908046,
+              "y": 0.48034934497816595
+            },
+            {
+              "x": 0.2672413793103448,
+              "y": 0.48034934497816595
+            }
+          ]
+        }
+      ]
+    },
+    "tooltips": [
+      {
+        "value": {
+          "values": [
+            {
+              "locale": "en-US",
+              "value": "Watch coming soon!"
+            },
+            {
+              "locale": "fr-FR",
+              "value": "Montre bientôt disponible !"
+            },
+            {
+              "locale": "de-DE",
+              "value": "Uhr kommt bald !"
+            },
+            {
+              "locale": "es-ES",
+              "value": "Reloj próximamente"
+            },
+            {
+              "locale": "it-IT",
+              "value": "Orologio in arrivo"
+            }
+          ],
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+          }
+        },
+        "key": "tooltip/watch"
       }
-    }
+    ]
   },
-  "version": 1,
+  "version": 2,
   "label": "Accessories Shoppable collection",
   "status": "ACTIVE",
   "createdBy": "918ec612-377d-4c6a-94e4-9d4fcf8a25b0",
   "createdDate": "2022-10-05T09:48:20.618Z",
-  "lastModifiedBy": "918ec612-377d-4c6a-94e4-9d4fcf8a25b0",
-  "lastModifiedDate": "2022-10-05T09:48:20.618Z",
-  "lastPublishedVersion": 1,
-  "lastPublishedDate": "2022-10-11T17:24:54.094Z",
+  "lastModifiedBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+  "lastModifiedDate": "2022-10-19T09:53:22.111Z",
+  "lastPublishedVersion": 2,
+  "lastPublishedDate": "2022-10-19T09:53:32.393Z",
   "deliveryId": "026cfc7a-ee0a-488d-bf61-c5fb36ffba86"
 }

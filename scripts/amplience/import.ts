@@ -214,17 +214,6 @@ export const importHandler = async (context: Arguments<Context>): Promise<any> =
             {stdio: 'inherit'}
         )
 
-        console.log(`Importing personalised content...`)
-        execSync(
-            `npx dc-cli content-item import ${context.tempDir}/content/content-personalised \
-                --baseRepo ${context.contentRepoId} \
-                --media true \
-                --publish \
-                --batchPublish \
-                --mapFile ${mappingFile}`,
-            {stdio: 'inherit'}
-        )
-
         console.log(`Importing slots...`)
         execSync(
             `npx dc-cli content-item import ${context.tempDir}/content/slots \

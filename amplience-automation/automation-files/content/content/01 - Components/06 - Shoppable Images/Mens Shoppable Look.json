@@ -133,8 +133,8 @@
         },
         {
           "id": "45cc95c5-c6a3-43d8-835e-b596a0fd76a4",
-          "target": "sunglasses",
-          "selector": "tooltip",
+          "target": "content/information/sunglasses",
+          "selector": "contentKey",
           "points": [
             {
               "x": 0.5898835516739448,
@@ -217,36 +217,6 @@
       }
     },
     "tooltips": [
-      {
-        "value": {
-          "values": [
-            {
-              "locale": "en-US",
-              "value": "Sunglasses coming soon!"
-            },
-            {
-              "locale": "fr-FR",
-              "value": "Les lunettes de soleil arrivent bientôt !"
-            },
-            {
-              "locale": "de-DE",
-              "value": "Sonnenbrille kommt bald!"
-            },
-            {
-              "locale": "es-ES",
-              "value": "Próximamente gafas de sol!"
-            },
-            {
-              "locale": "it-IT",
-              "value": "Occhiali da sole in arrivo!"
-            }
-          ],
-          "_meta": {
-            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
-          }
-        },
-        "key": "sunglasses"
-      },
       {
         "value": {
           "values": [
@@ -339,12 +309,14 @@
       }
     ]
   },
-  "version": 7,
+  "version": 9,
   "label": "Mens Shoppable Look",
   "status": "ACTIVE",
   "createdBy": "918ec612-377d-4c6a-94e4-9d4fcf8a25b0",
   "createdDate": "2022-10-04T12:45:21.103Z",
-  "lastModifiedBy": "918ec612-377d-4c6a-94e4-9d4fcf8a25b0",
-  "lastModifiedDate": "2022-10-12T09:14:08.019Z",
+  "lastModifiedBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+  "lastModifiedDate": "2022-10-19T09:59:37.354Z",
+  "lastPublishedVersion": 9,
+  "lastPublishedDate": "2022-10-19T09:59:48.980Z",
   "deliveryId": "b297be6e-e3ce-4312-bbe9-b54c9fbb7c4f"
 }

@@ -1,0 +1,189 @@
+{
+  "id": "93440e83-fd3c-43cb-8c7a-d35bc709ca67",
+  "body": {
+    "_meta": {
+      "name": "Sunglasses Information",
+      "schema": "https://sfcc.com/components/rich-text",
+      "deliveryKey": "content/information/sunglasses"
+    },
+    "header": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Sunglasses"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Des lunettes de soleil"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Sonnenbrille"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Gafas de sol"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Occhiali da sole"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "content": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla purus nunc, pulvinar vel erat id, interdum gravida eros. Vestibulum finibus sem at purus vulputate placerat. Donec nibh nisl, vulputate id consequat quis, semper nec diam. Curabitur a nunc eu ipsum aliquet mollis quis et nibh. Nullam eget venenatis eros. Duis non vestibulum leo. Quisque at interdum mauris. Maecenas in venenatis tellus, vel dictum ipsum. Curabitur felis justo, vulputate sed efficitur nec, placerat pellentesque massa. Pellentesque nec rhoncus nibh, vitae egestas dolor. Mauris feugiat leo eu diam ornare, et ultricies nisi commodo. In nec ultricies risus, nec commodo ipsum. In ut velit erat."
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "b19a5176-451c-4649-972a-4717f43dd571",
+                  "name": "shoppable-poi-womens-festival-amos-bar-zeev-hVk6pIFbW9o-unsplash",
+                  "endpoint": "sfcccompdev2",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "Cras in mauris elementum, vestibulum dui sit amet, interdum erat. Sed ullamcorper vestibulum augue, ut vehicula dolor sodales et. Quisque eu sagittis ipsum, nec tincidunt nisl. Integer auctor est nec felis eleifend vestibulum. Morbi aliquam ultrices arcu in varius. Sed molestie hendrerit purus id dapibus. Aliquam auctor ex et eros varius euismod. Curabitur porttitor dapibus lacus, et facilisis odio accumsan nec. Ut egestas enim risus, a egestas eros commodo finibus. In hac habitasse platea dictumst. Morbi et efficitur ante. Aliquam erat volutpat. Suspendisse potenti.\n\nNullam sed ex augue. Mauris sit amet orci eu felis gravida porta a eu massa. Praesent lorem sapien, lobortis quis tortor vitae, vulputate dictum elit. Donec eget justo vitae justo malesuada sodales. Sed a cursus ligula. Fusce quis eros vel felis aliquet eleifend. Sed mauris neque, tincidunt eget ipsum a, gravida laoreet tellus. In venenatis nisi eu velit auctor, vel venenatis tortor congue. Cras malesuada magna tincidunt malesuada pellentesque. Phasellus ullamcorper in leo eget dignissim. Aliquam ullamcorper purus vel vestibulum tempor. Ut rutrum, est gravida dictum bibendum, nulla metus rhoncus diam, ultrices mattis nisl sapien sit amet lacus. Cras maximus semper bibendum. Aenean lacinia tempus tellus sed auctor. Praesent vitae ante at dui tincidunt eleifend. Mauris tempor massa non tellus volutpat maximus."
+              }
+            ]
+          }
+        },
+        {
+          "locale": "fr-FR",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla purus nunc, pulvinar vel erat id, interdum gravida eros. Vestibulum finibus sem at purus vulputate placerat. Donec nibh nisl, vulputate id consequat quis, semper nec diam. Curabitur a nunc eu ipsum aliquet mollis quis et nibh. Nullam eget venenatis eros. Duis non vestibulum leo. Quisque at interdum mauris. Maecenas in venenatis tellus, vel dictum ipsum. Curabitur felis justo, vulputate sed efficitur nec, placerat pellentesque massa. Pellentesque nec rhoncus nibh, vitae egestas dolor. Mauris feugiat leo eu diam ornare, et ultricies nisi commodo. In nec ultricies risus, nec commodo ipsum. In ut velit erat."
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "b19a5176-451c-4649-972a-4717f43dd571",
+                  "name": "shoppable-poi-womens-festival-amos-bar-zeev-hVk6pIFbW9o-unsplash",
+                  "endpoint": "sfcccompdev2",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "Cras in mauris elementum, vestibulum dui sit amet, interdum erat. Sed ullamcorper vestibulum augue, ut vehicula dolor sodales et. Quisque eu sagittis ipsum, nec tincidunt nisl. Integer auctor est nec felis eleifend vestibulum. Morbi aliquam ultrices arcu in varius. Sed molestie hendrerit purus id dapibus. Aliquam auctor ex et eros varius euismod. Curabitur porttitor dapibus lacus, et facilisis odio accumsan nec. Ut egestas enim risus, a egestas eros commodo finibus. In hac habitasse platea dictumst. Morbi et efficitur ante. Aliquam erat volutpat. Suspendisse potenti.\n\nNullam sed ex augue. Mauris sit amet orci eu felis gravida porta a eu massa. Praesent lorem sapien, lobortis quis tortor vitae, vulputate dictum elit. Donec eget justo vitae justo malesuada sodales. Sed a cursus ligula. Fusce quis eros vel felis aliquet eleifend. Sed mauris neque, tincidunt eget ipsum a, gravida laoreet tellus. In venenatis nisi eu velit auctor, vel venenatis tortor congue. Cras malesuada magna tincidunt malesuada pellentesque. Phasellus ullamcorper in leo eget dignissim. Aliquam ullamcorper purus vel vestibulum tempor. Ut rutrum, est gravida dictum bibendum, nulla metus rhoncus diam, ultrices mattis nisl sapien sit amet lacus. Cras maximus semper bibendum. Aenean lacinia tempus tellus sed auctor. Praesent vitae ante at dui tincidunt eleifend. Mauris tempor massa non tellus volutpat maximus."
+              }
+            ]
+          }
+        },
+        {
+          "locale": "de-DE",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla purus nunc, pulvinar vel erat id, interdum gravida eros. Vestibulum finibus sem at purus vulputate placerat. Donec nibh nisl, vulputate id consequat quis, semper nec diam. Curabitur a nunc eu ipsum aliquet mollis quis et nibh. Nullam eget venenatis eros. Duis non vestibulum leo. Quisque at interdum mauris. Maecenas in venenatis tellus, vel dictum ipsum. Curabitur felis justo, vulputate sed efficitur nec, placerat pellentesque massa. Pellentesque nec rhoncus nibh, vitae egestas dolor. Mauris feugiat leo eu diam ornare, et ultricies nisi commodo. In nec ultricies risus, nec commodo ipsum. In ut velit erat."
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "b19a5176-451c-4649-972a-4717f43dd571",
+                  "name": "shoppable-poi-womens-festival-amos-bar-zeev-hVk6pIFbW9o-unsplash",
+                  "endpoint": "sfcccompdev2",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "Cras in mauris elementum, vestibulum dui sit amet, interdum erat. Sed ullamcorper vestibulum augue, ut vehicula dolor sodales et. Quisque eu sagittis ipsum, nec tincidunt nisl. Integer auctor est nec felis eleifend vestibulum. Morbi aliquam ultrices arcu in varius. Sed molestie hendrerit purus id dapibus. Aliquam auctor ex et eros varius euismod. Curabitur porttitor dapibus lacus, et facilisis odio accumsan nec. Ut egestas enim risus, a egestas eros commodo finibus. In hac habitasse platea dictumst. Morbi et efficitur ante. Aliquam erat volutpat. Suspendisse potenti.\n\nNullam sed ex augue. Mauris sit amet orci eu felis gravida porta a eu massa. Praesent lorem sapien, lobortis quis tortor vitae, vulputate dictum elit. Donec eget justo vitae justo malesuada sodales. Sed a cursus ligula. Fusce quis eros vel felis aliquet eleifend. Sed mauris neque, tincidunt eget ipsum a, gravida laoreet tellus. In venenatis nisi eu velit auctor, vel venenatis tortor congue. Cras malesuada magna tincidunt malesuada pellentesque. Phasellus ullamcorper in leo eget dignissim. Aliquam ullamcorper purus vel vestibulum tempor. Ut rutrum, est gravida dictum bibendum, nulla metus rhoncus diam, ultrices mattis nisl sapien sit amet lacus. Cras maximus semper bibendum. Aenean lacinia tempus tellus sed auctor. Praesent vitae ante at dui tincidunt eleifend. Mauris tempor massa non tellus volutpat maximus."
+              }
+            ]
+          }
+        },
+        {
+          "locale": "es-ES",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla purus nunc, pulvinar vel erat id, interdum gravida eros. Vestibulum finibus sem at purus vulputate placerat. Donec nibh nisl, vulputate id consequat quis, semper nec diam. Curabitur a nunc eu ipsum aliquet mollis quis et nibh. Nullam eget venenatis eros. Duis non vestibulum leo. Quisque at interdum mauris. Maecenas in venenatis tellus, vel dictum ipsum. Curabitur felis justo, vulputate sed efficitur nec, placerat pellentesque massa. Pellentesque nec rhoncus nibh, vitae egestas dolor. Mauris feugiat leo eu diam ornare, et ultricies nisi commodo. In nec ultricies risus, nec commodo ipsum. In ut velit erat."
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "b19a5176-451c-4649-972a-4717f43dd571",
+                  "name": "shoppable-poi-womens-festival-amos-bar-zeev-hVk6pIFbW9o-unsplash",
+                  "endpoint": "sfcccompdev2",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "Cras in mauris elementum, vestibulum dui sit amet, interdum erat. Sed ullamcorper vestibulum augue, ut vehicula dolor sodales et. Quisque eu sagittis ipsum, nec tincidunt nisl. Integer auctor est nec felis eleifend vestibulum. Morbi aliquam ultrices arcu in varius. Sed molestie hendrerit purus id dapibus. Aliquam auctor ex et eros varius euismod. Curabitur porttitor dapibus lacus, et facilisis odio accumsan nec. Ut egestas enim risus, a egestas eros commodo finibus. In hac habitasse platea dictumst. Morbi et efficitur ante. Aliquam erat volutpat. Suspendisse potenti.\n\nNullam sed ex augue. Mauris sit amet orci eu felis gravida porta a eu massa. Praesent lorem sapien, lobortis quis tortor vitae, vulputate dictum elit. Donec eget justo vitae justo malesuada sodales. Sed a cursus ligula. Fusce quis eros vel felis aliquet eleifend. Sed mauris neque, tincidunt eget ipsum a, gravida laoreet tellus. In venenatis nisi eu velit auctor, vel venenatis tortor congue. Cras malesuada magna tincidunt malesuada pellentesque. Phasellus ullamcorper in leo eget dignissim. Aliquam ullamcorper purus vel vestibulum tempor. Ut rutrum, est gravida dictum bibendum, nulla metus rhoncus diam, ultrices mattis nisl sapien sit amet lacus. Cras maximus semper bibendum. Aenean lacinia tempus tellus sed auctor. Praesent vitae ante at dui tincidunt eleifend. Mauris tempor massa non tellus volutpat maximus."
+              }
+            ]
+          }
+        },
+        {
+          "locale": "it-IT",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla purus nunc, pulvinar vel erat id, interdum gravida eros. Vestibulum finibus sem at purus vulputate placerat. Donec nibh nisl, vulputate id consequat quis, semper nec diam. Curabitur a nunc eu ipsum aliquet mollis quis et nibh. Nullam eget venenatis eros. Duis non vestibulum leo. Quisque at interdum mauris. Maecenas in venenatis tellus, vel dictum ipsum. Curabitur felis justo, vulputate sed efficitur nec, placerat pellentesque massa. Pellentesque nec rhoncus nibh, vitae egestas dolor. Mauris feugiat leo eu diam ornare, et ultricies nisi commodo. In nec ultricies risus, nec commodo ipsum. In ut velit erat."
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "b19a5176-451c-4649-972a-4717f43dd571",
+                  "name": "shoppable-poi-womens-festival-amos-bar-zeev-hVk6pIFbW9o-unsplash",
+                  "endpoint": "sfcccompdev2",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "Cras in mauris elementum, vestibulum dui sit amet, interdum erat. Sed ullamcorper vestibulum augue, ut vehicula dolor sodales et. Quisque eu sagittis ipsum, nec tincidunt nisl. Integer auctor est nec felis eleifend vestibulum. Morbi aliquam ultrices arcu in varius. Sed molestie hendrerit purus id dapibus. Aliquam auctor ex et eros varius euismod. Curabitur porttitor dapibus lacus, et facilisis odio accumsan nec. Ut egestas enim risus, a egestas eros commodo finibus. In hac habitasse platea dictumst. Morbi et efficitur ante. Aliquam erat volutpat. Suspendisse potenti.\n\nNullam sed ex augue. Mauris sit amet orci eu felis gravida porta a eu massa. Praesent lorem sapien, lobortis quis tortor vitae, vulputate dictum elit. Donec eget justo vitae justo malesuada sodales. Sed a cursus ligula. Fusce quis eros vel felis aliquet eleifend. Sed mauris neque, tincidunt eget ipsum a, gravida laoreet tellus. In venenatis nisi eu velit auctor, vel venenatis tortor congue. Cras malesuada magna tincidunt malesuada pellentesque. Phasellus ullamcorper in leo eget dignissim. Aliquam ullamcorper purus vel vestibulum tempor. Ut rutrum, est gravida dictum bibendum, nulla metus rhoncus diam, ultrices mattis nisl sapien sit amet lacus. Cras maximus semper bibendum. Aenean lacinia tempus tellus sed auctor. Praesent vitae ante at dui tincidunt eleifend. Mauris tempor massa non tellus volutpat maximus."
+              }
+            ]
+          }
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    }
+  },
+  "version": 4,
+  "label": "Sunglasses Information",
+  "status": "ACTIVE",
+  "createdBy": "918ec612-377d-4c6a-94e4-9d4fcf8a25b0",
+  "createdDate": "2022-10-14T09:45:44.147Z",
+  "lastModifiedBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+  "lastModifiedDate": "2022-10-17T08:09:45.092Z",
+  "lastPublishedVersion": 4,
+  "lastPublishedDate": "2022-10-17T08:10:12.228Z",
+  "deliveryId": "93440e83-fd3c-43cb-8c7a-d35bc709ca67"
+}

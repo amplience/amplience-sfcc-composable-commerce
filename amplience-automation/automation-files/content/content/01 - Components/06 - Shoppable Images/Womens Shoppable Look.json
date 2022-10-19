@@ -47,8 +47,8 @@
       "polygons": [
         {
           "id": "1f2e2050-d2db-487d-97fb-de54bcd1ef48",
-          "target": "sunglasses",
-          "selector": "tooltip",
+          "target": "content/information/sunglasses",
+          "selector": "contentKey",
           "points": [
             {
               "x": 0.10469432314410482,
@@ -100,7 +100,13 @@
             }
           ]
         }
-      ]
+      ],
+      "poi": {
+        "x": 0.4162663755458515,
+        "y": 0.32237991266375543,
+        "w": 0.15,
+        "h": 0.15
+      }
     },
     "imageAltText": {
       "values": [
@@ -155,30 +161,16 @@
       "_meta": {
         "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
       }
-    },
-    "tooltips": [
-      {
-        "value": {
-          "values": [
-            {
-              "locale": "en-US",
-              "value": "Check out our Sunglasses!"
-            }
-          ],
-          "_meta": {
-            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
-          }
-        },
-        "key": "sunglasses"
-      }
-    ]
+    }
   },
-  "version": 3,
+  "version": 5,
   "label": "Womens Shoppable Look",
   "status": "ACTIVE",
   "createdBy": "918ec612-377d-4c6a-94e4-9d4fcf8a25b0",
   "createdDate": "2022-10-04T12:16:42.097Z",
   "lastModifiedBy": "faf50c60-6d31-48fe-8af3-c52557850527",
-  "lastModifiedDate": "2022-10-04T15:17:19.315Z",
+  "lastModifiedDate": "2022-10-19T09:58:28.047Z",
+  "lastPublishedVersion": 5,
+  "lastPublishedDate": "2022-10-19T09:58:44.075Z",
   "deliveryId": "d8dfaa4c-4b7b-4f80-ae7d-986c1a13ba44"
 }
