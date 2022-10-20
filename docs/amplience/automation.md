@@ -2,7 +2,7 @@
 
 In order to save manual entry to use this starting point we have included an automation directory with all the relevant content and media
 
-> Note: you will need dc-cli version v0.17.0+ for automation to work properly
+> Note: you will need dc-cli version v0.17.1+ for automation to work properly
 
 ## Media
 
