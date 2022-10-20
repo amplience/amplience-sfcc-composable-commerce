@@ -16,8 +16,8 @@
         "default": true
       },
       {
-        "label": "Live (Amplience MRT)",
-        "templatedUri": "https://ascc-production.mobify-storefront.com/{{locales}}/visualization?vse={{vse.domain}}&contentId={{content.sys.id}}&hub={{hub.name}}",
+        "label": "{{visName}}",
+        "templatedUri": "{{visUrl}}/{{locales}}/visualization?vse={{vse.domain}}&contentId={{content.sys.id}}&hub={{hub.name}}",
         "default": false
       },
       {
