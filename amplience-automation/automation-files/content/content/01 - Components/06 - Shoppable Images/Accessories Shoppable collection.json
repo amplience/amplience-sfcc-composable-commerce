@@ -17,40 +17,117 @@
       },
       "hotspots": [
         {
-          "id": "4a96d429-1811-4da4-b5ce-30bcc2265f94",
+          "id": "2054df71-ebce-4063-acfc-6cee68084a9e",
           "target": "tooltip/watch",
           "selector": "tooltip",
           "points": {
-            "x": 0.4482758620689655,
+            "x": 0.4464798850574712,
             "y": 0.7270742358078602
           }
         }
       ],
       "polygons": [
         {
-          "id": "149b751a-f307-430b-b612-49f806d3bb35",
+          "id": "0dfc5692-6a7e-499a-b995-65ac84ee1c8c",
+          "target": "mens-accessories",
+          "selector": "category",
+          "points": [
+            {
+              "x": 0.04418103448275862,
+              "y": 0.1222707423580786
+            },
+            {
+              "x": 0.9392959770114944,
+              "y": 0.1222707423580786
+            },
+            {
+              "x": 0.9392959770114944,
+              "y": 0.9454148471615721
+            },
+            {
+              "x": 0.04418103448275862,
+              "y": 0.9454148471615721
+            }
+          ]
+        },
+        {
+          "id": "de95ff97-4db3-4725-9cfb-99a528e9f0af",
           "target": "content/information/sunglasses",
           "selector": "contentKey",
           "points": [
             {
-              "x": 0.2672413793103448,
-              "y": 0.15065502183406113
+              "x": 0.26688218390804597,
+              "y": 0.13537117903930132
             },
             {
-              "x": 0.3735632183908046,
-              "y": 0.15065502183406113
+              "x": 0.36602011494252873,
+              "y": 0.13537117903930132
             },
             {
-              "x": 0.3735632183908046,
-              "y": 0.48034934497816595
+              "x": 0.36602011494252873,
+              "y": 0.47816593886462866
             },
             {
-              "x": 0.2672413793103448,
-              "y": 0.48034934497816595
+              "x": 0.26688218390804597,
+              "y": 0.47816593886462866
             }
           ]
         }
       ]
+    },
+    "imageAltText": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Collection of accessories"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Collection d'accessoires"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Sammlung von Zubehör"
+        },
+        {
+          "locale": "es-ES",
+          "value": "colección de accesorios"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Collezione di accessori"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "seoText": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Accessories look collection"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Accessoires look collection"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Accessoires-Look-Kollektion"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Colección de looks de accesorios"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Collezione look accessori"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
     },
     "tooltips": [
       {
