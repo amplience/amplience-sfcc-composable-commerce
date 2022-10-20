@@ -61,14 +61,14 @@
             },
             {
                 "position": 9,
-                "cols": "2",
-                "rows": "1",
+                "cols": "1",
+                "rows": "2",
                 "content": {
-                    "_meta": {
-                        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference"
-                    },
-                    "contentType": "https://sfcc.com/components/card-enhanced",
-                    "id": "6511f76d-ce39-4bc7-8a96-b3526db81935"
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference"
+                  },
+                  "contentType": "https://sfcc.com/components/shoppable-image",
+                  "id": "96fed435-b80e-46d6-a50b-8ac39d3717c3"
                 }
             },
             {
