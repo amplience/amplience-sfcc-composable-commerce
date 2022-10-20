@@ -72,7 +72,13 @@ const ContentPage = ({page, pageVse}) => {
             ) : (
                 <>
                     {pageModel.content?.map((item) => {
-                        return <AmplienceWrapper key={item._meta.deliveryId} content={item} rtvActive={rtvActive}  />
+                        return (
+                            <AmplienceWrapper
+                                key={item._meta.deliveryId}
+                                content={item}
+                                rtvActive={rtvActive}
+                            />
+                        )
                     })}
                 </>
             )}

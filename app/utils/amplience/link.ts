@@ -104,7 +104,7 @@ const enrichNavContent = (node, targetLocale) => {
 const enrichTitle = (targetLocale) => (node) => {
     node.common.title = unpackLocale(node.common.title, targetLocale)
 
-    if (node.externalUrl){
+    if (node.externalUrl) {
         node.externalUrl = unpackLocale(node.externalUrl, targetLocale)
     }
 

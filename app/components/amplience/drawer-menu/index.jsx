@@ -17,8 +17,6 @@ import SocialIcons from '../../social-icons'
 // Components
 import {
     Box,
-    AccordionButton,
-    AccordionItem,
     Button,
     Center,
     Divider,
@@ -43,11 +41,11 @@ import {
 } from '@chakra-ui/react'
 import Link from '../link'
 // Icons
-import {BrandLogo, LocationIcon, SignoutIcon, UserIcon} from '../../icons'
+import {LocationIcon, SignoutIcon, UserIcon} from '../../icons'
 
 // Others
 import {noop} from '../../../utils/utils'
-import {getPathWithLocale, categoryUrlBuilder} from '../../../utils/url'
+import {getPathWithLocale} from '../../../utils/url'
 import useCustomer from '../../../commerce-api/hooks/useCustomer'
 import LoadingSpinner from '../../loading-spinner'
 import {getLinkUrl} from '../../../utils/amplience/link'
@@ -79,7 +77,15 @@ const STORE_LOCATOR_HREF = '/store-locator'
  * main usage is to navigate from one category to the next, but also homes links to
  * support, log in and out actions, as support links.
  */
-const DrawerMenu = ({isOpen, onClose = noop, onLogoClick = noop, root, footer, logo, showVse = false}) => {
+const DrawerMenu = ({
+    isOpen,
+    onClose = noop,
+    onLogoClick = noop,
+    root,
+    footer,
+    logo,
+    showVse = false
+}) => {
     const intl = useIntl()
     const customer = useCustomer()
     const navigate = useNavigation()
@@ -101,21 +107,31 @@ const DrawerMenu = ({isOpen, onClose = noop, onLogoClick = noop, root, footer, l
     const showLocaleSelector = supportedLocaleIds?.length > 1
 
     return (
-        <Drawer isOpen={isOpen} onClose={onClose} placement="left" size={drawerSize} trapFocus={!showVse}>
+        <Drawer
+            isOpen={isOpen}
+            onClose={onClose}
+            placement="left"
+            size={drawerSize}
+            trapFocus={!showVse}
+        >
             <DrawerOverlay>
                 <DrawerContent>
                     {/* Header Content */}
                     <DrawerHeader>
-                        {url && (<IconButton
-                            icon={<img
-                                {...styles.logo}
-                                style={{...ampStyles.logo}}
-                                alt={'logo'}
-                                src={`${url}?w=192&fmt=auto`}
-                            />}
-                            variant="unstyled"
-                            onClick={onLogoClick}
-                        />)}
+                        {url && (
+                            <IconButton
+                                icon={
+                                    <img
+                                        {...styles.logo}
+                                        style={{...ampStyles.logo}}
+                                        alt={'logo'}
+                                        src={`${url}?w=192&fmt=auto`}
+                                    />
+                                }
+                                variant="unstyled"
+                                onClick={onLogoClick}
+                            />
+                        )}
 
                         <DrawerCloseButton />
                     </DrawerHeader>
@@ -304,7 +320,15 @@ DrawerMenu.propTypes = {
     /**
      * Function called when the drawer logo is clicked.
      */
-    onLogoClick: PropTypes.func
+    onLogoClick: PropTypes.func,
+    /**
+     * Logo image object
+     */
+    logo: PropTypes.object,
+    /**
+     * Show VSE toggle
+     */
+    showVse: PropTypes.bool
 }
 
 export default DrawerMenu

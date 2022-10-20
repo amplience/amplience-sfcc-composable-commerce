@@ -6,7 +6,7 @@
  */
 
 import React, {useContext, useEffect, useState} from 'react'
-import {useLocation, useParams} from 'react-router-dom'
+import {useLocation} from 'react-router-dom'
 import PropTypes from 'prop-types'
 import {Box} from '@chakra-ui/react'
 import Seo from '../../../components/seo'
@@ -54,10 +54,9 @@ const AmpRtv = ({vse, contentId, hubname}) => {
             setLocalContentId(contentId)
         }
 
-        if (hub){
+        if (hub) {
             setLocalHubname(hub)
         }
-
     }, [location])
 
     // Overwrite the context to perform vis from vse.
@@ -66,14 +65,24 @@ const AmpRtv = ({vse, contentId, hubname}) => {
 
     return (
         <Box data-testid="real-viz" layerStyle="page">
-            <AmplienceContextProvider hubname={localHubname} vse={localVse} contentId={localContentId} groups={groups}>
+            <AmplienceContextProvider
+                hubname={localHubname}
+                vse={localVse}
+                contentId={localContentId}
+                groups={groups}
+            >
                 <Seo
                     title="Home Page"
                     description="Commerce Cloud Retail React App"
                     keywords="Commerce Cloud, Retail React App, React Storefront"
                 />
 
-                <AmplienceWrapper content={formContent} fetch={fetch} type="SLOT" rtvActive={true} />
+                <AmplienceWrapper
+                    content={formContent}
+                    fetch={fetch}
+                    type="SLOT"
+                    rtvActive={true}
+                />
             </AmplienceContextProvider>
         </Box>
     )
@@ -82,7 +91,10 @@ const AmpRtv = ({vse, contentId, hubname}) => {
 AmpRtv.getTemplateName = () => 'ampRtv'
 AmpRtv.propTypes = {
     recommendations: PropTypes.array,
-    isLoading: PropTypes.bool
+    isLoading: PropTypes.bool,
+    vse: PropTypes.string,
+    contentId: PropTypes.string,
+    hubname: PropTypes.string
 }
 
 AmpRtv.getProps = async ({req}) => {

@@ -164,50 +164,56 @@ const InGridHero = ({
         query: img?.query
     }
 
-    const content = (<Contain>
-        <Stack
-            {...styles.stackContainer}
-        >
-            <Skeleton isLoaded={!imageLoading}
-                      sx={{width: '100%', height: compHeight}}
-                      style={{
-                          justifyContent: justifyContent.toLowerCase(),
-                          alignItems: alignItems.toLowerCase(),
-                          display: 'flex'
-                      }}
-            >
-                <Stack className="text-pane"
-                       style={{display: `${imageLoading ? 'none' : 'flex'}`}} {...styles.textContainer}
-                       textAlign={{base: 'center', md: textAlign.toLowerCase()}}
-                       position={{base: 'absolute'}}
+    const content = (
+        <Contain>
+            <Stack {...styles.stackContainer}>
+                <Skeleton
+                    isLoaded={!imageLoading}
+                    sx={{width: '100%', height: compHeight}}
+                    style={{
+                        justifyContent: justifyContent.toLowerCase(),
+                        alignItems: alignItems.toLowerCase(),
+                        display: 'flex'
+                    }}
                 >
-                    <Heading
-                        as="h2"
-                        fontSize={{base: 'md', md: '4xl', lg: '6xl'}}
-                        maxWidth={{base: 'full'}}
-                        {...styles.heading}
+                    <Stack
+                        className="text-pane"
+                        style={{display: `${imageLoading ? 'none' : 'flex'}`}}
+                        {...styles.textContainer}
+                        textAlign={{base: 'center', md: textAlign.toLowerCase()}}
+                        position={{base: 'absolute'}}
                     >
-                        {title}
-                    </Heading>
-                    {actions.map(({label}, ind) => {
-                        if (label) {
-                            return (<span key={ind}>{label}</span>)
-                        }
-                        return null
-                    })}
-                </Stack>
-                <div className="img-place" style={{display: `${imageLoading ? 'none' : 'block'}`, width: '100%'}}>
-                    <TrueAdaptiveImage
-                        style={{...styles.image}}
-                        ref={imageRef}
-                        onLoad={() => setImageLoading(false)}
-                        image={img?.image}
-                        transformations={cardTransformations}
-                    />
-                </div>
-            </Skeleton>
-        </Stack>
-    </Contain>)
+                        <Heading
+                            as="h2"
+                            fontSize={{base: 'md', md: '4xl', lg: '6xl'}}
+                            maxWidth={{base: 'full'}}
+                            {...styles.heading}
+                        >
+                            {title}
+                        </Heading>
+                        {actions.map(({label}, ind) => {
+                            if (label) {
+                                return <span key={ind}>{label}</span>
+                            }
+                            return null
+                        })}
+                    </Stack>
+                    <div
+                        className="img-place"
+                        style={{display: `${imageLoading ? 'none' : 'block'}`, width: '100%'}}
+                    >
+                        <TrueAdaptiveImage
+                            style={{...styles.image}}
+                            ref={imageRef}
+                            onLoad={() => setImageLoading(false)}
+                            image={img?.image}
+                            transformations={cardTransformations}
+                        />
+                    </div>
+                </Skeleton>
+            </Stack>
+        </Contain>
+    )
 
     return (
         <Box

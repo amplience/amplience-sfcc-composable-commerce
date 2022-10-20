@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import PropTypes from 'prop-types'
 import * as cookie from 'cookie'
 import {AmplienceAPI, defaultAmpClient} from '../../amplience-api'
-import { default as amplience } from '../../../config/amplience/default.js'
+import {default as amplience} from '../../../config/amplience/default.js'
 
 /**
  * This is the global Amplience Realtime Visualization Context on Non-category pages
@@ -32,7 +32,7 @@ export const RealtimeVisualizationProvider = ({status: initState, ampViz}) => {
     const [status, setStatus] = useState(initState)
     const [ampVizSdk, setAmpVizSdk] = useState(ampViz)
 
-    async () => {
+    ;async () => {
         const sdk = await init({debug: true})
 
         setAmpVizSdk(sdk)
@@ -68,12 +68,18 @@ RealtimeVisualizationProvider.propTypes = {
 
 export const AmplienceContext = React.createContext()
 
-export const AmplienceContextProvider = ({vse, contentId, vseTimestamp, groups: initialGroups, children}) => {
+export const AmplienceContextProvider = ({
+    vse,
+    contentId,
+    vseTimestamp,
+    groups: initialGroups,
+    children
+}) => {
     // Init client using VSE
     const [client] = useState(new AmplienceAPI())
     const [groups, setGroups] = useState(initialGroups)
-    const [envs, setEnvs] = useState(amplience.envs)
-    const [defaultEnv, setDefaultEnv] = useState(amplience.default)
+    const [envs] = useState(amplience.envs)
+    const [defaultEnv] = useState(amplience.default)
 
     useEffect(() => {
         if (groups !== initialGroups) {
@@ -92,18 +98,18 @@ export const AmplienceContextProvider = ({vse, contentId, vseTimestamp, groups: 
     }
 
     return (
-        <AmplienceContext.Provider value={
-            {
+        <AmplienceContext.Provider
+            value={{
                 vse,
                 contentId,
-                vseTimestamp, 
-                envs, 
-                defaultEnv, 
-                groups, 
-                updateGroups, 
+                vseTimestamp,
+                envs,
+                defaultEnv,
+                groups,
+                updateGroups,
                 client
-                }
-        }>
+            }}
+        >
             {children}
         </AmplienceContext.Provider>
     )
@@ -141,7 +147,7 @@ export const generateVseProps = ({req, res, query}) => {
     const vizRegEx = /\/(.*)\/visualization/
     if (req.originalUrl.match(vizRegEx)) {
         const url = req.originalUrl.split('?')[0]
-        const [match, locale] = url.match(vizRegEx)
+        const [, locale] = url.match(vizRegEx)
         return {vse: query.vse, hubname: query.hub, contentId: query.contentId, locale}
     } else if (query['vse'] || query['vse-timestamp']) {
         let vse = null
@@ -170,5 +176,6 @@ AmplienceContextProvider.propTypes = {
     groups: PropTypes.array,
     defaultEnv: PropTypes.any,
     envs: PropTypes.array,
-    children: PropTypes.node.isRequired
+    children: PropTypes.node.isRequired,
+    contentId: PropTypes.string
 }

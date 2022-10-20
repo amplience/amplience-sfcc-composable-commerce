@@ -41,13 +41,10 @@ const PersonalisationPanel = ({customerGroups}) => {
     return (
         <Box {...styles.box}>
             <Heading as="h2" size="xs">
-                {
-                    formatMessage({
-                        defaultMessage:
-                            'Customer groups',
-                        id: 'toolbar.personalisation.heading'
-                    })
-                }
+                {formatMessage({
+                    defaultMessage: 'Customer groups',
+                    id: 'toolbar.personalisation.heading'
+                })}
             </Heading>
             <Wrap spacing={2} paddingTop={4}>
                 {customerGroups.sort().map((group, index) => {
