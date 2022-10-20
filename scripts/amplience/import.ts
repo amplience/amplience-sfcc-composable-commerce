@@ -4,9 +4,9 @@ import {compile} from 'handlebars'
 import {promises, mkdirSync, rmSync} from 'fs'
 import {tmpdir} from 'os'
 import {join} from 'path'
-import {nanoid} from 'nanoid'
-import {Context} from './cli'
-import {default as amplience} from '../../config/amplience/default.js'
+import { nanoid } from 'nanoid'
+import { Context } from './cli'
+const amplience = require('../../config/amplience/default.js')
 
 const recursiveTemplateSearch = async (baseDir: string, targetDir: string, dir: string, fileFunc: (path: string) => Promise<void>) => {
     const files = await promises.readdir(join(baseDir, dir))
