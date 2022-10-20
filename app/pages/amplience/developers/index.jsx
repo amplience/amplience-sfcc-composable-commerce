@@ -10,10 +10,7 @@ import PropTypes from 'prop-types'
 import {Heading} from '@chakra-ui/react'
 
 // Components
-import {
-    Box,
-    Text
-} from '@chakra-ui/react'
+import {Box} from '@chakra-ui/react'
 
 // Project Components
 import Seo from '../../../components/seo'
@@ -23,14 +20,12 @@ import Section from '../../../components/section'
 import AmplienceWrapper from '../../../components/amplience/wrapper'
 
 // Constants
-import {
-    MAX_CACHE_AGE,
-} from '../../../constants'
-import { resolveSiteFromUrl } from '../../../utils/site-utils'
-import { getTargetLocale } from '../../../utils/locale'
-import { personalisationChanged } from '../../../amplience-api/utils'
+import {MAX_CACHE_AGE} from '../../../constants'
+import {resolveSiteFromUrl} from '../../../utils/site-utils'
+import {getTargetLocale} from '../../../utils/locale'
+import {personalisationChanged} from '../../../amplience-api/utils'
 
-const Developers = ({isLoading, homeSlotTop}) => {
+const Developers = ({homeSlotTop}) => {
     return (
         <Box data-testid="developers-page" layerStyle="page">
             <Seo
@@ -39,9 +34,9 @@ const Developers = ({isLoading, homeSlotTop}) => {
                 keywords="Commerce Cloud, Retail React App, React Storefront"
             />
 
-            <Heading
-                as="h1" 
-                fontSize={{base: '4xl', md: '5xl', lg: '6xl'}}>Developers Information</Heading>
+            <Heading as="h1" fontSize={{base: '4xl', md: '5xl', lg: '6xl'}}>
+                Developers Information
+            </Heading>
 
             <AmplienceWrapper fetch={{key: 'section-developers'}}></AmplienceWrapper>
 
@@ -62,10 +57,9 @@ const Developers = ({isLoading, homeSlotTop}) => {
             >
                 <AmplienceWrapper fetch={{key: 'rich-text/dev-by-key1'}}></AmplienceWrapper>
             </Section>
-            
-            
+
             <AmplienceWrapper fetch={{key: 'home/slot/top-personalised'}}></AmplienceWrapper>
-            
+
             <Section
                 background={'pink.50'}
                 marginX="auto"
@@ -129,7 +123,9 @@ Developers.getProps = async ({res, location, api, ampClient}) => {
         l10nConfig
     })
 
-    const homeSlotTop = await (await ampClient.fetchContent([{key: 'home/slot/top'}], {locale: targetLocale})).pop()
+    const homeSlotTop = await (
+        await ampClient.fetchContent([{key: 'home/slot/top'}], {locale: targetLocale})
+    ).pop()
 
     return {homeSlotTop}
 }

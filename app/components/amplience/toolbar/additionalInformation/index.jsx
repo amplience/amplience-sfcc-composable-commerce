@@ -15,11 +15,7 @@ import {
     Divider,
     Spacer
 } from '@chakra-ui/react'
-import {
-    CheckIcon,
-    CheckCircleIcon,
-    CloseIcon
-} from '@chakra-ui/icons'
+import {CheckIcon, CheckCircleIcon, CloseIcon} from '@chakra-ui/icons'
 import {AmplienceContext} from '../../../../contexts/amplience'
 import moment from 'moment'
 import {useIntl} from 'react-intl'
@@ -28,69 +24,59 @@ const Legend = () => {
     const styles = useMultiStyleConfig('PreviewHeader')
     const {formatMessage} = useIntl()
 
-    return (<Box>
+    return (
         <Box>
-            <Heading as="h4" mt={4} mb={2} fontSize={'xs'}>
-                {
-                    formatMessage({
-                        defaultMessage:
-                            'Legend',
+            <Box>
+                <Heading as="h4" mt={4} mb={2} fontSize={'xs'}>
+                    {formatMessage({
+                        defaultMessage: 'Legend',
                         id: 'toolbar.additional.legend'
-                    })
-                }
-            </Heading>
-            <CheckCircleIcon {...styles.infoBox} color={'green'} width={'14px'} />
-            <Text fontSize="xs" as={'span'}>
-                {
-                    formatMessage({
-                        defaultMessage:
-                            'Match on default or variant',
+                    })}
+                </Heading>
+                <CheckCircleIcon {...styles.infoBox} color={'green'} width={'14px'} />
+                <Text fontSize="xs" as={'span'}>
+                    {formatMessage({
+                        defaultMessage: 'Match on default or variant',
                         id: 'toolbar.additional.match'
-                    })
-                }
-            </Text>
-        </Box>
-        <Box>
-            <CloseIcon {...styles.infoBox} color={'red'} />
-            <Text fontSize="xs" as={'span'}>
-                {
-                    formatMessage({
-                        defaultMessage:
-                            'No match on default or variant',
+                    })}
+                </Text>
+            </Box>
+            <Box>
+                <CloseIcon {...styles.infoBox} color={'red'} />
+                <Text fontSize="xs" as={'span'}>
+                    {formatMessage({
+                        defaultMessage: 'No match on default or variant',
                         id: 'toolbar.additional.noMatch'
-                    })
-                }
-            </Text>
-        </Box>
-        <Box>
-            <CheckIcon {...styles.infoBox} color={'grey'} />
-            <Text fontSize="xs" as={'span'}>
-                {
-                    formatMessage({
-                        defaultMessage:
-                            'Match on variant, but ignored (max items reached)',
+                    })}
+                </Text>
+            </Box>
+            <Box>
+                <CheckIcon {...styles.infoBox} color={'grey'} />
+                <Text fontSize="xs" as={'span'}>
+                    {formatMessage({
+                        defaultMessage: 'Match on variant, but ignored (max items reached)',
                         id: 'toolbar.additional.limit'
-                    })
-                }
-
-            </Text>
+                    })}
+                </Text>
+            </Box>
         </Box>
-    </Box>)
+    )
 }
 
 const AdditionalInformation = ({_meta, slot, matchesList}) => {
     const styles = useMultiStyleConfig('PreviewHeader')
     const {defaultEnv, envs, vse = ''} = useContext(AmplienceContext)
-    const currentHub = envs?.find(item => {
-        const regExp = /(.*)-(.*)-(.*)(\.staging.bigcontent.io)/
-        const matches = vse.match(regExp)
-        if (matches) {
-            const originalVse = `${matches[1]}.staging.bigcontent.io`
-            return item.vse === originalVse
-        } else {
-            return item.vse === vse
-        }
-    })?.hub || defaultEnv.hub
+    const currentHub =
+        envs?.find((item) => {
+            const regExp = /(.*)-(.*)-(.*)(\.staging.bigcontent.io)/
+            const matches = vse.match(regExp)
+            if (matches) {
+                const originalVse = `${matches[1]}.staging.bigcontent.io`
+                return item.vse === originalVse
+            } else {
+                return item.vse === vse
+            }
+        })?.hub || defaultEnv.hub
 
     const SlotContentRender = ({deliveryId, name, schema, deliveryKey, content}) => (
         <>
@@ -98,20 +84,34 @@ const AdditionalInformation = ({_meta, slot, matchesList}) => {
                 <Link
                     color={'ampliencePink.500'}
                     target={'_blank'}
-                    href={`https://content.amplience.net/#!/${currentHub}/authoring/content-item/edit/${deliveryId}`}>{name}</Link>
+                    href={`https://content.amplience.net/#!/${currentHub}/authoring/content-item/edit/${deliveryId}`}
+                >
+                    {name}
+                </Link>
             </Heading>
-            {content && <Heading as="h2" size="xs">
-                <Link
-                    color={'ampliencePink.500'}
-                    target={'_blank'}
-                    href={`https://content.amplience.net/#!/${currentHub}/authoring/content-item/edit/${content.deliveryId}`}> {'>'} {content.name}</Link>
-            </Heading>}
-            <Text fontSize="xs" fontWeight={'bold'}>{schema}</Text>
-            <Text fontSize="xs" fontStyle={'italic'}>{deliveryId}</Text>
-            {
-                deliveryKey &&
-                <Text fontSize="xs" fontStyle={'italic'}>{deliveryKey}</Text>
-            }
+            {content && (
+                <Heading as="h2" size="xs">
+                    <Link
+                        color={'ampliencePink.500'}
+                        target={'_blank'}
+                        href={`https://content.amplience.net/#!/${currentHub}/authoring/content-item/edit/${content.deliveryId}`}
+                    >
+                        {' '}
+                        {'>'} {content.name}
+                    </Link>
+                </Heading>
+            )}
+            <Text fontSize="xs" fontWeight={'bold'}>
+                {schema}
+            </Text>
+            <Text fontSize="xs" fontStyle={'italic'}>
+                {deliveryId}
+            </Text>
+            {deliveryKey && (
+                <Text fontSize="xs" fontStyle={'italic'}>
+                    {deliveryKey}
+                </Text>
+            )}
         </>
     )
 
@@ -121,14 +121,22 @@ const AdditionalInformation = ({_meta, slot, matchesList}) => {
                 <Link
                     color={'ampliencePink.500'}
                     target={'_blank'}
-                    href={`https://content.amplience.net/#!/${currentHub}/authoring/content-item/edit/${deliveryId}`}>{name}</Link>
+                    href={`https://content.amplience.net/#!/${currentHub}/authoring/content-item/edit/${deliveryId}`}
+                >
+                    {name}
+                </Link>
             </Heading>
-            <Text fontSize="xs" fontWeight={'bold'}>{moment(start).format(`DD/MM/YYYY HH:mm:ss`)}</Text>
-            <Text fontSize="xs" fontWeight={'bold'}>{moment(end).format(`DD/MM/YYYY HH:mm:ss`)}</Text>
-            {
-                id &&
-                <Text fontSize="xs" fontStyle={'italic'}>{id}</Text>
-            }
+            <Text fontSize="xs" fontWeight={'bold'}>
+                {moment(start).format(`DD/MM/YYYY HH:mm:ss`)}
+            </Text>
+            <Text fontSize="xs" fontWeight={'bold'}>
+                {moment(end).format(`DD/MM/YYYY HH:mm:ss`)}
+            </Text>
+            {id && (
+                <Text fontSize="xs" fontStyle={'italic'}>
+                    {id}
+                </Text>
+            )}
         </>
     )
 
@@ -140,24 +148,33 @@ const AdditionalInformation = ({_meta, slot, matchesList}) => {
                     <Link
                         color={'ampliencePink.500'}
                         target={'_blank'}
-                        href={`https://content.amplience.net/#!/${currentHub}/authoring/content-item/edit/${deliveryId}`}>{name}</Link>
+                        href={`https://content.amplience.net/#!/${currentHub}/authoring/content-item/edit/${deliveryId}`}
+                    >
+                        {name}
+                    </Link>
                 </Heading>
-                {matchesList.map(({title, isDefault, match, maxReached}) => (<Box>
-                    {match && !maxReached ?
-                        <CheckCircleIcon {...styles.infoBox} color={'green'} width={'14px'} /> :
-                        match && maxReached ?
-                            <CheckIcon {...styles.infoBox} color={'grey'} /> :
-                            <CloseIcon {...styles.infoBox} color={'red'} />}
-                    <Text fontSize="xs" as={'span'}>{
-                        isDefault ? formatMessage({
-                            defaultMessage: 'Default variant',
-                            id: 'toolbar.additional.default'
-                        }) : `${formatMessage({
-                            defaultMessage: 'Variant',
-                            id: 'toolbar.additional.variant'
-                        })} ${title}`
-                    }</Text>
-                </Box>))}
+                {matchesList.map(({title, isDefault, match, maxReached}, index) => (
+                    <Box key={index}>
+                        {match && !maxReached ? (
+                            <CheckCircleIcon {...styles.infoBox} color={'green'} width={'14px'} />
+                        ) : match && maxReached ? (
+                            <CheckIcon {...styles.infoBox} color={'grey'} />
+                        ) : (
+                            <CloseIcon {...styles.infoBox} color={'red'} />
+                        )}
+                        <Text fontSize="xs" as={'span'}>
+                            {isDefault
+                                ? formatMessage({
+                                      defaultMessage: 'Default variant',
+                                      id: 'toolbar.additional.default'
+                                  })
+                                : `${formatMessage({
+                                      defaultMessage: 'Variant',
+                                      id: 'toolbar.additional.variant'
+                                  })} ${title}`}
+                        </Text>
+                    </Box>
+                ))}
                 <Spacer h={6} />
                 <Divider />
                 <Legend />
@@ -165,33 +182,42 @@ const AdditionalInformation = ({_meta, slot, matchesList}) => {
         )
     }
 
-    const items = [{
-        color: 'teal',
-        icon: (<p>P</p>),
-        content: (<PersonalisationRender matchesList={matchesList} {..._meta} />),
-        visibility: () => matchesList && matchesList.length
-    }, {
-        color: 'orange',
-        icon: (<p>S</p>),
-        content: (<SlotContentRender {...slot} content={_meta} />),
-        visibility: () => !!slot
-    }, {
-        color: 'blue',
-        icon: (<p>C</p>),
-        content: <SlotContentRender {..._meta} />
-    }, {
-        color: 'pink',
-        icon: (<p>E</p>),
-        content: <EditionRender {...slot} />,
-        visibility: () => slot && !!slot.edition
-    }]
+    const items = [
+        {
+            color: 'teal',
+            icon: <p>P</p>,
+            content: <PersonalisationRender matchesList={matchesList} {..._meta} />,
+            visibility: () => matchesList && matchesList.length
+        },
+        {
+            color: 'orange',
+            icon: <p>S</p>,
+            content: <SlotContentRender {...slot} content={_meta} />,
+            visibility: () => !!slot
+        },
+        {
+            color: 'blue',
+            icon: <p>C</p>,
+            content: <SlotContentRender {..._meta} />
+        },
+        {
+            color: 'pink',
+            icon: <p>E</p>,
+            content: <EditionRender {...slot} />,
+            visibility: () => slot && !!slot.edition
+        }
+    ]
 
     return (
         <div style={styles.infoContainer} className={'matchInfo'}>
             {items
-                .filter(data => {
+                .filter((data) => {
                     data.visibility = data.visibility || (() => true)
-                    return data.visibility && typeof data.visibility === 'function' && data.visibility()
+                    return (
+                        data.visibility &&
+                        typeof data.visibility === 'function' &&
+                        data.visibility()
+                    )
                 })
                 .map(({icon, content, color}, index) => {
                     const {isOpen, onToggle, onClose} = useDisclosure()
@@ -216,10 +242,11 @@ const AdditionalInformation = ({_meta, slot, matchesList}) => {
                                 </PopoverTrigger>
                                 <PopoverContent>
                                     <PopoverArrow />
-                                    <PopoverBody  {...styles.popoverBody}>{content}</PopoverBody>
+                                    <PopoverBody {...styles.popoverBody}>{content}</PopoverBody>
                                 </PopoverContent>
                             </Popover>
-                        </React.Fragment>)
+                        </React.Fragment>
+                    )
                 })}
         </div>
     )

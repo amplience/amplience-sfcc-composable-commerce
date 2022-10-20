@@ -12,7 +12,7 @@ import {getAssetUrl} from 'pwa-kit-react-sdk/ssr/universal/utils'
 import {getAppOrigin} from 'pwa-kit-react-sdk/utils/url'
 
 // Chakra
-import {Box, useDisclosure, useMultiStyleConfig, useStyleConfig} from '@chakra-ui/react'
+import {Box, useDisclosure, useStyleConfig} from '@chakra-ui/react'
 import {SkipNavLink, SkipNavContent} from '@chakra-ui/skip-nav'
 
 // Contexts
@@ -146,7 +146,10 @@ const App = (props) => {
         // location path is changed.
         onClose()
         const activeParams = new URLSearchParams(location.search || '')
-        const showPreview = activeParams && ((activeParams.has('vse') && activeParams.get('vse')) || (activeParams.has('pagevse') && activeParams.get('pagevse')));
+        const showPreview =
+            activeParams &&
+            ((activeParams.has('vse') && activeParams.get('vse')) ||
+                (activeParams.has('pagevse') && activeParams.get('pagevse')))
         setShowVse(showPreview)
     }, [location])
 

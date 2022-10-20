@@ -15,12 +15,11 @@ const AmplienceRichText = ({header, content}) => {
     return (
         <>
             <Box>
-                {
-                    header &&
+                {header && (
                     <Heading pb="8" as="h2">
                         {header}
                     </Heading>
-                }
+                )}
                 {content?.richText?.map((item, index) => {
                     switch (item.type) {
                         case 'markdown':
@@ -71,6 +70,10 @@ const AmplienceRichText = ({header, content}) => {
 AmplienceRichText.displayName = 'AmplienceRichText'
 
 AmplienceRichText.propTypes = {
+    /**
+     * Header to display above content.
+     */
+    header: PropTypes.string,
     /**
      * Rich Text Content
      */

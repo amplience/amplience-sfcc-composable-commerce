@@ -182,10 +182,10 @@ const CardEnhanced = ({
                           : undefined
               }
             : {
-                ...img,
-                width: 1200,
-                quality: 80,
-                upscale: false
+                  ...img,
+                  width: 1200,
+                  quality: 80,
+                  upscale: false
               }
 
     const content = (

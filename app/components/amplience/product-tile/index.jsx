@@ -117,7 +117,7 @@ const AmplienceProductTile = (props) => {
     const {currency: activeCurrency} = useCurrency()
     const [isFavouriteLoading, setFavouriteLoading] = useState(false)
     const styles = useMultiStyleConfig('AmplienceProductTile')
-    const location = useLocation();
+    const location = useLocation()
 
     return (
         <Contain

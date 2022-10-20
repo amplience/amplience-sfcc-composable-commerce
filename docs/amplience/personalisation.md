@@ -45,7 +45,7 @@ A ***single*** piece of personalised content that accepts any component defined 
 
 - **Default** content is a content link -- the content data is loaded on first fetch. 
 - **Variant** content is an `Array` of Content References -- the content is loaded via reference ID ***after*** determining the customer's qualifying group(s)
-- **maxNumberMatches** - to define how many Content Variants a qualifying custimer will see
+- **maxNumberMatches** - to define how many Content Variants a qualifying customer will see
 
 ### Personalised In-Grid Container
 
@@ -53,7 +53,7 @@ Just like the Personalised Component, but only allowing content for a Product Li
 
 - **Default** content is a content link -- the content data is loaded on first fetch. 
 - **Variant** content is an `Array` of Content References -- the content is loaded via reference ID ***after*** determining the customer's qualifying group(s)
-- **maxNumberMatches** - to define how many Content Variants a qualifying custimer will see
+- **maxNumberMatches** - to define how many Content Variants a qualifying customer will see
 
 ### Personalized Container
 
@@ -70,7 +70,7 @@ A ***list*** of personalised content with a **Delivery Key** that accepts any co
 - **Delivery Key** - Container may be fetched with `AmplienceWrapper` using the key you've entered
 - **Default** content is an `Array` of content links -- the content data is loaded on first fetch. 
 - **Variant** content is an `Array` of Content Links -- ***the content data is loaded on first fetch***
-- **maxNumberMatches** - to define how many Content Variants a qualifying custimer will see
+- **maxNumberMatches** - to define how many Content Variants a qualifying customer will see
 
 ## Toolbar Enhancements
 

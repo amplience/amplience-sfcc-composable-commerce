@@ -49,7 +49,11 @@ const AmplienceWrapper = ({fetch, content, components, skeleton, rtvActive, ...r
     const {locale} = useIntl()
     const location = useLocation()
     const activeParams = new URLSearchParams(location.search || '')
-    const showInfo = (activeParams && ((activeParams.has('vse') && activeParams.get('vse')) || (activeParams.has('pagevse') && activeParams.get('pagevse')))) || rtvActive;
+    const showInfo =
+        (activeParams &&
+            ((activeParams.has('vse') && activeParams.get('vse')) ||
+                (activeParams.has('pagevse') && activeParams.get('pagevse')))) ||
+        rtvActive
 
     const mapping = components ? {...componentsMapping, ...components} : componentsMapping
 
@@ -75,10 +79,9 @@ const AmplienceWrapper = ({fetch, content, components, skeleton, rtvActive, ...r
 
     const result = Component ? (
         <div style={{position: 'relative', width: '100%'}}>
-            {showInfo ? (<AdditionalInformation {...fetchedContent} />) : ''}
+            {showInfo ? <AdditionalInformation {...fetchedContent} /> : ''}
             <Component {...fetchedContent} {...rest} />
         </div>
-
     ) : (
         <>{JSON.stringify(fetchedContent)}</>
     )
@@ -98,7 +101,8 @@ AmplienceWrapper.propTypes = {
     fetch: PropTypes.object,
     content: PropTypes.object,
     components: PropTypes.object,
-    skeleton: PropTypes.object
+    skeleton: PropTypes.object,
+    rtvActive: PropTypes.bool
 }
 
 export default AmplienceWrapper

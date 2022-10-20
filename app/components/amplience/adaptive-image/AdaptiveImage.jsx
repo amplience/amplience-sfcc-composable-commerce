@@ -1,7 +1,7 @@
 import React, {createContext, forwardRef} from 'react'
 import PropTypes from 'prop-types'
 import {getImageURL} from '../utils/getImageURL'
-import { Image } from "@chakra-ui/react"
+import {Image} from '@chakra-ui/react'
 
 export const AdaptiveImageContext = createContext(null)
 
@@ -23,7 +23,12 @@ const AdaptiveImage = (props) => {
         >
             <picture>
                 {children}
-                <Image ref={imageRef} src={defaultImageUrl} fallbackSrc={`${defaultImageUrl}&w=1&qlt=1`} {...other} />
+                <Image
+                    ref={imageRef}
+                    src={defaultImageUrl}
+                    fallbackSrc={`${defaultImageUrl}&w=1&qlt=1`}
+                    {...other}
+                />
             </picture>
         </AdaptiveImageContext.Provider>
     )

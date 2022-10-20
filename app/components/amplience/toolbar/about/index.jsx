@@ -14,20 +14,20 @@ import styled from '@emotion/styled'
 import {useIntl} from 'react-intl'
 
 const StyledBox = styled(Box)`
-  .matchInfo {
-    display: none !important;
-  }
+    .matchInfo {
+        display: none !important;
+    }
 
-  p {
-    font-size: 0.75rem;
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
+    p {
+        font-size: 0.75rem;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
 
-  h2 {
-    font-size: 0.75rem;
-    padding-bottom: 10px;
-  }
+    h2 {
+        font-size: 0.75rem;
+        padding-bottom: 10px;
+    }
 `
 
 const AboutPanel = ({toolbarOpacity, setToolbarOpacity}) => {
@@ -38,24 +38,21 @@ const AboutPanel = ({toolbarOpacity, setToolbarOpacity}) => {
         <StyledBox {...styles.box}>
             <AmplienceWrapper fetch={{key: 'rich-text/amplience-toolbar'}}></AmplienceWrapper>
             <Heading mt={8} mb={2} as="h2" fontSize="xs">
-                {
-                    formatMessage({
-                        defaultMessage:
-                            'Toolbar Opacity',
-                        id: 'toolbar.about.heading'
-                    })
-                }
+                {formatMessage({
+                    defaultMessage: 'Toolbar Opacity',
+                    id: 'toolbar.about.heading'
+                })}
             </Heading>
             <Slider
                 aria-label={formatMessage({
-                    defaultMessage:
-                        'Toolbar Opacity',
+                    defaultMessage: 'Toolbar Opacity',
                     id: 'toolbar.about.heading'
                 })}
                 defaultValue={toolbarOpacity * 200 - 100}
                 step={1}
                 colorScheme={'ampliencePink'}
-                onChange={(val) => setToolbarOpacity(0.5 + val / 200.0)}>
+                onChange={(val) => setToolbarOpacity(0.5 + val / 200.0)}
+            >
                 <SliderTrack>
                     <SliderFilledTrack />
                 </SliderTrack>
