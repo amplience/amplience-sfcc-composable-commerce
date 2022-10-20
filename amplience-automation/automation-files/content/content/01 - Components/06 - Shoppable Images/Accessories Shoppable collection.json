@@ -1,0 +1,175 @@
+{
+  "id": "026cfc7a-ee0a-488d-bf61-c5fb36ffba86",
+  "body": {
+    "_meta": {
+      "name": "Accessories Shoppable collection",
+      "schema": "https://sfcc.com/components/shoppable-image"
+    },
+    "shoppableImage": {
+      "image": {
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+        },
+        "id": "8c1db0d8-558e-4c2f-9cc7-b8a290fde906",
+        "name": "shoppable-accessories-vadim-sherbakov-tCICLJ5ktBE-unsplash",
+        "endpoint": "sfcccompdev2",
+        "defaultHost": "cdn.media.amplience.net"
+      },
+      "hotspots": [
+        {
+          "id": "2054df71-ebce-4063-acfc-6cee68084a9e",
+          "target": "tooltip/watch",
+          "selector": "tooltip",
+          "points": {
+            "x": 0.4464798850574712,
+            "y": 0.7270742358078602
+          }
+        }
+      ],
+      "polygons": [
+        {
+          "id": "0dfc5692-6a7e-499a-b995-65ac84ee1c8c",
+          "target": "mens-accessories",
+          "selector": "category",
+          "points": [
+            {
+              "x": 0.04418103448275862,
+              "y": 0.1222707423580786
+            },
+            {
+              "x": 0.9392959770114944,
+              "y": 0.1222707423580786
+            },
+            {
+              "x": 0.9392959770114944,
+              "y": 0.9454148471615721
+            },
+            {
+              "x": 0.04418103448275862,
+              "y": 0.9454148471615721
+            }
+          ]
+        },
+        {
+          "id": "de95ff97-4db3-4725-9cfb-99a528e9f0af",
+          "target": "content/information/sunglasses",
+          "selector": "contentKey",
+          "points": [
+            {
+              "x": 0.26688218390804597,
+              "y": 0.13537117903930132
+            },
+            {
+              "x": 0.36602011494252873,
+              "y": 0.13537117903930132
+            },
+            {
+              "x": 0.36602011494252873,
+              "y": 0.47816593886462866
+            },
+            {
+              "x": 0.26688218390804597,
+              "y": 0.47816593886462866
+            }
+          ]
+        }
+      ]
+    },
+    "imageAltText": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Collection of accessories"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Collection d'accessoires"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Sammlung von Zubehör"
+        },
+        {
+          "locale": "es-ES",
+          "value": "colección de accesorios"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Collezione di accessori"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "seoText": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Accessories look collection"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Accessoires look collection"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Accessoires-Look-Kollektion"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Colección de looks de accesorios"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Collezione look accessori"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "tooltips": [
+      {
+        "value": {
+          "values": [
+            {
+              "locale": "en-US",
+              "value": "Watch coming soon!"
+            },
+            {
+              "locale": "fr-FR",
+              "value": "Montre bientôt disponible !"
+            },
+            {
+              "locale": "de-DE",
+              "value": "Uhr kommt bald !"
+            },
+            {
+              "locale": "es-ES",
+              "value": "Reloj próximamente"
+            },
+            {
+              "locale": "it-IT",
+              "value": "Orologio in arrivo"
+            }
+          ],
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+          }
+        },
+        "key": "tooltip/watch"
+      }
+    ]
+  },
+  "version": 2,
+  "label": "Accessories Shoppable collection",
+  "status": "ACTIVE",
+  "createdBy": "918ec612-377d-4c6a-94e4-9d4fcf8a25b0",
+  "createdDate": "2022-10-05T09:48:20.618Z",
+  "lastModifiedBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+  "lastModifiedDate": "2022-10-19T09:53:22.111Z",
+  "lastPublishedVersion": 2,
+  "lastPublishedDate": "2022-10-19T09:53:32.393Z",
+  "deliveryId": "026cfc7a-ee0a-488d-bf61-c5fb36ffba86"
+}

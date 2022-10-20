@@ -1,0 +1,188 @@
+{
+  "id": "d93e683c-af01-45c0-b542-5a3bcad3317a",
+  "body": {
+    "title": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Women Fall Model"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Modèle d'automne pour femmes"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Frauen-Herbst-Modell"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Mujer Otoño Modelo"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Modello autunnale da donna"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "shoppableImage": {
+      "image": {
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+        },
+        "id": "4490c327-ca59-44fc-bd1f-43aeb4dcf008",
+        "name": "shoppable-look-02-kristina-petrick--poL3YQTBPI-unsplash",
+        "endpoint": "sfcccompdev2",
+        "defaultHost": "cdn.media.amplience.net"
+      },
+      "hotspots": [
+        {
+          "id": "5c266f92-e2bd-4a2f-9329-0cc4909cf682",
+          "target": "luxury-bags",
+          "selector": "tooltip",
+          "points": {
+            "x": 0.651018922852984,
+            "y": 0.4432314410480349
+          }
+        },
+        {
+          "id": "c74902eb-95ca-421f-a23e-e1944f736b8a",
+          "target": "womens-accessories-shoes",
+          "selector": "category",
+          "points": {
+            "x": 0.435589519650655,
+            "y": 0.631004366812227
+          }
+        },
+        {
+          "id": "28826232-be73-4062-9691-a3d0008311ad",
+          "target": "25419639M",
+          "selector": "product",
+          "points": {
+            "x": 0.3628093158660844,
+            "y": 0.2663755458515284
+          }
+        },
+        {
+          "id": "15a88ef1-6576-4224-b207-9b94982a92ee",
+          "target": "25599638M",
+          "selector": "product",
+          "points": {
+            "x": 0.4661572052401747,
+            "y": 0.2423580786026201
+          }
+        }
+      ],
+      "poi": {
+        "x": 0.5031295487627365,
+        "y": 0.4555676855895196,
+        "w": 0.09999999999999999,
+        "h": 0.15
+      }
+    },
+    "imageAltText": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Women in fall fashion on step"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Les femmes à la mode d'automne sur l'étape"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Frauen in Herbstmode auf Schritt"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Mujeres en moda de otoño en el paso"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Donne in moda autunnale sul gradino"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "seoText": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Fall Fashion look"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Look mode d'automne"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Herbstmode-Look"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Mirada de moda de otoño"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Look alla moda autunnale"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "tooltips": [
+      {
+        "value": {
+          "values": [
+            {
+              "locale": "en-US",
+              "value": "Luxury bag range coming soon..."
+            },
+            {
+              "locale": "fr-FR",
+              "value": "Gamme de sacs de luxe bientôt disponible..."
+            },
+            {
+              "locale": "de-DE",
+              "value": "Luxuriöses Taschensortiment in Kürze erhältlich..."
+            },
+            {
+              "locale": "es-ES",
+              "value": "Próximamente gama de bolsos de lujo..."
+            },
+            {
+              "locale": "it-IT",
+              "value": "Presto la gamma di borse di lusso..."
+            }
+          ],
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+          }
+        },
+        "key": "luxury-bags"
+      }
+    ],
+    "_meta": {
+      "deliveryKey": "shoppable/woman-fall",
+      "name": "Fall Women Model Shoppable",
+      "schema": "https://sfcc.com/components/shoppable-image"
+    }
+  },
+  "version": 5,
+  "label": "Fall Women Model Shoppable",
+  "status": "ACTIVE",
+  "createdBy": "918ec612-377d-4c6a-94e4-9d4fcf8a25b0",
+  "createdDate": "2022-10-05T09:50:05.842Z",
+  "lastModifiedBy": "918ec612-377d-4c6a-94e4-9d4fcf8a25b0",
+  "lastModifiedDate": "2022-10-12T09:08:08.159Z",
+  "lastPublishedVersion": 5,
+  "lastPublishedDate": "2022-10-17T07:45:28.988Z",
+  "deliveryId": "d93e683c-af01-45c0-b542-5a3bcad3317a"
+}

@@ -128,7 +128,7 @@ export class AmplienceAPI {
      */
     constructor() {
         this.clientReady = new Promise((resolve) => (this.clientReadyResolve = resolve))
-        this.client = new ContentClient({hubName: app.amplience.hub})
+        this.client = new ContentClient({hubName: app.amplience.default.hub})
         this.hierarchyClient = this.client
     }
 
@@ -146,13 +146,13 @@ export class AmplienceAPI {
     setVse(vse) {
         if (this.vse != vse) {
             this.client = new ContentClient({
-                hubName: app.amplience.hub,
+                hubName: app.amplience.default.hub,
                 stagingEnvironment: vse
             })
 
             if (isTimeMachineVse(vse)) {
                 this.hierarchyClient = new ContentClient({
-                    hubName: app.amplience.hub,
+                    hubName: app.amplience.default.hub,
                     stagingEnvironment: clearTimeMachine(vse)
                 })
             } else {
@@ -289,23 +289,40 @@ export class AmplienceAPI {
         const {
             variants = [],
             maxNumberMatches = 1,
-            defaultContent,
-            _meta: {name}
+            defaultContent
         } = props
+        const matchesList = [{
+            title: 'Default variant',
+            isDefault: true,
+            match: false
+        }]
+        let maxNumberCounter = 0
 
         const matches = compact(
             variants.map((arg: Variant, ind: number) => {
                 const similar = intersection(arg.segment, this.groups)
+                const matchObj = {
+                    title: `${ind + 1} - (${arg.matchMode}) ${similar.join(', ')}`,
+                    match: true,
+                    isDefault: false,
+                    maxReached: false
+                }
                 if (
                     arg.matchMode == 'Any'
                         ? similar.length == 0
                         : similar.length < arg.segment.length
                 ) {
+                    matchObj.title = `${ind + 1} - (${arg.matchMode}) ${arg.segment.join(', ')}`
+                    matchObj.match = false
+                    matchesList.push(matchObj)
                     return null
                 }
-                arg.match = `${name} match on variant ${ind + 1} (${arg.matchMode}), ${similar.join(
-                    ', '
-                )} segment${similar.length > 1 ? 's' : ''}`
+
+                maxNumberCounter += 1
+                if (maxNumberCounter > maxNumberMatches) {
+                    matchObj.maxReached = true
+                }
+                matchesList.push(matchObj)
                 return arg
             })
         )
@@ -313,7 +330,7 @@ export class AmplienceAPI {
         let responses = await Promise.all(
             matches.slice(0, maxNumberMatches).map(async (arg: Variant) => {
                 let rawIds: ('' | {id: string})[]
-                
+
                 if (arg.content == null) {
                     arg.content = []
                 }
@@ -321,7 +338,7 @@ export class AmplienceAPI {
                 if (Array.isArray(arg.content)) {
                     arg.content = arg.content.map((el) => ({
                         ...el,
-                        match: arg.match
+                        matchesList
                     })) as any[]
                     rawIds = arg.content.map(({id}) => id && {id})
                 } else {
@@ -339,7 +356,7 @@ export class AmplienceAPI {
                     if ('content' in response) {
                         return {
                             ...response.content,
-                            match: arg.match
+                            matchesList
                         }
                     }
                     return response.error
@@ -360,12 +377,14 @@ export class AmplienceAPI {
             } else if (Array.isArray(defaultContent)) {
                 allContent = [
                     ...defaultContent.map((el) => {
-                        el.match = `${name} default variant`
+                        matchesList[0].match = true
+                        el.matchesList = matchesList
                         return el
                     })
                 ]
             } else {
-                allContent = [{...defaultContent, match: `${name} default variant`}]
+                matchesList[0].match = true
+                allContent = [{...defaultContent, matchesList}]
             }
         }
 

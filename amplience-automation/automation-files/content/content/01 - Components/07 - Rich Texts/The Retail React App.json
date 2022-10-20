@@ -1,0 +1,71 @@
+{
+  "id": "2f44e56e-f748-4f4a-a39d-dddb337333f3",
+  "body": {
+    "_meta": {
+      "name": "The Retail React App",
+      "schema": "https://sfcc.com/components/rich-text"
+    },
+    "header": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "The Retail React App"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "content": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown"
+              },
+              {
+                "type": "dc-content-link",
+                "data": {
+                  "id": "657df3b9-d047-4981-b31b-d6b77bb7528f",
+                  "contentType": "https://sfcc.com/components/hero",
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                  }
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "The Retail React App is a project template that includes an isomorphic JavaScript storefront and<span> </span>[Progressive Web App](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps)<span> </span>built using<span> </span>[React](https://reactjs.org/)<span> </span>and<span> </span>[Express](https://expressjs.com/). It uses a modern headless architecture that enables developers to decouple front-end code from back-end systems. It leverages popular open-source libraries in the React ecosystem, such as<span> </span>[Chakra UI](https://chakra-ui.com/)<span> </span>components,<span> </span>[Emotion](https://emotion.sh/docs/introduction)<span> </span>(CSS-in-JS),<span> </span>[Webpack](https://webpack.js.org/), and many more.\n\nDevelopers don’t have to worry about the underlying infrastructure, whether they’re developing their app locally, deploying it to a<span> </span>[Managed Runtime](https://developer.salesforce.com/docs/commerce/pwa-kit-managed-runtime/guide/mrt-overview.html)<span> </span>environment, or testing the app live."
+              },
+              {
+                "type": "dc-content-link",
+                "data": {
+                  "id": "f5ede58e-28ac-40f3-804b-a5c22662eae3",
+                  "contentType": "https://sfcc.com/components/section",
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    }
+  },
+  "version": 4,
+  "label": "The Retail React App",
+  "status": "ACTIVE",
+  "createdBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+  "createdDate": "2022-10-12T09:30:31.313Z",
+  "lastModifiedBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+  "lastModifiedDate": "2022-10-12T10:09:20.579Z",
+  "lastPublishedVersion": 4,
+  "lastPublishedDate": "2022-10-12T10:13:30.428Z",
+  "deliveryId": "2f44e56e-f748-4f4a-a39d-dddb337333f3"
+}

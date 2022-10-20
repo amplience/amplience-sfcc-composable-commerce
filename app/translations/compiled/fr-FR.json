@@ -361,6 +361,24 @@
       "value": "Vous aimerez peut-être aussi"
     }
   ],
+  "amplience.shoppable_image.content_key": [
+    {
+      "type": 0,
+      "value": "Cliquer pour ouvrir..."
+    }
+  ],
+  "amplience.shoppable_image.loading": [
+    {
+      "type": 0,
+      "value": "Chargement..."
+    }
+  ],
+  "amplience.shoppable_image.product_404": [
+    {
+      "type": 0,
+      "value": "Impossible de trouver le produit"
+    }
+  ],
   "auth_modal.description.now_signed_in": [
     {
       "type": 0,
@@ -2639,6 +2657,132 @@
     {
       "type": 0,
       "value": "Modifier"
+    }
+  ],
+  "toolbar.about.heading": [
+    {
+      "type": 0,
+      "value": "Transparence de la barre d'outils"
+    }
+  ],
+  "toolbar.additional.default": [
+    {
+      "type": 0,
+      "value": "Contenu par défault"
+    }
+  ],
+  "toolbar.additional.legend": [
+    {
+      "type": 0,
+      "value": "Légende"
+    }
+  ],
+  "toolbar.additional.limit": [
+    {
+      "type": 0,
+      "value": "Correspondance sur la variante, mais ignorée (nombre maximal atteint)"
+    }
+  ],
+  "toolbar.additional.match": [
+    {
+      "type": 0,
+      "value": "Correspondance par défaut ou variante"
+    }
+  ],
+  "toolbar.additional.noMatch": [
+    {
+      "type": 0,
+      "value": "Aucune correspondance par défaut ou variante"
+    }
+  ],
+  "toolbar.additional.variant": [
+    {
+      "type": 0,
+      "value": "Variante"
+    }
+  ],
+  "toolbar.personalisation.heading": [
+    {
+      "type": 0,
+      "value": "Segments clients"
+    }
+  ],
+  "toolbar.preview.cancel": [
+    {
+      "type": 0,
+      "value": "Annuler"
+    }
+  ],
+  "toolbar.preview.date": [
+    {
+      "type": 0,
+      "value": "Date"
+    }
+  ],
+  "toolbar.preview.time": [
+    {
+      "type": 0,
+      "value": "Heure"
+    }
+  ],
+  "toolbar.preview.update": [
+    {
+      "type": 0,
+      "value": "Mettre à jour"
+    }
+  ],
+  "toolbar.title.about": [
+    {
+      "type": 0,
+      "value": "À propos de la barre d'outils"
+    }
+  ],
+  "toolbar.title.environments": [
+    {
+      "type": 0,
+      "value": "Environnements"
+    }
+  ],
+  "toolbar.title.personalisation": [
+    {
+      "type": 0,
+      "value": "Personnalisation"
+    }
+  ],
+  "toolbar.title.preview": [
+    {
+      "type": 0,
+      "value": "Pré-visualisation"
+    }
+  ],
+  "toolbar.title.visualisation": [
+    {
+      "type": 0,
+      "value": "Visualisation"
+    }
+  ],
+  "toolbar.visualisation.content": [
+    {
+      "type": 0,
+      "value": "Content ID"
+    }
+  ],
+  "toolbar.visualisation.locale": [
+    {
+      "type": 0,
+      "value": "Locale"
+    }
+  ],
+  "toolbar.visualisation.showMatches": [
+    {
+      "type": 0,
+      "value": "Afficher les informations"
+    }
+  ],
+  "toolbar.visualisation.title": [
+    {
+      "type": 0,
+      "value": "Nom du Hub"
     }
   ],
   "update_password_fields.button.forgot_password": [

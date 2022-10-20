@@ -1,0 +1,176 @@
+{
+  "id": "d8dfaa4c-4b7b-4f80-ae7d-986c1a13ba44",
+  "body": {
+    "_meta": {
+      "name": "Womens Shoppable Look",
+      "schema": "https://sfcc.com/components/shoppable-image"
+    },
+    "shoppableImage": {
+      "image": {
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+        },
+        "id": "783d0c45-a73b-4ed3-841c-bb9ef5d6aa57",
+        "name": "shoppable-womens-engin-akyurt-RSm7GBuMqos-unsplash",
+        "endpoint": "sfcccompdev2",
+        "defaultHost": "cdn.media.amplience.net"
+      },
+      "hotspots": [
+        {
+          "id": "549d9e1e-303e-4dc4-8588-5a8dee1b41c6",
+          "target": "25772766M",
+          "selector": "product",
+          "points": {
+            "x": 0.7985807860262009,
+            "y": 0.6572052401746725
+          }
+        },
+        {
+          "id": "181e25f0-5655-4c23-9066-cc40849c324f",
+          "target": "25695327M",
+          "selector": "product",
+          "points": {
+            "x": 0.8247816593886463,
+            "y": 0.16375545851528384
+          }
+        },
+        {
+          "id": "05ceda0e-f32a-4126-a4f8-cc6259042c86",
+          "target": "25565572M",
+          "selector": "product",
+          "points": {
+            "x": 0.18504366812227074,
+            "y": 0.4956331877729257
+          }
+        }
+      ],
+      "polygons": [
+        {
+          "id": "1f2e2050-d2db-487d-97fb-de54bcd1ef48",
+          "target": "content/information/sunglasses",
+          "selector": "contentKey",
+          "points": [
+            {
+              "x": 0.10469432314410482,
+              "y": 0.1986899563318777
+            },
+            {
+              "x": 0.1387554585152838,
+              "y": 0.1986899563318777
+            },
+            {
+              "x": 0.17019650655021823,
+              "y": 0.2165720524017466
+            },
+            {
+              "x": 0.18722707423580787,
+              "y": 0.249585152838428
+            },
+            {
+              "x": 0.18722707423580787,
+              "y": 0.2853493449781658
+            },
+            {
+              "x": 0.17019650655021823,
+              "y": 0.3183624454148468
+            },
+            {
+              "x": 0.1387554585152838,
+              "y": 0.33624454148471616
+            },
+            {
+              "x": 0.10469432314410482,
+              "y": 0.33624454148471616
+            },
+            {
+              "x": 0.07325327510917021,
+              "y": 0.3183624454148468
+            },
+            {
+              "x": 0.05622270742358078,
+              "y": 0.2853493449781658
+            },
+            {
+              "x": 0.05622270742358078,
+              "y": 0.249585152838428
+            },
+            {
+              "x": 0.07325327510917021,
+              "y": 0.2165720524017466
+            }
+          ]
+        }
+      ],
+      "poi": {
+        "x": 0.4162663755458515,
+        "y": 0.32237991266375543,
+        "w": 0.15,
+        "h": 0.15
+      }
+    },
+    "imageAltText": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Womens fashion look"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Look mode femme"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Damenmode-Look"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Look de moda para mujer"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Look alla moda da donna"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "seoText": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Collection of womens clothing"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Collection de vêtements pour femmes"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Sammlung von Damenbekleidung"
+        },
+        {
+          "locale": "es-ES",
+          "value": "colección de ropa de mujer"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Collezione di abbigliamento femminile"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    }
+  },
+  "version": 5,
+  "label": "Womens Shoppable Look",
+  "status": "ACTIVE",
+  "createdBy": "918ec612-377d-4c6a-94e4-9d4fcf8a25b0",
+  "createdDate": "2022-10-04T12:16:42.097Z",
+  "lastModifiedBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+  "lastModifiedDate": "2022-10-19T09:58:28.047Z",
+  "lastPublishedVersion": 5,
+  "lastPublishedDate": "2022-10-19T09:58:44.075Z",
+  "deliveryId": "d8dfaa4c-4b7b-4f80-ae7d-986c1a13ba44"
+}

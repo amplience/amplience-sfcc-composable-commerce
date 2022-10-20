@@ -1,0 +1,49 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://sfcc.com/components/card-list",
+    "title": "Card List",
+    "description": "A list of cards",
+    "allOf": [
+        {
+            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+        }
+    ],
+    "type": "object",
+    "properties": {
+        "header": {
+			"title": "Header",
+			"allOf": [
+				{ "$ref": "http://bigcontent.io/cms/schema/v1/localization#/definitions/localized-string" }
+			]
+		},
+        "cards": {
+            "type": "array",
+            "title": "Cards",
+            "description": "Please select the cards to display in this list",
+            "items": {
+                "allOf": [
+                    {
+                        "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                    },
+                    {
+                        "properties": {
+                            "contentType": {
+                                "title": "",
+                                "enum": [
+                                    "https://sfcc.com/components/card-enhanced"
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "minItems": 1,
+            "maxItems": 6
+        }
+
+    },
+    "propertyOrder": [
+        "header",
+        "cards"
+    ]
+}

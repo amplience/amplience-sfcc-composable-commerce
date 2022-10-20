@@ -111,6 +111,7 @@ const Home = ({isLoading, homeSlotTop}) => {
             </Section>
 
             <AmplienceWrapper content={homeSlotTop}></AmplienceWrapper>
+            <AmplienceWrapper fetch={{key: 'shoppable/woman-fall'}}></AmplienceWrapper>
             <AmplienceWrapper fetch={{key: 'simple-product-list'}}></AmplienceWrapper>
             <AmplienceWrapper fetch={{key: 'section'}}></AmplienceWrapper>
 

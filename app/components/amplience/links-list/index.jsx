@@ -43,13 +43,15 @@ const LinksList = ({
                         <HStack>
                             {links.map((link, i) => (
                                 <ListItem key={i} {...styles.listItem} sx={styles.listItemSx}>
-                                    {link.href && link.href !== '$' ? (<Link
-                                        to={link.href}
-                                        onClick={onLinkClick}
-                                        {...(link.styles ? link.styles : {})}
-                                    >
-                                        {link.text}
-                                    </Link>) : (
+                                    {link.href && link.href !== '$' ? (
+                                        <Link
+                                            to={link.href}
+                                            onClick={onLinkClick}
+                                            {...(link.styles ? link.styles : {})}
+                                        >
+                                            {link.text}
+                                        </Link>
+                                    ) : (
                                         <Heading {...styles.footerHeading}>{link?.text}</Heading>
                                     )}
                                 </ListItem>
@@ -58,13 +60,15 @@ const LinksList = ({
                     ) : (
                         links.map((link, i) => (
                             <ListItem key={i}>
-                                {link.href && link.href !== '$' ? (<Link
-                                    to={link.href}
-                                    onClick={onLinkClick}
-                                    {...(link.styles ? link.styles : {})}
-                                >
-                                    {link.text}
-                                </Link>) : (
+                                {link.href && link.href !== '$' ? (
+                                    <Link
+                                        to={link.href}
+                                        onClick={onLinkClick}
+                                        {...(link.styles ? link.styles : {})}
+                                    >
+                                        {link.text}
+                                    </Link>
+                                ) : (
                                     <Heading {...styles.footerHeading}>{link?.text}</Heading>
                                 )}
                             </ListItem>

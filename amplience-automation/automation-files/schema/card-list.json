@@ -1,0 +1,5 @@
+{
+  "body": "./schemas/card-list-schema.json",
+  "schemaId": "https://sfcc.com/components/card-list",
+  "validationLevel": "CONTENT_TYPE"
+}

@@ -10,7 +10,6 @@ import {useCommerceAPI, CustomerContext} from '../contexts'
 import {app} from '../../../config/default'
 import {createOcapiFetch} from '../../amplience-api/utils'
 import {AmplienceContext} from '../../contexts/amplience'
-import useNavigation from '../../hooks/use-navigation'
 
 const AuthTypes = Object.freeze({GUEST: 'guest', REGISTERED: 'registered'})
 
@@ -92,7 +91,7 @@ export default function useCustomer() {
                 const data = await ocapiFetch('customers/' + api.auth._storage.get('cid'), 'GET', [
                     {headers: {Authorization: api.auth._storage.get('token')}}
                 ])
-                if ( data.c_customerGroups ) {
+                if (data.c_customerGroups) {
                     return data.c_customerGroups
                 } else {
                     return api.auth._storage.get('cid') ? ['Everyone', 'Registered'] : []

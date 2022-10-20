@@ -1,0 +1,52 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://sfcc.com/components/rich-text",
+
+	"title": "Text component",
+	"description": "Simple Text component",
+
+	"allOf": [
+		{
+			"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+		}
+	],
+	
+	"type": "object",
+	"properties": {
+		"header": {
+			"title": "Header",
+			"allOf": [
+				{ "$ref": "http://bigcontent.io/cms/schema/v1/localization#/definitions/localized-string" }
+			]
+		},
+		"content": {
+			"allOf": [
+				{
+				"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+				}
+			],
+			"properties": {
+				"values": {
+					"items": {
+						"properties": {
+						"value": {
+							"type": "object",
+							"title": "Text Content",
+							"properties": {
+							"richText": {
+								"allOf": [
+								{
+									"$ref": "https://sfcc.com/libs/all-definitions#/definitions/richText"
+								}
+								]
+							}
+							}
+						}
+						}
+					}
+				}
+			}
+		}
+	},
+	"propertyOrder": []
+}

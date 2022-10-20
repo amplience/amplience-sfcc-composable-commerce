@@ -12,12 +12,12 @@
         "visualizations": [
             {
                 "label": "Localhost",
-                "templatedUri": "http://localhost:3000/visualization/{{hub.name}}/{{content.sys.id}}?vse={{vse.domain}}",
+                "templatedUri": "http://localhost:3000/{{locales}}/visualization?vse={{vse.domain}}&contentId={{content.sys.id}}&hub={{hub.name}}",
                 "default": true
             },
             {
                 "label": "Live (Amplience MRT)",
-                "templatedUri": "https://ascc-production.mobify-storefront.com/visualization/{{hub.name}}/{{content.sys.id}}?vse={{vse.domain}}",
+                "templatedUri": "https://ascc-production.mobify-storefront.com/{{locales}}/visualization?vse={{vse.domain}}&contentId={{content.sys.id}}&hub={{hub.name}}",
                 "default": false
             },
             {

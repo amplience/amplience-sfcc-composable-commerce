@@ -1,0 +1,322 @@
+{
+  "id": "b297be6e-e3ce-4312-bbe9-b54c9fbb7c4f",
+  "body": {
+    "_meta": {
+      "name": "Mens Shoppable Look",
+      "schema": "https://sfcc.com/components/shoppable-image"
+    },
+    "shoppableImage": {
+      "image": {
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+        },
+        "id": "d64865f5-0256-46fa-9239-022172f43a69",
+        "name": "shoppable-mens-nordwood-themes-Nv4QHkTVEaI-unsplash",
+        "endpoint": "sfcccompdev2",
+        "defaultHost": "cdn.media.amplience.net"
+      },
+      "polygons": [
+        {
+          "id": "03888010-ece4-482f-b680-a159c257b3de",
+          "target": "belt",
+          "selector": "tooltip",
+          "points": [
+            {
+              "x": 0.49672489082969434,
+              "y": 0.004366812227074246
+            },
+            {
+              "x": 0.5476710334788938,
+              "y": 0.004366812227074246
+            },
+            {
+              "x": 0.5476710334788938,
+              "y": 0.6746724890829693
+            },
+            {
+              "x": 0.49672489082969434,
+              "y": 0.6746724890829693
+            }
+          ]
+        },
+        {
+          "id": "948e1149-a559-45c0-a5c4-f28d1362fe8d",
+          "target": "78916783M",
+          "selector": "product",
+          "points": [
+            {
+              "x": 0.5724163027656477,
+              "y": 0.44104803493449785
+            },
+            {
+              "x": 0.8111353711790392,
+              "y": 0.44104803493449785
+            },
+            {
+              "x": 0.8111353711790392,
+              "y": 0.6724890829694323
+            },
+            {
+              "x": 0.5724163027656477,
+              "y": 0.6724890829694323
+            }
+          ]
+        },
+        {
+          "id": "fe477171-f061-492b-802b-ae6a66449676",
+          "target": "54736828M",
+          "selector": "product",
+          "points": [
+            {
+              "x": 0.5491266375545851,
+              "y": 0.03930131004366811
+            },
+            {
+              "x": 0.757278020378457,
+              "y": 0.03930131004366811
+            },
+            {
+              "x": 0.757278020378457,
+              "y": 0.2903930131004367
+            },
+            {
+              "x": 0.5491266375545851,
+              "y": 0.2903930131004367
+            }
+          ]
+        },
+        {
+          "id": "657f94c4-3edf-4e80-9edb-bcf79f16978d",
+          "target": "watches",
+          "selector": "tooltip",
+          "points": [
+            {
+              "x": 0.28129548762736534,
+              "y": 0.5960698689956332
+            },
+            {
+              "x": 0.4836244541484716,
+              "y": 0.5960698689956332
+            },
+            {
+              "x": 0.4836244541484716,
+              "y": 0.6528384279475983
+            },
+            {
+              "x": 0.28129548762736534,
+              "y": 0.6528384279475983
+            }
+          ]
+        },
+        {
+          "id": "009ea541-f904-4bae-a047-a1464a90df61",
+          "target": "shoes",
+          "selector": "tooltip",
+          "points": [
+            {
+              "x": 0.22307132459970888,
+              "y": 0.0611353711790393
+            },
+            {
+              "x": 0.48653566229985445,
+              "y": 0.0611353711790393
+            },
+            {
+              "x": 0.48653566229985445,
+              "y": 0.5764192139737991
+            },
+            {
+              "x": 0.22307132459970888,
+              "y": 0.5764192139737991
+            }
+          ]
+        },
+        {
+          "id": "45cc95c5-c6a3-43d8-835e-b596a0fd76a4",
+          "target": "content/information/sunglasses",
+          "selector": "contentKey",
+          "points": [
+            {
+              "x": 0.5898835516739448,
+              "y": 0.3209606986899563
+            },
+            {
+              "x": 0.7441775836972344,
+              "y": 0.3209606986899563
+            },
+            {
+              "x": 0.7441775836972344,
+              "y": 0.4170305676855895
+            },
+            {
+              "x": 0.5898835516739448,
+              "y": 0.4170305676855895
+            }
+          ]
+        }
+      ],
+      "poi": {
+        "x": 0.39868995633187776,
+        "y": 0.04072052401746726,
+        "w": 0.09999999999999999,
+        "h": 0.15
+      }
+    },
+    "imageAltText": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Mens fashion look"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Look mode homme"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Herrenmode-Look"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Look de moda para hombre"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Look alla moda maschile"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "seoText": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Collection of mens clothing"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Collection de vêtements pour hommes"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Sammlung von Herrenbekleidung"
+        },
+        {
+          "locale": "es-ES",
+          "value": "colección de ropa de hombre"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Collezione di abbigliamento uomo"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "tooltips": [
+      {
+        "value": {
+          "values": [
+            {
+              "locale": "en-US",
+              "value": "Remember to pick up a belt!"
+            },
+            {
+              "locale": "fr-FR",
+              "value": "N'oubliez pas de prendre une ceinture!"
+            },
+            {
+              "locale": "de-DE",
+              "value": "Denken Sie daran, einen Gürtel aufzuheben!"
+            },
+            {
+              "locale": "es-ES",
+              "value": "¡Recuerda llevar un cinturón!"
+            },
+            {
+              "locale": "it-IT",
+              "value": "Ricordati di prendere una cintura!"
+            }
+          ],
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+          }
+        },
+        "key": "belt"
+      },
+      {
+        "value": {
+          "values": [
+            {
+              "locale": "en-US",
+              "value": "Men's shoes range coming next year!"
+            },
+            {
+              "locale": "fr-FR",
+              "value": "La gamme de chaussures pour hommes arrive l'année prochaine !"
+            },
+            {
+              "locale": "de-DE",
+              "value": "Herrenschuh-Sortiment kommt nächstes Jahr!"
+            },
+            {
+              "locale": "es-ES",
+              "value": "¡La gama de zapatos de hombre llegará el próximo año!"
+            },
+            {
+              "locale": "it-IT",
+              "value": "La gamma di scarpe da uomo in arrivo il prossimo anno!"
+            }
+          ],
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+          }
+        },
+        "key": "shoes"
+      },
+      {
+        "value": {
+          "values": [
+            {
+              "locale": "en-US",
+              "value": "Luxury watches range coming soon..."
+            },
+            {
+              "locale": "fr-FR",
+              "value": "Gamme de montres de luxe bientôt disponible..."
+            },
+            {
+              "locale": "de-DE",
+              "value": "Luxusuhren-Sortiment in Kürze erhältlich..."
+            },
+            {
+              "locale": "es-ES",
+              "value": "Gama de relojes de lujo próximamente..."
+            },
+            {
+              "locale": "it-IT",
+              "value": "Presto la gamma di orologi di lusso..."
+            }
+          ],
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+          }
+        },
+        "key": "watches"
+      }
+    ]
+  },
+  "version": 9,
+  "label": "Mens Shoppable Look",
+  "status": "ACTIVE",
+  "createdBy": "918ec612-377d-4c6a-94e4-9d4fcf8a25b0",
+  "createdDate": "2022-10-04T12:45:21.103Z",
+  "lastModifiedBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+  "lastModifiedDate": "2022-10-19T09:59:37.354Z",
+  "lastPublishedVersion": 9,
+  "lastPublishedDate": "2022-10-19T09:59:48.980Z",
+  "deliveryId": "b297be6e-e3ce-4312-bbe9-b54c9fbb7c4f"
+}

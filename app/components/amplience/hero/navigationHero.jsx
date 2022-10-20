@@ -13,12 +13,7 @@ const NavigationHero = ({title, img, actions, fullWidth, ...props}) => {
     }
 
     return (
-        <Box
-            marginBottom={{base: 0}}
-            height={{lg: 'xs'}}
-            position={{lg: 'relative'}}
-            {...props}
-        >
+        <Box marginBottom={{base: 0}} height={{lg: 'xs'}} position={{lg: 'relative'}} {...props}>
             <Stack
                 align={'center'}
                 spacing={{base: 2}}
@@ -26,9 +21,7 @@ const NavigationHero = ({title, img, actions, fullWidth, ...props}) => {
                 paddingBottom={{base: 2}}
                 direction={{base: 'column'}}
             >
-                {
-
-                    src &&
+                {src && (
                     <Flex
                         flex={1}
                         justify={'center'}
@@ -49,14 +42,11 @@ const NavigationHero = ({title, img, actions, fullWidth, ...props}) => {
                         </Box>
                         {actions && (
                             <Box position={'absolute'}>
-                                <Button
-                                    label={actions[0].label}
-                                    url={actions[0].url}>
-                                </Button>
+                                <Button label={actions[0].label} url={actions[0].url}></Button>
                             </Box>
                         )}
                     </Flex>
-                }
+                )}
             </Stack>
         </Box>
     )

@@ -1,0 +1,172 @@
+{
+  "id": "96fed435-b80e-46d6-a50b-8ac39d3717c3",
+  "body": {
+    "shoppableImage": {
+      "image": {
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+        },
+        "id": "b19a5176-451c-4649-972a-4717f43dd571",
+        "name": "shoppable-poi-womens-festival-amos-bar-zeev-hVk6pIFbW9o-unsplash",
+        "endpoint": "sfcccompdev2",
+        "defaultHost": "cdn.media.amplience.net"
+      },
+      "poi": {
+        "x": 0.7188775510204082,
+        "y": 0.5057860262008734,
+        "w": 0.10014577259475219,
+        "h": 0.15
+      },
+      "polygons": [
+        {
+          "id": "9808113d-e2ac-44cb-b34c-8ed9747eb76e",
+          "target": "content/information/sunglasses",
+          "selector": "contentKey",
+          "points": [
+            {
+              "x": 0.6643586005830904,
+              "y": 0.2052401746724891
+            },
+            {
+              "x": 0.8305393586005831,
+              "y": 0.2052401746724891
+            },
+            {
+              "x": 0.8305393586005831,
+              "y": 0.31222707423580787
+            },
+            {
+              "x": 0.6643586005830904,
+              "y": 0.31222707423580787
+            }
+          ]
+        },
+        {
+          "id": "728264ed-216b-415d-8f08-d3f3f7647ac8",
+          "target": "25593169M",
+          "selector": "product",
+          "points": [
+            {
+              "x": 0.6362973760932945,
+              "y": 0.425764192139738
+            },
+            {
+              "x": 0.8622448979591837,
+              "y": 0.425764192139738
+            },
+            {
+              "x": 0.8622448979591837,
+              "y": 0.7554585152838428
+            },
+            {
+              "x": 0.6362973760932945,
+              "y": 0.7554585152838428
+            }
+          ]
+        },
+        {
+          "id": "a25e677e-567e-4dc6-988d-8b0b42885f49",
+          "target": "25565178M",
+          "selector": "product",
+          "points": [
+            {
+              "x": 0.5827259475218659,
+              "y": 0.7336244541484717
+            },
+            {
+              "x": 0.8509475218658892,
+              "y": 0.7336244541484717
+            },
+            {
+              "x": 0.8509475218658892,
+              "y": 0.9388646288209607
+            },
+            {
+              "x": 0.5827259475218659,
+              "y": 0.9388646288209607
+            }
+          ]
+        }
+      ],
+      "hotspots": [
+        {
+          "id": "98960d1d-1655-4b84-9691-64852ad70300",
+          "target": "25720074M",
+          "selector": "product",
+          "points": {
+            "x": 0.7561953352769678,
+            "y": 0.5305676855895196
+          }
+        }
+      ]
+    },
+    "imageAltText": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Woman sitting on top of a green car"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Femme assise sur une voiture verte"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Frau sitzt auf einem grünen Auto"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Mujer sentada encima de un auto verde"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Donna seduta su un'auto verde"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "seoText": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Get your your perfect look for festival season!"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Obtenez votre look parfait pour la saison des festivals !"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Hol dir deinen perfekten Look für die Festivalsaison!"
+        },
+        {
+          "locale": "es-ES",
+          "value": "¡Consigue tu look perfecto para la temporada de festivales!"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Ottieni il tuo look perfetto per la stagione dei festival!"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "_meta": {
+      "name": "Fall Festival Womens Shoppable",
+      "schema": "https://sfcc.com/components/shoppable-image"
+    }
+  },
+  "version": 7,
+  "label": "Fall Festival Womens Shoppable",
+  "status": "ACTIVE",
+  "createdBy": "918ec612-377d-4c6a-94e4-9d4fcf8a25b0",
+  "createdDate": "2022-10-05T09:57:29.353Z",
+  "lastModifiedBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+  "lastModifiedDate": "2022-10-17T07:45:00.223Z",
+  "lastPublishedVersion": 7,
+  "lastPublishedDate": "2022-10-17T07:45:28.988Z",
+  "deliveryId": "96fed435-b80e-46d6-a50b-8ac39d3717c3"
+}

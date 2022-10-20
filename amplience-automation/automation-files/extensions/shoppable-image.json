@@ -1,0 +1,22 @@
+{
+  "name": "shoppable-image",
+  "label": "Shoppable Image",
+  "description": "Shoppable Image Extension",
+  "url": "https://shoppable-image.extensions.content.amplience.net",
+  "height": 200,
+  "enabledForAllContentTypes": false,
+  "category": "CONTENT_FIELD",
+  "parameters": "{}",
+  "snippets": [
+    {
+      "label": "Shoppable Image",
+      "body": "{\n  \"title\": \"Shoppable Image\",\n  \"description\": \"An image enriched with a focal point and hotspots.\",\n  \"allOf\": [\n    {\n      \"$ref\": \"https://amplience.com/shoppable-image-partial#/definitions/shoppableImage\"\n    }\n  ]\n}"
+    }
+  ],
+  "settings": "{\"API\":{\"READ\":false,\"EDIT\":false},\"SANDBOX\":{\"SAME_ORIGIN\":false,\"MODALS\":false,\"NAVIGATION\":false,\"POPUPS\":false,\"POPUP_ESCAPE_SANDBOX\":false,\"DOWNLOADS\":false,\"FORMS\":false}}",
+  "status": "ACTIVE",
+  "createdBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+  "createdDate": "2022-10-03T10:33:51.764Z",
+  "lastModifiedBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+  "lastModifiedDate": "2022-10-03T10:57:31.535Z"
+}

@@ -1,0 +1,93 @@
+{
+  "id": "7c0ed6d3-e59a-4ff9-acbf-ffb7112e163e",
+  "body": {
+    "_meta": {
+      "name": "The Amplience Toolbar",
+      "schema": "https://sfcc.com/components/rich-text",
+      "deliveryKey": "rich-text/amplience-toolbar"
+    },
+    "header": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Details"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "content": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "The **Amplience Toolbar** allows you to easily navigate preview and visualisation using the different panels available.\n\nThe **Preview Panel** allows you to do time travel in your events and editions.\n\nThe **Visualisation Panel** shows the current visualisation parameters such as VSE, hub name, locale and content ID. You can easily copy/paste any of these value using the copy icon.\n\nThe **Environments Panel** allows you to switch from your default environment to additional ones (for instance UAT, Test, etc.).\n\nThe **Personalisation Panel** allows you to show personalisation rules match, and simulate customer groups to test your rules."
+              }
+            ]
+          }
+        },
+        {
+          "locale": "fr-FR",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "La **barre d'outils Amplience** vous permet de naviguer facilement dans l'aperçu et la visualisation à l'aide des différents panneaux disponibles.\n\nLe **panneau de pré-visualisation** vous permet de voyager dans le temps dans vos événements et éditions.\n\nLe **panneau de visualisation** affiche les paramètres de visualisation actuels tels que le VSE, le nom du hub, les paramètres régionaux et l'ID de contenu. Vous pouvez facilement copier/coller n'importe laquelle de ces valeurs à l'aide de l'icône de copie.\n\nLe **panneau des environnements** vous permet de passer de votre environnement par défaut à d'autres (par exemple UAT, Test, etc.).\n\nLe **panneau de personnalisation** vous permet d'afficher la correspondance des règles de personnalisation et de simuler des groupes de clients pour tester vos règles."
+              }
+            ]
+          }
+        },
+        {
+          "locale": "de-DE",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Mit der **Amplience-Symbolleiste** können Sie mithilfe der verschiedenen verfügbaren Bedienfelder einfach durch die Vorschau und Visualisierung navigieren.\n\nDas **Vorschaufenster** ermöglicht es Ihnen, Zeitreisen in Ihren Veranstaltungen und Ausgaben zu unternehmen.\n\nDas **Visualisierungsfenster** zeigt die aktuellen Visualisierungsparameter wie VSE, Hub-Name, Gebietsschema und Inhalts-ID. Sie können jeden dieser Werte einfach kopieren/einfügen, indem Sie das Kopiersymbol verwenden.\n\nDas **Umgebungsfenster** ermöglicht es Ihnen, von Ihrer Standardumgebung zu zusätzlichen Umgebungen (z. B. UAT, Test usw.) zu wechseln.\n\nIm **Personalisierungsbereich** können Sie Übereinstimmungen mit Personalisierungsregeln anzeigen und Kundengruppen simulieren, um Ihre Regeln zu testen."
+              }
+            ]
+          }
+        },
+        {
+          "locale": "es-ES",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "La **barra de herramientas de Amplience** le permite navegar fácilmente por la vista previa y la visualización utilizando los diferentes paneles disponibles.\n\nEl **panel de vista** previa le permite viajar en el tiempo en sus eventos y ediciones.\n\nEl **panel de visualización** muestra los parámetros de visualización actuales, como VSE, el nombre del concentrador, la configuración regional y el ID de contenido. Puede copiar/pegar fácilmente cualquiera de estos valores usando el icono de copiar.\n\nEl **Panel de entornos** le permite cambiar de su entorno predeterminado a otros adicionales (por ejemplo, UAT, Prueba, etc.).\n\nEl **panel de personalización** le permite mostrar la coincidencia de reglas de personalización y simular grupos de clientes para probar sus reglas."
+              }
+            ]
+          }
+        },
+        {
+          "locale": "it-IT",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "La **barra degli strumenti Amplience** consente di navigare facilmente in anteprima e visualizzazione utilizzando i diversi pannelli disponibili.\n\nIl **pannello di anteprima** ti consente di viaggiare nel tempo nei tuoi eventi ed edizioni.\n\nIl **pannello di visualizzazione** mostra i parametri di visualizzazione correnti come VSE, nome hub, locale e ID contenuto. Puoi facilmente copiare/incollare uno qualsiasi di questi valori utilizzando l'icona di copia.\n\nIl **pannello Ambienti** ti consente di passare dal tuo ambiente predefinito a quelli aggiuntivi (ad esempio UAT, Test, ecc.).\n\nIl **pannello di personalizzazione** ti consente di mostrare la corrispondenza delle regole di personalizzazione e di simulare gruppi di clienti per testare le tue regole."
+              }
+            ]
+          }
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    }
+  },
+  "version": 8,
+  "label": "The Amplience Toolbar",
+  "status": "ACTIVE",
+  "createdBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+  "createdDate": "2022-10-12T10:24:29.889Z",
+  "lastModifiedBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+  "lastModifiedDate": "2022-10-12T12:14:03.230Z",
+  "lastPublishedVersion": 8,
+  "lastPublishedDate": "2022-10-12T15:23:22.859Z",
+  "deliveryId": "7c0ed6d3-e59a-4ff9-acbf-ffb7112e163e"
+}

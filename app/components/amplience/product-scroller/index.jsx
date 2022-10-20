@@ -51,7 +51,12 @@ const ProductScroller = forwardRef(
                     {isLoading && <Skeleton height={6} width="150px" m="auto" />}
 
                     {title && !header && !isLoading && (
-                        <Heading as="h2" fontSize="xl" textAlign="center">
+                        <Heading
+                            as="h2"
+                            mt={4}
+                            mb={4}
+                            textAlign={'center'}
+                            fontSize={{base: 'md', md: '3xl', lg: '4xl'}}>
                             {title}
                         </Heading>
                     )}

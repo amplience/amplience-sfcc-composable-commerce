@@ -1,0 +1,49 @@
+{
+  "id": "f3391c5c-80bd-49fe-bb1d-6cdb6ad68652",
+  "body": {
+    "_meta": {
+      "name": "Personalised Slot - Amplience Wrapper by key",
+      "schema": "https://sfcc.com/components/rich-text",
+      "deliveryKey": "rich-text/dev-by-key1"
+    },
+    "header": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Personalised Slot - Amplience Wrapper by key"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "content": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Using the `AmplienceWrapper` Component, you can get content from slot `home/slot/top-personalised`:\n\n```javascript\n<AmplienceWrapper fetch={{key: 'home/slot/top-personalised'}} />\n```"
+              }
+            ]
+          }
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    }
+  },
+  "version": 7,
+  "label": "Personalised Slot - Amplience Wrapper by key",
+  "status": "ACTIVE",
+  "createdBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+  "createdDate": "2022-10-12T10:57:24.668Z",
+  "lastModifiedBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+  "lastModifiedDate": "2022-10-12T21:51:42.172Z",
+  "lastPublishedVersion": 7,
+  "lastPublishedDate": "2022-10-12T21:51:47.855Z",
+  "deliveryId": "f3391c5c-80bd-49fe-bb1d-6cdb6ad68652"
+}

@@ -12,7 +12,7 @@ import {getAssetUrl} from 'pwa-kit-react-sdk/ssr/universal/utils'
 import {getAppOrigin} from 'pwa-kit-react-sdk/utils/url'
 
 // Chakra
-import {Box, useDisclosure, useMultiStyleConfig, useStyleConfig} from '@chakra-ui/react'
+import {Box, useDisclosure, useStyleConfig} from '@chakra-ui/react'
 import {SkipNavLink, SkipNavContent} from '@chakra-ui/skip-nav'
 
 // Contexts
@@ -57,7 +57,7 @@ import {resolveSiteFromUrl} from '../../utils/site-utils'
 import useMultiSite from '../../hooks/use-multi-site'
 
 import {init} from 'dc-visualization-sdk'
-import PreviewHeader from '../amplience/preview-header'
+import Toolbar from '../amplience/toolbar'
 import {defaultAmpClient} from '../../amplience-api'
 import {useAmpRtvNav} from '../../utils/amplience/rtv'
 
@@ -145,8 +145,11 @@ const App = (props) => {
         // Lets automatically close the mobile navigation when the
         // location path is changed.
         onClose()
-        
-        const showPreview = (location.search && (location.search.includes('vse=') || location.search.includes('pagevse='))) || location.pathname.includes('visualization')
+        const activeParams = new URLSearchParams(location.search || '')
+        const showPreview =
+            activeParams &&
+            ((activeParams.has('vse') && activeParams.get('vse')) ||
+                (activeParams.has('pagevse') && activeParams.get('pagevse')))
         setShowVse(showPreview)
     }, [location])
 
@@ -217,7 +220,7 @@ const App = (props) => {
                 <CategoriesProvider categories={allCategories}>
                     <CurrencyProvider currency={currency}>
                         <AmplienceContextProvider {...ampProps} showVse={showVse}>
-                            {showVse && <PreviewHeader {...ampProps} showVse={showVse} />}
+                            {showVse && <Toolbar {...ampProps} showVse={showVse} />}
                             <RealtimeVisualization.Provider value={{ampVizSdk, status}}>
                                 <Seo>
                                     <meta name="theme-color" content={THEME_COLOR} />

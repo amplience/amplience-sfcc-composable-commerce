@@ -1,0 +1,131 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://sfcc.com/components/shoppable-image",
+
+	"title": "Shoppable Image",
+	"description": "An image with interactable elements",
+
+	"allOf": [
+		{
+			"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+		}
+	],
+	
+	"type": "object",
+	"properties": {
+		"help": {
+			"type": "null",
+			"ui:extension": {
+				"name": "help",
+				"params": {
+					"title": "Help with Shoppable Target & Selector",
+					"message": "The Shoppable Image extension allows you to tie hotspots and regions on an image to links, tooltips and popups via the string fields 'target' and 'selector'. In this project, the selector defines what type of content is associated, and the target defines the specific content.\n- **product:** Links to an SFCC product by ID. On hover, will show the product name and price.\n    - *Example:* `78916783M`\n- **category:** Links to an SFCC category by ID. On hover, will show the category name.\n    - *Example:* `newarrivals-women`\n- **link:** A link to any URL. Can be relative or absolute.\n    - *Examples:* `/cart`, `https://amplience.com`\n- **page:** Links to an amplience content page.\n    - *Example:* `faq`\n- **tooltip:** A tooltip that does nothing on click.\n    - *Example:* `tooltip-key`\n- **contentKey:** Opens a drawer displaying amplience content with the specified key.\n    - *Example:* `hero`\n### Tooltips\nFor any selector, you can define a custom localized tooltip using the array below that overrides the default one. The `key` of the tooltip should match whatever the `target` is in the shoppable image, and the value is what you want to appear in the tooltip. The `tooltip` selector will _only_ display a tooltip if the text is defined here."	
+				}
+			}
+		},
+		"title": {
+            "title": "Title",
+            "description": "Title for the shoppable image",
+            "allOf": [
+                {
+                    "$ref": "http://bigcontent.io/cms/schema/v1/localization#/definitions/localized-string"
+                }
+            ]
+        },
+		"shoppableImage": {
+			"title": "Shoppable Image",
+			"description": "An image enriched with a focal point and hotspots.",
+			"allOf": [
+				{
+					"$ref": "https://sfcc.com/libs/all-definitions#/definitions/shoppableImage"
+				}
+			]
+		},
+		"imageAltText": {
+			"allOf": [
+				{
+					"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+				}
+			],
+			"properties": {
+				"values": {
+					"items": {
+						"properties": {
+							"value": {
+								"type": "string",
+								"title": "Image alt text",
+								"description": "Alternative text for image for SEO",
+								"minLength": 0,
+								"maxLength": 50
+							}
+						}
+					}
+				}
+			}
+		},
+		"seoText": {
+			"allOf": [
+				{
+					"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+				}
+			],
+			"properties": {
+				"values": {
+					"items": {
+						"properties": {
+							"value": {
+								"type": "string",
+								"title": "SEO Text",
+								"description": "e.g. ladies-sunglasses",
+								"minLength": 0,
+								"maxLength": 100
+							}
+						}
+					}
+				}
+			}
+		},
+		"tooltips": {
+			"title": "Tooltips",
+			"description": "Custom tooltips used in the Shoppable Image",
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"key": {
+						"title": "Tooltip Key",
+						"description": "The key used to identify this tooltip text, referenced by the Target.",
+						"type": "string"
+					},
+					"value": {
+						"allOf": [
+							{
+								"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+							}
+						],
+						"properties": {
+							"values": {
+								"items": {
+									"properties": {
+										"value": {
+											"type": "string",
+											"title": "Tooltip Text",
+											"description": "Text that appears when the user hovers the hotspot or polygon.",
+											"minLength": 0,
+											"maxLength": 100
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+				"required": [
+					"key",
+					"value"
+				]
+			}
+		}
+	},
+	"propertyOrder": []
+}
