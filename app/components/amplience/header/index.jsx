@@ -36,7 +36,6 @@ import Search from '../../search'
 import withRegistration from '../../../hoc/with-registration'
 import {
     AccountIcon,
-    BrandLogo,
     BasketIcon,
     HamburgerIcon,
     ChevronDownIcon,
@@ -71,15 +70,15 @@ const IconButtonWithRegistration = withRegistration(IconButton)
  * @return  {React.ReactElement} - Header component
  */
 const Header = ({
-                    children,
-                    onMenuClick = noop,
-                    onMyAccountClick = noop,
-                    onLogoClick = noop,
-                    onMyCartClick = noop,
-                    onWishlistClick = noop,
-                    logo,
-                    ...props
-                }) => {
+    children,
+    onMenuClick = noop,
+    onMyAccountClick = noop,
+    onLogoClick = noop,
+    onMyCartClick = noop,
+    onWishlistClick = noop,
+    logo,
+    ...props
+}) => {
     const intl = useIntl()
     const basket = useBasket()
     const customer = useCustomer()
@@ -95,7 +94,7 @@ const Header = ({
 
     const styles = useMultiStyleConfig('Header')
     const ampStyles = useMultiStyleConfig('AmplienceHeader')
-    const url = getImageUrl(logo);
+    const url = getImageUrl(logo)
 
     const onSignoutClick = async () => {
         setShowLoading(true)
@@ -119,35 +118,37 @@ const Header = ({
         <Box {...styles.container} {...props}>
             <Box {...styles.content}>
                 {showLoading && <LoadingSpinner wrapperStyles={{height: '100vh'}} />}
-                <Flex wrap='wrap' alignItems={['baseline', 'baseline', 'baseline', 'center']}>
+                <Flex wrap="wrap" alignItems={['baseline', 'baseline', 'baseline', 'center']}>
                     <IconButton
                         aria-label={intl.formatMessage({
                             id: 'header.button.assistive_msg.menu',
                             defaultMessage: 'Menu'
                         })}
                         icon={<HamburgerIcon />}
-                        variant='unstyled'
+                        variant="unstyled"
                         display={{lg: 'none'}}
                         {...styles.icons}
                         onClick={onMenuClick}
                     />
-                    {url && (<IconButton
-                        aria-label={intl.formatMessage({
-                            id: 'header.button.assistive_msg.logo',
-                            defaultMessage: 'Logo'
-                        })}
-                        icon={
-                            <img
-                                {...styles.logo}
-                                style={{...ampStyles.logo}}
-                                alt={'logo'}
-                                src={`${url}?w=192&fmt=auto`}
-                            />
-                        }
-                        {...styles.icons}
-                        variant='unstyled'
-                        onClick={onLogoClick}
-                    />)}
+                    {url && (
+                        <IconButton
+                            aria-label={intl.formatMessage({
+                                id: 'header.button.assistive_msg.logo',
+                                defaultMessage: 'Logo'
+                            })}
+                            icon={
+                                <img
+                                    {...styles.logo}
+                                    style={{...ampStyles.logo}}
+                                    alt={'logo'}
+                                    src={`${url}?w=192&fmt=auto`}
+                                />
+                            }
+                            {...styles.icons}
+                            variant="unstyled"
+                            onClick={onLogoClick}
+                        />
+                    )}
                     <Box {...styles.bodyContainer}>{children}</Box>
                     <Box {...styles.searchContainer}>
                         <Search
@@ -177,13 +178,13 @@ const Header = ({
                             isLazy
                             arrowSize={15}
                             isOpen={isOpen}
-                            placement='bottom-end'
+                            placement="bottom-end"
                             onClose={onClose}
                             onOpen={onOpen}
                         >
                             <PopoverTrigger>
                                 <ChevronDownIcon
-                                    aria-label='My account trigger'
+                                    aria-label="My account trigger"
                                     onMouseLeave={handleIconsMouseLeave}
                                     onKeyDown={(e) => {
                                         keyMap[e.key]?.(e)
@@ -214,7 +215,7 @@ const Header = ({
                                     </Text>
                                 </PopoverHeader>
                                 <PopoverBody>
-                                    <Stack spacing={0} as='nav' data-testid='account-detail-nav'>
+                                    <Stack spacing={0} as="nav" data-testid="account-detail-nav">
                                         {navLinks.map((link) => {
                                             const LinkIcon = link.icon
                                             return (
@@ -223,7 +224,7 @@ const Header = ({
                                                     as={Link}
                                                     to={`/account${link.path}`}
                                                     useNavLink={true}
-                                                    variant='menu-link'
+                                                    variant="menu-link"
                                                     leftIcon={<LinkIcon boxSize={5} />}
                                                 >
                                                     {intl.formatMessage(messages[link.name])}
@@ -232,12 +233,12 @@ const Header = ({
                                         })}
                                     </Stack>
                                 </PopoverBody>
-                                <PopoverFooter onClick={onSignoutClick} cursor='pointer'>
-                                    <Divider colorScheme='gray' />
-                                    <Button variant='unstyled' {...styles.signout}>
+                                <PopoverFooter onClick={onSignoutClick} cursor="pointer">
+                                    <Divider colorScheme="gray" />
+                                    <Button variant="unstyled" {...styles.signout}>
                                         <Flex>
                                             <SignoutIcon boxSize={5} {...styles.signoutIcon} />
-                                            <Text as='span' {...styles.signoutText}>
+                                            <Text as="span" {...styles.signoutText}>
                                                 {intl.formatMessage({
                                                     defaultMessage: 'Log out',
                                                     id: 'header.popover.action.log_out'
@@ -255,7 +256,7 @@ const Header = ({
                             id: 'header.button.assistive_msg.wishlist'
                         })}
                         icon={<HeartIcon />}
-                        variant='unstyled'
+                        variant="unstyled"
                         {...styles.icons}
                         onClick={onWishlistClick}
                     />
@@ -268,13 +269,13 @@ const Header = ({
                             <>
                                 <BasketIcon />
                                 {basket?.loaded && (
-                                    <Badge variant='notification'>
+                                    <Badge variant="notification">
                                         {basket.itemAccumulatedCount}
                                     </Badge>
                                 )}
                             </>
                         }
-                        variant='unstyled'
+                        variant="unstyled"
                         {...styles.icons}
                         onClick={onMyCartClick}
                     />

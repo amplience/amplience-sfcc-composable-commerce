@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import {useCommerceAPI} from '../../../commerce-api/contexts'
 import {handleAsyncError} from '../../../commerce-api/utils'
 import ProductScroller from '../product-scroller'
-import { Stack } from '@chakra-ui/react'
+import {Stack} from '@chakra-ui/react'
 
 const selectImage = (product) => {
     const groups = product.imageGroups

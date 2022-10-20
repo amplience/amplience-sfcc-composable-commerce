@@ -14,14 +14,14 @@ export const indexStyle = {
 }
 
 const PersonalisedContainer = ({
-                                   content,
-                                   components,
-                                   limit,
-                                   defaultContent,
-                                   maxNumberMatches,
-                                   variants,
-                                   ...props
-                               }) => {
+    content,
+    components,
+    limit,
+    defaultContent,
+    maxNumberMatches,
+    variants,
+    ...props
+}) => {
     if (content) {
         if (limit) {
             content = content.slice(0, limit)

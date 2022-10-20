@@ -15,24 +15,28 @@ const AmplienceRichText = ({header, content}) => {
     return (
         <>
             <Box>
-                {
-                    header &&
+                {header && (
                     <Heading pb="8" as="h2">
                         {header}
                     </Heading>
-                }
+                )}
                 {content?.richText?.map((item, index) => {
                     switch (item.type) {
                         case 'markdown':
                             return (
-                                <AmplienceMarkdown
-                                    content={item.data}
-                                    key={index}
-                                    className="amp-rich-text"
-                                />
+                                <Box mt={4} mb={4}>
+                                    <AmplienceMarkdown
+                                        content={item.data}
+                                        key={index}
+                                        className="amp-rich-text"
+                                    />
+                                </Box>
                             )
                         case 'dc-content-link':
-                            return <AmplienceWrapper content={item.data} key={index} />
+                            return (
+                                <Box mt={4} mb={4}>
+                                    <AmplienceWrapper content={item.data} key={index} />
+                                </Box> )
                         case 'dc-image-link': {
                             let src = ''
                             let alt = ''
@@ -42,16 +46,18 @@ const AmplienceRichText = ({header, content}) => {
                             }
 
                             return (
-                                <img
-                                    src={src}
-                                    alt={alt}
-                                    key={index}
-                                    style={{
-                                        maxHeight: '50vh',
-                                        margin: '0 auto',
-                                        marginBlockEnd: '1em'
-                                    }}
-                                ></img>
+                                <Box mt={4} mb={4}>
+                                    <img
+                                        src={src}
+                                        alt={alt}
+                                        key={index}
+                                        style={{
+                                            maxHeight: '50vh',
+                                            margin: '0 auto',
+                                            marginBlockEnd: '1em'
+                                        }}
+                                    ></img>
+                                </Box>
                             )
                         }
                     }
@@ -64,6 +70,10 @@ const AmplienceRichText = ({header, content}) => {
 AmplienceRichText.displayName = 'AmplienceRichText'
 
 AmplienceRichText.propTypes = {
+    /**
+     * Header to display above content.
+     */
+    header: PropTypes.string,
     /**
      * Rich Text Content
      */

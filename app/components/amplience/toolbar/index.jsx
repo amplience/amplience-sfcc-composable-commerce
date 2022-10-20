@@ -51,9 +51,7 @@ const AccordionItemRender = ({title, Icon, Component, onClick, ...otherProps}) =
 
     return (
         <AccordionItem {...styles.section}>
-            <AccordionButton
-                onClick={onClick}
-                {...styles.button}>
+            <AccordionButton onClick={onClick} {...styles.button}>
                 <Box flex="1" textAlign="left" {...styles.sectionTitle}>
                     <Heading as="h2" size="xs">
                         <HStack>
@@ -87,8 +85,7 @@ const Toolbar = (props) => {
     const items = [
         {
             title: formatMessage({
-                defaultMessage:
-                    'Preview',
+                defaultMessage: 'Preview',
                 id: 'toolbar.title.preview'
             }),
             Icon: CalendarIcon,
@@ -97,8 +94,7 @@ const Toolbar = (props) => {
         },
         {
             title: formatMessage({
-                defaultMessage:
-                    'Visualisation',
+                defaultMessage: 'Visualisation',
                 id: 'toolbar.title.visualisation'
             }),
             Icon: ViewIcon,
@@ -107,8 +103,7 @@ const Toolbar = (props) => {
         },
         {
             title: formatMessage({
-                defaultMessage:
-                    'Environments',
+                defaultMessage: 'Environments',
                 id: 'toolbar.title.environments'
             }),
             Icon: ExternalLinkIcon,
@@ -117,8 +112,7 @@ const Toolbar = (props) => {
         },
         {
             title: formatMessage({
-                defaultMessage:
-                    'Personalisation',
+                defaultMessage: 'Personalisation',
                 id: 'toolbar.title.personalisation'
             }),
             Icon: SettingsIcon,
@@ -126,8 +120,7 @@ const Toolbar = (props) => {
         },
         {
             title: formatMessage({
-                defaultMessage:
-                    'About The Toolbar',
+                defaultMessage: 'About The Toolbar',
                 id: 'toolbar.title.about'
             }),
             Icon: InfoOutlineIcon,
@@ -167,7 +160,8 @@ const Toolbar = (props) => {
                 isOpen={isOpen}
                 size={'sm'}
                 blockScrollOnMount={false}
-                trapFocus={false}>
+                trapFocus={false}
+            >
                 <DrawerOverlay />
                 <div>
                     <IconButton
@@ -187,9 +181,7 @@ const Toolbar = (props) => {
                         display={inIframe() ? 'none' : 'block'}
                     />
                 </div>
-                <DrawerContent
-                    opacity={toolbarOpacity}
-                >
+                <DrawerContent opacity={toolbarOpacity}>
                     <DrawerHeader {...styles.header} mt={10}>
                         <AmplienceLogo color={'#000000'} width={'unset'} height={'unset'} mb={10} />
                     </DrawerHeader>
@@ -197,11 +189,16 @@ const Toolbar = (props) => {
                         <Accordion
                             allowToggle={true}
                             defaultIndex={openedPanels}
-                            allowMultiple={true}>
+                            allowMultiple={true}
+                        >
                             {items
-                                .filter(data => {
+                                .filter((data) => {
                                     data.visibility = data.visibility || (() => true)
-                                    return data.visibility && typeof data.visibility === 'function' && data.visibility({...props})
+                                    return (
+                                        data.visibility &&
+                                        typeof data.visibility === 'function' &&
+                                        data.visibility({...props})
+                                    )
                                 })
                                 .map((data, index) => {
                                     return (
@@ -209,9 +206,14 @@ const Toolbar = (props) => {
                                             key={index}
                                             onClick={() => {
                                                 if (openedPanels.includes(index)) {
-                                                    setOpenedPanels((prevState) => prevState.filter(item => item != index))
+                                                    setOpenedPanels((prevState) =>
+                                                        prevState.filter((item) => item != index)
+                                                    )
                                                 } else {
-                                                    setOpenedPanels((prevState) => [...prevState, index])
+                                                    setOpenedPanels((prevState) => [
+                                                        ...prevState,
+                                                        index
+                                                    ])
                                                 }
                                             }}
                                             {...data}
@@ -221,8 +223,7 @@ const Toolbar = (props) => {
                                             setToolbarOpacity={setToolbarOpacity}
                                         />
                                     )
-                                })
-                            }
+                                })}
                         </Accordion>
                     </DrawerBody>
                 </DrawerContent>
