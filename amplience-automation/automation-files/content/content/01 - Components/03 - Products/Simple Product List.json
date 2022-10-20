@@ -10,23 +10,23 @@
             "values": [
                 {
                     "locale": "en-US",
-                    "value": "Product List"
+                    "value": "Explore our shirts"
                 },
                 {
                     "locale": "fr-FR",
-                    "value": "Liste de produits"
+                    "value": "Découvrez nos chemises"
                 },
                 {
                     "locale": "de-DE",
-                    "value": "Produktliste"
+                    "value": "Entdecken Sie unsere Hemden"
                 },
                 {
                     "locale": "es-ES",
-                    "value": "Lista de productos"
+                    "value": "Explora nuestras camisas"
                 },
                 {
                     "locale": "it-IT",
-                    "value": "Elenco prodotti"
+                    "value": "Esplora le nostre magliette"
                 }
             ],
             "_meta": {
