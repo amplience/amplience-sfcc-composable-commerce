@@ -176,6 +176,12 @@ export const importHandler = async (context: Arguments<Context>): Promise<any> =
                 --hubId ${context.hubId}`, 
             {stdio: 'inherit'}
         )
+        
+        console.log(`dc-cli version used ...`)
+        execSync(
+            `npx dc-cli --version`, 
+            {stdio: 'inherit'}
+        )
 
         console.log(`Importing settings...`)
         execSync(

@@ -70,6 +70,12 @@ export const cleanHandler = async (context: Arguments<Context>): Promise<any> =>
         { stdio: 'inherit' }
     )
 
+    console.log(`dc-cli version used ...`)
+    execSync(
+        `npx dc-cli --version`, 
+        {stdio: 'inherit'}
+    )
+
     console.log(`Cleaning hub...`)
     execSync(
         `npx dc-cli hub clean \
