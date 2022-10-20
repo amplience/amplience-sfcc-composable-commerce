@@ -1,9 +1,32 @@
 {
   "id": "d93e683c-af01-45c0-b542-5a3bcad3317a",
   "body": {
-    "_meta": {
-      "name": "Fall Women Model Shoppable",
-      "schema": "https://sfcc.com/components/shoppable-image"
+    "title": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Women Fall Model"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Modèle d'automne pour femmes"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Frauen-Herbst-Modell"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Mujer Otoño Modelo"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Modello autunnale da donna"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
     },
     "shoppableImage": {
       "image": {
@@ -21,7 +44,7 @@
           "target": "luxury-bags",
           "selector": "tooltip",
           "points": {
-            "x": 0.7470887918486172,
+            "x": 0.651018922852984,
             "y": 0.4432314410480349
           }
         },
@@ -30,8 +53,8 @@
           "target": "womens-accessories-shoes",
           "selector": "category",
           "points": {
-            "x": 0.43850072780203786,
-            "y": 0.75764192139738
+            "x": 0.435589519650655,
+            "y": 0.631004366812227
           }
         },
         {
@@ -39,8 +62,8 @@
           "target": "25419639M",
           "selector": "product",
           "points": {
-            "x": 0.311863173216885,
-            "y": 0.15938864628820962
+            "x": 0.3628093158660844,
+            "y": 0.2663755458515284
           }
         },
         {
@@ -48,11 +71,17 @@
           "target": "25599638M",
           "selector": "product",
           "points": {
-            "x": 0.4734352256186317,
-            "y": 0.2183406113537118
+            "x": 0.4661572052401747,
+            "y": 0.2423580786026201
           }
         }
-      ]
+      ],
+      "poi": {
+        "x": 0.5031295487627365,
+        "y": 0.4555676855895196,
+        "w": 0.09999999999999999,
+        "h": 0.15
+      }
     },
     "imageAltText": {
       "values": [
@@ -139,7 +168,12 @@
         },
         "key": "luxury-bags"
       }
-    ]
+    ],
+    "_meta": {
+      "deliveryKey": "shoppable/woman-fall",
+      "name": "Fall Women Model Shoppable",
+      "schema": "https://sfcc.com/components/shoppable-image"
+    }
   },
   "version": 5,
   "label": "Fall Women Model Shoppable",

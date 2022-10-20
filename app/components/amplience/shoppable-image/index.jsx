@@ -11,7 +11,8 @@ import {
     DrawerBody,
     Image,
     Tooltip,
-    useDisclosure
+    useDisclosure,
+    Heading
 } from '@chakra-ui/react'
 import {categoryUrlBuilder, productUrlBuilder} from '../../../utils/url'
 import {useCategories} from '../../../hooks/use-categories'
@@ -287,6 +288,7 @@ const getBounds = (points) => {
 }
 
 const ShoppableImage = ({
+    title,
     shoppableImage,
     imageAltText,
     seoText,
@@ -535,10 +537,22 @@ const ShoppableImage = ({
     const imageUrl = getImageURL(shoppableImage.image, transformations)
 
     return (
-        <Contain {...props} ref={target} overflow="hidden" position="relative">
-            {selectedWidth && <Image src={imageUrl} {...imageStyle} alt={imageAltText}></Image>}
-            {elements}
-        </Contain>
+        <Box>
+            {title && (
+                <Heading
+                    as="h2"
+                    mt={4}
+                    mb={4}
+                    textAlign={'center'}
+                    fontSize={{base: 'md', md: '3xl', lg: '4xl'}}>
+                    {title}
+                </Heading>
+            )}
+            <Contain {...props} ref={target} overflow="hidden" position="relative">
+                {selectedWidth && <Image src={imageUrl} {...imageStyle} alt={imageAltText}></Image>}
+                {elements}
+            </Contain>
+        </Box>
     )
 }
 

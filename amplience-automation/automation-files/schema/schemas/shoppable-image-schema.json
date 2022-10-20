@@ -23,6 +23,15 @@
 				}
 			}
 		},
+		"title": {
+            "title": "Title",
+            "description": "Title for the shoppable image",
+            "allOf": [
+                {
+                    "$ref": "http://bigcontent.io/cms/schema/v1/localization#/definitions/localized-string"
+                }
+            ]
+        },
 		"shoppableImage": {
 			"title": "Shoppable Image",
 			"description": "An image enriched with a focal point and hotspots.",

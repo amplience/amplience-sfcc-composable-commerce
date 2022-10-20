@@ -1,10 +1,6 @@
 {
   "id": "96fed435-b80e-46d6-a50b-8ac39d3717c3",
   "body": {
-    "_meta": {
-      "name": "Fall Festival Womens Shoppable",
-      "schema": "https://sfcc.com/components/shoppable-image"
-    },
     "shoppableImage": {
       "image": {
         "_meta": {
@@ -16,8 +12,8 @@
         "defaultHost": "cdn.media.amplience.net"
       },
       "poi": {
-        "x": 0.6623906705539359,
-        "y": 0.4861353711790393,
+        "x": 0.7188775510204082,
+        "y": 0.5057860262008734,
         "w": 0.10014577259475219,
         "h": 0.15
       },
@@ -51,20 +47,20 @@
           "selector": "product",
           "points": [
             {
-              "x": 0.6147959183673469,
-              "y": 0.36899563318777295
+              "x": 0.6362973760932945,
+              "y": 0.425764192139738
             },
             {
-              "x": 0.9063411078717201,
-              "y": 0.36899563318777295
+              "x": 0.8622448979591837,
+              "y": 0.425764192139738
             },
             {
-              "x": 0.9063411078717201,
-              "y": 0.7991266375545851
+              "x": 0.8622448979591837,
+              "y": 0.7554585152838428
             },
             {
-              "x": 0.6147959183673469,
-              "y": 0.7991266375545851
+              "x": 0.6362973760932945,
+              "y": 0.7554585152838428
             }
           ]
         },
@@ -157,6 +153,10 @@
       "_meta": {
         "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
       }
+    },
+    "_meta": {
+      "name": "Fall Festival Womens Shoppable",
+      "schema": "https://sfcc.com/components/shoppable-image"
     }
   },
   "version": 7,
