@@ -6,7 +6,7 @@ import {tmpdir} from 'os'
 import {join} from 'path'
 import { nanoid } from 'nanoid'
 import { Context } from './cli'
-const amplience = require('../../config/amplience/default.js')
+const amplience: any = require('../../config/amplience/default')
 
 const recursiveTemplateSearch = async (baseDir: string, targetDir: string, dir: string, fileFunc: (path: string) => Promise<void>) => {
     const files = await promises.readdir(join(baseDir, dir))
@@ -165,8 +165,8 @@ export const importHandler = async (context: Arguments<Context>): Promise<any> =
     context.editions = editions
 
     // Getting visualisation name and url from Amplience default config
-    context.visName = amplience.name
-    context.visUrl = amplience.url
+    context.visName = amplience.default.name
+    context.visUrl = amplience.default.url
 
     console.log(`Compiling templates and copying files...`)
     await compileTemplates(context.automationDir, context.tempDir, context)

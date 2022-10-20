@@ -1,0 +1,58 @@
+{
+    "contentTypeUri": "https://sfcc.com/site/navigation/category",
+    "status": "ACTIVE",
+    "settings": {
+        "label": "Category",
+        "icons": [
+            {
+                "size": 256,
+                "url": "https://bigcontent.io/cms/icons/experience-management/exp-nodebranch.png"
+            }
+        ],
+        "visualizations": [
+            {
+                "label": "Default - Localhost",
+                "templatedUri": "http://localhost:3000/\{{locales}}/\{{delivery.key}}?vse=\{{vse.domain}}",
+                "default": true
+            },
+            {
+                "label": "Header - Localhost",
+                "templatedUri": "http://localhost:3000/\{{locales}}/visualization?navvis=header&navchild=\{{content.sys.id}}&vse=\{{vse.domain}}&contentId=\{{content.sys.id}}&hub=\{{hub.name}}",
+                "default": false
+            },
+            {
+                "label": "Footer - Localhost",
+                "templatedUri": "http://localhost:3000/\{{locales}}/visualization?navvis=footer&navchild=\{{content.sys.id}}&vse=\{{vse.domain}}&contentId=\{{content.sys.id}}&hub=\{{hub.name}}",
+                "default": false
+            },
+            {
+                "label": "Default - {{visName}}",
+                "templatedUri": "{{visUrl}}/\{{locales}}/\{{delivery.key}}?vse=\{{vse.domain}}",
+                "default": false
+            },
+            {
+                "label": "Header - {{visName}}",
+                "templatedUri": "{{visUrl}}/\{{locales}}/visualization?navvis=header&navchild=\{{content.sys.id}}&vse=\{{vse.domain}}&contentId=\{{content.sys.id}}&hub=\{{hub.name}}",
+                "default": false
+            },
+            {
+                "label": "Footer - {{visName}}",
+                "templatedUri": "{{visUrl}}/\{{locales}}/visualization?navvis=footer&navchild=\{{content.sys.id}}&vse=\{{vse.domain}}&contentId=\{{content.sys.id}}&hub=\{{hub.name}}",
+                "default": false
+            },
+            {
+                "label": "JSON",
+                "templatedUri": "https://delivery-preview.visualizations.content.amplience.net?id=\{{content.sys.id}}&vse=\{{vse.domain}}&locale=\{{locales}}&hub=\{{cms.hub}}&realtime=true",
+                "default": false
+            }
+        ],
+        "cards": [
+            {
+                "templatedUri": "https://bigcontent.io/cms/cards/photo/index.html?image=/common/content/img/image&imageAlt=/common/content/img/alt&src=%2F%2F\{{vse.domain}}%2Fcms%2Fcontent%2Fquery%3FfullBodyObject%3Dtrue%26query%3D%257B%2522sys.iri%2522%253A%2522http%253A%252F%252Fcontent.cms.amplience.com%252F\{{content.sys.id}}%2522%257D%26scope%3Dtree%26store%3Dstaging"
+            }
+        ]
+    },
+    "repositories": [
+        "sitestructure"
+    ]
+}

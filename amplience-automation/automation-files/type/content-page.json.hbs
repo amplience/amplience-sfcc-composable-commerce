@@ -12,17 +12,17 @@
         "visualizations": [ 
             {
                 "label": "Localhost",
-                "templatedUri": "http://localhost:3000/{{locales}}/page/{{delivery.key}}?pagevse={{vse.domain}}",
+                "templatedUri": "http://localhost:3000/\{{locales}}/page/\{{delivery.key}}?pagevse=\{{vse.domain}}",
                 "default": true
             },
             {
                 "label": "{{visName}}",
-                "templatedUri": "{{visUrl}}/{{locales}}/page/{{delivery.key}}?pagevse={{vse.domain}}",
+                "templatedUri": "{{visUrl}}/\{{locales}}/page/\{{delivery.key}}?pagevse=\{{vse.domain}}",
                 "default": false
             },
             {
                 "label": "JSON",
-                "templatedUri": "https://delivery-preview.visualizations.content.amplience.net?id={{content.sys.id}}&vse={{vse.domain}}&locale={{locales}}&hub={{cms.hub}}&realtime=true",
+                "templatedUri": "https://delivery-preview.visualizations.content.amplience.net?id=\{{content.sys.id}}&vse=\{{vse.domain}}&locale=\{{locales}}&hub=\{{cms.hub}}&realtime=true",
                 "default": false
             }
         ],
