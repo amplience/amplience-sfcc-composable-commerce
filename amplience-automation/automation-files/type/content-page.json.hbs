@@ -10,16 +10,13 @@
             }
         ],
         "visualizations": [ 
+            {{#each visualisations}}
             {
-                "label": "Localhost",
-                "templatedUri": "http://localhost:3000/\{{locales}}/page/\{{delivery.key}}?pagevse=\{{vse.domain}}",
-                "default": true
+                "label": "{{this.name}}",
+                "templatedUri": "{{this.url}}/\{{locales}}/page/\{{delivery.key}}?pagevse=\{{vse.domain}}",
+                "default": "{{this.default}}"
             },
-            {
-                "label": "{{visName}}",
-                "templatedUri": "{{visUrl}}/\{{locales}}/page/\{{delivery.key}}?pagevse=\{{vse.domain}}",
-                "default": false
-            },
+            {{/each}}
             {
                 "label": "JSON",
                 "templatedUri": "https://delivery-preview.visualizations.content.amplience.net?id=\{{content.sys.id}}&vse=\{{vse.domain}}&locale=\{{locales}}&hub=\{{cms.hub}}&realtime=true",

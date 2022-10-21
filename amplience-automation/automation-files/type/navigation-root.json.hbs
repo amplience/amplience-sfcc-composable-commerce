@@ -10,36 +10,23 @@
             }
         ],
         "visualizations": [
+            {{#each visualisations}}
             {
-                "label": "Default - Localhost",
-                "templatedUri": "http://localhost:3000?vse=\{{vse.domain}}",
-                "default": true
+                "label": "Default - {{this.name}}",
+                "templatedUri": "{{this.url}}?vse=\{{vse.domain}}",
+                "default": "{{this.default}}"
             },
             {
-                "label": "Header - Localhost",
-                "templatedUri": "http://localhost:3000/\{{locales}}/visualization?navvis=header&navroot=\{{delivery.key}}&vse=\{{vse.domain}}&contentId=\{{content.sys.id}}&hub=\{{hub.name}}",
+                "label": "Header - {{this.name}}",
+                "templatedUri": "{{this.url}}/\{{locales}}/visualization?navvis=header&navroot=\{{delivery.key}}&vse=\{{vse.domain}}&contentId=\{{content.sys.id}}&hub=\{{hub.name}}",
                 "default": false
             },
             {
-                "label": "Footer - Localhost",
-                "templatedUri": "http://localhost:3000/\{{locales}}/visualization?navvis=footer&navroot=\{{delivery.key}}&vse=\{{vse.domain}}&contentId=\{{content.sys.id}}&hub=\{{hub.name}}",
+                "label": "Footer - {{this.name}}",
+                "templatedUri": "{{this.url}}/\{{locales}}/visualization?navvis=footer&navroot=\{{delivery.key}}&vse=\{{vse.domain}}&contentId=\{{content.sys.id}}&hub=\{{hub.name}}",
                 "default": false
             },
-            {
-                "label": "Default - {{visName}}",
-                "templatedUri": "{{visUrl}}?vse=\{{vse.domain}}",
-                "default": false
-            },
-            {
-                "label": "Header - {{visName}}",
-                "templatedUri": "{{visUrl}}/\{{locales}}/visualization?navvis=header&navroot=\{{delivery.key}}&vse=\{{vse.domain}}&contentId=\{{content.sys.id}}&hub=\{{hub.name}}",
-                "default": false
-            },
-            {
-                "label": "Footer - {{visName}}",
-                "templatedUri": "{{visUrl}}/\{{locales}}/visualization?navvis=footer&navroot=\{{delivery.key}}&vse=\{{vse.domain}}&contentId=\{{content.sys.id}}&hub=\{{hub.name}}",
-                "default": false
-            },
+            {{/each}}
             {
                 "label": "JSON",
                 "templatedUri": "https://delivery-preview.visualizations.content.amplience.net?id=\{{content.sys.id}}&vse=\{{vse.domain}}&locale=\{{locales}}&hub=\{{cms.hub}}&realtime=true",

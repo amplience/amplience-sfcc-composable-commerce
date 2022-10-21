@@ -39,14 +39,12 @@
             }
         ],
         "applications": [
+            {{#each visualisations}}
             {
-                "name": "Localhost",
-                "templatedUri": "http://localhost:3000/?vse=\{{vse.domain}}&vse-timestamp=\{{context.timestamp}}"
-            },
-            {
-                "name": "{{visName}}",
-                "templatedUri": "{{visUrl}}/?vse=\{{vse.domain}}&vse-timestamp=\{{context.timestamp}}"
-            }
+                "label": "{{this.name}}",
+                "templatedUri": "{{this.url}}/?vse=\{{vse.domain}}&vse-timestamp=\{{context.timestamp}}"
+            }{{#unless @last}},{{/unless}}
+            {{/each}}
         ],
         "localization": {
             "locales": [

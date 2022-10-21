@@ -165,8 +165,7 @@ export const importHandler = async (context: Arguments<Context>): Promise<any> =
     context.editions = editions
 
     // Getting visualisation name and url from Amplience default config
-    context.visName = amplience.default.name
-    context.visUrl = amplience.default.url
+    context.visualisations = amplience.visualisations
 
     console.log(`Compiling templates and copying files...`)
     await compileTemplates(context.automationDir, context.tempDir, context)

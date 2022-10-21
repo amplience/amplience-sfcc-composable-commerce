@@ -18,12 +18,14 @@ import {CopyIcon} from '@chakra-ui/icons'
 import {useContext} from 'react'
 import {AmplienceContext} from '../../../../contexts/amplience'
 
-const VisualisationPanel = ({vse, locale, contentId, toolbarState}) => {
+const VisualisationPanel = ({vse, hubname, locale, contentId, toolbarState}) => {
     const intl = useIntl()
     const styles = useMultiStyleConfig('PreviewHeader')
     const {defaultEnv, envs} = useContext(AmplienceContext)
 
     const currentHub =
+        hubname
+        ||
         envs?.find((item) => {
             const regExp = /(.*)-(.*)-(.*)(\.staging.bigcontent.io)/
             const matches = vse.match(regExp)
@@ -33,7 +35,7 @@ const VisualisationPanel = ({vse, locale, contentId, toolbarState}) => {
             } else {
                 return item.vse === vse
             }
-        })?.hub || defaultEnv.hub
+        })?.hub
 
     const {hasCopied: hasCopiedHub, onCopy: onCopyHub} = useClipboard(currentHub)
     const {hasCopied: hasCopiedVse, onCopy: onCopyVse} = useClipboard(vse)

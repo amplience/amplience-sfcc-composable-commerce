@@ -1,38 +1,35 @@
 {
-  "contentTypeUri": "https://sfcc.com/components/card-list",
-  "status": "ACTIVE",
-  "settings": {
-    "label": "Card List",
-    "icons": [
-      {
-        "size": 256,
-        "url": "https://sfcccomposable.a.bigcontent.io/v1/static/icon-component-card-list"
-      }
-    ],
-    "visualizations": [
-      {
-        "label": "Localhost",
-        "templatedUri": "http://localhost:3000/\{{locales}}/visualization?vse=\{{vse.domain}}&contentId=\{{content.sys.id}}&hub=\{{hub.name}}",
-        "default": true
-      },
-      {
-        "label": "{{visName}}",
-        "templatedUri": "{{visUrl}}/\{{locales}}/visualization?vse=\{{vse.domain}}&contentId=\{{content.sys.id}}&hub=\{{hub.name}}",
-        "default": false
-      },
-      {
-        "label": "JSON",
-        "templatedUri": "https://delivery-preview.visualizations.content.amplience.net?id=\{{content.sys.id}}&vse=\{{vse.domain}}&locale=\{{locales}}&hub=\{{cms.hub}}&realtime=true",
-        "default": false
-      }
-    ],
-    "cards": [
-      {
-        "templatedUri": "https://bigcontent.io/cms/cards/gallery/index.html?headline=/header/values/0/value&image0=/cards/0/image/image/image&image1=/cards/1/image/image/image&image2=/cards/2/image/image/image&image3=/cards/3/image/image/image&imageAlt0=/cards/0/image/imageAltText&imageAlt1=/cards/1/image/imageAltText&imageAlt2=/cards/2/image/imageAltText&imageAlt3=/cards/3/image/imageAltText&src=%2F%2F\{{vse.domain}}%2Fcms%2Fcontent%2Fquery%3FfullBodyObject%3Dtrue%26query%3D%257B%2522sys.iri%2522%253A%2522http%253A%252F%252Fcontent.cms.amplience.com%252F\{{content.sys.id}}%2522%257D%26scope%3Dtree%26store%3Dstaging"
-      }
+    "contentTypeUri": "https://sfcc.com/components/card-list",
+    "status": "ACTIVE",
+    "settings": {
+        "label": "Card List",
+        "icons": [
+            {
+                "size": 256,
+                "url": "https://sfcccomposable.a.bigcontent.io/v1/static/icon-component-card-list"
+            }
+        ],
+        "visualizations": [
+            {{#each visualisations}}
+            {
+                "label": "{{this.name}}",
+                "templatedUri": "{{this.url}}/\{{locales}}/visualization?vse=\{{vse.domain}}&contentId=\{{content.sys.id}}&hub=\{{hub.name}}",
+                "default": "{{this.default}}"
+            },
+            {{/each}}
+            {
+                "label": "JSON",
+                "templatedUri": "https://delivery-preview.visualizations.content.amplience.net?id=\{{content.sys.id}}&vse=\{{vse.domain}}&locale=\{{locales}}&hub=\{{cms.hub}}&realtime=true",
+                "default": false
+            }
+        ],
+        "cards": [
+            {
+                "templatedUri": "https://bigcontent.io/cms/cards/gallery/index.html?headline=/header/values/0/value&image0=/cards/0/image/image/image&image1=/cards/1/image/image/image&image2=/cards/2/image/image/image&image3=/cards/3/image/image/image&imageAlt0=/cards/0/image/imageAltText&imageAlt1=/cards/1/image/imageAltText&imageAlt2=/cards/2/image/imageAltText&imageAlt3=/cards/3/image/imageAltText&src=%2F%2F\{{vse.domain}}%2Fcms%2Fcontent%2Fquery%3FfullBodyObject%3Dtrue%26query%3D%257B%2522sys.iri%2522%253A%2522http%253A%252F%252Fcontent.cms.amplience.com%252F\{{content.sys.id}}%2522%257D%26scope%3Dtree%26store%3Dstaging"
+            }
+        ]
+    },
+    "repositories": [
+        "content"
     ]
-  },
-  "repositories": [
-    "content"
-  ]
 }
