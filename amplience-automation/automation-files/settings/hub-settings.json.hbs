@@ -41,7 +41,7 @@
         "applications": [
             {{#each visualisations}}
             {
-                "label": "{{this.name}}",
+                "name": "{{this.name}}",
                 "templatedUri": "{{this.url}}/?vse=\{{vse.domain}}&vse-timestamp=\{{context.timestamp}}"
             }{{#unless @last}},{{/unless}}
             {{/each}}
