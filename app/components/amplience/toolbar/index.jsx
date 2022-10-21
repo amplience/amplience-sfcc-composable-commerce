@@ -184,7 +184,6 @@ const Toolbar = (props) => {
                 <DrawerContent opacity={toolbarOpacity}>
                     <DrawerHeader {...styles.header} mt={10}>
                         <AmplienceLogo color={'#000000'} width={'unset'} height={'unset'} mb={10} />
-                        {JSON.stringify(props)}
                     </DrawerHeader>
                     <DrawerBody padding={0}>
                         <Accordion
