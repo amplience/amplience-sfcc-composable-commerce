@@ -49,7 +49,8 @@ const formatSuggestions = (searchSuggestions, input) => {
                     type: 'category',
                     id: suggestion.id,
                     link: categoryUrlBuilder({id: suggestion.id}),
-                    name: boldString(suggestion.name, capitalize(input))
+                    name: boldString(suggestion.name, capitalize(input)),
+                    parentCategoryName: suggestion.parentCategoryName
                 }
             }
         ),

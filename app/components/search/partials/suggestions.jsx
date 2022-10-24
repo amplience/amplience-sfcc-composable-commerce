@@ -16,19 +16,25 @@ const Suggestions = ({suggestions, closeAndNavigate}) => {
         <Stack spacing={0} data-testid="sf-suggestion">
             <Box mx={'-16px'}>
                 {suggestions.map((suggestion, idx) => (
-                    <Button
-                        width="full"
-                        onMouseDown={() => closeAndNavigate(suggestion.link)}
-                        fontSize={'md'}
-                        key={idx}
-                        marginTop={0}
-                        variant="menu-link"
-                    >
-                        <Text
-                            fontWeight="400"
-                            dangerouslySetInnerHTML={{__html: suggestion.name}}
-                        />
-                    </Button>
+                    <>
+                        <Button
+                            width="full"
+                            onMouseDown={() => closeAndNavigate(suggestion.link)}
+                            fontSize={'md'}
+                            key={idx}
+                            marginTop={0}
+                            variant="menu-link"
+                        >
+                            <Text
+                                fontWeight="400"
+                                dangerouslySetInnerHTML={{__html: suggestion.name}}
+                            />
+                        </Button>
+                        {
+                            suggestion.parentCategoryName &&
+                            <Text ml={4} fontSize={'xs'} textStyle={'italic'}>(&gt; {suggestion.parentCategoryName})</Text>
+                        }
+                    </>
                 ))}
             </Box>
         </Stack>
