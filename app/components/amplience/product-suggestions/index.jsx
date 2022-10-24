@@ -66,16 +66,16 @@ const ProductSuggestions = ({suggestions, closeAndNavigate}) => {
     }, [api, suggestions])
 
     return (
-        <Grid w={'2xl'} templateColumns='repeat(3, 1fr)' gap={2}>
+        <Grid w={'xl'} templateColumns='repeat(3, 1fr)' gap={2}>
             {
                 isLoading &&
                 <>
-                    <GridItem><Skeleton w={219} h={219}/></GridItem>
-                    <GridItem><Skeleton w={219} h={219}/></GridItem>
-                    <GridItem><Skeleton w={219} h={219}/></GridItem>
-                    <GridItem><Skeleton w={219} h={219}/></GridItem>
-                    <GridItem><Skeleton w={219} h={219}/></GridItem>
-                    <GridItem><Skeleton w={219} h={219}/></GridItem>
+                    <GridItem><Skeleton w={187} h={187}/></GridItem>
+                    <GridItem><Skeleton w={187} h={187}/></GridItem>
+                    <GridItem><Skeleton w={187} h={187}/></GridItem>
+                    <GridItem><Skeleton w={187} h={187}/></GridItem>
+                    <GridItem><Skeleton w={187} h={187}/></GridItem>
+                    <GridItem><Skeleton w={187} h={187}/></GridItem>
                 </>
             }
             {

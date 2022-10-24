@@ -42,6 +42,7 @@ const SearchSuggestions = ({recentSearches, searchSuggestions, closeAndNavigate}
                             closeAndNavigate={closeAndNavigate}
                             suggestions={searchSuggestions?.brandSuggestions}
                         /> */}
+                        <Heading as='h2' mt={4} fontSize={'md'} textTransform={'uppercase'}>Pages</Heading> 
                     </Fragment>
                 ) : (
                     <RecentSearches
@@ -53,7 +54,7 @@ const SearchSuggestions = ({recentSearches, searchSuggestions, closeAndNavigate}
             <Box>
                 {
                     searchSuggestions?.productSuggestions &&
-                    <Heading as='h2' fontSize={'md'} textTransform={'uppercase'}>Products</Heading> 
+                    <Heading as='h2' mb={4} fontSize={'md'} textTransform={'uppercase'}>Products</Heading> 
                 }
                 <ProductSuggestions 
                     closeAndNavigate={closeAndNavigate}

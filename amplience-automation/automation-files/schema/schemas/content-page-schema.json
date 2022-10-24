@@ -9,6 +9,15 @@
         }
     ],
     "type": "object",
+    "trait:filterable": {
+        "filterBy": [
+            {
+                "paths": [
+                    "/seo/noindex"
+                ]
+            }
+        ]
+    },
     "properties": {
         "_meta": {
             "title": "",

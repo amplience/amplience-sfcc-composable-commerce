@@ -29,18 +29,6 @@ import debounce from 'lodash/debounce'
 import {RECENT_SEARCH_KEY, RECENT_SEARCH_LIMIT, RECENT_SEARCH_MIN_LENGTH} from '../../constants'
 import {productUrlBuilder, searchUrlBuilder, categoryUrlBuilder} from '../../utils/url'
 
-const selectImage = (product) => {
-    const groups = product.imageGroups
-    if (groups == null || groups.length === 0) {
-        return {}
-    }
-
-    const desiredViewType = 'large'
-    const desiredGroup = groups.find((group) => group.viewType === desiredViewType) ?? groups[0]
-
-    return desiredGroup.images[0]
-}
-
 const formatSuggestions = (searchSuggestions, input) => {
     return {
         categorySuggestions: searchSuggestions?.categorySuggestions?.categories?.map(
@@ -60,7 +48,6 @@ const formatSuggestions = (searchSuggestions, input) => {
                 currency: product.currency,
                 price: product.price,
                 productId: product.productId,
-                image: product.imageGroups,
                 name: boldString(product.productName, capitalize(input)),
                 link: productUrlBuilder({id: product.productId})
             }

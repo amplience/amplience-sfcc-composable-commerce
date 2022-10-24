@@ -482,6 +482,17 @@ export class AmplienceAPI {
 
         return root
     }
+
+    async getSearchableContentPages() {
+        await this.clientReady
+        
+        const result = await this.client
+            .filterByContentType('https://sfcc.com/site/pages/content-page')
+            .filterBy("/seo/noindex", false)
+            .request()
+
+        return result.responses
+    }
 }
 
 /**
