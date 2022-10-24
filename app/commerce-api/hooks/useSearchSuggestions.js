@@ -24,9 +24,11 @@ const useSearchSuggestions = () => {
             setState({loading: true})
             const searchSuggestions = await api.shopperSearch.getSearchSuggestions({
                 parameters: {
-                    q: input
+                    q: input,
+                    limit: 6
                 }
             })
+            console.log("Search Suggestions:", searchSuggestions)
             setState({results: searchSuggestions})
         },
         /**

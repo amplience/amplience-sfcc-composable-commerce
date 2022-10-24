@@ -6,33 +6,61 @@
  */
 import React, {Fragment} from 'react'
 import PropTypes from 'prop-types'
-import {Stack} from '@chakra-ui/react'
+import {Box, Heading, HStack, Stack} from '@chakra-ui/react'
 import RecentSearches from './recent-searches'
 import Suggestions from './suggestions'
+import ProductSuggestions from '../../amplience/product-suggestions'
 
 const SearchSuggestions = ({recentSearches, searchSuggestions, closeAndNavigate}) => {
     const useSuggestions = searchSuggestions && searchSuggestions?.categorySuggestions?.length
     return (
-        <Stack padding={6} spacing={0}>
-            {useSuggestions ? (
-                <Fragment>
-                    <Suggestions
+        <HStack padding={6} spacing={0} alignItems={'baseline'}>
+            <Stack padding={6} spacing={0} w={'l'}>
+                {useSuggestions ? (
+                    <Fragment>
+                        {
+                        searchSuggestions?.phraseSuggestions &&
+                        <Heading as='h2' fontSize={'md'} textTransform={'uppercase'}>Searches</Heading> 
+                        }
+                        <Suggestions
+                            closeAndNavigate={closeAndNavigate}
+                            suggestions={searchSuggestions?.phraseSuggestions}
+                        />
+                        {
+                        searchSuggestions?.categorySuggestions &&
+                        <Heading as='h2' fontSize={'md'} textTransform={'uppercase'}>Categories</Heading> 
+                        }
+                        <Suggestions
+                            closeAndNavigate={closeAndNavigate}
+                            suggestions={searchSuggestions?.categorySuggestions}
+                        />
+                        {/* {
+                        searchSuggestions?.categorySuggestions &&
+                        <Heading as='h2' fontSize={'md'} textTransform={'uppercase'}>Brands</Heading> 
+                        }
+                        <Suggestions
+                            closeAndNavigate={closeAndNavigate}
+                            suggestions={searchSuggestions?.brandSuggestions}
+                        /> */}
+                    </Fragment>
+                ) : (
+                    <RecentSearches
+                        recentSearches={recentSearches}
                         closeAndNavigate={closeAndNavigate}
-                        suggestions={searchSuggestions?.categorySuggestions}
                     />
-                    {/* <Suggestions
-                        closeAndNavigate={closeAndNavigate}
-                        suggestions={searchSuggestions?.phraseSuggestions}
-                    /> */}
-                    {/* <Suggestions suggestions={searchSuggestions.productSuggestions} /> */}
-                </Fragment>
-            ) : (
-                <RecentSearches
-                    recentSearches={recentSearches}
+                )}
+            </Stack>
+            <Box>
+                {
+                    searchSuggestions?.productSuggestions &&
+                    <Heading as='h2' fontSize={'md'} textTransform={'uppercase'}>Products</Heading> 
+                }
+                <ProductSuggestions 
                     closeAndNavigate={closeAndNavigate}
+                    suggestions={searchSuggestions?.productSuggestions} 
                 />
-            )}
-        </Stack>
+            </Box>
+        </HStack>
     )
 }
 
