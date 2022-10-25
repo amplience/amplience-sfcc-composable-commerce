@@ -112,7 +112,6 @@ const ProductSuggestions = ({suggestions, closeAndNavigate}) => {
                                 <Img
                                     src={item.image.link}
                                     width={140}
-                                    style={{minWidth: 140}}
                                     alt={item.image.alt}
                                 />
                                 <Text fontSize={'xs'} fontWeight={700}>{item.name}</Text>
@@ -131,13 +130,15 @@ const ProductSuggestions = ({suggestions, closeAndNavigate}) => {
                                     style={{cursor: 'pointer'}}
                                     onMouseDown={() => closeAndNavigate(item.link)}
                                 >
-                                    <DynamicImage
-                                        src={`${item.image.disBaseLink || item.image.link}[?sw={width}&q=60]`}
-                                        widths={[40]}
-                                        imageProps={{
-                                            alt: item.image.alt,
-                                        }}
-                                    />
+                                    <Box w={'40px'}>
+                                        <DynamicImage
+                                            src={`${item.image.disBaseLink || item.image.link}[?sw={width}&q=60]`}
+                                            widths={[40]}
+                                            imageProps={{
+                                                alt: item.image.alt,
+                                            }}
+                                        />
+                                    </Box>
                                     <Text fontWeight={700}>{item.name}</Text>
                                     <Text>
                                     {intl.formatNumber(item.price, {
