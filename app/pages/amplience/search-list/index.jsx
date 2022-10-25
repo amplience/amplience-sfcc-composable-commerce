@@ -75,6 +75,7 @@ import LoadingSpinner from '../../../components/loading-spinner'
 
 // Amplience Imports
 import ProductListing from '../../../components/amplience/product-listing'
+import PageListing from '../../../components/amplience/page-listing'
 
 // NOTE: You can ignore certain refinements on a template level by updating the below
 // list of ignored refinements.
@@ -93,6 +94,7 @@ const SearchList = (props) => {
         staticContext,
         location,
         isLoading,
+        ampPages,
         ...rest
     } = props
     const {total, sortingOptions} = productSearchResult || {}
@@ -338,8 +340,6 @@ const SearchList = (props) => {
                                                         id="product_list.button.filter"
                                                     />
                                                 </Button>
-                                            </Flex>
-                                            <Flex align="center">
                                                 <Button
                                                     maxWidth="245px"
                                                     fontSize="sm"
@@ -356,30 +356,14 @@ const SearchList = (props) => {
                                                             defaultMessage: 'Sort By: {sortOption}'
                                                         },
                                                         {
-                                                            sortOption: selectedSortingOptionLabel?.label
+                                                            sortOption:
+                                                                selectedSortingOptionLabel?.label
                                                         }
                                                     )}
                                                 </Button>
                                             </Flex>
                                         </TabPanel>
-                                        <TabPanel sx={{padding: 0}}>
-                                            <Flex align="center">
-                                                <Button
-                                                    fontSize="sm"
-                                                    colorScheme="black"
-                                                    variant="outline"
-                                                    marginRight={2}
-                                                    display="inline-flex"
-                                                    leftIcon={<FilterIcon boxSize={5} />}
-                                                    onClick={onOpen}
-                                                >
-                                                    <FormattedMessage
-                                                        defaultMessage="Content Filter"
-                                                        id="product_list.button.contentfilter"
-                                                    />
-                                                </Button>
-                                            </Flex>
-                                        </TabPanel>
+                                        <TabPanel sx={{padding: 0}}></TabPanel>
                                     </TabPanels>
                                 </Tabs>
                             </Stack>
@@ -418,7 +402,7 @@ const SearchList = (props) => {
                             <Tabs onChange={handleTabsChange}>
                                 <TabList>
                                     <Tab>Products ({productSearchResult?.total})</Tab>
-                                    <Tab>Posts (n)</Tab>
+                                    <Tab>Pages ({ampPages.length})</Tab>
                                 </TabList>
 
                                 <TabPanels>
@@ -435,7 +419,7 @@ const SearchList = (props) => {
                                         />
                                     </TabPanel>
                                     <TabPanel sx={{padding: 0, paddingTop: '12px'}}>
-                                        <h3>Nothing Here Yet</h3>
+                                        <PageListing pages={ampPages} />
                                     </TabPanel>
                                 </TabPanels>
                             </Tabs>
@@ -558,11 +542,14 @@ SearchList.shouldGetProps = ({previousLocation, location}) =>
     previousLocation.pathname !== location.pathname ||
     previousLocation.search !== location.search
 
-SearchList.getProps = async ({res, params, location, api}) => {
+SearchList.getProps = async ({res, params, location, api, ampClient}) => {
     const {categoryId} = params
     const urlParams = new URLSearchParams(location.search)
     let searchQuery = urlParams.get('q')
     let isSearch = false
+
+    const ampPages = await ampClient.getSearchableContentPages()
+    console.log('allSearchablePages:', ampPages)
 
     if (searchQuery) {
         isSearch = true
@@ -609,7 +596,7 @@ SearchList.getProps = async ({res, params, location, api}) => {
         throw new HTTPNotFound(category.detail)
     }
 
-    return {searchQuery: searchQuery, productSearchResult}
+    return {searchQuery: searchQuery, productSearchResult, ampPages}
 }
 
 SearchList.propTypes = {
@@ -633,7 +620,8 @@ SearchList.propTypes = {
     location: PropTypes.object,
     searchQuery: PropTypes.string,
     onAddToWishlistClick: PropTypes.func,
-    onRemoveWishlistClick: PropTypes.func
+    onRemoveWishlistClick: PropTypes.func,
+    ampPages: PropTypes.array
 }
 
 export default SearchList
