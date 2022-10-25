@@ -6,7 +6,7 @@
  */
 import React, {Fragment} from 'react'
 import PropTypes from 'prop-types'
-import {Box, Heading, HStack, Stack} from '@chakra-ui/react'
+import {Box, Flex, Grid, GridItem, Heading, HStack, Stack} from '@chakra-ui/react'
 import RecentSearches from './recent-searches'
 import Suggestions from './suggestions'
 import ProductSuggestions from '../../amplience/product-suggestions'
@@ -14,8 +14,8 @@ import ProductSuggestions from '../../amplience/product-suggestions'
 const SearchSuggestions = ({recentSearches, searchSuggestions, closeAndNavigate}) => {
     const useSuggestions = searchSuggestions && searchSuggestions?.categorySuggestions?.length
     return (
-        <HStack padding={6} spacing={0} alignItems={'baseline'}>
-            <Stack padding={6} spacing={0} w={'l'}>
+        <Flex w={'100%'} wrap={'wrap'}>
+            <Box p={4} w={{sm: '100%', lg: '300px'}}>
                 {useSuggestions ? (
                     <Fragment>
                         {
@@ -50,8 +50,8 @@ const SearchSuggestions = ({recentSearches, searchSuggestions, closeAndNavigate}
                         closeAndNavigate={closeAndNavigate}
                     />
                 )}
-            </Stack>
-            <Box>
+            </Box>
+            <Box p={4} w={{sm: '100%', lg: '470px'}}>
                 {
                     searchSuggestions?.productSuggestions &&
                     <Heading as='h2' mb={4} fontSize={'md'} textTransform={'uppercase'}>Products</Heading> 
@@ -61,7 +61,7 @@ const SearchSuggestions = ({recentSearches, searchSuggestions, closeAndNavigate}
                     suggestions={searchSuggestions?.productSuggestions} 
                 />
             </Box>
-        </HStack>
+        </Flex> 
     )
 }
 

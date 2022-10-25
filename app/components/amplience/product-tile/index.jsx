@@ -105,6 +105,7 @@ const AmplienceProductTile = (props) => {
         onFavouriteToggle,
         dynamicImageProps,
         children,
+        fontSize,
         ...rest
     } = props
     const {currency, image, price, productId} = product
@@ -168,10 +169,10 @@ const AmplienceProductTile = (props) => {
 
             <div className="ptile-hover-pane" style={{...styles.ptileHoverPane}}>
                 {/* Title */}
-                <Text {...styles.title}>{localizedProductName}</Text>
+                <Text fontSize={fontSize} {...styles.title}>{localizedProductName}</Text>
 
                 {/* Price */}
-                <Text {...styles.price}>
+                <Text fontSize={fontSize} {...styles.price}>
                     {intl.formatNumber(price, {
                         style: 'currency',
                         currency: currency || activeCurrency
