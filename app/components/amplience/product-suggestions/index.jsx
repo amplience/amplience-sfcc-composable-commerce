@@ -112,6 +112,7 @@ const ProductSuggestions = ({suggestions, closeAndNavigate}) => {
                                 <Img
                                     src={item.image.link}
                                     width={140}
+                                    style={{minWidth: 140}}
                                     alt={item.image.alt}
                                 />
                                 <Text fontSize={'xs'} fontWeight={700}>{item.name}</Text>
