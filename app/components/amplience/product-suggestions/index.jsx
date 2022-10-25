@@ -130,7 +130,10 @@ const ProductSuggestions = ({suggestions, closeAndNavigate}) => {
                                     style={{cursor: 'pointer'}}
                                     onMouseDown={() => closeAndNavigate(item.link)}
                                 >
-                                    <Box w={'40px'}>
+                                    <Box 
+                                        w={'40px'}
+                                        style={{minWidth: '40px'}}
+                                    >
                                         <DynamicImage
                                             src={`${item.image.disBaseLink || item.image.link}[?sw={width}&q=60]`}
                                             widths={[40]}
@@ -139,8 +142,8 @@ const ProductSuggestions = ({suggestions, closeAndNavigate}) => {
                                             }}
                                         />
                                     </Box>
-                                    <Text fontWeight={700}>{item.name}</Text>
-                                    <Text>
+                                    <Text fontSize='xs' fontWeight={700}>{item.name}</Text>
+                                    <Text fontSize='xs'>
                                     {intl.formatNumber(item.price, {
                                         style: 'currency',
                                         currency: item.currency || activeCurrency
