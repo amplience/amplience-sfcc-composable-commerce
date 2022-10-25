@@ -4,7 +4,6 @@ import {Text, Stack, Box, HStack, VStack, Skeleton, AspectRatio, SimpleGrid, use
 import {useCommerceAPI} from '../../../commerce-api/contexts'
 import {handleAsyncError} from '../../../commerce-api/utils'
 import { productUrlBuilder } from '../../../utils/url'
-import DynamicImage from '../../dynamic-image'
 import { useCurrency } from '../../../hooks'
 import {useIntl} from 'react-intl'
 
