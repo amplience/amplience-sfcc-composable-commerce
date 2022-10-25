@@ -109,11 +109,19 @@ const ProductSuggestions = ({suggestions, closeAndNavigate}) => {
                                 style={{cursor: 'pointer'}}
                                 onMouseDown={() => closeAndNavigate(item.link)}
                             >
-                                <Img
-                                    src={item.image.link}
-                                    width={140}
-                                    alt={item.image.alt}
-                                />
+                                
+                                <AspectRatio ratio={1}>
+                                    <Box 
+                                            w={'140px'}
+                                            style={{minWidth: '140px'}}
+                                        >
+                                        <Img
+                                            src={item.image.link}
+                                            width={140}
+                                            alt={item.image.alt}
+                                        />
+                                    </Box>
+                                </AspectRatio>
                                 <Text fontSize={'xs'} fontWeight={700}>{item.name}</Text>
                                 <Text fontSize={'xs'}>
                                 {intl.formatNumber(item.price, {
