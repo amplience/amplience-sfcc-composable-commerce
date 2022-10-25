@@ -50,7 +50,7 @@ import {resolveSiteFromUrl} from '../../../utils/site-utils'
 import {getTargetLocale} from '../../../utils/locale'
 import AmplienceWrapper from '../../../components/amplience/wrapper'
 
-const ProductDetail = ({category, product, isLoading, productPdp}) => {
+const ProductDetail = ({category, product, isLoading, productPdp, categoryPdp}) => {
     const {formatMessage} = useIntl()
     const basket = useBasket()
     const history = useHistory()
@@ -147,12 +147,22 @@ const ProductDetail = ({category, product, isLoading, productPdp}) => {
     }, [product])
 
     const productExtras = []
+    const categoryExtras = []
 
     if (productPdp && productPdp.content) {
         let i = 0
         for (let content of productPdp.content) {
             productExtras.push(
                 <AmplienceWrapper content={content} key={`pdp-${i++}`}></AmplienceWrapper>
+            )
+        }
+    }
+
+    if (categoryPdp && categoryPdp.content) {
+        let i = 0
+        for (let content of categoryPdp.content) {
+            categoryExtras.push(
+                <AmplienceWrapper content={content} key={`cpdp-${i++}`}></AmplienceWrapper>
             )
         }
     }
@@ -270,7 +280,10 @@ const ProductDetail = ({category, product, isLoading, productPdp}) => {
                 </Stack>
 
                 {/* Amplience PDP Content */}
-                <Stack spacing={16}>{productExtras}</Stack>
+                <Stack spacing={16}>
+                    {productExtras}
+                    {categoryExtras}
+                </Stack>
 
                 {/* Product Recommendations */}
                 <Stack spacing={16}>
@@ -372,14 +385,15 @@ ProductDetail.getProps = async ({res, params, location, api, ampClient}) => {
         throw new HTTPNotFound(category.detail)
     }
 
-    // Try fetch PDP content for this product from Amplience.
-    const productPdp = (
-        await ampClient.fetchContent([{key: `pdp/${productId.toUpperCase()}`}], {
+    // Try fetch PDP content for this product/category from Amplience.
+    const [productPdp, categoryPdp] = await ampClient.fetchContent(
+        [{key: `pdp/${productId.toUpperCase()}`}, {key: `pdp/${product?.primaryCategoryId}`}],
+        {
             locale: targetLocale
-        })
-    ).pop()
+        }
+    )
 
-    return {category, product, productPdp}
+    return {category, product, productPdp, categoryPdp}
 }
 
 ProductDetail.propTypes = {
@@ -403,7 +417,11 @@ ProductDetail.propTypes = {
     /**
      * The Amplience content for this product, if available.
      */
-    productPdp: PropTypes.object
+    productPdp: PropTypes.object,
+    /**
+     * The Amplience content for this product's category, if available.
+     */
+    categoryPdp: PropTypes.object
 }
 
 export default ProductDetail
