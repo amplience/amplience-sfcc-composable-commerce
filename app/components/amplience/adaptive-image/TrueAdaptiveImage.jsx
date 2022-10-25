@@ -120,8 +120,10 @@ const TrueAdaptiveImage = (props) => {
         ]
     }, [transformations])
 
+    const mainTransform = props.transformations ?? {}
+
     return (
-        <AdaptiveImage ref={imageRef} {...props}>
+        <AdaptiveImage ref={imageRef} {...props} transformations={mainTransform}>
             <AdaptiveImageSource
                 media="(min-width: 1280px)"
                 type="image/webp"
