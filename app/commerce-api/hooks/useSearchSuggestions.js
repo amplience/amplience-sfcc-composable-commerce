@@ -4,7 +4,8 @@
  * SPDX-License-Identifier: BSD-3-Clause
  * For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
-import {useState} from 'react'
+import {useContext, useState} from 'react'
+import { AmplienceContext } from '../../contexts/amplience'
 import {useCommerceAPI} from '../contexts'
 
 /**
@@ -12,6 +13,7 @@ import {useCommerceAPI} from '../contexts'
  */
 const useSearchSuggestions = () => {
     const api = useCommerceAPI()
+    const {client} = useContext(AmplienceContext)
     const [state, setState] = useState({results: {}})
     return {
         ...state,
@@ -28,7 +30,9 @@ const useSearchSuggestions = () => {
                     limit: 6
                 }
             })
-            console.log("Search Suggestions:", searchSuggestions)
+            const allSearchablePages = await client.getSearchableContentPages()
+            console.log("allSearchablePages:", allSearchablePages)
+            searchSuggestions.pageSuggestions = allSearchablePages
             setState({results: searchSuggestions})
         },
         /**
