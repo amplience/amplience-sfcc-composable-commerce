@@ -42,6 +42,7 @@ const Developers = loadable(() => import('./pages/amplience/developers'), {fallb
 //Amplience Pages
 const RealtimeVisualization = loadable(() => import('./pages/amplience/realtime-visualization'))
 const ContentPage = loadable(() => import('./pages/amplience/page'))
+const SearchList = loadable(() => import('./pages/amplience/search-list'))
 
 const routes = [
     {
@@ -94,7 +95,7 @@ const routes = [
     },
     {
         path: '/search',
-        component: ProductList
+        component: SearchList
     },
     {
         path: '/category/:categoryId',
