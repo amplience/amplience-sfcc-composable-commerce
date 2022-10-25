@@ -15,9 +15,7 @@ import {Helmet} from 'react-helmet'
 import {
     Box,
     Flex,
-    SimpleGrid,
     Grid,
-    GridItem,
     Select,
     Spacer,
     Text,
@@ -38,12 +36,16 @@ import {
     DrawerOverlay,
     DrawerContent,
     DrawerCloseButton,
-    useBreakpointValue
+    useBreakpointValue,
+    Tabs,
+    TabList,
+    TabPanels,
+    Tab,
+    TabPanel
 } from '@chakra-ui/react'
 
 // Project Components
 import Pagination from '../../../components/pagination'
-//import ProductTile, {Skeleton as ProductTileSkeleton} from '../../components/product-tile'
 import {HideOnDesktop} from '../../../components/responsive'
 import Refinements from '../../product-list/partials/refinements'
 import SelectedRefinements from '../../product-list/partials/selected-refinements'
@@ -53,10 +55,6 @@ import PageHeader from '../../product-list/partials/page-header'
 // Amplience Components
 import AmplienceWrapper from '../../../components/amplience/wrapper'
 import _ from 'lodash'
-
-// TO switch back to the OOTB Product Tile, comment the next 2 line out and uncomment line 46 above
-import AmplienceProductTile from '../../../components/amplience/product-tile'
-import {Skeleton as ProductTileSkeleton} from '../../../components/amplience/product-tile'
 
 // Icons
 import {FilterIcon, ChevronDownIcon} from '../../../components/icons'
@@ -93,6 +91,8 @@ import {defaultAmpClient} from '../../../amplience-api'
 import GridItemHero from '../../../components/amplience/hero/gridItemHero'
 import PersonalisedComponent from '../../../components/amplience/personalised-component'
 import {personalisationChanged} from '../../../amplience-api/utils'
+
+import ProductListing from '../../../components/amplience/product-listing'
 
 const PersonalisedComponentGridItem = ({...props}) => {
     return <PersonalisedComponent limit="1" components={inGridComponents} {...props} />
@@ -374,6 +374,7 @@ const ProductList = (props) => {
     const [wishlistLoading, setWishlistLoading] = useState([])
     const [filtersLoading, setFiltersLoading] = useState(false)
     const [rtvActive, setRtvActive] = useState(false)
+    const [tabIndex, setTabIndex] = useState(0)
 
     const {total, sortingOptions} = productSearchResult || {}
     const basePath = `${location.pathname}${location.search}`
@@ -389,6 +390,10 @@ const ProductList = (props) => {
     const pageUrls = useAmpPageUrls({total, pageOffsets})
 
     const showNoResults = !isLoading && productSearchResult && !productSearchResult?.hits
+
+    const handleTabsChange = (index) => {
+        setTabIndex(index)
+    }
 
     useAmpRtv(
         async (model) => {
@@ -538,15 +543,6 @@ const ProductList = (props) => {
         isMobile
     )
 
-    const indexStyle = {
-        position: 'absolute',
-        zIndex: '1',
-        background: 'white',
-        padding: '2px 9px',
-        margin: '5px',
-        borderRadius: '30px'
-    }
-
     return (
         <Box
             className="sf-product-list-page"
@@ -620,44 +616,68 @@ const ProductList = (props) => {
                                 height={12}
                                 borderColor="gray.100"
                             >
-                                <Flex align="center">
-                                    <Button
-                                        fontSize="sm"
-                                        colorScheme="black"
-                                        variant="outline"
-                                        marginRight={2}
-                                        display="inline-flex"
-                                        leftIcon={<FilterIcon boxSize={5} />}
-                                        onClick={onOpen}
-                                    >
-                                        <FormattedMessage
-                                            defaultMessage="Filter"
-                                            id="product_list.button.filter"
-                                        />
-                                    </Button>
-                                </Flex>
-                                <Flex align="center">
-                                    <Button
-                                        maxWidth="245px"
-                                        fontSize="sm"
-                                        marginRight={2}
-                                        colorScheme="black"
-                                        variant="outline"
-                                        display="inline-flex"
-                                        rightIcon={<ChevronDownIcon boxSize={5} />}
-                                        onClick={() => setSortOpen(true)}
-                                    >
-                                        {formatMessage(
-                                            {
-                                                id: 'product_list.button.sort_by',
-                                                defaultMessage: 'Sort By: {sortOption}'
-                                            },
-                                            {
-                                                sortOption: selectedSortingOptionLabel?.label
-                                            }
-                                        )}
-                                    </Button>
-                                </Flex>
+                                <Tabs isFitted index={tabIndex}>
+                                    <TabPanels>
+                                        <TabPanel sx={{padding: 0}}>
+                                            <Flex align="center">
+                                                <Button
+                                                    fontSize="sm"
+                                                    colorScheme="black"
+                                                    variant="outline"
+                                                    marginRight={2}
+                                                    display="inline-flex"
+                                                    leftIcon={<FilterIcon boxSize={5} />}
+                                                    onClick={onOpen}
+                                                >
+                                                    <FormattedMessage
+                                                        defaultMessage="Filter"
+                                                        id="product_list.button.filter"
+                                                    />
+                                                </Button>
+                                            </Flex>
+                                            <Flex align="center">
+                                                <Button
+                                                    maxWidth="245px"
+                                                    fontSize="sm"
+                                                    marginRight={2}
+                                                    colorScheme="black"
+                                                    variant="outline"
+                                                    display="inline-flex"
+                                                    rightIcon={<ChevronDownIcon boxSize={5} />}
+                                                    onClick={() => setSortOpen(true)}
+                                                >
+                                                    {formatMessage(
+                                                        {
+                                                            id: 'product_list.button.sort_by',
+                                                            defaultMessage: 'Sort By: {sortOption}'
+                                                        },
+                                                        {
+                                                            sortOption: selectedSortingOptionLabel?.label
+                                                        }
+                                                    )}
+                                                </Button>
+                                            </Flex>
+                                        </TabPanel>
+                                        <TabPanel sx={{padding: 0}}>
+                                            <Flex align="center">
+                                                <Button
+                                                    fontSize="sm"
+                                                    colorScheme="black"
+                                                    variant="outline"
+                                                    marginRight={2}
+                                                    display="inline-flex"
+                                                    leftIcon={<FilterIcon boxSize={5} />}
+                                                    onClick={onOpen}
+                                                >
+                                                    <FormattedMessage
+                                                        defaultMessage="Content Filter"
+                                                        id="product_list.button.contentfilter"
+                                                    />
+                                                </Button>
+                                            </Flex>
+                                        </TabPanel>
+                                    </TabPanels>
+                                </Tabs>
                             </Stack>
                         </Stack>
                         <Box marginBottom={4}>
@@ -668,16 +688,28 @@ const ProductList = (props) => {
                             />
                         </Box>
                     </HideOnDesktop>
+
                     {/* Body  */}
                     <Grid templateColumns={{base: '1fr', md: '280px 1fr'}} columnGap={6}>
-                        <Stack display={{base: 'none', md: 'flex'}}>
-                            <Refinements
-                                isLoading={filtersLoading}
-                                toggleFilter={toggleFilter}
-                                filters={productSearchResult?.refinements}
-                                selectedFilters={searchParams.refine}
-                            />
-                        </Stack>
+                        <Tabs index={tabIndex}>
+                            <TabPanels>
+                                <TabPanel sx={{padding: 0}}>
+                                    <Stack display={{base: 'none', md: 'flex'}}>
+                                        <Refinements
+                                            isLoading={filtersLoading}
+                                            toggleFilter={toggleFilter}
+                                            filters={productSearchResult?.refinements}
+                                            selectedFilters={searchParams.refine}
+                                        />
+                                    </Stack>
+                                </TabPanel>
+                                <TabPanel sx={{padding: 0}}>
+                                    <Stack display={{base: 'none', md: 'flex'}}>
+                                        <h2>Post Refinements</h2>
+                                    </Stack>
+                                </TabPanel>
+                            </TabPanels>
+                        </Tabs>
                         <Box position="relative">
                             {validationResult && (
                                 <Box
@@ -693,114 +725,58 @@ const ProductList = (props) => {
                                     {validationResult}
                                 </Box>
                             )}
-                            <SimpleGrid
-                                columns={[2, 2, 3, 3]}
-                                spacingX={4}
-                                spacingY={{base: 4, lg: 4}}
-                            >
-                                {isLoading || !productSearchResult
-                                    ? new Array(searchParams.limit)
-                                          .fill(0)
-                                          .map((value, index) => (
-                                              <ProductTileSkeleton key={index} />
-                                          ))
-                                    : results.map((item, index) => {
-                                          if (item.isAmplience) {
-                                              // Amplience content tile
 
-                                              return (
-                                                  <GridItem
-                                                      key={index}
-                                                      colEnd={{
-                                                          base: `span 1`,
-                                                          md: `span ${item.cols}`
-                                                      }}
-                                                      rowEnd={{
-                                                          base: `span 1`,
-                                                          md: `span ${item.rows}`
-                                                      }}
-                                                      display="flex"
-                                                  >
-                                                      {rtvActive && (
-                                                          <Box {...indexStyle}>
-                                                              {item.indices.join(', ')}
-                                                          </Box>
-                                                      )}
-                                                      <AmplienceWrapper
-                                                          fetch={{id: item.content?.id}}
-                                                          components={inGridComponents}
-                                                          cols={isMobile ? 1 : item.cols}
-                                                          rows={isMobile ? 1 : item.rows}
-                                                          gap={16}
-                                                          skeleton={{display: 'flex', flex: 1}}
-                                                      ></AmplienceWrapper>
-                                                  </GridItem>
-                                              )
-                                          } else {
-                                              const productSearchItem = item
-                                              const productId = productSearchItem.productId
-                                              const isInWishlist = !!wishlist.findItemByProductId(
-                                                  productId
-                                              )
+                            <Tabs onChange={handleTabsChange}>
+                                <TabList>
+                                    <Tab>Products ({productSearchResult?.total})</Tab>
+                                    <Tab>Posts (n)</Tab>
+                                </TabList>
 
-                                              return (
-                                                  <AmplienceProductTile
-                                                      data-testid={`sf-product-tile-${productSearchItem.productId}`}
-                                                      key={productSearchItem.productId}
-                                                      product={productSearchItem}
-                                                      enableFavourite={true}
-                                                      isFavourite={isInWishlist}
-                                                      onFavouriteToggle={(isFavourite) => {
-                                                          const action = isFavourite
-                                                              ? addItemToWishlist
-                                                              : removeItemFromWishlist
-                                                          return action(productSearchItem)
-                                                      }}
-                                                      dynamicImageProps={{
-                                                          widths: [
-                                                              '50vw',
-                                                              '50vw',
-                                                              '20vw',
-                                                              '20vw',
-                                                              '25vw'
-                                                          ]
-                                                      }}
-                                                  >
-                                                      {rtvActive && (
-                                                          <Box {...indexStyle}>
-                                                              {item.indices.join(', ')}
-                                                          </Box>
-                                                      )}
-                                                  </AmplienceProductTile>
-                                              )
-                                          }
-                                      })}
-                            </SimpleGrid>
-                            {/* Footer */}
-                            <Flex
-                                justifyContent={['center', 'center', 'flex-start']}
-                                paddingTop={8}
-                            >
-                                <Pagination currentURL={basePath} urls={pageUrls} />
+                                <TabPanels>
+                                    <TabPanel sx={{padding: 0, paddingTop: '12px'}}>
+                                        <ProductListing
+                                            isLoading={isLoading}
+                                            isMobile={isMobile}
+                                            rtvActive={rtvActive}
+                                            productSearchResult={productSearchResult}
+                                            searchParams={searchParams}
+                                            results={results}
+                                            inGridComponents={inGridComponents}
+                                            addItemToWishlist={addItemToWishlist}
+                                            removeItemFromWishlist={removeItemFromWishlist}
+                                        />
 
-                                {/*
-                            Our design doesn't call for a page size select. Show this element if you want
-                            to add one to your design.
-                        */}
-                                <Select
-                                    display="none"
-                                    value={basePath}
-                                    onChange={({target}) => {
-                                        history.push(target.value)
-                                    }}
-                                >
-                                    {limitUrls.map((href, index) => (
-                                        <option key={href} value={href}>
-                                            {DEFAULT_LIMIT_VALUES[index]}
-                                        </option>
-                                    ))}
-                                </Select>
-                            </Flex>
+                                        {/* Footer */}
+                                        <Flex
+                                            justifyContent={['center', 'center', 'flex-start']}
+                                            paddingTop={8}
+                                        >
+                                            <Pagination currentURL={basePath} urls={pageUrls} />
+
+                                            {/*
+                                        Our design doesn't call for a page size select. Show this element if you want
+                                        to add one to your design.
+                                    */}
+                                            <Select
+                                                display="none"
+                                                value={basePath}
+                                                onChange={({target}) => {
+                                                    history.push(target.value)
+                                                }}
+                                            >
+                                                {limitUrls.map((href, index) => (
+                                                    <option key={href} value={href}>
+                                                        {DEFAULT_LIMIT_VALUES[index]}
+                                                    </option>
+                                                ))}
+                                            </Select>
+                                        </Flex>
+                                    </TabPanel>
+                                    <TabPanel sx={{padding: 0, paddingTop: '12px'}}>
+                                        <h3>Nothing Here Yet</h3>
+                                    </TabPanel>
+                                </TabPanels>
+                            </Tabs>
                         </Box>
                     </Grid>
                     <Spacer height={6} />

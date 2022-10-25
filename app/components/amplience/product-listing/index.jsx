@@ -1,81 +1,38 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {Box, SimpleGrid, GridItem} from '@chakra-ui/react'
+import {Flex, Select, SimpleGrid} from '@chakra-ui/react'
 
+import Pagination from '../../../components/pagination'
 import useWishlist from '../../../hooks/use-wishlist'
+
+// Constants
+import {DEFAULT_LIMIT_VALUES} from '../../../constants'
 
 // TO switch back to the OOTB Product Tile, comment out the next 2 lines and uncomment line 10
 import AmplienceProductTile from '../../../components/amplience/product-tile'
 import {Skeleton as ProductTileSkeleton} from '../../../components/amplience/product-tile'
 //import ProductTile, {Skeleton as ProductTileSkeleton} from '../../components/product-tile'
 
-import AmplienceWrapper from '../../../components/amplience/wrapper'
-
 const ProductListing = ({
+    basePath,
     isLoading,
-    isMobile,
-    rtvActive,
     productSearchResult,
     searchParams,
-    inGridComponents,
-    results,
     addItemToWishlist,
-    removeItemFromWishlist
+    removeItemFromWishlist,
+    pageUrls,
+    limitUrls
 }) => {
     const wishlist = useWishlist()
 
-    const indexStyle = {
-        position: 'absolute',
-        zIndex: '1',
-        background: 'white',
-        padding: '2px 9px',
-        margin: '5px',
-        borderRadius: '30px'
-    }
-
     return (
-        <SimpleGrid
-            className="listComp"
-            columns={[2, 2, 3, 3]}
-            spacingX={4}
-            spacingY={{base: 4, lg: 4}}
-        >
-            {isLoading || !productSearchResult
-                ? new Array(searchParams.limit)
-                      .fill(0)
-                      .map((value, index) => <ProductTileSkeleton key={index} />)
-                : results.map((item, index) => {
-                      if (item.isAmplience) {
-                          // Amplience content tile
-
-                          return (
-                              <GridItem
-                                  key={index}
-                                  colEnd={{
-                                      base: `span 1`,
-                                      md: `span ${item.cols}`
-                                  }}
-                                  rowEnd={{
-                                      base: `span 1`,
-                                      md: `span ${item.rows}`
-                                  }}
-                                  display="flex"
-                              >
-                                  {rtvActive && (
-                                      <Box {...indexStyle}>{item.indices.join(', ')}</Box>
-                                  )}
-                                  <AmplienceWrapper
-                                      fetch={{id: item.content?.id}}
-                                      components={inGridComponents}
-                                      cols={isMobile ? 1 : item.cols}
-                                      rows={isMobile ? 1 : item.rows}
-                                      gap={16}
-                                      skeleton={{display: 'flex', flex: 1}}
-                                  ></AmplienceWrapper>
-                              </GridItem>
-                          )
-                      } else {
-                          const productSearchItem = item
+        <>
+            <SimpleGrid columns={[2, 2, 3, 3]} spacingX={4} spacingY={{base: 12, lg: 16}}>
+                {isLoading || !productSearchResult
+                    ? new Array(searchParams.limit)
+                          .fill(0)
+                          .map((value, index) => <ProductTileSkeleton key={index} />)
+                    : productSearchResult.hits.map((productSearchItem) => {
                           const productId = productSearchItem.productId
                           const isInWishlist = !!wishlist.findItemByProductId(productId)
 
@@ -95,26 +52,42 @@ const ProductListing = ({
                                   dynamicImageProps={{
                                       widths: ['50vw', '50vw', '20vw', '20vw', '25vw']
                                   }}
-                              >
-                                  {rtvActive && (
-                                      <Box {...indexStyle}>{item.indices.join(', ')}</Box>
-                                  )}
-                              </AmplienceProductTile>
+                              />
                           )
-                      }
-                  })}
-        </SimpleGrid>
+                      })}
+            </SimpleGrid>
+            <Flex justifyContent={['center', 'center', 'flex-start']} paddingTop={8}>
+                <Pagination currentURL={basePath} urls={pageUrls} />
+
+                {/*
+                Our design doesn't call for a page size select. Show this element if you want
+                to add one to your design.
+                */}
+                <Select
+                    display="none"
+                    value={basePath}
+                    onChange={({target}) => {
+                        history.push(target.value)
+                    }}
+                >
+                    {limitUrls.map((href, index) => (
+                        <option key={href} value={href}>
+                            {DEFAULT_LIMIT_VALUES[index]}
+                        </option>
+                    ))}
+                </Select>
+            </Flex>
+        </>
     )
 }
 
 ProductListing.propTypes = {
+    basePath: PropTypes.string,
     isLoading: PropTypes.boolean,
-    isMobile: PropTypes.boolean,
-    rtvActive: PropTypes.boolean,
+    pageUrls: PropTypes.arrayOf(PropTypes.string),
+    limitUrls: PropTypes.arrayOf(PropTypes.string),
     productSearchResult: PropTypes.object,
-    results: PropTypes.object,
     searchParams: PropTypes.object,
-    inGridComponents: PropTypes.object,
     addItemToWishlist: PropTypes.func,
     removeItemFromWishlist: PropTypes.func
 }
