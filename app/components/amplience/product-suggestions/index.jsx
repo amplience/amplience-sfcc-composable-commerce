@@ -1,17 +1,9 @@
-/*
- * Copyright (c) 2021, salesforce.com, inc.
- * All rights reserved.
- * SPDX-License-Identifier: BSD-3-Clause
- * For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
- */
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
-import {Text, Button, Stack, Box, HStack, VStack, Grid, GridItem, Skeleton, AspectRatio, SimpleGrid, useBreakpointValue, SkeletonText, Img} from '@chakra-ui/react'
+import {Text, Stack, Box, HStack, VStack, Skeleton, AspectRatio, SimpleGrid, useBreakpointValue, SkeletonText, Image} from '@chakra-ui/react'
 import {useCommerceAPI} from '../../../commerce-api/contexts'
 import {handleAsyncError} from '../../../commerce-api/utils'
-import AmplienceProductTile from '../product-tile'
 import { productUrlBuilder } from '../../../utils/url'
-import {HideOnDesktop, HideOnMobile} from '../../responsive'
 import DynamicImage from '../../dynamic-image'
 import { useCurrency } from '../../../hooks'
 import {useIntl} from 'react-intl'
@@ -115,7 +107,7 @@ const ProductSuggestions = ({suggestions, closeAndNavigate}) => {
                                             w={'140px'}
                                             style={{minWidth: '140px'}}
                                         >
-                                        <Img
+                                        <Image
                                             src={item.image.link}
                                             width={140}
                                             alt={item.image.alt}
@@ -142,12 +134,10 @@ const ProductSuggestions = ({suggestions, closeAndNavigate}) => {
                                         w={'40px'}
                                         style={{minWidth: '40px'}}
                                     >
-                                        <DynamicImage
-                                            src={`${item.image.disBaseLink || item.image.link}[?sw={width}&q=60]`}
-                                            widths={[40]}
-                                            imageProps={{
-                                                alt: item.image.alt,
-                                            }}
+                                        <Image
+                                            src={item.image.link}
+                                            width={40}
+                                            alt={item.image.alt}
                                         />
                                     </Box>
                                     <Text fontSize='xs' fontWeight={700}>{item.name}</Text>
