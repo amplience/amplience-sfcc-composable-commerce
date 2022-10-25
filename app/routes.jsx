@@ -33,6 +33,7 @@ const Checkout = loadable(() => import('./pages/checkout'), {fallback})
 const CheckoutConfirmation = loadable(() => import('./pages/checkout/confirmation'), {fallback})
 const LoginRedirect = loadable(() => import('./pages/login-redirect'), {fallback})
 const ProductDetail = loadable(() => import('./pages/product-detail'), {fallback})
+const AmpProductDetail = loadable(() => import('./pages/amplience/product-detail'), {fallback})
 const ProductList = loadable(() => import('./pages/product-list'), {fallback})
 const AmpProductList = loadable(() => import('./pages/amplience/product-list'), {fallback})
 const Wishlist = loadable(() => import('./pages/account/wishlist'), {fallback})
@@ -90,7 +91,11 @@ const routes = [
     },
     {
         path: '/product/:productId',
-        component: ProductDetail
+        component: AmpProductDetail
+    },
+    {
+        path: '/pdp/:productId',
+        component: AmpProductDetail
     },
     {
         path: '/search',
