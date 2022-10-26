@@ -95,7 +95,7 @@ const routes = [
         component: AmpProductDetail
     },
     {
-        path: '/pdp/:productId',
+        path: '/pdp/content/:productId', // For PDP visualisation
         component: AmpProductDetail
     },
     {

@@ -19,7 +19,8 @@ import {
     AccordionIcon,
     Box,
     Button,
-    Stack
+    Stack,
+    Heading
 } from '@chakra-ui/react'
 
 // Hooks
@@ -49,8 +50,11 @@ import {useToast} from '../../../hooks/use-toast'
 import {resolveSiteFromUrl} from '../../../utils/site-utils'
 import {getTargetLocale} from '../../../utils/locale'
 import AmplienceWrapper from '../../../components/amplience/wrapper'
+import {useAmpRtv} from '../../../utils/amplience/rtv'
+import {useContext} from 'react'
+import {AmplienceContext} from '../../../contexts/amplience'
 
-const ProductDetail = ({category, product, isLoading, productPdp, categoryPdp}) => {
+const ProductDetail = ({category, product, isLoading, productPdp: initialProductPdp}) => {
     const {formatMessage} = useIntl()
     const basket = useBasket()
     const history = useHistory()
@@ -59,6 +63,20 @@ const ProductDetail = ({category, product, isLoading, productPdp, categoryPdp}) 
     const toast = useToast()
     const navigate = useNavigation()
     const [primaryCategory, setPrimaryCategory] = useState(category)
+    const [productPdp, setProductPdp] = useState(initialProductPdp)
+    const {groups} = useContext(AmplienceContext)
+
+    useAmpRtv(
+        (model) => {
+            setProductPdp(model.content)
+        },
+        undefined,
+        [initialProductPdp, groups]
+    )
+
+    useEffect(() => {
+        setProductPdp(initialProductPdp)
+    }, [initialProductPdp])
 
     // This page uses the `primaryCategoryId` to retrieve the category data. This attribute
     // is only available on `master` products. Since a variation will be loaded once all the
@@ -147,7 +165,6 @@ const ProductDetail = ({category, product, isLoading, productPdp, categoryPdp}) 
     }, [product])
 
     const productExtras = []
-    const categoryExtras = []
 
     if (productPdp && productPdp.title) {
         productExtras.push(
@@ -156,28 +173,25 @@ const ProductDetail = ({category, product, isLoading, productPdp, categoryPdp}) 
                 mt={4}
                 mb={4}
                 textAlign={'center'}
-                fontSize={{base: 'md', md: '3xl', lg: '4xl'}}>
+                fontSize={{base: 'md', md: '3xl', lg: '4xl'}}
+            >
                 {productPdp.title}
             </Heading>
         )
     }
+
     if (productPdp && productPdp.content) {
         let i = 0
         for (let content of productPdp.content) {
             productExtras.push(
-                <AmplienceWrapper content={content} key={`pdp-${i++}`}></AmplienceWrapper>
+                <AmplienceWrapper
+                    content={content}
+                    fetch={{id: content._meta.deliveryId}}
+                    key={`pdp-${i++}`}
+                ></AmplienceWrapper>
             )
         }
     }
-
-    // if (categoryPdp && categoryPdp.content) {
-    //     let i = 0
-    //     for (let content of categoryPdp.content) {
-    //         categoryExtras.push(
-    //             <AmplienceWrapper content={content} key={`cpdp-${i++}`}></AmplienceWrapper>
-    //         )
-    //     }
-    // }
 
     return (
         <Box
@@ -292,10 +306,7 @@ const ProductDetail = ({category, product, isLoading, productPdp, categoryPdp}) 
                 </Stack>
 
                 {/* Amplience PDP Content */}
-                <Stack spacing={16}>
-                    {productExtras}
-                    {categoryExtras}
-                </Stack>
+                <Stack spacing={16}>{productExtras}</Stack>
 
                 {/* Product Recommendations */}
                 <Stack spacing={16}>
@@ -398,14 +409,14 @@ ProductDetail.getProps = async ({res, params, location, api, ampClient}) => {
     }
 
     // Try fetch PDP content for this product/category from Amplience.
-    const [productPdp, categoryPdp] = await ampClient.fetchContent(
-        [{key: `pdp/${productId.toUpperCase()}`}, {key: `pdp/${product?.primaryCategoryId}`}],
+    const [productPdp] = await ampClient.fetchContent(
+        [{key: `pdp/content/${productId.toUpperCase()}`}],
         {
             locale: targetLocale
         }
     )
 
-    return {category, product, productPdp, categoryPdp}
+    return {category, product, productPdp}
 }
 
 ProductDetail.propTypes = {
@@ -429,11 +440,7 @@ ProductDetail.propTypes = {
     /**
      * The Amplience content for this product, if available.
      */
-    productPdp: PropTypes.object,
-    /**
-     * The Amplience content for this product's category, if available.
-     */
-    categoryPdp: PropTypes.object
+    productPdp: PropTypes.object
 }
 
 export default ProductDetail
