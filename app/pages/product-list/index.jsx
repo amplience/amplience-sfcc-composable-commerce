@@ -72,8 +72,6 @@ import {
 import useNavigation from '../../hooks/use-navigation'
 import LoadingSpinner from '../../components/loading-spinner'
 
-import AmplienceWrapper from '../../components/amplience/wrapper'
-
 // NOTE: You can ignore certain refinements on a template level by updating the below
 // list of ignored refinements.
 const REFINEMENT_DISALLOW_LIST = ['c_isNew']
@@ -255,7 +253,6 @@ const ProductList = (props) => {
             ) : (
                 <>
                     {/* Header */}
-                    <AmplienceWrapper fetch={{key: 'search-personalisation'}} />
                     <Stack
                         display={{base: 'none', lg: 'flex'}}
                         direction="row"
