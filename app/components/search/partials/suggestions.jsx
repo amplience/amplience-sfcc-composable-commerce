@@ -29,11 +29,12 @@ const Suggestions = ({suggestions, closeAndNavigate}) => {
                                 fontWeight="400"
                                 dangerouslySetInnerHTML={{__html: suggestion.name}}
                             />
+                            {suggestion.parentCategoryName && (
+                                <Text ml={4} fontSize={'xs'} textStyle={'italic'}>
+                                    (&gt; {suggestion.parentCategoryName})
+                                </Text>
+                            )}
                         </Button>
-                        {
-                            suggestion.parentCategoryName &&
-                            <Text ml={4} fontSize={'xs'} textStyle={'italic'}>(&gt; {suggestion.parentCategoryName})</Text>
-                        }
                     </>
                 ))}
             </Box>
