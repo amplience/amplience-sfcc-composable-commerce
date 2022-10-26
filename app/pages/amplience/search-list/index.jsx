@@ -125,6 +125,7 @@ const SearchList = (props) => {
     useEffect(() => {
         isLoading && window.scrollTo(0, 0)
         setFiltersLoading(isLoading)
+        setTabIndex(0)
     }, [isLoading])
 
     // Get urls to be used for pagination, page size changes, and sorting.
@@ -400,7 +401,7 @@ const SearchList = (props) => {
                             </TabPanels>
                         </Tabs>
                         <Box>
-                            <Tabs onChange={handleTabsChange}>
+                            <Tabs index={tabIndex} onChange={handleTabsChange}>
                                 <TabList>
                                     <Tab>Products {
                                             productSearchResult?.total &&
@@ -558,6 +559,7 @@ SearchList.getProps = async ({res, params, location, api, ampClient}) => {
     let isSearch = false
 
     const ampPages = await ampClient.getSearchableContentPages()
+    //const ampPages = await ampClient.queryFilterSearch('/_meta/name', searchQuery)
     console.log('allSearchablePages:', ampPages)
 
     if (searchQuery) {
