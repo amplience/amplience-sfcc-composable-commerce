@@ -27,7 +27,7 @@ const ProductListing = ({
 
     return (
         <>
-            <SimpleGrid columns={[2, 2, 3, 3]} spacingX={4} spacingY={{base: 12, lg: 16}}>
+            <SimpleGrid columns={[2, 2, 3, 3]} spacingX={4} spacingY={4}>
                 {isLoading || !productSearchResult
                     ? new Array(searchParams.limit)
                           .fill(0)
