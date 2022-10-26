@@ -149,6 +149,18 @@ const ProductDetail = ({category, product, isLoading, productPdp, categoryPdp}) 
     const productExtras = []
     const categoryExtras = []
 
+    if (productPdp && productPdp.title) {
+        productExtras.push(
+            <Heading
+                as="h2"
+                mt={4}
+                mb={4}
+                textAlign={'center'}
+                fontSize={{base: 'md', md: '3xl', lg: '4xl'}}>
+                {productPdp.title}
+            </Heading>
+        )
+    }
     if (productPdp && productPdp.content) {
         let i = 0
         for (let content of productPdp.content) {
@@ -158,14 +170,14 @@ const ProductDetail = ({category, product, isLoading, productPdp, categoryPdp}) 
         }
     }
 
-    if (categoryPdp && categoryPdp.content) {
-        let i = 0
-        for (let content of categoryPdp.content) {
-            categoryExtras.push(
-                <AmplienceWrapper content={content} key={`cpdp-${i++}`}></AmplienceWrapper>
-            )
-        }
-    }
+    // if (categoryPdp && categoryPdp.content) {
+    //     let i = 0
+    //     for (let content of categoryPdp.content) {
+    //         categoryExtras.push(
+    //             <AmplienceWrapper content={content} key={`cpdp-${i++}`}></AmplienceWrapper>
+    //         )
+    //     }
+    // }
 
     return (
         <Box
