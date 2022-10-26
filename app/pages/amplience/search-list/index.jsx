@@ -76,6 +76,7 @@ import LoadingSpinner from '../../../components/loading-spinner'
 // Amplience Imports
 import ProductListing from '../../../components/amplience/product-listing'
 import PageListing from '../../../components/amplience/page-listing'
+import AmplienceWrapper from '../../../components/amplience/wrapper'
 
 // NOTE: You can ignore certain refinements on a template level by updating the below
 // list of ignored refinements.
@@ -264,7 +265,7 @@ const SearchList = (props) => {
             ) : (
                 <>
                     {/* Header */}
-
+                    <AmplienceWrapper fetch={{key: 'search-personalisation'}} />
                     <Stack
                         display={{base: 'none', lg: 'flex'}}
                         direction="row"
@@ -401,8 +402,16 @@ const SearchList = (props) => {
                         <Box>
                             <Tabs onChange={handleTabsChange}>
                                 <TabList>
-                                    <Tab>Products ({productSearchResult?.total})</Tab>
-                                    <Tab>Pages ({ampPages?.length})</Tab>
+                                    <Tab>Products {
+                                            productSearchResult?.total &&
+                                                <>({productSearchResult?.total})</>
+                                        }
+                                        </Tab>
+                                    <Tab>Pages {
+                                            ampPages?.length &&
+                                                <>({ampPages?.length})</>
+                                        }
+                                    </Tab>
                                 </TabList>
 
                                 <TabPanels>
@@ -511,7 +520,7 @@ const SearchList = (props) => {
                                 width="full"
                                 onClick={() => {
                                     setSortOpen(false)
-                                    history.push(href)
+                                    navigate(href)
                                 }}
                                 fontSize={'md'}
                                 key={idx}

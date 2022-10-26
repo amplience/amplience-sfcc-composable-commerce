@@ -488,7 +488,7 @@ export class AmplienceAPI {
         
         const result = await this.client
             .filterByContentType('https://sfcc.com/site/pages/content-page')
-            // .filterBy("/seo/noindex", false)
+            .filterBy("/active", true)
             .request()
 
         return result.responses
