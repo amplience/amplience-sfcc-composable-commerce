@@ -1,0 +1,62 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://sfcc.com/site/product-pdp",
+
+	"title": "Product PDP",
+	"description": "Associates an SFCC product with Amplience content that should appear on its PDP.",
+
+	"allOf": [
+		{
+			"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+		}
+	],
+	
+	"type": "object",
+	"properties": {
+        "_meta": {
+            "title": "Associated Product",
+            "properties": {
+                "deliveryKey": {
+                    "title": "Product ID",
+                    "description": "(format pdp/content/<id>) When the Product ID matches, this item's content is shown on the PDP.",
+                    "type": "string",
+                    "pattern": "pdp\/content\/.*"
+                }
+            }
+        },
+		"title": {
+            "title": "Title (optional)",
+            "description": "Title for the product content",
+            "allOf": [
+                {
+                    "$ref": "http://bigcontent.io/cms/schema/v1/localization#/definitions/localized-string"
+                }
+            ]
+        },
+		"content": {
+			"title": "Content",
+			"description": "Content that appears on the PDP.",
+			"type": "array",
+			"minItems": 0,
+			"maxItems": 10,
+			"items": {
+				"allOf": [
+					{ "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link" },
+					{
+						"properties": {
+							"contentType": {
+								"allOf": [
+									{
+										"$ref": "https://sfcc.com/libs/all-definitions#/definitions/anyComponentPageAndSlot"
+									}
+								]
+							}
+						}
+					}
+				]
+			}
+		}
+		
+	},
+	"propertyOrder": []
+}
