@@ -402,7 +402,7 @@ const SearchList = (props) => {
                             <Tabs onChange={handleTabsChange}>
                                 <TabList>
                                     <Tab>Products ({productSearchResult?.total})</Tab>
-                                    <Tab>Pages ({ampPages.length})</Tab>
+                                    <Tab>Pages ({ampPages?.length})</Tab>
                                 </TabList>
 
                                 <TabPanels>
