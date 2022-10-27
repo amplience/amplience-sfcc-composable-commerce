@@ -12,7 +12,11 @@ import Suggestions from './suggestions'
 import ProductSuggestions from '../../amplience/product-suggestions'
 
 const SearchSuggestions = ({recentSearches, searchSuggestions, closeAndNavigate}) => {
-    const useSuggestions = searchSuggestions && searchSuggestions?.categorySuggestions?.length
+    const useSuggestions =
+        searchSuggestions &&
+        (searchSuggestions?.categorySuggestions?.length ||
+            searchSuggestions?.pageSuggestions?.length)
+
     return (
         <Flex w={'100%'} wrap={'wrap'}>
             <Box p={4} w={{sm: '100%', lg: '300px'}}>
@@ -42,7 +46,15 @@ const SearchSuggestions = ({recentSearches, searchSuggestions, closeAndNavigate}
                             closeAndNavigate={closeAndNavigate}
                             suggestions={searchSuggestions?.brandSuggestions}
                         /> */}
-                        <Heading as='h2' mt={4} fontSize={'md'} textTransform={'uppercase'}>Pages</Heading> 
+                        {searchSuggestions?.pageSuggestions && (
+                            <Heading as="h2" mt={4} fontSize={'md'} textTransform={'uppercase'}>
+                                Pages
+                            </Heading>
+                        )}
+                        <Suggestions
+                            closeAndNavigate={closeAndNavigate}
+                            suggestions={searchSuggestions?.pageSuggestions}
+                        />
                     </Fragment>
                 ) : (
                     <RecentSearches

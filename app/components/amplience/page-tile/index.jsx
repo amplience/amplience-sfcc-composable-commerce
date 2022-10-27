@@ -6,9 +6,9 @@ const PageTile = ({page}) => {
     return (
         <Box>
             <Link href={'page/' + page._meta.deliveryKey}>
-                <Text fontSize="lg">{page.seo.title.values[0].value}</Text>
+                <Text fontSize="lg">{page.seo.title}</Text>
             </Link>
-            <Text noOfLines={2}>{page.seo.description.values[0].value}</Text>
+            <Text noOfLines={2}>{page.seo.description}</Text>
         </Box>
     )
 }

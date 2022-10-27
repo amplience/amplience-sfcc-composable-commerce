@@ -60,7 +60,15 @@ const formatSuggestions = (searchSuggestions, input) => {
                     link: searchUrlBuilder(phrase.phrase)
                 }
             }
-        )
+        ),
+        pageSuggestions: searchSuggestions?.pageSuggestions?.map((page) => {
+            const content = page.content
+            return {
+                type: 'page',
+                name: boldString(content.seo.title, capitalize(input)),
+                link: '/' + content._meta.deliveryId
+            }
+        })
     }
 }
 

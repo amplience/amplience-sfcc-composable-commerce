@@ -5,7 +5,8 @@
  * For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
 import {useContext, useState} from 'react'
-import { AmplienceContext } from '../../contexts/amplience'
+import {useIntl} from 'react-intl'
+import {AmplienceContext} from '../../contexts/amplience'
 import {useCommerceAPI} from '../contexts'
 
 /**
@@ -15,6 +16,7 @@ const useSearchSuggestions = () => {
     const api = useCommerceAPI()
     const {client} = useContext(AmplienceContext)
     const [state, setState] = useState({results: {}})
+    const {locale} = useIntl()
     return {
         ...state,
         /**
@@ -30,8 +32,7 @@ const useSearchSuggestions = () => {
                     limit: 6
                 }
             })
-            const allSearchablePages = await client.getSearchableContentPages()
-            console.log("allSearchablePages:", allSearchablePages)
+            const allSearchablePages = await client.getSearchableContentPages(locale, input)
             searchSuggestions.pageSuggestions = allSearchablePages
             setState({results: searchSuggestions})
         },

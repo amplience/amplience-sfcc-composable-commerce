@@ -483,15 +483,21 @@ export class AmplienceAPI {
         return root
     }
 
-    async getSearchableContentPages() {
+    filterPages(pages, filter) {
+        return pages.filter(item => item.content?.seo?.title?.toLowerCase()?.indexOf(filter.toLowerCase()) !== -1)
+    }
+
+    async getSearchableContentPages(locale = 'en-US', filter) {
         await this.clientReady
         
         const result = await this.client
             .filterByContentType('https://sfcc.com/site/pages/content-page')
             .filterBy("/active", true)
-            .request()
+            .request({locale})
 
-        return result.responses
+        return filter == null ?
+            result.responses :
+            this.filterPages(result.responses, filter);
     }
 }
 

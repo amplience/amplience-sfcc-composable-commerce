@@ -77,6 +77,8 @@ import LoadingSpinner from '../../../components/loading-spinner'
 import ProductListing from '../../../components/amplience/product-listing'
 import PageListing from '../../../components/amplience/page-listing'
 import AmplienceWrapper from '../../../components/amplience/wrapper'
+import {resolveSiteFromUrl} from '../../../utils/site-utils'
+import {getTargetLocale} from '../../../utils/locale'
 
 // NOTE: You can ignore certain refinements on a template level by updating the below
 // list of ignored refinements.
@@ -558,9 +560,18 @@ SearchList.getProps = async ({res, params, location, api, ampClient}) => {
     let searchQuery = urlParams.get('q')
     let isSearch = false
 
-    const ampPages = await ampClient.getSearchableContentPages()
+    const site = resolveSiteFromUrl(location.pathname)
+    const l10nConfig = site.l10n
+    const targetLocale = getTargetLocale({
+        getUserPreferredLocales: () => {
+            const {locale} = api.getConfig()
+            return [locale]
+        },
+        l10nConfig
+    })
+
+    const ampPages = await ampClient.getSearchableContentPages(targetLocale, searchQuery)
     //const ampPages = await ampClient.queryFilterSearch('/_meta/name', searchQuery)
-    console.log('allSearchablePages:', ampPages)
 
     if (searchQuery) {
         isSearch = true
