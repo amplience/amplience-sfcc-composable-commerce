@@ -302,7 +302,7 @@ const SearchList = (props) => {
                                         />
                                     </Box>
                                 </TabPanel>
-                                <TabPanel></TabPanel>
+                                {ampPages?.length && <TabPanel></TabPanel>}
                             </TabPanels>
                         </Tabs>
                     </Stack>
@@ -365,7 +365,9 @@ const SearchList = (props) => {
                                                 </Button>
                                             </Flex>
                                         </TabPanel>
-                                        <TabPanel sx={{padding: 0}}></TabPanel>
+                                        {ampPages?.length && (
+                                            <TabPanel sx={{padding: 0}}></TabPanel>
+                                        )}
                                     </TabPanels>
                                 </Tabs>
                             </Stack>
@@ -393,26 +395,19 @@ const SearchList = (props) => {
                                         />
                                     </Stack>
                                 </TabPanel>
-                                <TabPanel sx={{padding: 0}}>
-                                    <Stack display={{base: 'none', md: 'flex'}}>
-                                        <h2>Post Refinements</h2>
-                                    </Stack>
-                                </TabPanel>
+                                {ampPages?.length && <TabPanel sx={{padding: 0}}></TabPanel>}
                             </TabPanels>
                         </Tabs>
                         <Box>
                             <Tabs index={tabIndex} onChange={handleTabsChange}>
                                 <TabList>
-                                    <Tab>Products {
-                                            productSearchResult?.total &&
-                                                <>({productSearchResult?.total})</>
-                                        }
-                                        </Tab>
-                                    <Tab>Pages {
-                                            ampPages?.length &&
-                                                <>({ampPages?.length})</>
-                                        }
+                                    <Tab>
+                                        Products{' '}
+                                        {productSearchResult?.total && (
+                                            <>({productSearchResult?.total})</>
+                                        )}
                                     </Tab>
+                                    {ampPages?.length && <Tab>Pages ({ampPages?.length})</Tab>}
                                 </TabList>
 
                                 <TabPanels>
@@ -428,9 +423,11 @@ const SearchList = (props) => {
                                             removeItemFromWishlist={removeItemFromWishlist}
                                         />
                                     </TabPanel>
-                                    <TabPanel sx={{padding: 0, paddingTop: '12px'}}>
-                                        <PageListing pages={ampPages} />
-                                    </TabPanel>
+                                    {ampPages?.length && (
+                                        <TabPanel sx={{padding: 0, paddingTop: '12px'}}>
+                                            <PageListing pages={ampPages} />
+                                        </TabPanel>
+                                    )}
                                 </TabPanels>
                             </Tabs>
                         </Box>
@@ -560,7 +557,6 @@ SearchList.getProps = async ({res, params, location, api, ampClient}) => {
 
     const ampPages = await ampClient.getSearchableContentPages()
     //const ampPages = await ampClient.queryFilterSearch('/_meta/name', searchQuery)
-    console.log('allSearchablePages:', ampPages)
 
     if (searchQuery) {
         isSearch = true
