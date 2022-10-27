@@ -11,13 +11,15 @@ import {
     SimpleGrid,
     useBreakpointValue,
     SkeletonText,
-    Image
+    Image,
+    usePrevious
 } from '@chakra-ui/react'
 import {useCommerceAPI} from '../../../commerce-api/contexts'
 import {handleAsyncError} from '../../../commerce-api/utils'
 import {productUrlBuilder} from '../../../utils/url'
 import {useCurrency} from '../../../hooks'
 import {useIntl} from 'react-intl'
+import _ from 'lodash'
 
 const selectImage = (product) => {
     const groups = product.imageGroups
@@ -41,8 +43,14 @@ const ProductSuggestions = ({suggestions, closeAndNavigate}) => {
     const isMobile = useBreakpointValue({base: true, lg: false, xl: false, xxl: false, xxxl: false})
     const {currency: activeCurrency} = useCurrency()
     const intl = useIntl()
+    const previousSuggestions = usePrevious(suggestions)
 
     useEffect(() => {
+        if (previousSuggestions && _.isEqual(previousSuggestions, suggestions)) {
+            // No need to reload the suggestions if they are identical.
+            return
+        }
+
         let active = true
 
         if (suggestions?.length === 0) {
