@@ -136,7 +136,8 @@ const SearchList = (props) => {
     const limitUrls = useLimitUrls()
 
     // If we are loaded and still have no products, show the no results component.
-    const showNoResults = !isLoading && productSearchResult && !productSearchResult?.hits && !ampPages.length
+    const showNoResults =
+        !isLoading && productSearchResult && !productSearchResult?.hits && !ampPages.length
 
     /**************** Wishlist ****************/
     const wishlist = useWishlist()
@@ -295,15 +296,17 @@ const SearchList = (props) => {
                         </Box>
                         <Tabs index={tabIndex}>
                             <TabPanels>
-                                <TabPanel sx={{padding: 0}}>
-                                    <Box paddingTop={'45px'}>
-                                        <Sort
-                                            sortUrls={sortUrls}
-                                            productSearchResult={productSearchResult}
-                                            basePath={basePath}
-                                        />
-                                    </Box>
-                                </TabPanel>
+                                {productSearchResult?.hits && (
+                                    <TabPanel sx={{padding: 0}}>
+                                        <Box paddingTop={'45px'}>
+                                            <Sort
+                                                sortUrls={sortUrls}
+                                                productSearchResult={productSearchResult}
+                                                basePath={basePath}
+                                            />
+                                        </Box>
+                                    </TabPanel>
+                                )}
                                 {ampPages?.length && <TabPanel></TabPanel>}
                             </TabPanels>
                         </Tabs>
@@ -328,47 +331,52 @@ const SearchList = (props) => {
                             >
                                 <Tabs isFitted index={tabIndex}>
                                     <TabPanels>
-                                        <TabPanel sx={{padding: 0}}>
-                                            <Flex align="center">
-                                                <Button
-                                                    fontSize="sm"
-                                                    colorScheme="black"
-                                                    variant="outline"
-                                                    marginRight={2}
-                                                    display="inline-flex"
-                                                    leftIcon={<FilterIcon boxSize={5} />}
-                                                    onClick={onOpen}
-                                                >
-                                                    <FormattedMessage
-                                                        defaultMessage="Filter"
-                                                        id="product_list.button.filter"
-                                                    />
-                                                </Button>
-                                                <Button
-                                                    maxWidth="245px"
-                                                    fontSize="sm"
-                                                    marginRight={2}
-                                                    colorScheme="black"
-                                                    variant="outline"
-                                                    display="inline-flex"
-                                                    rightIcon={<ChevronDownIcon boxSize={5} />}
-                                                    onClick={() => setSortOpen(true)}
-                                                >
-                                                    {formatMessage(
-                                                        {
-                                                            id: 'product_list.button.sort_by',
-                                                            defaultMessage: 'Sort By: {sortOption}'
-                                                        },
-                                                        {
-                                                            sortOption:
-                                                                selectedSortingOptionLabel?.label
-                                                        }
-                                                    )}
-                                                </Button>
-                                            </Flex>
-                                        </TabPanel>
-                                        {ampPages?.length && (
+                                        {productSearchResult?.hits && (
+                                            <TabPanel sx={{padding: 0}}>
+                                                <Flex align="center">
+                                                    <Button
+                                                        fontSize="sm"
+                                                        colorScheme="black"
+                                                        variant="outline"
+                                                        marginRight={2}
+                                                        display="inline-flex"
+                                                        leftIcon={<FilterIcon boxSize={5} />}
+                                                        onClick={onOpen}
+                                                    >
+                                                        <FormattedMessage
+                                                            defaultMessage="Filter"
+                                                            id="product_list.button.filter"
+                                                        />
+                                                    </Button>
+                                                    <Button
+                                                        maxWidth="245px"
+                                                        fontSize="sm"
+                                                        marginRight={2}
+                                                        colorScheme="black"
+                                                        variant="outline"
+                                                        display="inline-flex"
+                                                        rightIcon={<ChevronDownIcon boxSize={5} />}
+                                                        onClick={() => setSortOpen(true)}
+                                                    >
+                                                        {formatMessage(
+                                                            {
+                                                                id: 'product_list.button.sort_by',
+                                                                defaultMessage:
+                                                                    'Sort By: {sortOption}'
+                                                            },
+                                                            {
+                                                                sortOption:
+                                                                    selectedSortingOptionLabel?.label
+                                                            }
+                                                        )}
+                                                    </Button>
+                                                </Flex>
+                                            </TabPanel>
+                                        )}
+                                        {ampPages?.length ? (
                                             <TabPanel sx={{padding: 0}}></TabPanel>
+                                        ) : (
+                                            ''
                                         )}
                                     </TabPanels>
                                 </Tabs>
@@ -387,44 +395,47 @@ const SearchList = (props) => {
                     <Grid templateColumns={{base: '1fr', md: '280px 1fr'}} columnGap={6}>
                         <Tabs index={tabIndex}>
                             <TabPanels>
-                                <TabPanel sx={{padding: 0}}>
-                                    <Stack display={{base: 'none', md: 'flex'}}>
-                                        <Refinements
-                                            isLoading={filtersLoading}
-                                            toggleFilter={toggleFilter}
-                                            filters={productSearchResult?.refinements}
-                                            selectedFilters={searchParams.refine}
-                                        />
-                                    </Stack>
-                                </TabPanel>
-                                {ampPages?.length && <TabPanel sx={{padding: 0}}></TabPanel>}
+                                {productSearchResult?.hits && (
+                                    <TabPanel sx={{padding: 0}}>
+                                        <Stack display={{base: 'none', md: 'flex'}}>
+                                            <Refinements
+                                                isLoading={filtersLoading}
+                                                toggleFilter={toggleFilter}
+                                                filters={productSearchResult?.refinements}
+                                                selectedFilters={searchParams.refine}
+                                            />
+                                        </Stack>
+                                    </TabPanel>
+                                )}
+                                {ampPages?.length ? <TabPanel sx={{padding: 0}}></TabPanel> : ''}
                             </TabPanels>
                         </Tabs>
                         <Box>
                             <Tabs index={tabIndex} onChange={handleTabsChange}>
                                 <TabList>
-                                    <Tab>
-                                        Products{' '}
-                                        {productSearchResult?.total && (
-                                            <>({productSearchResult?.total})</>
-                                        )}
-                                    </Tab>
-                                    {ampPages?.length && <Tab>Pages ({ampPages?.length})</Tab>}
+                                    {productSearchResult?.hits ? (
+                                        <Tab>Products ({productSearchResult?.total})</Tab>
+                                    ) : (
+                                        ''
+                                    )}
+                                    {ampPages?.length ? <Tab>Pages ({ampPages?.length})</Tab> : ''}
                                 </TabList>
 
                                 <TabPanels>
-                                    <TabPanel sx={{padding: 0, paddingTop: '12px'}}>
-                                        {productSearchResult?.hits && <ProductListing
-                                            basePath={basePath}
-                                            isLoading={isLoading}
-                                            pageUrls={pageUrls}
-                                            limitUrls={limitUrls}
-                                            productSearchResult={productSearchResult}
-                                            searchParams={searchParams}
-                                            addItemToWishlist={addItemToWishlist}
-                                            removeItemFromWishlist={removeItemFromWishlist}
-                                        />}
-                                    </TabPanel>
+                                    {productSearchResult?.hits && (
+                                        <TabPanel sx={{padding: 0, paddingTop: '12px'}}>
+                                            <ProductListing
+                                                basePath={basePath}
+                                                isLoading={isLoading}
+                                                pageUrls={pageUrls}
+                                                limitUrls={limitUrls}
+                                                productSearchResult={productSearchResult}
+                                                searchParams={searchParams}
+                                                addItemToWishlist={addItemToWishlist}
+                                                removeItemFromWishlist={removeItemFromWishlist}
+                                            />
+                                        </TabPanel>
+                                    )}
                                     {ampPages?.length && (
                                         <TabPanel sx={{padding: 0, paddingTop: '12px'}}>
                                             <PageListing pages={ampPages} />
