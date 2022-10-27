@@ -134,7 +134,7 @@ const SearchList = (props) => {
     const limitUrls = useLimitUrls()
 
     // If we are loaded and still have no products, show the no results component.
-    const showNoResults = !isLoading && productSearchResult && !productSearchResult?.hits
+    const showNoResults = !isLoading && productSearchResult && !productSearchResult?.hits && !ampPages.length
 
     /**************** Wishlist ****************/
     const wishlist = useWishlist()
@@ -417,7 +417,7 @@ const SearchList = (props) => {
 
                                 <TabPanels>
                                     <TabPanel sx={{padding: 0, paddingTop: '12px'}}>
-                                        <ProductListing
+                                        {productSearchResult?.hits && <ProductListing
                                             basePath={basePath}
                                             isLoading={isLoading}
                                             pageUrls={pageUrls}
@@ -426,7 +426,7 @@ const SearchList = (props) => {
                                             searchParams={searchParams}
                                             addItemToWishlist={addItemToWishlist}
                                             removeItemFromWishlist={removeItemFromWishlist}
-                                        />
+                                        />}
                                     </TabPanel>
                                     <TabPanel sx={{padding: 0, paddingTop: '12px'}}>
                                         <PageListing pages={ampPages} />
