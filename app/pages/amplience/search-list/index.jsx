@@ -47,7 +47,7 @@ import {HideOnDesktop} from '../../../components/responsive'
 import Refinements from '../../../pages/product-list/partials/refinements'
 import SelectedRefinements from '../../../pages/product-list/partials/selected-refinements'
 import EmptySearchResults from '../../../pages/product-list/partials/empty-results'
-import PageHeader from '../../../pages/product-list/partials/page-header'
+import PageHeader from './partials/page-header'
 
 // Icons
 import {FilterIcon, ChevronDownIcon} from '../../../components/icons'
@@ -105,6 +105,9 @@ const SearchList = (props) => {
     const {isOpen, onOpen, onClose} = useDisclosure()
     const [sortOpen, setSortOpen] = useState(false)
     const [tabIndex, setTabIndex] = useState(0)
+    const [totalResult, setTotalResult] = useState(
+        parseInt(productSearchResult.total + ampPages.length)
+    )
     const {formatMessage} = useIntl()
     const navigate = useNavigation()
     const history = useHistory()
@@ -129,6 +132,10 @@ const SearchList = (props) => {
         setFiltersLoading(isLoading)
         setTabIndex(0)
     }, [isLoading])
+
+    useEffect(() => {
+        setTotalResult(parseInt(productSearchResult.total + ampPages?.length))
+    }, [productSearchResult])
 
     // Get urls to be used for pagination, page size changes, and sorting.
     const pageUrls = usePageUrls({total})
@@ -282,7 +289,7 @@ const SearchList = (props) => {
                             <PageHeader
                                 searchQuery={searchQuery}
                                 category={category}
-                                productSearchResult={productSearchResult}
+                                totalResult={totalResult}
                                 isLoading={isLoading}
                             />
                         </Flex>
@@ -317,7 +324,7 @@ const SearchList = (props) => {
                             <PageHeader
                                 searchQuery={searchQuery}
                                 category={category}
-                                productSearchResult={productSearchResult}
+                                totalResult={totalResult}
                                 isLoading={isLoading}
                             />
                             <Stack
