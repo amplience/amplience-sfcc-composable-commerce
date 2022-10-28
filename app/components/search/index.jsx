@@ -66,7 +66,7 @@ const formatSuggestions = (searchSuggestions, input) => {
             return {
                 type: 'page',
                 name: boldString(content.seo.title, capitalize(input)),
-                link: '/' + content._meta.deliveryId
+                link: '/' + content._meta.deliveryKey
             }
         })
     }

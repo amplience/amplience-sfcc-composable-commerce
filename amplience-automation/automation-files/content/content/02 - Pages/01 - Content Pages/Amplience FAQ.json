@@ -4,7 +4,7 @@
         "_meta": {
             "name": "Amplience FAQ",
             "schema": "https://sfcc.com/site/pages/content-page",
-            "deliveryKey": "faq"
+            "deliveryKey": "page/faq"
         },
         "seo": {
             "noindex": false,

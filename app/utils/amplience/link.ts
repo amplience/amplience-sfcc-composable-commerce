@@ -22,7 +22,7 @@ const contentPageLinkBuilder = (link) => {
         return '#'
     }
 
-    return '/page/' + link.contentpage.deliveryKey
+    return '/' + link.contentpage.deliveryKey
 }
 
 const externalLinkBuilder = (link, forRelative) => {
