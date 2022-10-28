@@ -493,7 +493,7 @@ export class AmplienceAPI {
         const result = await this.client
             .filterByContentType('https://sfcc.com/site/pages/content-page')
             .filterBy("/active", true)
-            .request({locale})
+            .request({locale: locale + ',*'})
 
         return filter == null ?
             result.responses :
