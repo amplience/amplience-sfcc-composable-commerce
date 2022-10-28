@@ -2,7 +2,8 @@ module.exports = {
     default: {
         hub: 'sfcccompdev2'
     },
-    /*envs: [
+    envs: [
+        /*
         {
             name: 'Live',
             hub: 'sfcccomposable',
@@ -13,7 +14,8 @@ module.exports = {
             hub: 'sfcccompuat',
             vse: 'e7ssecddcjvq1470dg00ennz9.staging.bigcontent.io'
         }
-    ],*/
+        */
+    ],
     visualisations: [
         {
             name: 'Localhost',
@@ -24,7 +26,8 @@ module.exports = {
             name: 'Development 2',
             default: false,
             url: 'https://ascc-development-2.mobify-storefront.com'
-        } /*,
+        }
+        /*,
         {
             name: 'Live',
             default: false,
@@ -34,6 +37,7 @@ module.exports = {
             name: 'UAT',
             default: false,
             url: 'https://ascc-uat.mobify-storefront.com'
-        } */
+        }
+        */
     ]
 }

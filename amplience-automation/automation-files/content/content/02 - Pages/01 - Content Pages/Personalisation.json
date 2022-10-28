@@ -4,7 +4,7 @@
     "_meta": {
       "name": "Personalisation",
       "schema": "https://sfcc.com/site/pages/content-page",
-      "deliveryKey": "personalisation"
+      "deliveryKey": "page/personalisation"
     },
     "seo": {
       "title": {

@@ -202,7 +202,7 @@ const ShoppableImageInteractable = ({
             // TODO: get page name?
             return (
                 <Tooltip label={label} {...tProps}>
-                    <Link to={'/page/' + target} {...style}>
+                    <Link to={'/' + target} {...style}>
                         {children}
                     </Link>
                 </Tooltip>

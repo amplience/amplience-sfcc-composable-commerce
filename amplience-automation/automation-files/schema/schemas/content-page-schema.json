@@ -24,7 +24,9 @@
             "properties": {
                 "deliveryKey": {
                     "title": "Key",
-                    "type": "string"
+                    "type": "string",
+                    "description": "Format page/<key>",
+                    "pattern": "page\/.*"
                 }
             }
         },
