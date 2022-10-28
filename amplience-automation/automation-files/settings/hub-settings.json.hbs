@@ -39,14 +39,12 @@
             }
         ],
         "applications": [
+            {{#each visualisations}}
             {
-                "name": "Localhost",
-                "templatedUri": "http://localhost:3000/?vse={{vse.domain}}&vse-timestamp={{context.timestamp}}"
-            },
-            {
-                "name": "Live (Amplience MRT)",
-                "templatedUri": "https://ascc-production.mobify-storefront.com/?vse={{vse.domain}}&vse-timestamp={{context.timestamp}}"
-            }
+                "name": "{{this.name}}",
+                "templatedUri": "{{this.url}}/?vse=\{{vse.domain}}&vse-timestamp=\{{context.timestamp}}"
+            }{{#unless @last}},{{/unless}}
+            {{/each}}
         ],
         "localization": {
             "locales": [

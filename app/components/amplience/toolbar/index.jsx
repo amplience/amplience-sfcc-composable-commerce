@@ -99,7 +99,7 @@ const Toolbar = (props) => {
             }),
             Icon: ViewIcon,
             Component: VisualisationPanel,
-            visibility: () => !!props.vse
+            visibility: () => !!props.showVse
         },
         {
             title: formatMessage({

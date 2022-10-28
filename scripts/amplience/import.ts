@@ -4,8 +4,9 @@ import {compile} from 'handlebars'
 import {promises, mkdirSync, rmSync} from 'fs'
 import {tmpdir} from 'os'
 import {join} from 'path'
-import {nanoid} from 'nanoid'
-import {Context} from './cli'
+import { nanoid } from 'nanoid'
+import { Context } from './cli'
+const amplience: any = require('../../config/amplience/default')
 
 const recursiveTemplateSearch = async (baseDir: string, targetDir: string, dir: string, fileFunc: (path: string) => Promise<void>) => {
     const files = await promises.readdir(join(baseDir, dir))
@@ -163,6 +164,9 @@ export const importHandler = async (context: Arguments<Context>): Promise<any> =
     })
     context.editions = editions
 
+    // Getting visualisation name and url from Amplience default config
+    context.visualisations = amplience.visualisations
+
     console.log(`Compiling templates and copying files...`)
     await compileTemplates(context.automationDir, context.tempDir, context)
     const mappingFile = context.mapFile || join(process.env[process.platform == 'win32' ? 'USERPROFILE' : 'HOME'] || __dirname, '.amplience', 'imports', `sfcc-${context.hubId}.json`)
@@ -186,6 +190,7 @@ export const importHandler = async (context: Arguments<Context>): Promise<any> =
         console.log(`Importing settings...`)
         execSync(
             `npx dc-cli settings import ${context.tempDir}/settings/hub-settings.json \
+                --allowDelete true \
                 --mapFile ${mappingFile}`, 
             {stdio: 'inherit'}
         )
