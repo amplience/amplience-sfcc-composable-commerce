@@ -190,6 +190,7 @@ export const importHandler = async (context: Arguments<Context>): Promise<any> =
         console.log(`Importing settings...`)
         execSync(
             `npx dc-cli settings import ${context.tempDir}/settings/hub-settings.json \
+                --allowDelete true \
                 --mapFile ${mappingFile}`, 
             {stdio: 'inherit'}
         )
