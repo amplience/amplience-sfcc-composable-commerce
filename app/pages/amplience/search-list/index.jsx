@@ -106,7 +106,7 @@ const SearchList = (props) => {
     const [sortOpen, setSortOpen] = useState(false)
     const [tabIndex, setTabIndex] = useState(0)
     const [totalResult, setTotalResult] = useState(
-        parseInt(productSearchResult.total + ampPages.length)
+        parseInt(productSearchResult?.total + ampPages?.length)
     )
     const {formatMessage} = useIntl()
     const navigate = useNavigation()
@@ -134,7 +134,7 @@ const SearchList = (props) => {
     }, [isLoading])
 
     useEffect(() => {
-        setTotalResult(parseInt(productSearchResult.total + ampPages?.length))
+        setTotalResult(parseInt(productSearchResult?.total + ampPages?.length))
     }, [productSearchResult])
 
     // Get urls to be used for pagination, page size changes, and sorting.
