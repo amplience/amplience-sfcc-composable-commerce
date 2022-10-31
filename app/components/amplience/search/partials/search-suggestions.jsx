@@ -9,7 +9,7 @@ import PropTypes from 'prop-types'
 import {Box, Flex, Grid, GridItem, Heading, HStack, Stack} from '@chakra-ui/react'
 import RecentSearches from './recent-searches'
 import Suggestions from './suggestions'
-import ProductSuggestions from '../../amplience/product-suggestions'
+import ProductSuggestions from './product-suggestions'
 
 const SearchSuggestions = ({recentSearches, searchSuggestions, closeAndNavigate}) => {
     const useSuggestions =

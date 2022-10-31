@@ -19,7 +19,7 @@ import {
     Spinner
 } from '@chakra-ui/react'
 import SearchSuggestions from './partials/search-suggestions'
-import {SearchIcon} from '../icons'
+import {SearchIcon} from '../../icons'
 import useSearchSuggestions from '../../../commerce-api/hooks/useSearchSuggestions'
 import {capitalize, boldString, getSessionJSONItem, setSessionJSONItem} from '../../../utils/utils'
 import useNavigation from '../../../hooks/use-navigation'

@@ -14,10 +14,10 @@ import {
     Image,
     usePrevious
 } from '@chakra-ui/react'
-import {useCommerceAPI} from '../../../commerce-api/contexts'
-import {handleAsyncError} from '../../../commerce-api/utils'
-import {productUrlBuilder} from '../../../utils/url'
-import {useCurrency} from '../../../hooks'
+import {useCommerceAPI} from '../../../../commerce-api/contexts'
+import {handleAsyncError} from '../../../../commerce-api/utils'
+import {productUrlBuilder} from '../../../../utils/url'
+import {useCurrency} from '../../../../hooks'
 import {useIntl} from 'react-intl'
 import _ from 'lodash'
 
