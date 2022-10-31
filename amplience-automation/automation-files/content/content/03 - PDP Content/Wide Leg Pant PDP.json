@@ -1,0 +1,41 @@
+{
+  "id": "5def62f7-2cf4-48ed-aff9-f6aec9cae2ee",
+  "body": {
+    "_meta": {
+      "name": "Wide Leg Pant PDP",
+      "schema": "https://sfcc.com/site/product-pdp",
+      "deliveryKey": "pdp/content/25501785M"
+    },
+    "active": true,
+    "title": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "title"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "content": [
+      {
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+        },
+        "contentType": "https://sfcc.com/slots/flexible-list",
+        "id": "efd4fdec-3586-4bfd-9dc4-602e8b198ef6"
+      }
+    ]
+  },
+  "version": 15,
+  "label": "Wide Leg Pant PDP",
+  "status": "ACTIVE",
+  "createdBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+  "createdDate": "2022-10-25T11:55:20.735Z",
+  "lastModifiedBy": "918ec612-377d-4c6a-94e4-9d4fcf8a25b0",
+  "lastModifiedDate": "2022-10-31T15:07:43.234Z",
+  "lastPublishedVersion": 14,
+  "lastPublishedDate": "2022-10-31T12:28:56.078Z",
+  "deliveryId": "5def62f7-2cf4-48ed-aff9-f6aec9cae2ee"
+}

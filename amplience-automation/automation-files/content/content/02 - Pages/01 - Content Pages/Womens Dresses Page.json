@@ -1,0 +1,115 @@
+{
+  "id": "5981af28-7ebf-4925-9806-8651a1a527ba",
+  "body": {
+    "_meta": {
+      "name": "Womens Dresses Page",
+      "schema": "https://sfcc.com/site/pages/content-page",
+      "deliveryKey": "page/womens-dresses"
+    },
+    "active": true,
+    "seo": {
+      "title": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "Womens Dresses"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "Robes Femme"
+          },
+          {
+            "locale": "de-DE",
+            "value": "Damenkleider"
+          },
+          {
+            "locale": "es-ES",
+            "value": "vestidos de mujer"
+          },
+          {
+            "locale": "it-IT",
+            "value": "Abiti da donna"
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      },
+      "description": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "Explore Women's Dresses. Whatever the occasion, find the perfect dresses from our range"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "Découvrez les robes pour femmes. Quelle que soit l'occasion, trouvez les robes parfaites de notre gamme"
+          },
+          {
+            "locale": "de-DE",
+            "value": "Entdecken Sie Damenkleider. Finden Sie in unserem Sortiment die perfekten Kleider für jeden Anlass"
+          },
+          {
+            "locale": "es-ES",
+            "value": "Explora Vestidos de mujer. Sea cual sea la ocasión, encuentra los vestidos perfectos en nuestra gama."
+          },
+          {
+            "locale": "it-IT",
+            "value": "Esplora Abiti da donna. Qualunque sia l'occasione, trova gli abiti perfetti dalla nostra gamma"
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      },
+      "keywords": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "dresses"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "Robes"
+          },
+          {
+            "locale": "de-DE",
+            "value": "Kleider"
+          },
+          {
+            "locale": "es-ES",
+            "value": "Vestidos"
+          },
+          {
+            "locale": "it-IT",
+            "value": "vestiti"
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      },
+      "noindex": false
+    },
+    "content": [
+      {
+        "_meta": {
+          "name": "Women's Dresses Page Content",
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+        },
+        "id": "7cbd1acc-5b62-4bfb-a902-aa52d2127969",
+        "contentType": "https://sfcc.com/components/rich-text"
+      }
+    ]
+  },
+  "version": 3,
+  "label": "Womens Dresses Page",
+  "status": "ACTIVE",
+  "createdBy": "918ec612-377d-4c6a-94e4-9d4fcf8a25b0",
+  "createdDate": "2022-10-31T10:12:00.537Z",
+  "lastModifiedBy": "918ec612-377d-4c6a-94e4-9d4fcf8a25b0",
+  "lastModifiedDate": "2022-10-31T10:46:11.530Z",
+  "lastPublishedVersion": 3,
+  "lastPublishedDate": "2022-10-31T14:59:37.502Z",
+  "deliveryId": "5981af28-7ebf-4925-9806-8651a1a527ba"
+}
