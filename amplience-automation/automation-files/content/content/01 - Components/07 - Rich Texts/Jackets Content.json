@@ -1,0 +1,211 @@
+{
+  "id": "21220bae-afe3-4de1-a60a-ad0ba68f1f1d",
+  "body": {
+    "_meta": {
+      "name": "Jackets Content",
+      "schema": "https://sfcc.com/components/rich-text"
+    },
+    "content": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": {
+            "richText": [
+              {
+                "type": "dc-content-link",
+                "data": {
+                  "id": "2a559b2f-9eb4-4ff7-8eb9-42941af53799",
+                  "contentType": "https://sfcc.com/components/section",
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                  }
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "With a major change in the weather just around the corner, it’s important to consider what kind of changes your Jackets and wardrobe will need, in turn!"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "288ef2fb-c4eb-4551-b804-c4a7e40b401d",
+                  "name": "jackets-amanda-vick-ohWf6YuzOQk-unsplash",
+                  "endpoint": "sfcccompdev2",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "## Styling Guide\n\n#### 1. Layering is Key\n\nOne of the best ways you can make the most of your wardrobe, and particularly weather transitions like winter to spring, is by layering. Mixing and matching favourite, versatile pieces keep your wardrobe fresh without needing to buy a zillion new items. Pick a few key things like attractive crew neck jumpers, cardigans, and gilets to wear underneath your best jackets.\n\nIf you have individual pieces you love, you can use them to their full potential throughout winter and spring. This way, your favourite hoodies and jumpers will truly last you for months, until it’s time to put them away in summer!\n\n#### 2. Light-Weight Jackets\n\nThere are tons of lightweight jackets that get the job done without being overly warm. We recommend layering with these as a good transition period before the warmer days of spring.\n\nA warmer option is a slim fit parka design. While boasting warm layers and a cosy, lined hood, jackets like these are a little bit lighter by virtue of their slim cut.\n\nFollowing the slim fit trend, we want to recommend our buttoned stamp coats, available in a wide range of beautiful, neutral tones. These are fantastic jackets to usher in spring, as they layer well with hoodies for a more casually hip look, or can be dressed up with button-up shirts for the office or finer affairs. The colour tones also mean they pair well with just about every pair of trousers.\n\nSpring means saying goodbye to puffer jackets and hello to raincoats. Though we don’t wish for rain, a sleek raincoat can add style to any outfit, whatever the weather.\n\n#### 3. Suede, Bombers, and Leather Jackets\n\nOnce you start looking at men’s fashion options, you will discover a plethora of choices to suit every style. Luckily, lightweight, Layerable jackets come in many forms. You’ll love fabric options like smooth suede, stylish faux leather, long-sleeve button-ups and bomber jacket cuts."
+              }
+            ]
+          }
+        },
+        {
+          "locale": "fr-FR",
+          "value": {
+            "richText": [
+              {
+                "type": "dc-content-link",
+                "data": {
+                  "id": "2a559b2f-9eb4-4ff7-8eb9-42941af53799",
+                  "contentType": "https://sfcc.com/components/section",
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                  }
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "Avec un changement climatique majeur qui approche à grands pas, il est important de réfléchir au type de changements dont vos vestes et votre garde-robe auront besoin, à leur tour !"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "288ef2fb-c4eb-4551-b804-c4a7e40b401d",
+                  "name": "jackets-amanda-vick-ohWf6YuzOQk-unsplash",
+                  "endpoint": "sfcccompdev2",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "## Guide de style\n\n#### 1. La superposition est la clé\n\nL'une des meilleures façons de tirer le meilleur parti de votre garde-robe, et en particulier des transitions météorologiques comme l'hiver au printemps, est de superposer. Mélangez et assortissez vos pièces préférées et polyvalentes pour garder votre garde-robe fraîche sans avoir besoin d'acheter un million de nouveaux articles. Choisissez quelques éléments clés comme des pulls ras du cou, des cardigans et des gilets attrayants à porter sous vos plus belles vestes.\n\nSi vous avez des pièces individuelles que vous aimez, vous pouvez les utiliser à leur plein potentiel tout au long de l'hiver et du printemps. De cette façon, vos sweats à capuche et pulls préférés vous dureront vraiment pendant des mois, jusqu'à ce qu'il soit temps de les ranger en été !\n\n#### 2. Vestes légères\n\nIl existe des tonnes de vestes légères qui font le travail sans être trop chaudes. Nous vous recommandons de les superposer comme une bonne période de transition avant les journées plus chaudes du printemps.\n\nUne option plus chaude est une conception de parka ajustée. Tout en offrant des couches chaudes et une capuche douillette et doublée, les vestes comme celles-ci sont un peu plus légères grâce à leur coupe slim.\n\nSuivant la tendance des coupes ajustées, nous souhaitons recommander nos manteaux de timbre boutonnés, disponibles dans une large gamme de beaux tons neutres. Ce sont des vestes fantastiques pour inaugurer le printemps, car elles se superposent bien avec des sweats à capuche pour un look branché plus décontracté, ou peuvent être habillées avec des chemises boutonnées pour le bureau ou des affaires plus raffinées. Les tons de couleur signifient également qu'ils se marient bien avec à peu près tous les pantalons.\n\nLe printemps, c'est dire adieu aux doudounes et bonjour aux imperméables. Bien que nous ne souhaitions pas la pluie, un imperméable élégant peut ajouter du style à n'importe quelle tenue, quel que soit le temps.\n\n#### 3. Vestes en daim, bombardiers et cuir\n\nUne fois que vous aurez commencé à regarder les options de mode pour hommes, vous découvrirez une pléthore de choix pour tous les styles. Heureusement, les vestes légères et superposées se présentent sous de nombreuses formes. Vous adorerez les options de tissus comme le daim lisse, le similicuir élégant, les boutons à manches longues et les coupes de blouson aviateur."
+              }
+            ]
+          }
+        },
+        {
+          "locale": "de-DE",
+          "value": {
+            "richText": [
+              {
+                "type": "dc-content-link",
+                "data": {
+                  "id": "2a559b2f-9eb4-4ff7-8eb9-42941af53799",
+                  "contentType": "https://sfcc.com/components/section",
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                  }
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "Mit einem großen Wetterumschwung gleich um die Ecke ist es wichtig zu überlegen, welche Art von Änderungen Ihre Jacken und Ihre Garderobe wiederum benötigen!"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "288ef2fb-c4eb-4551-b804-c4a7e40b401d",
+                  "name": "jackets-amanda-vick-ohWf6YuzOQk-unsplash",
+                  "endpoint": "sfcccompdev2",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "## Styling-Guide\n\n#### 1. Schichtung ist der Schlüssel\n\nEine der besten Möglichkeiten, um das Beste aus Ihrer Garderobe und insbesondere aus Wetterübergängen wie Winter und Frühling zu machen, ist das Schichten. Kombinieren und kombinieren Sie vielseitige Lieblingsstücke, um Ihre Garderobe frisch zu halten, ohne dass Sie zig neue Artikel kaufen müssen. Wählen Sie ein paar wichtige Dinge wie attraktive Pullover mit Rundhalsausschnitt, Strickjacken und Westen, die Sie unter Ihren besten Jacken tragen können.\n\nWenn Sie einzelne Stücke haben, die Sie lieben, können Sie sie im Winter und Frühling voll ausschöpfen. Auf diese Weise halten deine Lieblings-Hoodies und -Pullover wirklich monatelang, bis es Zeit ist, sie im Sommer wegzulegen!\n\n#### 2. Leichte Jacken\n\nEs gibt Tonnen von leichten Jacken, die ihre Arbeit erledigen, ohne übermäßig warm zu sein. Als gute Übergangszeit vor den wärmeren Frühlingstagen empfehlen wir das Schichten mit diesen.\n\nEine wärmere Option ist ein eng anliegendes Parka-Design. Mit wärmenden Lagen und einer kuschelig gefütterten Kapuze sind Jacken wie diese durch ihren schmalen Schnitt etwas leichter.\n\nDem Slim-Fit-Trend folgend möchten wir unsere geknöpften Stempelmäntel empfehlen, die in einer großen Auswahl an schönen, neutralen Tönen erhältlich sind. Dies sind fantastische Jacken, um den Frühling einzuläuten, da sie sich gut mit Hoodies für einen lässigeren, hippen Look kombinieren lassen oder mit geknöpften Hemden für das Büro oder feinere Angelegenheiten herausgeputzt werden können. Durch die Farbtöne passen sie außerdem zu fast jeder Hose.\n\nDer Frühling bedeutet, sich von Daunenjacken zu verabschieden und Regenmäntel zu begrüßen. Obwohl wir uns keinen Regen wünschen, kann ein eleganter Regenmantel jedem Outfit bei jedem Wetter Stil verleihen.\n\n#### 3. Wildleder, Bomber und Lederjacken\n\nSobald Sie anfangen, sich die Herrenmode-Optionen anzusehen, werden Sie eine Fülle von Möglichkeiten entdecken, die zu jedem Stil passen. Glücklicherweise gibt es leichte Lagenjacken in vielen Formen. Sie werden Stoffoptionen wie glattes Wildleder, stilvolles Kunstleder, langärmelige Knöpfe und Bomberjackenschnitte lieben."
+              }
+            ]
+          }
+        },
+        {
+          "locale": "es-ES",
+          "value": {
+            "richText": [
+              {
+                "type": "dc-content-link",
+                "data": {
+                  "id": "2a559b2f-9eb4-4ff7-8eb9-42941af53799",
+                  "contentType": "https://sfcc.com/components/section",
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                  }
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "Con un cambio importante en el clima a la vuelta de la esquina, es importante considerar qué tipo de cambios necesitarán sus chaquetas y su guardarropa, a su vez."
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "288ef2fb-c4eb-4551-b804-c4a7e40b401d",
+                  "name": "jackets-amanda-vick-ohWf6YuzOQk-unsplash",
+                  "endpoint": "sfcccompdev2",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "## Guía de estilo\n\n#### 1. Las capas son la clave\n\nUna de las mejores maneras de aprovechar al máximo tu guardarropa, y en particular las transiciones climáticas como el invierno y la primavera, es usar capas. Mezclar y combinar piezas favoritas y versátiles mantiene tu guardarropa fresco sin necesidad de comprar un millón de artículos nuevos. Elige algunas prendas clave, como atractivos jerséis de cuello redondo, cárdigans y chalecos para llevar debajo de tus mejores chaquetas.\n\nSi tiene piezas individuales que le encantan, puede usarlas en todo su potencial durante el invierno y la primavera. De esta forma, tus sudaderas con capucha y jerséis favoritos te durarán meses, ¡hasta que llegue el momento de guardarlos en verano!\n\n#### 2. Chaquetas ligeras\n\nHay toneladas de chaquetas livianas que hacen el trabajo sin ser demasiado abrigadas. Recomendamos usar capas con estos como un buen período de transición antes de los días más cálidos de la primavera.\n\nUna opción más cálida es un diseño de parka ajustado. Si bien cuentan con capas cálidas y una capucha forrada y acogedora, las chaquetas como estas son un poco más livianas gracias a su corte delgado.\n\nSiguiendo la tendencia slim fit, queremos recomendarte nuestros abrigos estampados abotonados, disponibles en una amplia gama de bonitos tonos neutros. Estas chaquetas son fantásticas para marcar el comienzo de la primavera, ya que combinan bien con sudaderas con capucha para un look más informal a la moda, o se pueden vestir con camisas abotonadas para la oficina o asuntos más finos. Los tonos de color también significan que combinan bien con casi todos los pantalones.\n\nLa primavera significa decir adiós a las chaquetas acolchadas y hola a los impermeables. Aunque no deseamos que llueva, un impermeable elegante puede agregar estilo a cualquier atuendo, sin importar el clima.\n\n#### 3. Chaquetas de gamuza, bombers y cuero\n\nUna vez que comience a buscar opciones de moda para hombres, descubrirá una gran cantidad de opciones que se adaptan a cada estilo. Por suerte, las chaquetas ligeras y superpuestas vienen en muchas formas. Te encantarán las opciones de telas como el ante suave, la elegante piel sintética, los botones de manga larga y los cortes de chaqueta bomber."
+              }
+            ]
+          }
+        },
+        {
+          "locale": "it-IT",
+          "value": {
+            "richText": [
+              {
+                "type": "dc-content-link",
+                "data": {
+                  "id": "2a559b2f-9eb4-4ff7-8eb9-42941af53799",
+                  "contentType": "https://sfcc.com/components/section",
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                  }
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "Con un grande cambiamento del tempo dietro l'angolo, è importante considerare che tipo di cambiamenti avranno bisogno le tue giacche e il tuo guardaroba, a loro volta!"
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "288ef2fb-c4eb-4551-b804-c4a7e40b401d",
+                  "name": "jackets-amanda-vick-ohWf6YuzOQk-unsplash",
+                  "endpoint": "sfcccompdev2",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "## Guida allo stile\n\n#### 1. La stratificazione è fondamentale\n\nUno dei modi migliori per sfruttare al meglio il tuo guardaroba, e in particolare le transizioni climatiche come l'inverno e la primavera, è la stratificazione. Mescolando e abbinando i capi versatili preferiti, manterrai fresco il tuo guardaroba senza dover acquistare milioni di nuovi capi. Scegli alcune cose chiave come attraenti maglioni girocollo, cardigan e gilet da indossare sotto le tue migliori giacche.\n\nSe hai singoli pezzi che ami, puoi usarli al massimo delle loro potenzialità durante l'inverno e la primavera. In questo modo, le tue felpe e i tuoi maglioni preferiti ti dureranno davvero per mesi, fino al momento di metterli via in estate!\n\n#### 2. Giacche leggere\n\nCi sono tonnellate di giacche leggere che fanno il lavoro senza essere eccessivamente calde. Consigliamo la stratificazione con questi come un buon periodo di transizione prima delle giornate più calde della primavera.\n\nUn'opzione più calda è un design parka slim fit. Pur vantando strati caldi e un comodo cappuccio foderato, giacche come queste sono un po' più leggere in virtù del loro taglio slim.\n\nSeguendo la tendenza slim fit, vogliamo consigliare i nostri cappotti con bottoni, disponibili in un'ampia gamma di bellissime tonalità neutre. Queste sono giacche fantastiche per inaugurare la primavera, poiché si abbinano bene con felpe con cappuccio per un look più casual alla moda, o possono essere vestite con camicie abbottonate per l'ufficio o per gli affari più raffinati. Le tonalità di colore significano anche che si abbinano bene a quasi tutti i pantaloni.\n\nPrimavera significa dire addio ai piumini e salutare gli impermeabili. Anche se non desideriamo la pioggia, un impermeabile elegante può aggiungere stile a qualsiasi outfit, con qualsiasi tempo.\n\n#### 3. Pelle scamosciata, bomber e giacche di pelle\n\nUna volta che inizi a guardare le opzioni di moda maschile, scoprirai una miriade di scelte per soddisfare ogni stile. Fortunatamente, le giacche leggere e stratificabili sono disponibili in molte forme. Amerai le opzioni di tessuto come la pelle scamosciata liscia, l'elegante ecopelle, i bottoni a maniche lunghe e i tagli dei giubbotti bomber."
+              }
+            ]
+          }
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    }
+  },
+  "version": 13,
+  "label": "Jackets Content",
+  "status": "ACTIVE",
+  "createdBy": "918ec612-377d-4c6a-94e4-9d4fcf8a25b0",
+  "createdDate": "2022-10-31T11:32:10.322Z",
+  "lastModifiedBy": "918ec612-377d-4c6a-94e4-9d4fcf8a25b0",
+  "lastModifiedDate": "2022-10-31T16:03:01.444Z",
+  "lastPublishedVersion": 13,
+  "lastPublishedDate": "2022-10-31T16:03:22.886Z",
+  "deliveryId": "21220bae-afe3-4de1-a60a-ad0ba68f1f1d"
+}

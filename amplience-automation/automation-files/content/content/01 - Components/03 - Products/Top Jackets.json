@@ -1,0 +1,52 @@
+{
+  "id": "018089f3-fcd0-46a8-a134-41ff41f14901",
+  "body": {
+    "_meta": {
+      "name": "Top Jackets",
+      "schema": "https://sfcc.com/components/curated-product"
+    },
+    "title": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Top Jackets"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Top Vestes"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Top-Jacken"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Chaquetas superiores"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Giacche superiori"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "products": [
+      "66936828M",
+      "25519044M",
+      "62516752M",
+      "25697499M"
+    ]
+  },
+  "version": 1,
+  "label": "Top Jackets",
+  "status": "ACTIVE",
+  "createdBy": "918ec612-377d-4c6a-94e4-9d4fcf8a25b0",
+  "createdDate": "2022-10-31T13:19:43.796Z",
+  "lastModifiedBy": "918ec612-377d-4c6a-94e4-9d4fcf8a25b0",
+  "lastModifiedDate": "2022-10-31T13:19:43.796Z",
+  "lastPublishedVersion": 1,
+  "lastPublishedDate": "2022-10-31T16:03:22.886Z",
+  "deliveryId": "018089f3-fcd0-46a8-a134-41ff41f14901"
+}

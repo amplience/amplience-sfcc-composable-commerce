@@ -1,0 +1,301 @@
+{
+  "id": "7cbd1acc-5b62-4bfb-a902-aa52d2127969",
+  "body": {
+    "_meta": {
+      "name": "Women's Dresses Page Content",
+      "schema": "https://sfcc.com/components/rich-text"
+    },
+    "content": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "We found the dress you've been looking for right here in our latest collection of women's dresses. From trending dress styles in new-season prints to must-have designs in mini, midi and maxi lengths, we have a dress for every occasion."
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "83dd5a51-9472-47c7-93e7-68d917b236a3",
+                  "name": "tamara-bellis-uN1m9Ca0aqo-unsplash",
+                  "endpoint": "sfcccompdev2",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "Keep it casual in shirt dresses and jumper dresses or shop iconic black dresses that will never go off trend."
+              },
+              {
+                "type": "dc-content-link",
+                "data": {
+                  "id": "d8922094-a56f-4771-a56e-b488c367e465",
+                  "contentType": "https://sfcc.com/components/card-list",
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                  }
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "Heading out out? Let your outfit do the talking in party dresses that will still look good at 2am, from silver slip styles to sequin statement pieces."
+              },
+              {
+                "type": "dc-content-link",
+                "data": {
+                  "id": "eb7adba7-fad3-47f6-87e8-eb404f95363d",
+                  "contentType": "https://sfcc.com/components/curated-product",
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                  }
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "\nDress your way in a statement blazer dress paired with barely-there heels for your next girls' night. With everything from head-turning going out dresses to autumn dresses to get cosy in, shop the collection now (warning: dress envy is inevitable)"
+              }
+            ]
+          }
+        },
+        {
+          "locale": "fr-FR",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Nous avons trouvé la robe que vous cherchiez ici même dans notre dernière collection de robes pour femmes. Des styles vestimentaires tendance dans les imprimés de la nouvelle saison aux modèles incontournables dans les longueurs mini, midi et maxi, nous avons une robe pour chaque occasion."
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "83dd5a51-9472-47c7-93e7-68d917b236a3",
+                  "name": "tamara-bellis-uN1m9Ca0aqo-unsplash",
+                  "endpoint": "sfcccompdev2",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "Restez décontracté dans les robes chemises et les robes pull ou achetez des robes noires emblématiques qui ne se démoderont jamais."
+              },
+              {
+                "type": "dc-content-link",
+                "data": {
+                  "id": "d8922094-a56f-4771-a56e-b488c367e465",
+                  "contentType": "https://sfcc.com/components/card-list",
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                  }
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "Avec un changement climatique majeur qui approche à grands pas, il est important de réfléchir au type de changements dont vos vestes et votre garde-robe auront besoin, à leur tour !"
+              },
+              {
+                "type": "dc-content-link",
+                "data": {
+                  "id": "eb7adba7-fad3-47f6-87e8-eb404f95363d",
+                  "contentType": "https://sfcc.com/components/curated-product",
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                  }
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "Habillez-vous avec une robe blazer tendance associée à des talons discrets pour votre prochaine soirée entre filles. Avec tout, des robes de soirée qui font tourner les têtes aux robes d'automne pour se sentir à l'aise, achetez la collection maintenant (avertissement : l'envie de robe est inévitable)"
+              }
+            ]
+          }
+        },
+        {
+          "locale": "de-DE",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Wir haben das Kleid, nach dem Sie gesucht haben, genau hier in unserer neuesten Kollektion von Damenkleidern gefunden. Von trendigen Kleidungsstilen mit Prints der neuen Saison bis hin zu Must-Have-Designs in Mini-, Midi- und Maxi-Längen, wir haben ein Kleid für jeden Anlass."
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "83dd5a51-9472-47c7-93e7-68d917b236a3",
+                  "name": "tamara-bellis-uN1m9Ca0aqo-unsplash",
+                  "endpoint": "sfcccompdev2",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "Halten Sie es lässig in Hemdkleidern und Pulloverkleidern oder kaufen Sie ikonische schwarze Kleider, die nie aus dem Trend geraten."
+              },
+              {
+                "type": "dc-content-link",
+                "data": {
+                  "id": "d8922094-a56f-4771-a56e-b488c367e465",
+                  "contentType": "https://sfcc.com/components/card-list",
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                  }
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "Ausgehen? Lassen Sie Ihr Outfit in Partykleidern sprechen, die auch um 2 Uhr morgens noch gut aussehen, von silbernen Slip-Styles bis hin zu paillettenbesetzten Statement-Pieces."
+              },
+              {
+                "type": "dc-content-link",
+                "data": {
+                  "id": "eb7adba7-fad3-47f6-87e8-eb404f95363d",
+                  "contentType": "https://sfcc.com/components/curated-product",
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                  }
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "Kleiden Sie sich in einem Statement-Blazerkleid, gepaart mit kaum sichtbaren Absätzen, für Ihren nächsten Mädelsabend. Mit allem, von auffälligen Ausgehkleidern bis hin zu Herbstkleidern, um es sich gemütlich zu machen, kaufen Sie die Kollektion jetzt ein (Achtung: Kleiderneid ist unvermeidlich)"
+              }
+            ]
+          }
+        },
+        {
+          "locale": "es-ES",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Encontramos el vestido que estabas buscando aquí mismo en nuestra última colección de vestidos de mujer. Desde estilos de vestidos de tendencia con estampados de la nueva temporada hasta diseños imprescindibles en largos mini, midi y maxi, tenemos un vestido para cada ocasión."
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "83dd5a51-9472-47c7-93e7-68d917b236a3",
+                  "name": "tamara-bellis-uN1m9Ca0aqo-unsplash",
+                  "endpoint": "sfcccompdev2",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "Manténgalo informal con vestidos camiseros y vestidos tipo jersey o compre vestidos negros icónicos que nunca pasarán de moda."
+              },
+              {
+                "type": "dc-content-link",
+                "data": {
+                  "id": "d8922094-a56f-4771-a56e-b488c367e465",
+                  "contentType": "https://sfcc.com/components/card-list",
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                  }
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "¿Saliendo? Deja que tu atuendo hable por sí solo con vestidos de fiesta que aún se verán bien a las 2 a. m., desde estilos de combinación plateada hasta piezas llamativas con lentejuelas."
+              },
+              {
+                "type": "dc-content-link",
+                "data": {
+                  "id": "eb7adba7-fad3-47f6-87e8-eb404f95363d",
+                  "contentType": "https://sfcc.com/components/curated-product",
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                  }
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "Vístete a tu manera con un vestido estilo blazer combinado con tacones imperceptibles para tu próxima noche de chicas. Con todo, desde llamativos vestidos para salir hasta vestidos de otoño para ponerse cómodos, compre la colección ahora (advertencia: la envidia por los vestidos es inevitable)"
+              }
+            ]
+          }
+        },
+        {
+          "locale": "it-IT",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Abbiamo trovato l'abito che stavi cercando proprio qui nella nostra ultima collezione di abiti da donna. Dagli stili di abbigliamento di tendenza nelle stampe della nuova stagione ai modelli must-have nelle lunghezze mini, midi e maxi, abbiamo un vestito per ogni occasione."
+              },
+              {
+                "type": "dc-image-link",
+                "data": {
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                  },
+                  "id": "83dd5a51-9472-47c7-93e7-68d917b236a3",
+                  "name": "tamara-bellis-uN1m9Ca0aqo-unsplash",
+                  "endpoint": "sfcccompdev2",
+                  "defaultHost": "cdn.media.amplience.net"
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "Mantieni il look casual con abiti chemisier e vestiti in maglia o acquista abiti neri iconici che non passeranno mai di moda."
+              },
+              {
+                "type": "dc-content-link",
+                "data": {
+                  "id": "d8922094-a56f-4771-a56e-b488c367e465",
+                  "contentType": "https://sfcc.com/components/card-list",
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                  }
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "Uscire? Lascia che il tuo outfit parli con abiti da festa che staranno ancora bene alle 2 del mattino, dagli stili sottoveste argento ai capi con paillettes."
+              },
+              {
+                "type": "dc-content-link",
+                "data": {
+                  "id": "eb7adba7-fad3-47f6-87e8-eb404f95363d",
+                  "contentType": "https://sfcc.com/components/curated-product",
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                  }
+                }
+              },
+              {
+                "type": "markdown",
+                "data": "Vestiti a modo tuo con un abito blazer di tendenza abbinato a tacchi a malapena per la tua prossima notte da ragazza. Con di tutto, dagli abiti da capogiro per uscire agli abiti autunnali per metterti comodo, acquista subito la collezione (attenzione: l'invidia del vestito è inevitabile)"
+              }
+            ]
+          }
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    }
+  },
+  "version": 8,
+  "label": "Women's Dresses Page Content",
+  "status": "ACTIVE",
+  "createdBy": "918ec612-377d-4c6a-94e4-9d4fcf8a25b0",
+  "createdDate": "2022-10-31T10:45:56.345Z",
+  "lastModifiedBy": "918ec612-377d-4c6a-94e4-9d4fcf8a25b0",
+  "lastModifiedDate": "2022-10-31T14:28:05.654Z",
+  "lastPublishedVersion": 8,
+  "lastPublishedDate": "2022-10-31T14:59:37.502Z",
+  "deliveryId": "7cbd1acc-5b62-4bfb-a902-aa52d2127969"
+}
