@@ -19,15 +19,15 @@ import {
     Spinner
 } from '@chakra-ui/react'
 import SearchSuggestions from './partials/search-suggestions'
-import {SearchIcon} from '../icons'
-import useSearchSuggestions from '../../commerce-api/hooks/useSearchSuggestions'
-import {capitalize, boldString, getSessionJSONItem, setSessionJSONItem} from '../../utils/utils'
-import useNavigation from '../../hooks/use-navigation'
-import {HideOnDesktop, HideOnMobile} from '../responsive'
+import {SearchIcon} from '../../icons'
+import useSearchSuggestions from '../../../commerce-api/hooks/useSearchSuggestions'
+import {capitalize, boldString, getSessionJSONItem, setSessionJSONItem} from '../../../utils/utils'
+import useNavigation from '../../../hooks/use-navigation'
+import {HideOnDesktop, HideOnMobile} from '../../responsive'
 import {FormattedMessage} from 'react-intl'
 import debounce from 'lodash/debounce'
-import {RECENT_SEARCH_KEY, RECENT_SEARCH_LIMIT, RECENT_SEARCH_MIN_LENGTH} from '../../constants'
-import {productUrlBuilder, searchUrlBuilder, categoryUrlBuilder} from '../../utils/url'
+import {RECENT_SEARCH_KEY, RECENT_SEARCH_LIMIT, RECENT_SEARCH_MIN_LENGTH} from '../../../constants'
+import {productUrlBuilder, searchUrlBuilder, categoryUrlBuilder} from '../../../utils/url'
 
 const formatSuggestions = (searchSuggestions, input) => {
     return {
@@ -37,7 +37,8 @@ const formatSuggestions = (searchSuggestions, input) => {
                     type: 'category',
                     id: suggestion.id,
                     link: categoryUrlBuilder({id: suggestion.id}),
-                    name: boldString(suggestion.name, capitalize(input))
+                    name: boldString(suggestion.name, capitalize(input)),
+                    parentCategoryName: suggestion.parentCategoryName
                 }
             }
         ),
@@ -59,7 +60,15 @@ const formatSuggestions = (searchSuggestions, input) => {
                     link: searchUrlBuilder(phrase.phrase)
                 }
             }
-        )
+        ),
+        pageSuggestions: searchSuggestions?.pageSuggestions?.map((page) => {
+            const content = page.content
+            return {
+                type: 'page',
+                name: boldString(content.seo.title, capitalize(input)),
+                link: '/' + content._meta.deliveryKey
+            }
+        })
     }
 }
 
@@ -97,7 +106,8 @@ const Search = (props) => {
     const searchSuggestionsAvailable =
         searchSuggestions &&
         (searchSuggestions?.categorySuggestions?.length ||
-            searchSuggestions?.phraseSuggestions?.length)
+            searchSuggestions?.phraseSuggestions?.length||
+            searchSuggestions?.productSuggestions?.length)
 
     const saveRecentSearch = (searchText) => {
         // Get recent searches or an empty array if undefined.
@@ -213,7 +223,7 @@ const Search = (props) => {
                 </PopoverTrigger>
 
                 <HideOnMobile>
-                    <PopoverContent data-testid="sf-suggestion-popover">
+                    <PopoverContent w={'780px'} data-testid="sf-suggestion-popover">
                         <SearchSuggestions
                             closeAndNavigate={closeAndNavigate}
                             recentSearches={recentSearches}
