@@ -13,7 +13,7 @@
             {{#each visualisations}}
             {
                 "label": "{{this.name}}",
-                "templatedUri": "{{this.url}}/\{{locales}}/page/\{{delivery.key}}?pagevse=\{{vse.domain}}",
+                "templatedUri": "{{this.url}}/\{{locales}}/\{{delivery.key}}?pagevse=\{{vse.domain}}",
                 "default": "{{this.default}}"
             },
             {{/each}}
