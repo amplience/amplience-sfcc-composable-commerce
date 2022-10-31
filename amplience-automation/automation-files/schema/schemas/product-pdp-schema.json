@@ -1,18 +1,34 @@
 {
-	"$schema": "http://json-schema.org/draft-07/schema#",
-	"$id": "https://sfcc.com/site/product-pdp",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://sfcc.com/site/product-pdp",
 
-	"title": "Product PDP",
-	"description": "Associates an SFCC product with Amplience content that should appear on its PDP.",
+    "title": "Product PDP",
+    "description": "Associates an SFCC product with Amplience content that should appear on its PDP.",
 
-	"allOf": [
-		{
-			"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
-		}
-	],
-	
-	"type": "object",
-	"properties": {
+    "allOf": [
+        {
+            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+        }
+    ],
+
+    "trait:filterable": {
+        "filterBy": [
+            {
+                "paths": [
+                    "/active"
+                ]
+            }
+        ]
+    },
+    
+    "type": "object",
+    "properties": {
+        "active": {
+            "title": "Active",
+            "description": "",
+            "type": "boolean",
+            "default": true
+        },
         "_meta": {
             "title": "Associated Product",
             "properties": {
@@ -24,7 +40,7 @@
                 }
             }
         },
-		"title": {
+        "title": {
             "title": "Title (optional)",
             "description": "Title for the product content",
             "allOf": [
@@ -33,30 +49,30 @@
                 }
             ]
         },
-		"content": {
-			"title": "Content",
-			"description": "Content that appears on the PDP.",
-			"type": "array",
-			"minItems": 0,
-			"maxItems": 10,
-			"items": {
-				"allOf": [
-					{ "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link" },
-					{
-						"properties": {
-							"contentType": {
-								"allOf": [
-									{
-										"$ref": "https://sfcc.com/libs/all-definitions#/definitions/anyComponentPageAndSlot"
-									}
-								]
-							}
-						}
-					}
-				]
-			}
-		}
-		
-	},
-	"propertyOrder": []
+        "content": {
+            "title": "Content",
+            "description": "Content that appears on the PDP.",
+            "type": "array",
+            "minItems": 0,
+            "maxItems": 10,
+            "items": {
+                "allOf": [
+                    { "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link" },
+                    {
+                        "properties": {
+                            "contentType": {
+                                "allOf": [
+                                    {
+                                        "$ref": "https://sfcc.com/libs/all-definitions#/definitions/anyComponentPageAndSlot"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+        
+    },
+    "propertyOrder": []
 }
