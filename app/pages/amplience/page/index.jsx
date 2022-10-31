@@ -129,7 +129,9 @@ ContentPage.getProps = async ({req, res, params, location, api, ampClient}) => {
     let page
 
     if (pageId) {
-        page = await (await client.fetchContent([{key: pageId}], {locale: targetLocale})).pop()
+        page = await (
+            await client.fetchContent([{key: `page/${pageId}`}], {locale: targetLocale})
+        ).pop()
     }
 
     return {
