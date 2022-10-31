@@ -1,0 +1,121 @@
+{
+  "id": "9a418db0-46fd-4542-93a5-d2951c96b26c",
+  "body": {
+    "_meta": {
+      "name": "Jackets Page",
+      "schema": "https://sfcc.com/site/pages/content-page",
+      "deliveryKey": "page/jackets"
+    },
+    "active": true,
+    "seo": {
+      "title": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "Jackets"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "Vestes"
+          },
+          {
+            "locale": "de-DE",
+            "value": "Jacken"
+          },
+          {
+            "locale": "es-ES",
+            "value": "Chaquetas"
+          },
+          {
+            "locale": "it-IT",
+            "value": "Giacche"
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      },
+      "description": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "Our jackets and coats will see you through the season in style. Shop your new favourite layer today."
+          },
+          {
+            "locale": "fr-FR",
+            "value": "Nos vestes et manteaux vous accompagneront tout au long de la saison avec style. Achetez votre nouvelle couche préférée aujourd'hui."
+          },
+          {
+            "locale": "de-DE",
+            "value": "Mit unseren Jacken und Mänteln kommen Sie stilvoll durch die Saison. Kaufen Sie noch heute Ihre neue Lieblingsschicht."
+          },
+          {
+            "locale": "es-ES",
+            "value": "Nuestras chaquetas y abrigos te ayudarán a pasar la temporada con estilo. Compra tu nueva capa favorita hoy."
+          },
+          {
+            "locale": "it-IT",
+            "value": "Le nostre giacche e cappotti ti accompagneranno per tutta la stagione con stile. Acquista oggi il tuo nuovo strato preferito."
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      },
+      "keywords": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "Jackets"
+          },
+          {
+            "locale": "fr-FR",
+            "value": "Vestes"
+          },
+          {
+            "locale": "de-DE",
+            "value": "Jacken"
+          },
+          {
+            "locale": "es-ES",
+            "value": "Chaquetas"
+          },
+          {
+            "locale": "it-IT",
+            "value": "Giacche"
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      },
+      "noindex": false
+    },
+    "content": [
+      {
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+        },
+        "contentType": "https://sfcc.com/components/rich-text",
+        "id": "21220bae-afe3-4de1-a60a-ad0ba68f1f1d"
+      },
+      {
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+        },
+        "contentType": "https://sfcc.com/components/curated-product",
+        "id": "018089f3-fcd0-46a8-a134-41ff41f14901"
+      }
+    ]
+  },
+  "version": 3,
+  "label": "Jackets Page",
+  "status": "ACTIVE",
+  "createdBy": "918ec612-377d-4c6a-94e4-9d4fcf8a25b0",
+  "createdDate": "2022-10-31T11:30:53.814Z",
+  "lastModifiedBy": "918ec612-377d-4c6a-94e4-9d4fcf8a25b0",
+  "lastModifiedDate": "2022-10-31T13:20:12.537Z",
+  "lastPublishedVersion": 3,
+  "lastPublishedDate": "2022-10-31T16:03:22.886Z",
+  "deliveryId": "9a418db0-46fd-4542-93a5-d2951c96b26c"
+}

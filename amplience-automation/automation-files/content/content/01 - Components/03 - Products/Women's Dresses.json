@@ -1,0 +1,54 @@
+{
+  "id": "eb7adba7-fad3-47f6-87e8-eb404f95363d",
+  "body": {
+    "_meta": {
+      "name": "Women's Dresses",
+      "schema": "https://sfcc.com/components/curated-product"
+    },
+    "title": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Best picks - Women's dresses"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Coups de coeur - Robes femme"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Beste Auswahl – Damenkleider"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Las mejores selecciones - Vestidos de mujer"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Le migliori scelte - Abiti da donna"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "products": [
+      "22956726M",
+      "25696630M",
+      "25591426M",
+      "25593254M",
+      "25697800M",
+      "25771342M"
+    ]
+  },
+  "version": 1,
+  "label": "Women's Dresses",
+  "status": "ACTIVE",
+  "createdBy": "918ec612-377d-4c6a-94e4-9d4fcf8a25b0",
+  "createdDate": "2022-10-31T10:43:23.793Z",
+  "lastModifiedBy": "918ec612-377d-4c6a-94e4-9d4fcf8a25b0",
+  "lastModifiedDate": "2022-10-31T10:43:23.793Z",
+  "lastPublishedVersion": 1,
+  "lastPublishedDate": "2022-10-31T14:59:37.502Z",
+  "deliveryId": "eb7adba7-fad3-47f6-87e8-eb404f95363d"
+}
