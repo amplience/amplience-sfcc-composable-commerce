@@ -6,7 +6,7 @@
  */
 import React, {Fragment} from 'react'
 import PropTypes from 'prop-types'
-import {Box, Flex, Grid, GridItem, Heading, HStack, Stack} from '@chakra-ui/react'
+import {Box, Flex, Heading} from '@chakra-ui/react'
 import RecentSearches from './recent-searches'
 import Suggestions from './suggestions'
 import ProductSuggestions from './product-suggestions'
