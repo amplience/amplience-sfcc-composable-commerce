@@ -79,6 +79,21 @@ const defaultParams: FetchParams = {
 }
 
 /**
+ * Add the fallback locale to a given locale.
+ * @param locale The existing locale.
+ * @returns The fallback locale.
+ */
+const addFallback = (locale: string | undefined): string => {
+    if (locale == null) {
+        return 'en-US,*'
+    } else if (locale.indexOf(',') === -1) {
+        return locale + ',*'
+    }
+
+    return locale
+}
+
+/**
  * Combine the given fetch params with the defaults.
  * @param params Options provided by the user.
  * @returns Options for fetch with fallback to defaults.
@@ -87,8 +102,8 @@ const addDefaultParams = (params: FetchParams = {}): FetchParams => {
     if (params) {
         return {
             ...defaultParams,
-            locale: 'en-US',
-            ...params
+            ...params,
+            locale: addFallback(params.locale)
         }
     } else {
         return {
