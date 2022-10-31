@@ -6,74 +6,33 @@
  */
 import React, {Fragment} from 'react'
 import PropTypes from 'prop-types'
-import {Box, Flex, Grid, GridItem, Heading, HStack, Stack} from '@chakra-ui/react'
+import {Stack} from '@chakra-ui/react'
 import RecentSearches from './recent-searches'
 import Suggestions from './suggestions'
-import ProductSuggestions from '../../amplience/product-suggestions'
 
 const SearchSuggestions = ({recentSearches, searchSuggestions, closeAndNavigate}) => {
-    const useSuggestions =
-        searchSuggestions &&
-        (searchSuggestions?.categorySuggestions?.length ||
-            searchSuggestions?.pageSuggestions?.length)
-
+    const useSuggestions = searchSuggestions && searchSuggestions?.categorySuggestions?.length
     return (
-        <Flex w={'100%'} wrap={'wrap'}>
-            <Box p={4} w={{sm: '100%', lg: '300px'}}>
-                {useSuggestions ? (
-                    <Fragment>
-                        {
-                        searchSuggestions?.phraseSuggestions &&
-                        <Heading as='h2' fontSize={'md'} textTransform={'uppercase'}>Searches</Heading> 
-                        }
-                        <Suggestions
-                            closeAndNavigate={closeAndNavigate}
-                            suggestions={searchSuggestions?.phraseSuggestions}
-                        />
-                        {
-                        searchSuggestions?.categorySuggestions &&
-                        <Heading as='h2' fontSize={'md'} textTransform={'uppercase'}>Categories</Heading> 
-                        }
-                        <Suggestions
-                            closeAndNavigate={closeAndNavigate}
-                            suggestions={searchSuggestions?.categorySuggestions}
-                        />
-                        {/* {
-                        searchSuggestions?.categorySuggestions &&
-                        <Heading as='h2' fontSize={'md'} textTransform={'uppercase'}>Brands</Heading> 
-                        }
-                        <Suggestions
-                            closeAndNavigate={closeAndNavigate}
-                            suggestions={searchSuggestions?.brandSuggestions}
-                        /> */}
-                        {searchSuggestions?.pageSuggestions && (
-                            <Heading as="h2" mt={4} fontSize={'md'} textTransform={'uppercase'}>
-                                Pages
-                            </Heading>
-                        )}
-                        <Suggestions
-                            closeAndNavigate={closeAndNavigate}
-                            suggestions={searchSuggestions?.pageSuggestions}
-                        />
-                    </Fragment>
-                ) : (
-                    <RecentSearches
-                        recentSearches={recentSearches}
+        <Stack padding={6} spacing={0}>
+            {useSuggestions ? (
+                <Fragment>
+                    <Suggestions
                         closeAndNavigate={closeAndNavigate}
+                        suggestions={searchSuggestions?.categorySuggestions}
                     />
-                )}
-            </Box>
-            <Box p={4} w={{sm: '100%', lg: '470px'}}>
-                {
-                    searchSuggestions?.productSuggestions &&
-                    <Heading as='h2' mb={4} fontSize={'md'} textTransform={'uppercase'}>Products</Heading> 
-                }
-                <ProductSuggestions 
+                    {/* <Suggestions
+                        closeAndNavigate={closeAndNavigate}
+                        suggestions={searchSuggestions?.phraseSuggestions}
+                    /> */}
+                    {/* <Suggestions suggestions={searchSuggestions.productSuggestions} /> */}
+                </Fragment>
+            ) : (
+                <RecentSearches
+                    recentSearches={recentSearches}
                     closeAndNavigate={closeAndNavigate}
-                    suggestions={searchSuggestions?.productSuggestions} 
                 />
-            </Box>
-        </Flex> 
+            )}
+        </Stack>
     )
 }
 

@@ -37,8 +37,7 @@ const formatSuggestions = (searchSuggestions, input) => {
                     type: 'category',
                     id: suggestion.id,
                     link: categoryUrlBuilder({id: suggestion.id}),
-                    name: boldString(suggestion.name, capitalize(input)),
-                    parentCategoryName: suggestion.parentCategoryName
+                    name: boldString(suggestion.name, capitalize(input))
                 }
             }
         ),
@@ -60,15 +59,7 @@ const formatSuggestions = (searchSuggestions, input) => {
                     link: searchUrlBuilder(phrase.phrase)
                 }
             }
-        ),
-        pageSuggestions: searchSuggestions?.pageSuggestions?.map((page) => {
-            const content = page.content
-            return {
-                type: 'page',
-                name: boldString(content.seo.title, capitalize(input)),
-                link: '/' + content._meta.deliveryKey
-            }
-        })
+        )
     }
 }
 
@@ -106,8 +97,7 @@ const Search = (props) => {
     const searchSuggestionsAvailable =
         searchSuggestions &&
         (searchSuggestions?.categorySuggestions?.length ||
-            searchSuggestions?.phraseSuggestions?.length||
-            searchSuggestions?.productSuggestions?.length)
+            searchSuggestions?.phraseSuggestions?.length)
 
     const saveRecentSearch = (searchText) => {
         // Get recent searches or an empty array if undefined.
@@ -223,7 +213,7 @@ const Search = (props) => {
                 </PopoverTrigger>
 
                 <HideOnMobile>
-                    <PopoverContent w={'780px'} data-testid="sf-suggestion-popover">
+                    <PopoverContent data-testid="sf-suggestion-popover">
                         <SearchSuggestions
                             closeAndNavigate={closeAndNavigate}
                             recentSearches={recentSearches}
