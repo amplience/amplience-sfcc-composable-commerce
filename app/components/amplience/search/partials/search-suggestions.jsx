@@ -6,7 +6,7 @@
  */
 import React, {Fragment} from 'react'
 import PropTypes from 'prop-types'
-import {Box, Flex, Heading} from '@chakra-ui/react'
+import {Box, Divider, Flex, Heading} from '@chakra-ui/react'
 import RecentSearches from './recent-searches'
 import Suggestions from './suggestions'
 import ProductSuggestions from './product-suggestions'
@@ -19,6 +19,12 @@ const SearchSuggestions = ({recentSearches, searchSuggestions, closeAndNavigate}
 
     return (
         <Flex w={'100%'} wrap={'wrap'}>
+            <Box p={4} w={'100%'} sx={{paddingBottom: 0}}>
+                <Heading as="h2" fontSize={'md'} textTransform={'uppercase'}>
+                    Suggestions
+                </Heading>
+                <Divider sx={{paddingTop: '14px'}} />
+            </Box>
             <Box p={4} w={{sm: '100%', lg: '300px'}}>
                 {useSuggestions ? (
                     <Fragment>
