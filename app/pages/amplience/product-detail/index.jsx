@@ -409,12 +409,16 @@ ProductDetail.getProps = async ({res, params, location, api, ampClient}) => {
     }
 
     // Try fetch PDP content for this product/category from Amplience.
-    const [productPdp] = await ampClient.fetchContent(
+    let [productPdp] = await ampClient.fetchContent(
         [{key: `pdp/content/${productId.toUpperCase()}`}],
         {
             locale: targetLocale
         }
     )
+
+    if (!productPdp?.active) {
+        productPdp = undefined
+    }
 
     return {category, product, productPdp}
 }
