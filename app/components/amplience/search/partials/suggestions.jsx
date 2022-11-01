@@ -23,6 +23,7 @@ const Suggestions = ({suggestions, closeAndNavigate}) => {
                             fontSize={'md'}
                             key={idx}
                             marginTop={0}
+                            height={'30px'}
                             variant="menu-link"
                         >
                             <Text

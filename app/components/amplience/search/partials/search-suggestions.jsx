@@ -20,27 +20,41 @@ const SearchSuggestions = ({recentSearches, searchSuggestions, closeAndNavigate}
     return (
         <Flex w={'100%'} wrap={'wrap'}>
             <Box p={4} w={'100%'} sx={{paddingBottom: 0}}>
-                <Heading as="h2" fontSize={'md'} textTransform={'uppercase'}>
+                <Heading as="h2" fontSize={'lg'} textTransform={'uppercase'}>
                     Suggestions
                 </Heading>
-                <Divider sx={{paddingTop: '14px'}} />
+                <Divider sx={{paddingTop: '10px'}} />
             </Box>
             <Box p={4} w={{sm: '100%', lg: '300px'}}>
                 {useSuggestions ? (
                     <Fragment>
                         {searchSuggestions?.phraseSuggestions && (
-                            <Heading as="h2" fontSize={'md'} textTransform={'uppercase'}>
-                                Searches
-                            </Heading>
+                            <>
+                                <Heading
+                                    sx={{paddingBottom: '8px'}}
+                                    as="h2"
+                                    fontSize={'md'}
+                                    textTransform={'uppercase'}
+                                >
+                                    Searches
+                                </Heading>
+                            </>
                         )}
                         <Suggestions
                             closeAndNavigate={closeAndNavigate}
                             suggestions={searchSuggestions?.phraseSuggestions}
                         />
                         {searchSuggestions?.categorySuggestions && (
-                            <Heading as="h2" fontSize={'md'} textTransform={'uppercase'}>
-                                Categories
-                            </Heading>
+                            <>
+                                <Heading
+                                    sx={{paddingTop: '24px', paddingBottom: '6px'}}
+                                    as="h2"
+                                    fontSize={'md'}
+                                    textTransform={'uppercase'}
+                                >
+                                    Categories
+                                </Heading>
+                            </>
                         )}
                         <Suggestions
                             closeAndNavigate={closeAndNavigate}
@@ -55,9 +69,16 @@ const SearchSuggestions = ({recentSearches, searchSuggestions, closeAndNavigate}
                             suggestions={searchSuggestions?.brandSuggestions}
                         /> */}
                         {searchSuggestions?.pageSuggestions && (
-                            <Heading as="h2" mt={4} fontSize={'md'} textTransform={'uppercase'}>
-                                Pages
-                            </Heading>
+                            <>
+                                <Heading
+                                    sx={{paddingTop: '24px', paddingBottom: '6px'}}
+                                    as="h2"
+                                    fontSize={'md'}
+                                    textTransform={'uppercase'}
+                                >
+                                    Pages
+                                </Heading>
+                            </>
                         )}
                         <Suggestions
                             closeAndNavigate={closeAndNavigate}
@@ -73,7 +94,13 @@ const SearchSuggestions = ({recentSearches, searchSuggestions, closeAndNavigate}
             </Box>
             <Box p={4} w={{sm: '100%', lg: '470px'}}>
                 {searchSuggestions?.productSuggestions && (
-                    <Heading as="h2" mb={4} fontSize={'md'} textTransform={'uppercase'}>
+                    <Heading
+                        sx={{marginBottom: '8px'}}
+                        as="h2"
+                        mb={4}
+                        fontSize={'md'}
+                        textTransform={'uppercase'}
+                    >
                         Products
                     </Heading>
                 )}
