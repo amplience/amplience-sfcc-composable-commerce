@@ -5,7 +5,7 @@ import PageTile from '../page-tile'
 
 const PageListing = ({pages}) => {
     return (
-        <SimpleGrid columns={[2, 2, 3, 3]} spacingX={4} spacingY={{base: 12, lg: 16}}>
+        <SimpleGrid columns={[2, 2, 2, 2]} spacingX={4} spacingY={{base: 12, lg: 16}}>
             {!pages
                 ? new Array(3).fill(0).map((value, index) => <Skeleton key={index} />)
                 : pages.map((page) => {
