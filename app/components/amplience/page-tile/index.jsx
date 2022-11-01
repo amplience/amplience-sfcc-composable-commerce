@@ -1,10 +1,22 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {Box, Text, Heading, useMultiStyleConfig} from '@chakra-ui/react'
+import {Box, Text, Heading, Flex, Center, useMultiStyleConfig, Icon} from '@chakra-ui/react'
 import Link from '../link'
 import styled from '@emotion/styled'
+import {BiFile} from 'react-icons/bi'
 
 const Contain = styled(Link)`
+    .text-box {
+        padding-left: 20px;
+    }
+    @media (max-width: 768px) {
+        .flex-pane {
+            flex-direction: column;
+        }
+        .text-box {
+            padding: 20px 0 0 0;
+        }
+    }
     &:hover {
         text-decoration: none;
         h2 {
@@ -22,12 +34,19 @@ const PageTile = ({page}) => {
     return (
         <Contain to={'/' + page._meta.deliveryKey}>
             <Box {...styles.tile}>
-                <Heading as={'h2'} {...styles.title} fontSize="lg">
-                    {page.seo.title}
-                </Heading>
-                <Text {...styles.blurb} noOfLines={1}>
-                    {page.seo.description}
-                </Text>
+                <Flex className="flex-pane" flexDirection={{sm: 'column', md: 'row'}}>
+                    <Center>
+                        <Icon as={BiFile} boxSize={'2em'} />
+                    </Center>
+                    <Box className="text-box">
+                        <Heading as={'h2'} {...styles.title} fontSize="lg">
+                            {page.seo.title}
+                        </Heading>
+                        <Text {...styles.blurb} noOfLines={1}>
+                            {page.seo.description}
+                        </Text>
+                    </Box>
+                </Flex>
             </Box>
         </Contain>
     )

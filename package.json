@@ -119,6 +119,7 @@
         "markdown-it": "^13.0.1",
         "markdown-it-highlightjs": "^4.0.1",
         "moment": "^2.29.4",
+        "react-icons": "^4.6.0",
         "react-json-tree": "^0.17.0",
         "yargs": "^15.4.1"
     }
