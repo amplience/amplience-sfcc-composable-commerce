@@ -587,7 +587,10 @@ SearchList.getProps = async ({res, params, location, api, ampClient}) => {
     })
 
     const ampPages = await ampClient.getSearchableContentPages(targetLocale, searchQuery)
-    //const ampPages = await ampClient.queryFilterSearch('/_meta/name', searchQuery)
+
+    ampPages.sort((a, b) =>
+        (a.content?.seo?.title ?? '').localeCompare(b.content?.seo?.title ?? '')
+    )
 
     if (searchQuery) {
         isSearch = true

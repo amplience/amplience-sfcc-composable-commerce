@@ -4,7 +4,6 @@ import {SimpleGrid, Skeleton} from '@chakra-ui/react'
 import PageTile from '../page-tile'
 
 const PageListing = ({pages}) => {
-    console.log('pages', pages)
     return (
         <SimpleGrid columns={[2, 2, 3, 3]} spacingX={4} spacingY={{base: 12, lg: 16}}>
             {!pages
