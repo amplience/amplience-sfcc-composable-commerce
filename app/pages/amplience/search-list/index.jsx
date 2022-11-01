@@ -241,7 +241,7 @@ const SearchList = (props) => {
             }
         }
 
-        navigate(`/category/${params.categoryId}?${stringifySearchParams(searchParamsCopy)}`)
+        navigate(`/search?${stringifySearchParams(searchParamsCopy)}`)
     }
 
     // Clears all filters
