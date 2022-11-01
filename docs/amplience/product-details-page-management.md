@@ -12,7 +12,7 @@ The out of the box SFCC Composable Storefront from Salesforce displays product i
 ### With Amplience
 Amplience allows you to associate content to be displayed on the PDP. This can be one item or many items.
 
-![Amplience PDP)](./media/THIS-NEEDS-A-SCREENSHOT.png)
+![Amplience PDP)](./media/PDP_-_amplience-management.png)
 
 ## Global Architecture choices
 The vast majority of pages made up on a website are product details pages. There are 2 main considerations:
@@ -22,7 +22,7 @@ The vast majority of pages made up on a website are product details pages. There
 
 In order to address the 2 points above, we have a new content type **Product PDP**. This has an enforced delivery key in a known format: `pdp/content\{SKU}`
 
-This means that every PDP has a known method of fetching content that is relevant to that product from the application.
+This means that every PDP has a known method of fetching content that is relevant to that product from the application. This can be any content (individual, personalised, multiple items, content or/and slots)
 
 An updated version of the PDP can be found in `app/pages/amplience/product-detail/index.jsx`.
 
