@@ -274,6 +274,7 @@ const ProductList = (props) => {
                             <SelectedRefinements
                                 filters={productSearchResult?.refinements}
                                 toggleFilter={toggleFilter}
+                                resetFilters={resetFilters}
                                 selectedFilterValues={productSearchResult?.selectedRefinements}
                             />
                         </Box>
@@ -347,6 +348,7 @@ const ProductList = (props) => {
                             <SelectedRefinements
                                 filters={productSearchResult?.refinements}
                                 toggleFilter={toggleFilter}
+                                resetFilters={resetFilters}
                                 selectedFilterValues={productSearchResult?.selectedRefinements}
                             />
                         </Box>

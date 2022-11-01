@@ -246,7 +246,7 @@ const SearchList = (props) => {
 
     // Clears all filters
     const resetFilters = () => {
-        navigate(window.location.pathname)
+        navigate(`/search?${stringifySearchParams({q: searchParams.q, refine: {}})}`)
     }
 
     let selectedSortingOptionLabel = productSearchResult?.sortingOptions?.find(
@@ -297,6 +297,7 @@ const SearchList = (props) => {
                             <SelectedRefinements
                                 filters={productSearchResult?.refinements}
                                 toggleFilter={toggleFilter}
+                                resetFilters={resetFilters}
                                 selectedFilterValues={productSearchResult?.selectedRefinements}
                             />
                         </Box>
@@ -392,6 +393,7 @@ const SearchList = (props) => {
                             <SelectedRefinements
                                 filters={productSearchResult?.refinements}
                                 toggleFilter={toggleFilter}
+                                resetFilters={resetFilters}
                                 selectedFilterValues={productSearchResult?.selectedRefinements}
                             />
                         </Box>
