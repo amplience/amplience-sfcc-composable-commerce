@@ -276,7 +276,6 @@ const SearchList = (props) => {
             ) : (
                 <>
                     {/* Header */}
-                    <AmplienceWrapper fetch={{key: 'search-personalisation'}} />
                     <Stack
                         display={{base: 'none', lg: 'flex'}}
                         direction="row"
