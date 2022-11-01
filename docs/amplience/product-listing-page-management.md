@@ -105,7 +105,7 @@ useAmpRtv(
 ```
 
 ## Rules for displaying in grid content
-24As we are enriching the product list content with content, we need rules to display the content as the order and quantity of products may change. Plus sizes (columns and rows) for desktop are not valid for mobile:
+As we are enriching the product list content with content, we need rules to display the content as the order and quantity of products may change. Plus sizes (columns and rows) for desktop are not valid for mobile:
 
 * In-Grid content should not overwrite products, they should be moved aside.
 * Ensure the search with/without the in-grid content have the same products.

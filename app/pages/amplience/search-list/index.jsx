@@ -305,7 +305,7 @@ const SearchList = (props) => {
                             <TabPanels>
                                 {productSearchResult?.hits && (
                                     <TabPanel sx={{padding: 0}}>
-                                        <Box>
+                                        <Box paddingTop={'16px'}>
                                             <Sort
                                                 sortUrls={sortUrls}
                                                 productSearchResult={productSearchResult}
