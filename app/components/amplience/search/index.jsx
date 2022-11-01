@@ -106,7 +106,7 @@ const Search = (props) => {
     const searchSuggestionsAvailable =
         searchSuggestions &&
         (searchSuggestions?.categorySuggestions?.length ||
-            searchSuggestions?.phraseSuggestions?.length||
+            searchSuggestions?.phraseSuggestions?.length ||
             searchSuggestions?.productSuggestions?.length)
 
     const saveRecentSearch = (searchText) => {
