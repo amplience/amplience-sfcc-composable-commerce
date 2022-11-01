@@ -25,7 +25,7 @@ const PageTile = ({page}) => {
                 <Heading as={'h2'} {...styles.title} fontSize="lg">
                     {page.seo.title}
                 </Heading>
-                <Text {...styles.blurb} noOfLines={2}>
+                <Text {...styles.blurb} noOfLines={1}>
                     {page.seo.description}
                 </Text>
             </Box>
