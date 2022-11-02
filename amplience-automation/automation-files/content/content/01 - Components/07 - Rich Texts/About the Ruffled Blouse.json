@@ -17,6 +17,50 @@
               }
             ]
           }
+        },
+        {
+          "locale": "fr-FR",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Peu importe ce que disent les prévisions, il est toujours temps de porter un favori cool! Le chemisier à volants vous embrassera avec sa silhouette près du corps, son col haut et ses manches longues. Et que diriez-vous du meilleur match? Nous pensons que vous adorerez ajouter des doudounes et des bas colorés à votre look prêt pour l'automne &lt;3\n\n* Ajustement moulant\n\n* Col haut\n\n* Corsage froncé\n\n* Manches longues"
+              }
+            ]
+          }
+        },
+        {
+          "locale": "de-DE",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Egal, was die Wettervorhersage sagt, es ist immer Zeit, einen coolen Favoriten zu tragen! Die Rüschenbluse wird Sie mit ihrer körpernahen Silhouette, dem hohen Ausschnitt und den langen Ärmeln umarmen. Und wie sieht es mit dem besten Spiel aus? Wir glauben, dass Sie es lieben werden, farbenfrohe Daunenjacken und Unterteile zu Ihrem herbstlichen Look hinzuzufügen &lt;3\n\n* Hautenge Passform\n\n* Hoher Hals\n\n* Gerafftes Mieder\n\n* Lange Ärmel"
+              }
+            ]
+          }
+        },
+        {
+          "locale": "es-ES",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "No importa lo que diga el pronóstico, ¡siempre es hora de usar un favorito genial! La blusa con volantes te abrazará con su silueta ceñida al cuerpo, cuello alto y mangas largas. ¿Y qué tal el mejor partido? Creemos que te encantará agregar chaquetas acolchadas y pantalones coloridos a tu look listo para el otoño &lt;3\n\n* Ajuste ceñido a la piel\n\n* Cuello alto\n\n* Corpiño fruncido\n\n* mangas largas"
+              }
+            ]
+          }
+        },
+        {
+          "locale": "it-IT",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Non importa cosa dicono le previsioni, è sempre il momento di indossare un bel fave! La camicetta arricciata ti abbraccerà con la sua silhouette aderente, il collo alto e le maniche lunghe. E che ne dici della migliore partita? Pensiamo che ti piacerà aggiungere piumini e pantaloni colorati al tuo look pronto per l'autunno &lt;3\n\n* Vestibilità attillata\n\n* Collo alto\n\n* Corpino arricciato\n\n* Maniche lunghe"
+              }
+            ]
+          }
         }
       ],
       "_meta": {
@@ -24,14 +68,14 @@
       }
     }
   },
-  "version": 2,
+  "version": 3,
   "label": "About the Ruffled Blouse",
   "status": "ACTIVE",
   "createdBy": "faf50c60-6d31-48fe-8af3-c52557850527",
   "createdDate": "2022-11-02T09:15:09.653Z",
   "lastModifiedBy": "faf50c60-6d31-48fe-8af3-c52557850527",
-  "lastModifiedDate": "2022-11-02T10:33:36.639Z",
-  "lastPublishedVersion": 2,
-  "lastPublishedDate": "2022-11-02T10:20:45.929Z",
+  "lastModifiedDate": "2022-11-02T10:58:07.102Z",
+  "lastPublishedVersion": 3,
+  "lastPublishedDate": "2022-11-02T10:58:12.419Z",
   "deliveryId": "fbfa3892-2cfe-4f5e-89bc-6dda112fa561"
 }

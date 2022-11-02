@@ -10,6 +10,22 @@
         {
           "locale": "en-US",
           "value": "Winter is coming"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "L'hiver arrive"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Der Winter kommt"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Viene el invierno"
+        },
+        {
+          "locale": "it-IT",
+          "value": "L'inverno sta arrivando"
         }
       ],
       "_meta": {
@@ -32,14 +48,14 @@
     "justifyContent": "Right",
     "alignItems": "Center"
   },
-  "version": 2,
+  "version": 3,
   "label": "Winter is coming",
   "status": "ACTIVE",
   "createdBy": "faf50c60-6d31-48fe-8af3-c52557850527",
   "createdDate": "2022-11-02T10:31:29.649Z",
   "lastModifiedBy": "faf50c60-6d31-48fe-8af3-c52557850527",
-  "lastModifiedDate": "2022-11-02T10:32:02.778Z",
-  "lastPublishedVersion": 2,
-  "lastPublishedDate": "2022-11-02T10:32:59.226Z",
+  "lastModifiedDate": "2022-11-02T10:51:29.741Z",
+  "lastPublishedVersion": 3,
+  "lastPublishedDate": "2022-11-02T10:51:40.875Z",
   "deliveryId": "3387dd36-cfc2-4fcc-ad18-95384dc6c3f5"
 }

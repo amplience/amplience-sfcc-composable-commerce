@@ -12,6 +12,22 @@
         {
           "locale": "en-US",
           "value": "Chic Style for Romantic Nights"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Style chic pour les nuits romantiques"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Schicker Style für romantische Nächte"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Estilo Chic para Noches Románticas"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Stile chic per notti romantiche"
         }
       ],
       "_meta": {
@@ -35,14 +51,14 @@
       }
     ]
   },
-  "version": 3,
+  "version": 4,
   "label": "Floral Print Tee",
   "status": "ACTIVE",
   "createdBy": "faf50c60-6d31-48fe-8af3-c52557850527",
   "createdDate": "2022-11-02T10:15:08.834Z",
   "lastModifiedBy": "faf50c60-6d31-48fe-8af3-c52557850527",
-  "lastModifiedDate": "2022-11-02T10:26:19.709Z",
-  "lastPublishedVersion": 3,
-  "lastPublishedDate": "2022-11-02T10:26:34.396Z",
+  "lastModifiedDate": "2022-11-02T10:56:04.039Z",
+  "lastPublishedVersion": 4,
+  "lastPublishedDate": "2022-11-02T10:52:23.387Z",
   "deliveryId": "79c13403-df70-4a91-a36f-fb88cc3b8d70"
 }

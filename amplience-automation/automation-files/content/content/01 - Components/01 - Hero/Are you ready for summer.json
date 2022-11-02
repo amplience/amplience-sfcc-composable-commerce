@@ -1,7 +1,5 @@
 {
   "id": "d5074197-d0de-449b-9f7b-f82b9d27a393",
-  "contentRepositoryId": "6321ee3f4cedfd0001b5a5e8",
-  "folderId": "635122aea1bd6e0001b7de15",
   "body": {
     "_meta": {
       "name": "Are you ready for summer",
@@ -12,6 +10,22 @@
         {
           "locale": "en-US",
           "value": "Are you ready for Summer?"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Êtes-vous prêt pour l'été?"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Bist du bereit für den Sommer?"
+        },
+        {
+          "locale": "es-ES",
+          "value": "¿Estás listo para el verano?"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Sei pronto per l'estate?"
         }
       ],
       "_meta": {
@@ -34,14 +48,14 @@
     "justifyContent": "Center",
     "alignItems": "Center"
   },
-  "version": 4,
+  "version": 5,
   "label": "Are you ready for summer",
   "status": "ACTIVE",
   "createdBy": "faf50c60-6d31-48fe-8af3-c52557850527",
   "createdDate": "2022-10-25T17:13:13.916Z",
   "lastModifiedBy": "faf50c60-6d31-48fe-8af3-c52557850527",
-  "lastModifiedDate": "2022-10-25T23:43:23.123Z",
-  "lastPublishedVersion": 4,
-  "lastPublishedDate": "2022-11-02T10:26:34.396Z",
+  "lastModifiedDate": "2022-11-02T10:53:45.441Z",
+  "lastPublishedVersion": 5,
+  "lastPublishedDate": "2022-11-02T10:53:59.487Z",
   "deliveryId": "d5074197-d0de-449b-9f7b-f82b9d27a393"
 }

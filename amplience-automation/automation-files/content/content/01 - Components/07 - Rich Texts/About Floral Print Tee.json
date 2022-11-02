@@ -17,6 +17,50 @@
               }
             ]
           }
+        },
+        {
+          "locale": "fr-FR",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Le style chic pour les soirées romantiques à la plage est là avec le t-shirt à imprimé fleuri. Coupe décontractée, imprimé floral, ourlet à volants, sans manches, col montant. Portez-le avec votre pantalon décontracté et vos talons. Ce t-shirt à imprimé floral offre un look romantique avec sa bordure à volants sans manches et son col montant. Un joli imprimé floral fleurit ce chemisier avec un dos sans manches et un trou de serrure à volants gracieux. Charmez toute la journée dans ce chemisier à imprimé floral coupé dans une silhouette flatteuse avec col montant"
+              }
+            ]
+          }
+        },
+        {
+          "locale": "de-DE",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Der schicke Stil für romantische Strandnächte ist hier mit dem T-Shirt mit Blumendruck. Entspannte Passform, Blumendruck, Rüschensaum, ärmellos, Stehkragen. Tragen Sie es zu Ihrer lässigen Hose und Ihren Absätzen. Dieses T-Shirt mit Blumendruck bietet mit seinem ärmellosen Rüschenbesatz und dem Stehkragen einen romantischen Look. Hübscher Blumendruck blüht diese Bluse komplett mit anmutig gekräuselten ärmellosen und Schlüssellochrücken. Bezaubern Sie den ganzen Tag in dieser Bluse mit Blumendruck, die in einer schmeichelhaften Silhouette mit Stehkragen geschnitten ist"
+              }
+            ]
+          }
+        },
+        {
+          "locale": "es-ES",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "El estilo chic para las noches románticas en la playa está aquí con la camiseta con estampado floral. Ajuste relajado, estampado floral, dobladillo con volantes, sin mangas, cuello alto. Úselo con sus pantalones casuales y tacones. Esta camiseta con estampado floral ofrece un look romántico con su ribete de volantes sin mangas y cuello alzado. Un bonito estampado floral florece en esta blusa que se completa con una elegante espalda sin mangas con volantes y abertura en forma de cerradura. Encante todo el día con esta blusa con estampado floral con una silueta favorecedora y cuello alzado"
+              }
+            ]
+          }
+        },
+        {
+          "locale": "it-IT",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Lo stile chic per romantiche serate in spiaggia è qui con la t-shirt con stampa floreale. Vestibilità rilassata, stampa floreale, orlo con volant, senza maniche, colletto rialzato. Indossalo con pantaloni e tacchi casual. Questa t-shirt a stampa floreale offre un look romantico con il bordo increspato senza maniche e il colletto rialzato. Graziosa stampa floreale sboccia su questa camicetta completa di maniche senza maniche e buco della serratura con grazia. Affascina tutto il giorno con questa blusa stampata a fiori dalla silhouette lusinghiera con colletto rialzato"
+              }
+            ]
+          }
         }
       ],
       "_meta": {
@@ -24,14 +68,14 @@
       }
     }
   },
-  "version": 1,
+  "version": 2,
   "label": "About Floral Print Tee",
   "status": "ACTIVE",
   "createdBy": "faf50c60-6d31-48fe-8af3-c52557850527",
   "createdDate": "2022-11-02T10:16:47.329Z",
   "lastModifiedBy": "faf50c60-6d31-48fe-8af3-c52557850527",
-  "lastModifiedDate": "2022-11-02T10:33:39.483Z",
-  "lastPublishedVersion": 1,
-  "lastPublishedDate": "2022-11-02T10:26:34.396Z",
+  "lastModifiedDate": "2022-11-02T10:53:03.490Z",
+  "lastPublishedVersion": 2,
+  "lastPublishedDate": "2022-11-02T10:53:09.846Z",
   "deliveryId": "fb9ee82a-1147-4273-aa16-79da763eec87"
 }

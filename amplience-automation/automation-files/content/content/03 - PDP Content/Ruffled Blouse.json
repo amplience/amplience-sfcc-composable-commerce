@@ -12,6 +12,22 @@
         {
           "locale": "en-US",
           "value": "More about our Ruffled Blouse"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "En savoir plus sur notre chemisier à volants"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Mehr über unsere Rüschenbluse"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Más sobre nuestra blusa con volantes"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Maggiori informazioni sulla nostra camicetta arricciata"
         }
       ],
       "_meta": {
@@ -28,14 +44,14 @@
       }
     ]
   },
-  "version": 2,
+  "version": 3,
   "label": "Ruffled Blouse",
   "status": "ACTIVE",
   "createdBy": "faf50c60-6d31-48fe-8af3-c52557850527",
   "createdDate": "2022-11-02T09:13:18.435Z",
   "lastModifiedBy": "faf50c60-6d31-48fe-8af3-c52557850527",
-  "lastModifiedDate": "2022-11-02T09:44:09.175Z",
-  "lastPublishedVersion": 2,
-  "lastPublishedDate": "2022-11-02T10:20:45.929Z",
+  "lastModifiedDate": "2022-11-02T10:57:05.766Z",
+  "lastPublishedVersion": 3,
+  "lastPublishedDate": "2022-11-02T10:57:11.932Z",
   "deliveryId": "659a458b-b282-4fbd-b6d6-90f080301bc3"
 }
