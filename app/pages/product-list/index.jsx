@@ -253,6 +253,7 @@ const ProductList = (props) => {
             ) : (
                 <>
                     {/* Header */}
+
                     <Stack
                         display={{base: 'none', lg: 'flex'}}
                         direction="row"
