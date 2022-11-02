@@ -1,0 +1,37 @@
+{
+  "id": "fb9ee82a-1147-4273-aa16-79da763eec87",
+  "body": {
+    "_meta": {
+      "name": "About Floral Print Tee",
+      "schema": "https://sfcc.com/components/rich-text"
+    },
+    "content": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "The chic style for romantic beach nights is here with the  floral print tee. Relaxed Fit, Floral Print, Ruffle Hem, Sleeveless, Stand Collar.Wear with your casual pants and heels. This floral-printed tee offers a romantic look with its ruffled trim sleeveless and stand collar. Pretty floral print blossoms this blouse complete with gracefully ruffled sleeveless and keyhole back. Charm all day long in this floral-printed blouse cut in a flattering silhouette with stand collar"
+              }
+            ]
+          }
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    }
+  },
+  "version": 1,
+  "label": "About Floral Print Tee",
+  "status": "ACTIVE",
+  "createdBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+  "createdDate": "2022-11-02T10:16:47.329Z",
+  "lastModifiedBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+  "lastModifiedDate": "2022-11-02T10:33:39.483Z",
+  "lastPublishedVersion": 1,
+  "lastPublishedDate": "2022-11-02T10:26:34.396Z",
+  "deliveryId": "fb9ee82a-1147-4273-aa16-79da763eec87"
+}

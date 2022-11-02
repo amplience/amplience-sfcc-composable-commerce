@@ -1,0 +1,48 @@
+{
+  "id": "79c13403-df70-4a91-a36f-fb88cc3b8d70",
+  "body": {
+    "_meta": {
+      "name": "Product PDP Floral Print Tee",
+      "schema": "https://sfcc.com/site/product-pdp",
+      "deliveryKey": "pdp/content/25565055M"
+    },
+    "active": true,
+    "title": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Chic Style for Romantic Nights"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "content": [
+      {
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+        },
+        "contentType": "https://sfcc.com/components/rich-text",
+        "id": "fb9ee82a-1147-4273-aa16-79da763eec87"
+      },
+      {
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+        },
+        "contentType": "https://sfcc.com/components/hero",
+        "id": "d5074197-d0de-449b-9f7b-f82b9d27a393"
+      }
+    ]
+  },
+  "version": 3,
+  "label": "Floral Print Tee",
+  "status": "ACTIVE",
+  "createdBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+  "createdDate": "2022-11-02T10:15:08.834Z",
+  "lastModifiedBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+  "lastModifiedDate": "2022-11-02T10:26:19.709Z",
+  "lastPublishedVersion": 3,
+  "lastPublishedDate": "2022-11-02T10:26:34.396Z",
+  "deliveryId": "79c13403-df70-4a91-a36f-fb88cc3b8d70"
+}

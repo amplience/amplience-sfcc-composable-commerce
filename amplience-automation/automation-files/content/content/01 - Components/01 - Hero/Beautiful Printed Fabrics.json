@@ -1,0 +1,45 @@
+{
+  "id": "218020ad-1cec-4063-a3a5-d31cff14d6de",
+  "body": {
+    "_meta": {
+      "name": "Beautiful Printed Fabrics",
+      "schema": "https://sfcc.com/components/hero"
+    },
+    "title": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Beautiful Printed Fabrics"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "img": {
+      "image": {
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+        },
+        "id": "c7b98fe7-4f5e-4d10-af0e-81f6f7d6eb68",
+        "name": "jason-yoder-beRDGiXtBAk-unsplash",
+        "endpoint": "sfcccompdev2",
+        "defaultHost": "cdn.media.amplience.net"
+      }
+    },
+    "fullWidth": true,
+    "textAlign": "Center",
+    "justifyContent": "Center",
+    "alignItems": "Center"
+  },
+  "version": 2,
+  "label": "Beautiful Printed Fabrics",
+  "status": "ACTIVE",
+  "createdBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+  "createdDate": "2022-10-26T09:08:37.247Z",
+  "lastModifiedBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+  "lastModifiedDate": "2022-10-26T09:08:52.454Z",
+  "lastPublishedVersion": 2,
+  "lastPublishedDate": "2022-10-26T09:09:05.855Z",
+  "deliveryId": "218020ad-1cec-4063-a3a5-d31cff14d6de"
+}

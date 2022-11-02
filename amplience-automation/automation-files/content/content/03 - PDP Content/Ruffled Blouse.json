@@ -1,0 +1,41 @@
+{
+  "id": "659a458b-b282-4fbd-b6d6-90f080301bc3",
+  "body": {
+    "_meta": {
+      "name": "Ruffled Blouse",
+      "schema": "https://sfcc.com/site/product-pdp",
+      "deliveryKey": "pdp/content/25518519M"
+    },
+    "active": true,
+    "title": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "More about our Ruffled Blouse"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "content": [
+      {
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+        },
+        "contentType": "https://sfcc.com/components/rich-text",
+        "id": "fbfa3892-2cfe-4f5e-89bc-6dda112fa561"
+      }
+    ]
+  },
+  "version": 2,
+  "label": "Ruffled Blouse",
+  "status": "ACTIVE",
+  "createdBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+  "createdDate": "2022-11-02T09:13:18.435Z",
+  "lastModifiedBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+  "lastModifiedDate": "2022-11-02T09:44:09.175Z",
+  "lastPublishedVersion": 2,
+  "lastPublishedDate": "2022-11-02T10:20:45.929Z",
+  "deliveryId": "659a458b-b282-4fbd-b6d6-90f080301bc3"
+}
