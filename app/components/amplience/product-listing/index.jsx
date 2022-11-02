@@ -83,7 +83,7 @@ const ProductListing = ({
 
 ProductListing.propTypes = {
     basePath: PropTypes.string,
-    isLoading: PropTypes.boolean,
+    isLoading: PropTypes.bool,
     pageUrls: PropTypes.arrayOf(PropTypes.string),
     limitUrls: PropTypes.arrayOf(PropTypes.string),
     productSearchResult: PropTypes.object,
