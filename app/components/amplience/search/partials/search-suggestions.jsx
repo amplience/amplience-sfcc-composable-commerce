@@ -10,8 +10,10 @@ import {Box, Divider, Flex, Heading} from '@chakra-ui/react'
 import RecentSearches from './recent-searches'
 import Suggestions from './suggestions'
 import ProductSuggestions from './product-suggestions'
+import {useIntl} from 'react-intl'
 
 const SearchSuggestions = ({recentSearches, searchSuggestions, closeAndNavigate}) => {
+    const intl = useIntl()
     const useSuggestions =
         searchSuggestions &&
         (searchSuggestions?.categorySuggestions?.length ||
@@ -21,7 +23,12 @@ const SearchSuggestions = ({recentSearches, searchSuggestions, closeAndNavigate}
         <Flex w={'100%'} wrap={'wrap'}>
             <Box p={4} w={'100%'} sx={{paddingBottom: 0}}>
                 <Heading as="h2" fontSize={'lg'} textTransform={'uppercase'}>
-                    Suggestions
+                    {
+                        intl.formatMessage({
+                            id: 'amplience.search.suggestions.suggestions',
+                            defaultMessage: 'Suggestions'
+                        })
+                    }
                 </Heading>
                 <Divider sx={{paddingTop: '10px'}} />
             </Box>
@@ -36,7 +43,12 @@ const SearchSuggestions = ({recentSearches, searchSuggestions, closeAndNavigate}
                                     fontSize={'md'}
                                     textTransform={'uppercase'}
                                 >
-                                    Searches
+                                    {
+                                        intl.formatMessage({
+                                            id: 'amplience.search.suggestions.searches',
+                                            defaultMessage: 'Searches'
+                                        })
+                                    }
                                 </Heading>
                             </>
                         )}
@@ -52,7 +64,12 @@ const SearchSuggestions = ({recentSearches, searchSuggestions, closeAndNavigate}
                                     fontSize={'md'}
                                     textTransform={'uppercase'}
                                 >
-                                    Categories
+                                    {
+                                        intl.formatMessage({
+                                            id: 'amplience.search.suggestions.categories',
+                                            defaultMessage: 'Categories'
+                                        })
+                                    }
                                 </Heading>
                             </>
                         )}
@@ -76,7 +93,12 @@ const SearchSuggestions = ({recentSearches, searchSuggestions, closeAndNavigate}
                                     fontSize={'md'}
                                     textTransform={'uppercase'}
                                 >
-                                    Pages
+                                    {
+                                        intl.formatMessage({
+                                            id: 'amplience.search.suggestions.pages',
+                                            defaultMessage: 'Pages'
+                                        })
+                                    }
                                 </Heading>
                             </>
                         )}
@@ -101,7 +123,12 @@ const SearchSuggestions = ({recentSearches, searchSuggestions, closeAndNavigate}
                         fontSize={'md'}
                         textTransform={'uppercase'}
                     >
-                        Products
+                        {
+                            intl.formatMessage({
+                                id: 'amplience.search.suggestions.products',
+                                defaultMessage: 'Products'
+                            })
+                        }
                     </Heading>
                 )}
                 <ProductSuggestions

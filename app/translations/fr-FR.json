@@ -147,6 +147,21 @@
   "add_to_cart_modal.recommended_products.title.might_also_like": {
     "defaultMessage": "Vous aimerez peut-être aussi"
   },
+  "amplience.search.suggestions.categories": {
+    "defaultMessage": "Catégories"
+  },
+  "amplience.search.suggestions.pages": {
+    "defaultMessage": "Pages"
+  },
+  "amplience.search.suggestions.products": {
+    "defaultMessage": "Produits"
+  },
+  "amplience.search.suggestions.searches": {
+    "defaultMessage": "Recherches"
+  },
+  "amplience.search.suggestions.suggestions": {
+    "defaultMessage": "Suggestions"
+  },
   "amplience.shoppable_image.content_key": {
     "defaultMessage": "Cliquer pour ouvrir..."
   },
