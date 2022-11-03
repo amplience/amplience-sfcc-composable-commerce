@@ -132,7 +132,7 @@ We then have a fetch content function which allows us to:
 * Fetch multiple content by id or key
 
 
-```js
+```ts
  async fetchContent(args: IdOrKey[], locale = 'en-US') {
         await this.clientReady
 
@@ -147,3 +147,23 @@ We then have a fetch content function which allows us to:
 ```
 
 Any component / service can call fetch content and use the response in their components in a re-usable manner.
+
+## Enrich
+It's possible for the AmplienceAPI class to automatcally enrich content as it is fetched. The two ways that this is currently used is for personalisation, and fetching delivery keys for content references in the navigation hierarchy. These are defined as "enrich strategies".
+
+```ts
+export interface EnrichStrategy {
+    trigger: (content: any) => boolean;
+    enrich: (content: EnrichTarget[]) => Promise<void>;
+}
+```
+
+The `trigger` is a method that checks any given object in the content, and returns true if the enrich strategy should be performed.
+The `enrich` async method does the actual modification of the object, and is performed in batch after the content is fully scanned. A list of `EnrichTargets` are provided, which contain the item itself, the parent, and the index used to access it from the parent.
+
+These strategies are provided to the `enrichContent(item, strategies)` method, which scans a given content item for matches of the strategy and enriches them in bulk. The default strategies (just personalisation for now) are called via `defaultEnrich` in the API class on any regular fetch, and this is also called externally to enrich any content provided by real-time visualiation.
+
+### Personalisation
+By default, fetched content will be enriched with the "enrichVariantsStrategy", which detects personalised content (via the `enrichType` property equalling `PERSONALISED`), selects relevant variants to activate based on the active groups and fetches them in batch. Groups are set on the `AmplienceAPI` object when it is initialized using the `setGroups` method.
+
+See [the personalisation page](/docs/amplience/personalisation.md#technical-behaviour) for more information.
