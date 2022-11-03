@@ -70,7 +70,7 @@ It is important to be able to visualise the content for a PDP as you are editing
 
 ### Route
 
-```json
+```javascript
 {
     path: '/pdp/content/:productId', // For PDP visualisation
     component: AmpProductDetail

@@ -34,7 +34,7 @@
             "properties": {
                 "deliveryKey": {
                     "title": "Product ID",
-                    "description": "(format pdp/content/<id>) When the Product ID matches, this item's content is shown on the PDP.",
+                    "description": "(format pdp/content/<id>). Must be set in order to visualise. When the Product ID matches, this item's content is shown on on the right PDP.",
                     "type": "string",
                     "pattern": "pdp\/content\/.*"
                 }
@@ -71,8 +71,7 @@
                     }
                 ]
             }
-        }
-        
+        }  
     },
     "propertyOrder": []
 }
