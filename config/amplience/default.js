@@ -25,7 +25,7 @@ module.exports = {
         {
             name: 'Amplience Live',
             default: false,
-            url: 'https://ascc-production.mobify-storefront.com/'
+            url: 'https://ascc-production.mobify-storefront.com'
         }
         /*,
         {
