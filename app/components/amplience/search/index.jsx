@@ -101,7 +101,8 @@ const Search = (props) => {
         searchSuggestions &&
         (searchSuggestions?.categorySuggestions?.length ||
             searchSuggestions?.phraseSuggestions?.length ||
-            searchSuggestions?.productSuggestions?.length)
+            searchSuggestions?.productSuggestions?.length ||
+            searchSuggestions?.pageSuggestions?.length)
 
     const saveRecentSearch = (searchText) => {
         // Get recent searches or an empty array if undefined.
