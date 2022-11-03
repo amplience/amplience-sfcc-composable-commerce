@@ -73,7 +73,7 @@ It is important to be able to visualise the content for a PDP as you are editing
 ```json
 {
     path: '/pdp/content/:productId', // For PDP visualisation
-     component: AmpProductDetail
+    component: AmpProductDetail
 },
 ```
 
