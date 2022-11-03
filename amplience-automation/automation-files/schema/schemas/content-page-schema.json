@@ -9,13 +9,30 @@
         }
     ],
     "type": "object",
+    "trait:filterable": {
+        "filterBy": [
+            {
+                "paths": [
+                    "/active"
+                ]
+            }
+        ]
+    },
     "properties": {
+        "active": {
+            "title": "Active",
+            "description": "",
+            "type": "boolean",
+            "default": true
+        },
         "_meta": {
             "title": "",
             "properties": {
                 "deliveryKey": {
                     "title": "Key",
-                    "type": "string"
+                    "type": "string",
+                    "description": "Format page/<key>",
+                    "pattern": "page\/.*"
                 }
             }
         },

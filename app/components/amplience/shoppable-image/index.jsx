@@ -202,7 +202,7 @@ const ShoppableImageInteractable = ({
             // TODO: get page name?
             return (
                 <Tooltip label={label} {...tProps}>
-                    <Link to={'/page/' + target} {...style}>
+                    <Link to={'/' + target} {...style}>
                         {children}
                     </Link>
                 </Tooltip>
@@ -306,6 +306,11 @@ const ShoppableImage = ({
     const [size, setSize] = useState()
     const [imageSize, setImageSize] = useState()
     const [selectedWidth, setSelectedWidth] = useState(0)
+    const [pixelRatio, setPixelRatio] = useState(1)
+
+    useEffect(() => {
+        setPixelRatio(devicePixelRatio)
+    })
 
     const considerSelectedWidth = (width) => {
         if (width > selectedWidth * SelectedWidthIncrement) {
@@ -529,7 +534,7 @@ const ShoppableImage = ({
     // Determine a transformation to use given the current image scale.
 
     const transformations = {
-        width: selectedWidth * devicePixelRatio,
+        width: selectedWidth * pixelRatio,
         quality: 80,
         upscale: false
     }
@@ -544,7 +549,8 @@ const ShoppableImage = ({
                     mt={4}
                     mb={4}
                     textAlign={'center'}
-                    fontSize={{base: 'md', md: '3xl', lg: '4xl'}}>
+                    fontSize={{base: 'md', md: '3xl', lg: '4xl'}}
+                >
                     {title}
                 </Heading>
             )}
@@ -559,6 +565,7 @@ const ShoppableImage = ({
 ShoppableImage.displayName = 'ShoppableImage'
 
 ShoppableImage.propTypes = {
+    title: PropTypes.string,
     shoppableImage: PropTypes.object,
     imageAltText: PropTypes.string,
     seoText: PropTypes.string,

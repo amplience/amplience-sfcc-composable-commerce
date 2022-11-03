@@ -58,6 +58,7 @@ import CardEnhanced from './components/amplience/card-enhanced'
 import GridLock from './components/amplience/grid-lock'
 import Hero from './components/amplience/hero'
 import AmplienceProductTile from './components/amplience/product-tile'
+import ContentTile from './components/amplience/content-tile'
 
 // Please refer to the Chakra-Ui theme customization docs found
 // here https://chakra-ui.com/docs/theming/customize-theme to learn
@@ -114,7 +115,8 @@ const overrides = {
         CardEnhanced,
         GridLock,
         Hero,
-        AmplienceProductTile
+        AmplienceProductTile,
+        ContentTile
     }
 }
 

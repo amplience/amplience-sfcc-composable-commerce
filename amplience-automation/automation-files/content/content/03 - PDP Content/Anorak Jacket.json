@@ -1,0 +1,64 @@
+{
+  "id": "3e2083b8-a7e7-45a8-98cd-0e525dbf6737",
+  "body": {
+    "_meta": {
+      "name": "Product PDP Anorak Jacket",
+      "schema": "https://sfcc.com/site/product-pdp",
+      "deliveryKey": "pdp/content/25519044M"
+    },
+    "active": true,
+    "title": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "A lightweight jacket for light showers"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Une veste légère pour les averses légères"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Eine leichte Jacke für leichte Schauer"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Una chaqueta ligera para lluvias ligeras"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Una giacca leggera per piogge leggere"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "content": [
+      {
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+        },
+        "contentType": "https://sfcc.com/components/rich-text",
+        "id": "1f254e7b-f7a1-470f-b936-68b75817d4a8"
+      },
+      {
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+        },
+        "contentType": "https://sfcc.com/components/hero",
+        "id": "3387dd36-cfc2-4fcc-ad18-95384dc6c3f5"
+      }
+    ]
+  },
+  "version": 4,
+  "label": "Anorak Jacket",
+  "status": "ACTIVE",
+  "createdBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+  "createdDate": "2022-11-02T10:24:50.249Z",
+  "lastModifiedBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+  "lastModifiedDate": "2022-11-02T10:56:12.974Z",
+  "lastPublishedVersion": 4,
+  "lastPublishedDate": "2022-11-02T10:50:08.798Z",
+  "deliveryId": "3e2083b8-a7e7-45a8-98cd-0e525dbf6737"
+}

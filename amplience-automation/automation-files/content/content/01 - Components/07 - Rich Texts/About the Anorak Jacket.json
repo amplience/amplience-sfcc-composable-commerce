@@ -1,0 +1,81 @@
+{
+  "id": "1f254e7b-f7a1-470f-b936-68b75817d4a8",
+  "body": {
+    "_meta": {
+      "name": "About the Anorak Jacket",
+      "schema": "https://sfcc.com/components/rich-text"
+    },
+    "content": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Fusing functional outerwear and streetwear cool, this anorak jacket is suited to walks in the wilderness or strolls through the city. Crafted in a water-repellent polyester and fitted with a protective hood, it promises to keep you dry - whatever the weather. Styled in a stylish quarter-zip design and fitted with a spacious front pocket, it’s complete with bold silver branding printed on the back."
+              }
+            ]
+          }
+        },
+        {
+          "locale": "fr-FR",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Fusionnant vêtements d'extérieur fonctionnels et streetwear cool, cette veste anorak est adaptée aux promenades dans la nature ou aux promenades en ville. Confectionnée dans un polyester déperlant et dotée d'une capuche de protection, elle promet de vous garder au sec, quel que soit le temps. Doté d'un design élégant à quart de zip et doté d'une poche avant spacieuse, il est doté d'une marque argentée audacieuse imprimée au dos."
+              }
+            ]
+          }
+        },
+        {
+          "locale": "de-DE",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Diese Anorak-Jacke verbindet funktionale Oberbekleidung mit Streetwear-Coolness und eignet sich für Spaziergänge in der Wildnis oder Spaziergänge durch die Stadt. Aus wasserabweisendem Polyester gefertigt und mit einer schützenden Kapuze ausgestattet, verspricht es dich trocken zu halten - bei jedem Wetter. Es hat ein stilvolles Design mit Viertelreißverschluss und ist mit einer geräumigen Vordertasche ausgestattet. Es ist komplett mit einem auffälligen silbernen Branding auf der Rückseite."
+              }
+            ]
+          }
+        },
+        {
+          "locale": "es-ES",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Esta chaqueta anorak, que fusiona prendas de abrigo funcionales y ropa de calle, es ideal para paseos por la naturaleza o paseos por la ciudad. Confeccionado en poliéster repelente al agua y equipado con una capucha protectora, promete mantenerte seco, sin importar el clima. Diseñado con un elegante diseño de un cuarto de cremallera y equipado con un amplio bolsillo frontal, se completa con una llamativa marca plateada impresa en la parte posterior."
+              }
+            ]
+          }
+        },
+        {
+          "locale": "it-IT",
+          "value": {
+            "richText": [
+              {
+                "type": "markdown",
+                "data": "Unendo capispalla funzionali e streetwear cool, questa giacca anorak è adatta per le passeggiate nella natura selvaggia o per le passeggiate in città. Realizzata in poliestere idrorepellente e dotata di cappuccio protettivo, promette di tenerti all'asciutto, in qualsiasi condizione atmosferica. Caratterizzato da un elegante design con zip a un quarto e dotato di una spaziosa tasca frontale, è completo di audace marchio argentato stampato sul retro."
+              }
+            ]
+          }
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    }
+  },
+  "version": 2,
+  "label": "About the Anorak Jacket",
+  "status": "ACTIVE",
+  "createdBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+  "createdDate": "2022-11-02T10:23:39.327Z",
+  "lastModifiedBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+  "lastModifiedDate": "2022-11-02T10:50:43.551Z",
+  "lastPublishedVersion": 2,
+  "lastPublishedDate": "2022-11-02T10:50:49.106Z",
+  "deliveryId": "1f254e7b-f7a1-470f-b936-68b75817d4a8"
+}

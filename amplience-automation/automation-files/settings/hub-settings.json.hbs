@@ -1,0 +1,60 @@
+{
+    "settings": {
+        "devices": [
+            {
+                "name": "Desktop Large",
+                "width": 1280,
+                "height": 720,
+                "orientate": false
+            },
+            {
+                "name": "Desktop",
+                "width": 1024,
+                "height": 768,
+                "orientate": false
+            },
+            {
+                "name": "Tablet",
+                "width": 640,
+                "height": 768,
+                "orientate": false
+            },
+            {
+                "name": "Mobile",
+                "width": 390,
+                "height": 667,
+                "orientate": false
+            },
+            {
+                "name": "Desktop HD",
+                "width": 1920,
+                "height": 1080,
+                "orientate": false
+            },
+            {
+                "name": "4k",
+                "width": 3840,
+                "height": 2160,
+                "orientate": false
+            }
+        ],
+        "applications": [
+            {{#each visualisations}}
+            {
+                "name": "{{this.name}}",
+                "templatedUri": "{{this.url}}/?vse=\{{vse.domain}}&vse-timestamp=\{{context.timestamp}}"
+            }{{#unless @last}},{{/unless}}
+            {{/each}}
+        ],
+        "localization": {
+            "locales": [
+                "en-US",
+                "fr-FR",
+                "de-DE",
+                "es-ES",
+                "it-IT"
+            ]
+        }
+    },
+    "workflowStates": []
+}

@@ -32,8 +32,9 @@ const Cart = loadable(() => import('./pages/cart'), {fallback})
 const Checkout = loadable(() => import('./pages/checkout'), {fallback})
 const CheckoutConfirmation = loadable(() => import('./pages/checkout/confirmation'), {fallback})
 const LoginRedirect = loadable(() => import('./pages/login-redirect'), {fallback})
-const ProductDetail = loadable(() => import('./pages/product-detail'), {fallback})
-const ProductList = loadable(() => import('./pages/product-list'), {fallback})
+//const ProductDetail = loadable(() => import('./pages/product-detail'), {fallback})
+//const ProductList = loadable(() => import('./pages/product-list'), {fallback})
+const AmpProductDetail = loadable(() => import('./pages/amplience/product-detail'), {fallback})
 const AmpProductList = loadable(() => import('./pages/amplience/product-list'), {fallback})
 const Wishlist = loadable(() => import('./pages/account/wishlist'), {fallback})
 const PageNotFound = loadable(() => import('./pages/page-not-found'))
@@ -42,6 +43,7 @@ const Developers = loadable(() => import('./pages/amplience/developers'), {fallb
 //Amplience Pages
 const RealtimeVisualization = loadable(() => import('./pages/amplience/realtime-visualization'))
 const ContentPage = loadable(() => import('./pages/amplience/page'))
+const SearchList = loadable(() => import('./pages/amplience/search-list'))
 
 const routes = [
     {
@@ -90,11 +92,15 @@ const routes = [
     },
     {
         path: '/product/:productId',
-        component: ProductDetail
+        component: AmpProductDetail
+    },
+    {
+        path: '/pdp/content/:productId', // For PDP visualisation
+        component: AmpProductDetail
     },
     {
         path: '/search',
-        component: ProductList
+        component: SearchList
     },
     {
         path: '/category/:categoryId',

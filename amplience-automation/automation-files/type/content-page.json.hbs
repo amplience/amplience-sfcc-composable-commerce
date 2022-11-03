@@ -1,0 +1,31 @@
+{
+    "contentTypeUri": "https://sfcc.com/site/pages/content-page",
+    "status": "ACTIVE",
+    "settings": {
+        "label": "Content Page",
+        "icons": [
+            {
+                "size": 256,
+                "url": "https://sfcccomposable.a.bigcontent.io/v1/static/icon-component-content-page"
+            }
+        ],
+        "visualizations": [ 
+            {{#each visualisations}}
+            {
+                "label": "{{this.name}}",
+                "templatedUri": "{{this.url}}/\{{locales}}/\{{delivery.key}}?pagevse=\{{vse.domain}}",
+                "default": "{{this.default}}"
+            },
+            {{/each}}
+            {
+                "label": "JSON",
+                "templatedUri": "https://delivery-preview.visualizations.content.amplience.net?id=\{{content.sys.id}}&vse=\{{vse.domain}}&locale=\{{locales}}&hub=\{{cms.hub}}&realtime=true",
+                "default": false
+            }
+        ],
+        "cards": []
+    },
+    "repositories": [
+        "content"
+    ]
+}

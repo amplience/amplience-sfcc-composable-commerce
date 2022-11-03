@@ -4,7 +4,7 @@ import AmplienceWrapper from '../wrapper'
 import AmplienceMarkdown from '../markdown'
 import {Box, Heading} from '@chakra-ui/react'
 
-import {getImageUrl} from '../../../utils/amplience/image'
+import {TrueAdaptiveImage} from '../adaptive-image'
 
 /**
  * Amplience Rich Text Component
@@ -36,27 +36,21 @@ const AmplienceRichText = ({header, content}) => {
                             return (
                                 <Box mt={4} mb={4}>
                                     <AmplienceWrapper content={item.data} key={index} />
-                                </Box> )
+                                </Box>
+                            )
                         case 'dc-image-link': {
-                            let src = ''
-                            let alt = ''
-                            if (item.data) {
-                                src = getImageUrl(item.data)
-                                alt = item.data.alt
-                            }
-
                             return (
                                 <Box mt={4} mb={4}>
-                                    <img
-                                        src={src}
-                                        alt={alt}
+                                    <TrueAdaptiveImage
+                                        image={item.data}
                                         key={index}
                                         style={{
+                                            maxWidth: '100%',
                                             maxHeight: '50vh',
                                             margin: '0 auto',
                                             marginBlockEnd: '1em'
                                         }}
-                                    ></img>
+                                    />
                                 </Box>
                             )
                         }

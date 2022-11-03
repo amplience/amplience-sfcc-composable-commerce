@@ -1,0 +1,137 @@
+{
+  "id": "2a559b2f-9eb4-4ff7-8eb9-42941af53799",
+  "body": {
+    "_meta": {
+      "name": "Jackets - Mens Women",
+      "schema": "https://sfcc.com/components/section"
+    },
+    "title": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Jackets for all"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Vestes pour tous"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Jacken für alle"
+        },
+        {
+          "locale": "es-ES",
+          "value": "Chaquetas para todos"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Giacche per tutti"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "subtitle": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "We have many options for  of all ages, from teens to twenty-somethings, and on to mature adults. Whatever your age or style, you can find superb options for all fashion here, and at unbeatable prices."
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Nous proposons de nombreuses options pour tous les âges, des adolescents à la vingtaine, en passant par les adultes matures. Quel que soit votre âge ou votre style, vous trouverez ici de superbes options pour tous les styles, et à des prix imbattables."
+        },
+        {
+          "locale": "de-DE",
+          "value": "Wir haben viele Optionen für alle Altersgruppen, von Teenagern über Zwanzig bis hin zu reifen Erwachsenen. Unabhängig von Ihrem Alter oder Stil finden Sie hier hervorragende Optionen für alle Moden und das zu unschlagbaren Preisen."
+        },
+        {
+          "locale": "es-ES",
+          "value": "Tenemos muchas opciones para todas las edades, desde adolescentes hasta veinteañeros y adultos maduros. Sea cual sea tu edad o estilo, aquí puedes encontrar magníficas opciones para toda la moda, ya precios inmejorables."
+        },
+        {
+          "locale": "it-IT",
+          "value": "Abbiamo molte opzioni per tutte le età, dagli adolescenti ai ventenni e agli adulti maturi. Qualunque sia la tua età o il tuo stile, qui puoi trovare superbe opzioni per tutta la moda e a prezzi imbattibili."
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "actions": [
+      {
+        "label": {
+          "values": [
+            {
+              "locale": "en-US",
+              "value": "Mens"
+            },
+            {
+              "locale": "fr-FR",
+              "value": "Pour des hommes"
+            },
+            {
+              "locale": "de-DE",
+              "value": "Herren"
+            },
+            {
+              "locale": "es-ES",
+              "value": "De los hombres"
+            },
+            {
+              "locale": "it-IT",
+              "value": "Uomo"
+            }
+          ],
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+          }
+        },
+        "url": "/category/mens-clothing-jackets"
+      },
+      {
+        "label": {
+          "values": [
+            {
+              "locale": "en-US",
+              "value": "Womens"
+            },
+            {
+              "locale": "fr-FR",
+              "value": "Aux femmes"
+            },
+            {
+              "locale": "de-DE",
+              "value": "Damen"
+            },
+            {
+              "locale": "es-ES",
+              "value": "De las mujeres"
+            },
+            {
+              "locale": "it-IT",
+              "value": "Da donna"
+            }
+          ],
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+          }
+        },
+        "url": "/category/womens-clothing-jackets"
+      }
+    ],
+    "maxWidth": "2xl",
+    "background": "gray.50"
+  },
+  "version": 3,
+  "label": "Jackets - Mens Women",
+  "status": "ACTIVE",
+  "createdBy": "918ec612-377d-4c6a-94e4-9d4fcf8a25b0",
+  "createdDate": "2022-10-31T13:23:42.696Z",
+  "lastModifiedBy": "918ec612-377d-4c6a-94e4-9d4fcf8a25b0",
+  "lastModifiedDate": "2022-10-31T13:27:29.269Z",
+  "lastPublishedVersion": 3,
+  "lastPublishedDate": "2022-10-31T16:03:22.886Z",
+  "deliveryId": "2a559b2f-9eb4-4ff7-8eb9-42941af53799"
+}

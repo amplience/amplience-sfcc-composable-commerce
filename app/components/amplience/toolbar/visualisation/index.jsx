@@ -18,25 +18,26 @@ import {CopyIcon} from '@chakra-ui/icons'
 import {useContext} from 'react'
 import {AmplienceContext} from '../../../../contexts/amplience'
 
-const VisualisationPanel = ({vse, locale, contentId, toolbarState}) => {
+const VisualisationPanel = ({showVse, hubname, locale, contentId, toolbarState}) => {
     const intl = useIntl()
     const styles = useMultiStyleConfig('PreviewHeader')
-    const {defaultEnv, envs} = useContext(AmplienceContext)
+    const {envs} = useContext(AmplienceContext)
 
     const currentHub =
+        hubname ||
         envs?.find((item) => {
             const regExp = /(.*)-(.*)-(.*)(\.staging.bigcontent.io)/
-            const matches = vse.match(regExp)
+            const matches = showVse.match(regExp)
             if (matches) {
                 const originalVse = `${matches[1]}.staging.bigcontent.io`
                 return item.vse === originalVse
             } else {
-                return item.vse === vse
+                return item.vse === showVse
             }
-        })?.hub || defaultEnv.hub
+        })?.hub
 
     const {hasCopied: hasCopiedHub, onCopy: onCopyHub} = useClipboard(currentHub)
-    const {hasCopied: hasCopiedVse, onCopy: onCopyVse} = useClipboard(vse)
+    const {hasCopied: hasCopiedVse, onCopy: onCopyVse} = useClipboard(showVse)
     const {hasCopied: hasCopiedLocale, onCopy: onCopyLocale} = useClipboard(locale || intl.locale)
     const {hasCopied: hasCopiedContentId, onCopy: onCopyContentId} = useClipboard(contentId || null)
 
@@ -65,7 +66,7 @@ const VisualisationPanel = ({vse, locale, contentId, toolbarState}) => {
 
     return (
         <Box {...styles.box}>
-            {vse && (envs || defaultEnv) && (
+            {showVse && (
                 <>
                     <Heading as="h4" mb={2} size="xs">
                         {intl.formatMessage({
@@ -88,7 +89,7 @@ const VisualisationPanel = ({vse, locale, contentId, toolbarState}) => {
                         VSE
                     </Heading>
                     <HStack>
-                        <Input size="xs" isReadonly={true} value={vse} />
+                        <Input size="xs" isReadonly={true} value={showVse} />
                         <IconButton
                             size="xs"
                             colorScheme={'ampliencePink'}

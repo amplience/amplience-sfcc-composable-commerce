@@ -1,0 +1,61 @@
+{
+  "id": "d5074197-d0de-449b-9f7b-f82b9d27a393",
+  "body": {
+    "_meta": {
+      "name": "Are you ready for summer",
+      "schema": "https://sfcc.com/components/hero"
+    },
+    "title": {
+      "values": [
+        {
+          "locale": "en-US",
+          "value": "Are you ready for Summer?"
+        },
+        {
+          "locale": "fr-FR",
+          "value": "Êtes-vous prêt pour l'été?"
+        },
+        {
+          "locale": "de-DE",
+          "value": "Bist du bereit für den Sommer?"
+        },
+        {
+          "locale": "es-ES",
+          "value": "¿Estás listo para el verano?"
+        },
+        {
+          "locale": "it-IT",
+          "value": "Sei pronto per l'estate?"
+        }
+      ],
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+      }
+    },
+    "img": {
+      "image": {
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+        },
+        "id": "467d863c-40a6-4a3d-9a5d-f19d99d00dd2",
+        "name": "ales-maze-n6d5E4wk6Ic-unsplash",
+        "endpoint": "sfcccompdev2",
+        "defaultHost": "cdn.media.amplience.net"
+      }
+    },
+    "fullWidth": true,
+    "textAlign": "Left",
+    "justifyContent": "Center",
+    "alignItems": "Center"
+  },
+  "version": 5,
+  "label": "Are you ready for summer",
+  "status": "ACTIVE",
+  "createdBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+  "createdDate": "2022-10-25T17:13:13.916Z",
+  "lastModifiedBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+  "lastModifiedDate": "2022-11-02T10:53:45.441Z",
+  "lastPublishedVersion": 5,
+  "lastPublishedDate": "2022-11-02T10:53:59.487Z",
+  "deliveryId": "d5074197-d0de-449b-9f7b-f82b9d27a393"
+}

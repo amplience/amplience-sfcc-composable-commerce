@@ -1,0 +1,5 @@
+{
+    "body": "./schemas/product-pdp-schema.json",
+    "schemaId": "https://sfcc.com/site/product-pdp",
+    "validationLevel": "CONTENT_TYPE"
+}

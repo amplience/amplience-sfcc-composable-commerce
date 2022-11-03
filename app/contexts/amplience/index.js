@@ -70,6 +70,7 @@ export const AmplienceContext = React.createContext()
 
 export const AmplienceContextProvider = ({
     vse,
+    hubname,
     contentId,
     vseTimestamp,
     groups: initialGroups,
@@ -101,6 +102,7 @@ export const AmplienceContextProvider = ({
         <AmplienceContext.Provider
             value={{
                 vse,
+                hubname,
                 contentId,
                 vseTimestamp,
                 envs,
@@ -177,5 +179,6 @@ AmplienceContextProvider.propTypes = {
     defaultEnv: PropTypes.any,
     envs: PropTypes.array,
     children: PropTypes.node.isRequired,
+    hubname: PropTypes.string,
     contentId: PropTypes.string
 }

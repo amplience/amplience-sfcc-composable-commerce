@@ -5,10 +5,10 @@ import PropTypes from 'prop-types'
 import {useContext} from 'react'
 import {AmplienceContext} from '../../../../contexts/amplience'
 
-const EnvironmentsPanel = ({vse}) => {
+const EnvironmentsPanel = ({vse, hubname}) => {
     const styles = useMultiStyleConfig('PreviewHeader')
     const {envs} = useContext(AmplienceContext)
-    const [currentHub, setCurrentHub] = useState('')
+    const [currentHub, setCurrentHub] = useState(hubname)
 
     const handleNewCurrentEnv = (e) => {
         const env = JSON.parse(decodeURIComponent(e.target.dataset.env))
@@ -65,7 +65,8 @@ const EnvironmentsPanel = ({vse}) => {
 }
 
 EnvironmentsPanel.propTypes = {
-    vse: PropTypes.string
+    vse: PropTypes.string,
+    hubname: PropTypes.string
 }
 
 export default EnvironmentsPanel
