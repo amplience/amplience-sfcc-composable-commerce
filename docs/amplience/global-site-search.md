@@ -51,14 +51,17 @@ Below is an illustration of pages matching 'jackets'
 - Filter API to get all pages
 - Text matching ordering is done in the application via the page title, description and keywords. 
 
-These are achieved by calling `getSearchableContentPages` in `docs/amplience/amplience-api.md`. The matches prioritise in the following order:
-1) Title
-2) Keywords
-3) Description
+These are achieved by calling `getSearchableContentPages` in `docs/amplience/amplience-api.md`. The matches prioritise in the following order to give the page a score:
+
+1) Title [1x]
+2) Keywords [.5x]
+3) Description - set to not match 'middle of word' cases. [0.2x]
+
+Matches at the start of the word multiply ranking by 2
+Matches at the end of the word multiply ranking by 1.5
 
 - Any links maintain locale and VSE information.
 
-All links use the `useNavigation` hook found in `app/hooks/use-navigation.js`
-
+All links use the `useNavigation` hook found in `app/hooks/use-navigation.js` where the standard link component is not available.
 
 > Note: Future releases will include content from [Amplience Search](https://amplience.com/developers/docs/integrations/search/)
