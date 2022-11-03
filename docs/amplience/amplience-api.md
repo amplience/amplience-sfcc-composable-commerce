@@ -1,7 +1,7 @@
 # Amplience API
-In order for any area of the application to be able to request content from Amplience we have put all API methods into a service found in `amplience/api.js`.
+In order for any area of the application to be able to request content from Amplience we have put all API methods into series of services found in `/app/amplience-api/`.
 
-This service uses the [Amplience delivery SDK]( https://github.com/amplience/dc-delivery-sdk-js ) to connect and return content, and our own wrapper called the `AmplienceAPI` to provide helper methods for fetching content, hierarchies and more.
+These service use the [Amplience delivery SDK]( https://github.com/amplience/dc-delivery-sdk-js ) to connect and return content, and our own wrapper called the `AmplienceAPI` to provide helper methods for fetching content, hierarchies and more.
 
 ## Dependency
 
