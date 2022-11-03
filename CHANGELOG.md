@@ -2,6 +2,58 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.8.0](https://github.com/amplience/amplience-sfcc-composable-commerce/compare/v1.7.0...v1.8.0) (2022-11-03)
+
+
+### Features
+
+* active status ([311f4e8](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/311f4e8a7afe2ab02d9a76c1920078093a46ef48))
+* Added --allowDelete for import scripts ([17ee671](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/17ee6716b5fa823eedb8a41f86c7c081653c1511))
+* Added automation for content pages in search (Jacket & Dress) ([a43be5a](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/a43be5a46e5ce0821d2b63a6474eed3f368f31e6))
+* added title ([92d5af6](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/92d5af6ebed89033e0bca5a46e04ed36585305b4))
+* automate vis urls ([8c5ea23](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/8c5ea23892508e2aeba509fb92ca507fa683ead3))
+* display parent cat name (wip) ([724d40b](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/724d40b7a9729a0ec6642e559d0b060a45625ca9))
+* handlebars for types ([fc1cc7e](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/fc1cc7ed21549341c838582a8c3d09c7263cfe27))
+* prefix page ([7076f02](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/7076f02ba6b94bc60f617d0dae4d052a6a9a4f3e))
+* product suggestions ([33401e2](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/33401e29767968f19f2a071b68f4aecc17f73f38))
+* reserved space ([fd8d4fe](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/fd8d4fee34d28182b229f2c88f2d004c6fa343c2))
+* responsive and skeleton ([1c09cca](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/1c09ccaacadd2b86308d77babe95486133e0280e))
+* rudimentary page listing ([a7e4709](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/a7e4709945eb6794b0c09a7a83ec75cdf2d6e413))
+* SearchListing ([f14a3c9](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/f14a3c932daa39e27ee5035bf1cee052d904ba05))
+* separate Search listing ([4a9b199](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/4a9b199029d61af706e0c3f55a7993a2c857cba7))
+* show/hide product/content refinement area when main tab selected ([ecf45aa](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/ecf45aa16e04a3371149c1a70ec712ccb64532db))
+* using chakra icon ([19202eb](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/19202eb14a9852577c346a39311196dabe9ce827))
+* visualisations automation from config ([2fac41d](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/2fac41d0c882513918885d08ad1d9fc93c6d37ff))
+
+
+### Bug Fixes
+
+* Added personalised slots to all definitions and updated components / cards / icons in rich text ([f6c22c1](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/f6c22c1d2c0194c4959029d05eca22c7f60f2e8f))
+* attribute name ([c5176bc](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/c5176bc26126b7c6b5e8fe47d1c241fc3a334bd6))
+* can be undefined ([51bd08c](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/51bd08cd7d7e976e0d582f289ac3f95a308b50f4))
+* fix pdp vis, shoppable image ssr, change pdp key ([567a09a](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/567a09a3524d22ffd2a9214e0e7f3f7ff6d47969))
+* Icon for PDP Content and name ([110c49a](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/110c49a81e0c52a8e74440d15bd42abdb0675661))
+* importing config ([d0c8b27](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/d0c8b27ff9962163fa536db358f8affea0dc20c7))
+* issue with box size ([ee313fa](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/ee313faf8c195bcc8a6469e33c45e6dffa632bf9))
+* left align product suggestion text ([194665a](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/194665af8d8ecb5c275b49685b3692f31484e414))
+* New partial for anyComponentAndSlot used in PDP content ([374f887](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/374f887c33c7ad03662aba3cc0fbba6992125750))
+* no image from suggestions ([bf9fa48](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/bf9fa486f95aa1daac2790cc4c828c88d6aa515f))
+* only render page tab/panels if there are pages ([d6e5a2c](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/d6e5a2c201908d6272c578ff89f58a1a9ae00cd5))
+* pageHeader total should include page results ([a3bf6d3](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/a3bf6d3f1da4244ada361faca489de931997dca7))
+* pdp docs and new line ([b13790e](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/b13790e5dfe5db74b05d13470da9b93268d96cc5))
+* product tile spacing and tab reset on new search ([491751e](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/491751ed2787b7eb9ba23cbc47ed2c4df4e8dba0))
+* Rendering of the page (right param) ([0760123](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/076012374975656dca2762536869ec8004900379))
+* reserved space ([9285664](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/9285664dee6ee629313d753c3ab7a210910618ba))
+* reserved space ([b2d9be1](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/b2d9be17d2b161e645a8becb87322318fa61d65d))
+* Resolved extra comma and linting issues ([adc922e](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/adc922e681b348a45b021edadf5412e23a7b4240))
+* revert sont size ([bcda3a4](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/bcda3a40af7c10d0d5eb2d3c4c861e7ea2ab7aa1))
+* Rich Text had no styling ([8ab346d](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/8ab346d4ab7f6bfbff1422d36ca5ade678819a5f))
+* Rich Text removed blog card and added shoppable image ([830ab12](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/830ab12da8526e08140e078a479a161c5bb8faad))
+* SEO has same string limits as non localised (150 chars) ([d81c115](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/d81c115573d57a5ab65c91ac58eb2c948b37babd))
+* switch to showvse ([6eb5d25](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/6eb5d25f56c267240ade334cdba64a778235e8db))
+* total could be undefined ([881e38d](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/881e38d9262597eb46acacc164768fae20aaa6b5))
+* Viz URI ([33681be](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/33681be9e76a8e36c0f38b046c6f346dafca1f90))
+
 ## [1.7.0](https://github.com/amplience/amplience-sfcc-composable-commerce/compare/v1.6.0...v1.7.0) (2022-10-20)
 
 
