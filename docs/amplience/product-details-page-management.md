@@ -29,7 +29,7 @@ An updated version of the PDP can be found in `app/pages/amplience/product-detai
 This is updated to:
 * Fetch content from Amplience with the matching key
 * Check if it should be displayed
-* For each content in the **Product PDP** content type uses the [AmplienceWrappper](./ampliencewrapper-component.md) to draw the content passing in the content.
+* Draws each content item linked in the **Product PDP** content type using the [AmplienceWrappper](./ampliencewrapper-component.md) component.
 
 In getProps:
 ```javascript
