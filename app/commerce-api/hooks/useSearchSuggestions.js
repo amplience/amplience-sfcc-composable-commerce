@@ -32,8 +32,8 @@ const useSearchSuggestions = () => {
                     limit: 6
                 }
             })
-            const allSearchablePages = await client.getSearchableContentPages(locale, input)
-            searchSuggestions.pageSuggestions = allSearchablePages
+            const filteredSearchablePages = await client.getSearchableContentPages(locale, input)
+            searchSuggestions.pageSuggestions = filteredSearchablePages
             setState({results: searchSuggestions})
         },
         /**
