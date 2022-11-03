@@ -498,11 +498,53 @@ export class AmplienceAPI {
         return root
     }
 
-    filterPages(pages, filter) {
-        return pages.filter(item => item.content?.seo?.title?.toLowerCase()?.indexOf(filter.toLowerCase()) !== -1)
+    stringScore(string: string, filter: string, threshold: number): number {
+        const stringWords = string.split(' ')
+        const filterWords = filter.split(' ')
+        let score = 0;
+
+        for (let stringWord of stringWords) {
+            if (stringWord.length === 0) continue;
+
+            for (let filterWord of filterWords) {
+                if (filterWord.length === 0) continue;
+
+                const index = stringWord.indexOf(filterWord)
+
+                if (index > -1) {
+                    let wordScore = 1
+                    if (index === 0) wordScore *= 2
+                    if (index + filterWord.length === stringWord.length) wordScore *= 1.5
+
+                    if (wordScore >= threshold) {
+                        score += wordScore;
+                    }
+                }
+            }
+        }
+
+        return score;
     }
 
-    async getSearchableContentPages(locale = 'en-US', filter) {
+    pageScore(page, filter: string): number {
+        let score = 0;
+        score += this.stringScore(page.content?.seo?.title?.toLowerCase(), filter, 1);
+        score += this.stringScore(page.content?.seo?.keywords?.toLowerCase(), filter, 1) * 0.5;
+        score += this.stringScore(page.content?.seo?.description?.toLowerCase(), filter, 2) * 0.2;
+
+        return score;
+    }
+
+    filterPages(pages, filter: string) {
+        filter = filter.toLowerCase();
+
+        const results = pages.map(page => ({page, score: this.pageScore(page, filter)})).filter(item => item.score > 0);
+        results.sort((a, b) => b.score - a.score)
+
+        return results.map(item => item.page)
+    }
+
+    async getSearchableContentPages(locale = 'en-US', filter: string) {
         await this.clientReady
         
         const result = await this.client
