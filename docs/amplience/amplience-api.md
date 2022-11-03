@@ -151,6 +151,28 @@ Our content fetching in this project is rather complex, supporting default argum
 
 Any component / service can call fetch content and use the response in their components in a re-usable manner.
 
+## Filter API
+
+The hierarchy fetch methods obtain the root content item, then use the Filter API to fetch child content for each level in the hierarchy. They are then placed in a `children` property for each level. This is done by filtering by the parent ID:
+```js
+const result = await this.hierarchyClient
+    .filterByParentId(id)
+    .sortBy('default', 'ASC')
+    .request({
+        format: 'inlined',
+        depth: 'all'
+    })
+```
+
+The content page search method obtains a list of all active pages from the Filter API, and then selects the pages that match the input search query. This is done by a similar request, followed by a filtering method we provide to return only the matching pages:
+
+```js
+const result = await this.client
+    .filterByContentType('https://sfcc.com/site/pages/content-page')
+    .filterBy("/active", true)
+    .request({locale: locale + ',*'})
+```
+
 ## Enrich
 It's possible for our AmplienceAPI class to automatcally enrich content as it is fetched. The two ways that this is currently used is for personalisation, and fetching delivery keys for content references in the navigation hierarchy. These are defined as "enrich strategies".
 
