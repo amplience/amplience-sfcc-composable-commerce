@@ -65,8 +65,8 @@ if (productPdp && productPdp.content) {
 ## Visualisation
 It is important to be able to visualise the content for a PDP as you are editing. Therefore can do the following:
 
-* use the delivery key as a route
-* have the content as a UseState so it can be redrawn if changed from [Real Time Visualisation](./visualization.md)
+* Use the delivery key as a route
+* Have the content as a UseState so it can be redrawn if changed from [Real Time Visualisation](./visualization.md)
 
 ### Route
 
