@@ -33,7 +33,7 @@ const useSearchSuggestions = () => {
                 }
             })
             const filteredSearchablePages = await client.getSearchableContentPages(locale, input)
-            searchSuggestions.pageSuggestions = filteredSearchablePages
+            searchSuggestions.pageSuggestions = filteredSearchablePages.slice(0, 4)
             setState({results: searchSuggestions})
         },
         /**
