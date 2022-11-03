@@ -13,12 +13,18 @@
         "filterBy": [
             {
                 "paths": [
-                    "/seo/noindex"
+                    "/active"
                 ]
             }
         ]
     },
     "properties": {
+        "active": {
+            "title": "Active",
+            "description": "",
+            "type": "boolean",
+            "default": true
+        },
         "_meta": {
             "title": "",
             "properties": {
