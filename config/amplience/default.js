@@ -1,18 +1,18 @@
 module.exports = {
     default: {
-        hub: 'sfcccompdev2'
+        hub: 'sfcccomposable'
     },
     envs: [
         /*
         {
-            name: 'Live',
-            hub: 'sfcccomposable',
-            vse: '1pqebtas9axy7zeeiy96389op.staging.bigcontent.io'
+            name: 'Environment 1',
+            hub: 'environment01',
+            vse: '{{Your VSE URL for Environment 1}}'
         },
-        {
-            name: 'UAT',
-            hub: 'sfcccompuat',
-            vse: 'e7ssecddcjvq1470dg00ennz9.staging.bigcontent.io'
+         {
+            name: 'Environment 1',
+            hub: 'environment01',
+            vse: '{{Your VSE URL for Environment 2}}'
         }
         */
     ],
@@ -23,16 +23,11 @@ module.exports = {
             url: 'http://localhost:3000'
         },
         {
-            name: 'Development 2',
+            name: 'Amplience Live',
             default: false,
-            url: 'https://ascc-development-2.mobify-storefront.com'
+            url: 'https://ascc-production.mobify-storefront.com/'
         }
         /*,
-        {
-            name: 'Live',
-            default: false,
-            url: 'https://ascc-production.mobify-storefront.com'
-        },
         {
             name: 'UAT',
             default: false,
