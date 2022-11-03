@@ -76,7 +76,6 @@ import LoadingSpinner from '../../../components/loading-spinner'
 // Amplience Imports
 import ProductListing from '../../../components/amplience/product-listing'
 import PageListing from '../../../components/amplience/page-listing'
-import AmplienceWrapper from '../../../components/amplience/wrapper'
 import {resolveSiteFromUrl} from '../../../utils/site-utils'
 import {getTargetLocale} from '../../../utils/locale'
 
@@ -110,7 +109,6 @@ const SearchList = (props) => {
     )
     const {formatMessage} = useIntl()
     const navigate = useNavigation()
-    const history = useHistory()
     const params = useParams()
     const {categories} = useCategories()
     const toast = useToast()

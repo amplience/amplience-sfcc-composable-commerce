@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import {useContext} from 'react'
 import {AmplienceContext} from '../../../../contexts/amplience'
 
-const EnvironmentsPanel = ({vse,hubname}) => {
+const EnvironmentsPanel = ({vse, hubname}) => {
     const styles = useMultiStyleConfig('PreviewHeader')
     const {envs} = useContext(AmplienceContext)
     const [currentHub, setCurrentHub] = useState(hubname)

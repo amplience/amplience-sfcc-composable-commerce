@@ -24,8 +24,7 @@ const VisualisationPanel = ({showVse, hubname, locale, contentId, toolbarState})
     const {envs} = useContext(AmplienceContext)
 
     const currentHub =
-        hubname
-        ||
+        hubname ||
         envs?.find((item) => {
             const regExp = /(.*)-(.*)-(.*)(\.staging.bigcontent.io)/
             const matches = showVse.match(regExp)
