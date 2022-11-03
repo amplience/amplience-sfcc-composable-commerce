@@ -63,7 +63,7 @@
                             "contentType": {
                                 "allOf": [
                                     {
-                                        "$ref": "https://sfcc.com/libs/all-definitions#/definitions/anyComponentPageAndSlot"
+                                        "$ref": "https://sfcc.com/libs/all-definitions#/definitions/anyComponentAndSlot"
                                     }
                                 ]
                             }
