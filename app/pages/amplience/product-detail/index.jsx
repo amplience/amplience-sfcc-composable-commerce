@@ -31,7 +31,7 @@ import useNavigation from '../../../hooks/use-navigation'
 import useEinstein from '../../../commerce-api/hooks/useEinstein'
 
 // Project Components
-import RecommendedProducts from '../../../components/recommended-products'
+import RecommendedProducts from '../../../components/amplience/recommended-products'
 import ProductView from '../../../partials/product-view'
 
 // Others/Utils
