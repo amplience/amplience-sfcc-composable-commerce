@@ -20,7 +20,7 @@ The vast majority of pages made up on a website are product details pages. There
 * Every product has a unique ID (SKU)
 * These pages hold great SEO value so should be rendered server side.
 
-In order to address the 2 points above, we have a new content type **Product PDP**. This has an enforced delivery key in a known format: `pdp/content\{SKU}`
+In order to address the 2 points above, we have a new content type **Product PDP**. This has an enforced delivery key in a known format: `pdp/content/{SKU}`
 
 This means that every PDP has a known method of fetching content that is relevant to that product from the application. This can be any content (individual, personalised, multiple items, content or/and slots)
 
