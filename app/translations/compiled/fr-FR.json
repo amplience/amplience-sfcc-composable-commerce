@@ -361,6 +361,36 @@
       "value": "Vous aimerez peut-être aussi"
     }
   ],
+  "amplience.search.suggestions.categories": [
+    {
+      "type": 0,
+      "value": "Catégories"
+    }
+  ],
+  "amplience.search.suggestions.pages": [
+    {
+      "type": 0,
+      "value": "Pages"
+    }
+  ],
+  "amplience.search.suggestions.products": [
+    {
+      "type": 0,
+      "value": "Produits"
+    }
+  ],
+  "amplience.search.suggestions.searches": [
+    {
+      "type": 0,
+      "value": "Recherches"
+    }
+  ],
+  "amplience.search.suggestions.suggestions": [
+    {
+      "type": 0,
+      "value": "Suggestions"
+    }
+  ],
   "amplience.shoppable_image.content_key": [
     {
       "type": 0,
@@ -2257,6 +2287,12 @@
     {
       "type": 0,
       "value": "Quantité :"
+    }
+  ],
+  "product_list.button.contentfilter": [
+    {
+      "type": 0,
+      "value": "Content Filtrer"
     }
   ],
   "product_list.button.filter": [

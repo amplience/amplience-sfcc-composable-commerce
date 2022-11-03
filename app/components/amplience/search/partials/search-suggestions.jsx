@@ -1,17 +1,13 @@
-/*
- * Copyright (c) 2021, salesforce.com, inc.
- * All rights reserved.
- * SPDX-License-Identifier: BSD-3-Clause
- * For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
- */
-import React, {Fragment} from 'react'
+import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
-import {Box, Divider, Flex, Heading} from '@chakra-ui/react'
+import { Box, Divider, Flex, Heading } from '@chakra-ui/react'
 import RecentSearches from './recent-searches'
 import Suggestions from './suggestions'
 import ProductSuggestions from './product-suggestions'
+import { useIntl } from 'react-intl'
 
-const SearchSuggestions = ({recentSearches, searchSuggestions, closeAndNavigate}) => {
+const SearchSuggestions = ({ recentSearches, searchSuggestions, closeAndNavigate }) => {
+    const intl = useIntl()
     const useSuggestions =
         searchSuggestions &&
         (searchSuggestions?.categorySuggestions?.length ||
@@ -19,24 +15,34 @@ const SearchSuggestions = ({recentSearches, searchSuggestions, closeAndNavigate}
 
     return (
         <Flex w={'100%'} wrap={'wrap'}>
-            <Box p={4} w={'100%'} sx={{paddingBottom: 0}}>
+            <Box p={4} w={'100%'} sx={{ paddingBottom: 0 }}>
                 <Heading as="h2" fontSize={'lg'} textTransform={'uppercase'}>
-                    Suggestions
+                    {
+                        intl.formatMessage({
+                            id: 'amplience.search.suggestions.suggestions',
+                            defaultMessage: 'Suggestions'
+                        })
+                    }
                 </Heading>
-                <Divider sx={{paddingTop: '10px'}} />
+                <Divider sx={{ paddingTop: '10px' }} />
             </Box>
-            <Box p={4} w={{sm: '100%', lg: '300px'}}>
+            <Box p={4} w={{ sm: '100%', lg: '300px' }}>
                 {useSuggestions ? (
                     <Fragment>
                         {searchSuggestions?.phraseSuggestions && (
                             <>
                                 <Heading
-                                    sx={{paddingBottom: '8px'}}
+                                    sx={{ paddingBottom: '8px' }}
                                     as="h2"
                                     fontSize={'md'}
                                     textTransform={'uppercase'}
                                 >
-                                    Searches
+                                    {
+                                        intl.formatMessage({
+                                            id: 'amplience.search.suggestions.searches',
+                                            defaultMessage: 'Searches'
+                                        })
+                                    }
                                 </Heading>
                             </>
                         )}
@@ -47,12 +53,17 @@ const SearchSuggestions = ({recentSearches, searchSuggestions, closeAndNavigate}
                         {searchSuggestions?.categorySuggestions && (
                             <>
                                 <Heading
-                                    sx={{paddingTop: '24px', paddingBottom: '6px'}}
+                                    sx={{ paddingTop: '24px', paddingBottom: '6px' }}
                                     as="h2"
                                     fontSize={'md'}
                                     textTransform={'uppercase'}
                                 >
-                                    Categories
+                                    {
+                                        intl.formatMessage({
+                                            id: 'amplience.search.suggestions.categories',
+                                            defaultMessage: 'Categories'
+                                        })
+                                    }
                                 </Heading>
                             </>
                         )}
@@ -60,23 +71,20 @@ const SearchSuggestions = ({recentSearches, searchSuggestions, closeAndNavigate}
                             closeAndNavigate={closeAndNavigate}
                             suggestions={searchSuggestions?.categorySuggestions}
                         />
-                        {/* {
-                        searchSuggestions?.categorySuggestions &&
-                        <Heading as='h2' fontSize={'md'} textTransform={'uppercase'}>Brands</Heading> 
-                        }
-                        <Suggestions
-                            closeAndNavigate={closeAndNavigate}
-                            suggestions={searchSuggestions?.brandSuggestions}
-                        /> */}
                         {searchSuggestions?.pageSuggestions && (
                             <>
                                 <Heading
-                                    sx={{paddingTop: '24px', paddingBottom: '6px'}}
+                                    sx={{ paddingTop: '24px', paddingBottom: '6px' }}
                                     as="h2"
                                     fontSize={'md'}
                                     textTransform={'uppercase'}
                                 >
-                                    Pages
+                                    {
+                                        intl.formatMessage({
+                                            id: 'amplience.search.suggestions.pages',
+                                            defaultMessage: 'Pages'
+                                        })
+                                    }
                                 </Heading>
                             </>
                         )}
@@ -92,16 +100,21 @@ const SearchSuggestions = ({recentSearches, searchSuggestions, closeAndNavigate}
                     />
                 )}
             </Box>
-            <Box p={4} w={{sm: '100%', lg: '470px'}}>
+            <Box p={4} w={{ sm: '100%', lg: '470px' }}>
                 {searchSuggestions?.productSuggestions && (
                     <Heading
-                        sx={{marginBottom: '8px'}}
+                        sx={{ marginBottom: '8px' }}
                         as="h2"
                         mb={4}
                         fontSize={'md'}
                         textTransform={'uppercase'}
                     >
-                        Products
+                        {
+                            intl.formatMessage({
+                                id: 'amplience.search.suggestions.products',
+                                defaultMessage: 'Products'
+                            })
+                        }
                     </Heading>
                 )}
                 <ProductSuggestions

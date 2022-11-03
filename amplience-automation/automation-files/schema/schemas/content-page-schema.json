@@ -13,7 +13,7 @@
         "filterBy": [
             {
                 "paths": [
-                    "/seo/noindex"
+                    "/active"
                 ]
             }
         ]

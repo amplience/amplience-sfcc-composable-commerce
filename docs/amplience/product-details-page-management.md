@@ -20,16 +20,16 @@ The vast majority of pages made up on a website are product details pages. There
 * Every product has a unique ID (SKU)
 * These pages hold great SEO value so should be rendered server side.
 
-In order to address the 2 points above, we have a new content type **Product PDP**. This has an enforced delivery key in a known format: `pdp/content\{SKU}`
+In order to address the 2 points above, we have a new content type **Product PDP**. This has an enforced delivery key in a known format: `pdp/content/{SKU}`
 
-This means that every PDP has a known method of fetching content that is relevant to that product from the application. This can be any content (individual, personalised, multiple items, content or/and slots)
+This means that every PDP has a known method of fetching content that is relevant to that product from the application. This can be any content (individual, personalised, multiple items, content and/or slots)
 
 An updated version of the PDP can be found in `app/pages/amplience/product-detail/index.jsx`.
 
 This is updated to:
 * Fetch content from Amplience with the matching key
 * Check if it should be displayed
-* For each content in the **Product PDP** content type uses the [AmplienceWrappper](./ampliencewrapper-component.md) to draw the content passing in the content.
+* Draws each content item linked in the **Product PDP** content type using the [AmplienceWrappper](./ampliencewrapper-component.md) component.
 
 In getProps:
 ```javascript
@@ -65,15 +65,15 @@ if (productPdp && productPdp.content) {
 ## Visualisation
 It is important to be able to visualise the content for a PDP as you are editing. Therefore can do the following:
 
-* use the delivery key as a route
-* have the content as a UseState so it can be redrawn if changed from [Real Time Visualisation](./visualization.md)
+* Use the delivery key as a route
+* Have the content as a UseState so it can be redrawn if changed from [Real Time Visualisation](./visualization.md)
 
 ### Route
 
-```json
+```javascript
 {
     path: '/pdp/content/:productId', // For PDP visualisation
-     component: AmpProductDetail
+    component: AmpProductDetail
 },
 ```
 

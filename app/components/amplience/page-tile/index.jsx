@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import {Box, Text, Heading, Flex, Center, useMultiStyleConfig, Icon} from '@chakra-ui/react'
 import Link from '../link'
 import styled from '@emotion/styled'
-import {BiFile} from 'react-icons/bi'
+import { LinkIcon } from '@chakra-ui/icons'
 
 const Contain = styled(Link)`
     .text-box {
@@ -36,7 +36,7 @@ const PageTile = ({page}) => {
             <Box {...styles.tile}>
                 <Flex className="flex-pane" flexDirection={{sm: 'column', md: 'row'}}>
                     <Center>
-                        <Icon as={BiFile} boxSize={'2em'} />
+                        <Icon as={LinkIcon} boxSize={'1.5em'} />
                     </Center>
                     <Box className="text-box">
                         <Heading as={'h2'} {...styles.title} fontSize="lg">

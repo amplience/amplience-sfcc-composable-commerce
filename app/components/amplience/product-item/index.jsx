@@ -1,12 +1,5 @@
-/*
- * Copyright (c) 2021, salesforce.com, inc.
- * All rights reserved.
- * SPDX-License-Identifier: BSD-3-Clause
- * For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
- */
 import React from 'react'
 import PropTypes from 'prop-types'
-import {FormattedMessage} from 'react-intl'
 
 // Chakra Components
 import {Box, Fade, Flex, Stack, Text} from '@chakra-ui/react'
@@ -19,7 +12,6 @@ import CartItemVariantName from '../../item-variant/item-name'
 import CartItemVariantAttributes from '../../item-variant/item-attributes'
 import CartItemVariantPrice from '../../item-variant/item-price'
 import LoadingSpinner from '../../loading-spinner'
-import QuantityPicker from '../../quantity-picker'
 
 // Utilities
 import {noop} from '../../../utils/utils'
@@ -70,42 +62,6 @@ const ProductItem = ({
                             </Stack>
 
                             <Flex align="flex-end" justify="space-between">
-                                {/* <Stack spacing={1}>
-                                    <Text fontSize="sm" color="gray.700">
-                                        <FormattedMessage
-                                            defaultMessage="Quantity:"
-                                            id="product_item.label.quantity"
-                                        />
-                                    </Text>
-                                    <QuantityPicker
-                                        step={stepQuantity}
-                                        value={quantity}
-                                        min={0}
-                                        clampValueOnBlur={false}
-                                        onBlur={(e) => {
-                                            // Default to last known quantity if a user leaves the box with an invalid value
-                                            const {value} = e.target
-
-                                            if (!value) {
-                                                setQuantity(product.quantity)
-                                            }
-                                        }}
-                                        onChange={(stringValue, numberValue) => {
-                                            // Set the Quantity of product to value of input if value number
-                                            if (numberValue >= 0) {
-                                                // Call handler
-                                                onItemQuantityChange(numberValue).then(
-                                                    (isValidChange) =>
-                                                        isValidChange && setQuantity(numberValue)
-                                                )
-                                            } else if (stringValue === '') {
-                                                // We want to allow the use to clear the input to start a new input so here we set the quantity to '' so NAN is not displayed
-                                                // User will not be able to add '' qauntity to the cart due to the add to cart button enablement rules
-                                                setQuantity(stringValue)
-                                            }
-                                        }}
-                                    />
-                                </Stack> */}
                                 <Stack>
                                     <HideOnMobile>
                                         <CartItemVariantPrice />

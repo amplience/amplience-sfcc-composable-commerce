@@ -43,7 +43,8 @@
         },
         "anySlot": {
             "enum": [
-                "https://sfcc.com/slots/flexible-list"
+                "https://sfcc.com/slots/flexible-list",
+                "https://sfcc.com/slots/personalised-slot"
             ]
         },
         "anyComponentPageAndSlot": {
@@ -53,12 +54,28 @@
                 "https://sfcc.com/components/curated-product",
                 "https://sfcc.com/components/personalised-container",
                 "https://sfcc.com/components/personalised-component",
-                "https://sfcc.com/site/pages/content-page",
-                "https://sfcc.com/slots/flexible-list",
                 "https://sfcc.com/components/card-enhanced",
                 "https://sfcc.com/components/card-list",
                 "https://sfcc.com/components/rich-text",
-                "https://sfcc.com/components/shoppable-image"
+                "https://sfcc.com/components/shoppable-image",
+                "https://sfcc.com/site/pages/content-page",
+                "https://sfcc.com/slots/flexible-list",
+                "https://sfcc.com/slots/personalised-slot"
+            ]
+        },
+        "anyComponentAndSlot": {
+            "enum": [
+                "https://sfcc.com/components/hero",
+                "https://sfcc.com/components/section",
+                "https://sfcc.com/components/curated-product",
+                "https://sfcc.com/components/personalised-container",
+                "https://sfcc.com/components/personalised-component",
+                "https://sfcc.com/components/card-enhanced",
+                "https://sfcc.com/components/card-list",
+                "https://sfcc.com/components/rich-text",
+                "https://sfcc.com/components/shoppable-image",
+                "https://sfcc.com/slots/flexible-list",
+                "https://sfcc.com/slots/personalised-slot"
             ]
         },
         "diImage": {
@@ -211,26 +228,52 @@
                         "blacklist": [],
                         "dc-content-link": {
                             "contentTypes": [
-                                "https://sfcc.com/components/section",
                                 "https://sfcc.com/components/hero",
+                                "https://sfcc.com/components/section",
+                                "https://sfcc.com/components/curated-product",
                                 "https://sfcc.com/components/card-enhanced",
                                 "https://sfcc.com/components/card-list",
-                                "https://sfcc.com/components/curated-product",
+                                "https://sfcc.com/components/personalised-container",
+                                "https://sfcc.com/components/personalised-component",
                                 "https://sfcc.com/components/shoppable-image"
                             ],
                             "contentTypeSettings": [
-                                {
-                                    "id": "https://sfcc.com/components/section",
-                                    "icon": "https://sfcccomposable.a.bigcontent.io/v1/static/icon-component-section"
-                                },
                                 {
                                     "id": "https://sfcc.com/components/hero",
                                     "icon": "https://sfcccomposable.a.bigcontent.io/v1/static/icon-component-hero",
                                     "card": "https://bigcontent.io/cms/cards/summary-photo/index.html?headline=/title&image=/img/image&imageAlt=/img/alt&src=%2F%2F{{vse.domain}}%2Fcms%2Fcontent%2Fquery%3FfullBodyObject%3Dtrue%26query%3D%257B%2522sys.iri%2522%253A%2522http%253A%252F%252Fcontent.cms.amplience.com%252F{{content.sys.id}}%2522%257D%26scope%3Dtree%26store%3Dstaging"
                                 },
                                 {
+                                    "id": "https://sfcc.com/components/section",
+                                    "icon": "https://sfcccomposable.a.bigcontent.io/v1/static/icon-component-section",
+                                    "card": "https://bigcontent.io/cms/cards/text/index.html?headline=/subtitle/values/0/value&src=%2F%2F{{vse.domain}}%2Fcms%2Fcontent%2Fquery%3FfullBodyObject%3Dtrue%26query%3D%257B%2522sys.iri%2522%253A%2522http%253A%252F%252Fcontent.cms.amplience.com%252F{{content.sys.id}}%2522%257D%26scope%3Dtree%26store%3Dstaging"
+                                },
+                                {
                                     "id": "https://sfcc.com/components/curated-product",
                                     "icon": "https://sfcccomposable.a.bigcontent.io/v1/static/icon-component-curated-product"
+                                },
+                                {
+                                    "id": "https://sfcc.com/components/card-enhanced",
+                                    "icon": "https://sfcccomposable.a.bigcontent.io/v1/static/icon-component-card-enhanced",
+                                    "card": "https://bigcontent.io/cms/cards/summary-photo/index.html?headline=/_meta/name&image=/image/image/image&imageAlt=/img/alt&src=%2F%2F{{vse.domain}}%2Fcms%2Fcontent%2Fquery%3FfullBodyObject%3Dtrue%26query%3D%257B%2522sys.iri%2522%253A%2522http%253A%252F%252Fcontent.cms.amplience.com%252F{{content.sys.id}}%2522%257D%26scope%3Dtree%26store%3Dstaging"
+                                },
+                                {
+                                    "id": "https://sfcc.com/components/card-list",
+                                    "icon": "https://sfcccomposable.a.bigcontent.io/v1/static/icon-component-card-list",
+                                    "card": "https://bigcontent.io/cms/cards/gallery/index.html?headline=/header/values/0/value&image0=/cards/0/image/image/image&image1=/cards/1/image/image/image&image2=/cards/2/image/image/image&image3=/cards/3/image/image/image&imageAlt0=/cards/0/image/imageAltText&imageAlt1=/cards/1/image/imageAltText&imageAlt2=/cards/2/image/imageAltText&imageAlt3=/cards/3/image/imageAltText&src=%2F%2F{{vse.domain}}%2Fcms%2Fcontent%2Fquery%3FfullBodyObject%3Dtrue%26query%3D%257B%2522sys.iri%2522%253A%2522http%253A%252F%252Fcontent.cms.amplience.com%252F{{content.sys.id}}%2522%257D%26scope%3Dtree%26store%3Dstaging"
+                                },
+                                {
+                                    "id": "https://sfcc.com/components/personalised-container",
+                                    "icon": "https://sfcccomposable.a.bigcontent.io/v1/static/icon-component-personalised-container"
+                                },
+                                {
+                                    "id": "https://sfcc.com/components/personalised-content",
+                                    "icon": "https://sfcccomposable.a.bigcontent.io/v1/static/icon-component-personalised-content"
+                                },
+                                {
+                                    "id": "https://sfcc.com/components/shoppable-image",
+                                    "icon": "https://sfcccomposable.a.bigcontent.io/v1/static/icon-component-shoppable-image",
+                                    "card": "https://bigcontent.io/cms/cards/photo/index.html?image=/shoppableImage/image&imageAlt=/shoppableImage/imageAltText&src=%2F%2F{{vse.domain}}%2Fcms%2Fcontent%2Fquery%3FfullBodyObject%3Dtrue%26query%3D%257B%2522sys.iri%2522%253A%2522http%253A%252F%252Fcontent.cms.amplience.com%252F{{content.sys.id}}%2522%257D%26scope%3Dtree%26store%3Dstaging"
                                 }
                             ]
                         },
