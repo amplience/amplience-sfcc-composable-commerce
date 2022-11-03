@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.1](https://github.com/amplience/amplience-sfcc-composable-commerce/compare/v1.8.0...v1.8.1) (2022-11-03)
+
+
+### Bug Fixes
+
+* CSS in rich-text component, not static file ([5a62ba8](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/5a62ba8d1905d2079d210010d600bdde2d6ed105))
+
 ## [1.8.0](https://github.com/amplience/amplience-sfcc-composable-commerce/compare/v1.7.0...v1.8.0) (2022-11-03)
 
 
