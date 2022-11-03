@@ -42,6 +42,7 @@ This version of the SF Retail React app integrates Amplience as the Content CMS 
 * [Product Listing Page (PLP) Management](./docs/amplience/product-listing-page-management.md)
 * [Product Details Page (PDP) Management](./docs/amplience/product-details-page-management.md)
 * [Personalisation (Customer Groups)](docs/amplience/personalisation.md)
+* [Global Site Search](./docs/amplience/global-site-search.md)
 
 ### 🧩 Components & Extensions
 * [Amplience Extensions List](./docs/amplience/amplience-extensions-list.md)
