@@ -1,6 +1,6 @@
 # Amplience Configuration
 
-Main Amplience configuration parameters are stored in the config/`amplience/default.js` file.
+Main Amplience configuration parameters are stored in the config file `amplience/default.js`.
 
 Example configuration file:
 
