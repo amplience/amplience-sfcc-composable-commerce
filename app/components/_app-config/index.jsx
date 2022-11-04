@@ -23,8 +23,29 @@ import {MultiSiteProvider} from '../../contexts'
 import {resolveSiteFromUrl} from '../../utils/site-utils'
 import {resolveLocaleFromUrl} from '../../utils/utils'
 import {getConfig} from 'pwa-kit-runtime/utils/ssr-config'
+import {withLegacyGetProps} from 'pwa-kit-react-sdk/ssr/universal/components/with-legacy-get-props'
+import {withReactQuery} from 'pwa-kit-react-sdk/ssr/universal/components/with-react-query'
 import {createUrlTemplate} from '../../utils/url'
 import {AmplienceAPI, defaultAmpClient} from '../../amplience-api'
+
+const isServerSide = typeof window === 'undefined'
+
+// Recommended settings for PWA-Kit usages.
+// NOTE: they will be applied on both server and client side.
+const options = {
+    queryClientConfig: {
+        defaultOptions: {
+            queries: {
+                retry: false,
+                staleTime: 2 * 1000,
+                ...(isServerSide ? {retryOnMount: false} : {})
+            },
+            mutations: {
+                retry: false
+            }
+        }
+    }
+}
 
 /**
  * Use the AppConfig component to inject extra arguments into the getProps
@@ -94,4 +115,4 @@ AppConfig.propTypes = {
     locals: PropTypes.object
 }
 
-export default AppConfig
+export default withReactQuery(withLegacyGetProps(AppConfig), options)
