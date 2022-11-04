@@ -7,7 +7,7 @@
 
 import {getAppOrigin} from 'pwa-kit-react-sdk/utils/url'
 import {getLocaleByReference, getParamsFromPath, getUrlConfig} from './utils'
-import {getDefaultSite, getSites} from './site-utils'
+import {getDefaultSite, getSiteByReference, getSites} from './site-utils'
 import {HOME_HREF, urlPartPositions} from '../constants'
 import {keepVse} from '../hooks/use-navigation'
 
@@ -127,7 +127,7 @@ export const productUrlBuilderAndQuery = (product, locale, baseLocation) => {
  * @param {string} searchTerm
  * @returns {string}
  */
-export const searchUrlBuilder = (searchTerm) => `/search?q=${searchTerm}`
+export const searchUrlBuilder = (searchTerm) => '/search?q=' + encodeURIComponent(searchTerm)
 
 /**
  * Returns a relative URL for a locale short code.
@@ -162,6 +162,11 @@ export const getPathWithLocale = (shortCode, opts = {}) => {
 
     const isDefaultLocaleOfDefaultSite = shortCode === defaultSite.l10n.defaultLocale
     const isDefaultSite = siteRef === defaultSite.alias || siteRef === defaultSite.id
+
+    const site = getSiteByReference(siteRef)
+
+    const locale = getLocaleByReference(site, shortCode)
+
     // rebuild the url with new locale,
     const newUrl = buildPathWithUrlConfig(
         `${pathname}${search}`,
@@ -172,7 +177,10 @@ export const getPathWithLocale = (shortCode, opts = {}) => {
                 isDefaultLocaleOfDefaultSite && isDefaultSite && isHomeRef
                     ? ''
                     : siteRef || defaultSite.alias || defaultSite.id,
-            locale: isDefaultLocaleOfDefaultSite && isDefaultSite && isHomeRef ? '' : shortCode
+            locale:
+                isDefaultLocaleOfDefaultSite && isDefaultSite && isHomeRef
+                    ? ''
+                    : locale?.alias || locale?.id
         },
         opts
     )
@@ -191,15 +199,8 @@ export const getPathWithLocale = (shortCode, opts = {}) => {
 export const createUrlTemplate = (appConfig, siteRef, localeRef) => {
     const {site: siteConfig, locale: localeConfig, showDefaults: showDefaultsConfig} = appConfig.url
     const defaultSite = getDefaultSite()
-    const sites = getSites()
-    const siteAliasOrIdRef =
-        sites.find((site) => {
-            return site.alias === siteRef || site.id === siteRef
-        }) || defaultSite
-    const defaultLocale = getLocaleByReference(
-        siteAliasOrIdRef,
-        siteAliasOrIdRef.l10n.defaultLocale
-    )
+    const site = getSiteByReference(siteRef)
+    const defaultLocale = getLocaleByReference(site, site.l10n.defaultLocale)
 
     const isDefaultSite =
         defaultSite.id === siteRef || (defaultSite.alias && defaultSite.alias === siteRef)
