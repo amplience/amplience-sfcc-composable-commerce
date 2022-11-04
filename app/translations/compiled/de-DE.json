@@ -776,7 +776,7 @@
   "checkout_footer.message.copyright": [
     {
       "type": 0,
-      "value": "2021 Salesforce oder dessen Geschäftspartner. Alle Rechte vorbehalten. Dies ist lediglich ein Geschäft zu Demonstrationszwecken. Aufgegebene Bestellungen WERDEN NICHT bearbeitet."
+      "value": "Salesforce oder dessen Geschäftspartner. Alle Rechte vorbehalten. Dies ist lediglich ein Geschäft zu Demonstrationszwecken. Aufgegebene Bestellungen WERDEN NICHT bearbeitet."
     }
   ],
   "checkout_header.link.cart": [
@@ -1138,7 +1138,7 @@
   "empty_search_results.link.contact_us": [
     {
       "type": 0,
-      "value": "Kontakt"
+      "value": "klicken Sie auf \"Kontakt\""
     }
   ],
   "empty_search_results.recommended_products.title.most_viewed": [
@@ -1228,7 +1228,7 @@
   "footer.message.copyright": [
     {
       "type": 0,
-      "value": "2021 Salesforce oder dessen Geschäftspartner. Alle Rechte vorbehalten. Dies ist lediglich ein Geschäft zu Demonstrationszwecken. Aufgegebene Bestellungen WERDEN NICHT bearbeitet."
+      "value": "Salesforce oder dessen Geschäftspartner. Alle Rechte vorbehalten. Dies ist lediglich ein Geschäft zu Demonstrationszwecken. Aufgegebene Bestellungen WERDEN NICHT bearbeitet."
     }
   ],
   "footer.subscribe.button.sign_up": [
