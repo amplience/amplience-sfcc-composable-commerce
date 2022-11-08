@@ -51,9 +51,9 @@ This version of the SF Retail React app integrates Amplience as the Content CMS 
   * [Shoppable Image specifics](docs/amplience/shoppable-image-component.md)
 * [Toolbar Framework](docs/amplience/toolbar-framework.md)
 
-> Note: This code is built against the code version @latest at the time which was PWAKit v2.2.0 released on August 27th 2022: https://github.com/SalesforceCommerceCloud/pwa-kit/releases/tag/v2.2.0
+> Note: This code is built against the code version @latest at the time which was PWAKit v2.3.0 released on November 7th 2022: https://github.com/SalesforceCommerceCloud/pwa-kit/releases/tag/v2.3.0
 
-If you are using a v2.1.0, either upgrade using this code base or use a previous Amplience version [v1.2.0](https://github.com/amplience/amplience-sfcc-composable-commerce/releases/tag/v1.2.0) with the capabilities at that time.
+If you are using an earlier version, please consider upgrading your codebase to match this by either using this as a basis or following the same upgrade path as can be found here: https://developer.salesforce.com/docs/commerce/pwa-kit-managed-runtime/guide/upgrade-to-v2-3.html
 
 ## Known Limitations
 

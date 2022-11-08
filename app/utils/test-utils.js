@@ -21,7 +21,6 @@ import {
     CustomerProductListsProvider
 } from '../commerce-api/contexts'
 import {AddToCartModalContext} from '../hooks/use-add-to-cart-modal'
-import {app as appDefaultConfig} from '../../config/default'
 import {IntlProvider} from 'react-intl'
 import {
     mockCategories as initialMockCategories,
@@ -48,7 +47,7 @@ export const DEFAULT_SITE = 'global'
 import {CategoriesProvider, CurrencyProvider, MultiSiteProvider} from '../contexts'
 
 import {createUrlTemplate} from './url'
-import {getDefaultSite, getSites} from './site-utils'
+import {getSiteByReference} from './site-utils'
 
 export const renderWithReactIntl = (node, locale = DEFAULT_LOCALE) => {
     return render(
@@ -62,8 +61,8 @@ export const renderWithRouter = (node) => renderWithReactIntl(<Router>{node}</Ro
 
 export const renderWithRouterAndCommerceAPI = (node) => {
     const api = new CommerceAPI({
-        ...appDefaultConfig.commerceAPI,
-        einsteinConfig: appDefaultConfig.einsteinAPI,
+        ...mockConfig.app.commerceAPI,
+        einsteinConfig: mockConfig.app.einsteinAPI,
         proxy: undefined
     })
     return renderWithReactIntl(
@@ -83,9 +82,9 @@ export const TestProviders = ({
     initialBasket = null,
     initialCustomer = null,
     initialCategories = initialMockCategories,
-    locale = DEFAULT_LOCALE,
+    locale = {id: DEFAULT_LOCALE},
     messages = fallbackMessages,
-    appConfig = appDefaultConfig,
+    appConfig = mockConfig.app,
     siteAlias = DEFAULT_SITE
 }) => {
     const mounted = useRef()
@@ -126,16 +125,16 @@ export const TestProviders = ({
         onClose: () => {}
     }
 
-    const sites = getSites()
-    const site =
-        sites.find((site) => {
-            return site.alias === siteAlias || site.id === appConfig['site']
-        }) || getDefaultSite()
+    const site = getSiteByReference(siteAlias || appConfig.defaultSite)
 
-    const buildUrl = createUrlTemplate(appConfig, site.alias || site.id, locale)
+    const buildUrl = createUrlTemplate(
+        appConfig,
+        site?.alias || site?.id,
+        locale.alias || locale.id
+    )
 
     return (
-        <IntlProvider locale={locale} defaultLocale={DEFAULT_LOCALE} messages={messages}>
+        <IntlProvider locale={locale.id} defaultLocale={DEFAULT_LOCALE} messages={messages}>
             <MultiSiteProvider site={site} locale={locale} buildUrl={buildUrl}>
                 <CommerceAPIProvider value={api}>
                     <CategoriesProvider categories={initialCategories}>
@@ -170,7 +169,7 @@ TestProviders.propTypes = {
     initialCategories: PropTypes.element,
     initialProductLists: PropTypes.object,
     messages: PropTypes.object,
-    locale: PropTypes.string,
+    locale: PropTypes.object,
     appConfig: PropTypes.object,
     siteAlias: PropTypes.string
 }

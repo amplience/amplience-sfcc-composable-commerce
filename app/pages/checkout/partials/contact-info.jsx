@@ -44,6 +44,7 @@ const ContactInfo = () => {
         setIsGuestCheckout,
         step,
         login,
+        checkoutSteps,
         setCheckoutStep,
         goToNextStep
     } = useCheckout()
@@ -96,13 +97,13 @@ const ContactInfo = () => {
                 defaultMessage: 'Contact Info',
                 id: 'contact_info.title.contact_info'
             })}
-            editing={step === 0}
+            editing={step === checkoutSteps.Contact_Info}
             isLoading={form.formState.isSubmitting}
             onEdit={() => {
                 if (!isGuestCheckout) {
                     setSignOutConfirmDialogIsOpen(true)
                 } else {
-                    setCheckoutStep(0)
+                    setCheckoutStep(checkoutSteps.Contact_Info)
                 }
             }}
             editLabel={

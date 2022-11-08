@@ -67,9 +67,16 @@ import useNavigation from '../../hooks/use-navigation'
 
 const DEFAULT_NAV_DEPTH = 3
 const DEFAULT_ROOT_CATEGORY = 'root'
+const DEFAULT_LOCALE = 'en-US'
 
 const App = (props) => {
-    const {children, targetLocale, messages, categories: allCategories = {}, ampProps} = props
+    const {
+        children,
+        targetLocale = DEFAULT_LOCALE,
+        messages = {},
+        categories: allCategories = {},
+        ampProps
+    } = props
 
     const appOrigin = getAppOrigin()
     const navigate = useNavigation()
@@ -215,7 +222,7 @@ const App = (props) => {
                 // NOTE: if you update this value, please also update the following npm scripts in `template-retail-react-app/package.json`:
                 // - "extract-default-translations"
                 // - "compile-translations:pseudo"
-                defaultLocale="en-US"
+                defaultLocale={DEFAULT_LOCALE}
             >
                 <CategoriesProvider categories={allCategories}>
                     <CurrencyProvider currency={currency}>
@@ -259,8 +266,6 @@ const App = (props) => {
                                         hrefLang="x-default"
                                         href={`${appOrigin}/`}
                                     />
-                                    {/* Amplience rich text styling */}
-                                    <link rel="stylesheet" href="/css/rich-text.css"></link>
                                 </Seo>
 
                                 <ScrollToTop />
