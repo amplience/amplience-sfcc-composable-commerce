@@ -67,6 +67,7 @@ import {useToast} from '../../../hooks/use-toast'
 import useWishlist from '../../../hooks/use-wishlist'
 import {parse as parseSearchParams} from '../../../hooks/use-search-params'
 import {useCategories} from '../../../hooks/use-categories'
+import useEinstein from '../../../commerce-api/hooks/useEinstein'
 import useMultiSite from '../../../hooks/use-multi-site'
 
 // Others
@@ -360,8 +361,18 @@ const ProductList = (props) => {
     const params = useParams()
     const {categories} = useCategories()
     const toast = useToast()
+    const einstein = useEinstein()
     const {locale} = useMultiSite()
     const [searchParams, {stringify: stringifySearchParams}] = useSearchParams()
+
+    /**************** Einstein ****************/
+    useEffect(() => {
+        if (productSearchResult) {
+            searchQuery
+                ? einstein.sendViewSearch(searchQuery, productSearchResult)
+                : einstein.sendViewCategory(category, productSearchResult)
+        }
+    }, [productSearchResult])
 
     const limitUrls = useLimitUrls()
     const wishlist = useWishlist()
@@ -752,6 +763,19 @@ const ProductList = (props) => {
                                                       product={productSearchItem}
                                                       enableFavourite={true}
                                                       isFavourite={isInWishlist}
+                                                      onClick={() => {
+                                                          if (searchQuery) {
+                                                              einstein.sendClickSearch(
+                                                                  searchQuery,
+                                                                  productSearchItem
+                                                              )
+                                                          } else if (category) {
+                                                              einstein.sendClickCategory(
+                                                                  category,
+                                                                  productSearchItem
+                                                              )
+                                                          }
+                                                      }}
                                                       onFavouriteToggle={(isFavourite) => {
                                                           const action = isFavourite
                                                               ? addItemToWishlist

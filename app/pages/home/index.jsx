@@ -5,9 +5,10 @@
  * For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
 
-import React from 'react'
+import React, {useEffect} from 'react'
 import PropTypes from 'prop-types'
 import {useIntl} from 'react-intl'
+import {useLocation} from 'react-router-dom'
 
 // Components
 import {
@@ -33,6 +34,9 @@ import AmplienceWrapper from '../../components/amplience/wrapper'
 // Others
 import {heroFeatures, features} from './data'
 
+//Hooks
+import useEinstein from '../../commerce-api/hooks/useEinstein'
+
 // Constants
 import {
     MAX_CACHE_AGE
@@ -49,6 +53,13 @@ import { personalisationChanged } from '../../amplience-api/utils'
  */
 const Home = ({isLoading, homeSlotTop}) => {
     const intl = useIntl()
+    const einstein = useEinstein()
+    const {pathname} = useLocation()
+
+    /**************** Einstein ****************/
+    useEffect(() => {
+        einstein.sendViewPage(pathname)
+    }, [])
 
     return (
         <Box data-testid="home-page" layerStyle="page">
