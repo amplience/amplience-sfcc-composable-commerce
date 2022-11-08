@@ -88,7 +88,7 @@ useAmpRtv(
             const topContentIDs = model.content?.topContent.map(getIdsForContent) || []
             if (topContentIDs && topContentIDs.length) {
                 const rtvTopContent = await defaultAmpClient.fetchContent(topContentIDs, {
-                    locale: locale + ',*'
+                    locale: locale.id + ',*'
                 })
                 return rtvTopContent
             } else {
