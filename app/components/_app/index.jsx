@@ -266,8 +266,6 @@ const App = (props) => {
                                         hrefLang="x-default"
                                         href={`${appOrigin}/`}
                                     />
-                                    {/* Amplience rich text styling */}
-                                    <link rel="stylesheet" href="/css/rich-text.css"></link>
                                 </Seo>
 
                                 <ScrollToTop />
