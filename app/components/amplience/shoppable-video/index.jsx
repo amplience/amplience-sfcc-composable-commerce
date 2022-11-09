@@ -156,7 +156,7 @@ const ShoppableVideoArrow = ({transform, width, ...props}) => {
 
     const arrowBody = {
         position: 'absolute',
-        width: (width - 20) + 'px',
+        width: width - 20 + 'px',
         marginRight: '8px',
         height: '8px',
         backgroundImage,
@@ -458,8 +458,8 @@ const ShoppableVideo = ({
         props.height = (rows * (size.width - gap * (cols - 1))) / cols + (rows - 1) * gap + 'px'
     } else if (height) {
         props.height = height
-    } else {
-        props.minHeight = '600px'
+    } else if (videoSize && size) {
+        props.height = size.width * (videoSize.height / videoSize.width)
     }
 
     if (autoplay) {
