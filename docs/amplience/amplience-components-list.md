@@ -12,5 +12,6 @@
 | https://sfcc.com/components/rich-text| `./rich-text/RichText` | Component using the dc-extension-rich-text with Markdown and visual editing |
 | https://sfcc.com/components/section | `./section/Section` | ![Section](./media/components-section.png) A block of text with a localised title and localised subtitle|
 | https://sfcc.com/components/shoppable-image | `./shoppable-image/ShoppableImage` | A component that allows the merchandizer to add hotspot links to an image. Links may point to Commerce products & catagories, as well as simple tooltips and external URLs.  |
+| https://sfcc.com/components/shoppable-video | `./shoppable-video/ShoppableVideo` | A component that allows the merchandizer to add hotspot links to a video. Links may point to Commerce products & catagories, as well as simple tooltips and external URLs.  |
 | https://sfcc.com/slots/flexible-list | `./flexibleListSlot/flexibleListSlot` | A slot that contains a flexible list of content |
 | https://sfcc.com/slots/personalised-slot | `./personalised-slot/PersonalisedComponent` | A slot that contains variants associated to customer groups to display personalised content |
