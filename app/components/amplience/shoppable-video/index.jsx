@@ -20,7 +20,7 @@ import {useEffect} from 'react'
 import {useShoppableTooltip} from '../shoppable-image'
 import Link from '../link'
 import AmplienceWrapper from '../wrapper'
-import { categoryUrlBuilder, productUrlBuilder } from '../../../utils/url'
+import {categoryUrlBuilder, productUrlBuilder} from '../../../utils/url'
 
 const Contain = styled(Box)`
     .interactive {
@@ -151,19 +151,27 @@ const ShoppableVideoArrow = ({transform, width, ...props}) => {
         transition: 'opacity 0.2s'
     }
 
+    const backgroundImage = `radial-gradient(circle, rgba(255,255,255,1) 36%, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0) 64%);`
+    const backgroundSize = `${(10 / width) * 100}%`
+
     const arrowBody = {
         position: 'absolute',
-        width: '100%',
-        height: '5px',
-        backgroundColor: 'white'
+        width: (width - 20) + 'px',
+        marginRight: '8px',
+        height: '8px',
+        backgroundImage,
+        backgroundSize
     }
 
     const arrowHead = {
         transform: 'rotate(45deg)',
-        borderTop: '5px solid white',
-        borderRight: '5px solid white',
-        width: '20px',
-        height: '20px'
+        backgroundColor: 'white',
+        backgroundClip: 'padding-box',
+        width: '16px',
+        height: '16px',
+        margin: '-8px',
+        borderRadius: '8px',
+        border: '2px solid rgba(0, 0, 0, 0.3)'
     }
 
     return (
@@ -178,7 +186,13 @@ const ShoppableVideoCta = ({target, selector, tooltips, transform}) => {
     const {isOpen, onOpen, onClose} = useDisclosure()
     const label = useShoppableTooltip(target, selector, tooltips)
 
-    const style = {transform, minWidth: 'unset', border: '2px solid white'}
+    const style = {
+        transform,
+        minWidth: 'unset',
+        border: '2px solid white',
+        backgroundColor: 'rgba(1, 118, 211, 0.75)',
+        boxShadow: '2px 4px 8px rgb(0 0 0 / 20%)'
+    }
 
     switch (selector) {
         case 'product': {
@@ -412,16 +426,21 @@ const ShoppableVideo = ({
 
             const vec = {
                 x: point ? sX(point.x - ctaPoint.x) : 0,
-                y: point ? sY(point.y - ctaPoint.y) : 0,
-            };
-    
-            const arrowWidth = Math.sqrt(vec.x * vec.x + vec.y * vec.y);
-            const rotate = Math.atan2(vec.y, vec.x);
+                y: point ? sY(point.y - ctaPoint.y) : 0
+            }
+
+            const arrowWidth = Math.sqrt(vec.x * vec.x + vec.y * vec.y)
+            const rotate = Math.atan2(vec.y, vec.x)
 
             const arrowTransform = ctaTransform + ` rotate(${rotate}rad)`
 
             elements.push(
-                <ShoppableVideoArrow key={i++} transform={arrowTransform} width={arrowWidth} {...visibility} />
+                <ShoppableVideoArrow
+                    key={i++}
+                    transform={arrowTransform}
+                    width={arrowWidth}
+                    {...visibility}
+                />
             )
 
             elements.push(
