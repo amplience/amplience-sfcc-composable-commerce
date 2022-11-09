@@ -61,6 +61,7 @@ const {handler} = runtime.createHandler(options, (app) => {
                         "'unsafe-eval'",
                         '*.cdn.content.amplience.net',
                         'cdn.media.amplience.net',
+                        'cdn.static.amplience.net',
                         '*.staging.bigcontent.io'
                     ],
                     'frame-ancestors': ["'self'", '*.amplience.net'],
