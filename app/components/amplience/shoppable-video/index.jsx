@@ -182,12 +182,13 @@ const ShoppableVideoArrow = ({transform, width, ...props}) => {
     )
 }
 
-const ShoppableVideoCta = ({target, selector, tooltips, transform}) => {
+const ShoppableVideoCta = ({target, selector, tooltips, scale}) => {
     const {isOpen, onOpen, onClose} = useDisclosure()
     const label = useShoppableTooltip(target, selector, tooltips)
+    const sizeBias = 0.66
 
     const style = {
-        transform,
+        transform: `scale(${(scale - 1) * sizeBias + 1})`,
         minWidth: 'unset',
         border: '2px solid white',
         backgroundColor: 'rgba(1, 118, 211, 0.75)',
@@ -281,7 +282,7 @@ ShoppableVideoCta.propTypes = {
     target: PropTypes.string,
     selector: PropTypes.string,
     tooltips: PropTypes.array,
-    transform: PropTypes.string
+    width: PropTypes.number
 }
 
 const ShoppableVideo = ({
@@ -445,7 +446,7 @@ const ShoppableVideo = ({
 
             elements.push(
                 <Box key={i++} transform={ctaTransform} {...ctaStyle} {...visibility}>
-                    <ShoppableVideoCta {...hotspot} tooltips={tooltips}></ShoppableVideoCta>
+                    <ShoppableVideoCta {...hotspot} tooltips={tooltips} scale={size.width / 1000}></ShoppableVideoCta>
                 </Box>
             )
         }
@@ -490,6 +491,7 @@ const ShoppableVideo = ({
                     alt={videoAltText}
                     objectFit="contain"
                     ref={videoRef}
+                    playsInline
                 >
                     {sources}
                 </Box>
