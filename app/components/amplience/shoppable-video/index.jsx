@@ -23,22 +23,31 @@ import {categoryUrlBuilder, productUrlBuilder} from '../../../utils/url'
 import {useCallback} from 'react'
 
 const Contain = styled(Box)`
-    .interactive {
-        transition: border-width 0.3s;
-        border: 0px solid white;
-        cursor: pointer;
+    @keyframes targetHover {
+        0% {
+            outline-color: white;
+            outline-offset: -20px;
+            outline-width: 2px;
+        }
+        100% {
+            outline-color: rgba(255, 255, 255, 0);
+            outline-offset: 0px;
+            outline-width: 5px;
+        }
     }
 
-    .interactive:hover {
-        border-width: 3px;
+    .arrowHead:hover {
+        transform: scale(1.6, 1.6);
+        animation: targetHover 0.75s;
+        animation-iteration-count: infinite;
+        outline: 1px solid transparent;
     }
 
-    a:focus {
-        box-shadow: none !important;
-    }
-
-    a:focus .interactive {
-        border-width: 3px;
+    .arrowHeadHover {
+        transform: scale(1.6, 1.6);
+        animation: targetHover 0.75s;
+        animation-iteration-count: infinite;
+        outline: 1px solid transparent;
     }
 `
 
@@ -138,7 +147,7 @@ const videoLoop = (token) => {
     }
 }
 
-const ShoppableVideoArrow = ({transform, width, ...props}) => {
+const ShoppableVideoArrow = ({transform, width, clickTarget, hovered, ...props}) => {
     const style = {
         height: '20px',
         margin: '-10px 0px',
@@ -175,10 +184,24 @@ const ShoppableVideoArrow = ({transform, width, ...props}) => {
         border: '2px solid rgba(0, 0, 0, 0.3)'
     }
 
+    const arrowHeadContainer = {
+        transition: 'transform 0.3s',
+        width: '48px',
+        height: '48px',
+        margin: '-24px',
+        borderRadius: '24px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        className: hovered ? 'arrowHeadHover' : 'arrowHead'
+    }
+
     return (
         <Box {...style} style={dynamicStyle}>
             <Box {...arrowBody} style={{backgroundSize, width: width - 20 + 'px'}} />
-            <Box {...arrowHead} />
+            <Box {...arrowHeadContainer} onClick={clickTarget}>
+                <Box {...arrowHead} />
+            </Box>
         </Box>
     )
 }
@@ -187,10 +210,21 @@ ShoppableVideoArrow.displayName = 'ShoppableVideoArrow'
 
 ShoppableVideoArrow.propTypes = {
     transform: PropTypes.string,
-    width: PropTypes.number
+    width: PropTypes.number,
+    clickTarget: PropTypes.func,
+    hovered: PropTypes.bool
 }
 
-const ShoppableVideoCta = ({target, selector, tooltips, scale, video}) => {
+const ShoppableVideoCta = ({
+    target,
+    selector,
+    tooltips,
+    scale,
+    video,
+    buttonRef,
+    hoverButton,
+    unhoverButton
+}) => {
     const {isOpen, onOpen, onClose} = useDisclosure()
     const label = useShoppableTooltip(target, selector, tooltips)
     const sizeBias = 0.66
@@ -208,7 +242,10 @@ const ShoppableVideoCta = ({target, selector, tooltips, scale, video}) => {
         minWidth: 'unset',
         border: '2px solid white',
         backgroundColor: 'rgba(1, 118, 211, 0.75)',
-        boxShadow: '2px 4px 8px rgb(0 0 0 / 20%)'
+        boxShadow: '2px 4px 8px rgb(0 0 0 / 20%)',
+        ref: buttonRef,
+        onMouseOver: hoverButton,
+        onMouseOut: unhoverButton
     }
 
     switch (selector) {
@@ -300,7 +337,84 @@ ShoppableVideoCta.propTypes = {
     tooltips: PropTypes.array,
     width: PropTypes.number,
     scale: PropTypes.number,
-    video: PropTypes.object
+    video: PropTypes.object,
+    buttonRef: PropTypes.object,
+    hoverButton: PropTypes.bool,
+    unhoverButton: PropTypes.bool
+}
+
+const ShoppableVideoGroup = ({
+    target,
+    selector,
+    tooltips,
+    width,
+    scale,
+    video,
+    ctaTransform,
+    arrowTransform,
+    visibility
+}) => {
+    const ctaStyle = {
+        display: 'flex',
+        width: '0px',
+        height: '0px',
+        justifyContent: 'center',
+        alignItems: 'center',
+        transition: 'opacity 0.2s'
+    }
+
+    const ref = React.createRef()
+    const [hovered, setHovered] = useState(false)
+
+    const clickTarget = useCallback(() => {
+        if (ref.current) {
+            ref.current.click()
+        }
+    }, [ref])
+
+    const hoverButton = useCallback(() => {
+        setHovered(true)
+    })
+
+    const unhoverButton = useCallback(() => {
+        setHovered(false)
+    })
+
+    return (
+        <>
+            <ShoppableVideoArrow
+                transform={arrowTransform}
+                width={width}
+                clickTarget={clickTarget}
+                hovered={hovered}
+                {...visibility}
+            />
+            <Box transform={ctaTransform} {...ctaStyle} style={{...visibility}}>
+                <ShoppableVideoCta
+                    target={target}
+                    selector={selector}
+                    tooltips={tooltips}
+                    scale={scale}
+                    video={video}
+                    buttonRef={ref}
+                    hoverButton={hoverButton}
+                    unhoverButton={unhoverButton}
+                ></ShoppableVideoCta>
+            </Box>
+        </>
+    )
+}
+
+ShoppableVideoGroup.propTypes = {
+    target: PropTypes.string,
+    selector: PropTypes.string,
+    tooltips: PropTypes.array,
+    width: PropTypes.number,
+    scale: PropTypes.number,
+    video: PropTypes.object,
+    ctaTransform: PropTypes.string,
+    arrowTransform: PropTypes.string,
+    visibility: PropTypes.object
 }
 
 const ShoppableVideo = ({
@@ -409,15 +523,6 @@ const ShoppableVideo = ({
 
         videoStyle.transform = `translate(${imgPosition[0]}px, ${imgPosition[1]}px)`
 
-        const ctaStyle = {
-            display: 'flex',
-            width: '0px',
-            height: '0px',
-            justifyContent: 'center',
-            alignItems: 'center',
-            transition: 'opacity 0.2s'
-        }
-
         // Generate video elements. Inactive elements just opacity: 0
 
         let i = 0
@@ -446,23 +551,17 @@ const ShoppableVideo = ({
             const arrowTransform = ctaTransform + ` rotate(${rotate}rad)`
 
             elements.push(
-                <ShoppableVideoArrow
+                <ShoppableVideoGroup
+                    {...hotspot}
                     key={i++}
-                    transform={arrowTransform}
+                    arrowTransform={arrowTransform}
+                    ctaTransform={ctaTransform}
                     width={arrowWidth}
-                    {...visibility}
+                    visibility={visibility}
+                    tooltips={tooltips}
+                    scale={size.width / 1000}
+                    video={videoRef}
                 />
-            )
-
-            elements.push(
-                <Box key={i++} transform={ctaTransform} {...ctaStyle} style={{...visibility}}>
-                    <ShoppableVideoCta
-                        {...hotspot}
-                        tooltips={tooltips}
-                        scale={size.width / 1000}
-                        video={videoRef}
-                    ></ShoppableVideoCta>
-                </Box>
             )
         }
     }
