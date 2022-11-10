@@ -8,7 +8,6 @@ import {
     DrawerOverlay,
     DrawerContent,
     DrawerCloseButton,
-    DrawerHeader,
     DrawerBody,
     useDisclosure
 } from '@chakra-ui/react'
@@ -146,10 +145,13 @@ const ShoppableVideoArrow = ({transform, width, ...props}) => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'flex-end',
-        transformOrigin: 'center left',
+        transformOrigin: 'center left'
+    }
+
+    const dynamicStyle = {
         transform,
         width: width + 'px',
-        transition: 'opacity 0.2s'
+        ...props
     }
 
     const backgroundImage = `radial-gradient(circle, rgba(255,255,255,1) 36%, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0) 64%);`
@@ -157,11 +159,9 @@ const ShoppableVideoArrow = ({transform, width, ...props}) => {
 
     const arrowBody = {
         position: 'absolute',
-        width: width - 20 + 'px',
         marginRight: '8px',
         height: '8px',
-        backgroundImage,
-        backgroundSize
+        backgroundImage
     }
 
     const arrowHead = {
@@ -176,11 +176,18 @@ const ShoppableVideoArrow = ({transform, width, ...props}) => {
     }
 
     return (
-        <Box {...style} {...props}>
-            <Box {...arrowBody} />
+        <Box {...style} style={dynamicStyle}>
+            <Box {...arrowBody} style={{backgroundSize, width: width - 20 + 'px'}} />
             <Box {...arrowHead} />
         </Box>
     )
+}
+
+ShoppableVideoArrow.displayName = 'ShoppableVideoArrow'
+
+ShoppableVideoArrow.propTypes = {
+    transform: PropTypes.string,
+    width: PropTypes.number
 }
 
 const ShoppableVideoCta = ({target, selector, tooltips, scale, video}) => {
@@ -197,7 +204,7 @@ const ShoppableVideoCta = ({target, selector, tooltips, scale, video}) => {
     }, [onClose, video])
 
     const style = {
-        transform: `scale(${(scale - 1) * sizeBias + 1})`,
+        style: {transform: `scale(${(scale - 1) * sizeBias + 1})`},
         minWidth: 'unset',
         border: '2px solid white',
         backgroundColor: 'rgba(1, 118, 211, 0.75)',
@@ -251,8 +258,6 @@ const ShoppableVideoCta = ({target, selector, tooltips, scale, video}) => {
             return <></>
         }
         case 'contentKey': {
-            const matchTooltip = tooltips?.find((tooltip) => tooltip.key === target)
-
             return (
                 <>
                     <Button
@@ -293,7 +298,9 @@ ShoppableVideoCta.propTypes = {
     target: PropTypes.string,
     selector: PropTypes.string,
     tooltips: PropTypes.array,
-    width: PropTypes.number
+    width: PropTypes.number,
+    scale: PropTypes.number,
+    video: PropTypes.object
 }
 
 const ShoppableVideo = ({
@@ -302,12 +309,12 @@ const ShoppableVideo = ({
     videoAltText,
     seoText,
     tooltips,
+    autoplay,
     width,
     height,
     rows,
     cols,
     gap,
-    autoplay,
     ...props
 }) => {
     const target = useRef(null)
@@ -400,15 +407,7 @@ const ShoppableVideo = ({
         const tX = (x) => x * imgSize[0] + imgPosition[0]
         const tY = (y) => y * imgSize[1] + imgPosition[1]
 
-        const transformBounds = (bounds) => ({
-            x: tX(bounds.x),
-            y: tY(bounds.y),
-            w: sX(bounds.w),
-            h: sY(bounds.h)
-        })
-
         videoStyle.transform = `translate(${imgPosition[0]}px, ${imgPosition[1]}px)`
-        const minDim = Math.min(size.width, size.height)
 
         const ctaStyle = {
             display: 'flex',
@@ -456,7 +455,7 @@ const ShoppableVideo = ({
             )
 
             elements.push(
-                <Box key={i++} transform={ctaTransform} {...ctaStyle} {...visibility}>
+                <Box key={i++} transform={ctaTransform} {...ctaStyle} style={{...visibility}}>
                     <ShoppableVideoCta
                         {...hotspot}
                         tooltips={tooltips}
@@ -525,6 +524,7 @@ ShoppableVideo.propTypes = {
     videoAltText: PropTypes.string,
     seoText: PropTypes.string,
     tooltips: PropTypes.array,
+    autoplay: PropTypes.bool,
     width: PropTypes.number,
     height: PropTypes.number,
     rows: PropTypes.number,
