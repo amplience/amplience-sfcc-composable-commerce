@@ -193,6 +193,7 @@ const ShoppableVideoArrow = ({transform, width, clickTarget, hovered, ...props})
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
+        cursor: 'pointer',
         className: hovered ? 'arrowHeadHover' : 'arrowHead'
     }
 
