@@ -21,6 +21,7 @@ import {useShoppableTooltip} from '../shoppable-image'
 import Link from '../link'
 import AmplienceWrapper from '../wrapper'
 import {categoryUrlBuilder, productUrlBuilder} from '../../../utils/url'
+import {useCallback} from 'react'
 
 const Contain = styled(Box)`
     .interactive {
@@ -182,10 +183,18 @@ const ShoppableVideoArrow = ({transform, width, ...props}) => {
     )
 }
 
-const ShoppableVideoCta = ({target, selector, tooltips, scale}) => {
+const ShoppableVideoCta = ({target, selector, tooltips, scale, video}) => {
     const {isOpen, onOpen, onClose} = useDisclosure()
     const label = useShoppableTooltip(target, selector, tooltips)
     const sizeBias = 0.66
+    const [oldPause] = useState({})
+
+    const onCloseWithUnpause = useCallback(() => {
+        if (video && video.current.paused && !oldPause.paused) {
+            video.current.play()
+        }
+        onClose()
+    }, [onClose, video])
 
     const style = {
         transform: `scale(${(scale - 1) * sizeBias + 1})`,
@@ -248,6 +257,11 @@ const ShoppableVideoCta = ({target, selector, tooltips, scale}) => {
                 <>
                     <Button
                         onClick={(evt) => {
+                            const paused = video.current.paused
+                            if (!paused) {
+                                video.current.pause()
+                            }
+                            oldPause.paused = paused
                             onOpen()
                             evt.preventDefault()
                             return false
@@ -256,14 +270,11 @@ const ShoppableVideoCta = ({target, selector, tooltips, scale}) => {
                     >
                         {label}
                     </Button>
-                    <Drawer onClose={onClose} isOpen={isOpen} size="xl">
+                    <Drawer onClose={onCloseWithUnpause} isOpen={isOpen} size="xl">
                         <DrawerOverlay />
                         <DrawerContent>
                             <DrawerBody>
                                 <DrawerCloseButton />
-                                {matchTooltip?.value && (
-                                    <DrawerHeader>{matchTooltip?.value}</DrawerHeader>
-                                )}
                                 <AmplienceWrapper fetch={{key: target}}></AmplienceWrapper>
                             </DrawerBody>
                         </DrawerContent>
@@ -446,7 +457,12 @@ const ShoppableVideo = ({
 
             elements.push(
                 <Box key={i++} transform={ctaTransform} {...ctaStyle} {...visibility}>
-                    <ShoppableVideoCta {...hotspot} tooltips={tooltips} scale={size.width / 1000}></ShoppableVideoCta>
+                    <ShoppableVideoCta
+                        {...hotspot}
+                        tooltips={tooltips}
+                        scale={size.width / 1000}
+                        video={videoRef}
+                    ></ShoppableVideoCta>
                 </Box>
             )
         }
