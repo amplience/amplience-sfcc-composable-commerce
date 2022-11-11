@@ -64,6 +64,10 @@ const pointLerp = (p1, p2, t) => {
 
 const getHotspotPoint = (time, hotspot) => {
     // Determine the range which we're in on the hotspot timeline.
+    if (!hotspot?.timeline?.points) {
+        return undefined
+    }
+
     const timeline = hotspot.timeline.points
 
     if (timeline.length == 0 || timeline[0].t > time) {
@@ -95,6 +99,10 @@ const getHotspotPoint = (time, hotspot) => {
 
 const getHotspotCta = (time, hotspot) => {
     // Find the latest cta position that is behind or equal to the current time.
+    if (!hotspot?.timeline?.points) {
+        return undefined
+    }
+
     const timeline = hotspot.timeline.points
 
     for (let i = timeline.length - 1; i >= 0; i--) {
@@ -400,46 +408,56 @@ const ShoppableVideo = ({
     const [time, setTime] = useState(0)
 
     useLayoutEffect(() => {
-        setSize(target.current.getBoundingClientRect())
+        if (target?.current) {
+            setSize(target.current.getBoundingClientRect())
+        }
     }, [target])
 
     useResizeObserver(target, (entry) => setSize(entry.contentRect))
 
     useEffect(() => {
-        // Bind video events.
-        const video = videoRef.current
-        const videoToken = {active: true, video, playing: false, setTime, offset: 0}
+        if (videoRef?.current) {
+            // Bind video events.
+            const video = videoRef.current
+            const videoToken = {active: true, video, playing: false, setTime, offset: 0}
 
-        video.onplay = () => (videoToken.playing = true)
-        video.onpause = () => (videoToken.playing = false)
-        video.onended = () => (videoToken.playing = false)
+            video.onplay = () => (videoToken.playing = true)
+            video.onpause = () => (videoToken.playing = false)
+            video.onended = () => (videoToken.playing = false)
 
-        videoLoop(videoToken)
+            videoLoop(videoToken)
 
-        return () => (videoToken.active = false)
+            return () => (videoToken.active = false)
+        }
     }, [videoRef, setTime])
 
     useEffect(async () => {
-        let cancelled = false
+        if (shoppableVideo?.video) {
+            let cancelled = false
 
-        // Determine the image size.
-        let response = await fetch(getVideoUrl(shoppableVideo.video) + '.json?metadata=true')
+            // Determine the image size.
+            let response = await fetch(getVideoUrl(shoppableVideo.video) + '.json?metadata=true')
 
-        if (cancelled) return
+            if (cancelled) return
 
-        let json = await response.json()
+            let json = await response.json()
 
-        if (cancelled) return
+            if (cancelled) return
 
-        const media = selectHQMediaSubset(json.media)
+            const media = selectHQMediaSubset(json.media)
 
-        setVideoMedia(media)
-        setVideoSize({width: media[0].width, height: media[0].height})
+            setVideoMedia(media)
+            setVideoSize({width: media[0].width, height: media[0].height})
 
-        return () => {
-            cancelled = true
+            return () => {
+                cancelled = true
+            }
         }
-    }, [shoppableVideo.video])
+    }, [shoppableVideo?.video])
+
+    if (!shoppableVideo?.video) {
+        return <></>
+    }
 
     const sources = (videoMedia ?? []).map((item, i) => (
         <source src={item.src} type={`video/${formatToHtml(item.format)}`} key={i} />
@@ -487,7 +505,8 @@ const ShoppableVideo = ({
         // Generate video elements. Inactive elements just opacity: 0
 
         let i = 0
-        for (let hotspot of shoppableVideo.hotspots) {
+        const hotspots = shoppableVideo.hotspots ?? []
+        for (let hotspot of hotspots) {
             const point = getHotspotPoint(time, hotspot)
             const ctaPoint = getHotspotCta(time, hotspot)
 
