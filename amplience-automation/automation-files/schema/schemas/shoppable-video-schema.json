@@ -19,7 +19,7 @@
 				"name": "help",
 				"params": {
 					"title": "Help with Shoppable Target & Selector",
-					"message": "The Shoppable Video extension allows you to tie hotspots within a video to links, tooltips and popups via the string fields 'target' and 'selector'. In this project, the selector defines what type of content is associated, and the target defines the specific content.\n- **product:** Links to an SFCC product by ID. On hover, will show the product name and price.\n    - *Example:* `78916783M`\n- **category:** Links to an SFCC category by ID. On hover, will show the category name.\n    - *Example:* `newarrivals-women`\n- **link:** A link to any URL. Can be relative or absolute.\n    - *Examples:* `/cart`, `https://amplience.com`\n- **page:** Links to an amplience content page.\n    - *Example:* `faq`\n- **tooltip:** A tooltip that does nothing on click.\n    - *Example:* `tooltip-key`\n- **contentKey:** Opens a drawer displaying amplience content with the specified key.\n    - *Example:* `hero`\n### Tooltips\nFor any selector, you can define a custom localized tooltip using the array below that overrides the default one. The `key` of the tooltip should match whatever the `target` is in the shoppable video, and the value is what you want to appear in the tooltip. The `tooltip` selector will _only_ display a tooltip if the text is defined here."	
+					"message": "The Shoppable Video extension allows you to tie hotspots within a video to links, captions and popups via the string fields 'target' and 'selector'. In this project, the selector defines what type of content is associated, and the target defines the specific content.\n- **product:** Links to an SFCC product by ID. On hover, will show the product name and price.\n    - *Example:* `78916783M`\n- **category:** Links to an SFCC category by ID. On hover, will show the category name.\n    - *Example:* `newarrivals-women`\n- **link:** A link to any URL. Can be relative or absolute.\n    - *Examples:* `/cart`, `https://amplience.com`\n- **page:** Links to an amplience content page.\n    - *Example:* `faq`\n- **tooltip:** A caption that does nothing on click.\n    - *Example:* `tooltip-key`\n- **contentKey:** Opens a drawer displaying amplience content with the specified key.\n    - *Example:* `hero`\n### Call to Action\nThe call to action parameters within the video are unused - only the enabled flag, target and selector matter. You can set the CTA caption to any value you want to better match what it will be in the render.\n### Captions\nFor any selector, you can define a custom localized captions using the array below that overrides the default one. The `key` of the caption should match whatever the `target` is in the shoppable video, and the value is what you want to appear in the caption. The `tooltip` selector will _only_ display a caption if the text is defined here."
 				}
 			}
 		},
@@ -90,16 +90,16 @@
 				}
 			}
 		},
-		"tooltips": {
-			"title": "Tooltips",
-			"description": "Custom tooltips used in the Shoppable Video",
+		"captions": {
+			"title": "Captions",
+			"description": "Custom captions used in the Shoppable Video",
 			"type": "array",
 			"items": {
 				"type": "object",
 				"properties": {
 					"key": {
-						"title": "Tooltip Key",
-						"description": "The key used to identify this tooltip text, referenced by the Target.",
+						"title": "Caption Key",
+						"description": "The key used to identify this caption text, referenced by the Target.",
 						"type": "string"
 					},
 					"value": {
@@ -114,7 +114,7 @@
 									"properties": {
 										"value": {
 											"type": "string",
-											"title": "Tooltip Text",
+											"title": "Caption Text",
 											"description": "Text that appears when the user hovers the hotspot or polygon.",
 											"minLength": 0,
 											"maxLength": 100
