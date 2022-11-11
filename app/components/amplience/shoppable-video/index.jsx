@@ -187,7 +187,7 @@ ShoppableVideoArrow.propTypes = {
 const ShoppableVideoCta = ({
     target,
     selector,
-    tooltips,
+    captions,
     scale,
     video,
     buttonRef,
@@ -195,7 +195,7 @@ const ShoppableVideoCta = ({
     unhoverButton
 }) => {
     const {isOpen, onOpen, onClose} = useDisclosure()
-    const label = useShoppableTooltip(target, selector, tooltips)
+    const label = useShoppableTooltip(target, selector, captions)
     const sizeBias = 0.66
     const [oldPause] = useState({})
 
@@ -302,7 +302,7 @@ ShoppableVideoCta.displayName = 'ShoppableVideoCta'
 ShoppableVideoCta.propTypes = {
     target: PropTypes.string,
     selector: PropTypes.string,
-    tooltips: PropTypes.array,
+    captions: PropTypes.array,
     width: PropTypes.number,
     scale: PropTypes.number,
     video: PropTypes.object,
@@ -314,7 +314,7 @@ ShoppableVideoCta.propTypes = {
 const ShoppableVideoGroup = ({
     target,
     selector,
-    tooltips,
+    captions,
     width,
     scale,
     video,
@@ -354,7 +354,7 @@ const ShoppableVideoGroup = ({
                 <ShoppableVideoCta
                     target={target}
                     selector={selector}
-                    tooltips={tooltips}
+                    captions={captions}
                     scale={scale}
                     video={video}
                     buttonRef={ref}
@@ -369,7 +369,7 @@ const ShoppableVideoGroup = ({
 ShoppableVideoGroup.propTypes = {
     target: PropTypes.string,
     selector: PropTypes.string,
-    tooltips: PropTypes.array,
+    captions: PropTypes.array,
     width: PropTypes.number,
     scale: PropTypes.number,
     video: PropTypes.object,
@@ -383,7 +383,7 @@ const ShoppableVideo = ({
     shoppableVideo,
     videoAltText,
     seoText,
-    tooltips,
+    captions,
     autoplay,
     width,
     height,
@@ -519,7 +519,7 @@ const ShoppableVideo = ({
                     ctaTransform={ctaTransform}
                     width={arrowWidth}
                     visibility={visibility}
-                    tooltips={tooltips}
+                    captions={captions}
                     scale={size.width / 1000}
                     video={videoRef}
                 />
@@ -583,7 +583,7 @@ ShoppableVideo.propTypes = {
     shoppableVideo: PropTypes.object,
     videoAltText: PropTypes.string,
     seoText: PropTypes.string,
-    tooltips: PropTypes.array,
+    captions: PropTypes.array,
     autoplay: PropTypes.bool,
     width: PropTypes.number,
     height: PropTypes.number,
