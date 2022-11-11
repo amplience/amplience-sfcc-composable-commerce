@@ -9,7 +9,8 @@ import {
     DrawerContent,
     DrawerCloseButton,
     DrawerBody,
-    useDisclosure
+    useDisclosure,
+    useMultiStyleConfig
 } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 import {useLayoutEffect} from 'react'
@@ -148,14 +149,9 @@ const videoLoop = (token) => {
 }
 
 const ShoppableVideoArrow = ({transform, width, clickTarget, hovered, ...props}) => {
-    const style = {
-        height: '20px',
-        margin: '-10px 0px',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'flex-end',
-        transformOrigin: 'center left'
-    }
+    const {arrowContainer, arrowBody, arrowHead, arrowHeadContainer} = useMultiStyleConfig(
+        'ShoppableVideo'
+    )
 
     const dynamicStyle = {
         transform,
@@ -163,44 +159,16 @@ const ShoppableVideoArrow = ({transform, width, clickTarget, hovered, ...props})
         ...props
     }
 
-    const backgroundImage = `radial-gradient(circle, rgba(255,255,255,1) 36%, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0) 64%);`
     const backgroundSize = `${(10 / width) * 100}%`
 
-    const arrowBody = {
-        position: 'absolute',
-        marginRight: '8px',
-        height: '8px',
-        backgroundImage
-    }
-
-    const arrowHead = {
-        transform: 'rotate(45deg)',
-        backgroundColor: 'white',
-        backgroundClip: 'padding-box',
-        width: '16px',
-        height: '16px',
-        margin: '-8px',
-        borderRadius: '8px',
-        border: '2px solid rgba(0, 0, 0, 0.3)'
-    }
-
-    const arrowHeadContainer = {
-        transition: 'transform 0.3s',
-        width: '48px',
-        height: '48px',
-        margin: '-24px',
-        borderRadius: '24px',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        cursor: 'pointer',
-        className: hovered ? 'arrowHeadHover' : 'arrowHead'
-    }
-
     return (
-        <Box {...style} style={dynamicStyle}>
+        <Box {...arrowContainer} style={dynamicStyle}>
             <Box {...arrowBody} style={{backgroundSize, width: width - 20 + 'px'}} />
-            <Box {...arrowHeadContainer} onClick={clickTarget}>
+            <Box
+                {...arrowHeadContainer}
+                onClick={clickTarget}
+                className={hovered ? 'arrowHeadHover' : 'arrowHead'}
+            >
                 <Box {...arrowHead} />
             </Box>
         </Box>
@@ -231,6 +199,8 @@ const ShoppableVideoCta = ({
     const sizeBias = 0.66
     const [oldPause] = useState({})
 
+    const {ctaButton} = useMultiStyleConfig('ShoppableVideo')
+
     const onCloseWithUnpause = useCallback(() => {
         if (video && video.current.paused && !oldPause.paused) {
             video.current.play()
@@ -240,10 +210,7 @@ const ShoppableVideoCta = ({
 
     const style = {
         style: {transform: `scale(${(scale - 1) * sizeBias + 1})`},
-        minWidth: 'unset',
-        border: '2px solid white',
-        backgroundColor: 'rgba(1, 118, 211, 0.75)',
-        boxShadow: '2px 4px 8px rgb(0 0 0 / 20%)',
+        ...ctaButton,
         ref: buttonRef,
         onMouseOver: hoverButton,
         onMouseOut: unhoverButton
@@ -355,14 +322,7 @@ const ShoppableVideoGroup = ({
     arrowTransform,
     visibility
 }) => {
-    const ctaStyle = {
-        display: 'flex',
-        width: '0px',
-        height: '0px',
-        justifyContent: 'center',
-        alignItems: 'center',
-        transition: 'opacity 0.2s'
-    }
+    const {ctaContainer} = useMultiStyleConfig('ShoppableVideo')
 
     const ref = React.createRef()
     const [hovered, setHovered] = useState(false)
@@ -390,7 +350,7 @@ const ShoppableVideoGroup = ({
                 hovered={hovered}
                 {...visibility}
             />
-            <Box transform={ctaTransform} {...ctaStyle} style={{...visibility}}>
+            <Box transform={ctaTransform} {...ctaContainer} style={{...visibility}}>
                 <ShoppableVideoCta
                     target={target}
                     selector={selector}
