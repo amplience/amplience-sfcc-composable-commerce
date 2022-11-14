@@ -8,6 +8,8 @@ In order to save manual entry to use this starting point we have included an aut
 
 Take the media from `amplience/media` and upload to your [Amplience Media Hub](https://ondemand.amplience.com) and publish.
 
+For any videos uploaded, you will need to assign [Video Transcoding Profiles](https://amplience.com/developers/docs/user-guides/assets/video/). 240p, 480p & 720p profiles are enabled on your account by default. Simply add the profiles to the video and once completed publish the video.
+
 > WARNING! If this is not done before importing content, you'll get errors when running the application
 
 ## Content import
