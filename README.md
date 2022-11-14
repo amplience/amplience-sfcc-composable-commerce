@@ -14,7 +14,7 @@ ___
 
 This version of the SF Retail React app integrates Amplience as the Content CMS to:
  - drive all site content, PLP in-grid content, site navigation, product page content and footer links
- - shoppable content conmponents for rich media like images and video
+ - shoppable content components for rich media like images and video
  - schedule & preview all content
  - real-time visualisation of all content
  - real-time visualisation of content sizing & placement ***within*** product listing grids
