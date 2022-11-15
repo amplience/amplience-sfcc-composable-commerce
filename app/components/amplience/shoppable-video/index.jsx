@@ -167,11 +167,9 @@ const ShoppableVideoArrow = ({transform, width, clickTarget, hovered, ...props})
         ...props
     }
 
-    const backgroundSize = `${(10 / width) * 100}%`
-
     return (
         <Box {...arrowContainer} style={dynamicStyle}>
-            <Box {...arrowBody} style={{backgroundSize, width: width - 20 + 'px'}} />
+            <Box {...arrowBody} style={{width: width - 20 + 'px'}} />
             <Box
                 {...arrowHeadContainer}
                 onClick={clickTarget}

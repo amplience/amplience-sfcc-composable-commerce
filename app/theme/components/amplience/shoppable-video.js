@@ -26,6 +26,7 @@ export default {
             position: 'absolute',
             marginRight: '8px',
             height: '8px',
+            backgroundSize: '10px 8px',
             backgroundImage:
                 'radial-gradient(circle, rgba(255,255,255,1) 36%, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0) 64%)'
         },
