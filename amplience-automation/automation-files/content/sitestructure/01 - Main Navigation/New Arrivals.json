@@ -32,7 +32,16 @@
                 "id": "81cbd4ca-e71b-40f5-b944-19d466bbde36"
             }
         },
-        "includeSFCC": true
+        "includeSFCC": true,
+        "topContent": [
+            {
+                "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference"
+                },
+                "contentType": "https://sfcc.com/components/shoppable-video",
+                "id": "6f57ec33-dab2-467e-aa59-180e3e43f9e9"
+            }
+        ]
     },
     "version": 1,
     "label": "New Arrivals",
