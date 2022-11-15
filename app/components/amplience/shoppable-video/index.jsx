@@ -26,29 +26,43 @@ import {useCallback} from 'react'
 const Contain = styled(Box)`
     @keyframes targetHover {
         0% {
-            outline-color: white;
-            outline-offset: -20px;
-            outline-width: 2px;
+            opacity: 100%;
+            border-width: 3px;
+            transform: scale(1, 1);
         }
         100% {
-            outline-color: rgba(255, 255, 255, 0);
-            outline-offset: 0px;
-            outline-width: 5px;
+            opacity: 0%;
+            border-width: 2px;
+            transform: scale(3, 3);
         }
+    }
+
+    .arrowHead::before {
+        content: '';
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        border-radius: 8px;
+        border: 3px solid white;
+        opacity: 0%;
+    }
+
+    .arrowHead:hover::before {
+        animation: targetHover 0.75s;
+        animation-iteration-count: infinite;
+    }
+
+    .arrowHeadHover::before {
+        animation: targetHover 0.75s;
+        animation-iteration-count: infinite;
     }
 
     .arrowHead:hover {
         transform: scale(1.6, 1.6);
-        animation: targetHover 0.75s;
-        animation-iteration-count: infinite;
-        outline: 1px solid transparent;
     }
 
     .arrowHeadHover {
         transform: scale(1.6, 1.6);
-        animation: targetHover 0.75s;
-        animation-iteration-count: infinite;
-        outline: 1px solid transparent;
     }
 `
 
@@ -167,15 +181,13 @@ const ShoppableVideoArrow = ({transform, width, clickTarget, hovered, ...props})
         ...props
     }
 
-    const backgroundSize = `${(10 / width) * 100}%`
-
     return (
         <Box {...arrowContainer} style={dynamicStyle}>
-            <Box {...arrowBody} style={{backgroundSize, width: width - 20 + 'px'}} />
+            <Box {...arrowBody} style={{width: width - 20 + 'px'}} />
             <Box
                 {...arrowHeadContainer}
                 onClick={clickTarget}
-                className={hovered ? 'arrowHeadHover' : 'arrowHead'}
+                className={hovered ? 'arrowHead arrowHeadHover' : 'arrowHead'}
             >
                 <Box {...arrowHead} />
             </Box>
