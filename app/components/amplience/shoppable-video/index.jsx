@@ -10,7 +10,8 @@ import {
     DrawerCloseButton,
     DrawerBody,
     useDisclosure,
-    useMultiStyleConfig
+    useMultiStyleConfig,
+    useBreakpointValue
 } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 import {useLayoutEffect} from 'react'
@@ -131,17 +132,18 @@ const getHotspotCta = (time, hotspot) => {
     return {x: 0.5, y: 0.5}
 }
 
-const selectHQMediaSubset = (media) => {
+const selectMediaSubset = (media, targetHeight) => {
     // Select the media entries with the highest bitrate for their given format.
-    // TODO: select based on video player resolution?
     const formatMap = new Map()
 
     for (const item of media) {
         const format = `${item.format}/${item['video.codec']}`
+        const diff = Math.abs(targetHeight - Number(item.height))
 
         const best = formatMap.get(format)
+        const bestDiff = Math.abs(targetHeight - Number(best?.height ?? 0))
 
-        if (!best || Number(best.bitrate) < Number(item.bitrate)) {
+        if (!best || diff < bestDiff) {
             // If the bitrate is higher or this format hasn't been seen before, add it to the thing.
             formatMap.set(format, item)
         }
@@ -327,8 +329,8 @@ ShoppableVideoCta.propTypes = {
     scale: PropTypes.number,
     video: PropTypes.object,
     buttonRef: PropTypes.object,
-    hoverButton: PropTypes.bool,
-    unhoverButton: PropTypes.bool
+    hoverButton: PropTypes.func,
+    unhoverButton: PropTypes.func
 }
 
 const ShoppableVideoGroup = ({
@@ -418,6 +420,9 @@ const ShoppableVideo = ({
     const [videoSize, setVideoSize] = useState()
     const [videoMedia, setVideoMedia] = useState()
     const [time, setTime] = useState(0)
+    const [targetRes, setTargetRes] = useState(0)
+
+    const res = Math.max(useBreakpointValue([480, 480, 720, 720]), targetRes)
 
     useLayoutEffect(() => {
         if (target?.current) {
@@ -444,6 +449,8 @@ const ShoppableVideo = ({
     }, [videoRef, setTime])
 
     useEffect(async () => {
+        setTargetRes(res)
+
         if (shoppableVideo?.video) {
             let cancelled = false
 
@@ -456,7 +463,7 @@ const ShoppableVideo = ({
 
             if (cancelled) return
 
-            const media = selectHQMediaSubset(json.media)
+            const media = selectMediaSubset(json.media, res)
 
             setVideoMedia(media)
             setVideoSize({width: media[0].width, height: media[0].height})
@@ -465,7 +472,7 @@ const ShoppableVideo = ({
                 cancelled = true
             }
         }
-    }, [shoppableVideo?.video])
+    }, [shoppableVideo?.video, res])
 
     if (!shoppableVideo?.video) {
         return <></>
@@ -570,7 +577,7 @@ const ShoppableVideo = ({
     }
 
     if (autoplay) {
-        videoStyle.autoplay = 'autoplay'
+        videoStyle.autoPlay = 'autoplay'
         videoStyle.muted = true
         videoStyle.loop = true
     } else {
