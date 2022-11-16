@@ -14,7 +14,7 @@ These interactive elements links, captions and popups by setting `targets` and `
 | **contentKey** | Delivery Key | `hero` | Opens a drawer displaying amplience content with the specified key. On Hover, will show the text "Click to Open..." |
 
 ## Keyframes
-For each interactive element you add (hotspot), you will have a new timeline object. You can add multiple keyframes for each hotspot and position the elements on the screen.
+For each interactive element you add (hotspot), you will have a new row in the timeline timeline. You can add multiple keyframes for each hotspot and position the elements on the screen.
 
 ## Captions
 For any selector, you can define a custom localized caption using the array below that overrides the default one. The `key` of the caption should match whatever the `target` is in the shoppable video, and the value is what you want to appear in the caption. The `tooltip` selector will only display a caption if the text is defined here.
@@ -41,11 +41,11 @@ If you need more fine grained control, you can zoom in on the timeline using ctr
 
 ## CTA Position
 
-![Call to Action](./media/shoppyVideoCTA.png)
+![Call to Action](./media/shoppyVideoCta.png)
 
 The Call to Action (CTA) button is where your caption for the target will display. It stays static during any period of time the hotspot is visible, so that it can easily be clicked or tapped without the user missing the button due to movement. You should place the button at a position that doesn't overlap your hotspot at any point, and is generally at an equal distance to each point in the motion to avoid the connecting line being too long.
 
-To move a hotspot, click and drag the button anywhere over the video. Take note of how the hotspot looks in the visualization, as it will appear slightly differently.
+To move a hotspot, click and drag the button anywhere over the video. Take note of how the hotspot looks in the visualization, as it will render slightly differently.
 
 ## Temporarily Hiding Hotspots
 
