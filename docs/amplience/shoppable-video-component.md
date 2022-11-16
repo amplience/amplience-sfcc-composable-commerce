@@ -55,28 +55,20 @@ By default, hotspots are visible in the time between their first keyframe and th
 
 These are useful for camera changes (make the target point disappear momentarily while the camera changes), when the target goes offscreen or when it is occluded, without needing to create another identical hotspot. The CTA can also be repositioned when a hotspot hides and reappears, so hiding is useful if you want to move it.
 
-## Setting Selectors & Targets
-
-Below are some examples of hotspot selectors and targets.
-
-![Selector & Target examples](./media/shoppyVideoSelTar.png)
-
 ## Setting Captions
-
-TODO
 
 Except for `tooltip` type hotspots, which ***MUST*** have a custom caption, there's a few examples where setting custom captions make a lot of sense. Let's take the example where you might want to link to the cart page from your hotspot:
 
-![Link Tooltip Example](./media/shoppyVideoLink.png)
+![Link Caption Example](./media/shoppyVideoLink.png)
 ![Cart Link Example](./media/shoppyVideoCartLink.png)
 
 When the hotspot appears in the video the CTA button will simply read "/cart", which is not very user friendly. This is a case where you'd want to set a custom caption. In the Caption section click the "Add Caption" button and set the key to `/cart`, which exactly matches the **target** of that hotspot, and then set any text you'd like.
 
-![Cart Custom Tooltip](./media/shoppyVideoCartTooltip.png)
+![Cart Custom Caption](./media/shoppyVideoCartCaption.png)
 
 Now the CTA button will read the text you've entered. This text may also be localised.
 
-![Cart Tooltip Updated Hover](./media/shoppyVideoCartComplete.png)
+![Cart Caption Updated Hover](./media/shoppyVideoCartComplete.png)
 
 ## Realtime Visualisation
 
