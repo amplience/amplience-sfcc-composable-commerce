@@ -8,6 +8,7 @@
                 "https://sfcc.com/components/section",
                 "https://sfcc.com/components/curated-product",
                 "https://sfcc.com/components/card-enhanced",
+                "https://sfcc.com/components/image",
                 "https://sfcc.com/components/card-list",
                 "https://sfcc.com/components/personalised-container",
                 "https://sfcc.com/components/personalised-component",
@@ -20,6 +21,7 @@
             "enum": [
                 "https://sfcc.com/components/hero",
                 "https://sfcc.com/components/card-enhanced",
+                "https://sfcc.com/components/image",
                 "https://sfcc.com/components/shoppable-image"
             ]
         },
@@ -37,6 +39,7 @@
                 "https://sfcc.com/components/personalised-component",
                 "https://sfcc.com/site/pages/content-page",
                 "https://sfcc.com/components/card-enhanced",
+                "https://sfcc.com/components/image",
                 "https://sfcc.com/components/card-list",
                 "https://sfcc.com/components/rich-text",
                 "https://sfcc.com/components/shoppable-image",
@@ -57,6 +60,7 @@
                 "https://sfcc.com/components/personalised-container",
                 "https://sfcc.com/components/personalised-component",
                 "https://sfcc.com/components/card-enhanced",
+                "https://sfcc.com/components/image",
                 "https://sfcc.com/components/card-list",
                 "https://sfcc.com/components/rich-text",
                 "https://sfcc.com/components/shoppable-image",
@@ -74,6 +78,7 @@
                 "https://sfcc.com/components/personalised-container",
                 "https://sfcc.com/components/personalised-component",
                 "https://sfcc.com/components/card-enhanced",
+                "https://sfcc.com/components/image",
                 "https://sfcc.com/components/card-list",
                 "https://sfcc.com/components/rich-text",
                 "https://sfcc.com/components/shoppable-image",
@@ -445,6 +450,7 @@
                                 "contentType": {
                                     "enum": [
                                         "https://sfcc.com/components/card-enhanced",
+                                        "https://sfcc.com/components/image",
                                         "https://sfcc.com/components/hero",
                                         "https://sfcc.com/components/personalised-ingrid-component",
                                         "https://sfcc.com/components/shoppable-image"

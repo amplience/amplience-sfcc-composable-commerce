@@ -55,6 +55,7 @@ import ImageGallery from './components/project/image-gallery'
 import PreviewHeader from './components/amplience/preview-header'
 import AmplienceHeader from './components/amplience/header'
 import CardEnhanced from './components/amplience/card-enhanced'
+import Image from './components/amplience/image'
 import GridLock from './components/amplience/grid-lock'
 import Hero from './components/amplience/hero'
 import AmplienceProductTile from './components/amplience/product-tile'
@@ -114,6 +115,7 @@ const overrides = {
         AmplienceHeader,
         AmplienceListMenu: ListMenu,
         CardEnhanced,
+        Image,
         GridLock,
         Hero,
         AmplienceProductTile,
