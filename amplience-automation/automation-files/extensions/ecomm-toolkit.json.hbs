@@ -2,7 +2,7 @@
     "name": "ecomm-toolkit",
     "label": "eCommerce Toolkit",
     "description": "",
-    "url": "https://ecomm-toolkit.dc-demostore.com/",
+    "url": "https://dc-extension-ecomm-toolkit.vercel.app/",
     "height": 200,
     "enabledForAllContentTypes": false,
     "category": "CONTENT_FIELD",
@@ -35,6 +35,18 @@
         {
             "label": "Category - Single Select Tree - enforced string",
             "body": "{\n  \"title\": \"Category\",\n  \"description\": \"Single-select Category Tree and store ID as string\",\n  \"type\": \"string\",\n  \"pattern\": \"category/.*\",\n  \"ui:extension\": {\n    \"name\": \"swiss-army-knife\",\n    \"params\": {\n      \"label\": \"Category\",\n      \"view\": \"tree\",\n      \"data\": \"category\",\n      \"type\": \"string\"\n    }\n  }\n}"
+        },
+        {
+            "label": "Product Selector - Single String",
+            "body": "{\n  \"title\": \"Product Selector (string)\",\n  \"description\": \"Single-select Category and store ID as string\",\n  \"type\": \"string\",\n  \"ui:extension\": {\n    \"name\": \"ecomm-toolkit\",\n    \"params\": {\n      \"label\": \"Search By Category\",\n      \"view\": \"product\",\n      \"data\": \"product\",\n      \"type\": \"string\"\n    }\n  }\n}"
+        },
+        {
+            "label": "Product Selector - Single Enforced String",
+            "body": "{\n  \"title\": \"Product Selector (string)\",\n  \"description\": \"Single-select Category and store ID as string\",\n  \"type\": \"string\",\n  \"pattern\": \"pdp/content/.*\",\n  \"ui:extension\": {\n    \"name\": \"ecomm-toolkit\",\n    \"params\": {\n      \"label\": \"Search By Category\",\n      \"view\": \"product\",\n      \"data\": \"product\",\n      \"type\": \"string\"\n    }\n  }\n}"
+        },
+        {
+            "label": "Product Selector -  ID String Array",
+            "body": "{\n  \"title\": \"Product Selector (strings)\",\n  \"description\": \"Single-select Category and store ID as string\",\n  \"type\": \"array\",\n  \"items\": {\n    \"type\": \"string\"\n  },\n  \"ui:extension\": {\n    \"name\": \"ecomm-toolkit\",\n    \"params\": {\n      \"label\": \"Search By Category\",\n      \"view\": \"product\",\n      \"data\": \"product\",\n      \"type\": \"strings\"\n    }\n  }\n}"
         }
     ],
     "settings": "{\"API\":{\"READ\":true,\"EDIT\":true},\"SANDBOX\":{\"SAME_ORIGIN\":true,\"MODALS\":false,\"NAVIGATION\":false,\"POPUPS\":false,\"POPUP_ESCAPE_SANDBOX\":false,\"DOWNLOADS\":false,\"FORMS\":false}}",
