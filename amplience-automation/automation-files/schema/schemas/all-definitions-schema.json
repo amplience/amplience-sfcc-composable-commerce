@@ -863,97 +863,99 @@
             }
         },
         "shoppableVideo": {
-			"type": "object",
-			"properties": {
-				"video": {
-					"title": "Video",
-					"description": "The base video that the shoppable video elements are for.",
-					"allOf": [
-						{ "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/video-link" }
-					]
-				},
-				"hotspots": {
-					"title": "Hotspots",
-					"description": "Interactable hotspots defined on the video. Each hotspot has a list of positions to move to at given times in the video.",
-					"type": "array",
-					"items": {
-						"type": "object",
-						"properties": {
-							"timeline": {
-								"title": "Timeline",
-								"description": "A timeline containing locations for the hotspot at different time points.",
-								"type": "object",
-								"properties": {
-									"points": {
-										"title": "Points",
-										"description": "A list of points, sorted by time.",
-										"type": "array",
-										"items": {
-											"type": "object",
-											"properties": {
-												"t": {
-													"title": "Time (s)",
-													"description": "The time (in seconds) of this timepoint.",
-													"type": "number"
-												},
-												"p": {
-													"title": "Position",
-													"description": "The position of the hotspot at the given time. In normalized range 0-1.",
-													"type": "object",
-													"properties": {
-														"x": {
-															"type": "number"
-														},
-														"y": {
-															"type": "number"
-														}
-													}
-												},
-												"cta": {
-													"title": "Call-to-action Position",
-													"description": "The position of the call to action starting at the given time. If undefined, use the last cta position that was set.",
-													"type": "object",
-													"properties": {
-														"x": {
-															"type": "number"
-														},
-														"y": {
-															"type": "number"
-														}
-													}
-												},
-												"e": {
-													"title": "End Visible Section",
-													"description": "When true, the hotspot will become invisible after this timepoint. (until the end or another timepoint)",
-													"type": "boolean"
-												}
-											}
-										}
-									}
-								}
-							},
-							"id": {
-								"title": "ID",
-								"description": "Unique idendifier for this hotspot.",
-								"type": "string"
-							},
-							"selector": {
-								"title": "Selector",
-								"description": "The selector associated with this hotspot.",
-								"type": "string"
-							},
-							"target": {
-								"title": "Target",
-								"description": "The target associated with this hotspot.",
-								"type": "string"
-							}
-						}
-					}
-				}
-			},
-			"ui:extension": {
-				"name": "shoppable-video"
-			}
-		}
+            "type": "object",
+            "properties": {
+                "video": {
+                    "title": "Video",
+                    "description": "The base video that the shoppable video elements are for.",
+                    "allOf": [
+                        {
+                            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/video-link"
+                        }
+                    ]
+                },
+                "hotspots": {
+                    "title": "Hotspots",
+                    "description": "Interactable hotspots defined on the video. Each hotspot has a list of positions to move to at given times in the video.",
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "timeline": {
+                                "title": "Timeline",
+                                "description": "A timeline containing locations for the hotspot at different time points.",
+                                "type": "object",
+                                "properties": {
+                                    "points": {
+                                        "title": "Points",
+                                        "description": "A list of points, sorted by time.",
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "t": {
+                                                    "title": "Time (s)",
+                                                    "description": "The time (in seconds) of this timepoint.",
+                                                    "type": "number"
+                                                },
+                                                "p": {
+                                                    "title": "Position",
+                                                    "description": "The position of the hotspot at the given time. In normalized range 0-1.",
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "x": {
+                                                            "type": "number"
+                                                        },
+                                                        "y": {
+                                                            "type": "number"
+                                                        }
+                                                    }
+                                                },
+                                                "cta": {
+                                                    "title": "Call-to-action Position",
+                                                    "description": "The position of the call to action starting at the given time. If undefined, use the last cta position that was set.",
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "x": {
+                                                            "type": "number"
+                                                        },
+                                                        "y": {
+                                                            "type": "number"
+                                                        }
+                                                    }
+                                                },
+                                                "e": {
+                                                    "title": "End Visible Section",
+                                                    "description": "When true, the hotspot will become invisible after this timepoint. (until the end or another timepoint)",
+                                                    "type": "boolean"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "id": {
+                                "title": "ID",
+                                "description": "Unique idendifier for this hotspot.",
+                                "type": "string"
+                            },
+                            "selector": {
+                                "title": "Selector",
+                                "description": "The selector associated with this hotspot.",
+                                "type": "string"
+                            },
+                            "target": {
+                                "title": "Target",
+                                "description": "The target associated with this hotspot.",
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "ui:extension": {
+                "name": "shoppable-video"
+            }
+        }
     }
 }
