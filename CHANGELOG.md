@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.10.0](https://github.com/amplience/amplience-sfcc-composable-commerce/compare/v1.9.1...v1.10.0) (2022-11-24)
+
+
+### Features
+
+* add dotted styling for shoppable video ([c44412d](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/c44412d8c7edc8fbdb45d55d6800942110c51139))
+* add point interactions ([0effe77](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/0effe77c844758061412bd7c3bb124e73492be51))
+* automatic aspect sizing for shoppable video ([dbac1e5](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/dbac1e5588a48a566cddc1ff8f3e95754073377a))
+* change cta size based on width ([47420af](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/47420af2f5459049c776b089229e9c47e2e94388))
+* change cursor to pointer when hovering target ([6ba88ce](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/6ba88cea410f1f88d9479203826e4b1ac80bbef3))
+* pause video when opening popover content ([1f996de](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/1f996dee4675d06bf2253990b95e9813c00cb248))
+* select video resolution based on breakpoint ([4e64fc2](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/4e64fc2f0c67dc1ceee974edbad221ff64c792d1))
+* use theme for shoppable video ([5bca7f5](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/5bca7f50d26a1897561ff18620ebf9423f1512fc))
+
+
+### Bug Fixes
+
+* address feedback ([378f176](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/378f176de23e5a40d41451b0818a93e7329cb3c1))
+* alternate strategy for pulsing animation on shoppable video ([686936a](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/686936a64561df3a74d12630b9e3002383b6794e))
+* escape brackets on shoppable video hbs ([fbd5d28](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/fbd5d28cc4c79e889466e8e1963db61bd093d99f))
+* fix crashing when making new shoppable video ([5f536f2](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/5f536f282ba3d2c5ab8574132b27762352be2d82))
+* fix minor issues ([23c5c3a](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/23c5c3a3f3df16016242a3d09c38420106d8483d))
+* fix shoppable image dot line on safari ([b08346a](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/b08346ad793eee521d22eb140aba60eed7ca6316))
+* NOVADEV-962 remove rich-text.css ([657f520](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/657f520e586184fcb5237642d244f70bd49c7701))
+* product tile bug on safari ([5947d5a](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/5947d5a4b2bdf6dca954057e97084cfaec185d64))
+
 ### [1.9.1](https://github.com/amplience/amplience-sfcc-composable-commerce/compare/v1.9.0...v1.9.1) (2022-11-08)
 
 
