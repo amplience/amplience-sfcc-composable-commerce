@@ -1,0 +1,22 @@
+{
+    "name": "shoppable-video",
+    "label": "Shoppable Video",
+    "description": "Shoppable Video Extension",
+    "url": "https://shoppable-video.extensions.content.amplience.net",
+    "height": 200,
+    "enabledForAllContentTypes": false,
+    "category": "CONTENT_FIELD",
+    "parameters": "{}",
+    "snippets": [
+        {
+            "label": "Shoppable Video",
+            "body": "{\n    \"shoppableVideo\": {\n        \"title\": \"Shoppable Video\",\n        \"description\": \"A video enriched with timed, animated hotspots that can be used for user interaction.\",\n        \"allOf\": [\n            { \"$ref\": \"https://sfcc.com/libs/all-definitions#/definitions/shoppableVideo\" }\n        ]\n    }\n}"
+        }
+    ],
+    "settings": "{\"API\":{\"READ\":false,\"EDIT\":false},\"SANDBOX\":{\"SAME_ORIGIN\":true,\"MODALS\":false,\"NAVIGATION\":false,\"POPUPS\":true,\"POPUP_ESCAPE_SANDBOX\":false,\"DOWNLOADS\":false,\"FORMS\":false}}",
+    "status": "ACTIVE",
+    "createdBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+    "createdDate": "2022-10-03T10:33:51.764Z",
+    "lastModifiedBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+    "lastModifiedDate": "2022-10-03T10:57:31.535Z"
+}

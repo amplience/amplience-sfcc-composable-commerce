@@ -18,6 +18,7 @@ import AdditionalInformation from '../toolbar/additionalInformation'
 import AmplienceRichText from '../rich-text'
 import CardList from '../card-list'
 import {useLocation} from 'react-router-dom'
+import ShoppableVideo from '../shoppable-video'
 
 const Blank = () => <></>
 
@@ -31,6 +32,7 @@ const componentsMapping = {
     'https://sfcc.com/components/personalised-ingrid-component': PersonalisedComponent,
     'https://sfcc.com/components/personalised-container': PersonalisedContainer,
     'https://sfcc.com/components/shoppable-image': ShoppableImage,
+    'https://sfcc.com/components/shoppable-video': ShoppableVideo,
     'https://sfcc.com/slots/flexible-list': flexibleListSlot,
     'https://sfcc.com/slots/personalised-slot': flexibleListSlot,
     'https://sfcc.com/components/card-list': CardList,

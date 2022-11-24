@@ -67,7 +67,7 @@ When you hover over the the bowtie hotspot, the tooltip will simply read "/cart"
 
 ![Cart Custom Tooltip](./media/shoppyCartTooltip.png)
 
-Now when you hover over that spot it will read the text you've entered. THis text may also be localised.
+Now when you hover over that spot it will read the text you've entered. This text may also be localised.
 
 ![Cart Tooltip Updated Hover](./media/shoppyCartComplete.png)
 

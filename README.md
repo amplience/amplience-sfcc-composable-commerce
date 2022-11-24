@@ -14,6 +14,7 @@ ___
 
 This version of the SF Retail React app integrates Amplience as the Content CMS to:
  - drive all site content, PLP in-grid content, site navigation, product page content and footer links
+ - shoppable content components for rich media like images and video
  - schedule & preview all content
  - real-time visualisation of all content
  - real-time visualisation of content sizing & placement ***within*** product listing grids
@@ -49,6 +50,7 @@ This version of the SF Retail React app integrates Amplience as the Content CMS 
 * [Amplience Components List](./docs/amplience/amplience-components-list.md)
   * [AmplienceWrapper Component specifics](./docs/amplience/ampliencewrapper-component.md)
   * [Shoppable Image specifics](docs/amplience/shoppable-image-component.md)
+  * [Shoppable Video specifics](docs/amplience/shoppable-video-component.md)
 * [Toolbar Framework](docs/amplience/toolbar-framework.md)
 
 > Note: This code is built against the code version @latest at the time which was PWAKit v2.3.0 released on November 7th 2022: https://github.com/SalesforceCommerceCloud/pwa-kit/releases/tag/v2.3.0

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import {Box, Text, Heading, Flex, Center, useMultiStyleConfig, Icon} from '@chakra-ui/react'
 import Link from '../link'
 import styled from '@emotion/styled'
-import { LinkIcon } from '@chakra-ui/icons'
+import {LinkIcon} from '@chakra-ui/icons'
 
 const Contain = styled(Link)`
     .text-box {

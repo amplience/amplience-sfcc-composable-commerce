@@ -12,7 +12,8 @@
                 "https://sfcc.com/components/personalised-container",
                 "https://sfcc.com/components/personalised-component",
                 "https://sfcc.com/components/rich-text",
-                "https://sfcc.com/components/shoppable-image"
+                "https://sfcc.com/components/shoppable-image",
+                "https://sfcc.com/components/shoppable-video"
             ]
         },
         "anyInGridComponent": {
@@ -38,7 +39,8 @@
                 "https://sfcc.com/components/card-enhanced",
                 "https://sfcc.com/components/card-list",
                 "https://sfcc.com/components/rich-text",
-                "https://sfcc.com/components/shoppable-image"
+                "https://sfcc.com/components/shoppable-image",
+                "https://sfcc.com/components/shoppable-video"
             ]
         },
         "anySlot": {
@@ -58,6 +60,7 @@
                 "https://sfcc.com/components/card-list",
                 "https://sfcc.com/components/rich-text",
                 "https://sfcc.com/components/shoppable-image",
+                "https://sfcc.com/components/shoppable-video",
                 "https://sfcc.com/site/pages/content-page",
                 "https://sfcc.com/slots/flexible-list",
                 "https://sfcc.com/slots/personalised-slot"
@@ -74,6 +77,7 @@
                 "https://sfcc.com/components/card-list",
                 "https://sfcc.com/components/rich-text",
                 "https://sfcc.com/components/shoppable-image",
+                "https://sfcc.com/components/shoppable-video",
                 "https://sfcc.com/slots/flexible-list",
                 "https://sfcc.com/slots/personalised-slot"
             ]
@@ -235,7 +239,8 @@
                                 "https://sfcc.com/components/card-list",
                                 "https://sfcc.com/components/personalised-container",
                                 "https://sfcc.com/components/personalised-component",
-                                "https://sfcc.com/components/shoppable-image"
+                                "https://sfcc.com/components/shoppable-image",
+                                "https://sfcc.com/components/shoppable-video"
                             ],
                             "contentTypeSettings": [
                                 {
@@ -274,6 +279,11 @@
                                     "id": "https://sfcc.com/components/shoppable-image",
                                     "icon": "https://sfcccomposable.a.bigcontent.io/v1/static/icon-component-shoppable-image",
                                     "card": "https://bigcontent.io/cms/cards/photo/index.html?image=/shoppableImage/image&imageAlt=/shoppableImage/imageAltText&src=%2F%2F{{vse.domain}}%2Fcms%2Fcontent%2Fquery%3FfullBodyObject%3Dtrue%26query%3D%257B%2522sys.iri%2522%253A%2522http%253A%252F%252Fcontent.cms.amplience.com%252F{{content.sys.id}}%2522%257D%26scope%3Dtree%26store%3Dstaging"
+                                },
+                                {
+                                    "id": "https://sfcc.com/components/shoppable-video",
+                                    "icon": "https://sfcccomposable.a.bigcontent.io/v1/static/icon-component-shoppable-video",
+                                    "card": "https://bigcontent.io/cms/cards/summary-photo/index.html?headline=/title/values/0/value&image=/shoppableVideo/video&imageAlt=/videoAltText/values/0/value&src=%2F%2F{{vse.domain}}%2Fcms%2Fcontent%2Fquery%3FfullBodyObject%3Dtrue%26query%3D%257B%2522sys.iri%2522%253A%2522http%253A%252F%252Fcontent.cms.amplience.com%252F{{content.sys.id}}%2522%257D%26scope%3Dtree%26store%3Dstaging"
                                 }
                             ]
                         },
@@ -850,6 +860,101 @@
             },
             "ui:extension": {
                 "name": "shoppable-image"
+            }
+        },
+        "shoppableVideo": {
+            "type": "object",
+            "properties": {
+                "video": {
+                    "title": "Video",
+                    "description": "The base video that the shoppable video elements are for.",
+                    "allOf": [
+                        {
+                            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/video-link"
+                        }
+                    ]
+                },
+                "hotspots": {
+                    "title": "Hotspots",
+                    "description": "Interactable hotspots defined on the video. Each hotspot has a list of positions to move to at given times in the video.",
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "timeline": {
+                                "title": "Timeline",
+                                "description": "A timeline containing locations for the hotspot at different time points.",
+                                "type": "object",
+                                "properties": {
+                                    "points": {
+                                        "title": "Points",
+                                        "description": "A list of points, sorted by time.",
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "t": {
+                                                    "title": "Time (s)",
+                                                    "description": "The time (in seconds) of this timepoint.",
+                                                    "type": "number"
+                                                },
+                                                "p": {
+                                                    "title": "Position",
+                                                    "description": "The position of the hotspot at the given time. In normalized range 0-1.",
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "x": {
+                                                            "type": "number"
+                                                        },
+                                                        "y": {
+                                                            "type": "number"
+                                                        }
+                                                    }
+                                                },
+                                                "cta": {
+                                                    "title": "Call-to-action Position",
+                                                    "description": "The position of the call to action starting at the given time. If undefined, use the last cta position that was set.",
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "x": {
+                                                            "type": "number"
+                                                        },
+                                                        "y": {
+                                                            "type": "number"
+                                                        }
+                                                    }
+                                                },
+                                                "e": {
+                                                    "title": "End Visible Section",
+                                                    "description": "When true, the hotspot will become invisible after this timepoint. (until the end or another timepoint)",
+                                                    "type": "boolean"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "id": {
+                                "title": "ID",
+                                "description": "Unique idendifier for this hotspot.",
+                                "type": "string"
+                            },
+                            "selector": {
+                                "title": "Selector",
+                                "description": "The selector associated with this hotspot.",
+                                "type": "string"
+                            },
+                            "target": {
+                                "title": "Target",
+                                "description": "The target associated with this hotspot.",
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "ui:extension": {
+                "name": "shoppable-video"
             }
         }
     }

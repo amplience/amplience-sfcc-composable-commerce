@@ -61,6 +61,7 @@ const {handler} = runtime.createHandler(options, (app) => {
                         "'unsafe-eval'",
                         '*.cdn.content.amplience.net',
                         'cdn.media.amplience.net',
+                        'cdn.static.amplience.net',
                         '*.staging.bigcontent.io'
                     ],
                     'frame-ancestors': ["'self'", '*.amplience.net'],
@@ -91,6 +92,7 @@ const {handler} = runtime.createHandler(options, (app) => {
     })
     app.get('/robots.txt', runtime.serveStaticFile('static/robots.txt'))
     app.get('/favicon.ico', runtime.serveStaticFile('static/ico/favicon.ico'))
+
     app.get('/worker.js(.map)?', runtime.serveServiceWorker)
     app.get('*', runtime.render)
 })

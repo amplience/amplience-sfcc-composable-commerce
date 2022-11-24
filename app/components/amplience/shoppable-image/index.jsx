@@ -76,20 +76,10 @@ const Polygon = styled(Box)`
     animation: gradient 7s ease infinite;
 `
 
-const ShoppableImageInteractable = ({
-    target,
-    selector,
-    tooltips,
-    tooltipPlacement,
-    children,
-    transform
-}) => {
+export const useShoppableTooltip = (target, selector, tooltips) => {
     const matchTooltip = tooltips?.find((tooltip) => tooltip.key === target)
     const api = useCommerceAPI()
     const intl = useIntl()
-
-    const {isOpen, onOpen, onClose} = useDisclosure()
-    const tProps = {placement: tooltipPlacement ?? 'bottom'}
 
     let defaultTooltip = target
     switch (selector) {
@@ -156,7 +146,20 @@ const ShoppableImageInteractable = ({
         return () => (useResult = false)
     }, [selector, target])
 
-    const label = matchTooltip?.value ?? tooltip
+    return matchTooltip?.value ?? tooltip
+}
+
+export const ShoppableImageInteractable = ({
+    target,
+    selector,
+    tooltips,
+    tooltipPlacement,
+    children,
+    transform
+}) => {
+    const label = useShoppableTooltip(target, selector, tooltips)
+    const {isOpen, onOpen, onClose} = useDisclosure()
+    const tProps = {placement: tooltipPlacement ?? 'bottom'}
 
     const style = {
         position: 'absolute',
@@ -208,9 +211,9 @@ const ShoppableImageInteractable = ({
                 </Tooltip>
             )
         case 'tooltip': {
-            if (matchTooltip) {
+            if (label) {
                 return (
-                    <Tooltip label={matchTooltip.value} {...tProps}>
+                    <Tooltip label={label} {...tProps}>
                         <Box {...style} tabIndex="0">
                             {children}
                         </Box>
@@ -220,10 +223,12 @@ const ShoppableImageInteractable = ({
 
             return <>{children}</>
         }
-        case 'contentKey':
+        case 'contentKey': {
+            const matchTooltip = tooltips?.find((tooltip) => tooltip.key === target)
+
             return (
                 <>
-                    <Tooltip label={matchTooltip?.value ?? tooltip} {...tProps}>
+                    <Tooltip label={label} {...tProps}>
                         <Link
                             to="#"
                             onClick={(evt) => {
@@ -250,6 +255,7 @@ const ShoppableImageInteractable = ({
                     </Drawer>
                 </>
             )
+        }
         default:
             return <>{children}</>
     }

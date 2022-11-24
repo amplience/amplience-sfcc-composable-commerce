@@ -8,7 +8,9 @@ export default {
     baseStyle: () => ({
         container: {
             height: '100%',
-            position: 'relative'
+            position: 'relative',
+            display: 'flex',
+            flexDirection: 'column'
         },
         favIcon: {
             position: 'absolute',
