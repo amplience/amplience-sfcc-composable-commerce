@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.10.1](https://github.com/amplience/amplience-sfcc-composable-commerce/compare/v1.10.0...v1.10.1) (2022-11-24)
+
+
+### Features
+
+* ecomm toolkit for products ([dcdb818](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/dcdb818f33ec2b424401c19698687b2596c72f4c))
+
 ## [1.10.0](https://github.com/amplience/amplience-sfcc-composable-commerce/compare/v1.9.1...v1.10.0) (2022-11-24)
 
 
