@@ -23,7 +23,7 @@ module.exports = {
             url: 'http://localhost:3000'
         },
         {
-            name: 'Amplience Live',
+            name: 'Production',
             default: false,
             url: 'https://ascc-production.mobify-storefront.com'
         }
