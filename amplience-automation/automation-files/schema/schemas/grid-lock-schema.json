@@ -1,0 +1,71 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://sfcc.com/components/grid-lock",
+
+    "title": "Title",
+    "description": "Description",
+
+    "allOf": [
+        {
+            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+        }
+    ],
+
+    "type": "object",
+    "properties": {
+        "columns": {
+            "title": "Grid Columns",
+            "description": "",
+            "type": "object",
+            "properties": {
+                "sm": {
+                    "title": "Columns in Mobile",
+                    "type": "number",
+                    "minimum": 1,
+                    "default": 2
+                },
+                "md": {
+                    "title": "Columns in Tablet",
+                    "type": "number",
+                    "minimum": 1,
+                    "default": 2
+                },
+                "lg": {
+                    "title": "Columns in Desktop",
+                    "description": "",
+                    "type": "number",
+                    "minimum": 1,
+                    "default": 3
+                },
+                "xl": {
+                    "title": "Columns in Large Desktop",
+                    "description": "",
+                    "type": "number",
+                    "minimum": 1,
+                    "default": 4
+                }
+            }
+        },
+        "gap": {
+            "title": "Grid Spacing",
+            "description": "",
+            "type": "number",
+            "minimum": 1,
+            "default": 4
+        },
+        "cards": {
+            "title": "Grid Content",
+            "description": "Items to display in the grid",
+            "type": "array",
+            "minItems": 0,
+            "maxItems": 10,
+            "items": {
+                "allOf": [
+                    {
+                        "$ref": "https://sfcc.com/libs/all-definitions#/definitions/gridItem"
+                    }
+                ]
+            }
+        }
+    }
+}

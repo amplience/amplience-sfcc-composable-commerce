@@ -1,0 +1,5 @@
+{
+    "body": "./schemas/grid-lock-schema.json",
+    "schemaId": "https://sfcc.com/components/grid-lock",
+    "validationLevel": "CONTENT_TYPE"
+}
