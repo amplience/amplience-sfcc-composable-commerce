@@ -6,15 +6,15 @@ These interactive elements links, captions and popups by setting `targets` and `
 
 | selector  | target    | example   | description   | 
 | --------  | ------    | -------   | -----------   |
-| **product** | Product ID | `78916783M` | Links to an SFCC product by ID. On hover, will show the product name and price.|
-| **category** | Category ID | `newarrivals-women` | Links to an SFCC category by ID. On hover, will show the category name. |
-| **link** | relative/absolute URL | `/cart`, `https://amplience.com` | A link to any URL. Can be relative or absolute. On hover, will show the target text. We recommend setting a custom caption. |
-| **page** | Delivery Key | `faq` | Links to an amplience content page. On hover will display the target text, we recommend setting a custom caption. |
+| **product** | Product ID | `78916783M` | Links to an SFCC product by ID. The CTA caption will show the product name and price.|
+| **category** | Category ID | `newarrivals-women` | Links to an SFCC category by ID. The CTA caption will show the category name. |
+| **link** | relative/absolute URL | `/cart`, `https://amplience.com` | A link to any URL. Can be relative or absolute. The CTA caption will show the target text. We recommend setting a custom caption. |
+| **page** | Delivery Key | `faq` | Links to an Amplience content page. The CTA caption will display the target text, we recommend setting a custom caption. |
 | **tooltip** | Tooltip Key | `tooltip-key` | A caption that does nothing on click. |
-| **contentKey** | Delivery Key | `hero` | Opens a drawer displaying amplience content with the specified key. On Hover, will show the text "Click to Open..." |
+| **contentKey** | Delivery Key | `hero` | Opens a drawer displaying Amplience content with the specified key. The CTA caption will show the text "Click to Open..." |
 
 ## Keyframes
-For each interactive element you add (hotspot), you will have a new row in the timeline timeline. You can add multiple keyframes for each hotspot and position the elements on the screen.
+For each interactive element you add (hotspot), you will have a new row in the timeline. You can add multiple keyframes for each hotspot and position the elements on the screen.
 
 ## Captions
 For any selector, you can define a custom localized caption using the array below that overrides the default one. The `key` of the caption should match whatever the `target` is in the shoppable video, and the value is what you want to appear in the caption. The `tooltip` selector will only display a caption if the text is defined here.
@@ -33,7 +33,7 @@ As you start to add hotspots, they will appear on the timeline, where you can se
 
 ![Keyframes](./media/shoppyVideoKeyframes.png)
 
-The best way to track a product through a video is to start when it becomes visible. Select your new hotspot, find this point, then click on the video where you want the hotspot to appear. After this, you'll want to track the movement of your hotspot by scrolling through the video and dragging the keyframe to the correct position. Do this as many times as necessary to track the object movement. You can easily add keyframes between existing ones by going to a time between them, then dragging it to a new position.
+The best way to track a product through a video is ƒto start when it becomes visible. Select your new hotspot, find this point, then click on the video where you want the hotspot to appear. After this, you'll want to track the movement of your hotspot by scrolling through the video and dragging the keyframe to the correct position. Do this as many times as necessary to track the object movement. You can easily add keyframes between existing ones by going to a time between them, then dragging it to a new position.
 
 If you want to reposition a hotspot keyframe, click on it in the timeline to move to it first, then drag it around. You can also drag keyframes within the timeline if you want to slightly adjust their timing.
 
@@ -72,7 +72,7 @@ Now the CTA button will read the text you've entered. This text may also be loca
 
 ## Realtime Visualisation
 
-As with all of our amplience components, all your changes are ready to view in realtime as you're building a Shoppable Video, so there's no guessing what it's going to look like or what the shopper's experience will be.
+As with all of our Amplience components, all your changes are ready to view in realtime as you're building a Shoppable Video, so there's no guessing what it's going to look like or what the shopper's experience will be.
 
 ![Shoppable Video Realtime View](./media/shoppyVideoRTV.png)
 

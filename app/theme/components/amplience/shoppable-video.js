@@ -52,5 +52,12 @@ export default {
             cursor: 'pointer'
         }
     },
-    parts: ['ctaContainer', 'ctaButton', 'arrowBody', 'arrowHead', 'arrowHeadContainer']
+    parts: [
+        'ctaContainer',
+        'ctaButton',
+        'arrowContainer',
+        'arrowBody',
+        'arrowHead',
+        'arrowHeadContainer'
+    ]
 }

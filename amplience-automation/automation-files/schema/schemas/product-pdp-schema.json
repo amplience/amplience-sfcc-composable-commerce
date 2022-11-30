@@ -1,16 +1,13 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://sfcc.com/site/product-pdp",
-
     "title": "Product PDP",
     "description": "Associates an SFCC product with Amplience content that should appear on its PDP.",
-
     "allOf": [
         {
             "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
         }
     ],
-
     "trait:filterable": {
         "filterBy": [
             {
@@ -20,7 +17,6 @@
             }
         ]
     },
-    
     "type": "object",
     "properties": {
         "active": {
@@ -34,9 +30,18 @@
             "properties": {
                 "deliveryKey": {
                     "title": "Product ID",
-                    "description": "(format pdp/content/<id>). Must be set in order to visualise. When the Product ID matches, this item's content is shown on on the right PDP.",
+                    "description": "(format pdp/content/<id>) When the Product ID matches, this item's content is shown on the PDP.",
                     "type": "string",
-                    "pattern": "pdp\/content\/.*"
+                    "pattern": "pdp\/content\/.*",
+                    "ui:extension": {
+                        "name": "ecomm-toolkit",
+                        "params": {
+                            "label": "Search By Category",
+                            "view": "product",
+                            "data": "product",
+                            "type": "string"
+                        }
+                    }
                 }
             }
         },
@@ -57,7 +62,9 @@
             "maxItems": 10,
             "items": {
                 "allOf": [
-                    { "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link" },
+                    {
+                        "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                    },
                     {
                         "properties": {
                             "contentType": {
@@ -71,7 +78,7 @@
                     }
                 ]
             }
-        }  
+        }
     },
     "propertyOrder": []
 }

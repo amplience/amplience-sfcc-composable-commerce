@@ -1,16 +1,13 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "https://sfcc.com/components/shoppable-video",
-
 	"title": "Shoppable video",
 	"description": "An video with interactable elements",
-
 	"allOf": [
 		{
 			"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
 		}
 	],
-	
 	"type": "object",
 	"properties": {
 		"help": {
@@ -24,14 +21,14 @@
 			}
 		},
 		"title": {
-            "title": "Title",
-            "description": "Title for the shoppable video",
-            "allOf": [
-                {
-                    "$ref": "http://bigcontent.io/cms/schema/v1/localization#/definitions/localized-string"
-                }
-            ]
-        },
+			"title": "Title",
+			"description": "Title for the shoppable video",
+			"allOf": [
+				{
+					"$ref": "http://bigcontent.io/cms/schema/v1/localization#/definitions/localized-string"
+				}
+			]
+		},
 		"shoppableVideo": {
 			"title": "Shoppable Video",
 			"description": "An video enriched with hotspots that vary over time.",
