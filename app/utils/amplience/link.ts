@@ -51,7 +51,7 @@ const handlers = {
 
 const enumHandlers = {
     URL: (link) => '$' + link.value,
-    'Category ID': (link) => categoryUrlBuilder({id: categoryDKToId(link.value)}),
+    'Category ID': (link) => categoryUrlBuilder({id: link.value}),
     'Product SKU': (link) => productUrlBuilder({id: link.value}),
     'Page ID': (link) => '/' + link.value
 }
