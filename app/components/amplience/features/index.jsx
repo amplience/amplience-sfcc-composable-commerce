@@ -1,8 +1,10 @@
 import React from 'react'
-import {Link, Text, Image, useTheme} from '@chakra-ui/react'
+import {Text, Image, useTheme} from '@chakra-ui/react'
 import PropTypes from 'prop-types'
 import {Container, SimpleGrid, VStack, HStack, Flex} from '@chakra-ui/layout'
 import {getImageUrl} from '../../../utils/amplience/image'
+import Link from '../link'
+import {getLinkUrlEnum} from '../../../utils/amplience/link'
 
 const Features = ({features}) => {
     const theme = useTheme()
@@ -33,6 +35,11 @@ const Features = ({features}) => {
                                     {feature.title}
                                 </Text>
                                 <Text color={'black'}>{feature.text}</Text>
+                                {feature.link && feature.link.value && (
+                                    <Link to={getLinkUrlEnum(feature.link)} alignSelf="end">
+                                        {feature.link.label}
+                                    </Link>
+                                )}
                             </VStack>
                         </HStack>
                     )

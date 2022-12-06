@@ -1,4 +1,4 @@
-import {categoryUrlBuilder} from '../url'
+import {categoryUrlBuilder, productUrlBuilder} from '../url'
 import {EnrichConfig, EnrichConfigMap, processHierarchy} from './enrich'
 import {applyRtvToHierarchy} from './rtv'
 import {sortBy} from 'lodash'
@@ -49,10 +49,23 @@ const handlers = {
     'https://sfcc.com/site/navigation/group': noLinkBuilder
 }
 
+const enumHandlers = {
+    URL: (link) => '$' + link.value,
+    'Category ID': (link) => categoryUrlBuilder({id: categoryDKToId(link.value)}),
+    'Product SKU': (link) => productUrlBuilder({id: link.value}),
+    'Page ID': (link) => '/' + link.value
+}
+
 export const getLinkUrl = (link, forRelative = true) => {
     // Links can be one of a few content items.
 
     const builder = handlers[link._meta.schema]
+
+    return builder == null ? '' : builder(link, forRelative)
+}
+
+export const getLinkUrlEnum = (link, forRelative = true) => {
+    const builder = enumHandlers[link.type]
 
     return builder == null ? '' : builder(link, forRelative)
 }
