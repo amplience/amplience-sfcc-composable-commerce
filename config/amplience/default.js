@@ -1,6 +1,6 @@
 module.exports = {
     default: {
-        hub: 'sfcccomposable'
+        hub: 'sfcccompdev2'
     },
     envs: [
         /*

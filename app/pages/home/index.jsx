@@ -70,92 +70,12 @@ const Home = ({isLoading, homeSlotTop}) => {
             />
 
             <AmplienceWrapper fetch={{key: 'home/slot/top-personalised'}}></AmplienceWrapper>
-            
-            <Section
-                background={'gray.50'}
-                marginX="auto"
-                paddingY={{base: 8, md: 16}}
-                paddingX={{base: 4, md: 8}}
-                borderRadius="base"
-                width={{base: '100vw', md: 'inherit'}}
-                position={{base: 'relative', md: 'inherit'}}
-                left={{base: '50%', md: 'inherit'}}
-                right={{base: '50%', md: 'inherit'}}
-                marginTop="8"
-                marginBottom="8"
-                marginLeft={{base: '-50vw', md: 'auto'}}
-                marginRight={{base: '-50vw', md: 'auto'}}
-            >
-                <SimpleGrid
-                    columns={{base: 1, md: 1, lg: 3}}
-                    spacingX={{base: 1, md: 4}}
-                    spacingY={{base: 4, md: 14}}
-                >
-                    {heroFeatures.map((feature, index) => {
-                        const featureMessage = feature.message
-                        return (
-                            <Box
-                                key={index}
-                                background={'white'}
-                                boxShadow={'0px 2px 2px rgba(0, 0, 0, 0.1)'}
-                                borderRadius={'4px'}
-                            >
-                                <Link target="_blank" href={feature.href}>
-                                    <HStack>
-                                        <Flex
-                                            paddingLeft={6}
-                                            height={24}
-                                            align={'center'}
-                                            justify={'center'}
-                                        >
-                                            {feature.icon}
-                                        </Flex>
-                                        <Text fontWeight="700">
-                                            {intl.formatMessage(featureMessage.title)}
-                                        </Text>
-                                    </HStack>
-                                </Link>
-                            </Box>
-                        )
-                    })}
-                </SimpleGrid>
-            </Section>
-
+            <AmplienceWrapper fetch={{key: 'home/hero-features'}}></AmplienceWrapper>
             <AmplienceWrapper content={homeSlotTop}></AmplienceWrapper>
             <AmplienceWrapper fetch={{key: 'shoppable/woman-fall'}}></AmplienceWrapper>
             <AmplienceWrapper fetch={{key: 'simple-product-list'}}></AmplienceWrapper>
             <AmplienceWrapper fetch={{key: 'section'}}></AmplienceWrapper>
-
-            <Container maxW={'6xl'} marginTop={10}>
-                <SimpleGrid columns={{base: 1, md: 2, lg: 3}} spacing={10}>
-                    {features.map((feature, index) => {
-                        const featureMessage = feature.message
-                        return (
-                            <HStack key={index} align={'top'}>
-                                <VStack align={'start'}>
-                                    <Flex
-                                        width={16}
-                                        height={16}
-                                        align={'center'}
-                                        justify={'left'}
-                                        color={'gray.900'}
-                                        paddingX={2}
-                                    >
-                                        {feature.icon}
-                                    </Flex>
-                                    <Text color={'black'} fontWeight={700} fontSize={20}>
-                                        {intl.formatMessage(featureMessage.title)}
-                                    </Text>
-                                    <Text color={'black'}>
-                                        {intl.formatMessage(featureMessage.text)}
-                                    </Text>
-                                </VStack>
-                            </HStack>
-                        )
-                    })}
-                </SimpleGrid>
-            </Container>
-
+            <AmplienceWrapper fetch={{key: 'home/features'}}></AmplienceWrapper>
             <AmplienceWrapper fetch={{key: 'section/we-are-here'}}></AmplienceWrapper>
         </Box>
     )
