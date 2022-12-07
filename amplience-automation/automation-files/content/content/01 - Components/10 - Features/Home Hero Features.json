@@ -1,0 +1,112 @@
+{
+  "id": "9516bec8-4149-4b94-8806-ddb70e08f8c5",
+  "contentRepositoryId": "6321ee3f4cedfd0001b5a5e8",
+  "folderId": "637e26d5dc79a4000115bd09",
+  "body": {
+    "_meta": {
+      "name": "Home Hero Features",
+      "schema": "https://sfcc.com/components/features",
+      "deliveryKey": "home/hero-features"
+    },
+    "render": "Buttons",
+    "features": [
+      {
+        "link": {
+          "label": {
+            "values": [
+              {
+                "locale": "en-US",
+                "value": "Download on Github"
+              }
+            ],
+            "_meta": {
+              "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+            }
+          },
+          "type": "URL",
+          "value": "https://github.com/SalesforceCommerceCloud/pwa-kit",
+          "_meta": {
+            "schema": "https://sfcc.com/components/link"
+          }
+        },
+        "icon": {
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+          },
+          "id": "51d6c7c7-ae63-4b31-a1b7-225d380a6d7b",
+          "name": "icon-github",
+          "endpoint": "sfcccompdev2",
+          "defaultHost": "cdn.media.amplience.net"
+        }
+      },
+      {
+        "link": {
+          "label": {
+            "values": [
+              {
+                "locale": "en-US",
+                "value": "Deploy on Managed Runtime"
+              }
+            ],
+            "_meta": {
+              "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+            }
+          },
+          "type": "URL",
+          "value": "https://developer.salesforce.com/docs/commerce/pwa-kit-managed-runtime/guide/pushing-and-deploying-bundles.html",
+          "_meta": {
+            "schema": "https://sfcc.com/components/link"
+          }
+        },
+        "icon": {
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+          },
+          "id": "1d63e80b-572b-4d74-9be1-1f5f71586e3f",
+          "name": "icon-mrt",
+          "endpoint": "sfcccompdev2",
+          "defaultHost": "cdn.media.amplience.net"
+        }
+      },
+      {
+        "link": {
+          "label": {
+            "values": [
+              {
+                "locale": "en-US",
+                "value": "Create with the Figma PWA Design Kit"
+              }
+            ],
+            "_meta": {
+              "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+            }
+          },
+          "type": "URL",
+          "value": "https://sfdc.co/figma-pwa-design-kit",
+          "_meta": {
+            "schema": "https://sfcc.com/components/link"
+          }
+        },
+        "icon": {
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+          },
+          "id": "57a7ce72-87a1-4dd6-824e-0ff7e8c13f63",
+          "name": "icon-figma",
+          "endpoint": "sfcccompdev2",
+          "defaultHost": "cdn.media.amplience.net"
+        }
+      }
+    ]
+  },
+  "version": 3,
+  "label": "Home Hero Features",
+  "status": "ACTIVE",
+  "createdBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+  "createdDate": "2022-11-23T14:15:06.044Z",
+  "lastModifiedBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+  "lastModifiedDate": "2022-12-06T17:24:18.835Z",
+  "lastPublishedVersion": 3,
+  "lastPublishedDate": "2022-12-06T17:25:46.229Z",
+  "deliveryId": "9516bec8-4149-4b94-8806-ddb70e08f8c5"
+}

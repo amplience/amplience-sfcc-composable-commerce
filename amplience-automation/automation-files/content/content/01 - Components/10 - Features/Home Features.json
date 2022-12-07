@@ -1,0 +1,259 @@
+{
+  "id": "9da2e2e2-936d-435e-8125-dbf39241b286",
+  "contentRepositoryId": "6321ee3f4cedfd0001b5a5e8",
+  "folderId": "637e26d5dc79a4000115bd09",
+  "body": {
+    "_meta": {
+      "name": "Home Features",
+      "schema": "https://sfcc.com/components/features",
+      "deliveryKey": "home/features"
+    },
+    "render": "Listing",
+    "features": [
+      {
+        "title": {
+          "values": [
+            {
+              "locale": "en-US",
+              "value": "Cart & Checkout"
+            }
+          ],
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+          }
+        },
+        "text": {
+          "values": [
+            {
+              "locale": "en-US",
+              "value": "Ecommerce best practice for a shopper's cart and checkout experience."
+            }
+          ],
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+          }
+        },
+        "link": {
+          "type": "URL",
+          "_meta": {
+            "schema": "https://sfcc.com/components/link"
+          }
+        },
+        "icon": {
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+          },
+          "id": "be62a57e-42a9-4e00-a5d6-ec89b1fd06b4",
+          "name": "icon-cart",
+          "endpoint": "sfcccompdev2",
+          "defaultHost": "cdn.media.amplience.net"
+        }
+      },
+      {
+        "title": {
+          "values": [
+            {
+              "locale": "en-US",
+              "value": "Einstein Recommendations"
+            }
+          ],
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+          }
+        },
+        "text": {
+          "values": [
+            {
+              "locale": "en-US",
+              "value": "Deliver the next best product or offer to every shopper through product recommendations."
+            }
+          ],
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+          }
+        },
+        "link": {
+          "type": "URL",
+          "_meta": {
+            "schema": "https://sfcc.com/components/link"
+          }
+        },
+        "icon": {
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+          },
+          "id": "167a3677-29cc-489a-99d3-0c931fdd997c",
+          "name": "icon-like",
+          "endpoint": "sfcccompdev2",
+          "defaultHost": "cdn.media.amplience.net"
+        }
+      },
+      {
+        "title": {
+          "values": [
+            {
+              "locale": "en-US",
+              "value": "My Account"
+            }
+          ],
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+          }
+        },
+        "text": {
+          "values": [
+            {
+              "locale": "en-US",
+              "value": "Shoppers can manage account information such as their profile, addresses, payments and orders."
+            }
+          ],
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+          }
+        },
+        "link": {
+          "type": "URL",
+          "_meta": {
+            "schema": "https://sfcc.com/components/link"
+          }
+        },
+        "icon": {
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+          },
+          "id": "a5dee478-1727-45a1-a573-c8804d9fb89f",
+          "name": "icon-user",
+          "endpoint": "sfcccompdev2",
+          "defaultHost": "cdn.media.amplience.net"
+        }
+      },
+      {
+        "title": {
+          "values": [
+            {
+              "locale": "en-US",
+              "value": "Shopper Login and API Access Service"
+            }
+          ],
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+          }
+        },
+        "text": {
+          "values": [
+            {
+              "locale": "en-US",
+              "value": "Enable shoppers to easily log in with a more personalized shopping experience."
+            }
+          ],
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+          }
+        },
+        "link": {
+          "type": "URL",
+          "_meta": {
+            "schema": "https://sfcc.com/components/link"
+          }
+        },
+        "icon": {
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+          },
+          "id": "7210a889-3d1c-4386-b518-a5c022a38908",
+          "name": "icon-plug",
+          "endpoint": "sfcccompdev2",
+          "defaultHost": "cdn.media.amplience.net"
+        }
+      },
+      {
+        "title": {
+          "values": [
+            {
+              "locale": "en-US",
+              "value": "Components & Design Kit"
+            }
+          ],
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+          }
+        },
+        "text": {
+          "values": [
+            {
+              "locale": "en-US",
+              "value": "Built using Chakra UI, a simple, modular and accessible React component library."
+            }
+          ],
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+          }
+        },
+        "link": {
+          "type": "URL",
+          "_meta": {
+            "schema": "https://sfcc.com/components/link"
+          }
+        },
+        "icon": {
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+          },
+          "id": "ce576c3f-2f52-4ed1-8806-9353b34fde73",
+          "name": "icon-layout",
+          "endpoint": "sfcccompdev2",
+          "defaultHost": "cdn.media.amplience.net"
+        }
+      },
+      {
+        "title": {
+          "values": [
+            {
+              "locale": "en-US",
+              "value": "Wishlist"
+            }
+          ],
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+          }
+        },
+        "text": {
+          "values": [
+            {
+              "locale": "en-US",
+              "value": "Registered shoppers can add product items to their wishlist from purchasing later."
+            }
+          ],
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+          }
+        },
+        "link": {
+          "type": "URL",
+          "_meta": {
+            "schema": "https://sfcc.com/components/link"
+          }
+        },
+        "icon": {
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+          },
+          "id": "38ee5554-b12e-4d55-ad66-7b5f4228df02",
+          "name": "icon-heart",
+          "endpoint": "sfcccompdev2",
+          "defaultHost": "cdn.media.amplience.net"
+        }
+      }
+    ]
+  },
+  "version": 5,
+  "label": "Home Features",
+  "status": "ACTIVE",
+  "createdBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+  "createdDate": "2022-11-23T14:22:58.076Z",
+  "lastModifiedBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+  "lastModifiedDate": "2022-12-06T17:24:00.829Z",
+  "lastPublishedVersion": 5,
+  "lastPublishedDate": "2022-12-06T17:24:15.285Z",
+  "deliveryId": "9da2e2e2-936d-435e-8125-dbf39241b286"
+}

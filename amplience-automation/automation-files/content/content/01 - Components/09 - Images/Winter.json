@@ -1,0 +1,49 @@
+{
+  "id": "1270633e-22a5-4f38-80b9-7c5427f80fe1",
+  "contentRepositoryId": "6321ee3f4cedfd0001b5a5e8",
+  "folderId": "637cdd6579f1650001983978",
+  "body": {
+    "_meta": {
+      "name": "Winter",
+      "schema": "https://sfcc.com/components/image"
+    },
+    "image": {
+      "image": {
+        "crop": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "rot": 0,
+        "hue": 0,
+        "sat": 0,
+        "bri": 0,
+        "fliph": false,
+        "flipv": false,
+        "poi": {
+          "x": -1,
+          "y": -1
+        },
+        "aspectLock": "clear",
+        "image": {
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+          },
+          "id": "63674269-b883-4d8a-9f39-5c245b8ad48a",
+          "name": "luke-porter-Lv7kr8BcRrc-unsplash",
+          "endpoint": "sfcccompdev2",
+          "defaultHost": "cdn.media.amplience.net"
+        }
+      }
+    }
+  },
+  "version": 1,
+  "label": "Winter",
+  "status": "ACTIVE",
+  "createdBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+  "createdDate": "2022-11-22T14:33:05.047Z",
+  "lastModifiedBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+  "lastModifiedDate": "2022-11-22T14:33:05.047Z",
+  "deliveryId": "1270633e-22a5-4f38-80b9-7c5427f80fe1"
+}

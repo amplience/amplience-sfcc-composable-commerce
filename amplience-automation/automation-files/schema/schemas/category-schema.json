@@ -1,0 +1,179 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://sfcc.com/site/navigation/category",
+    "title": "Navigation Content Page",
+    "description": "Navigation item for SFCC categories",
+    "allOf": [
+        {
+            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+        }
+    ],
+    "trait:hierarchy": {
+        "childContentTypes": [
+            "https://sfcc.com/site/navigation/external",
+            "https://sfcc.com/site/navigation/internal",
+            "https://sfcc.com/site/navigation/content-page",
+            "https://sfcc.com/site/navigation/category",
+            "https://sfcc.com/site/navigation/group"
+        ]
+    },
+    "trait:sortable": {
+        "sortBy": [
+            {
+                "key": "default",
+                "paths": [
+                    "/common/priority"
+                ]
+            }
+        ]
+    },
+    "trait:filterable": {
+        "filterBy": [
+            {
+                "paths": [
+                    "/common/active"
+                ]
+            },
+            {
+                "paths": [
+                    "/common/active",
+                    "/common/visible"
+                ]
+            }
+        ]
+    },
+    "type": "object",
+    "properties": {
+        "common": {
+            "allOf": [
+                {
+                    "$ref": "https://sfcc.com/site/navigation/partial#/definitions/common"
+                }
+            ]
+        },
+        "_meta": {
+            "title": "Navigation Key",
+            "properties": {
+                "deliveryKey": {
+                    "title": "Category",
+                    "description": "Single-select Category and store ID as string",
+                    "type": "string",
+                    "pattern": "category\/.*",
+                    "ui:extension": {
+                        "name": "ecomm-toolkit",
+                        "params": {
+                            "label": "Linked Category",
+                            "view": "single",
+                            "data": "category",
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "includeSFCC": {
+            "title": "Include SFCC Subcategories",
+            "description": "Append the subcategories from SFCC into this node's children when rendering navigation.",
+            "type": "boolean",
+            "default": false
+        },
+        "topContent": {
+            "title": "Top Content Content",
+            "description":"The content / slots for the top of the page",
+            "type": "array",
+            "minItems": 0,
+            "maxItems": 10,
+            "items": {
+                "title": "Top Content",
+                "description":"The content / slots for the top of the page",
+                "allOf": [
+                    {
+                        "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference"
+                    },
+                    {
+                        "properties": {
+                            "contentType": {
+                                "$ref": "https://sfcc.com/libs/all-definitions#/definitions/anyComponentPageAndSlot"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "gridItem": {
+            "title": "In-Grid Content",
+            "description": "Items to display in the grid",
+            "type": "array",
+            "minItems": 0,
+            "maxItems": 10,
+            "items": {
+                "allOf": [
+                    {
+                        "$ref": "https://sfcc.com/libs/all-definitions#/definitions/gridItem"
+                    }
+                ]
+            },
+            "ui:extension": {
+                "name": "grid-layout",
+                "params": {
+                    "contentTypes": [
+                        {
+                            "id": "https://sfcc.com/components/personalised-ingrid-component",
+                            "icon": "https://sfcccomposable.a.bigcontent.io/v1/static/icon-component-personalised-container"
+                        },
+                        {
+                            "id": "https://sfcc.com/components/card-enhanced",
+                            "card": "https://bigcontent.io/cms/cards/summary-photo/index.html?headline=/_meta/name&image=/image/image/image&imageAlt=/img/alt&src=%2F%2F{{vse.domain}}%2Fcms%2Fcontent%2Fquery%3FfullBodyObject%3Dtrue%26query%3D%257B%2522sys.iri%2522%253A%2522http%253A%252F%252Fcontent.cms.amplience.com%252F{{content.sys.id}}%2522%257D%26scope%3Dtree%26store%3Dstaging",
+                            "icon": "https://sfcccomposable.a.bigcontent.io/v1/static/icon-component-card-enhanced"
+                        },
+                        {
+                            "id": "https://sfcc.com/components/hero",
+                            "card": "https://bigcontent.io/cms/cards/summary-photo/index.html?headline=/title&image=/img/image&imageAlt=/img/alt&src=%2F%2F{{vse.domain}}%2Fcms%2Fcontent%2Fquery%3FfullBodyObject%3Dtrue%26query%3D%257B%2522sys.iri%2522%253A%2522http%253A%252F%252Fcontent.cms.amplience.com%252F{{content.sys.id}}%2522%257D%26scope%3Dtree%26store%3Dstaging",
+                            "icon": "https://sfcccomposable.a.bigcontent.io/v1/static/icon-component-hero"
+                        },
+                        {
+                            "id": "https://sfcc.com/components/shoppable-image",
+                            "card": "https://bigcontent.io/cms/cards/photo/index.html?image=/shoppableImage/image&imageAlt=/shoppableImage/imageAltText&src=%2F%2F{{vse.domain}}%2Fcms%2Fcontent%2Fquery%3FfullBodyObject%3Dtrue%26query%3D%257B%2522sys.iri%2522%253A%2522http%253A%252F%252Fcontent.cms.amplience.com%252F{{content.sys.id}}%2522%257D%26scope%3Dtree%26store%3Dstaging",
+                            "icon": "https://sfcccomposable.a.bigcontent.io/v1/static/icon-component-shoppable-image"
+                        }
+                    ]
+                }
+            }
+        },
+        "bottomContent": {
+            "title": "Bottom Content",
+            "description":"test",
+            "type": "array",
+            "minItems": 0,
+            "maxItems": 10,
+            "items": {
+                "title": "Bottom Content",
+                "description":"The content / slots for the bottom of the page",
+                "allOf": [
+                    {
+                        "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference"
+                    },
+                    {
+                        "properties": {
+                            "contentType": {
+                                "$ref": "https://sfcc.com/libs/all-definitions#/definitions/anyComponentPageAndSlot"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "required": [
+        "common",
+        "_meta"
+    ],
+    "propertyOrder": [
+        "common",
+        "_meta",
+        "includeSFCC",
+        "topContent",
+        "gridItem",
+        "bottomContent"
+    ]
+}

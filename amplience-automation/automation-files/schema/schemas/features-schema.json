@@ -1,0 +1,76 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://sfcc.com/components/features",
+    "title": "Title",
+    "description": "Description",
+    "allOf": [
+        {
+            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+        }
+    ],
+    "type": "object",
+    "properties": {
+        "render": {
+            "title": "Render Mode",
+            "description": "The style to render these features with.",
+            "type": "string",
+            "enum": [
+                "Listing",
+                "Buttons"
+            ],
+            "default": "Listing"
+        },
+        "features": {
+            "title": "Features",
+            "description": "description",
+            "type": "array",
+            "minItems": 0,
+            "maxItems": 12,
+            "items": {
+                "title": "Feature",
+                "type": "object",
+                "properties": {
+                    "title": {
+                        "title": "Title",
+                        "description": "description",
+                        "allOf": [
+                            {
+                                "$ref": "http://bigcontent.io/cms/schema/v1/localization#/definitions/localized-string"
+                            }
+                        ]
+                    },
+                    "text": {
+                        "title": "Text",
+                        "description": "description",
+                        "allOf": [
+                            {
+                                "$ref": "http://bigcontent.io/cms/schema/v1/localization#/definitions/localized-string"
+                            }
+                        ]
+                    },
+                    "icon": {
+                        "title": "Icon",
+                        "allOf": [
+                            {
+                                "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                            }
+                        ]
+                    },
+                    "link": {
+                        "type": "object",
+                        "allOf": [
+                            {
+                                "$ref": "https://sfcc.com/components/link"
+                            }
+                        ]
+                    }
+                },
+                "propertyOrder": []
+            }
+        }
+    },
+    "required": [
+        "render"
+    ],
+    "propertyOrder": []
+}
