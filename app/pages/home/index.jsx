@@ -7,43 +7,25 @@
 
 import React, {useEffect} from 'react'
 import PropTypes from 'prop-types'
-import {useIntl} from 'react-intl'
 import {useLocation} from 'react-router-dom'
 
 // Components
-import {
-    Box,
-    Button,
-    SimpleGrid,
-    HStack,
-    VStack,
-    Text,
-    Flex,
-    Stack,
-    Container,
-    Link
-} from '@chakra-ui/react'
+import {Box} from '@chakra-ui/react'
 
 // Project Components
 import Seo from '../../components/seo'
-import Section from '../../components/section'
 
 // Amplience Wrapper Component
 import AmplienceWrapper from '../../components/amplience/wrapper'
-
-// Others
-import {heroFeatures, features} from './data'
 
 //Hooks
 import useEinstein from '../../commerce-api/hooks/useEinstein'
 
 // Constants
-import {
-    MAX_CACHE_AGE
-} from '../../constants'
-import { resolveSiteFromUrl } from '../../utils/site-utils'
-import { getTargetLocale } from '../../utils/locale'
-import { personalisationChanged } from '../../amplience-api/utils'
+import {MAX_CACHE_AGE} from '../../constants'
+import {resolveSiteFromUrl} from '../../utils/site-utils'
+import {getTargetLocale} from '../../utils/locale'
+import {personalisationChanged} from '../../amplience-api/utils'
 
 /**
  * This is the home page for Retail React App.
@@ -51,8 +33,7 @@ import { personalisationChanged } from '../../amplience-api/utils'
  * The page renders SEO metadata and a few promotion
  * categories and products, data is from local file.
  */
-const Home = ({isLoading, homeSlotTop}) => {
-    const intl = useIntl()
+const Home = ({homeSlotTop}) => {
     const einstein = useEinstein()
     const {pathname} = useLocation()
 
@@ -103,7 +84,9 @@ Home.getProps = async ({res, location, api, ampClient}) => {
         l10nConfig
     })
 
-    const homeSlotTop = await (await ampClient.fetchContent([{key: 'home/slot/top'}], {locale: targetLocale})).pop()
+    const homeSlotTop = await (
+        await ampClient.fetchContent([{key: 'home/slot/top'}], {locale: targetLocale})
+    ).pop()
 
     return {homeSlotTop}
 }
