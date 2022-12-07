@@ -2,7 +2,7 @@ import React from 'react'
 import AmplienceWrapper from '../wrapper'
 import PersonalisedComponent from '../personalised-component'
 import GridItemHero from '../hero/gridItemHero'
-import {SimpleGrid, GridItem, useBreakpointValue} from '@chakra-ui/react'
+import {SimpleGrid, GridItem, useBreakpointValue, Text} from '@chakra-ui/react'
 import PropTypes from 'prop-types'
 
 const PersonalisedComponentGridItem = ({...props}) => {
@@ -14,48 +14,46 @@ const inGridComponents = {
     'https://sfcc.com/components/personalised-ingrid-component': PersonalisedComponentGridItem
 }
 
-const GridLock = ({cards, columns, gap}) => {
-    const isMobile = useBreakpointValue({base: true, lg: false, xl: false, xxl: false, xxxl: false})
+const GridLock = ({title, subtitle, cards, breakpointColumns, gap}) => {
+    let bp = useBreakpointValue(breakpointColumns)
+    let columnIndex = breakpointColumns.indexOf(bp)
+    cards.sort((a, b) => a.position[columnIndex] - b.position[columnIndex])
 
     return (
-        <SimpleGrid
-            columns={[columns.sm, columns.md, columns.lg, columns.xl]}
-            spacingX={gap}
-            spacingY={{base: gap, lg: gap}}
-        >
-            {cards.map((item, index) => {
-                return (
-                    <GridItem
-                        key={index}
-                        colEnd={{
-                            base: `span 1`,
-                            md: `span ${item.cols}`
-                        }}
-                        rowEnd={{
-                            base: `span 1`,
-                            md: `span ${item.rows}`
-                        }}
-                        display="flex"
-                    >
-                        <AmplienceWrapper
-                            fetch={{id: item.content?.id}}
-                            components={inGridComponents}
-                            cols={isMobile ? 1 : item.cols}
-                            rows={isMobile ? 1 : item.rows}
-                            gap={16}
-                            skeleton={{display: 'flex', flex: 1}}
-                        ></AmplienceWrapper>
-                    </GridItem>
-                )
-            })}
-        </SimpleGrid>
+        <>
+            {title && <Text fontSize={'3xl'}>{title}</Text>}
+            {subtitle && <Text fontSize={'xl'}>{subtitle}</Text>}
+            <SimpleGrid columns={[1, 2, 4, 4]} spacingX={gap} spacingY={{base: gap, lg: gap}}>
+                {cards.map((item, index) => {
+                    return (
+                        <GridItem
+                            key={index}
+                            colEnd={`span ${item.cols[columnIndex]}`}
+                            rowEnd={`span ${item.rows[columnIndex]}`}
+                            display="flex"
+                        >
+                            <AmplienceWrapper
+                                fetch={{id: item.content?.id}}
+                                components={inGridComponents}
+                                cols={item.cols[columnIndex]}
+                                rows={item.rows[columnIndex]}
+                                gap={gap}
+                                skeleton={{display: 'flex', flex: 1}}
+                            ></AmplienceWrapper>
+                        </GridItem>
+                    )
+                })}
+            </SimpleGrid>
+        </>
     )
 }
 
 GridLock.displayName = 'GridLock'
 GridLock.propTypes = {
+    title: PropTypes.string,
+    subtitle: PropTypes.string,
     cards: PropTypes.array,
-    columns: PropTypes.number,
+    breakpointColumns: PropTypes.number,
     gap: PropTypes.number
 }
 
