@@ -21,6 +21,7 @@ import {useLocation} from 'react-router-dom'
 import ShoppableVideo from '../shoppable-video'
 import GridLock from '../grid-lock'
 import Image from '../image'
+import Features from '../features'
 
 const Blank = () => <></>
 
@@ -40,6 +41,7 @@ const componentsMapping = {
     'https://sfcc.com/slots/personalised-slot': flexibleListSlot,
     'https://sfcc.com/components/card-list': CardList,
     'https://sfcc.com/components/grid-lock': GridLock,
+    'https://sfcc.com/components/features': Features,
 
     'https://sfcc.com/site/navigation/root': Blank,
     'https://sfcc.com/site/navigation/external': Blank,

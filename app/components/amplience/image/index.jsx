@@ -1,9 +1,11 @@
 import React, {useEffect, useRef, useState} from 'react'
 import styled from '@emotion/styled'
 import {Heading} from '@chakra-ui/layout'
-import {useMultiStyleConfig, Link, Skeleton} from '@chakra-ui/react'
+import {useMultiStyleConfig, Skeleton} from '@chakra-ui/react'
 import TrueAdaptiveImage from '../adaptive-image/TrueAdaptiveImage'
 import PropTypes from 'prop-types'
+import { getLinkUrlEnum } from '../../../utils/amplience/link'
+import Link from '../link'
 
 const Contain = styled(Link)`
     height: 100%;
@@ -115,12 +117,12 @@ const Image = ({
         </>
     )
 
-    return links[0] ? (
+    return links[0] && links[0].value ? (
         <Skeleton isLoaded={!imageLoading} sx={{width: '100%', height: compHeight}}>
             <Contain
                 ref={parentRef}
                 className={`amp-tile amp-tile-${index + 1}`}
-                href={links[0]?.value}
+                to={getLinkUrlEnum(links[0])}
             >
                 {content}
             </Contain>

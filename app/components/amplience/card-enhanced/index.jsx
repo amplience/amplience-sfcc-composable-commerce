@@ -1,7 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react'
 import styled from '@emotion/styled'
 import {Heading} from '@chakra-ui/layout'
-import {useMultiStyleConfig, Link, Skeleton} from '@chakra-ui/react'
+import {useMultiStyleConfig, Link, Skeleton, useBreakpointValue} from '@chakra-ui/react'
 import TrueAdaptiveImage from '../adaptive-image/TrueAdaptiveImage'
 import PropTypes from 'prop-types'
 
@@ -119,13 +119,12 @@ const CardEnhanced = ({
     const [height, setHeight] = useState(400)
     const [width, setWidth] = useState(400)
     const [ratio, setRatio] = useState('1:1')
+    const [columns, setColumns] = useState(1)
+    const [rowss, setRows] = useState(1)
     const parentRef = useRef()
 
     const handleImageLoaded = () => {
         setImageLoading(false)
-        /*  if (onImageLoad instanceof Function) {
-             //onImageLoad(index);
-         } */
     }
 
     const gcd = (a, b) => {
@@ -142,20 +141,54 @@ const CardEnhanced = ({
     const w = parentRef.current?.clientWidth == 0 ? 400 : parentRef.current?.clientWidth
 
     let compHeight = 'auto'
+    //const [compHeight, setCompHeight] = useState('auto')
     if (cols && rows && gap) {
         // Force the height to a fraction of the width (minus gap)
+        //setCompHeight((rows * (w - gap * (cols - 1))) / cols + (rows - 1) * gap + 'px')
         compHeight = (rows * (w - gap * (cols - 1))) / cols + (rows - 1) * gap + 'px'
+    } else {
+        //setCompHeight('400px')
+        //compHeight = '400px'
     }
+
+    const defaultColRow = useBreakpointValue({
+        base: {
+            cols: 1,
+            rows: 1
+        },
+        md: {
+            cols: 3,
+            rows: 2
+        },
+        lg: {
+            cols: 4,
+            rows: 2
+        },
+        xl: {
+            cols: 5,
+            rows: 3
+        }
+    })
 
     useEffect(() => {
         let r, ratio
 
+        if (cols && rows) {
+            setColumns(cols)
+            setRows(rows)
+        } else {
+            setColumns(defaultColRow.cols)
+            setRows(defaultColRow.rows)
+        }
+
         if (w && h) {
             r = gcd(w, h)
-            setWidth(Math.floor(w / cols))
-            setHeight(Math.floor(h / rows))
+            setWidth(Math.floor(w / columns))
+            setHeight(Math.floor(h / rowss))
             ratio =
-                cols === rows ? w / r + ':' + h / r : (w / cols) * cols + ':' + (h / rows) * rows
+                columns === rowss
+                    ? w / r + ':' + h / r
+                    : (w / columns) * columns + ':' + (h / rowss) * rowss
             setRatio(ratio)
             setImageLoading(true)
         }
@@ -163,30 +196,22 @@ const CardEnhanced = ({
 
     const img = image?.image
 
-    const cardtransformations =
-        cols && rows && img?.poi
-            ? {
-                  ...img?.image,
-                  upscale: true,
-                  strip: true,
-                  quality: 80,
-                  width: width * cols,
-                  height: height * rows,
-                  aspectRatio: ratio,
-                  scaleMode: 'c',
-                  query: img?.query,
-                  scaleFit: img?.poi && img?.poi.x != -1 && img?.poi.y != -1 ? 'poi' : undefined,
-                  poi:
-                      img?.poi && img?.poi.x != -1 && img?.poi.y != -1
-                          ? {x: img?.poi.x, y: img?.poi.y}
-                          : undefined
-              }
-            : {
-                  ...img,
-                  width: 1200,
-                  quality: 80,
-                  upscale: false
-              }
+    const cardtransformations = {
+        ...img?.image,
+        upscale: true,
+        strip: true,
+        quality: 80,
+        width: width * columns,
+        height: height * rowss,
+        aspectRatio: ratio,
+        scaleMode: 'c',
+        query: img?.query,
+        scaleFit: 'poi',
+        poi:
+            img?.poi && img?.poi.x != -1 && img?.poi.y != -1
+                ? {x: img?.poi.x, y: img?.poi.y}
+                : {x: 0.5, y: 0.5}
+    }
 
     const content = (
         <>
