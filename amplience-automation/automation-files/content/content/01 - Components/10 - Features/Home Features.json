@@ -183,19 +183,19 @@
                         },
                         {
                             "locale": "fr-FR",
-                            "value": "Programmer et prévisualiser"
+                            "value": "Planifier et prévisualiser tout le contenu"
                         },
                         {
                             "locale": "de-DE",
-                            "value": "Zeitplan & Vorschau"
+                            "value": "Alle Inhalte planen und in der Vorschau anzeigen"
                         },
                         {
                             "locale": "es-ES",
-                            "value": "Programar y vista previa"
+                            "value": "Programar y obtener una vista previa de todo el contenido"
                         },
                         {
                             "locale": "it-IT",
-                            "value": "Programma e anteprima"
+                            "value": "Pianifica e visualizza in anteprima tutti i contenuti"
                         }
                     ],
                     "_meta": {
