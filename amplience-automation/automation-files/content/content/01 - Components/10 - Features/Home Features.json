@@ -1,259 +1,419 @@
 {
-  "id": "9da2e2e2-936d-435e-8125-dbf39241b286",
-  "contentRepositoryId": "6321ee3f4cedfd0001b5a5e8",
-  "folderId": "637e26d5dc79a4000115bd09",
-  "body": {
-    "_meta": {
-      "name": "Home Features",
-      "schema": "https://sfcc.com/components/features",
-      "deliveryKey": "home/features"
+    "id": "9da2e2e2-936d-435e-8125-dbf39241b286",
+    "contentRepositoryId": "6321ee3f4cedfd0001b5a5e8",
+    "folderId": "637e26d5dc79a4000115bd09",
+    "body": {
+        "render": "Listing",
+        "features": [
+            {
+                "title": {
+                    "values": [
+                        {
+                            "locale": "en-US",
+                            "value": "Manage Site Content"
+                        },
+                        {
+                            "locale": "fr-FR",
+                            "value": "Gérer le contenu du site"
+                        },
+                        {
+                            "locale": "de-DE",
+                            "value": "Website-Inhalte verwalten"
+                        },
+                        {
+                            "locale": "es-ES",
+                            "value": "Administrar el contenido del sitio"
+                        },
+                        {
+                            "locale": "it-IT",
+                            "value": "Gestisci il contenuto del sito"
+                        }
+                    ],
+                    "_meta": {
+                        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+                    }
+                },
+                "text": {
+                    "values": [
+                        {
+                            "locale": "en-US",
+                            "value": "Drive All Site Content, Product Listing Page in-grid content, site navigation, product page content and footer links"
+                        },
+                        {
+                            "locale": "fr-FR",
+                            "value": "Pilotez tout le contenu du site, le contenu de la grille de la page de liste de produits, la navigation sur le site, le contenu de la page produit et les liens de pied de page"
+                        },
+                        {
+                            "locale": "de-DE",
+                            "value": "Führen Sie alle Website-Inhalte, In-Grid-Inhalte der Produktlistenseite, Website-Navigation, Produktseiten-Inhalte und Fußzeilen-Links durch"
+                        },
+                        {
+                            "locale": "es-ES",
+                            "value": "Impulsar todo el contenido del sitio, el contenido de la página de lista de productos en la cuadrícula, la navegación del sitio, el contenido de la página del producto y los enlaces de pie de página"
+                        },
+                        {
+                            "locale": "it-IT",
+                            "value": "Guida tutto il contenuto del sito, il contenuto nella griglia della pagina con l'elenco dei prodotti, la navigazione del sito, il contenuto della pagina del prodotto e i collegamenti a piè di pagina"
+                        }
+                    ],
+                    "_meta": {
+                        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+                    }
+                },
+                "link": {
+                    "type": "URL",
+                    "_meta": {
+                        "schema": "https://sfcc.com/components/link"
+                    }
+                },
+                "icon": {
+                    "_meta": {
+                        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                    },
+                    "id": "deb0f7cf-8602-468e-a647-8502a95ea0f1",
+                    "name": "icon-amp-dynamic-content",
+                    "endpoint": "sfcccompdev2",
+                    "defaultHost": "cdn.media.amplience.net"
+                }
+            },
+            {
+                "title": {
+                    "values": [
+                        {
+                            "locale": "en-US",
+                            "value": "Shoppable Components"
+                        },
+                        {
+                            "locale": "fr-FR",
+                            "value": "Composants achetables"
+                        },
+                        {
+                            "locale": "de-DE",
+                            "value": "Einkaufbare Komponenten"
+                        },
+                        {
+                            "locale": "es-ES",
+                            "value": "Componentes comprables"
+                        },
+                        {
+                            "locale": "it-IT",
+                            "value": "Componenti acquistabili"
+                        }
+                    ],
+                    "_meta": {
+                        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+                    }
+                },
+                "text": {
+                    "values": [
+                        {
+                            "locale": "en-US",
+                            "value": "Shoppable content components for rich media like images and video"
+                        },
+                        {
+                            "locale": "fr-FR",
+                            "value": "Composants de contenu achetables pour les médias enrichis tels que les images et les vidéos"
+                        },
+                        {
+                            "locale": "de-DE",
+                            "value": "Einkaufbare Inhaltskomponenten für Rich Media wie Bilder und Videos"
+                        },
+                        {
+                            "locale": "es-ES",
+                            "value": "Componentes de contenido que se pueden comprar para medios enriquecidos como imágenes y videos"
+                        },
+                        {
+                            "locale": "it-IT",
+                            "value": "Componenti di contenuti acquistabili per contenuti multimediali come immagini e video"
+                        }
+                    ],
+                    "_meta": {
+                        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+                    }
+                },
+                "link": {
+                    "type": "URL",
+                    "_meta": {
+                        "schema": "https://sfcc.com/components/link"
+                    }
+                },
+                "icon": {
+                    "_meta": {
+                        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                    },
+                    "id": "f3d23f40-382f-455b-99e5-418e80e7a497",
+                    "name": "icon-amp-cart",
+                    "endpoint": "sfcccompdev2",
+                    "defaultHost": "cdn.media.amplience.net"
+                }
+            },
+            {
+                "title": {
+                    "values": [
+                        {
+                            "locale": "en-US",
+                            "value": "Schedule & Preview"
+                        }
+                    ],
+                    "_meta": {
+                        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+                    }
+                },
+                "text": {
+                    "values": [
+                        {
+                            "locale": "en-US",
+                            "value": "Schedule & preview all content"
+                        },
+                        {
+                            "locale": "fr-FR",
+                            "value": "Programmer et prévisualiser"
+                        },
+                        {
+                            "locale": "de-DE",
+                            "value": "Zeitplan & Vorschau"
+                        },
+                        {
+                            "locale": "es-ES",
+                            "value": "Programar y vista previa"
+                        },
+                        {
+                            "locale": "it-IT",
+                            "value": "Programma e anteprima"
+                        }
+                    ],
+                    "_meta": {
+                        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+                    }
+                },
+                "link": {
+                    "type": "URL",
+                    "_meta": {
+                        "schema": "https://sfcc.com/components/link"
+                    }
+                },
+                "icon": {
+                    "_meta": {
+                        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                    },
+                    "id": "f65a2c5d-f920-484e-a098-743f0f83e856",
+                    "name": "icon-amp-calendar",
+                    "endpoint": "sfcccompdev2",
+                    "defaultHost": "cdn.media.amplience.net"
+                }
+            },
+            {
+                "title": {
+                    "values": [
+                        {
+                            "locale": "en-US",
+                            "value": "Real-Time Visualisation"
+                        },
+                        {
+                            "locale": "fr-FR",
+                            "value": "Visualisation en temps réel"
+                        },
+                        {
+                            "locale": "de-DE",
+                            "value": "Echtzeit-Visualisierung"
+                        },
+                        {
+                            "locale": "es-ES",
+                            "value": "Visualización en tiempo real"
+                        },
+                        {
+                            "locale": "it-IT",
+                            "value": "Visualizzazione in tempo reale"
+                        }
+                    ],
+                    "_meta": {
+                        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+                    }
+                },
+                "text": {
+                    "values": [
+                        {
+                            "locale": "en-US",
+                            "value": "Real-time visualisation of all content, of content sizing & placement within product listing grids"
+                        },
+                        {
+                            "locale": "fr-FR",
+                            "value": "Visualisation en temps réel de tout le contenu, de la taille et du placement du contenu dans les grilles de liste de produits"
+                        },
+                        {
+                            "locale": "de-DE",
+                            "value": "Echtzeit-Visualisierung aller Inhalte, der Inhaltsgröße und -platzierung innerhalb von Produktlisting-Rastern"
+                        },
+                        {
+                            "locale": "es-ES",
+                            "value": "Visualización en tiempo real de todo el contenido, del tamaño y ubicación del contenido dentro de las cuadrículas de listado de productos"
+                        },
+                        {
+                            "locale": "it-IT",
+                            "value": "Visualizzazione in tempo reale di tutti i contenuti, delle dimensioni e del posizionamento dei contenuti all'interno delle griglie di elenco dei prodotti"
+                        }
+                    ],
+                    "_meta": {
+                        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+                    }
+                },
+                "link": {
+                    "type": "URL",
+                    "_meta": {
+                        "schema": "https://sfcc.com/components/link"
+                    }
+                },
+                "icon": {
+                    "_meta": {
+                        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                    },
+                    "id": "6503933a-70d2-423e-bba6-efb4c4c8d567",
+                    "name": "icon-amp-rtv",
+                    "endpoint": "sfcccompdev2",
+                    "defaultHost": "cdn.media.amplience.net"
+                }
+            },
+            {
+                "title": {
+                    "values": [
+                        {
+                            "locale": "en-US",
+                            "value": "Personalisation"
+                        },
+                        {
+                            "locale": "fr-FR",
+                            "value": "Personnalisation"
+                        },
+                        {
+                            "locale": "de-DE",
+                            "value": "Personalisierung"
+                        },
+                        {
+                            "locale": "es-ES",
+                            "value": "Personalización"
+                        },
+                        {
+                            "locale": "it-IT",
+                            "value": "Personalizzazione"
+                        }
+                    ],
+                    "_meta": {
+                        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+                    }
+                },
+                "text": {
+                    "values": [
+                        {
+                            "locale": "en-US",
+                            "value": "Content personalisation based on a user's groups"
+                        },
+                        {
+                            "locale": "fr-FR",
+                            "value": "Personnalisation du contenu en fonction des groupes d'utilisateurs"
+                        },
+                        {
+                            "locale": "de-DE",
+                            "value": "Inhaltspersonalisierung basierend auf den Gruppen eines Benutzers"
+                        },
+                        {
+                            "locale": "es-ES",
+                            "value": "Personalización de contenido en función de los grupos de un usuario"
+                        },
+                        {
+                            "locale": "it-IT",
+                            "value": "Personalizzazione dei contenuti basata sui gruppi di un utente"
+                        }
+                    ],
+                    "_meta": {
+                        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+                    }
+                },
+                "link": {
+                    "type": "URL",
+                    "_meta": {
+                        "schema": "https://sfcc.com/components/link"
+                    }
+                },
+                "icon": {
+                    "_meta": {
+                        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                    },
+                    "id": "bbba558a-46f9-45fb-9f6c-8df9ee07dc8f",
+                    "name": "icon-amp-personalisation",
+                    "endpoint": "sfcccompdev2",
+                    "defaultHost": "cdn.media.amplience.net"
+                }
+            },
+            {
+                "title": {
+                    "values": [
+                        {
+                            "locale": "en-US",
+                            "value": "Improved Search"
+                        },
+                        {
+                            "locale": "fr-FR",
+                            "value": "Recherche améliorée"
+                        },
+                        {
+                            "locale": "de-DE",
+                            "value": "Verbesserte Suche"
+                        },
+                        {
+                            "locale": "es-ES",
+                            "value": "Búsqueda mejorada"
+                        },
+                        {
+                            "locale": "it-IT",
+                            "value": "Ricerca migliorata"
+                        }
+                    ],
+                    "_meta": {
+                        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+                    }
+                },
+                "text": {
+                    "values": [
+                        {
+                            "locale": "en-US",
+                            "value": "Enhanced search suggestions and search results page with content, products and category parents"
+                        }
+                    ],
+                    "_meta": {
+                        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+                    }
+                },
+                "link": {
+                    "type": "URL",
+                    "_meta": {
+                        "schema": "https://sfcc.com/components/link"
+                    }
+                },
+                "icon": {
+                    "_meta": {
+                        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                    },
+                    "id": "df63b843-204d-413b-b8fb-a3975e8bcd2e",
+                    "name": "icon-amp-search",
+                    "endpoint": "sfcccompdev2",
+                    "defaultHost": "cdn.media.amplience.net"
+                }
+            }
+        ],
+        "_meta": {
+            "deliveryKey": "home/features",
+            "name": "Home Features",
+            "schema": "https://sfcc.com/components/features"
+        }
     },
-    "render": "Listing",
-    "features": [
-      {
-        "title": {
-          "values": [
-            {
-              "locale": "en-US",
-              "value": "Cart & Checkout"
-            }
-          ],
-          "_meta": {
-            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
-          }
-        },
-        "text": {
-          "values": [
-            {
-              "locale": "en-US",
-              "value": "Ecommerce best practice for a shopper's cart and checkout experience."
-            }
-          ],
-          "_meta": {
-            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
-          }
-        },
-        "link": {
-          "type": "URL",
-          "_meta": {
-            "schema": "https://sfcc.com/components/link"
-          }
-        },
-        "icon": {
-          "_meta": {
-            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
-          },
-          "id": "be62a57e-42a9-4e00-a5d6-ec89b1fd06b4",
-          "name": "icon-cart",
-          "endpoint": "sfcccompdev2",
-          "defaultHost": "cdn.media.amplience.net"
-        }
-      },
-      {
-        "title": {
-          "values": [
-            {
-              "locale": "en-US",
-              "value": "Einstein Recommendations"
-            }
-          ],
-          "_meta": {
-            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
-          }
-        },
-        "text": {
-          "values": [
-            {
-              "locale": "en-US",
-              "value": "Deliver the next best product or offer to every shopper through product recommendations."
-            }
-          ],
-          "_meta": {
-            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
-          }
-        },
-        "link": {
-          "type": "URL",
-          "_meta": {
-            "schema": "https://sfcc.com/components/link"
-          }
-        },
-        "icon": {
-          "_meta": {
-            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
-          },
-          "id": "167a3677-29cc-489a-99d3-0c931fdd997c",
-          "name": "icon-like",
-          "endpoint": "sfcccompdev2",
-          "defaultHost": "cdn.media.amplience.net"
-        }
-      },
-      {
-        "title": {
-          "values": [
-            {
-              "locale": "en-US",
-              "value": "My Account"
-            }
-          ],
-          "_meta": {
-            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
-          }
-        },
-        "text": {
-          "values": [
-            {
-              "locale": "en-US",
-              "value": "Shoppers can manage account information such as their profile, addresses, payments and orders."
-            }
-          ],
-          "_meta": {
-            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
-          }
-        },
-        "link": {
-          "type": "URL",
-          "_meta": {
-            "schema": "https://sfcc.com/components/link"
-          }
-        },
-        "icon": {
-          "_meta": {
-            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
-          },
-          "id": "a5dee478-1727-45a1-a573-c8804d9fb89f",
-          "name": "icon-user",
-          "endpoint": "sfcccompdev2",
-          "defaultHost": "cdn.media.amplience.net"
-        }
-      },
-      {
-        "title": {
-          "values": [
-            {
-              "locale": "en-US",
-              "value": "Shopper Login and API Access Service"
-            }
-          ],
-          "_meta": {
-            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
-          }
-        },
-        "text": {
-          "values": [
-            {
-              "locale": "en-US",
-              "value": "Enable shoppers to easily log in with a more personalized shopping experience."
-            }
-          ],
-          "_meta": {
-            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
-          }
-        },
-        "link": {
-          "type": "URL",
-          "_meta": {
-            "schema": "https://sfcc.com/components/link"
-          }
-        },
-        "icon": {
-          "_meta": {
-            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
-          },
-          "id": "7210a889-3d1c-4386-b518-a5c022a38908",
-          "name": "icon-plug",
-          "endpoint": "sfcccompdev2",
-          "defaultHost": "cdn.media.amplience.net"
-        }
-      },
-      {
-        "title": {
-          "values": [
-            {
-              "locale": "en-US",
-              "value": "Components & Design Kit"
-            }
-          ],
-          "_meta": {
-            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
-          }
-        },
-        "text": {
-          "values": [
-            {
-              "locale": "en-US",
-              "value": "Built using Chakra UI, a simple, modular and accessible React component library."
-            }
-          ],
-          "_meta": {
-            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
-          }
-        },
-        "link": {
-          "type": "URL",
-          "_meta": {
-            "schema": "https://sfcc.com/components/link"
-          }
-        },
-        "icon": {
-          "_meta": {
-            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
-          },
-          "id": "ce576c3f-2f52-4ed1-8806-9353b34fde73",
-          "name": "icon-layout",
-          "endpoint": "sfcccompdev2",
-          "defaultHost": "cdn.media.amplience.net"
-        }
-      },
-      {
-        "title": {
-          "values": [
-            {
-              "locale": "en-US",
-              "value": "Wishlist"
-            }
-          ],
-          "_meta": {
-            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
-          }
-        },
-        "text": {
-          "values": [
-            {
-              "locale": "en-US",
-              "value": "Registered shoppers can add product items to their wishlist from purchasing later."
-            }
-          ],
-          "_meta": {
-            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
-          }
-        },
-        "link": {
-          "type": "URL",
-          "_meta": {
-            "schema": "https://sfcc.com/components/link"
-          }
-        },
-        "icon": {
-          "_meta": {
-            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
-          },
-          "id": "38ee5554-b12e-4d55-ad66-7b5f4228df02",
-          "name": "icon-heart",
-          "endpoint": "sfcccompdev2",
-          "defaultHost": "cdn.media.amplience.net"
-        }
-      }
-    ]
-  },
-  "version": 5,
-  "label": "Home Features",
-  "status": "ACTIVE",
-  "createdBy": "faf50c60-6d31-48fe-8af3-c52557850527",
-  "createdDate": "2022-11-23T14:22:58.076Z",
-  "lastModifiedBy": "faf50c60-6d31-48fe-8af3-c52557850527",
-  "lastModifiedDate": "2022-12-06T17:24:00.829Z",
-  "lastPublishedVersion": 5,
-  "lastPublishedDate": "2022-12-06T17:24:15.285Z",
-  "deliveryId": "9da2e2e2-936d-435e-8125-dbf39241b286"
+    "version": 5,
+    "label": "Home Features",
+    "status": "ACTIVE",
+    "createdBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+    "createdDate": "2022-11-23T14:22:58.076Z",
+    "lastModifiedBy": "faf50c60-6d31-48fe-8af3-c52557850527",
+    "lastModifiedDate": "2022-12-06T17:24:00.829Z",
+    "lastPublishedVersion": 5,
+    "lastPublishedDate": "2022-12-06T17:24:15.285Z",
+    "deliveryId": "9da2e2e2-936d-435e-8125-dbf39241b286"
 }
