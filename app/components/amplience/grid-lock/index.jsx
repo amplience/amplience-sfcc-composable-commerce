@@ -1,9 +1,22 @@
 import React from 'react'
 import AmplienceWrapper from '../wrapper'
 import PersonalisedComponent from '../personalised-component'
+import styled from '@emotion/styled'
 import GridItemHero from '../hero/gridItemHero'
-import {SimpleGrid, GridItem, useBreakpointValue, Text} from '@chakra-ui/react'
+import {SimpleGrid, GridItem, useBreakpointValue, Text, Center} from '@chakra-ui/react'
 import PropTypes from 'prop-types'
+
+const Item = styled(GridItem)`
+    .chakra-skeleton,
+    .component-parent,
+    .tile-content,
+    .img-place {
+        height: 100%;
+        img {
+            height: 100%;
+        }
+    }
+`
 
 const PersonalisedComponentGridItem = ({...props}) => {
     return <PersonalisedComponent limit="1" components={inGridComponents} {...props} />
@@ -21,12 +34,22 @@ const GridLock = ({title, subtitle, cards, breakpointColumns, gap}) => {
 
     return (
         <>
-            {title && <Text fontSize={'3xl'}>{title}</Text>}
-            {subtitle && <Text fontSize={'xl'}>{subtitle}</Text>}
-            <SimpleGrid columns={[1, 2, 4, 4]} spacingX={gap} spacingY={{base: gap, lg: gap}}>
+            {title && (
+                <Center>
+                    <Text fontSize={'3xl'} fontWeight="bold">
+                        {title}
+                    </Text>
+                </Center>
+            )}
+            {subtitle && (
+                <Center mb={4}>
+                    <Text fontSize={'xl'}>{subtitle}</Text>
+                </Center>
+            )}
+            <SimpleGrid columns={breakpointColumns} spacing={gap + 'px'} mb={4}>
                 {cards.map((item, index) => {
                     return (
-                        <GridItem
+                        <Item
                             key={index}
                             colEnd={`span ${item.cols[columnIndex]}`}
                             rowEnd={`span ${item.rows[columnIndex]}`}
@@ -40,7 +63,7 @@ const GridLock = ({title, subtitle, cards, breakpointColumns, gap}) => {
                                 gap={gap}
                                 skeleton={{display: 'flex', flex: 1}}
                             ></AmplienceWrapper>
-                        </GridItem>
+                        </Item>
                     )
                 })}
             </SimpleGrid>
@@ -53,7 +76,7 @@ GridLock.propTypes = {
     title: PropTypes.string,
     subtitle: PropTypes.string,
     cards: PropTypes.array,
-    breakpointColumns: PropTypes.number,
+    breakpointColumns: PropTypes.array,
     gap: PropTypes.number
 }
 

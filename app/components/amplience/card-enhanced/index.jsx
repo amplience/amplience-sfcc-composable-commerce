@@ -159,29 +159,6 @@ const CardEnhanced = ({
         }
     })
 
-    const recalc = () => {
-        console.log('recalc in grid')
-        let ratio
-        setH(parentRef.current?.clientHeight)
-        setW(parentRef.current?.clientWidth)
-
-        if (parentWidth && parentHeight) {
-            const wid = Math.floor(parentRef.current?.clientWidth / cols)
-            const hei = Math.floor(parentRef.current?.clientHeight / rows)
-
-            ratio =
-                cols === rows
-                    ? '1:1'
-                    : (parentRef.current?.clientWidth / cols) * cols +
-                      ':' +
-                      (parentRef.current?.clientHeight / rows) * rows
-            setRatio(ratio)
-
-            setTransHeight(Math.floor(hei * rows))
-            setTransWidth(Math.floor(wid * cols))
-        }
-    }
-
     const styles = useMultiStyleConfig('CardEnhanced', {
         blend: blend,
         color: color,
@@ -192,28 +169,43 @@ const CardEnhanced = ({
     })
 
     useEffect(() => {
-        recalc()
-    }, [cols, rows, gap])
+        if (cols && rows) {
+            console.log('recalc in grid')
+
+            //if (parentWidth && parentHeight) {
+            const wid = Math.floor(parentRef.current?.clientWidth)
+            const hei = Math.floor((parentRef.current?.clientWidth * rows) / cols)
+
+            setRatio(cols + ':' + rows)
+
+            setTransHeight(Math.floor(hei))
+            setTransWidth(Math.floor(wid))
+            console.log('wid/hei', wid + '/' + hei)
+        }
+    }, [cols, rows, gap, parentRef?.current?.clientWidth])
 
     useEffect(() => {
-        console.log('recalc standalone')
-        setH(parentRef.current?.clientHeight)
-        setW(parentRef.current?.clientWidth)
+        // Don't do any of this if cols/rows have been sent down from above!
+        if (!cols && !rows) {
+            console.log('recalc standalone')
+            setH(parentRef.current?.clientHeight)
+            setW(parentRef.current?.clientWidth)
 
-        if (parentWidth && parentHeight) {
-            console.log('defaulAspect', defaultAspect)
+            if (parentWidth && parentHeight) {
+                console.log('defaulAspect', defaultAspect)
 
-            // Set height based on known parentWIdth and defaultAspectRatio
-            const setH = Math.floor(
-                (parentRef.current?.clientWidth * defaultAspect.h) / defaultAspect.w
-            )
-            setRatio(defaultAspect.w + ':' + defaultAspect.h)
+                // Set height based on known parentWIdth and defaultAspectRatio
+                const setH = Math.floor(
+                    (parentRef.current?.clientWidth * defaultAspect.h) / defaultAspect.w
+                )
+                setRatio(defaultAspect.w + ':' + defaultAspect.h)
 
-            setTransHeight(Math.floor(setH))
-            setTransWidth(Math.floor(parentRef.current?.clientWidth))
-            console.log('cols:rows: ', defaultAspect.w + ':' + defaultAspect.h)
-            console.log('parent w:h: ', parentRef.current?.clientWidth + ':' + parentHeight)
-            console.log('calc width:height: ', parentRef.current?.clientWidth + ':' + setH)
+                setTransHeight(Math.floor(setH))
+                setTransWidth(Math.floor(parentRef.current?.clientWidth))
+                console.log('cols:rows: ', defaultAspect.w + ':' + defaultAspect.h)
+                console.log('parent w:h: ', parentRef.current?.clientWidth + ':' + parentHeight)
+                console.log('calc width:height: ', parentRef.current?.clientWidth + ':' + setH)
+            }
         }
     }, [defaultAspect.w, defaultAspect.h])
 
@@ -241,28 +233,20 @@ const CardEnhanced = ({
     }
 
     const content = (
-        <div className="tile-content" style={{height: transHeight}}>
+        <div className="tile-content">
             <div className="img-place">
                 <TrueAdaptiveImage
-                    style={{...styles.image, opacity: `${imageLoading ? 0 : 1}`}}
+                    style={{...styles.image}}
                     ref={imageRef}
                     onLoad={() => handleImageLoaded()}
                     image={img?.image}
                     transformations={cardtransformations}
                 />
-                <div
-                    style={{
-                        ...styles.loading,
-                        opacity: `${imageLoading ? 1 : 0}`
-                    }}
-                ></div>
             </div>
 
             <div
                 style={{
-                    ...styles.tileText,
-                    opacity: `${imageLoading ? 0 : 1}`,
-                    height: transHeight
+                    ...styles.tileText
                 }}
                 className="blend"
             >
@@ -292,7 +276,7 @@ const CardEnhanced = ({
                     </div>
                 </div>
             </div>
-            <div style={{...styles.tileText, opacity: 0, height: transHeight}} className="hover">
+            <div style={{...styles.tileText, opacity: 0}} className="hover">
                 <div style={{...styles.textHoverCell}}>
                     <div className="text-pane" style={{...styles.textPane}}>
                         {mainText ? (
@@ -326,7 +310,6 @@ const CardEnhanced = ({
         <Skeleton isLoaded={!imageLoading} sx={{width: '100%', height: transHeight}}>
             <Contain
                 ref={parentRef}
-                sx={{height: transHeight}}
                 className={`amp-tile amp-tile-${index + 1}`}
                 href={links[0]?.value}
             >
@@ -335,11 +318,7 @@ const CardEnhanced = ({
         </Skeleton>
     ) : (
         <Skeleton isLoaded={!imageLoading} sx={{width: '100%', height: transHeight}}>
-            <Contain
-                ref={parentRef}
-                sx={{height: transHeight}}
-                className={`amp-tile amp-tile-${index + 1}`}
-            >
+            <Contain ref={parentRef} className={`amp-tile amp-tile-${index + 1}`}>
                 {content}
             </Contain>
         </Skeleton>
