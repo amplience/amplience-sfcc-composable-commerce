@@ -1,9 +1,10 @@
 import React, {useEffect, useRef, useState} from 'react'
 import styled from '@emotion/styled'
 import {Heading} from '@chakra-ui/layout'
-import {useMultiStyleConfig, Link, Skeleton, useBreakpointValue} from '@chakra-ui/react'
+import {useMultiStyleConfig, Link, useBreakpointValue} from '@chakra-ui/react'
 import TrueAdaptiveImage from '../adaptive-image/TrueAdaptiveImage'
 import PropTypes from 'prop-types'
+import useResizeObserver from '@react-hook/resize-observer'
 
 const Contain = styled(Link)`
     height: 100%;
@@ -103,15 +104,8 @@ const CardEnhanced = ({
     rows,
     gap
 }) => {
+    // eslint-disable-next-line prettier/prettier
     links ??= []
-
-    const styles = useMultiStyleConfig('CardEnhanced', {
-        blend: blend,
-        color: color,
-        tAlign: textAlignment,
-        vAlign: verticalAlignment,
-        linkPosition: linkPosition
-    })
 
     const [imageLoading, setImageLoading] = useState(true)
     const imageRef = useRef()
@@ -119,37 +113,38 @@ const CardEnhanced = ({
     const [height, setHeight] = useState(400)
     const [width, setWidth] = useState(400)
     const [ratio, setRatio] = useState('1:1')
-    const [columns, setColumns] = useState(1)
-    const [rowss, setRows] = useState(1)
+    const [columnState, setColumnState] = useState(1)
+    const [rowsState, setRowState] = useState(1)
     const parentRef = useRef()
 
     const handleImageLoaded = () => {
         setImageLoading(false)
     }
 
-    const gcd = (a, b) => {
+    /* const gcd = (a, b) => {
         return b == 0 ? a : gcd(b, a % b)
-    }
+    } */
 
     useEffect(() => {
-        if (imageRef?.current?.complete && imageLoading) {
+        if (imageRef?.current?.complete) {
             setImageLoading(false)
+        } else {
+            setImageLoading(true)
         }
-    }, [imageRef?.current?.complete])
+    }, [imageRef])
 
-    const h = parentRef.current?.clientHeight == 0 ? 400 : parentRef.current?.clientHeight
-    const w = parentRef.current?.clientWidth == 0 ? 400 : parentRef.current?.clientWidth
+    //const h = parentRef.current?.clientHeight == 0 ? 400 : parentRef.current?.clientHeight
+    //const w = parentRef.current?.clientWidth == 0 ? 400 : parentRef.current?.clientWidth
 
-    let compHeight = 'auto'
-    //const [compHeight, setCompHeight] = useState('auto')
-    if (cols && rows && gap) {
-        // Force the height to a fraction of the width (minus gap)
-        //setCompHeight((rows * (w - gap * (cols - 1))) / cols + (rows - 1) * gap + 'px')
-        compHeight = (rows * (w - gap * (cols - 1))) / cols + (rows - 1) * gap + 'px'
-    } else {
-        //setCompHeight('400px')
-        //compHeight = '400px'
-    }
+    const [h] = useState(
+        parentRef.current?.clientHeight == 0 ? 400 : parentRef.current?.clientHeight
+    )
+    const [w] = useState(parentRef.current?.clientWidth == 0 ? 400 : parentRef.current?.clientWidth)
+
+    useResizeObserver(parentRef, () => {
+        //  setImageLoading(true)
+        recalc()
+    })
 
     const defaultColRow = useBreakpointValue({
         base: {
@@ -165,34 +160,49 @@ const CardEnhanced = ({
             rows: 2
         },
         xl: {
-            cols: 5,
-            rows: 3
+            cols: 6,
+            rows: 2
         }
     })
 
-    useEffect(() => {
-        let r, ratio
+    const recalc = () => {
+        let ratio
 
         if (cols && rows) {
-            setColumns(cols)
-            setRows(rows)
+            setColumnState(cols)
+            setRowState(rows)
         } else {
-            setColumns(defaultColRow.cols)
-            setRows(defaultColRow.rows)
+            setColumnState(defaultColRow.cols)
+            setRowState(defaultColRow.rows)
         }
 
         if (w && h) {
-            r = gcd(w, h)
-            setWidth(Math.floor(w / columns))
-            setHeight(Math.floor(h / rowss))
+            //r = gcd(w, h)
+            setWidth(Math.floor(w / columnState))
+            setHeight(Math.floor(h / rowsState))
+            //setHeight((rows * (w - gap * (cols - 1))) / cols + (rows - 1) * gap)
+            console.log('height', height)
             ratio =
-                columns === rowss
-                    ? w / r + ':' + h / r
-                    : (w / columns) * columns + ':' + (h / rowss) * rowss
+                columnState === rowsState
+                    ? '1:1'
+                    : (w / columnState) * columnState + ':' + (h / rowsState) * rowsState
             setRatio(ratio)
-            setImageLoading(true)
+            //setImageLoading(true)
         }
-    }, [w, h, cols, rows])
+    }
+
+    const styles = useMultiStyleConfig('CardEnhanced', {
+        blend: blend,
+        color: color,
+        tAlign: textAlignment,
+        vAlign: verticalAlignment,
+        linkPosition: linkPosition,
+        height: height * rowsState
+    })
+
+    useEffect(() => {
+        recalc()
+    }, [cols, rows, gap])
 
     const img = image?.image
 
@@ -201,8 +211,8 @@ const CardEnhanced = ({
         upscale: true,
         strip: true,
         quality: 80,
-        width: width * columns,
-        height: height * rowss,
+        width: width * columnState,
+        height: height * rowsState,
         aspectRatio: ratio,
         scaleMode: 'c',
         query: img?.query,
@@ -214,18 +224,24 @@ const CardEnhanced = ({
     }
 
     const content = (
-        <>
-            <div className="img-place" style={{display: `${imageLoading ? 'none' : 'block'}`}}>
+        <div className="tile-content">
+            <div className="img-place">
                 <TrueAdaptiveImage
-                    style={{...styles.image}}
+                    style={{...styles.image, opacity: `${imageLoading ? 0 : 1}`}}
                     ref={imageRef}
                     onLoad={() => handleImageLoaded()}
                     image={img?.image}
                     transformations={cardtransformations}
                 />
+                <div
+                    style={{
+                        ...styles.loading,
+                        opacity: `${imageLoading ? 1 : 0}`
+                    }}
+                ></div>
             </div>
 
-            <div style={{...styles.tileText, opacity: 1}} className="blend">
+            <div style={{...styles.tileText, opacity: `${imageLoading ? 0 : 1}`}} className="blend">
                 <div style={{...styles.textCell}}>
                     <div className="text-pane" style={{...styles.textPane}}>
                         {mainText ? (
@@ -279,25 +295,22 @@ const CardEnhanced = ({
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     )
 
     return links[0] ? (
-        <Skeleton isLoaded={!imageLoading} sx={{width: '100%', height: compHeight}}>
-            <Contain
-                ref={parentRef}
-                className={`amp-tile amp-tile-${index + 1}`}
-                href={links[0]?.value}
-            >
-                {content}
-            </Contain>
-        </Skeleton>
+        <Contain
+            ref={parentRef}
+            sx={{height: 'auto'}}
+            className={`amp-tile amp-tile-${index + 1}`}
+            href={links[0]?.value}
+        >
+            {content}
+        </Contain>
     ) : (
-        <Skeleton isLoaded={!imageLoading} sx={{width: '100%', height: compHeight}}>
-            <Contain ref={parentRef} className={`amp-tile amp-tile-${index + 1}`}>
-                {content}
-            </Contain>
-        </Skeleton>
+        <Contain ref={parentRef} sx={{height: 'auto'}} className={`amp-tile amp-tile-${index + 1}`}>
+            {content}
+        </Contain>
     )
 }
 
