@@ -44,6 +44,7 @@ const Features = ({features, render}) => {
                                     maxWidth="12"
                                     maxHeight="12"
                                     src={getImageUrl(feature.icon)}
+                                    alt={feature.title || feature.text || feature.link?.label}
                                 ></Image>
                             </Flex>
                             <Text fontWeight="700">{feature.title ?? feature.link.label}</Text>
@@ -87,6 +88,7 @@ const Features = ({features, render}) => {
                                     <Image
                                         {...iconBaseStyle}
                                         src={getImageUrl(feature.icon)}
+                                        alt={feature.title || feature.text || feature.link?.label}
                                     ></Image>
                                 </Flex>
                                 <Text color={'black'} fontWeight={700} fontSize={20}>
