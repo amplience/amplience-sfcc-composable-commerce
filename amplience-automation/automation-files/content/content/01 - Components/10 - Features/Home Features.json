@@ -153,6 +153,22 @@
                         {
                             "locale": "en-US",
                             "value": "Schedule & Preview"
+                        },
+                        {
+                            "locale": "fr-FR",
+                            "value": "Programmer et prévisualiser"
+                        },
+                        {
+                            "locale": "de-DE",
+                            "value": "Zeitplan & Vorschau"
+                        },
+                        {
+                            "locale": "es-ES",
+                            "value": "Programar y vista previa"
+                        },
+                        {
+                            "locale": "it-IT",
+                            "value": "Programma e anteprima"
                         }
                     ],
                     "_meta": {
