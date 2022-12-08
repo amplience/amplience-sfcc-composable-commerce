@@ -1,10 +1,9 @@
 import React, {useEffect, useRef, useState} from 'react'
 import styled from '@emotion/styled'
 import {Heading} from '@chakra-ui/layout'
-import {useMultiStyleConfig, Link, useBreakpointValue} from '@chakra-ui/react'
+import {useMultiStyleConfig, Link, useBreakpointValue, Skeleton} from '@chakra-ui/react'
 import TrueAdaptiveImage from '../adaptive-image/TrueAdaptiveImage'
 import PropTypes from 'prop-types'
-import useResizeObserver from '@react-hook/resize-observer'
 
 const Contain = styled(Link)`
     height: 100%;
@@ -109,12 +108,9 @@ const CardEnhanced = ({
 
     const [imageLoading, setImageLoading] = useState(true)
     const imageRef = useRef()
-
-    const [height, setHeight] = useState(400)
-    const [width, setWidth] = useState(400)
     const [ratio, setRatio] = useState('1:1')
-    const [columnState, setColumnState] = useState(1)
-    const [rowsState, setRowState] = useState(1)
+    const [transHeight, setTransHeight] = useState(400)
+    const [transWidth, setTransWidth] = useState(400)
     const parentRef = useRef()
 
     const handleImageLoaded = () => {
@@ -126,68 +122,63 @@ const CardEnhanced = ({
     } */
 
     useEffect(() => {
-        if (imageRef?.current?.complete) {
-            setImageLoading(false)
-        } else {
+        if (imageRef?.current?.imageLoading) {
             setImageLoading(true)
+        } else {
+            setImageLoading(false)
         }
+        console.log('img loading', imageLoading)
     }, [imageRef])
 
     //const h = parentRef.current?.clientHeight == 0 ? 400 : parentRef.current?.clientHeight
     //const w = parentRef.current?.clientWidth == 0 ? 400 : parentRef.current?.clientWidth
 
-    const [h] = useState(
+    const [parentHeight, setH] = useState(
         parentRef.current?.clientHeight == 0 ? 400 : parentRef.current?.clientHeight
     )
-    const [w] = useState(parentRef.current?.clientWidth == 0 ? 400 : parentRef.current?.clientWidth)
+    const [parentWidth, setW] = useState(
+        parentRef.current?.clientWidth == 0 ? 400 : parentRef.current?.clientWidth
+    )
 
-    useResizeObserver(parentRef, () => {
-        //  setImageLoading(true)
-        recalc()
-    })
-
-    const defaultColRow = useBreakpointValue({
+    const defaultAspect = useBreakpointValue({
         base: {
-            cols: 1,
-            rows: 1
+            w: 1,
+            h: 1
         },
         md: {
-            cols: 3,
-            rows: 2
+            w: 3,
+            h: 2
         },
         lg: {
-            cols: 4,
-            rows: 2
+            w: 4,
+            h: 2
         },
         xl: {
-            cols: 6,
-            rows: 2
+            w: 5,
+            h: 2
         }
     })
 
     const recalc = () => {
+        console.log('recalc in grid')
         let ratio
+        setH(parentRef.current?.clientHeight)
+        setW(parentRef.current?.clientWidth)
 
-        if (cols && rows) {
-            setColumnState(cols)
-            setRowState(rows)
-        } else {
-            setColumnState(defaultColRow.cols)
-            setRowState(defaultColRow.rows)
-        }
+        if (parentWidth && parentHeight) {
+            const wid = Math.floor(parentRef.current?.clientWidth / cols)
+            const hei = Math.floor(parentRef.current?.clientHeight / rows)
 
-        if (w && h) {
-            //r = gcd(w, h)
-            setWidth(Math.floor(w / columnState))
-            setHeight(Math.floor(h / rowsState))
-            //setHeight((rows * (w - gap * (cols - 1))) / cols + (rows - 1) * gap)
-            console.log('height', height)
             ratio =
-                columnState === rowsState
+                cols === rows
                     ? '1:1'
-                    : (w / columnState) * columnState + ':' + (h / rowsState) * rowsState
+                    : (parentRef.current?.clientWidth / cols) * cols +
+                      ':' +
+                      (parentRef.current?.clientHeight / rows) * rows
             setRatio(ratio)
-            //setImageLoading(true)
+
+            setTransHeight(Math.floor(hei * rows))
+            setTransWidth(Math.floor(wid * cols))
         }
     }
 
@@ -197,12 +188,38 @@ const CardEnhanced = ({
         tAlign: textAlignment,
         vAlign: verticalAlignment,
         linkPosition: linkPosition,
-        height: height * rowsState
+        height: transHeight
     })
 
     useEffect(() => {
         recalc()
     }, [cols, rows, gap])
+
+    useEffect(() => {
+        console.log('recalc standalone')
+        setH(parentRef.current?.clientHeight)
+        setW(parentRef.current?.clientWidth)
+
+        if (parentWidth && parentHeight) {
+            console.log('defaulAspect', defaultAspect)
+
+            // Set height based on known parentWIdth and defaultAspectRatio
+            const setH = Math.floor(
+                (parentRef.current?.clientWidth * defaultAspect.h) / defaultAspect.w
+            )
+            setRatio(defaultAspect.w + ':' + defaultAspect.h)
+
+            setTransHeight(Math.floor(setH))
+            setTransWidth(Math.floor(parentRef.current?.clientWidth))
+            console.log('cols:rows: ', defaultAspect.w + ':' + defaultAspect.h)
+            console.log('parent w:h: ', parentRef.current?.clientWidth + ':' + parentHeight)
+            console.log('calc width:height: ', parentRef.current?.clientWidth + ':' + setH)
+        }
+    }, [defaultAspect.w, defaultAspect.h])
+
+    useEffect(() => {
+        console.log('image wh: ', transWidth + ' x ' + transHeight)
+    }, [transHeight, transWidth])
 
     const img = image?.image
 
@@ -211,8 +228,8 @@ const CardEnhanced = ({
         upscale: true,
         strip: true,
         quality: 80,
-        width: width * columnState,
-        height: height * rowsState,
+        width: transWidth,
+        height: transHeight,
         aspectRatio: ratio,
         scaleMode: 'c',
         query: img?.query,
@@ -224,7 +241,7 @@ const CardEnhanced = ({
     }
 
     const content = (
-        <div className="tile-content">
+        <div className="tile-content" style={{height: transHeight}}>
             <div className="img-place">
                 <TrueAdaptiveImage
                     style={{...styles.image, opacity: `${imageLoading ? 0 : 1}`}}
@@ -241,7 +258,14 @@ const CardEnhanced = ({
                 ></div>
             </div>
 
-            <div style={{...styles.tileText, opacity: `${imageLoading ? 0 : 1}`}} className="blend">
+            <div
+                style={{
+                    ...styles.tileText,
+                    opacity: `${imageLoading ? 0 : 1}`,
+                    height: transHeight
+                }}
+                className="blend"
+            >
                 <div style={{...styles.textCell}}>
                     <div className="text-pane" style={{...styles.textPane}}>
                         {mainText ? (
@@ -268,7 +292,7 @@ const CardEnhanced = ({
                     </div>
                 </div>
             </div>
-            <div style={{...styles.tileText, opacity: 0}} className="hover">
+            <div style={{...styles.tileText, opacity: 0, height: transHeight}} className="hover">
                 <div style={{...styles.textHoverCell}}>
                     <div className="text-pane" style={{...styles.textPane}}>
                         {mainText ? (
@@ -299,18 +323,26 @@ const CardEnhanced = ({
     )
 
     return links[0] ? (
-        <Contain
-            ref={parentRef}
-            sx={{height: 'auto'}}
-            className={`amp-tile amp-tile-${index + 1}`}
-            href={links[0]?.value}
-        >
-            {content}
-        </Contain>
+        <Skeleton isLoaded={!imageLoading} sx={{width: '100%', height: transHeight}}>
+            <Contain
+                ref={parentRef}
+                sx={{height: transHeight}}
+                className={`amp-tile amp-tile-${index + 1}`}
+                href={links[0]?.value}
+            >
+                {content}
+            </Contain>
+        </Skeleton>
     ) : (
-        <Contain ref={parentRef} sx={{height: 'auto'}} className={`amp-tile amp-tile-${index + 1}`}>
-            {content}
-        </Contain>
+        <Skeleton isLoaded={!imageLoading} sx={{width: '100%', height: transHeight}}>
+            <Contain
+                ref={parentRef}
+                sx={{height: transHeight}}
+                className={`amp-tile amp-tile-${index + 1}`}
+            >
+                {content}
+            </Contain>
+        </Skeleton>
     )
 }
 
