@@ -6,7 +6,7 @@ import {Image} from '@chakra-ui/react'
 export const AdaptiveImageContext = createContext(null)
 
 const AdaptiveImage = (props) => {
-    const {image, transformations, children, imageRef, ...other} = props
+    const {image, transformations, handleLoad, children, imageRef, ...other} = props
 
     if (!image) {
         return null
@@ -25,6 +25,7 @@ const AdaptiveImage = (props) => {
                 {children}
                 <Image
                     ref={imageRef}
+                    onLoad={handleLoad}
                     src={defaultImageUrl}
                     fallbackSrc={`${defaultImageUrl}&w=1&qlt=1`}
                     {...other}
@@ -40,7 +41,8 @@ AdaptiveImage.propTypes = {
     image: PropTypes.object,
     transformations: PropTypes.object,
     children: PropTypes.node,
-    imageRef: PropTypes.object
+    imageRef: PropTypes.object,
+    handleLoad: PropTypes.func
 }
 
 // eslint-disable-next-line react/display-name

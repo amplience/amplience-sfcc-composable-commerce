@@ -117,21 +117,18 @@ const CardEnhanced = ({
         setImageLoading(false)
     }
 
-    /* const gcd = (a, b) => {
-        return b == 0 ? a : gcd(b, a % b)
-    } */
+    useEffect(() => {
+        if (imageRef?.current?.complete) {
+            setImageLoading(false)
+        } else {
+            setImageLoading(true)
+        }
+        console.log('img loaded', imageRef?.current?.complete)
+    }, [imageRef?.current?.complete])
 
     useEffect(() => {
-        if (imageRef?.current?.imageLoading) {
-            setImageLoading(true)
-        } else {
-            setImageLoading(false)
-        }
-        console.log('img loading', imageLoading)
-    }, [imageRef])
-
-    //const h = parentRef.current?.clientHeight == 0 ? 400 : parentRef.current?.clientHeight
-    //const w = parentRef.current?.clientWidth == 0 ? 400 : parentRef.current?.clientWidth
+        console.log('img loading->', imageLoading)
+    }, [imageLoading])
 
     const [parentHeight, setH] = useState(
         parentRef.current?.clientHeight == 0 ? 400 : parentRef.current?.clientHeight
@@ -170,9 +167,6 @@ const CardEnhanced = ({
 
     useEffect(() => {
         if (cols && rows) {
-            console.log('recalc in grid')
-
-            //if (parentWidth && parentHeight) {
             const wid = Math.floor(parentRef.current?.clientWidth)
             const hei = Math.floor((parentRef.current?.clientWidth * rows) / cols)
 
@@ -180,20 +174,16 @@ const CardEnhanced = ({
 
             setTransHeight(Math.floor(hei))
             setTransWidth(Math.floor(wid))
-            console.log('wid/hei', wid + '/' + hei)
         }
     }, [cols, rows, gap, parentRef?.current?.clientWidth])
 
     useEffect(() => {
         // Don't do any of this if cols/rows have been sent down from above!
         if (!cols && !rows) {
-            console.log('recalc standalone')
             setH(parentRef.current?.clientHeight)
             setW(parentRef.current?.clientWidth)
 
             if (parentWidth && parentHeight) {
-                console.log('defaulAspect', defaultAspect)
-
                 // Set height based on known parentWIdth and defaultAspectRatio
                 const setH = Math.floor(
                     (parentRef.current?.clientWidth * defaultAspect.h) / defaultAspect.w
@@ -202,20 +192,12 @@ const CardEnhanced = ({
 
                 setTransHeight(Math.floor(setH))
                 setTransWidth(Math.floor(parentRef.current?.clientWidth))
-                console.log('cols:rows: ', defaultAspect.w + ':' + defaultAspect.h)
-                console.log('parent w:h: ', parentRef.current?.clientWidth + ':' + parentHeight)
-                console.log('calc width:height: ', parentRef.current?.clientWidth + ':' + setH)
             }
         }
     }, [defaultAspect.w, defaultAspect.h])
 
-    useEffect(() => {
-        console.log('image wh: ', transWidth + ' x ' + transHeight)
-    }, [transHeight, transWidth])
-
     const img = image?.image
-
-    const cardtransformations = {
+    const [cardtransformations, setTransforms] = useState({
         ...img?.image,
         upscale: true,
         strip: true,
@@ -230,7 +212,26 @@ const CardEnhanced = ({
             img?.poi && img?.poi.x != -1 && img?.poi.y != -1
                 ? {x: img?.poi.x, y: img?.poi.y}
                 : {x: 0.5, y: 0.5}
-    }
+    })
+
+    useEffect(() => {
+        setTransforms({
+            ...img?.image,
+            upscale: true,
+            strip: true,
+            quality: 80,
+            width: transWidth,
+            height: transHeight,
+            aspectRatio: ratio,
+            scaleMode: 'c',
+            query: img?.query,
+            scaleFit: 'poi',
+            poi:
+                img?.poi && img?.poi.x != -1 && img?.poi.y != -1
+                    ? {x: img?.poi.x, y: img?.poi.y}
+                    : {x: 0.5, y: 0.5}
+        })
+    }, [transHeight, transWidth])
 
     const content = (
         <div className="tile-content">
@@ -238,8 +239,8 @@ const CardEnhanced = ({
                 <TrueAdaptiveImage
                     style={{...styles.image}}
                     ref={imageRef}
-                    onLoad={() => handleImageLoaded()}
                     image={img?.image}
+                    handleLoad={handleImageLoaded}
                     transformations={cardtransformations}
                 />
             </div>
