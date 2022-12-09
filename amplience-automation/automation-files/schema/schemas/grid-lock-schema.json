@@ -36,7 +36,7 @@
         },
         "breakpointColumns": {
             "title": "title",
-            "description": "description",
+            "description": "this const value MUST match cards.ui:extension.params.cols value below",
             "type": "array",
             "const": [1, 2, 4]
         },
