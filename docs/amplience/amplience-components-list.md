@@ -5,6 +5,7 @@
 | https://sfcc.com/components/card-enhanced | `./card-enhanced/CardEnhanced` | ![Card Enhanced](./media/components-card-enhanced.png) An enhanced card with localisation, responsive imaging, point of interest cropping and layout options|
 | https://sfcc.com/components/card-list | `./card-list/CardList` | ![Card List](./media/components-card-list.png) Displaying a list of Card Enhanced in an horizontal stack |
 | https://sfcc.com/components/curated-product | `./curated-product-list/CuratedProductList` | ![Curated Product List](./media/components-curated-product-list.png) A list of manually curated products from SFCC |
+| https://sfcc.com/components/features | `./features/Features` | Component displaying a list of features (icon, title, text, link) with two possible views, listing or buttons |
 | https://sfcc.com/components/hero | `./hero/Hero` | ![Hero](./media/components-hero.png) Hero banner with an image, a localised title and a list of localised actions |
 | https://sfcc.com/components/personalised-component | `./personalised-component/PersonalisedComponent` | A component that contains variants associated to customer groups to display personalised content |
 | https://sfcc.com/components/personalised-container | `./personalised-container/PersonalisedContainer` | A container that contains variants associated to customer groups to display personalised content |
