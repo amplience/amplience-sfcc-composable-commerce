@@ -5,15 +5,6 @@ export default {
             filter: 'grayscale(0%)',
             transition: 'all 0.8s ease'
         },
-        loading: {
-            position: 'absolute',
-            top: 0,
-            bottom: 0,
-            left: 0,
-            right: 0,
-            color: '#333',
-            height: `${props.height}px`
-        },
         tile: {
             position: 'relative',
             margin: 0,
@@ -64,7 +55,6 @@ export default {
     }),
     parts: [
         'image',
-        'loading',
         'tile',
         'tileText',
         'textCell',

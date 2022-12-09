@@ -40,7 +40,6 @@ import {
     DrawerCloseButton,
     useBreakpointValue
 } from '@chakra-ui/react'
-import styled from '@emotion/styled'
 
 // Project Components
 import Pagination from '../../../components/pagination'
@@ -105,17 +104,6 @@ const inGridComponents = {
     'https://sfcc.com/components/personalised-ingrid-component': PersonalisedComponentGridItem
 }
 
-const Item = styled(GridItem)`
-    .chakra-skeleton,
-    .component-parent,
-    .tile-content,
-    .img-place {
-        height: 100%;
-        img {
-            height: 100%;
-        }
-    }
-`
 // NOTE: You can ignore certain refinements on a template level by updating the below
 // list of ignored refinements.
 const REFINEMENT_DISALLOW_LIST = ['c_isNew']
@@ -734,7 +722,7 @@ const ProductList = (props) => {
                                               // Amplience content tile
 
                                               return (
-                                                  <Item
+                                                  <GridItem
                                                       key={index}
                                                       colEnd={{
                                                           base: `span 1`,
@@ -759,7 +747,7 @@ const ProductList = (props) => {
                                                           gap={16}
                                                           skeleton={{display: 'flex', flex: 1}}
                                                       ></AmplienceWrapper>
-                                                  </Item>
+                                                  </GridItem>
                                               )
                                           } else {
                                               const productSearchItem = item

@@ -161,8 +161,7 @@ const CardEnhanced = ({
         color: color,
         tAlign: textAlignment,
         vAlign: verticalAlignment,
-        linkPosition: linkPosition,
-        height: transHeight
+        linkPosition: linkPosition
     })
 
     useEffect(() => {
@@ -172,7 +171,7 @@ const CardEnhanced = ({
 
             setRatio(cols + ':' + rows)
 
-            setTransHeight(Math.floor(hei))
+            setTransHeight(Math.floor(hei + gap * rows))
             setTransWidth(Math.floor(wid))
         }
     }, [cols, rows, gap, parentRef?.current?.clientWidth])
@@ -244,7 +243,6 @@ const CardEnhanced = ({
                     transformations={cardtransformations}
                 />
             </div>
-
             <div
                 style={{
                     ...styles.tileText
