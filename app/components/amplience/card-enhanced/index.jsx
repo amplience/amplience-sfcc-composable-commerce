@@ -123,12 +123,7 @@ const CardEnhanced = ({
         } else {
             setImageLoading(true)
         }
-        console.log('img loaded', imageRef?.current?.complete)
     }, [imageRef?.current?.complete])
-
-    useEffect(() => {
-        console.log('img loading->', imageLoading)
-    }, [imageLoading])
 
     const [parentHeight, setH] = useState(
         parentRef.current?.clientHeight == 0 ? 400 : parentRef.current?.clientHeight
