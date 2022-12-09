@@ -26,8 +26,6 @@ const Image = ({
     rows,
     gap
 }) => {
-    links ??= []
-
     const styles = useMultiStyleConfig('Image', {
     })
 
@@ -170,13 +168,11 @@ Image.propTypes = {
             sat: PropTypes.number
         })
     }),
-    links: PropTypes.arrayOf(
-        PropTypes.shape({
-            label: PropTypes.string,
-            type: PropTypes.string,
-            value: PropTypes.string
-        })
-    ),
+    link: PropTypes.shape({
+        label: PropTypes.string,
+        type: PropTypes.string,
+        value: PropTypes.string
+    }),
     cols: PropTypes.number,
     rows: PropTypes.number,
     gap: PropTypes.number,
