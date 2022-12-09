@@ -1,0 +1,17 @@
+{
+    "name": "grid-layout",
+    "label": "Grid Layout",
+    "description": "Ability to render components in a visual grid editor",
+    "url": "https://grid-extension.dc-demostore.com/",
+    "height": 200,
+    "enabledForAllContentTypes": false,
+    "category": "CONTENT_FIELD",
+    "parameters": "{\n  \"pageSize\": 24,\n  \"cols\": 3,\n  \"mode\": \"wrap\"\n}",
+    "snippets": [],
+    "settings": "{\"API\":{\"READ\":false,\"EDIT\":false},\"SANDBOX\":{\"SAME_ORIGIN\":true,\"MODALS\":false,\"NAVIGATION\":false,\"POPUPS\":false,\"POPUP_ESCAPE_SANDBOX\":false,\"DOWNLOADS\":false,\"FORMS\":false}}",
+    "status": "ACTIVE",
+    "createdBy": "d25504bc-f83f-4826-bf57-89fe3850ffef",
+    "createdDate": "2022-08-09T09:53:05.791Z",
+    "lastModifiedBy": "d25504bc-f83f-4826-bf57-89fe3850ffef",
+    "lastModifiedDate": "2022-08-09T09:53:05.791Z"
+}

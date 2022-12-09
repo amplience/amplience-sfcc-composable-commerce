@@ -1,0 +1,5 @@
+{
+    "body": "./schemas/image-schema.json",
+    "schemaId": "https://sfcc.com/components/image",
+    "validationLevel": "CONTENT_TYPE"
+}
