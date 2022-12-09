@@ -21,7 +21,7 @@ const Contain = styled(Link)`
 const Image = ({
     image,
     index = 0,
-    links,
+    link,
     cols,
     rows,
     gap
@@ -117,12 +117,12 @@ const Image = ({
         </>
     )
 
-    return links[0] && links[0].value ? (
+    return link && link.value ? (
         <Skeleton isLoaded={!imageLoading} sx={{width: '100%', height: compHeight}}>
             <Contain
                 ref={parentRef}
                 className={`amp-tile amp-tile-${index + 1}`}
-                to={getLinkUrlEnum(links[0])}
+                to={getLinkUrlEnum(link)}
             >
                 {content}
             </Contain>
