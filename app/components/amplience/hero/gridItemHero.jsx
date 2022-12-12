@@ -4,10 +4,6 @@ import {Box, Link, Heading, Stack, useMultiStyleConfig, Skeleton} from '@chakra-
 import TrueAdaptiveImage from '../adaptive-image/TrueAdaptiveImage'
 import styled from '@emotion/styled'
 
-const gcd = (a, b) => {
-    return b == 0 ? a : gcd(b, a % b)
-}
-
 const Contain = styled('div')`
   height: 100%;
   position: relative;
@@ -104,7 +100,7 @@ const Contain = styled('div')`
 
 const InGridHero = ({
     title,
-    img,
+    image,
     actions = [],
     textAlign = 'Left',
     justifyContent = 'Left',
@@ -115,54 +111,81 @@ const InGridHero = ({
     ...props
 }) => {
     const styles = useMultiStyleConfig('Hero', {variant: 'inGrid'})
-    const parentRef = useRef()
-    const imageRef = useRef()
-
-    const h = parentRef.current?.clientHeight == 0 ? 400 : parentRef.current?.clientHeight
-    const w = parentRef.current?.clientWidth == 0 ? 400 : parentRef.current?.clientWidth
     const [imageLoading, setImageLoading] = useState(true)
-    const [height, setHeight] = useState(400)
-    const [width, setWidth] = useState(400)
+    const imageRef = useRef()
+    const parentRef = useRef()
+
     const [ratio, setRatio] = useState('1:1')
+    const [transHeight, setTransHeight] = useState(400)
+    const [transWidth, setTransWidth] = useState(400)
 
-    useEffect(() => {
-        let r, ratio
-
-        if (w && h) {
-            r = gcd(w, h)
-            setWidth(Math.floor(w / cols))
-            setHeight(Math.floor(h / rows))
-            ratio =
-                cols === rows ? w / r + ':' + h / r : (w / cols) * cols + ':' + (h / rows) * rows
-            setRatio(ratio)
-            setImageLoading(img.image != null)
-        }
-    }, [w, h, cols, rows, img.image])
-
-    let compHeight = 'auto'
-    if (cols && rows && gap) {
-        // Force the height to a fraction of the width (minus gap)
-        compHeight = (rows * (w - gap * (cols - 1))) / cols + (rows - 1) * gap + 'px'
+    const handleImageLoaded = () => {
+        setImageLoading(false)
     }
 
-    const cardTransformations = {
+    useEffect(() => {
+        if (imageRef?.current?.complete) {
+            setImageLoading(false)
+        } else {
+            setImageLoading(true)
+        }
+    }, [imageRef?.current?.complete])
+
+    useEffect(() => {
+        if (cols && rows) {
+            const wid = Math.floor(parentRef.current?.clientWidth)
+            const hei = Math.floor((parentRef.current?.clientWidth * rows) / cols)
+
+            setRatio(cols + ':' + rows)
+
+            setTransHeight(Math.floor(hei + gap * rows))
+            setTransWidth(Math.floor(wid))
+        }
+    }, [cols, rows, gap, parentRef?.current?.clientWidth])
+
+    const img = image?.image
+    const [cardtransformations, setTransforms] = useState({
         ...img?.image,
         upscale: true,
         strip: true,
         quality: 80,
-        width: width * cols,
-        height: height * rows,
+        width: transWidth,
+        height: transHeight,
         aspectRatio: ratio,
         scaleMode: 'c',
-        query: img?.query
-    }
+        query: img?.query,
+        scaleFit: 'poi',
+        poi:
+            img?.poi && img?.poi.x != -1 && img?.poi.y != -1
+                ? {x: img?.poi.x, y: img?.poi.y}
+                : {x: 0.5, y: 0.5}
+    })
+
+    useEffect(() => {
+        setTransforms({
+            ...img?.image,
+            upscale: true,
+            strip: true,
+            quality: 80,
+            width: transWidth,
+            height: transHeight,
+            aspectRatio: ratio,
+            scaleMode: 'c',
+            query: img?.query,
+            scaleFit: 'poi',
+            poi:
+                img?.poi && img?.poi.x != -1 && img?.poi.y != -1
+                    ? {x: img?.poi.x, y: img?.poi.y}
+                    : {x: 0.5, y: 0.5}
+        })
+    }, [transHeight, transWidth])
 
     const content = (
         <Contain>
             <Stack {...styles.stackContainer}>
                 <Skeleton
                     isLoaded={!imageLoading}
-                    sx={{width: '100%', height: compHeight}}
+                    sx={{width: '100%', height: transHeight}}
                     style={{
                         justifyContent: justifyContent.toLowerCase(),
                         alignItems: alignItems.toLowerCase(),
@@ -191,16 +214,13 @@ const InGridHero = ({
                             return null
                         })}
                     </Stack>
-                    <div
-                        className="img-place"
-                        style={{display: `${imageLoading ? 'none' : 'block'}`, width: '100%'}}
-                    >
+                    <div className="img-place">
                         <TrueAdaptiveImage
                             style={{...styles.image}}
                             ref={imageRef}
-                            onLoad={() => setImageLoading(false)}
+                            handleLoad={handleImageLoaded}
                             image={img?.image}
-                            transformations={cardTransformations}
+                            transformations={cardtransformations}
                         />
                     </div>
                 </Skeleton>
@@ -212,7 +232,7 @@ const InGridHero = ({
         <Box
             ref={parentRef}
             {...styles.container}
-            sx={{width: '100%', height: compHeight}}
+            sx={{width: '100%', height: transHeight}}
             {...props}
         >
             {actions[0]?.url ? <Link href={actions[0]?.url}>{content}</Link> : content}
@@ -226,15 +246,37 @@ InGridHero.propTypes = {
     /**
      * Hero component image
      */
-    img: PropTypes.shape({
-        image: PropTypes.shape({
-            id: PropTypes.string,
-            name: PropTypes.string,
-            endpoint: PropTypes.string,
-            defaultHost: PropTypes.string
+    image: PropTypes.shape({
+        disablePoiAspectRatio: PropTypes.bool,
+        imageAltText: PropTypes.string,
+        seoText: PropTypes.string,
+        _meta: PropTypes.shape({
+            schema: PropTypes.string
         }),
-        alt: PropTypes.string,
-        query: PropTypes.string
+        image: PropTypes.shape({
+            aspectLock: PropTypes.string,
+            bri: PropTypes.number,
+            crop: PropTypes.arrayOf(PropTypes.number),
+            fliph: PropTypes.bool,
+            flipv: PropTypes.bool,
+            hue: PropTypes.number,
+            query: PropTypes.string,
+            image: PropTypes.shape({
+                defaultHost: PropTypes.string,
+                endpoint: PropTypes.string,
+                id: PropTypes.string,
+                name: PropTypes.string,
+                _meta: PropTypes.shape({
+                    schema: PropTypes.string
+                })
+            }),
+            poi: PropTypes.shape({
+                x: PropTypes.number,
+                y: PropTypes.number
+            }),
+            rot: PropTypes.number,
+            sat: PropTypes.number
+        })
     }),
     /**
      * Hero component main title

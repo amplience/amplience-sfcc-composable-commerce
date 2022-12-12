@@ -1,10 +1,9 @@
 import React, {useEffect, useRef, useState} from 'react'
 import styled from '@emotion/styled'
-import {Heading} from '@chakra-ui/layout'
-import {useMultiStyleConfig, Skeleton} from '@chakra-ui/react'
+import {useMultiStyleConfig, Skeleton, useBreakpointValue} from '@chakra-ui/react'
 import TrueAdaptiveImage from '../adaptive-image/TrueAdaptiveImage'
 import PropTypes from 'prop-types'
-import { getLinkUrlEnum } from '../../../utils/amplience/link'
+import {getLinkUrlEnum} from '../../../utils/amplience/link'
 import Link from '../link'
 
 const Contain = styled(Link)`
@@ -18,107 +17,139 @@ const Contain = styled(Link)`
     }
 `
 
-const Image = ({
-    image,
-    index = 0,
-    links,
-    cols,
-    rows,
-    gap
-}) => {
+const Image = ({image, index = 0, links, cols, rows, gap}) => {
     links ??= []
 
-    const styles = useMultiStyleConfig('Image', {
-    })
+    const styles = useMultiStyleConfig('Image', {})
 
     const [imageLoading, setImageLoading] = useState(true)
     const imageRef = useRef()
-
-    const [height, setHeight] = useState(400)
-    const [width, setWidth] = useState(400)
-    const [ratio, setRatio] = useState('1:1')
     const parentRef = useRef()
+
+    const [ratio, setRatio] = useState('1:1')
+    const [transHeight, setTransHeight] = useState(400)
+    const [transWidth, setTransWidth] = useState(400)
 
     const handleImageLoaded = () => {
         setImageLoading(false)
     }
 
-    const gcd = (a, b) => {
-        return b == 0 ? a : gcd(b, a % b)
-    }
-
     useEffect(() => {
-        if (imageRef?.current?.complete && imageLoading) {
+        if (imageRef?.current?.complete) {
             setImageLoading(false)
+        } else {
+            setImageLoading(true)
         }
     }, [imageRef?.current?.complete])
 
-    const h = parentRef.current?.clientHeight == 0 ? 400 : parentRef.current?.clientHeight
-    const w = parentRef.current?.clientWidth == 0 ? 400 : parentRef.current?.clientWidth
+    const [parentHeight, setH] = useState(
+        parentRef.current?.clientHeight == 0 ? 400 : parentRef.current?.clientHeight
+    )
+    const [parentWidth, setW] = useState(
+        parentRef.current?.clientWidth == 0 ? 400 : parentRef.current?.clientWidth
+    )
 
-    let compHeight = 'auto'
-    if (cols && rows && gap) {
-        // Force the height to a fraction of the width (minus gap)
-        compHeight = (rows * (w - gap * (cols - 1))) / cols + (rows - 1) * gap + 'px'
-    }
+    const defaultAspect = useBreakpointValue({
+        base: {
+            w: 1,
+            h: 1
+        },
+        md: {
+            w: 3,
+            h: 2
+        },
+        lg: {
+            w: 4,
+            h: 2
+        },
+        xl: {
+            w: 5,
+            h: 2
+        }
+    })
 
     useEffect(() => {
-        let r, ratio
+        if (cols && rows) {
+            const wid = Math.floor(parentRef.current?.clientWidth)
+            const hei = Math.floor((parentRef.current?.clientWidth * rows) / cols)
 
-        if (w && h) {
-            r = gcd(w, h)
-            setWidth(Math.floor(w / cols))
-            setHeight(Math.floor(h / rows))
-            ratio =
-                cols === rows ? w / r + ':' + h / r : (w / cols) * cols + ':' + (h / rows) * rows
-            setRatio(ratio)
-            setImageLoading(true)
+            setRatio(cols + ':' + rows)
+
+            setTransHeight(Math.floor(hei + gap * rows))
+            setTransWidth(Math.floor(wid))
         }
-    }, [w, h, cols, rows])
+    }, [cols, rows, gap, parentRef?.current?.clientWidth])
+
+    useEffect(() => {
+        // Don't do any of this if cols/rows have been sent down from above!
+        if (!cols && !rows) {
+            setH(parentRef.current?.clientHeight)
+            setW(parentRef.current?.clientWidth)
+
+            if (parentWidth && parentHeight) {
+                // Set height based on known parentWIdth and defaultAspectRatio
+                const setH = Math.floor(
+                    (parentRef.current?.clientWidth * defaultAspect.h) / defaultAspect.w
+                )
+                setRatio(defaultAspect.w + ':' + defaultAspect.h)
+
+                setTransHeight(Math.floor(setH))
+                setTransWidth(Math.floor(parentRef.current?.clientWidth))
+            }
+        }
+    }, [defaultAspect.w, defaultAspect.h])
 
     const img = image?.image
+    const [cardtransformations, setTransforms] = useState({
+        ...img?.image,
+        upscale: true,
+        strip: true,
+        quality: 80,
+        width: transWidth,
+        height: transHeight,
+        aspectRatio: ratio,
+        scaleMode: 'c',
+        query: img?.query,
+        scaleFit: 'poi',
+        poi:
+            img?.poi && img?.poi.x != -1 && img?.poi.y != -1
+                ? {x: img?.poi.x, y: img?.poi.y}
+                : {x: 0.5, y: 0.5}
+    })
 
-    const cardtransformations =
-        cols && rows && img?.poi
-            ? {
-                  ...img?.image,
-                  upscale: true,
-                  strip: true,
-                  quality: 80,
-                  width: width * cols,
-                  height: height * rows,
-                  aspectRatio: ratio,
-                  scaleMode: 'c',
-                  query: img?.query,
-                  scaleFit: img?.poi && img?.poi.x != -1 && img?.poi.y != -1 ? 'poi' : undefined,
-                  poi:
-                      img?.poi && img?.poi.x != -1 && img?.poi.y != -1
-                          ? {x: img?.poi.x, y: img?.poi.y}
-                          : undefined
-              }
-            : {
-                  ...img,
-                  width: 1200,
-                  quality: 80,
-                  upscale: false
-              }
+    useEffect(() => {
+        setTransforms({
+            ...img?.image,
+            upscale: true,
+            strip: true,
+            quality: 80,
+            width: transWidth,
+            height: transHeight,
+            aspectRatio: ratio,
+            scaleMode: 'c',
+            query: img?.query,
+            scaleFit: 'poi',
+            poi:
+                img?.poi && img?.poi.x != -1 && img?.poi.y != -1
+                    ? {x: img?.poi.x, y: img?.poi.y}
+                    : {x: 0.5, y: 0.5}
+        })
+    }, [transHeight, transWidth])
 
     const content = (
-        <>
-            <div className="img-place" style={{display: `${imageLoading ? 'none' : 'block'}`}}>
-                <TrueAdaptiveImage
-                    style={{...styles.image}}
-                    ref={imageRef}
-                    onLoad={() => handleImageLoaded()}
-                    image={img?.image}
-                    transformations={cardtransformations}
-                />
-            </div>
-        </>
+        <div className="img-place">
+            <TrueAdaptiveImage
+                style={{...styles.image}}
+                ref={imageRef}
+                handleLoad={handleImageLoaded}
+                image={img?.image}
+                transformations={cardtransformations}
+            />
+        </div>
     )
 
     return links[0] && links[0].value ? (
-        <Skeleton isLoaded={!imageLoading} sx={{width: '100%', height: compHeight}}>
+        <Skeleton isLoaded={!imageLoading} sx={{width: '100%', height: transHeight}}>
             <Contain
                 ref={parentRef}
                 className={`amp-tile amp-tile-${index + 1}`}
@@ -128,7 +159,7 @@ const Image = ({
             </Contain>
         </Skeleton>
     ) : (
-        <Skeleton isLoaded={!imageLoading} sx={{width: '100%', height: compHeight}}>
+        <Skeleton isLoaded={!imageLoading} sx={{width: '100%', height: transHeight}}>
             <Contain ref={parentRef} className={`amp-tile amp-tile-${index + 1}`}>
                 {content}
             </Contain>
@@ -180,6 +211,7 @@ Image.propTypes = {
     cols: PropTypes.number,
     rows: PropTypes.number,
     gap: PropTypes.number,
+    index: PropTypes.number,
     rest: PropTypes.object
 }
 
