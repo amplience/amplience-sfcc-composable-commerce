@@ -47,6 +47,7 @@ This version of the SF Retail React app integrates Amplience as the Content CMS 
 
 ### 🧩 Components & Extensions
 * [Amplience Extensions List](./docs/amplience/amplience-extensions-list.md)
+  * [Grid Layout extension specifics](./docs/amplience/grid-layout.md)
 * [Amplience Components List](./docs/amplience/amplience-components-list.md)
   * [AmplienceWrapper Component specifics](./docs/amplience/ampliencewrapper-component.md)
   * [Shoppable Image specifics](docs/amplience/shoppable-image-component.md)
