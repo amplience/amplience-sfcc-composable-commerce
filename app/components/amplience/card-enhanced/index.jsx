@@ -162,11 +162,13 @@ const CardEnhanced = ({
     useEffect(() => {
         if (cols && rows) {
             const wid = Math.floor(parentRef.current?.clientWidth)
-            const hei = Math.floor((parentRef.current?.clientWidth * rows) / cols)
+            const hei = Math.floor(
+                ((parentRef.current?.clientWidth - gap * (cols - 1)) / cols) * rows
+            )
 
             setRatio(cols + ':' + rows)
 
-            setTransHeight(Math.floor(hei + gap * rows))
+            setTransHeight(Math.floor(hei + gap * (rows - 1)))
             setTransWidth(Math.floor(wid))
         }
     }, [cols, rows, gap, parentRef?.current?.clientWidth])
