@@ -19,7 +19,6 @@ import AmplienceRichText from '../rich-text'
 import CardList from '../card-list'
 import {useLocation} from 'react-router-dom'
 import ShoppableVideo from '../shoppable-video'
-import Image from '../image'
 import Features from '../features'
 
 const Blank = () => <></>
@@ -30,7 +29,6 @@ const componentsMapping = {
     'https://sfcc.com/components/rich-text': AmplienceRichText,
     'https://sfcc.com/components/curated-product': CuratedProductList,
     'https://sfcc.com/components/card-enhanced': CardEnhanced,
-    'https://sfcc.com/components/image': Image,
     'https://sfcc.com/components/personalised-component': PersonalisedComponent,
     'https://sfcc.com/components/personalised-ingrid-component': PersonalisedComponent,
     'https://sfcc.com/components/personalised-container': PersonalisedContainer,
