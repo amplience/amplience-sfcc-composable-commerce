@@ -1,0 +1,5 @@
+{
+    "body": "./schemas/features-schema.json",
+    "schemaId": "https://sfcc.com/components/features",
+    "validationLevel": "CONTENT_TYPE"
+}

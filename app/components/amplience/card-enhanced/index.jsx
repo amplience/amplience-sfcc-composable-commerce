@@ -1,7 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react'
 import styled from '@emotion/styled'
 import {Heading} from '@chakra-ui/layout'
-import {useMultiStyleConfig, Link, Skeleton} from '@chakra-ui/react'
+import {useMultiStyleConfig, Link, Skeleton, useBreakpointValue} from '@chakra-ui/react'
 import TrueAdaptiveImage from '../adaptive-image/TrueAdaptiveImage'
 import PropTypes from 'prop-types'
 
@@ -119,13 +119,12 @@ const CardEnhanced = ({
     const [height, setHeight] = useState(400)
     const [width, setWidth] = useState(400)
     const [ratio, setRatio] = useState('1:1')
+    const [displayColumns, setDisplayColumns] = useState(1)
+    const [displayRows, setDisplayRows] = useState(1)
     const parentRef = useRef()
 
     const handleImageLoaded = () => {
         setImageLoading(false)
-        /*  if (onImageLoad instanceof Function) {
-             //onImageLoad(index);
-         } */
     }
 
     const gcd = (a, b) => {
@@ -147,15 +146,44 @@ const CardEnhanced = ({
         compHeight = (rows * (w - gap * (cols - 1))) / cols + (rows - 1) * gap + 'px'
     }
 
+    const defaultColRow = useBreakpointValue({
+        base: {
+            cols: 1,
+            rows: 1
+        },
+        md: {
+            cols: 3,
+            rows: 2
+        },
+        lg: {
+            cols: 4,
+            rows: 2
+        },
+        xl: {
+            cols: 5,
+            rows: 3
+        }
+    })
+
     useEffect(() => {
         let r, ratio
 
+        if (cols && rows) {
+            setDisplayColumns(cols)
+            setDisplayRows(rows)
+        } else {
+            setDisplayColumns(defaultColRow.cols)
+            setDisplayRows(defaultColRow.rows)
+        }
+
         if (w && h) {
             r = gcd(w, h)
-            setWidth(Math.floor(w / cols))
-            setHeight(Math.floor(h / rows))
+            setWidth(Math.floor(w / displayColumns))
+            setHeight(Math.floor(h / displayRows))
             ratio =
-                cols === rows ? w / r + ':' + h / r : (w / cols) * cols + ':' + (h / rows) * rows
+                displayColumns === displayRows
+                    ? w / r + ':' + h / r
+                    : (w / displayColumns) * displayColumns + ':' + (h / displayRows) * displayRows
             setRatio(ratio)
             setImageLoading(true)
         }
@@ -163,30 +191,22 @@ const CardEnhanced = ({
 
     const img = image?.image
 
-    const cardtransformations =
-        cols && rows && img?.poi
-            ? {
-                  ...img?.image,
-                  upscale: true,
-                  strip: true,
-                  quality: 80,
-                  width: width * cols,
-                  height: height * rows,
-                  aspectRatio: ratio,
-                  scaleMode: 'c',
-                  query: img?.query,
-                  scaleFit: img?.poi && img?.poi.x != -1 && img?.poi.y != -1 ? 'poi' : undefined,
-                  poi:
-                      img?.poi && img?.poi.x != -1 && img?.poi.y != -1
-                          ? {x: img?.poi.x, y: img?.poi.y}
-                          : undefined
-              }
-            : {
-                  ...img,
-                  width: 1200,
-                  quality: 80,
-                  upscale: false
-              }
+    const cardtransformations = {
+        ...img?.image,
+        upscale: true,
+        strip: true,
+        quality: 80,
+        width: width * displayColumns,
+        height: height * displayRows,
+        aspectRatio: ratio,
+        scaleMode: 'c',
+        query: img?.query,
+        scaleFit: 'poi',
+        poi:
+            img?.poi && img?.poi.x != -1 && img?.poi.y != -1
+                ? {x: img?.poi.x, y: img?.poi.y}
+                : {x: 0.5, y: 0.5}
+    }
 
     const content = (
         <>

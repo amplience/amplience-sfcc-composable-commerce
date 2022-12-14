@@ -13,7 +13,8 @@
                 "https://sfcc.com/components/personalised-component",
                 "https://sfcc.com/components/rich-text",
                 "https://sfcc.com/components/shoppable-image",
-                "https://sfcc.com/components/shoppable-video"
+                "https://sfcc.com/components/shoppable-video",
+                "https://sfcc.com/components/features"
             ]
         },
         "anyInGridComponent": {
@@ -40,7 +41,8 @@
                 "https://sfcc.com/components/card-list",
                 "https://sfcc.com/components/rich-text",
                 "https://sfcc.com/components/shoppable-image",
-                "https://sfcc.com/components/shoppable-video"
+                "https://sfcc.com/components/shoppable-video",
+                "https://sfcc.com/components/features"
             ]
         },
         "anySlot": {
@@ -61,6 +63,7 @@
                 "https://sfcc.com/components/rich-text",
                 "https://sfcc.com/components/shoppable-image",
                 "https://sfcc.com/components/shoppable-video",
+                "https://sfcc.com/components/features",
                 "https://sfcc.com/site/pages/content-page",
                 "https://sfcc.com/slots/flexible-list",
                 "https://sfcc.com/slots/personalised-slot"
@@ -78,6 +81,7 @@
                 "https://sfcc.com/components/rich-text",
                 "https://sfcc.com/components/shoppable-image",
                 "https://sfcc.com/components/shoppable-video",
+                "https://sfcc.com/components/features",
                 "https://sfcc.com/slots/flexible-list",
                 "https://sfcc.com/slots/personalised-slot"
             ]
@@ -240,7 +244,8 @@
                                 "https://sfcc.com/components/personalised-container",
                                 "https://sfcc.com/components/personalised-component",
                                 "https://sfcc.com/components/shoppable-image",
-                                "https://sfcc.com/components/shoppable-video"
+                                "https://sfcc.com/components/shoppable-video",
+                                "https://sfcc.com/components/features"
                             ],
                             "contentTypeSettings": [
                                 {
