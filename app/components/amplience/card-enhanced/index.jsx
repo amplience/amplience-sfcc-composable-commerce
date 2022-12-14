@@ -141,14 +141,9 @@ const CardEnhanced = ({
     const w = parentRef.current?.clientWidth == 0 ? 400 : parentRef.current?.clientWidth
 
     let compHeight = 'auto'
-    //const [compHeight, setCompHeight] = useState('auto')
     if (cols && rows && gap) {
         // Force the height to a fraction of the width (minus gap)
-        //setCompHeight((rows * (w - gap * (cols - 1))) / cols + (rows - 1) * gap + 'px')
         compHeight = (rows * (w - gap * (cols - 1))) / cols + (rows - 1) * gap + 'px'
-    } else {
-        //setCompHeight('400px')
-        //compHeight = '400px'
     }
 
     const defaultColRow = useBreakpointValue({
