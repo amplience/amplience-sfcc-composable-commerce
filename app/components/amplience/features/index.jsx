@@ -12,7 +12,7 @@ const Features = ({features, render}) => {
 
     const {iconBaseStyle} = theme.components.Icon
 
-    const buttonMode = render == 'Buttons'
+    const buttonMode = render === 'Buttons'
 
     return buttonMode ? (
         <Section

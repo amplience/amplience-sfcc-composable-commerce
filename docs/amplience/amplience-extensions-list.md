@@ -4,7 +4,7 @@
 |-----------|-----------------|-------------|
 | `di-image-transformation` | [DI Image Transformation](https://github.com/amplience/dc-extension-di-transform) | Extension that allows defining DI image transformations in content items |
 | `deep-copy` | [Deep Copy](https://github.com/amplience/dc-extension-deep-copy) | Dashboard extension which enables customers to copy nested content items |
-| `grid-layout` | [Grid](https://github.com/amplience/dc-extension-grid) |This extension allows users to place and resize grid items using a WYSIWYG editor, and edit their content by selecting them |
+| `grid-layout` | [Grid](https://github.com/amplience/dc-extension-grid) | This extension allows users to place and resize grid items using a WYSIWYG editor, and edit their content by selecting them |
 | `help` | [Help](https://github.com/amplience/dc-extension-help) | Add markdown help text to the content form |
 | `json-editor` | [JSON Editor](https://amplience.com/developers/docs/integrations/extensions/content-editor/) | JSON Content Editor |
 | `rich-text` | [Rich Text](https://github.com/amplience/dc-extension-rich-text) | Rich Text Editor using Markdown |
