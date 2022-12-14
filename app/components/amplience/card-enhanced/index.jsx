@@ -119,8 +119,8 @@ const CardEnhanced = ({
     const [height, setHeight] = useState(400)
     const [width, setWidth] = useState(400)
     const [ratio, setRatio] = useState('1:1')
-    const [columns, setColumns] = useState(1)
-    const [rowss, setRows] = useState(1)
+    const [displayColumns, setDisplayColumns] = useState(1)
+    const [displayRows, setDisplayRows] = useState(1)
     const parentRef = useRef()
 
     const handleImageLoaded = () => {
@@ -174,21 +174,21 @@ const CardEnhanced = ({
         let r, ratio
 
         if (cols && rows) {
-            setColumns(cols)
-            setRows(rows)
+            setDisplayColumns(cols)
+            setDisplayRows(rows)
         } else {
-            setColumns(defaultColRow.cols)
-            setRows(defaultColRow.rows)
+            setDisplayColumns(defaultColRow.cols)
+            setDisplayRows(defaultColRow.rows)
         }
 
         if (w && h) {
             r = gcd(w, h)
-            setWidth(Math.floor(w / columns))
-            setHeight(Math.floor(h / rowss))
+            setWidth(Math.floor(w / displayColumns))
+            setHeight(Math.floor(h / displayRows))
             ratio =
-                columns === rowss
+                displayColumns === displayRows
                     ? w / r + ':' + h / r
-                    : (w / columns) * columns + ':' + (h / rowss) * rowss
+                    : (w / displayColumns) * displayColumns + ':' + (h / displayRows) * displayRows
             setRatio(ratio)
             setImageLoading(true)
         }
@@ -201,8 +201,8 @@ const CardEnhanced = ({
         upscale: true,
         strip: true,
         quality: 80,
-        width: width * columns,
-        height: height * rowss,
+        width: width * displayColumns,
+        height: height * displayRows,
         aspectRatio: ratio,
         scaleMode: 'c',
         query: img?.query,
