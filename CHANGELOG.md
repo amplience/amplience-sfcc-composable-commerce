@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.11.0](https://github.com/amplience/amplience-sfcc-composable-commerce/compare/v1.10.1...v1.11.0) (2022-12-14)
+
+
+### Features
+
+* add different features renders ([c8bf5d7](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/c8bf5d742f58535b33362823fbdef7b674a8b8cc))
+* add features and image to automation ([9700be1](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/9700be13caa8cc4404bc3ee6e17b55c589381770))
+* add features component without link ([a3f1cea](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/a3f1cea55fdcd54970672d02132bed673a2e4851))
+* add image link support, fix category links ([2d4d5d8](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/2d4d5d87b14c5278d61c91e6f5cf7a71b1fb567f))
+* add link support to features content type ([980891a](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/980891a51a1351dfb853ddecf003bcb9814cdee9))
+* image component ([668ee77](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/668ee774f54dae1f082e6a8083dc6d53c45c68ee))
+* use content for homepage features ([d0b015d](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/d0b015d26c4d44d192fdb5a8706fecc708bf9987))
+
+
+### Bug Fixes
+
+* Added grid extension to automation ([075b8a5](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/075b8a5ce77c38cc04a525c9927957c2ffbed719))
+* calculate img transforms based on breakpoint when used OUTSIDE of a  grid ([f28a064](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/f28a064c6e1ec7aacabce21aaac74d866d730b9d))
+* clean up variable names ([fe5bf3c](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/fe5bf3c3d17566bbe792013b82a7b14806f00e26))
+* remove grid-lock from partials ([bd94ba0](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/bd94ba09f105a7196611e7531c45e9adb8b1c589))
+* removed duplicate schemas ([e5c3a07](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/e5c3a070e1f460dfed7420945270957740b33f71))
+* removed links array ([37fcfdf](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/37fcfdf3cded9a99e244a4d9a9692c5b0fc7ead6))
+* using one link ([69b9d8e](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/69b9d8ee8e70f30537477e45a1f279a09551dcb4))
+
 ### [1.10.1](https://github.com/amplience/amplience-sfcc-composable-commerce/compare/v1.10.0...v1.10.1) (2022-11-24)
 
 
