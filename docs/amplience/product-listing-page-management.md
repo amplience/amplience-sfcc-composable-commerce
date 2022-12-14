@@ -14,7 +14,7 @@ The out of the box SFCC Composable Storefront from Salesforce does not allow any
 Amplience allows you to manage content for your PLP in a number of ways:
 * Top Content - Choose a list of content / slots to display at the top of your PLP
 * Bottom Content - Choose a list of content / slots to display a the bottom of your PLP
-* In Grid Content - Choose content to display in the product grid. You can define the size in columns and rows as well as the order
+* In Grid Content - Choose content to display in the product grid. You can define the size in columns and rows as well as the position in the grid.
 
 ![Amplience PLP management)](./media/PLP_-_amplience-management.png)
 
@@ -63,6 +63,33 @@ We then render an Amplience Wrapper component passing through the content fetche
     ))
 }
 ```
+## In-Grid Content Authoring
+Version 1.11.0 introduces a simple and intuitive new way for users to author In-grid content.
+
+![In-Grid Authoring](./media/PLP_ingrid_authoring.png)
+
+Our newly released [Grid Layout Extension](https://github.com/amplience/dc-extension-grid) gives you the freedom to simply click anywhere in the Product Listing to add content. Once you've selected content, you can then drag your content to the size and position you'd like. The max width and height is currently set to 3 columns and 3 rows. And not to worry, product tiles are not replaced but are pushed forward in the listing. So, for example, if you have a piece of content occupying positions 1-3 of the grid, the last 3 products will be pushed to the next page. 
+
+The other great thing about Amplience In-Grid content is that it integrates seamlessly with Amplience Dynamic Media, so if you set a Point of Interest on your images, the image will automatically resize and center on your POI, no matter what size you decide to make the tile.
+
+![POI One](./media/PLP_ingrid_authoring2.png)
+![POI Two](./media/PLP_ingrid_authoring3.png)
+
+### Rules for displaying in grid content
+As we are enriching the product list content with content, we need rules to display the content as the order and quantity of products may change. Plus sizes (columns and rows) for desktop are not valid for mobile. The following were our considerations when implementing In-grid content.
+
+* In-Grid content should not overwrite products, they should be moved aside.
+* Ensure the search with/without the in-grid content have the same products.
+* Products should wrap to the next page at an earlier point when in-grid content is present, but it should not skip any.
+* In-Grid content positions should have 24 slots per page. For example, content at 24 should appear at the start of the 2nd page, 48 at the 3rd, etc.
+* Mobile size should force all in-grid content to be 1x1, and it should recover when resizing to desktop.
+* It should reload the page if the page offset is not valid relative to the content.
+* It’s possible to place invalid grid tiles since we can’t place constraints on the values. Follow these rules when testing:
+    * Pages start at multiples of 24 from the first result.
+    * Lines start at multiples of 3 from the start of the page. (2 for desktop)* 2-column content should only be placed at the start or middle of a line (for example, position 2 is not allowed)
+    * 3-column content should only be placed at the start of a line. (page base + multiple of 3)
+* I can put the same content in multiple times.
+
 
 ## Bottom Content - Client Side Rendered method
 As the bottom content is typically below the visible fold, we already have the ID's from the content references and pass them to the AmplienceWrapper component to render for each reference:
@@ -103,18 +130,3 @@ useAmpRtv(
     [initialAmpSlots, initialAmpBottomContent, initialAmpTopContent]
 )
 ```
-
-## Rules for displaying in grid content
-As we are enriching the product list content with content, we need rules to display the content as the order and quantity of products may change. Plus sizes (columns and rows) for desktop are not valid for mobile:
-
-* In-Grid content should not overwrite products, they should be moved aside.
-* Ensure the search with/without the in-grid content have the same products.
-* Products should wrap to the next page at an earlier point when in-grid content is present, but it should not skip any.
-* In-Grid content positions should have 24 slots per page. For example, content at 24 should appear at the start of the 2nd page, 48 at the 3rd, etc.
-* Mobile size should force all in-grid content to be 1x1, and it should recover when resizing to desktop.
-* It should reload the page if the page offset is not valid relative to the content.
-* It’s possible to place invalid grid tiles since we can’t place constraints on the values. Follow these rules when testing:
-    * Pages start at multiples of 24 from the first result.
-    * Lines start at multiples of 3 from the start of the page. (2 for desktop)* 2-column content should only be placed at the start or middle of a line (for example, position 2 is not allowed)
-    * 3-column content should only be placed at the start of a line. (page base + multiple of 3)
-* I can put the same content in multiple times.
