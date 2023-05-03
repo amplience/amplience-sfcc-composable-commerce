@@ -46,6 +46,15 @@ contentSecurityPolicy: {
             'cdn.media.amplience.net',
             '*.staging.bigcontent.io'
         ],
+        'connect-src': [
+            "'self'",
+            "'unsafe-eval'",
+            'api.cquotient.com',
+            '*.cdn.content.amplience.net',
+            'cdn.media.amplience.net',
+            'cdn.static.amplience.net',
+            '*.staging.bigcontent.io'
+        ],
         'default-src': ["'self'", "'unsafe-eval'", '*.cdn.content.amplience.net', 'cdn.media.amplience.net', '*.staging.bigcontent.io'],
         'frame-ancestors': ["'self'", '*.amplience.net'],
         // Do not upgrade insecure requests for local development
