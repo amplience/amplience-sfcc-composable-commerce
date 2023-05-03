@@ -1036,6 +1036,7 @@ ProductList.getProps = async ({res, params, location, api, ampClient}) => {
     return {
         searchQuery,
         productSearchResult,
+        category,
         ampSlots,
         ampTopContent,
         ampBottomContent: ampCategory?.bottomContent || []
