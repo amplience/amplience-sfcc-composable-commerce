@@ -345,6 +345,7 @@ const ProductList = (props) => {
     const {
         searchQuery,
         productSearchResult,
+        category,
         // eslint-disable-next-line react/prop-types
         staticContext,
         location,
@@ -388,7 +389,7 @@ const ProductList = (props) => {
 
     const {total, sortingOptions} = productSearchResult || {}
     const basePath = `${location.pathname}${location.search}`
-    const category = !searchQuery && params.categoryId ? categories[params.categoryId] : undefined
+    //const category = !searchQuery && params.categoryId ? categories[params.categoryId] : undefined
 
     const isMobile = useBreakpointValue({base: true, lg: false, xl: false, xxl: false, xxxl: false})
     const sortUrls = useSortUrls({options: sortingOptions})
@@ -1063,6 +1064,7 @@ ProductList.propTypes = {
     searchQuery: PropTypes.string,
     onAddToWishlistClick: PropTypes.func,
     onRemoveWishlistClick: PropTypes.func,
+    category: PropTypes.object,
 
     /**
      * Amplience specific - in-grid content positions and ids.
