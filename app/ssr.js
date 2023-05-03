@@ -56,7 +56,15 @@ const {handler} = runtime.createHandler(options, (app) => {
                         'cdn.media.amplience.net',
                         '*.staging.bigcontent.io'
                     ],
-                    'connect-src': ["'self'", 'api.cquotient.com'],
+                    'connect-src': [
+                        "'self'",
+                        "'unsafe-eval'",
+                        'api.cquotient.com',
+                        '*.cdn.content.amplience.net',
+                        'cdn.media.amplience.net',
+                        'cdn.static.amplience.net',
+                        '*.staging.bigcontent.io'
+                    ],
                     'default-src': [
                         "'self'",
                         "'unsafe-eval'",
