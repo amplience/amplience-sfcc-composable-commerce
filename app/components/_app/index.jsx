@@ -53,7 +53,7 @@ import {
     DEFAULT_SITE_TITLE,
     HOME_HREF,
     THEME_COLOR,
-    CAT_MENU_DEFAULT_NAV_DEPTH,
+    AMPLIENCE_CAT_MENU_DEFAULT_NAV_DEPTH,
     CAT_MENU_DEFAULT_ROOT_CATEGORY,
     DEFAULT_LOCALE
 } from '../../constants'
@@ -394,24 +394,27 @@ App.getProps = async ({api, res, req, ampClient}) => {
     let rootCategory = await api.shopperProducts.getCategory({
         parameters: {
             id: CAT_MENU_DEFAULT_ROOT_CATEGORY,
-            levels: CAT_MENU_DEFAULT_NAV_DEPTH,
+            levels: AMPLIENCE_CAT_MENU_DEFAULT_NAV_DEPTH,
             locale: targetLocale
         }
     })
 
     if (rootCategory.isError) {
-        rootCategory = await api.shopperProducts.getCategory({
-            parameters: {
-                id: CAT_MENU_DEFAULT_ROOT_CATEGORY,
-                levels: CAT_MENU_DEFAULT_NAV_DEPTH,
-                locale: defaultLocale
-            }
-        })
+        const message =
+            rootCategory.title === 'Unsupported Locale'
+                ? `
+It looks like the locale "${rootCategory.locale}" isn't set up, yet. The locale settings in your package.json must match what is enabled in your Business Manager instance.
+Learn more with our localization guide. https://sfdc.co/localization-guide
+`
+                : rootCategory.detail
+        throw new Error(message)
     }
 
     // Flatten the root so we can easily access all the categories throughout
     // the application.
-    const categories = {root: flatten(rootCategory, 'categories').root}
+    // if you want to use the original list-menu, replace next line with
+    // const categories = {root: flatten(rootCategory, 'categories').root}
+    const categories = flatten(rootCategory, 'categories')
 
     const ocapiApi = new OcapiApi(app.commerceAPI)
     const groupList = await ocapiApi.getAllGroups()
