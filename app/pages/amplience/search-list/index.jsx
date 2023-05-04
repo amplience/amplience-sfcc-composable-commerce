@@ -57,7 +57,7 @@ import {useLimitUrls, usePageUrls, useSortUrls, useSearchParams} from '../../../
 import {useToast} from '../../../hooks/use-toast'
 import useWishlist from '../../../hooks/use-wishlist'
 import {parse as parseSearchParams} from '../../../hooks/use-search-params'
-import {useCategories} from '../../../hooks/use-categories'
+import {useFlattenedCategories} from '../../../hooks/use-categories'
 
 // Others
 import {HTTPNotFound} from 'pwa-kit-react-sdk/ssr/universal/errors'
@@ -110,7 +110,7 @@ const SearchList = (props) => {
     const {formatMessage} = useIntl()
     const navigate = useNavigation()
     const params = useParams()
-    const {categories} = useCategories()
+    const categories = useFlattenedCategories()
     const toast = useToast()
 
     // Get the current category from global state.

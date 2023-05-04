@@ -100,7 +100,6 @@ const ProductList = (props) => {
     const navigate = useNavigation()
     const history = useHistory()
     const params = useParams()
-    const {categories} = useCategories()
     const toast = useToast()
     const einstein = useEinstein()
 

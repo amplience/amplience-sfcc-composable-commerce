@@ -66,7 +66,6 @@ import {useLimitUrls, useSortUrls, useSearchParams} from '../../../hooks'
 import {useToast} from '../../../hooks/use-toast'
 import useWishlist from '../../../hooks/use-wishlist'
 import {parse as parseSearchParams} from '../../../hooks/use-search-params'
-import {useCategories} from '../../../hooks/use-categories'
 import useEinstein from '../../../commerce-api/hooks/useEinstein'
 import useMultiSite from '../../../hooks/use-multi-site'
 
@@ -360,7 +359,6 @@ const ProductList = (props) => {
     const navigate = useNavigation()
     const history = useHistory()
     const params = useParams()
-    const {categories} = useCategories()
     const toast = useToast()
     const einstein = useEinstein()
     const {locale} = useMultiSite()
