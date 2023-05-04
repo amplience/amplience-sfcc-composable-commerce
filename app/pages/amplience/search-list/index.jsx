@@ -96,7 +96,7 @@ const SearchList = (props) => {
         staticContext,
         location,
         isLoading,
-        ampPages,
+        ampPages = [],
         ...rest
     } = props
     const {total, sortingOptions} = productSearchResult || {}
