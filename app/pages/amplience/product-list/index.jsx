@@ -751,9 +751,8 @@ const ProductList = (props) => {
                                           } else {
                                               const productSearchItem = item
                                               const productId = productSearchItem.productId
-                                              const isInWishlist = !!wishlist.findItemByProductId(
-                                                  productId
-                                              )
+                                              const isInWishlist =
+                                                  !!wishlist.findItemByProductId(productId)
 
                                               return (
                                                   <AmplienceProductTile
@@ -1006,8 +1005,6 @@ ProductList.getProps = async ({res, params, location, api, ampClient}) => {
     if (categoryId && !searchParams.refine.includes(`cgid=${categoryId}`)) {
         searchParams.refine.push(`cgid=${categoryId}`)
     }
-
-    searchParams.refine.push('htype=master')
 
     const [category, productSearchResult] = await Promise.all([
         isSearch
