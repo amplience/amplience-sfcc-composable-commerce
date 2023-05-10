@@ -106,7 +106,7 @@ const enrichNavContent = (node, targetLocale) => {
     if (node.common && node.common.navcontent) {
         node.common.navcontent.title = unpackLocale(node.common.navcontent.title, targetLocale)
 
-        node.common.navcontent.actions = node.common.navcontent.actions.map((el) => {
+        node.common.navcontent.actions = node.common.navcontent.actions?.map((el) => {
             el.label = unpackLocale(el.label, targetLocale)
 
             return el
