@@ -243,8 +243,6 @@ const ProductDetail = ({category, product, isLoading, productPdp: initialProduct
         }
     }
 
-    console.log('prodict id = ', product)
-
     return (
         <Box
             className="sf-product-detail-page"
