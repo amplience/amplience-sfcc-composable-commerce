@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.12.0](https://github.com/amplience/amplience-sfcc-composable-commerce/compare/v1.11.0...v1.12.0) (2023-05-11)
+
+
+### Bug Fixes
+
+* App crash if hero in nav without links ([7a5abce](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/7a5abcec9f3c8e7a331e348ab7f6fa4c6b5b4c5e))
+* category was not return in getProps, so breadcrumb/PageHeader wasn't working ([8c8ecc9](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/8c8ecc9a4e23310808c8f1f3b068257cc53e60b1))
+* fix product listing page ([a53c61d](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/a53c61d0ea0ccf073bd12eeeb817137bdb28c37c))
+* fix search ([7112dfc](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/7112dfc68e98a4256ef6d60ee202afdcc3b60930))
+* Search results page crashing ([f38b3a7](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/f38b3a7aba7243724181e7a41fe6ca6493276c62))
+* use flat cats with our main nav ([a6dd11d](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/a6dd11d1266205242fb21f86b69137cfede5e6c9))
+
 ## [1.11.0](https://github.com/amplience/amplience-sfcc-composable-commerce/compare/v1.10.1...v1.11.0) (2022-12-14)
 
 
