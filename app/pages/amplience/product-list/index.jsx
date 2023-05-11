@@ -66,7 +66,6 @@ import {useLimitUrls, useSortUrls, useSearchParams} from '../../../hooks'
 import {useToast} from '../../../hooks/use-toast'
 import useWishlist from '../../../hooks/use-wishlist'
 import {parse as parseSearchParams} from '../../../hooks/use-search-params'
-import {useCategories} from '../../../hooks/use-categories'
 import useEinstein from '../../../commerce-api/hooks/useEinstein'
 import useMultiSite from '../../../hooks/use-multi-site'
 
@@ -345,6 +344,7 @@ const ProductList = (props) => {
     const {
         searchQuery,
         productSearchResult,
+        category,
         // eslint-disable-next-line react/prop-types
         staticContext,
         location,
@@ -359,7 +359,6 @@ const ProductList = (props) => {
     const navigate = useNavigation()
     const history = useHistory()
     const params = useParams()
-    const {categories} = useCategories()
     const toast = useToast()
     const einstein = useEinstein()
     const {locale} = useMultiSite()
@@ -388,7 +387,7 @@ const ProductList = (props) => {
 
     const {total, sortingOptions} = productSearchResult || {}
     const basePath = `${location.pathname}${location.search}`
-    const category = !searchQuery && params.categoryId ? categories[params.categoryId] : undefined
+    //const category = !searchQuery && params.categoryId ? categories[params.categoryId] : undefined
 
     const isMobile = useBreakpointValue({base: true, lg: false, xl: false, xxl: false, xxxl: false})
     const sortUrls = useSortUrls({options: sortingOptions})
@@ -752,9 +751,8 @@ const ProductList = (props) => {
                                           } else {
                                               const productSearchItem = item
                                               const productId = productSearchItem.productId
-                                              const isInWishlist = !!wishlist.findItemByProductId(
-                                                  productId
-                                              )
+                                              const isInWishlist =
+                                                  !!wishlist.findItemByProductId(productId)
 
                                               return (
                                                   <AmplienceProductTile
@@ -1008,8 +1006,6 @@ ProductList.getProps = async ({res, params, location, api, ampClient}) => {
         searchParams.refine.push(`cgid=${categoryId}`)
     }
 
-    searchParams.refine.push('htype=master')
-
     const [category, productSearchResult] = await Promise.all([
         isSearch
             ? Promise.resolve()
@@ -1035,6 +1031,7 @@ ProductList.getProps = async ({res, params, location, api, ampClient}) => {
     return {
         searchQuery,
         productSearchResult,
+        category,
         ampSlots,
         ampTopContent,
         ampBottomContent: ampCategory?.bottomContent || []
@@ -1063,6 +1060,7 @@ ProductList.propTypes = {
     searchQuery: PropTypes.string,
     onAddToWishlistClick: PropTypes.func,
     onRemoveWishlistClick: PropTypes.func,
+    category: PropTypes.object,
 
     /**
      * Amplience specific - in-grid content positions and ids.

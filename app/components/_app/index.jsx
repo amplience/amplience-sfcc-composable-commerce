@@ -49,7 +49,14 @@ import {IntlProvider} from 'react-intl'
 // Others
 import {watchOnlineStatus, flatten} from '../../utils/utils'
 import {getTargetLocale, fetchTranslations} from '../../utils/locale'
-import {DEFAULT_SITE_TITLE, THEME_COLOR} from '../../constants'
+import {
+    DEFAULT_SITE_TITLE,
+    HOME_HREF,
+    THEME_COLOR,
+    AMPLIENCE_CAT_MENU_DEFAULT_NAV_DEPTH,
+    CAT_MENU_DEFAULT_ROOT_CATEGORY,
+    DEFAULT_LOCALE
+} from '../../constants'
 import {applyRtvToNav, enrichNavigation} from '../../utils/amplience/link'
 
 import Seo from '../seo'
@@ -65,9 +72,6 @@ import OcapiApi from '../../ocapi-api'
 import {app} from '../../../config/default'
 import useNavigation from '../../hooks/use-navigation'
 
-const DEFAULT_NAV_DEPTH = 3
-const DEFAULT_ROOT_CATEGORY = 'root'
-const DEFAULT_LOCALE = 'en-US'
 
 const App = (props) => {
     const {
@@ -224,7 +228,7 @@ const App = (props) => {
                 // - "compile-translations:pseudo"
                 defaultLocale={DEFAULT_LOCALE}
             >
-                <CategoriesProvider categories={allCategories}>
+                <CategoriesProvider treeRoot={allCategories} locale={targetLocale}>
                     <CurrencyProvider currency={currency}>
                         <AmplienceContextProvider {...ampProps} showVse={showVse}>
                             {showVse && <Toolbar {...ampProps} showVse={showVse} />}
@@ -294,6 +298,7 @@ const App = (props) => {
                                                         logo={headerNav.icon}
                                                         showVse={showVse}
                                                     />
+                                                    {/* Need to fix */}
                                                 </HideOnDesktop>
 
                                                 <HideOnMobile>
@@ -388,24 +393,27 @@ App.getProps = async ({api, res, req, ampClient}) => {
     // Get the root category, this will be used for things like the navigation.
     let rootCategory = await api.shopperProducts.getCategory({
         parameters: {
-            id: DEFAULT_ROOT_CATEGORY,
-            levels: DEFAULT_NAV_DEPTH,
+            id: CAT_MENU_DEFAULT_ROOT_CATEGORY,
+            levels: AMPLIENCE_CAT_MENU_DEFAULT_NAV_DEPTH,
             locale: targetLocale
         }
     })
 
     if (rootCategory.isError) {
-        rootCategory = await api.shopperProducts.getCategory({
-            parameters: {
-                id: DEFAULT_ROOT_CATEGORY,
-                levels: DEFAULT_NAV_DEPTH,
-                locale: defaultLocale
-            }
-        })
+        const message =
+            rootCategory.title === 'Unsupported Locale'
+                ? `
+It looks like the locale "${rootCategory.locale}" isn't set up, yet. The locale settings in your package.json must match what is enabled in your Business Manager instance.
+Learn more with our localization guide. https://sfdc.co/localization-guide
+`
+                : rootCategory.detail
+        throw new Error(message)
     }
 
     // Flatten the root so we can easily access all the categories throughout
     // the application.
+    // if you want to use the original list-menu, replace next line with
+    // const categories = {root: flatten(rootCategory, 'categories').root}
     const categories = flatten(rootCategory, 'categories')
 
     const ocapiApi = new OcapiApi(app.commerceAPI)

@@ -15,7 +15,7 @@ import {
     Heading
 } from '@chakra-ui/react'
 import {categoryUrlBuilder, productUrlBuilder} from '../../../utils/url'
-import {useCategories} from '../../../hooks/use-categories'
+import {useFlattenedCategories} from '../../../hooks/use-categories'
 import {useRef} from 'react'
 import {useState} from 'react'
 import {useEffect} from 'react'
@@ -90,8 +90,8 @@ export const useShoppableTooltip = (target, selector, tooltips) => {
             })
             break
         case 'category': {
-            const {categories} = useCategories()
-            defaultTooltip = categories[target]?.name ?? target
+            const cats = useFlattenedCategories()
+            defaultTooltip = cats[target]?.name ?? target
             break
         }
         case 'contentKey':

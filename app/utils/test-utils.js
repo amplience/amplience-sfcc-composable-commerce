@@ -9,8 +9,7 @@ import {render} from '@testing-library/react'
 import {BrowserRouter as Router} from 'react-router-dom'
 import {ChakraProvider} from '@chakra-ui/react'
 import PropTypes from 'prop-types'
-import {setupServer} from 'msw/node'
-import {rest} from 'msw'
+import {PageContext, Region} from '../page-designer/core'
 
 import theme from '../theme'
 import CommerceAPI from '../commerce-api'
@@ -20,13 +19,9 @@ import {
     CustomerProvider,
     CustomerProductListsProvider
 } from '../commerce-api/contexts'
-import {AddToCartModalContext} from '../hooks/use-add-to-cart-modal'
+import {AddToCartModal, AddToCartModalContext} from '../hooks/use-add-to-cart-modal'
 import {IntlProvider} from 'react-intl'
-import {
-    mockCategories as initialMockCategories,
-    mockedRegisteredCustomer,
-    exampleTokenReponse
-} from '../commerce-api/mock-data'
+import {mockCategories as initialMockCategories} from '../commerce-api/mock-data'
 import fallbackMessages from '../translations/compiled/en-GB.json'
 import mockConfig from '../../config/mocks/default'
 
@@ -72,6 +67,30 @@ export const renderWithRouterAndCommerceAPI = (node) => {
     )
 }
 
+const useAddToCartModal = () => {
+    const [state, setState] = useState({
+        isOpen: false,
+        data: null
+    })
+
+    return {
+        isOpen: state.isOpen,
+        data: state.data,
+        onOpen: (data) => {
+            setState({
+                isOpen: true,
+                data
+            })
+        },
+        onClose: () => {
+            setState({
+                isOpen: false,
+                data: null
+            })
+        }
+    }
+}
+
 /**
  * This is the Providers used to wrap components
  * for testing purposes.
@@ -100,7 +119,7 @@ export const TestProviders = ({
     const proxy = undefined
 
     // @TODO: make this dynamic (getting from package.json during CI tests fails, so hardcoding for now)
-    const ocapiHost = 'zzrf-001.sandbox.us03.dx.commercecloud.salesforce.com'
+    const ocapiHost = 'zzrf-001.dx.commercecloud.salesforce.com'
 
     const api = new CommerceAPI({
         ...appConfig.commerceAPI,
@@ -118,12 +137,7 @@ export const TestProviders = ({
         _setBasket(data)
     })
 
-    const addToCartModal = {
-        isOpen: false,
-        data: null,
-        onOpen: () => {},
-        onClose: () => {}
-    }
+    const addToCartModal = useAddToCartModal()
 
     const site = getSiteByReference(siteAlias || appConfig.defaultSite)
 
@@ -137,7 +151,7 @@ export const TestProviders = ({
         <IntlProvider locale={locale.id} defaultLocale={DEFAULT_LOCALE} messages={messages}>
             <MultiSiteProvider site={site} locale={locale} buildUrl={buildUrl}>
                 <CommerceAPIProvider value={api}>
-                    <CategoriesProvider categories={initialCategories}>
+                    <CategoriesProvider treeRoot={initialCategories}>
                         <CurrencyProvider currency={DEFAULT_CURRENCY}>
                             <CustomerProvider value={{customer, setCustomer}}>
                                 <BasketProvider value={{basket, setBasket}}>
@@ -148,6 +162,7 @@ export const TestProviders = ({
                                                     value={addToCartModal}
                                                 >
                                                     {children}
+                                                    <AddToCartModal />
                                                 </AddToCartModalContext.Provider>
                                             </ChakraProvider>
                                         </Router>
@@ -210,44 +225,41 @@ export const createPathWithDefaults = (path) => {
 }
 
 /**
- * Set up an API mocking server for testing purposes.
- * This mock server includes the basic oauth flow endpoints.
+ * When testing page designer components wrap them using this higher-order component
+ * if you plan on using `Region` of `Components` within the components definition.
+ *
+ * @param {*} Component
+ * @param {*} options
+ * @returns
  */
-export const setupMockServer = (...handlers) => {
-    return setupServer(
-        // customer handlers have higher priority
-        ...handlers,
-        rest.post('*/oauth2/authorize', (req, res, ctx) =>
-            res(ctx.delay(0), ctx.status(303), ctx.set('location', `/testcallback`))
-        ),
-        rest.get('*/oauth2/authorize', (req, res, ctx) =>
-            res(ctx.delay(0), ctx.status(303), ctx.set('location', `/testcallback`))
-        ),
-        rest.get('*/testcallback', (req, res, ctx) => {
-            return res(ctx.delay(0), ctx.status(200))
-        }),
-        rest.post('*/oauth2/login', (req, res, ctx) =>
-            res(ctx.delay(0), ctx.status(200), ctx.json(mockedRegisteredCustomer))
-        ),
-        rest.get('*/oauth2/logout', (req, res, ctx) =>
-            res(ctx.delay(0), ctx.status(200), ctx.json(exampleTokenReponse))
-        ),
-        rest.get('*/customers/:customerId', (req, res, ctx) =>
-            res(ctx.delay(0), ctx.status(200), ctx.json(mockedRegisteredCustomer))
-        ),
-        rest.post('*/sessions', (req, res, ctx) => res(ctx.delay(0), ctx.status(200))),
-        rest.post('*/oauth2/token', (req, res, ctx) =>
-            res(
-                ctx.delay(0),
-                ctx.json({
-                    customer_id: 'test',
-                    access_token: 'testtoken',
-                    refresh_token: 'testrefeshtoken',
-                    usid: 'testusid',
-                    enc_user_id: 'testEncUserId',
-                    id_token: 'testIdToken'
-                })
+export const withPageProvider = (Component, options) => {
+    const providerProps = options?.providerProps || {
+        value: {
+            components: new Proxy(
+                {},
+                {
+                    // eslint-disable-next-line no-unused-vars
+                    get(_target, _prop) {
+                        return (props) => (
+                            <div>
+                                <b>{props.typeId}</b>
+                                {props?.regions?.map((region) => (
+                                    <Region key={region.id} region={region} />
+                                ))}
+                            </div>
+                        )
+                    }
+                }
             )
-        )
+        }
+    }
+    const wrappedComponentName = Component.displayName || Component.name
+    const WrappedComponent = (props) => (
+        <PageContext.Provider {...providerProps}>
+            <Component {...props} />
+        </PageContext.Provider>
     )
+    WrappedComponent.displayName = `withRouter(${wrappedComponentName})`
+
+    return WrappedComponent
 }

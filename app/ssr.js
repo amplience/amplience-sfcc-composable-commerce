@@ -56,6 +56,15 @@ const {handler} = runtime.createHandler(options, (app) => {
                         'cdn.media.amplience.net',
                         '*.staging.bigcontent.io'
                     ],
+                    'connect-src': [
+                        "'self'",
+                        "'unsafe-eval'",
+                        'api.cquotient.com',
+                        '*.cdn.content.amplience.net',
+                        'cdn.media.amplience.net',
+                        'cdn.static.amplience.net',
+                        '*.staging.bigcontent.io'
+                    ],
                     'default-src': [
                         "'self'",
                         "'unsafe-eval'",
@@ -88,6 +97,9 @@ const {handler} = runtime.createHandler(options, (app) => {
 
     // Handle the redirect from SLAS as to avoid error
     app.get('/callback?*', (req, res) => {
+        // This endpoint does nothing and is not expected to change
+        // Thus we cache it for a year to maximize performance
+        res.set('Cache-Control', `max-age=31536000`)
         res.send()
     })
     app.get('/robots.txt', runtime.serveStaticFile('static/robots.txt'))

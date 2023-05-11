@@ -53,9 +53,9 @@ This version of the SF Retail React app integrates Amplience as the Content CMS 
   * [Shoppable Video specifics](docs/amplience/shoppable-video-component.md)
 * [Toolbar Framework](docs/amplience/toolbar-framework.md)
 
-> Note: This code is built against the code version @latest at the time which was PWAKit v2.3.0 released on November 7th 2022: https://github.com/SalesforceCommerceCloud/pwa-kit/releases/tag/v2.3.0
+> Note: This code is built against the code version @latest at the time which was PWAKit v2.7.0 released on March 3rd 2023: https://github.com/SalesforceCommerceCloud/pwa-kit/releases/tag/v2.7.0
 
-If you are using an earlier version, please consider upgrading your codebase to match this by either using this as a basis or following the same upgrade path as can be found here: https://developer.salesforce.com/docs/commerce/pwa-kit-managed-runtime/guide/upgrade-to-v2-3.html
+If you are using an earlier version, please consider upgrading your codebase to match this for Node 16 support.
 
 ## Known Limitations
 
@@ -77,7 +77,7 @@ Developers don’t have to worry about the underlying infrastructure, whether th
 
 ## Requirements
 
--   Node 14
+-   Node 14.17.0 or later - recommend Node 16.x
 -   npm 6.14.4 or later
 
 ## Get Started
