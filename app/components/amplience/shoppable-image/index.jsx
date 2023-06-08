@@ -9,6 +9,12 @@ import {
     DrawerCloseButton,
     DrawerHeader,
     DrawerBody,
+    Modal,
+    ModalOverlay,
+    ModalContent,
+    ModalHeader,
+    ModalBody,
+    ModalCloseButton,
     Image,
     Tooltip,
     useDisclosure,
@@ -98,6 +104,12 @@ export const useShoppableTooltip = (target, selector, tooltips) => {
             defaultTooltip = intl.formatMessage({
                 id: 'amplience.shoppable_image.content_key',
                 defaultMessage: 'Click to open...'
+            })
+            break
+        case 'modal':
+            defaultTooltip = intl.formatMessage({
+                id: 'amplience.shoppable_image.modal',
+                defaultMessage: 'Click to open modal...'
             })
             break
     }
@@ -253,6 +265,37 @@ export const ShoppableImageInteractable = ({
                             </DrawerBody>
                         </DrawerContent>
                     </Drawer>
+                </>
+            )
+        }
+        case 'modal': {
+            const matchTooltip = tooltips?.find((tooltip) => tooltip.key === target)
+
+            return (
+                <>
+                    <Tooltip label={label} {...tProps}>
+                        <Link
+                            to="#"
+                            onClick={(evt) => {
+                                onOpen()
+                                evt.preventDefault()
+                                return false
+                            }}
+                            {...style}
+                        >
+                            {children}
+                        </Link>
+                    </Tooltip>
+                    <Modal isOpen={isOpen} onClose={onClose}>
+                        <ModalOverlay />
+                        <ModalContent>
+                            <ModalHeader>{matchTooltip?.value}</ModalHeader>
+                            <ModalCloseButton />
+                            <ModalBody>
+                                <AmplienceWrapper fetch={{key: target}}></AmplienceWrapper>
+                            </ModalBody>
+                        </ModalContent>
+                    </Modal>
                 </>
             )
         }
