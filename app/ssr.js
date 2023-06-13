@@ -54,7 +54,8 @@ const {handler} = runtime.createHandler(options, (app) => {
                         'storage.googleapis.com',
                         '*.cdn.content.amplience.net',
                         'cdn.media.amplience.net',
-                        '*.staging.bigcontent.io'
+                        '*.staging.bigcontent.io',
+                        '*.brightcove.net'
                     ],
                     'connect-src': [
                         "'self'",
@@ -71,7 +72,8 @@ const {handler} = runtime.createHandler(options, (app) => {
                         '*.cdn.content.amplience.net',
                         'cdn.media.amplience.net',
                         'cdn.static.amplience.net',
-                        '*.staging.bigcontent.io'
+                        '*.staging.bigcontent.io',
+                        '*.brightcove.net'
                     ],
                     'frame-ancestors': ["'self'", '*.amplience.net'],
                     // Do not upgrade insecure requests for local development
