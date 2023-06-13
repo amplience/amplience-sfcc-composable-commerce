@@ -141,10 +141,17 @@ const CardEnhanced = ({
     const w = parentRef.current?.clientWidth == 0 ? 400 : parentRef.current?.clientWidth
 
     let compHeight = 'auto'
-    if (cols && rows && gap) {
+    // this fails when gap is set to 0 in content form b/c 0 == false in JS...
+    // the math also fails when it's 0 b/c * 0 will be 0
+    if (cols && rows && (gap != undefined || gap == null)) {
+        console.log(cols + ' ' + rows + ' ' + gap)
         // Force the height to a fraction of the width (minus gap)
         compHeight = (rows * (w - gap * (cols - 1))) / cols + (rows - 1) * gap + 'px'
+    }else if(cols && rows && gap === 0){
+        compHeight = (rows * (w * (cols - 1))) / cols + (rows - 1) + 'px'
     }
+
+    console.log('compH: ', compHeight)
 
     const defaultColRow = useBreakpointValue({
         base: {
@@ -182,8 +189,8 @@ const CardEnhanced = ({
             setHeight(Math.floor(h / displayRows))
             ratio =
                 displayColumns === displayRows
-                    ? w / r + ':' + h / r
-                    : (w / displayColumns) * displayColumns + ':' + (h / displayRows) * displayRows
+                    ? '1:1'//w / r + ':' + h / r
+                    : cols + ':' + rows//(w / displayColumns) * displayColumns + ':' + (h / displayRows) * displayRows
             setRatio(ratio)
             setImageLoading(true)
         }
