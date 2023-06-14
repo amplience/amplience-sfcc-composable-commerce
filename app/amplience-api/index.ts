@@ -240,7 +240,7 @@ export class AmplienceAPI {
      * @param parent Hierarchy node to get children of.
      * @param filter A method to filter out content.
      */
-    async getChildren(parent: any, filter: FilterType) {
+    async getChildren(parent: any, filter: FilterType, locale: string = 'en-US') {
         const id = parent._meta.deliveryId
 
         // TODO: pagination, rate limit
@@ -249,7 +249,8 @@ export class AmplienceAPI {
             .sortBy('default', 'ASC')
             .request({
                 format: 'inlined',
-                depth: 'all'
+                depth: 'all',
+                locale: locale
             })
 
         const items = result.responses
@@ -468,11 +469,11 @@ export class AmplienceAPI {
 
             return root
         }
-
-        await this.getChildren(root, filter)
-
+ 
+        await this.getChildren(root, filter, locale)
+        
         await this.enrichReferenceDeliveryKeys(root, locale)
-
+        
         return root
     }
 
