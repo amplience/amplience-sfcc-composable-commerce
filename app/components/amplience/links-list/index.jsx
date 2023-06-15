@@ -93,7 +93,7 @@ const LinksList = ({
                                     >
                                         {link.text}
                                     </Link>
-                                    <Modal isOpen={isOpen} onClose={onClose}>
+                                    <Modal isOpen={isOpen} size={link.modalSize} onClose={onClose}>
                                         <ModalOverlay />
                                         <ModalContent>
                                             <ModalCloseButton />

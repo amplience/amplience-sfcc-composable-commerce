@@ -22,6 +22,7 @@ import ShoppableVideo from '../shoppable-video'
 import Features from '../features'
 import GridLock from '../grid-lock'
 import Brightcove from '../brightcove'
+import FormBuilder from '../form-builder'
 
 const Blank = () => <></>
 
@@ -42,6 +43,7 @@ const componentsMapping = {
     'https://sfcc.com/components/features': Features,
     'https://sfcc.com/components/grid-lock': GridLock,
     'https://sfcc.com/components/video': Brightcove,
+    "https://sfcc.com/components/form-builder": FormBuilder,
 
     'https://sfcc.com/site/navigation/root': Blank,
     'https://sfcc.com/site/navigation/external': Blank,
