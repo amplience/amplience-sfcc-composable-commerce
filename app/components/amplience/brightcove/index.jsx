@@ -4,18 +4,18 @@ import {Box, Flex, Heading, Stack, useMultiStyleConfig} from '@chakra-ui/react'
 import Button from '../button'
 
 const Brightcove = ({
-                  title,
-                  video,
-                  playerType,
-                  actions,
-                  textAlign = 'Left',
-                  justifyContent = 'Left',
-                  alignItems = 'Center',
-                  fullWidth = false,
-                  variant,
-                  ...props
-              }) => {
-    const styles = useMultiStyleConfig('Brightcove', {variant: variant || (fullWidth && 'full')})
+    title,
+    video,
+    playerType,
+    actions,
+    textAlign = 'Left',
+    justifyContent = 'Left',
+    alignItems = 'Center',
+    fullWidth = false,
+    ...props
+}) => {
+    const styles = useMultiStyleConfig('Brightcove')
+    
     const playerID = playerType.split(' - ')[1]
     const type = playerType.split(' - ')[0]
     const videoID = type == 'Single' ? video : ''
@@ -27,30 +27,17 @@ const Brightcove = ({
             {...styles.container}
             {...props}
         >
-            <Stack
-                {...styles.stackContainer}
-                justifyContent={{base: "unset", md: justifyContent.toLowerCase()}}
-                alignItems={{base: "unset", md: alignItems.toLowerCase()}}
-            >
-                <Stack {...styles.textContainer} textAlign={{base: 'center', md: textAlign.toLowerCase()}}
-                       position={fullWidth ? {base: 'unset', md: 'absolute'} : ''}>
-                    <Heading
-                        as="h1"
-                        fontSize={{base: 'md', md: '4xl', lg: '6xl'}}
-                        maxWidth={{base: 'full', md: '75%'}}
-                        {...styles.heading}
-                    >
-                        {title}
-                    </Heading>
-
-                    {actions && (
-                        <Box maxWidth={{base: 'full', md: '75%'}}>
-                            {actions.map((props, ind) => (
-                                <Button key={ind} label={props.label} url={props.url}></Button>
-                            ))}
-                        </Box>
-                    )}
-                </Stack>
+                <Heading
+                    as="h1"
+                    fontSize={{base: 'md', md: 'xl', lg: '2xl'}}
+                    maxWidth={{base: 'full'}}
+                    mb={4}
+                    textAlign={{base: 'center', md: textAlign.toLowerCase()}}
+                    {...styles.heading}
+                >
+                    {title}
+                </Heading>
+            <Stack {...styles.stackContainer}>
                 {playerID && (
                     <Flex
                         {...styles.imageContainer}
@@ -91,24 +78,6 @@ Brightcove.propTypes = {
      * Brightcove component main title
      */
     title: PropTypes.string,
-    /**
-     * Call to action component(s)
-     */
-    actions: PropTypes.arrayOf(
-        PropTypes.shape({
-            label: PropTypes.string,
-            url: PropTypes.string
-        })
-    ),
-    /**
-     * Brightcove button label
-     */
-    label: PropTypes.string,
-    /**
-     * Brightcove button url
-     */
-    url: PropTypes.string,
-    fullWidth: PropTypes.bool
 }
 
 export default Brightcove
