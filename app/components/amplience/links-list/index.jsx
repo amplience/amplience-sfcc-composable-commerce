@@ -1,7 +1,21 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {Box, List, ListItem, Heading, HStack, useMultiStyleConfig} from '@chakra-ui/react'
+import {
+    Box, 
+    List, 
+    ListItem, 
+    Heading, 
+    HStack, 
+    Modal,
+    ModalOverlay,
+    ModalContent,
+    ModalBody,
+    ModalCloseButton,
+    useDisclosure,
+    useMultiStyleConfig
+} from '@chakra-ui/react'
 import Link from '../link'
+import AmplienceWrapper from '../wrapper'
 
 const LinksList = ({
     links = [],
@@ -13,6 +27,7 @@ const LinksList = ({
     ...otherProps
 }) => {
     const styles = useMultiStyleConfig('LinksList', {variant})
+    const {isOpen, onOpen, onClose} = useDisclosure()
     return (
         <Box {...styles.container} {...(color ? {color: color} : {})} {...otherProps}>
             {heading &&
@@ -37,34 +52,71 @@ const LinksList = ({
                         <HStack>
                             {links.map((link, i) => (
                                 <ListItem key={i} {...styles.listItem} sx={styles.listItemSx}>
-                                    {link.href && link.href !== '$' ? (
+                                    {link.modalSize && link.modalSize != undefined ? (
                                         <Link
                                             to={link.href}
                                             onClick={onLinkClick}
                                             {...(link.styles ? link.styles : {})}
                                         >
-                                            {link.text}
+                                            {link.text} - {link.modalSize}
                                         </Link>
-                                    ) : (
-                                        <Heading {...styles.footerHeading}>{link?.text}</Heading>
-                                    )}
+                                    ) : (<>
+                                            {link.href && link.href !== '$' ? (
+                                                <Link
+                                                    to={link.href}
+                                                    onClick={onLinkClick}
+                                                    {...(link.styles ? link.styles : {})}
+                                                >
+                                                    {link.text}
+                                                </Link>
+                                                ) : (<Heading {...styles.footerHeading}>{link?.text}</Heading>)
+                                            }
+                                        </>
+                                        )
+                                    }
                                 </ListItem>
                             ))}
                         </HStack>
                     ) : (
                         links.map((link, i) => (
                             <ListItem key={i}>
-                                {link.href && link.href !== '$' ? (
+                                {link.modalSize && link.modalSize != undefined ? (
+                                    <>
                                     <Link
-                                        to={link.href}
-                                        onClick={onLinkClick}
+                                        to="#"
+                                        onClick={(evt) => {
+                                            onOpen()
+                                            evt.preventDefault()
+                                            return false
+                                        }}
                                         {...(link.styles ? link.styles : {})}
                                     >
                                         {link.text}
                                     </Link>
-                                ) : (
-                                    <Heading {...styles.footerHeading}>{link?.text}</Heading>
-                                )}
+                                    <Modal isOpen={isOpen} onClose={onClose}>
+                                        <ModalOverlay />
+                                        <ModalContent>
+                                            <ModalCloseButton />
+                                            <ModalBody>
+                                                <AmplienceWrapper fetch={{id: link.href}}></AmplienceWrapper>
+                                            </ModalBody>
+                                        </ModalContent>
+                                    </Modal>
+                                    </>
+                                ) : (<>
+                                        {link.href && link.href !== '$' ? (
+                                            <Link
+                                                to={link.href}
+                                                onClick={onLinkClick}
+                                                {...(link.styles ? link.styles : {})}
+                                            >
+                                                {link.text}
+                                            </Link>
+                                            ) : (<Heading {...styles.footerHeading}>{link?.text}</Heading>)
+                                        }
+                                    </>
+                                    )
+                                }
                             </ListItem>
                         ))
                     )}

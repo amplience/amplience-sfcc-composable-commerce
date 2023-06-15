@@ -49,7 +49,8 @@ const Footer = ({root, ...otherProps}) => {
                                     heading={item.common.title}
                                     links={(item.children ?? []).map((subitem) => ({
                                         href: getLinkUrl(subitem),
-                                        text: subitem.common.title
+                                        text: subitem.common.title,
+                                        modalSize: subitem.modalSize
                                     }))}
                                 />
                             ))}
