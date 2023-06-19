@@ -26,7 +26,6 @@ const FormBuilder = ({
                         </FormControl>
                     ))}
                     <Stack spacing={4} direction='row' align='right'>
-                        <Button variant='outline'>Cancel</Button>
                         <Button>{submitText}</Button>
                     </Stack>
                 </Stack>
