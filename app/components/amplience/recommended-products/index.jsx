@@ -100,7 +100,7 @@ const RecommendedProducts = ({zone, recommender, products, title, shouldFetch, .
                     recommenderName: recommendations.recommenderName,
                     __recoUUID: recommendations.recoUUID
                 },
-                recommendations.recs.map((rec) => ({id: rec.id}))
+                recommendations.recs?.map((rec) => ({id: rec.id}))
             )
         }
     }, [isOnScreen, recommendations])
