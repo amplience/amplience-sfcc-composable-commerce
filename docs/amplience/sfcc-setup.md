@@ -44,11 +44,13 @@ You’ll need to configure access for both Shop & Data endpoints:
 
 ### Shop Settings
 
+You can use our deployment at https://ecomm-toolkit.extensions.content.amplience.net, or you can use your own deployment if you prefer.
+
 ```json
 {
     "client_id": "{THIS IS YOUR CLIENT ID}",
     "allowed_origins": [
-        "https://ecomm-toolkit.dc-demostore.com"
+        "https://ecomm-toolkit.extensions.content.amplience.net"
     ],
     "resources": [
         {
@@ -94,7 +96,7 @@ You’ll need to configure access for both Shop & Data endpoints:
 {
     "client_id": "{THIS IS YOUR CLIENT ID}",
     "allowed_origins": [
-        "https://ecomm-toolkit.dc-demostore.com"
+        "https://ecomm-toolkit.extensions.content.amplience.net"
     ],
     "resources": [
         {
