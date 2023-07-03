@@ -48,7 +48,7 @@ You’ll need to configure access for both Shop & Data endpoints:
 {
     "client_id": "{THIS IS YOUR CLIENT ID}",
     "allowed_origins": [
-        "https://ecomm-toolkit.dc-demostore.com"
+        "https://ecomm-toolkit.extensions.content.amplience.net"
     ],
     "resources": [
         {
@@ -94,7 +94,7 @@ You’ll need to configure access for both Shop & Data endpoints:
 {
     "client_id": "{THIS IS YOUR CLIENT ID}",
     "allowed_origins": [
-        "https://ecomm-toolkit.dc-demostore.com"
+        "https://ecomm-toolkit.extensions.content.amplience.net"
     ],
     "resources": [
         {
