@@ -20,7 +20,7 @@ import {
     useDisclosure,
     Heading
 } from '@chakra-ui/react'
-import ProductViewModal from '../../product-view-modal'
+import ProductViewModal from '../product-view-modal'
 import {categoryUrlBuilder, productUrlBuilder} from '../../../utils/url'
 import {useFlattenedCategories} from '../../../hooks/use-categories'
 import {useRef} from 'react'
@@ -326,37 +326,6 @@ export const ShoppableImageInteractable = ({
                             </DrawerBody>
                         </DrawerContent>
                     </Drawer>
-                </>
-            )
-        }
-        case 'modal': {
-            const matchTooltip = tooltips?.find((tooltip) => tooltip.key === target)
-
-            return (
-                <>
-                    <Tooltip label={label} {...tProps}>
-                        <Link
-                            to="#"
-                            onClick={(evt) => {
-                                onOpen()
-                                evt.preventDefault()
-                                return false
-                            }}
-                            {...style}
-                        >
-                            {children}
-                        </Link>
-                    </Tooltip>
-                    <Modal isOpen={isOpen} onClose={onClose}>
-                        <ModalOverlay />
-                        <ModalContent>
-                            <ModalHeader>{matchTooltip?.value}</ModalHeader>
-                            <ModalCloseButton />
-                            <ModalBody>
-                                <AmplienceWrapper fetch={{key: target}}></AmplienceWrapper>
-                            </ModalBody>
-                        </ModalContent>
-                    </Modal>
                 </>
             )
         }
