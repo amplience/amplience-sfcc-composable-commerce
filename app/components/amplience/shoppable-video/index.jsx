@@ -26,7 +26,7 @@ import {useEffect} from 'react'
 import {useShoppableTooltip} from '../shoppable-image'
 import Link from '../link'
 import AmplienceWrapper from '../wrapper'
-import ProductViewModal from '../../product-view-modal'
+import ProductViewModal from '../product-view-modal'
 import {categoryUrlBuilder, productUrlBuilder} from '../../../utils/url'
 import {useCallback} from 'react'
 
