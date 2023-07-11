@@ -23,6 +23,7 @@ import Features from '../features'
 import GridLock from '../grid-lock'
 import Brightcove from '../brightcove'
 import FormBuilder from '../form-builder'
+import Stylitics from '../stylitics'
 
 const Blank = () => <></>
 
@@ -45,12 +46,14 @@ const componentsMapping = {
     'https://sfcc.com/components/video': Brightcove,
     "https://sfcc.com/components/form-builder": FormBuilder,
 
+    'https://demostore.amplience.com/content/stylitics/generic': Stylitics,
+
     'https://sfcc.com/site/navigation/root': Blank,
     'https://sfcc.com/site/navigation/external': Blank,
     'https://sfcc.com/site/navigation/internal': Blank,
     'https://sfcc.com/site/navigation/content-page': Blank,
     'https://sfcc.com/site/navigation/category': Blank,
-    'https://sfcc.com/site/navigation/group': Blank
+    'https://sfcc.com/site/navigation/group': Blank,
 }
 
 const AmplienceWrapper = ({fetch, content, components, skeleton, rtvActive, ...rest}) => {
