@@ -7,7 +7,7 @@
 
 import React, {createRef, useEffect} from 'react'
 import PropTypes from 'prop-types'
-import {Heading} from '@chakra-ui/react'
+import {Heading, useBreakpointValue} from '@chakra-ui/react'
 
 const styliticsViewMapping = {
     classic: {
@@ -54,6 +54,8 @@ function ensureViewLoaded(view, onLoad) {
 }
 
 const Stylitics = ({header, ...props}) => {
+    const isMobile = useBreakpointValue({base: true, lg: false, xl: false, xxl: false, xxxl: false})
+
     const container = createRef()
     useEffect(() => {
         if (!window || !container.current) {
@@ -65,9 +67,13 @@ const Stylitics = ({header, ...props}) => {
         let widgetInstance
         let active = true
 
-        window.__Debug__ = true
+        let viewSelector = props.view || 'classic'
 
-        ensureViewLoaded(styliticsViewMapping[props.view || 'classic'], () => {
+        if (viewSelector === 'moodboard' && isMobile) {
+            viewSelector = 'hotspots'
+        }
+
+        ensureViewLoaded(styliticsViewMapping[viewSelector], () => {
             if (!active) return
 
             const {
@@ -87,8 +93,6 @@ const Stylitics = ({header, ...props}) => {
             }
 
             const styliticsAccount = props.account
-
-            const viewSelector = props.view || 'classic'
 
             switch (viewSelector) {
                 case 'classic':
@@ -176,7 +180,8 @@ const Stylitics = ({header, ...props}) => {
         props.moodboard,
         props.gallery,
         props.hotspots,
-        props.mainAndDetail
+        props.mainAndDetail,
+        isMobile
     ])
 
     return (
