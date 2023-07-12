@@ -80,6 +80,12 @@ const Stylitics = ({header, ...props}) => {
 
             const config = props
 
+            config.api = {
+                item_number: props.sku || null,
+                max: props.api?.max || 6,
+                min: props.api?.min || 3
+            }
+
             const styliticsAccount = props.account
 
             const viewSelector = props.view || 'classic'
@@ -91,7 +97,6 @@ const Stylitics = ({header, ...props}) => {
                     }
                     config.navigation = props.classic?.navigation
                     config.text = props.classic?.text
-                    debugger
                     widgetInstance = new StyliticsClassicWidget(styliticsAccount, target, config)
                     break
                 case 'hotspots':
