@@ -233,6 +233,9 @@
                     "language": "json",
                     "styles": "",
                     "tools": {
+                        "ai": {
+                            "key": ""
+                        },
                         "blacklist": [],
                         "dc-content-link": {
                             "contentTypes": [
@@ -397,6 +400,10 @@
                                         "toolName": "clear_formatting"
                                     }
                                 ]
+                            },
+                            {
+                              "type": "button",
+                              "toolName": "ai"
                             }
                         ]
                     }
