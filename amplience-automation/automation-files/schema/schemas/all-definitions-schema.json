@@ -402,7 +402,7 @@
                                 ]
                             },
                             {
-                              "type": "button",
+                                "type": "button",
                               "toolName": "ai"
                             }
                         ]
