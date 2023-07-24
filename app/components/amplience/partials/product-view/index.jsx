@@ -7,7 +7,6 @@
 
 import React, {Fragment, useCallback, useEffect, useState} from 'react'
 import PropTypes from 'prop-types'
-import {Helmet} from 'react-helmet'
 import {FormattedMessage, useIntl} from 'react-intl'
 
 // Components
@@ -249,11 +248,6 @@ const ProductDetail = ({category, product, isLoading, productPdp: initialProduct
             layerStyle="page"
             data-testid="product-details-page"
         >
-            <Helmet>
-                <title>{product?.pageTitle}</title>
-                <meta name="description" content={product?.pageDescription} />
-            </Helmet>
-
             <Stack spacing={16}>
             {isProductASet ? (
                     <Fragment>
