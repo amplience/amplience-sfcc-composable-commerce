@@ -8,50 +8,7 @@
 import React, {createRef, useEffect} from 'react'
 import PropTypes from 'prop-types'
 import {Heading, useBreakpointValue} from '@chakra-ui/react'
-
-const styliticsViewMapping = {
-    classic: {
-        script: 'https://web-assets.stylitics.com/v3-classic/latest/classic.release.js',
-        name: 'StyliticsClassicWidget'
-    },
-    hotspots: {
-        script: 'https://web-assets.stylitics.com/v3-hotspots/latest/hotspots.release.js',
-        name: 'StyliticsHotspotsWidget'
-    },
-    moodboard: {
-        script: 'https://web-assets.stylitics.com/v3-moodboard/latest/moodboard.release.js',
-        name: 'StyliticsMoodboardWidget'
-    },
-    gallery: {
-        script: 'https://web-assets.stylitics.com/v3-gallery/latest/gallery.release.js',
-        name: 'StyliticsGalleryWidget'
-    },
-    mainAndDetail: {
-        script: 'https://web-assets.stylitics.com/v3-main-and-detail/latest/main-and-detail.release.js',
-        name: 'StyliticsMainAndDetailWidget'
-    }
-}
-
-function ensureViewLoaded(view, onLoad) {
-    if (view.loaded) {
-        onLoad()
-    } else if (view.loadMethods == null) {
-        view.loadMethods = [onLoad]
-
-        var styliticsScript = document.createElement('script')
-        styliticsScript.onload = function () {
-            view.loaded = true
-
-            for (const method of view.loadMethods) {
-                method()
-            }
-        }
-        styliticsScript.src = view.script
-        document.head.appendChild(styliticsScript)
-    } else {
-        view.loadMethods.push(onLoad)
-    }
-}
+import {fromContentItem, createWidget} from 'dc-integration-stylitics'
 
 const Stylitics = ({header, ...props}) => {
     const isMobile = useBreakpointValue({base: true, lg: false, xl: false, xxl: false, xxxl: false})
@@ -67,122 +24,30 @@ const Stylitics = ({header, ...props}) => {
         let widgetInstance
         let active = true
 
-        let viewSelector = props.view || 'classic'
+        const args = fromContentItem(props)
 
-        if (viewSelector === 'moodboard' && isMobile) {
-            viewSelector = 'hotspots'
-        }
+        createWidget(target, args).then((widget) => {
+            if (active) {
+                widgetInstance = widget
 
-        ensureViewLoaded(styliticsViewMapping[viewSelector], () => {
-            if (!active) return
-
-            const {
-                StyliticsClassicWidget,
-                StyliticsHotspotsWidget,
-                StyliticsMoodboardWidget,
-                StyliticsGalleryWidget,
-                StyliticsMainAndDetailWidget
-            } = window
-
-            const config = props
-
-            config.api = {
-                item_number: props.sku || null,
-                max: props.api?.max || 6,
-                min: props.api?.min || 3
+                widget.start()
+            } else {
+                widget.destroy()
             }
-
-            const styliticsAccount = props.account
-
-            switch (viewSelector) {
-                case 'classic':
-                    if (props.classic?.display) {
-                        config.display = {...config.display, ...props.classic.display}
-                    }
-                    config.navigation = props.classic?.navigation
-                    config.text = props.classic?.text
-                    widgetInstance = new StyliticsClassicWidget(styliticsAccount, target, config)
-                    break
-                case 'hotspots':
-                    if (props.hotspots?.display) {
-                        config.display = {...config.display, ...props.hotspots.display}
-                    }
-                    config.text = props.hotspots?.text
-                    if (config?.display?.hotspotsOverlayOrder) {
-                        config.display.hotspotsOverlayOrder =
-                            config.display.hotspotsOverlayOrder.map((item) => {
-                                return item.split(',')
-                            })
-                    }
-                    widgetInstance = new StyliticsHotspotsWidget(styliticsAccount, target, config)
-                    break
-                case 'moodboard':
-                    if (props.moodboard?.display) {
-                        config.display = {...config.display, ...props.moodboard.display}
-                    }
-                    config.navigation = props.moodboard?.navigation
-                    config.text = props.moodboard?.text
-                    widgetInstance = new StyliticsMoodboardWidget(styliticsAccount, target, config)
-                    break
-                case 'gallery':
-                    if (props.gallery?.display) {
-                        config.display = {...config.display, ...props.gallery.display}
-                    }
-                    if (props.gallery?.api) {
-                        config.api = {...config.display, ...props.gallery.api}
-                    }
-                    config.navigation = props.gallery?.navigation
-                    config.text = props.gallery?.text
-                    widgetInstance = new StyliticsGalleryWidget(styliticsAccount, target, config)
-                    break
-                case 'mainAndDetail':
-                    if (props.mainAndDetail?.display) {
-                        config.display = {...config.display, ...props.mainAndDetail.display}
-                    }
-                    widgetInstance = new StyliticsMainAndDetailWidget(
-                        styliticsAccount,
-                        target,
-                        config
-                    )
-                    break
-                default:
-                    if (props.classic?.display) {
-                        config.display = {...config.display, ...props.classic.display}
-                    }
-                    config.navigation = props.classic?.navigation
-                    config.text = props.classic?.text
-                    widgetInstance = new StyliticsClassicWidget(styliticsAccount, target, config)
-                    break
-            }
-
-            widgetInstance.start()
         })
 
         return () => {
             active = false
 
-            if (target) {
-                target.innerHTML = ''
-            }
-
             if (widgetInstance) {
                 widgetInstance.destroy()
             }
+
+            if (target) {
+                target.innerHTML = ''
+            }
         }
-    }, [
-        container,
-        props.view,
-        props.sku,
-        props.api,
-        props.display,
-        props.price,
-        props.classic,
-        props.moodboard,
-        props.gallery,
-        props.hotspots,
-        props.mainAndDetail,
-        isMobile
-    ])
+    }, [container, props, isMobile])
 
     return (
         <div>
