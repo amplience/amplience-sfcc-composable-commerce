@@ -8,7 +8,7 @@
 import React, {createRef, useEffect} from 'react'
 import PropTypes from 'prop-types'
 import {Heading, useBreakpointValue} from '@chakra-ui/react'
-import {fromContentItem, createWidget} from 'dc-integration-stylitics'
+import {fromContentItem, createWidget} from '@amplience/dc-integration-stylitics'
 
 const Stylitics = ({header, ...props}) => {
     const isMobile = useBreakpointValue({base: true, lg: false, xl: false, xxl: false, xxxl: false})
