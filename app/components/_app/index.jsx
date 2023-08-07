@@ -286,6 +286,7 @@ const App = (props) => {
                                                 onMyAccountClick={onAccountClick}
                                                 onWishlistClick={onWishlistClick}
                                                 logo={headerNav.icon}
+                                                logoAlt={headerNav.alt}
                                             >
                                                 <HideOnDesktop>
                                                     <DrawerMenu

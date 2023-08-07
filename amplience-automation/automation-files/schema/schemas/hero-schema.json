@@ -55,10 +55,16 @@
                 },
                 "alt": {
                     "title": "Alt",
-                    "description": "",
+                    "description": "Image Alt Text",
                     "type": "string",
                     "minLength": 0,
-                    "maxLength": 32
+                    "maxLength": 250,
+                    "ui:extension": {
+                        "name": "ai-image-caption",
+                        "params": {
+                            "image": "1/image"
+                        }
+                    }
                 }
             }
         },

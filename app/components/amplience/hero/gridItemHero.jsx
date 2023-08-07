@@ -198,6 +198,7 @@ const InGridHero = ({
                         <TrueAdaptiveImage
                             style={{...styles.image}}
                             ref={imageRef}
+                            alt={img?.alt}
                             onLoad={() => setImageLoading(false)}
                             image={img?.image}
                             transformations={cardTransformations}

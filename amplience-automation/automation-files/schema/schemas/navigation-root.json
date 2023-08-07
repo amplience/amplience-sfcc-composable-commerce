@@ -47,12 +47,26 @@
                     "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
                 }
             ]
+        },
+        "alt":{
+            "type": "string",
+			"title": "Logo alt text",
+			"description": "Alternative text for Logo for SEO",
+			"minLength": 0,
+			"maxLength": 255,
+			"ui:extension": {
+				"name": "ai-image-caption",
+				"params": {
+				"image": "1/icon"
+				}
+			}
         }
     },
     "propertyOrder": [
         "_meta",
         "title",
         "description",
-        "icon"
+        "icon",
+        "alt"
     ]
 }

@@ -1,0 +1,13 @@
+{
+  "name": "ai-image-caption",
+  "label": "AI Image Caption",
+  "description": "Auto generate alt text for an image using AI",
+  "url": "https://ai-image-caption.extensions.content.amplience.net",
+  "height": 200,
+  "enabledForAllContentTypes": false,
+  "category": "CONTENT_FIELD",
+  "parameters": "{}",
+  "snippets": [],
+  "settings": "{\"API\":{\"READ\":true,\"EDIT\":true},\"SANDBOX\":{\"SAME_ORIGIN\":false,\"MODALS\":false,\"NAVIGATION\":false,\"POPUPS\":false,\"POPUP_ESCAPE_SANDBOX\":false,\"DOWNLOADS\":false,\"FORMS\":false}}",
+  "status": "ACTIVE"
+}
