@@ -18,7 +18,7 @@
             "endpoint": "sfcccompdev",
             "defaultHost": "cdn.media.amplience.net"
         },
-        "alt":"logo",
+        "alt": "logo",
         "title": "Main Navigation",
         "description": "The main navigation that appears at the top of the page."
     },
