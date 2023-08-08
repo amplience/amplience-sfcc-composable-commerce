@@ -217,6 +217,7 @@ const CardEnhanced = ({
                     onLoad={() => handleImageLoaded()}
                     image={img?.image}
                     transformations={cardtransformations}
+                    imageAltText={image.imageAltText}
                 />
             </div>
 
@@ -232,11 +233,7 @@ const CardEnhanced = ({
                         {links.map((link) => {
                             if (link.label) {
                                 return (
-                                    <span
-                                        key={Math.random()
-                                            .toString(36)
-                                            .substr(2, 9)}
-                                    >
+                                    <span key={Math.random().toString(36).substr(2, 9)}>
                                         {link.label}
                                     </span>
                                 )
@@ -259,11 +256,7 @@ const CardEnhanced = ({
                         {links.map((link) => {
                             if (link.label) {
                                 return (
-                                    <span
-                                        key={Math.random()
-                                            .toString(36)
-                                            .substr(2, 9)}
-                                    >
+                                    <span key={Math.random().toString(36).substr(2, 9)}>
                                         {link.label}
                                     </span>
                                 )

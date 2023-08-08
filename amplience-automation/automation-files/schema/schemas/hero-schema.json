@@ -55,10 +55,16 @@
                 },
                 "alt": {
                     "title": "Alt",
-                    "description": "",
+                    "description": "Image Alt Text",
                     "type": "string",
                     "minLength": 0,
-                    "maxLength": 32
+                    "maxLength": 250,
+                    "ui:extension": {
+                        "name": "ai-image-caption",
+                        "params": {
+                            "image": "1/image"
+                        }
+                    }
                 }
             }
         },
@@ -85,33 +91,21 @@
             "description": "",
             "type": "string",
             "default": "Left",
-            "enum": [
-                "Left",
-                "Center",
-                "Right"
-            ]
+            "enum": ["Left", "Center", "Right"]
         },
         "justifyContent": {
             "title": "Horizontal align",
             "description": "",
             "type": "string",
             "default": "Left",
-            "enum": [
-                "Left",
-                "Center",
-                "Right"
-            ]
+            "enum": ["Left", "Center", "Right"]
         },
         "alignItems": {
             "title": "Vertical align",
             "description": "",
             "type": "string",
             "default": "Center",
-            "enum": [
-                "Start",
-                "Center",
-                "End"
-            ]
+            "enum": ["Start", "Center", "End"]
         }
     },
     "propertyOrder": []
