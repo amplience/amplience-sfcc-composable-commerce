@@ -1,109 +1,91 @@
 {
-	"$schema": "http://json-schema.org/draft-07/schema#",
-	"$id": "https://sfcc.com/components/card-enhanced",
-	"title": "Card Enhanced",
-	"description": "An Enhanced card with POI and suitable for in grid content",
-	"allOf": [
-		{
-			"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
-		}
-	],
-	"type": "object",
-	"properties": {
-		"image": {
-			"type": "object",
-			"title": "Image",
-			"description": "Image to show in the snippet",
-			"allOf": [
-				{
-					"$ref": "https://sfcc.com/libs/all-definitions#/definitions/diImage"
-				}
-			]
-		},
-		"mainText": {
-			"title": "Card Main Text (max 30 chars.)",
-			"description": "description",
-			"minLength": 0,
-			"maxLength": 30,
-			"allOf": [
-				{
-					"$ref": "http://bigcontent.io/cms/schema/v1/localization#/definitions/localized-string"
-				}
-			]
-		},
-		"subText": {
-			"title": "Card Sub Text (max 150 chars.)",
-			"description": "description",
-			"minLength": 0,
-			"maxLength": 150,
-			"allOf": [
-				{
-					"$ref": "http://bigcontent.io/cms/schema/v1/localization#/definitions/localized-string"
-				}
-			]
-		},
-		"textAlignment": {
-			"title": "Text Alignment",
-			"description": "left, right, or center text alignment",
-			"type": "string",
-			"default": "right",
-			"enum": [
-				"left",
-				"right",
-				"center"
-			]
-		},
-		"verticalAlignment": {
-			"title": "Vertical Text Alignment",
-			"description": "top, middle, or bottom text alignment",
-			"type": "string",
-			"default": "bottom",
-			"enum": [
-				"top",
-				"middle",
-				"bottom"
-			]
-		},
-		"linkPosition": {
-			"title": "Position Link with card text",
-			"description": "place link with the card text OR below the image. Text Alignment still applies",
-			"default": "withtext",
-			"type": "string",
-			"enum": [
-				"withtext",
-				"belowimage"
-			]
-		},
-		"color": {
-			"title": "Text Color",
-			"description": "Color for all text in the card. If link is placed below the image, that text will be black.",
-			"format": "color",
-			"type": "string"
-		},
-		"blend": {
-			"title": "Text Blending",
-			"description": "Blending option for text over image",
-			"type": "string",
-			"default": "normal",
-			"enum": [
-				"normal",
-				"overlay",
-				"difference",
-				"exclusion"
-			]
-		},
-		"links": {
-			"type": "array",
-			"title": "Links",
-			"description": "Links for the card",
-			"items": {
-				"$ref": "https://sfcc.com/components/link"
-			},
-			"minItems": 0,
-			"maxItems": 4
-		}
-	},
-	"propertyOrder": [
-		"image"
-	]
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://sfcc.com/components/card-enhanced",
+    "title": "Card Enhanced",
+    "description": "An Enhanced card with POI and suitable for in grid content",
+    "allOf": [
+        {
+            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+        }
+    ],
+    "type": "object",
+    "properties": {
+        "image": {
+            "type": "object",
+            "title": "Image",
+            "description": "Image to show in the snippet",
+            "allOf": [
+                {
+                    "$ref": "https://sfcc.com/libs/all-definitions#/definitions/diImage"
+                }
+            ]
+        },
+        "mainText": {
+            "title": "Card Main Text (max 30 chars.)",
+            "description": "description",
+            "minLength": 0,
+            "maxLength": 30,
+            "allOf": [
+                {
+                    "$ref": "http://bigcontent.io/cms/schema/v1/localization#/definitions/localized-string"
+                }
+            ]
+        },
+        "subText": {
+            "title": "Card Sub Text (max 150 chars.)",
+            "description": "description",
+            "minLength": 0,
+            "maxLength": 150,
+            "allOf": [
+                {
+                    "$ref": "http://bigcontent.io/cms/schema/v1/localization#/definitions/localized-string"
+                }
+            ]
+        },
+        "textAlignment": {
+            "title": "Text Alignment",
+            "description": "left, right, or center text alignment",
+            "type": "string",
+            "default": "right",
+            "enum": ["left", "right", "center"]
+        },
+        "verticalAlignment": {
+            "title": "Vertical Text Alignment",
+            "description": "top, middle, or bottom text alignment",
+            "type": "string",
+            "default": "bottom",
+            "enum": ["top", "middle", "bottom"]
+        },
+        "linkPosition": {
+            "title": "Position Link with card text",
+            "description": "place link with the card text OR below the image. Text Alignment still applies",
+            "default": "withtext",
+            "type": "string",
+            "enum": ["withtext", "belowimage"]
+        },
+        "color": {
+            "title": "Text Color",
+            "description": "Color for all text in the card. If link is placed below the image, that text will be black.",
+            "format": "color",
+            "type": "string"
+        },
+        "blend": {
+            "title": "Text Blending",
+            "description": "Blending option for text over image",
+            "type": "string",
+            "default": "normal",
+            "enum": ["normal", "overlay", "difference", "exclusion"]
+        },
+        "links": {
+            "type": "array",
+            "title": "Links",
+            "description": "Links for the card",
+            "items": {
+                "$ref": "https://sfcc.com/components/link"
+            },
+            "minItems": 0,
+            "maxItems": 4
+        }
+    },
+    "propertyOrder": ["image"]
 }
