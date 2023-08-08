@@ -48,7 +48,7 @@
                 }
             ]
         },
-        "alt":{
+        "alt": {
             "type": "string",
 			"title": "Logo alt text",
 			"description": "Alternative text for Logo for SEO",
