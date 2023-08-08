@@ -23,7 +23,6 @@ const AdaptiveImageSource = (props) => {
     //TODO, fix this
     const imageUrl2x = getImageURL(image, t2)
 
-    //console.log(t2);
 
     return <source srcSet={`${imageUrl} 1x, ${imageUrl2x} 2x`} src={imageUrl} {...other} />
 }

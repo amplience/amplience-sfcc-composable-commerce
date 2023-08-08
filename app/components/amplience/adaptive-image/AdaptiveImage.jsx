@@ -14,8 +14,6 @@ const AdaptiveImage = (props) => {
 
     const defaultImageUrl = getImageURL(image, transformations)
 
-    console.log('image alt', imageAltText)
-
     return (
         <AdaptiveImageContext.Provider
             value={{
