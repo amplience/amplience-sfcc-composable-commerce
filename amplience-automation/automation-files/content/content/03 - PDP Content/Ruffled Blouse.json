@@ -41,6 +41,13 @@
         },
         "contentType": "https://sfcc.com/components/rich-text",
         "id": "fbfa3892-2cfe-4f5e-89bc-6dda112fa561"
+      },
+      {
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+        },
+        "contentType": "https://demostore.amplience.com/content/stylitics/generic",
+        "id": "0b0a8e6f-08a8-44bf-855e-b5990f71034e"
       }
     ]
   },

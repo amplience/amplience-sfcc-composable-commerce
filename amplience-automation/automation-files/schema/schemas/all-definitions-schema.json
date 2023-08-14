@@ -14,14 +14,28 @@
                 "https://sfcc.com/components/rich-text",
                 "https://sfcc.com/components/shoppable-image",
                 "https://sfcc.com/components/shoppable-video",
-                "https://sfcc.com/components/features"
+                "https://sfcc.com/components/features",
+
+                "https://sfcc.com/content/stylitics/generic",
+                "https://sfcc.com/content/stylitics/classic",
+                "https://sfcc.com/content/stylitics/gallery",
+                "https://sfcc.com/content/stylitics/mainAndDetail",
+                "https://sfcc.com/content/stylitics/hotspots",
+                "https://sfcc.com/content/stylitics/moodboard"
             ]
         },
         "anyInGridComponent": {
             "enum": [
                 "https://sfcc.com/components/hero",
                 "https://sfcc.com/components/card-enhanced",
-                "https://sfcc.com/components/shoppable-image"
+                "https://sfcc.com/components/shoppable-image",
+
+                "https://sfcc.com/content/stylitics/generic",
+                "https://sfcc.com/content/stylitics/classic",
+                "https://sfcc.com/content/stylitics/gallery",
+                "https://sfcc.com/content/stylitics/mainAndDetail",
+                "https://sfcc.com/content/stylitics/hotspots",
+                "https://sfcc.com/content/stylitics/moodboard"
             ]
         },
         "anyPage": {
@@ -42,7 +56,14 @@
                 "https://sfcc.com/components/rich-text",
                 "https://sfcc.com/components/shoppable-image",
                 "https://sfcc.com/components/shoppable-video",
-                "https://sfcc.com/components/features"
+                "https://sfcc.com/components/features",
+
+                "https://sfcc.com/content/stylitics/generic",
+                "https://sfcc.com/content/stylitics/classic",
+                "https://sfcc.com/content/stylitics/gallery",
+                "https://sfcc.com/content/stylitics/mainAndDetail",
+                "https://sfcc.com/content/stylitics/hotspots",
+                "https://sfcc.com/content/stylitics/moodboard"
             ]
         },
         "anySlot": {
@@ -66,7 +87,14 @@
                 "https://sfcc.com/components/features",
                 "https://sfcc.com/site/pages/content-page",
                 "https://sfcc.com/slots/flexible-list",
-                "https://sfcc.com/slots/personalised-slot"
+                "https://sfcc.com/slots/personalised-slot",
+
+                "https://sfcc.com/content/stylitics/generic",
+                "https://sfcc.com/content/stylitics/classic",
+                "https://sfcc.com/content/stylitics/gallery",
+                "https://sfcc.com/content/stylitics/mainAndDetail",
+                "https://sfcc.com/content/stylitics/hotspots",
+                "https://sfcc.com/content/stylitics/moodboard"
             ]
         },
         "anyComponentAndSlot": {
@@ -83,7 +111,14 @@
                 "https://sfcc.com/components/shoppable-video",
                 "https://sfcc.com/components/features",
                 "https://sfcc.com/slots/flexible-list",
-                "https://sfcc.com/slots/personalised-slot"
+                "https://sfcc.com/slots/personalised-slot",
+
+                "https://sfcc.com/content/stylitics/generic",
+                "https://sfcc.com/content/stylitics/classic",
+                "https://sfcc.com/content/stylitics/gallery",
+                "https://sfcc.com/content/stylitics/mainAndDetail",
+                "https://sfcc.com/content/stylitics/hotspots",
+                "https://sfcc.com/content/stylitics/moodboard"
             ]
         },
         "diImage": {
@@ -248,7 +283,14 @@
                                 "https://sfcc.com/components/personalised-component",
                                 "https://sfcc.com/components/shoppable-image",
                                 "https://sfcc.com/components/shoppable-video",
-                                "https://sfcc.com/components/features"
+                                "https://sfcc.com/components/features",
+
+                                "https://sfcc.com/content/stylitics/generic",
+                                "https://sfcc.com/content/stylitics/classic",
+                                "https://sfcc.com/content/stylitics/gallery",
+                                "https://sfcc.com/content/stylitics/mainAndDetail",
+                                "https://sfcc.com/content/stylitics/hotspots",
+                                "https://sfcc.com/content/stylitics/moodboard"
                             ],
                             "contentTypeSettings": [
                                 {
@@ -292,6 +334,37 @@
                                     "id": "https://sfcc.com/components/shoppable-video",
                                     "icon": "https://sfcccomposable.a.bigcontent.io/v1/static/icon-component-shoppable-video",
                                     "card": "https://bigcontent.io/cms/cards/summary-photo/index.html?headline=/title/values/0/value&image=/shoppableVideo/video&imageAlt=/videoAltText/values/0/value&src=%2F%2F{{vse.domain}}%2Fcms%2Fcontent%2Fquery%3FfullBodyObject%3Dtrue%26query%3D%257B%2522sys.iri%2522%253A%2522http%253A%252F%252Fcontent.cms.amplience.com%252F{{content.sys.id}}%2522%257D%26scope%3Dtree%26store%3Dstaging"
+                                },
+
+                                {
+                                    "id": "https://sfcc.com/content/stylitics/generic",
+                                    "icon": "https://styliticsdemo.a.bigcontent.io/v1/static/icon-stylitics-generic",
+                                    "card": "https://amp-product.s3.eu-west-1.amazonaws.com/integration-examples/dc-integration-stylitics/stylitics-card-html.html?vse={{vse.domain}}&content={{content.sys.id}}&locale=*"
+                                },
+                                {
+                                    "id": "https://sfcc.com/content/stylitics/classic",
+                                    "icon": "https://styliticsdemo.a.bigcontent.io/v1/static/icon-stylitics-classic",
+                                    "card": "https://amp-product.s3.eu-west-1.amazonaws.com/integration-examples/dc-integration-stylitics/stylitics-card-html.html?vse={{vse.domain}}&content={{content.sys.id}}&locale=*"
+                                },
+                                {
+                                    "id": "https://sfcc.com/content/stylitics/gallery",
+                                    "icon": "https://styliticsdemo.a.bigcontent.io/v1/static/icon-stylitics-gallery",
+                                    "card": "https://amp-product.s3.eu-west-1.amazonaws.com/integration-examples/dc-integration-stylitics/stylitics-card-html.html?vse={{vse.domain}}&content={{content.sys.id}}&locale=*"
+                                },
+                                {
+                                    "id": "https://sfcc.com/content/stylitics/mainAndDetail",
+                                    "icon": "https://styliticsdemo.a.bigcontent.io/v1/static/icon-stylitics-mainAndDetail",
+                                    "card": "https://amp-product.s3.eu-west-1.amazonaws.com/integration-examples/dc-integration-stylitics/stylitics-card-html.html?vse={{vse.domain}}&content={{content.sys.id}}&locale=*"
+                                },
+                                {
+                                    "id": "https://sfcc.com/content/stylitics/hotspots",
+                                    "icon": "https://styliticsdemo.a.bigcontent.io/v1/static/icon-stylitics-hotspots",
+                                    "card": "https://amp-product.s3.eu-west-1.amazonaws.com/integration-examples/dc-integration-stylitics/stylitics-card-html.html?vse={{vse.domain}}&content={{content.sys.id}}&locale=*"
+                                },
+                                {
+                                    "id": "https://sfcc.com/content/stylitics/moodboard",
+                                    "icon": "https://styliticsdemo.a.bigcontent.io/v1/static/icon-stylitics-moodboard",
+                                    "card": "https://amp-product.s3.eu-west-1.amazonaws.com/integration-examples/dc-integration-stylitics/stylitics-card-html.html?vse={{vse.domain}}&content={{content.sys.id}}&locale=*"
                                 }
                             ]
                         },

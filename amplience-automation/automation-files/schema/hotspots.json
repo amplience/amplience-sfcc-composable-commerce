@@ -1,0 +1,5 @@
+{
+  "body": "./schemas/hotspots-schema.json",
+  "schemaId": "https://sfcc.com/content/stylitics/hotspots",
+  "validationLevel": "CONTENT_TYPE"
+}

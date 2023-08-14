@@ -1,0 +1,40 @@
+{
+  "contentTypeUri": "https://sfcc.com/content/stylitics/hotspots",
+  "status": "ACTIVE",
+  "settings": {
+    "label": "Stylitics - Hotspots",
+    "icons": [
+      {
+        "size": 256,
+        "url": "https://styliticsdemo.a.bigcontent.io/v1/static/icon-stylitics-hotspots"
+      }
+    ],
+    "visualizations": [
+      {{#each visualisations}}
+      {
+        "label": "{{this.name}}",
+        "templatedUri": "{{this.url}}/\{{locales}}/visualization?vse=\{{vse.domain}}&contentId=\{{content.sys.id}}&hub=\{{hub.name}}",
+        "default": "{{this.default}}"
+      },
+      {{/each}}
+      {
+        "label": "HTML",
+        "templatedUri": "https://amp-product.s3.eu-west-1.amazonaws.com/integration-examples/dc-integration-stylitics/stylitics-generic-html.html?vse=\{{vse.domain}}&content=\{{content.sys.id}}&locale=\{{locales}}&realtime=true",
+        "default": true
+      },
+      {
+        "label": "JSON",
+        "templatedUri": "https://delivery-preview.visualizations.content.amplience.net?id=\{{content.sys.id}}&vse=\{{vse.domain}}&locale=\{{locales}}&hub=\{{hub.name}}&realtime=true",
+        "default": false
+      }
+    ],
+    "cards": [
+      {
+        "templatedUri": "https://amp-product.s3.eu-west-1.amazonaws.com/integration-examples/dc-integration-stylitics/stylitics-card-html.html?vse=\{{vse.domain}}&content=\{{content.sys.id}}&locale=*"
+      }
+    ]
+  },
+  "repositories": [
+    "content"
+  ]
+}
