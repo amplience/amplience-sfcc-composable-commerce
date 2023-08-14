@@ -66,7 +66,7 @@
                 "tempId": 1,
                 "content": {
                     "id": "bc1270be-7d55-4481-a9f8-fc96a471f3e9",
-                    "contentType": "https://demostore.amplience.com/content/stylitics/generic",
+                    "contentType": "https://sfcc.com/content/stylitics/generic",
                     "_meta": {
                         "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference"
                     }

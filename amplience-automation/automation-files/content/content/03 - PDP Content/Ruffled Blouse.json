@@ -46,7 +46,7 @@
         "_meta": {
           "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
         },
-        "contentType": "https://demostore.amplience.com/content/stylitics/generic",
+        "contentType": "https://sfcc.com/content/stylitics/generic",
         "id": "0b0a8e6f-08a8-44bf-855e-b5990f71034e"
       }
     ]
