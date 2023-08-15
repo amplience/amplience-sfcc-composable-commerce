@@ -19,7 +19,7 @@
                 "https://sfcc.com/content/stylitics/generic",
                 "https://sfcc.com/content/stylitics/classic",
                 "https://sfcc.com/content/stylitics/gallery",
-                "https://sfcc.com/content/stylitics/mainAndDetail",
+                "https://sfcc.com/content/stylitics/main-and-detail",
                 "https://sfcc.com/content/stylitics/hotspots",
                 "https://sfcc.com/content/stylitics/moodboard"
             ]
@@ -33,7 +33,7 @@
                 "https://sfcc.com/content/stylitics/generic",
                 "https://sfcc.com/content/stylitics/classic",
                 "https://sfcc.com/content/stylitics/gallery",
-                "https://sfcc.com/content/stylitics/mainAndDetail",
+                "https://sfcc.com/content/stylitics/main-and-detail",
                 "https://sfcc.com/content/stylitics/hotspots",
                 "https://sfcc.com/content/stylitics/moodboard"
             ]
@@ -61,7 +61,7 @@
                 "https://sfcc.com/content/stylitics/generic",
                 "https://sfcc.com/content/stylitics/classic",
                 "https://sfcc.com/content/stylitics/gallery",
-                "https://sfcc.com/content/stylitics/mainAndDetail",
+                "https://sfcc.com/content/stylitics/main-and-detail",
                 "https://sfcc.com/content/stylitics/hotspots",
                 "https://sfcc.com/content/stylitics/moodboard"
             ]
@@ -92,7 +92,7 @@
                 "https://sfcc.com/content/stylitics/generic",
                 "https://sfcc.com/content/stylitics/classic",
                 "https://sfcc.com/content/stylitics/gallery",
-                "https://sfcc.com/content/stylitics/mainAndDetail",
+                "https://sfcc.com/content/stylitics/main-and-detail",
                 "https://sfcc.com/content/stylitics/hotspots",
                 "https://sfcc.com/content/stylitics/moodboard"
             ]
@@ -116,7 +116,7 @@
                 "https://sfcc.com/content/stylitics/generic",
                 "https://sfcc.com/content/stylitics/classic",
                 "https://sfcc.com/content/stylitics/gallery",
-                "https://sfcc.com/content/stylitics/mainAndDetail",
+                "https://sfcc.com/content/stylitics/main-and-detail",
                 "https://sfcc.com/content/stylitics/hotspots",
                 "https://sfcc.com/content/stylitics/moodboard"
             ]
@@ -288,7 +288,7 @@
                                 "https://sfcc.com/content/stylitics/generic",
                                 "https://sfcc.com/content/stylitics/classic",
                                 "https://sfcc.com/content/stylitics/gallery",
-                                "https://sfcc.com/content/stylitics/mainAndDetail",
+                                "https://sfcc.com/content/stylitics/main-and-detail",
                                 "https://sfcc.com/content/stylitics/hotspots",
                                 "https://sfcc.com/content/stylitics/moodboard"
                             ],
@@ -352,7 +352,7 @@
                                     "card": "https://amp-product.s3.eu-west-1.amazonaws.com/integration-examples/dc-integration-stylitics/stylitics-card-html.html?vse={{vse.domain}}&content={{content.sys.id}}&locale=*"
                                 },
                                 {
-                                    "id": "https://sfcc.com/content/stylitics/mainAndDetail",
+                                    "id": "https://sfcc.com/content/stylitics/main-and-detail",
                                     "icon": "https://styliticsdemo.a.bigcontent.io/v1/static/icon-stylitics-mainAndDetail",
                                     "card": "https://amp-product.s3.eu-west-1.amazonaws.com/integration-examples/dc-integration-stylitics/stylitics-card-html.html?vse={{vse.domain}}&content={{content.sys.id}}&locale=*"
                                 },
@@ -532,7 +532,14 @@
                                         "https://sfcc.com/components/card-enhanced",
                                         "https://sfcc.com/components/hero",
                                         "https://sfcc.com/components/personalised-ingrid-component",
-                                        "https://sfcc.com/components/shoppable-image"
+                                        "https://sfcc.com/components/shoppable-image",
+
+                                        "https://sfcc.com/content/stylitics/generic",
+                                        "https://sfcc.com/content/stylitics/classic",
+                                        "https://sfcc.com/content/stylitics/gallery",
+                                        "https://sfcc.com/content/stylitics/main-and-detail",
+                                        "https://sfcc.com/content/stylitics/hotspots",
+                                        "https://sfcc.com/content/stylitics/moodboard"
                                     ]
                                 }
                             }

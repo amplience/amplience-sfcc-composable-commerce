@@ -49,7 +49,7 @@ const componentsMapping = {
     'https://sfcc.com/content/stylitics/generic': Stylitics,
     'https://sfcc.com/content/stylitics/classic': Stylitics,
     'https://sfcc.com/content/stylitics/hotspots': Stylitics,
-    'https://sfcc.com/content/stylitics/mainAndDetail': Stylitics,
+    'https://sfcc.com/content/stylitics/main-and-detail': Stylitics,
     'https://sfcc.com/content/stylitics/gallery': Stylitics,
     'https://sfcc.com/content/stylitics/moodboard': Stylitics,
 
