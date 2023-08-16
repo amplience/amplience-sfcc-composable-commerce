@@ -1,6 +1,10 @@
 {
     "id": "6f57ec33-dab2-467e-aa59-180e3e43f9e9",
     "body": {
+        "_meta": {
+            "name": "Shop the festival collection",
+            "schema": "https://sfcc.com/components/shoppable-video"
+        },
         "title": {
             "values": [
                 {
@@ -40,7 +44,7 @@
             },
             "hotspots": [
                 {
-                    "target": "content/information/sunglasses",
+                    "target": "stylitics/generic-sunglasses",
                     "selector": "contentKey",
                     "timeline": {
                         "points": [
@@ -1720,8 +1724,8 @@
                     }
                 },
                 {
-                    "target": "womens",
-                    "selector": "category",
+                    "target": "stylitics/generic-example",
+                    "selector": "contentKey",
                     "timeline": {
                         "points": [
                             {
@@ -1959,13 +1963,13 @@
                         ]
                     },
                     "cta": {
-                        "caption": "Womens Collection",
+                        "caption": "Shop the Look",
                         "value": "https://www.anyafinn.online/"
                     }
                 }
             ]
         },
-        "autoplay": true,
+        "autoplay": false,
         "videoAltText": {
             "values": [
                 {
@@ -2049,14 +2053,14 @@
                         "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
                     }
                 },
-                "key": "content/information/sunglasses"
+                "key": "stylitics/generic-sunglasses"
             },
             {
                 "value": {
                     "values": [
                         {
                             "locale": "en-US",
-                            "value": "Womens Collection"
+                            "value": "Shop the Look"
                         },
                         {
                             "locale": "fr-FR",
@@ -2079,13 +2083,9 @@
                         "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
                     }
                 },
-                "key": "womens"
+                "key": "stylitics/generic-example"
             }
-        ],
-        "_meta": {
-            "name": "Shop the festival collection",
-            "schema": "https://sfcc.com/components/shoppable-video"
-        }
+        ]
     },
     "version": 1,
     "label": "Shop the festival collection",
