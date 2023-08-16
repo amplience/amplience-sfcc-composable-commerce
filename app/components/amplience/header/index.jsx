@@ -71,6 +71,7 @@ const Header = ({
     onMyCartClick = noop,
     onWishlistClick = noop,
     logo,
+    logoAlt,
     ...props
 }) => {
     const intl = useIntl()
@@ -134,7 +135,7 @@ const Header = ({
                                 <img
                                     {...styles.logo}
                                     style={{...ampStyles.logo}}
-                                    alt={'logo'}
+                                    alt={logoAlt ? logoAlt : 'logo'}
                                     src={`${url}?w=192&fmt=auto`}
                                 />
                             }
@@ -292,6 +293,7 @@ Header.propTypes = {
         endpoint: PropTypes.string,
         defaultHost: PropTypes.string
     }),
+    logoAlt: PropTypes.string,
     searchInputRef: PropTypes.oneOfType([
         PropTypes.func,
         PropTypes.shape({current: PropTypes.elementType})

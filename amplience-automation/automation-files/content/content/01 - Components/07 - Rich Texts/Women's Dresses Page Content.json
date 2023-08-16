@@ -58,6 +58,16 @@
               {
                 "type": "markdown",
                 "data": "\nDress your way in a statement blazer dress paired with barely-there heels for your next girls' night. With everything from head-turning going out dresses to autumn dresses to get cosy in, shop the collection now (warning: dress envy is inevitable)"
+              },
+              {
+                "type": "dc-content-link",
+                "data": {
+                  "id": "e4d77c35-947d-4552-8b9f-9ec14769ad8e",
+                  "contentType": "https://sfcc.com/content/stylitics/gallery",
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                  }
+                }
               }
             ]
           }
@@ -113,6 +123,16 @@
               {
                 "type": "markdown",
                 "data": "Habillez-vous avec une robe blazer tendance associée à des talons discrets pour votre prochaine soirée entre filles. Avec tout, des robes de soirée qui font tourner les têtes aux robes d'automne pour se sentir à l'aise, achetez la collection maintenant (avertissement : l'envie de robe est inévitable)"
+              },
+              {
+                "type": "dc-content-link",
+                "data": {
+                  "id": "e4d77c35-947d-4552-8b9f-9ec14769ad8e",
+                  "contentType": "https://sfcc.com/content/stylitics/gallery",
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                  }
+                }
               }
             ]
           }
@@ -168,6 +188,16 @@
               {
                 "type": "markdown",
                 "data": "Kleiden Sie sich in einem Statement-Blazerkleid, gepaart mit kaum sichtbaren Absätzen, für Ihren nächsten Mädelsabend. Mit allem, von auffälligen Ausgehkleidern bis hin zu Herbstkleidern, um es sich gemütlich zu machen, kaufen Sie die Kollektion jetzt ein (Achtung: Kleiderneid ist unvermeidlich)"
+              },
+              {
+                "type": "dc-content-link",
+                "data": {
+                  "id": "e4d77c35-947d-4552-8b9f-9ec14769ad8e",
+                  "contentType": "https://sfcc.com/content/stylitics/gallery",
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                  }
+                }
               }
             ]
           }
@@ -223,6 +253,16 @@
               {
                 "type": "markdown",
                 "data": "Vístete a tu manera con un vestido estilo blazer combinado con tacones imperceptibles para tu próxima noche de chicas. Con todo, desde llamativos vestidos para salir hasta vestidos de otoño para ponerse cómodos, compre la colección ahora (advertencia: la envidia por los vestidos es inevitable)"
+              },
+              {
+                "type": "dc-content-link",
+                "data": {
+                  "id": "e4d77c35-947d-4552-8b9f-9ec14769ad8e",
+                  "contentType": "https://sfcc.com/content/stylitics/gallery",
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                  }
+                }
               }
             ]
           }
@@ -278,6 +318,16 @@
               {
                 "type": "markdown",
                 "data": "Vestiti a modo tuo con un abito blazer di tendenza abbinato a tacchi a malapena per la tua prossima notte da ragazza. Con di tutto, dagli abiti da capogiro per uscire agli abiti autunnali per metterti comodo, acquista subito la collezione (attenzione: l'invidia del vestito è inevitabile)"
+              },
+              {
+                "type": "dc-content-link",
+                "data": {
+                  "id": "e4d77c35-947d-4552-8b9f-9ec14769ad8e",
+                  "contentType": "https://sfcc.com/content/stylitics/gallery",
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                  }
+                }
               }
             ]
           }

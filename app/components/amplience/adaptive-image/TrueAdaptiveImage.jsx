@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 //import { ImageFormat } from '../../../amplience/utils/getImageURL';
 
 const TrueAdaptiveImage = (props) => {
-    const {imageRef, transformations} = props
+    const {imageRef, imageAltText, transformations} = props
 
     const [xl, xlNorm, l, lNorm, t, tNorm, m, mNorm] = useMemo(() => {
         return [
@@ -123,7 +123,12 @@ const TrueAdaptiveImage = (props) => {
     const mainTransform = props.transformations ?? {}
 
     return (
-        <AdaptiveImage ref={imageRef} {...props} transformations={mainTransform}>
+        <AdaptiveImage
+            ref={imageRef}
+            imageAltText={imageAltText}
+            {...props}
+            transformations={mainTransform}
+        >
             <AdaptiveImageSource
                 media="(min-width: 1280px)"
                 type="image/webp"
@@ -148,7 +153,8 @@ TrueAdaptiveImage.displayName = 'TrueAdaptiveImage'
 
 TrueAdaptiveImage.propTypes = {
     imageRef: PropTypes.object,
-    transformations: PropTypes.object
+    transformations: PropTypes.object,
+    imageAltText: PropTypes.string
 }
 
 // eslint-disable-next-line react/display-name

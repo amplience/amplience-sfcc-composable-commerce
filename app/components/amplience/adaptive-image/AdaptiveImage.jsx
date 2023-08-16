@@ -6,7 +6,7 @@ import {Image} from '@chakra-ui/react'
 export const AdaptiveImageContext = createContext(null)
 
 const AdaptiveImage = (props) => {
-    const {image, transformations, children, imageRef, ...other} = props
+    const {image, transformations, imageAltText, children, imageRef, ...other} = props
 
     if (!image) {
         return null
@@ -18,7 +18,8 @@ const AdaptiveImage = (props) => {
         <AdaptiveImageContext.Provider
             value={{
                 image,
-                transformations
+                transformations,
+                imageAltText
             }}
         >
             <picture>
@@ -27,6 +28,7 @@ const AdaptiveImage = (props) => {
                     ref={imageRef}
                     src={defaultImageUrl}
                     fallbackSrc={`${defaultImageUrl}&w=1&qlt=1`}
+                    alt={imageAltText}
                     {...other}
                 />
             </picture>
@@ -40,12 +42,14 @@ AdaptiveImage.propTypes = {
     image: PropTypes.object,
     transformations: PropTypes.object,
     children: PropTypes.node,
-    imageRef: PropTypes.object
+    imageRef: PropTypes.object,
+    imageAltText: PropTypes.string
 }
 
 // eslint-disable-next-line react/display-name
 export default forwardRef((props, ref) => (
-    <AdaptiveImage {...props} imageRef={ref}>
+    // eslint-disable-next-line react/prop-types
+    <AdaptiveImage {...props} imageRef={ref} imageAltText={props.imageAltText}>
         {props.children}
     </AdaptiveImage>
 ))
