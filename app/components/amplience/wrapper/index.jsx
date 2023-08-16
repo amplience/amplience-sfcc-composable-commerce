@@ -58,7 +58,7 @@ const componentsMapping = {
     'https://sfcc.com/site/navigation/internal': Blank,
     'https://sfcc.com/site/navigation/content-page': Blank,
     'https://sfcc.com/site/navigation/category': Blank,
-    'https://sfcc.com/site/navigation/group': Blank
+    'https://sfcc.com/site/navigation/group': Blank,
 }
 
 const AmplienceWrapper = ({fetch, content, components, skeleton, rtvActive, ...rest}) => {
