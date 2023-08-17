@@ -40,6 +40,16 @@
           "value": {
             "richText": [
               {
+                "type": "dc-content-link",
+                "data": {
+                  "id": "8ab5801f-cb92-405f-9e2a-2385d4c6360f",
+                  "contentType": "https://sfcc.com/content/stylitics/generic",
+                  "_meta": {
+                      "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                  }
+                }
+              },
+              {
                 "type": "markdown",
                 "data": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla purus nunc, pulvinar vel erat id, interdum gravida eros. Vestibulum finibus sem at purus vulputate placerat. Donec nibh nisl, vulputate id consequat quis, semper nec diam. Curabitur a nunc eu ipsum aliquet mollis quis et nibh. Nullam eget venenatis eros. Duis non vestibulum leo. Quisque at interdum mauris. Maecenas in venenatis tellus, vel dictum ipsum. Curabitur felis justo, vulputate sed efficitur nec, placerat pellentesque massa. Pellentesque nec rhoncus nibh, vitae egestas dolor. Mauris feugiat leo eu diam ornare, et ultricies nisi commodo. In nec ultricies risus, nec commodo ipsum. In ut velit erat."
               },
@@ -66,6 +76,16 @@
           "locale": "fr-FR",
           "value": {
             "richText": [
+              {
+                "type": "dc-content-link",
+                "data": {
+                  "id": "8ab5801f-cb92-405f-9e2a-2385d4c6360f",
+                  "contentType": "https://sfcc.com/content/stylitics/generic",
+                  "_meta": {
+                      "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                  }
+                }
+              },
               {
                 "type": "markdown",
                 "data": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla purus nunc, pulvinar vel erat id, interdum gravida eros. Vestibulum finibus sem at purus vulputate placerat. Donec nibh nisl, vulputate id consequat quis, semper nec diam. Curabitur a nunc eu ipsum aliquet mollis quis et nibh. Nullam eget venenatis eros. Duis non vestibulum leo. Quisque at interdum mauris. Maecenas in venenatis tellus, vel dictum ipsum. Curabitur felis justo, vulputate sed efficitur nec, placerat pellentesque massa. Pellentesque nec rhoncus nibh, vitae egestas dolor. Mauris feugiat leo eu diam ornare, et ultricies nisi commodo. In nec ultricies risus, nec commodo ipsum. In ut velit erat."
@@ -94,6 +114,16 @@
           "value": {
             "richText": [
               {
+                "type": "dc-content-link",
+                "data": {
+                  "id": "8ab5801f-cb92-405f-9e2a-2385d4c6360f",
+                  "contentType": "https://sfcc.com/content/stylitics/generic",
+                  "_meta": {
+                      "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                  }
+                }
+              },
+              {
                 "type": "markdown",
                 "data": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla purus nunc, pulvinar vel erat id, interdum gravida eros. Vestibulum finibus sem at purus vulputate placerat. Donec nibh nisl, vulputate id consequat quis, semper nec diam. Curabitur a nunc eu ipsum aliquet mollis quis et nibh. Nullam eget venenatis eros. Duis non vestibulum leo. Quisque at interdum mauris. Maecenas in venenatis tellus, vel dictum ipsum. Curabitur felis justo, vulputate sed efficitur nec, placerat pellentesque massa. Pellentesque nec rhoncus nibh, vitae egestas dolor. Mauris feugiat leo eu diam ornare, et ultricies nisi commodo. In nec ultricies risus, nec commodo ipsum. In ut velit erat."
               },
@@ -121,6 +151,16 @@
           "value": {
             "richText": [
               {
+                "type": "dc-content-link",
+                "data": {
+                  "id": "8ab5801f-cb92-405f-9e2a-2385d4c6360f",
+                  "contentType": "https://sfcc.com/content/stylitics/generic",
+                  "_meta": {
+                      "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                  }
+                }
+              },
+              {
                 "type": "markdown",
                 "data": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla purus nunc, pulvinar vel erat id, interdum gravida eros. Vestibulum finibus sem at purus vulputate placerat. Donec nibh nisl, vulputate id consequat quis, semper nec diam. Curabitur a nunc eu ipsum aliquet mollis quis et nibh. Nullam eget venenatis eros. Duis non vestibulum leo. Quisque at interdum mauris. Maecenas in venenatis tellus, vel dictum ipsum. Curabitur felis justo, vulputate sed efficitur nec, placerat pellentesque massa. Pellentesque nec rhoncus nibh, vitae egestas dolor. Mauris feugiat leo eu diam ornare, et ultricies nisi commodo. In nec ultricies risus, nec commodo ipsum. In ut velit erat."
               },
@@ -147,6 +187,16 @@
           "locale": "it-IT",
           "value": {
             "richText": [
+              {
+                "type": "dc-content-link",
+                "data": {
+                  "id": "8ab5801f-cb92-405f-9e2a-2385d4c6360f",
+                  "contentType": "https://sfcc.com/content/stylitics/generic",
+                  "_meta": {
+                      "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                  }
+                }
+              },
               {
                 "type": "markdown",
                 "data": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla purus nunc, pulvinar vel erat id, interdum gravida eros. Vestibulum finibus sem at purus vulputate placerat. Donec nibh nisl, vulputate id consequat quis, semper nec diam. Curabitur a nunc eu ipsum aliquet mollis quis et nibh. Nullam eget venenatis eros. Duis non vestibulum leo. Quisque at interdum mauris. Maecenas in venenatis tellus, vel dictum ipsum. Curabitur felis justo, vulputate sed efficitur nec, placerat pellentesque massa. Pellentesque nec rhoncus nibh, vitae egestas dolor. Mauris feugiat leo eu diam ornare, et ultricies nisi commodo. In nec ultricies risus, nec commodo ipsum. In ut velit erat."
