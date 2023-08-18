@@ -13,5 +13,12 @@ Uses the [Amplience Stylitics Integration (See link for full documentation)](htt
 * Shoppable Video examples (load Stylitics widgets in a sidebar)
 * Product Page content
 
+## Customising for your implementation
+This automation points to a sample Stylitics data set and account. If you are using in your own implementation as a sample and wanted to change anything, full detail can be found here: 
 
-> Note: Stylitics do not currently have any demo data sets for the SFCC default catalog, so we have implemented a product selector that points to a demo data set. This means that any links are as per Stylitic demo data. This may change in future releases 
+https://github.com/amplience/dc-integration-stylitics/blob/main/docs/automation.md#customisations--implementation
+
+Files can be found in `/amplience-automation/automation-files`
+
+
+> Note: Stylitics do not currently have any demo data sets for the SFCC default catalog, so we have implemented a product selector that points to a demo data set. This means that any links are as per Stylitics demo data. This may change in future releases 
