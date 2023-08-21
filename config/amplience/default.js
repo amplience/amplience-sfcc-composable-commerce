@@ -1,6 +1,6 @@
 module.exports = {
     default: {
-        hub: 'sfcccomposable'
+        hub: 'sfccdemo01'
     },
     envs: [
         /*
@@ -9,7 +9,7 @@ module.exports = {
             hub: 'environment01',
             vse: '{{Your VSE URL for Environment 1}}'
         },
-         {
+        {
             name: 'Environment 1',
             hub: 'environment01',
             vse: '{{Your VSE URL for Environment 2}}'
