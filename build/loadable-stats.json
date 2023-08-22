@@ -1,11 +1,12 @@
 {
   "name": "client",
-  "hash": "17482d489a4d80999e34",
+  "hash": "22020adf288d11f35e64",
   "publicPath": "/mobify/bundle/development/",
   "outputPath": "/Users/raybarragansweeten/Dev/Amplience/amplience-sfcc-composable-commerce/build",
   "assetsByChunkName": {
     "main": [
-      "main.js"
+      "main.js",
+      "main.e2dc8bd5ad5b0de6de7f.hot-update.js"
     ],
     "pages-home": [
       "pages-home.js"
@@ -430,6 +431,33 @@
     },
     {
       "type": "asset",
+      "name": "main.e2dc8bd5ad5b0de6de7f.hot-update.js",
+      "size": 40671,
+      "emitted": false,
+      "comparedForEmit": false,
+      "cached": true,
+      "info": {
+        "hotModuleReplacement": true,
+        "immutable": true,
+        "fullhash": "e2dc8bd5ad5b0de6de7f",
+        "related": {
+          "sourceMap": "main.e2dc8bd5ad5b0de6de7f.hot-update.js.map"
+        }
+      },
+      "chunkNames": [
+        "main"
+      ],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "filteredRelated": 1,
+      "chunks": [
+        "main"
+      ],
+      "auxiliaryChunks": []
+    },
+    {
+      "type": "asset",
       "name": "vendors-node_modules_salesforce_retail-react-app_app_components_breadcrumb_index_jsx-node_mod-2b0066.js",
       "size": 40370,
       "emitted": false,
@@ -848,6 +876,25 @@
         "_1242"
       ],
       "auxiliaryChunks": []
+    },
+    {
+      "type": "asset",
+      "name": "main.e2dc8bd5ad5b0de6de7f.hot-update.json",
+      "size": 28,
+      "emitted": false,
+      "comparedForEmit": false,
+      "cached": true,
+      "info": {
+        "hotModuleReplacement": true,
+        "immutable": true,
+        "fullhash": "e2dc8bd5ad5b0de6de7f"
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "chunks": [],
+      "auxiliaryChunks": []
     }
   ],
   "namedChunkGroups": {
@@ -863,11 +910,14 @@
         },
         {
           "name": "main.js"
+        },
+        {
+          "name": "main.e2dc8bd5ad5b0de6de7f.hot-update.js"
         }
       ],
       "filteredAssets": 0,
       "assetsSize": null,
-      "filteredAuxiliaryAssets": 2,
+      "filteredAuxiliaryAssets": 3,
       "auxiliaryAssetsSize": null,
       "children": {},
       "childAssets": {}
@@ -1292,7 +1342,8 @@
     {
       "id": "main",
       "files": [
-        "main.js"
+        "main.js",
+        "main.e2dc8bd5ad5b0de6de7f.hot-update.js"
       ]
     },
     {
