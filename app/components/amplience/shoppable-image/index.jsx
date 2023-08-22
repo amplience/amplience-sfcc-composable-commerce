@@ -318,7 +318,7 @@ export const ShoppableImageInteractable = ({
                         <DrawerOverlay />
                         <DrawerContent>
                             <DrawerBody>
-                                <DrawerCloseButton />
+                                <DrawerCloseButton sx={{zIndex: 1}} />
                                 {matchTooltip?.value && (
                                     <DrawerHeader>{matchTooltip?.value}</DrawerHeader>
                                 )}

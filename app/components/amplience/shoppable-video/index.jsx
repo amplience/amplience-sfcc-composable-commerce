@@ -334,7 +334,7 @@ const ShoppableVideoCta = ({
                         <DrawerOverlay />
                         <DrawerContent>
                             <DrawerBody>
-                                <DrawerCloseButton />
+                                <DrawerCloseButton sx={{zIndex: 1}} />
                                 <AmplienceWrapper fetch={{key: target}}></AmplienceWrapper>
                             </DrawerBody>
                         </DrawerContent>
