@@ -56,6 +56,19 @@
                 }
             },
             {
+                "position": 3,
+                "rows": "1",
+                "cols": "3",
+                "tempId": 1,
+                "content": {
+                  "id": "4c72d2c4-dd9c-4f4b-ad88-ec83fe4c741e",
+                  "contentType": "https://sfcc.com/content/stylitics/hotspots",
+                  "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference"
+                  }
+                }
+            },
+            {
                 "position": 10,
                 "cols": "2",
                 "rows": "2",
@@ -123,6 +136,20 @@
                 },
                 "contentType": "https://sfcc.com/components/section",
                 "id": "24ea6b6c-0c5f-46bd-bed2-636bc1ece3c5"
+            },
+            {
+                "_meta": {
+                  "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference"
+                },
+                "contentType": "https://sfcc.com/components/section",
+                "id": "f24a05e6-6bc2-4aab-aac7-17dbe438b00e"
+            },
+            {
+                "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference"
+                },
+                "contentType": "https://sfcc.com/content/stylitics/gallery",
+                "id": "ebc3d626-ecac-4158-8ad8-3dd59409fbfa"
             }
         ]
     },

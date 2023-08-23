@@ -46,7 +46,8 @@ const {handler} = runtime.createHandler(options, (app) => {
                         '*.cdn.content.amplience.net',
                         'cdn.media.amplience.net',
                         '*.staging.bigcontent.io',
-                        'i8.amplience.net'
+                        'i8.amplience.net',
+                        '*.stylitics.com'
                     ],
                     'script-src': [
                         "'self'",
@@ -54,7 +55,10 @@ const {handler} = runtime.createHandler(options, (app) => {
                         'storage.googleapis.com',
                         '*.cdn.content.amplience.net',
                         'cdn.media.amplience.net',
-                        '*.staging.bigcontent.io'
+                        '*.staging.bigcontent.io',
+                        '*.brightcove.net',
+                        '*.stylitics.com',
+                        "'unsafe-inline'"
                     ],
                     'connect-src': [
                         "'self'",
@@ -63,7 +67,8 @@ const {handler} = runtime.createHandler(options, (app) => {
                         '*.cdn.content.amplience.net',
                         'cdn.media.amplience.net',
                         'cdn.static.amplience.net',
-                        '*.staging.bigcontent.io'
+                        '*.staging.bigcontent.io',
+                        '*.stylitics.com'
                     ],
                     'default-src': [
                         "'self'",
@@ -71,7 +76,10 @@ const {handler} = runtime.createHandler(options, (app) => {
                         '*.cdn.content.amplience.net',
                         'cdn.media.amplience.net',
                         'cdn.static.amplience.net',
-                        '*.staging.bigcontent.io'
+                        '*.staging.bigcontent.io',
+                        '*.brightcove.net',
+                        '*.stylitics.com',
+                        'data:'
                     ],
                     'frame-ancestors': ["'self'", '*.amplience.net'],
                     // Do not upgrade insecure requests for local development

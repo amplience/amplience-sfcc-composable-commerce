@@ -141,7 +141,7 @@ const CardEnhanced = ({
     const w = parentRef.current?.clientWidth == 0 ? 400 : parentRef.current?.clientWidth
 
     let compHeight = 'auto'
-    if (cols && rows && gap) {
+    if (cols && rows && gap != null) {
         // Force the height to a fraction of the width (minus gap)
         compHeight = (rows * (w - gap * (cols - 1))) / cols + (rows - 1) * gap + 'px'
     }

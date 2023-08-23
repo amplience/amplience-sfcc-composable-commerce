@@ -1,0 +1,5 @@
+{
+  "body": "./schemas/moodboard-schema.json",
+  "schemaId": "https://sfcc.com/content/stylitics/moodboard",
+  "validationLevel": "CONTENT_TYPE"
+}

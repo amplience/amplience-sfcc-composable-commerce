@@ -21,6 +21,7 @@ This version of the SF Retail React app integrates Amplience as the Content CMS 
  - content personalisation based on a user's groups
  - enhanced search suggestions and search results page with content, products and category parents
  - automation scripts to load required content schemas and types to your Content HUB 
+ - [Stylitics](https://stylitics.com) components for configuration in content not code
  
  The documentation [starting here below](#the-retail-react-app) is 'as-is' from Salesforce. For Amplience specifics please see the docs listed under [Amplience Contents](#amplience-contents).
  
@@ -33,7 +34,7 @@ This version of the SF Retail React app integrates Amplience as the Content CMS 
 ### ⚙️ Core Functionalities
 * [Amplience Configuration](./docs/amplience/amplience-config.md)
 * [Amplience API](./docs/amplience/amplience-api.md)
-* [Visualization](docs/amplience/visualization.md)
+* [Visualisation](docs/amplience/visualization.md)
 * [Preview](docs/amplience/preview.md)
 * [Amplience Account](docs/amplience/amplience-account.md)
 * [Automation](docs/amplience/automation.md)
@@ -51,6 +52,7 @@ This version of the SF Retail React app integrates Amplience as the Content CMS 
   * [AmplienceWrapper Component specifics](./docs/amplience/ampliencewrapper-component.md)
   * [Shoppable Image specifics](docs/amplience/shoppable-image-component.md)
   * [Shoppable Video specifics](docs/amplience/shoppable-video-component.md)
+  * [Stylitics components specifics](docs/amplience/stylitics-components.md)
 * [Toolbar Framework](docs/amplience/toolbar-framework.md)
 
 > Note: This code is built against the code version @latest at the time which was PWAKit v2.7.0 released on March 3rd 2023: https://github.com/SalesforceCommerceCloud/pwa-kit/releases/tag/v2.7.0

@@ -1,0 +1,5 @@
+{
+  "body": "./schemas/stylitics-schema.json",
+  "schemaId": "https://sfcc.com/lib/stylitics",
+  "validationLevel": "PARTIAL"
+}

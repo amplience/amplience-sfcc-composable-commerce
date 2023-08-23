@@ -1,0 +1,5 @@
+{
+  "body": "./schemas/generic-schema.json",
+  "schemaId": "https://sfcc.com/content/stylitics/generic",
+  "validationLevel": "CONTENT_TYPE"
+}

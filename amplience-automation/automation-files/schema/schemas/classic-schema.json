@@ -1,0 +1,82 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://sfcc.com/content/stylitics/classic",
+    "title": "Stylitics Classic",
+    "description": "Content type for a stylitics classic widget as per https://web-assets.stylitics.com/demo-site/latest/Classic-Default.html",
+    "allOf": [
+        {
+            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+        }
+    ],
+    "type": "object",
+    "properties": {
+        "help": {
+            "type": "null",
+            "ui:extension": {
+                "name": "help",
+                "params": {
+                    "title": "Stylitics Classic",
+                    "message": "### Example SKUs\n#### demo-womens account\n|SKU label|SKU ID|\n|----|----|\n|PUMA x VOGUE Women's Sweatpants|536693_22|\n|Willa blazer in city crepe|BP416_BK0001|\n|Willa blazer in city crepe|BP416_NA6095|\n|Millie slingback heels with metallic mesh|BQ292_EE3794|\n|Demi-fine 14k gold-plated layered necklace|BN463_EC7253|\n|Edie Italian leather bag|BP508_NA6445|\n|Maisie ankle-strap heels in Italian suede|BP331_EE3843|"
+                }
+            }
+        },
+        "view": {
+            "type": "string",
+            "const": "classic"
+        },
+        "account": {
+            "title": "Account",
+            "allOf": [
+                {
+                    "$ref": "https://sfcc.com/lib/stylitics#/definitions/account"
+                }
+            ]
+        },
+        "sku": {
+            "title": "SKU",
+            "description": "The sku of the product to render",
+            "ui:extension": {
+                "name": "ecomm-toolkit-stylitics",
+                "params": {
+                    "label": "Search By Category",
+                    "view": "product",
+                    "data": "product",
+                    "type": "string"
+                }
+            },
+            "type": "string"
+        },
+        "api": {
+            "title": "API Properties",
+            "allOf": [
+                {
+                    "$ref": "https://sfcc.com/lib/stylitics#/definitions/api"
+                }
+            ]
+        },
+        "display": {
+            "title": "Display Properties",
+            "allOf": [
+                {
+                    "$ref": "https://sfcc.com/lib/stylitics#/definitions/display"
+                }
+            ]
+        },
+        "price": {
+            "title": "Price Properties",
+            "allOf": [
+                {
+                    "$ref": "https://sfcc.com/lib/stylitics#/definitions/price"
+                }
+            ]
+        },
+        "classic": {
+            "allOf": [
+                {
+                    "$ref": "https://sfcc.com/lib/stylitics#/definitions/classic"
+                }
+            ]
+        }
+    },
+    "propertyOrder": []
+}

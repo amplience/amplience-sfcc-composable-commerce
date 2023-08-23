@@ -61,6 +61,7 @@ import Hero from './components/amplience/hero'
 import AmplienceProductTile from './components/amplience/product-tile'
 import ContentTile from './components/amplience/content-tile'
 import ShoppableVideo from './components/amplience/shoppable-video'
+import Brightcove from './components/amplience/brightcove'
 
 // Please refer to the Chakra-Ui theme customization docs found
 // here https://chakra-ui.com/docs/theming/customize-theme to learn
@@ -120,7 +121,8 @@ const overrides = {
         Hero,
         AmplienceProductTile,
         ContentTile,
-        ShoppableVideo
+        ShoppableVideo,
+        Brightcove
     }
 }
 

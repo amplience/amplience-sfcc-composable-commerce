@@ -5,7 +5,7 @@ import {AmplienceAPI, defaultAmpClient} from '../../amplience-api'
 import {default as amplience} from '../../../config/amplience/default.js'
 
 /**
- * This is the global Amplience Realtime Visualization Context on Non-category pages
+ * This is the global Amplience Realtime Visualisation Context on Non-category pages
  *
  * To use these context's simply import them into the component requiring context
  * like the below example:
@@ -55,7 +55,7 @@ RealtimeVisualizationProvider.propTypes = {
 }
 
 /**
- * This is the global Amplience Visualization Context
+ * This is the global Amplience Visualisation Context
  *
  * To use these context's simply import them into the component requiring context
  * like the below example:

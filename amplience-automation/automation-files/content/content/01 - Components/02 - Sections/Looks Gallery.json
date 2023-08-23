@@ -1,0 +1,74 @@
+{
+    "id": "f24a05e6-6bc2-4aab-aac7-17dbe438b00e",
+    "body": {
+        "title": {
+            "values": [
+                {
+                    "locale": "en-US",
+                    "value": "Looks Gallery"
+                },
+                {
+                    "locale": "fr-FR",
+                    "value": "Galerie de looks"
+                },
+                {
+                    "locale": "de-DE",
+                    "value": "Looks-Galerie"
+                },
+                {
+                    "locale": "es-ES",
+                    "value": "Galería de looks"
+                },
+                {
+                    "locale": "it-IT",
+                    "value": "Guarda la Galleria"
+                }
+            ],
+            "_meta": {
+                "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+            }
+        },
+        "subtitle": {
+            "values": [
+                {
+                    "locale": "en-US",
+                    "value": "Enjoy our new collection!"
+                },
+                {
+                    "locale": "fr-FR",
+                    "value": "Profitez de notre nouvelle collection !"
+                },
+                {
+                    "locale": "de-DE",
+                    "value": "Viel Spaß mit unserer neuen Kollektion!"
+                },
+                {
+                    "locale": "es-ES",
+                    "value": "¡Disfruta de nuestra nueva colección!"
+                },
+                {
+                    "locale": "it-IT",
+                    "value": "Godetevi la nostra nuova collezione!"
+                }
+            ],
+            "_meta": {
+                "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+            }
+        },
+        "_meta": {
+            "name": "Section - Looks Gallery",
+            "schema": "https://sfcc.com/components/section"
+        }
+    },
+    "version": 1,
+    "label": "Looks Gallery",
+    "status": "ACTIVE",
+    "createdBy": "80d6035b-48f7-49d0-b4f4-feed71fe7bf8",
+    "locale": "en-US",
+    "createdDate": "2022-08-04T09:18:17.824Z",
+    "lastModifiedBy": "80d6035b-48f7-49d0-b4f4-feed71fe7bf8",
+    "lastModifiedDate": "2022-08-04T10:37:45.882Z",
+    "lastPublishedVersion": 1,
+    "lastPublishedDate": "2022-08-04T10:38:45.544Z",
+    "deliveryId": "f24a05e6-6bc2-4aab-aac7-17dbe438b00e"
+}

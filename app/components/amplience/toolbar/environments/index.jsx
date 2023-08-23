@@ -48,7 +48,7 @@ const EnvironmentsPanel = ({vse, hubname}) => {
                                 <>
                                     <Button
                                         fontSize="xs"
-                                        style={{display: 'inline', color: '#E80D8C'}}
+                                        style={{display: 'inline', color: '#F88B8B'}}
                                         variant="link"
                                         onClick={handleNewCurrentEnv}
                                         data-env={encodeURIComponent(JSON.stringify(env))}

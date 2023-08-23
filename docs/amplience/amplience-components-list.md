@@ -14,5 +14,11 @@
 | https://sfcc.com/components/section | `./section/Section` | ![Section](./media/components-section.png) A block of text with a localised title and localised subtitle|
 | https://sfcc.com/components/shoppable-image | `./shoppable-image/ShoppableImage` | A component that allows the merchandizer to add hotspot links to an image. Links may point to Commerce products & catagories, as well as simple tooltips and external URLs.  |
 | https://sfcc.com/components/shoppable-video | `./shoppable-video/ShoppableVideo` | A component that allows the merchandizer to add hotspot links to a video. Links may point to Commerce products & catagories, as well as simple tooltips and external URLs.  |
+| https://sfcc.com/content/stylitics/generic           | `./stylitics`              | ![Stylitics Generic](./media/component-stylitics-generic.png) Can render all stylitics widgets from a single content type with all available options |
+| https://sfcc.com/content/stylitics/hotspots            | `./stylitics`             | ![Stylitics Hotspots](./media/component-stylitics-hotspots.png) Only options for a Stylitics Hotspot Widget |
+| https://sfcc.com/content/stylitics/moodboard           | `./stylitics`             | ![Stylitics Moodboard](./media/component-stylitics-moodboard.png) Only options for a Stylitics Moodboard Widget |
+| https://sfcc.com/content/stylitics/gallery            | `./stylitics`            | ![Stylitics Gallery](./media/component-stylitics-gallery.png) Only options for a Stylitics Gallery Widget |
+| https://sfcc.com/content/stylitics/classic            | `./stylitics`            | ![Stylitics Classic](./media/component-stylitics-classic.png) Only options for a Stylitics Classic Widget |
+| https://sfcc.com/content/stylitics/main-and-detail            | `./stylitics`             | ![Stylitics Main & Detail](./media/component-stylitics-main-and-detail.png) Only options for a Stylitics Main & Detail Widget |
 | https://sfcc.com/slots/flexible-list | `./flexibleListSlot/flexibleListSlot` | A slot that contains a flexible list of content |
 | https://sfcc.com/slots/personalised-slot | `./personalised-slot/PersonalisedComponent` | A slot that contains variants associated to customer groups to display personalised content |

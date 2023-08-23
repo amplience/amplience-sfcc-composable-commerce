@@ -9,6 +9,11 @@ import {
     DrawerContent,
     DrawerCloseButton,
     DrawerBody,
+    Modal,
+    ModalOverlay,
+    ModalCloseButton,
+    ModalBody,
+    ModalContent,
     useDisclosure,
     useMultiStyleConfig,
     useBreakpointValue
@@ -21,6 +26,7 @@ import {useEffect} from 'react'
 import {useShoppableTooltip} from '../shoppable-image'
 import Link from '../link'
 import AmplienceWrapper from '../wrapper'
+import ProductViewModal from '../product-view-modal'
 import {categoryUrlBuilder, productUrlBuilder} from '../../../utils/url'
 import {useCallback} from 'react'
 
@@ -217,7 +223,7 @@ const ShoppableVideoCta = ({
     unhoverButton
 }) => {
     const {isOpen, onOpen, onClose} = useDisclosure()
-    const label = useShoppableTooltip(target, selector, captions)
+    const {label, qvProduct} = useShoppableTooltip(target, selector, captions)
     const sizeBias = 0.66
     const [oldPause] = useState({})
 
@@ -244,6 +250,28 @@ const ShoppableVideoCta = ({
                 <Button as={Link} to={productUrlBuilder({id: target})} {...style}>
                     {label}
                 </Button>
+            )
+        }
+        case 'quickview': {
+            return (
+                <>
+                    <Button
+                        onClick={(evt) => {
+                            const paused = video.current.paused
+                            if (!paused) {
+                                video.current.pause()
+                            }
+                            oldPause.paused = paused
+                            onOpen()
+                            evt.preventDefault()
+                            return false
+                        }}
+                        {...style}
+                    >
+                        {label}
+                    </Button>
+                    {qvProduct && <ProductViewModal product={qvProduct} onClose={onCloseWithUnpause} isOpen={isOpen} />}
+                </>
             )
         }
         case 'category': {
@@ -306,11 +334,41 @@ const ShoppableVideoCta = ({
                         <DrawerOverlay />
                         <DrawerContent>
                             <DrawerBody>
-                                <DrawerCloseButton />
+                                <DrawerCloseButton sx={{zIndex: 1}} />
                                 <AmplienceWrapper fetch={{key: target}}></AmplienceWrapper>
                             </DrawerBody>
                         </DrawerContent>
                     </Drawer>
+                </>
+            )
+        }
+        case 'modal': {
+            return (
+                <>
+                    <Button
+                        onClick={(evt) => {
+                            const paused = video.current.paused
+                            if (!paused) {
+                                video.current.pause()
+                            }
+                            oldPause.paused = paused
+                            onOpen()
+                            evt.preventDefault()
+                            return false
+                        }}
+                        {...style}
+                    >
+                        {label}
+                    </Button>
+                    <Modal isOpen={isOpen} onClose={onCloseWithUnpause}>
+                        <ModalOverlay />
+                        <ModalContent>
+                            <ModalCloseButton />
+                            <ModalBody>
+                                <AmplienceWrapper fetch={{key: target}}></AmplienceWrapper>
+                            </ModalBody>
+                        </ModalContent>
+                    </Modal>
                 </>
             )
         }

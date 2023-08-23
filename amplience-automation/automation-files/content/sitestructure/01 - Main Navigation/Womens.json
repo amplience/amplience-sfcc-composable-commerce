@@ -60,6 +60,19 @@
                 }
             },
             {
+                "position": 6,
+                "rows": "1",
+                "cols": "3",
+                "tempId": 1,
+                "content": {
+                    "id": "bc1270be-7d55-4481-a9f8-fc96a471f3e9",
+                    "contentType": "https://sfcc.com/content/stylitics/moodboard",
+                    "_meta": {
+                        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference"
+                    }
+                }
+            },
+            {
                 "position": 9,
                 "cols": "1",
                 "rows": "2",

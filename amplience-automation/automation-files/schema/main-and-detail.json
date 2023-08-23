@@ -1,0 +1,5 @@
+{
+  "body": "./schemas/main-and-detail-schema.json",
+  "schemaId": "https://sfcc.com/content/stylitics/main-and-detail",
+  "validationLevel": "CONTENT_TYPE"
+}

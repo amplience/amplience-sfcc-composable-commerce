@@ -25,6 +25,15 @@ const contentPageLinkBuilder = (link) => {
     return '/' + link.contentpage.deliveryKey
 }
 
+const modalContentLinkBuilder = (link) => {
+    // Delivery key appears in the reference due to our enrich method.
+    if (!link.contentpage?.id) {
+        return '#'
+    }
+
+    return link.contentpage.id
+}
+
 const externalLinkBuilder = (link, forRelative) => {
     return forRelative ? '$' + link.externalUrl : link.externalUrl
 }
@@ -46,7 +55,8 @@ const handlers = {
     'https://sfcc.com/site/navigation/internal': internalLinkBuilder,
     'https://sfcc.com/site/navigation/content-page': contentPageLinkBuilder,
     'https://sfcc.com/site/navigation/category': categoryLinkBuilder,
-    'https://sfcc.com/site/navigation/group': noLinkBuilder
+    'https://sfcc.com/site/navigation/group': noLinkBuilder,
+    'https://sfcc.com/site/navigation/modal': modalContentLinkBuilder
 }
 
 const enumHandlers = {

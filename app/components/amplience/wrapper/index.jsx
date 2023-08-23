@@ -20,6 +20,10 @@ import CardList from '../card-list'
 import {useLocation} from 'react-router-dom'
 import ShoppableVideo from '../shoppable-video'
 import Features from '../features'
+import GridLock from '../grid-lock'
+import Brightcove from '../brightcove'
+import FormBuilder from '../form-builder'
+import Stylitics from '../stylitics'
 
 const Blank = () => <></>
 
@@ -38,13 +42,23 @@ const componentsMapping = {
     'https://sfcc.com/slots/personalised-slot': flexibleListSlot,
     'https://sfcc.com/components/card-list': CardList,
     'https://sfcc.com/components/features': Features,
+    'https://sfcc.com/components/grid-lock': GridLock,
+    'https://sfcc.com/components/video': Brightcove,
+    'https://sfcc.com/components/form-builder': FormBuilder,
+
+    'https://sfcc.com/content/stylitics/generic': Stylitics,
+    'https://sfcc.com/content/stylitics/classic': Stylitics,
+    'https://sfcc.com/content/stylitics/hotspots': Stylitics,
+    'https://sfcc.com/content/stylitics/main-and-detail': Stylitics,
+    'https://sfcc.com/content/stylitics/gallery': Stylitics,
+    'https://sfcc.com/content/stylitics/moodboard': Stylitics,
 
     'https://sfcc.com/site/navigation/root': Blank,
     'https://sfcc.com/site/navigation/external': Blank,
     'https://sfcc.com/site/navigation/internal': Blank,
     'https://sfcc.com/site/navigation/content-page': Blank,
     'https://sfcc.com/site/navigation/category': Blank,
-    'https://sfcc.com/site/navigation/group': Blank
+    'https://sfcc.com/site/navigation/group': Blank,
 }
 
 const AmplienceWrapper = ({fetch, content, components, skeleton, rtvActive, ...rest}) => {

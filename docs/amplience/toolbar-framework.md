@@ -12,7 +12,7 @@ The Preview Panel allows you to do time travel in your events and editions.
 
 ### Visualisation Panel
 
-The Visualisation Panel shows the current visualisation parameters such as VSE, hub name, locale and content ID. You can easily copy/paste any of these value using the copy icon.
+The Visualisation Panel shows the current visualisation parameters such as VSE, hub name, locale and content ID. You can easily copy/paste any of these values using the copy icon.
 
 ### Environments Panel
 
@@ -59,7 +59,7 @@ visibility: ({vseTimestamp}) => !!vseTimestamp
 
 ### Toolbar State
 
-Toolbar is saving its state in `openedPanels` and `toolbarOpacity` so it appears correctly when the Toolbar is closed / re-opened. You can also pass some global intial state passed to all Toolbar Panels using `toolbarState`.
+Toolbar is saving its state in `openedPanels` and `toolbarOpacity` so it appears correctly when the Toolbar is closed / re-opened. You can also pass some global initial state passed to all Toolbar Panels using `toolbarState`.
 
 ### Toolbar Panel Renderer
 
