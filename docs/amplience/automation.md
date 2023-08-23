@@ -42,7 +42,7 @@ There is an optional command to specify your OpenAIKey for use with the Rich Tex
 
 [Documentation](https://github.com/amplience/dc-extension-rich-text)
 
-If this is not present, then no API key will be set but you can still use the Rich Text component with out the AI assistant
+If this is not present, then no API key will be set but you can still use the Rich Text component without the AI assistant
 
 Run the following command replacing the variables with details from your Amplience account:
 

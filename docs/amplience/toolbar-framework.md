@@ -59,7 +59,7 @@ visibility: ({vseTimestamp}) => !!vseTimestamp
 
 ### Toolbar State
 
-Toolbar is saving its state in `openedPanels` and `toolbarOpacity` so it appears correctly when the Toolbar is closed / re-opened. You can also pass some global intial state passed to all Toolbar Panels using `toolbarState`.
+Toolbar is saving its state in `openedPanels` and `toolbarOpacity` so it appears correctly when the Toolbar is closed / re-opened. You can also pass some global initial state passed to all Toolbar Panels using `toolbarState`.
 
 ### Toolbar Panel Renderer
 
