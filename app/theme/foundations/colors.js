@@ -166,8 +166,8 @@ const colors = {
         900: '#520066'
     },
 
-    ampliencePink: {
-        500: '#E80D8C'
+    amplienceColor: {
+        500: '#F88B8B'
     }
 }
 

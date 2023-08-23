@@ -82,7 +82,7 @@ const AdditionalInformation = ({_meta, slot, matchesList}) => {
         <>
             <Heading as="h2" size="xs">
                 <Link
-                    color={'ampliencePink.500'}
+                    color={'amplienceColor.500'}
                     target={'_blank'}
                     href={`https://content.amplience.net/#!/${currentHub}/authoring/content-item/edit/${deliveryId}`}
                 >
@@ -92,7 +92,7 @@ const AdditionalInformation = ({_meta, slot, matchesList}) => {
             {content && (
                 <Heading as="h2" size="xs">
                     <Link
-                        color={'ampliencePink.500'}
+                        color={'amplienceColor.500'}
                         target={'_blank'}
                         href={`https://content.amplience.net/#!/${currentHub}/authoring/content-item/edit/${content.deliveryId}`}
                     >
@@ -119,7 +119,7 @@ const AdditionalInformation = ({_meta, slot, matchesList}) => {
         <>
             <Heading as="h2" size="xs">
                 <Link
-                    color={'ampliencePink.500'}
+                    color={'amplienceColor.500'}
                     target={'_blank'}
                     href={`https://content.amplience.net/#!/${currentHub}/authoring/content-item/edit/${deliveryId}`}
                 >
@@ -146,7 +146,7 @@ const AdditionalInformation = ({_meta, slot, matchesList}) => {
             <>
                 <Heading as="h2" size="xs">
                     <Link
-                        color={'ampliencePink.500'}
+                        color={'amplienceColor.500'}
                         target={'_blank'}
                         href={`https://content.amplience.net/#!/${currentHub}/authoring/content-item/edit/${deliveryId}`}
                     >
