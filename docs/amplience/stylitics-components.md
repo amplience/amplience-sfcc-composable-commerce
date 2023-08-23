@@ -1,5 +1,7 @@
 # Stylitics Components
 
+![Stylitics Components](./media/stylitics-main.png)
+
 Uses the [Amplience Stylitics Integration (See link for full documentation)](https://github.com/amplience/dc-integration-stylitics) to render Stylitics widgets as a component. Stylitics and Amplience are a great fit for our creating automated shoppable experience using the great capabilities of Stylitics to increase AOV and basket size.
 
 ## Key implementation areas:
