@@ -17,7 +17,7 @@ Uses the [Amplience Stylitics Integration (see link for full documentation)](htt
 
 > Note: This demonstration uses Stylitics widgets which render into the front-end. Whilst suitable for a demo, these widgets do are not completely responsive. Noticeably when demonstrating Stylitics widgets in the product grid for category pages. At smaller screen resolutions and other sizing you may see that the widget does not contain in the grid properly (screenshot below). As a demo we recommend checking sizing first and where applicable making maximum grid sizing. In an implementation you might want to make your own React component using the Stylitics API's directly or a click path to open in a drawer.
 
-![Stylitics Grid Sizing](./media/stylitics-grid-sizing.png)
+![Stylitics Grid Sizing](./media/stylitics-grid-sizing-v2.png)
 
 
 ## Customising for your implementation
