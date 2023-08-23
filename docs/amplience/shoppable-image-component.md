@@ -12,7 +12,7 @@ The Shoppable Image component & extension allows you to tie hotspots and regions
 | **contentKey** | Delivery Key | `hero` | Opens a drawer displaying Amplience content with the specified key. On Hover, will show the text "Click to Open..." |
 
 ## Tooltips
-For any selector, you can define a custom localized tooltip using the array below that overrides the default one. The key of the tooltip should match whatever the target is in the shoppable image, and the value is what you want to appear in the tooltip. The tooltip selector will only display a tooltip if the text is defined here.
+For any selector, you can define a custom localised tooltip using the array below that overrides the default one. The key of the tooltip should match whatever the target is in the shoppable image, and the value is what you want to appear in the tooltip. The tooltip selector will only display a tooltip if the text is defined here.
 
 ## Editing Mode
 
@@ -67,7 +67,7 @@ When you hover over the the bowtie hotspot, the tooltip will simply read "/cart"
 
 ![Cart Custom Tooltip](./media/shoppyCartTooltip.png)
 
-Now when you hover over that spot it will read the text you've entered. This text may also be localized.
+Now when you hover over that spot it will read the text you've entered. This text may also be localised.
 
 ![Cart Tooltip Updated Hover](./media/shoppyCartComplete.png)
 
