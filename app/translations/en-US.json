@@ -168,6 +168,9 @@
   "amplience.shoppable_image.loading": {
     "defaultMessage": "Loading..."
   },
+  "amplience.shoppable_image.modal": {
+    "defaultMessage": "Click to open modal..."
+  },
   "amplience.shoppable_image.product_404": {
     "defaultMessage": "Product not found"
   },

@@ -403,6 +403,12 @@
       "value": "Loading..."
     }
   ],
+  "amplience.shoppable_image.modal": [
+    {
+      "type": 0,
+      "value": "Click to open modal..."
+    }
+  ],
   "amplience.shoppable_image.product_404": [
     {
       "type": 0,
