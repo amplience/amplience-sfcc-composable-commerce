@@ -12,7 +12,7 @@ The Preview Panel allows you to do time travel in your events and editions.
 
 ### Visualisation Panel
 
-The Visualisation Panel shows the current visualisation parameters such as VSE, hub name, locale and content ID. You can easily copy/paste any of these value using the copy icon.
+The Visualisation Panel shows the current visualisation parameters such as VSE, hub name, locale and content ID. You can easily copy/paste any of these values using the copy icon.
 
 ### Environments Panel
 
