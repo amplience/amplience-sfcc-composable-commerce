@@ -2,6 +2,55 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.15.0](https://github.com/amplience/amplience-sfcc-composable-commerce/compare/v1.14.0...v1.15.0) (2023-08-23)
+
+
+### Features
+
+* add shoppable video example and update dc-integration-stylitics ([fee8f7f](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/fee8f7fcd8fec76541e6de66e31f65197db76349))
+* add stylitics automation ([8edd05d](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/8edd05d88bce7faa2d238c651f22b2e01dd131e2))
+* allow specifying openai key in automation ([3926d82](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/3926d829f16d3e2cbfa50186d46edfaa71e49107))
+* basic form builder & size for footer modal ([ea2dd62](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/ea2dd6207e4c117192ddd6fb7d854818779ef245))
+* basic form builder & size for footer modal ([5fecc2b](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/5fecc2bd85533b76612522144f5f5ce12bbb0ddf))
+* form builder POC ([2212891](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/2212891a41d9ad60c763b09930b501edb7adcd81))
+* form builder POC ([37cbf6a](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/37cbf6a6c35738d9d443c356b6d8fd2841c394e7))
+* full pdp in shoppable img/vid quickview ([6ddc72b](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/6ddc72bafb7b50e424eae5da16ff9061580ea919))
+* full pdp in shoppable img/vid quickview ([99e9510](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/99e9510d6708734d1adc3d1ee3ce6fac385078a6))
+* hierarchy nodes that open a modal ([993772b](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/993772bd59ea476fa41aad5d6606589366ae75c2))
+* hierarchy nodes that open a modal ([1d72680](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/1d726805ce1b9ed3c6e05542176a26b29fb0d0c7))
+* initial pass at BC video component ([20c1f19](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/20c1f197d168515d000754cae0641c72ed2f7c95))
+* initial pass at BC video component ([f7b1df9](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/f7b1df9b557939fd43c1bce14b3e0e7223bf508f))
+* modal/quickview in shoppable video ([bbaef20](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/bbaef20e084232d135d1ba75c50d09655b4d3be9))
+* modal/quickview in shoppable video ([1bb3e3b](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/1bb3e3bce1e3f40ebe3c397c80adb5ad2e043c04))
+* move shoppable stylitics example into rich text ([2946e17](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/2946e177db47553431fbd42353b33c034268f2d5))
+* Stylitics ([f5ead6b](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/f5ead6b990a3ade6e2e1364c6f6376b681b2f817))
+* use dc-integration-stylitics for handling the stylitics widgets ([9becbce](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/9becbce5a47a981f039d8a9e7d718e05db174814))
+* use dc-integration-stylitics for handling the stylitics widgets ([6444b40](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/6444b40df6a82e9b63c341c918f3287cfa275732))
+* WIP stylitics component ([d799875](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/d79987548bdab59f86ed9724803f17228279e033))
+* WIP stylitics component ([e5a7df3](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/e5a7df3ac5cce3015de36642c6d89b0b13fd3b3b))
+
+
+### Bug Fixes
+
+* add fallback to hotspots from moodboard on smaller displays ([b11a9ec](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/b11a9ec6b79aa54f79688d143a86b37f6d29df70))
+* add fallback to hotspots from moodboard on smaller displays ([79a3ead](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/79a3ead7c982186ab7a52f8060f23051dd9511be))
+* adjust vse preview info z index ([6e506d4](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/6e506d475b136dadde4f322cff93aa82e2142f84))
+* ampClient.getChildren should include locale ([92f89d7](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/92f89d7001ec975e47f95df6665dbb6040200ea6))
+* ampClient.getChildren should include locale ([4befd67](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/4befd67a605ca9e1f0715b7947ba792660510e56))
+* automation not working for openaiKey param ([e3eb953](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/e3eb95315d78ef01271cae0c96b64762541abadd))
+* fix popout close button sometimes being unclickable ([8dc30e2](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/8dc30e2d99b0506774e9442b2cba68c337cb82cd))
+* fix schema id for stylitics content ([4301b64](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/4301b64cfc97868599e2b5062dda4bb7c919cfc5))
+* fix stylitics automation ([14aacfb](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/14aacfb60abf759c26bd2055b38e5371e147b186))
+* fix stylitics rendering ([51fe306](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/51fe306e2cf649bc7992d5dc9ec3bbbcbeee94e9))
+* fix stylitics rendering ([be7c7f4](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/be7c7f4a1098ce9efee23575fcd7bf5f787df4a0))
+* fix sunglasses example schema ([54b5a8f](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/54b5a8fbfe4e2c1d23033419bf87795e701cbb17))
+* more spaces ([15beff4](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/15beff403006745f81364091d1f46799e8ab631f))
+* removed Card enhanced future changes not for this release ([770c4ac](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/770c4acfcfecfe04d692c763b5b845a75eb83ce7))
+* removed new line ([90f8e2b](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/90f8e2b87693113564ad390427bb8f3ba6ad92af))
+* Reset to default SFCC ([4153bd5](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/4153bd524a4577887e4f01107e53a0b02668191b))
+* snippets in automation ([ee69d22](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/ee69d227ab598be422e9e6248aabcc7714fca255))
+* translation doc ([a39186b](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/a39186bf4ab439bccea3377affae779a2b81f033))
+
 ## [1.14.0](https://github.com/amplience/amplience-sfcc-composable-commerce/compare/v1.13.0...v1.14.0) (2023-08-08)
 
 
