@@ -2,7 +2,7 @@
 
 ![Stylitics Components](./media/stylitics-main.png)
 
-Uses the [Amplience Stylitics Integration (see link for full documentation)](https://github.com/amplience/dc-integration-stylitics) to render Stylitics widgets as a component. Stylitics and Amplience are a great fit for our creating automated shoppable experience using the great capabilities of Stylitics to increase AOV and basket size.
+Uses the [Amplience Stylitics Integration (see link for full documentation)](https://github.com/amplience/dc-integration-stylitics) to render Stylitics widgets as a component. Stylitics and Amplience are a great fit for our creating automated shoppable experiences using the great capabilities of Stylitics to increase AOV and basket size.
 
 ## Key implementation areas
 * Sample product set that can be used when selecting products (see [documentation](https://github.com/amplience/dc-integration-middleware/blob/main/docs/vendor/commerce/rest.md))
@@ -15,7 +15,7 @@ Uses the [Amplience Stylitics Integration (see link for full documentation)](htt
 * Shoppable Video examples (load Stylitics widgets in a sidebar)
 * Product Page content
 
-> Note: This demonstration uses Stylitics widgets which render into the front-end. Whilst suitable for a demo, these widgets do are not completely responsive. Noticeably when demonstrating Stylitics widgets in the product grid for category pages. At smaller screen resolutions and other sizing you may see that the widget does not contain in the grid properly (screenshot below). As a demo we recommend checking sizing first and where applicable making maximum grid sizing. In an implementation you might want to make your own React component using the Stylitics API's directly or a click path to open in a drawer.
+> Note: This demonstration uses Stylitics widgets which render into the front-end. Whilst suitable for a demo, these widgets are not completely responsive; noticeably when demonstrating Stylitics widgets in the product grid for category pages. At smaller screen resolutions and other sizing you may see that the widget does not fit in the grid properly (screenshot below). For a demo we recommend checking sizing first and where applicable making the widget span a full row. In an implementation you might want to make your own React component using the Stylitics API's directly or a click path to open in a drawer.
 
 ![Stylitics Grid Sizing](./media/stylitics-grid-sizing-v2.png)
 

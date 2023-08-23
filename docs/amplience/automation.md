@@ -38,11 +38,11 @@ You will need the following information from your Amplience and SFCC account:
     * Auth secret
     * Site ID
 
-There is an optional command to specify your OpenAIKey for use with the Rich Text component for Generative Content `--openaiKey`.
+There is an optional command to specify your OpenAI key for use with the Rich Text component for Generative Content `--openaiKey`.
 
 [Documentation](https://github.com/amplience/dc-extension-rich-text)
 
-If this is not present, then no API key will be set but you can still use the Rich Text component without the AI assistant
+If this is not present, then no API key will be set but you can still use the Rich Text component without the AI assistant.
 
 Run the following command replacing the variables with details from your Amplience account:
 
