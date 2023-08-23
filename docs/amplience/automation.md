@@ -38,6 +38,12 @@ You will need the following information from your Ampliene and SFCC account:
     * Auth secret
     * Site ID
 
+There is an optional command to specify your OpenAIKey for use with the Rich Text component for Generative Content `--openaikey`.
+
+[Documentation](https://github.com/amplience/dc-extension-rich-text)
+
+If this is not present, then no API key will be set but you can still use the Rich Text component with out the AI assistant
+
 Run the following command replacing the variables with details from your Amplience account:
 
 ```
@@ -55,7 +61,8 @@ npm run import \
     --authClientId <authClientId> \
     --authSecret <authSecret> \
     --authUrl <authUrl> \
-    --siteId <siteId>
+    --siteId <siteId> \
+    --openaiKey <openaikey>
 ```
 
 ## Hub Clean

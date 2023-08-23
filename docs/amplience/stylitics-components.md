@@ -15,6 +15,11 @@ Uses the [Amplience Stylitics Integration (See link for full documentation)](htt
 * Shoppable Video examples (load Stylitics widgets in a sidebar)
 * Product Page content
 
+> Note: This demonstration uses Stylitics widgets there are areas which are possible in a demo, but these widgets do are not completely responsive. Noticably when demonstrating Stylitics widgets in the product grid for category pages. At smaller screen resolutions and other sizing you may see that the widget does not contain in the grid properly (screenshot below). As a demo we recommend checking sizing first and where applicable making maximum grid sizing. In an implementation you might want to make your own React component using the Stylitics API's directly or a click path to open in a drawer.
+
+![Stylitics Grid Sizing](./media/stylitics-grid-sizing.png)
+
+
 ## Customising for your implementation
 This automation points to a sample Stylitics data set and account. If you are using in your own implementation as a sample and wanted to change anything, full detail can be found here: 
 
