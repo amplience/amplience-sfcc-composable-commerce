@@ -34,7 +34,7 @@ This version of the SF Retail React app integrates Amplience as the Content CMS 
 ### ⚙️ Core Functionalities
 * [Amplience Configuration](./docs/amplience/amplience-config.md)
 * [Amplience API](./docs/amplience/amplience-api.md)
-* [Visualization](docs/amplience/visualization.md)
+* [Visualisation](docs/amplience/visualization.md)
 * [Preview](docs/amplience/preview.md)
 * [Amplience Account](docs/amplience/amplience-account.md)
 * [Automation](docs/amplience/automation.md)

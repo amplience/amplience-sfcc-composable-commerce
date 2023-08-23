@@ -7,9 +7,9 @@ The Shoppable Image component & extension allows you to tie hotspots and regions
 | **product** | Product ID | `78916783M` | Links to an SFCC product by ID. On hover, will show the product name and price.|
 | **category** | Category ID | `newarrivals-women` | Links to an SFCC category by ID. On hover, will show the category name. |
 | **link** | relative/absolute URL | `/cart`, `https://amplience.com` | A link to any URL. Can be relative or absolute. On hover, will show the target text. We recommend setting a custom tooltip. |
-| **page** | Delivery Key | `faq` | Links to an amplience content page. On hover will display the target text, we recommend setting a custom tooltip. |
+| **page** | Delivery Key | `faq` | Links to an Amplience content page. On hover will display the target text, we recommend setting a custom tooltip. |
 | **tooltip** | Tooltip Key | `tooltip-key` | A tooltip that does nothing on click. |
-| **contentKey** | Delivery Key | `hero` | Opens a drawer displaying amplience content with the specified key. On Hover, will show the text "Click to Open..." |
+| **contentKey** | Delivery Key | `hero` | Opens a drawer displaying Amplience content with the specified key. On Hover, will show the text "Click to Open..." |
 
 ## Tooltips
 For any selector, you can define a custom localized tooltip using the array below that overrides the default one. The key of the tooltip should match whatever the target is in the shoppable image, and the value is what you want to appear in the tooltip. The tooltip selector will only display a tooltip if the text is defined here.
@@ -34,7 +34,7 @@ To delete the focal point, click the trash icon in the Focal point line below th
 
 ![Delete Focal Point](./media/shoppyDelFocal.png)
 
-> NOTE: If you don't set a focal point, the whole image will be shown but with white space around to so that it's centered.
+> NOTE: If you don't set a focal point, the whole image will be shown but with white space around to so that it's centred.
 
 ## Setting Hotspots & Polygon Areas
 
@@ -67,12 +67,12 @@ When you hover over the the bowtie hotspot, the tooltip will simply read "/cart"
 
 ![Cart Custom Tooltip](./media/shoppyCartTooltip.png)
 
-Now when you hover over that spot it will read the text you've entered. This text may also be localised.
+Now when you hover over that spot it will read the text you've entered. This text may also be localized.
 
 ![Cart Tooltip Updated Hover](./media/shoppyCartComplete.png)
 
 ## Realtime Visualisation
 
-As with all of our amplience components, all your changes are ready to view in realtime as you're building a Shoppable Image, so there's no guessing what it's going to look like or what the shopper's experience will be.
+As with all of our Amplience components, all your changes are ready to view in realtime as you're building a Shoppable Image, so there's no guessing what it's going to look like or what the shopper's experience will be.
 
 ![Shoppable Image Realtime View](./media/shoppyRTV.png)
