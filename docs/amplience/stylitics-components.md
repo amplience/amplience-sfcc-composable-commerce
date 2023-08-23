@@ -22,5 +22,8 @@ https://github.com/amplience/dc-integration-stylitics/blob/main/docs/automation.
 
 Files can be found in `/amplience-automation/automation-files`
 
+## Automation specifics
+We would recommend that you update upload and overwrite any media in your content hub before this release. Automation documentation can be seen [here](./automation.md#media)
+
 
 > Note: Stylitics do not currently have any demo data sets for the SFCC default catalog, so we have implemented a product selector that points to a demo data set. This means that any links are as per Stylitics demo data. This may change in future releases 
