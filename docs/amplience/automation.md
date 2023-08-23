@@ -18,7 +18,7 @@ Install the Amplience Dynamic Content CLI as can be found [here](https://github.
 
 Configure the CLI to point to your account (you will need your Amplience hubId, clientId and clientSecret)
 
-You will need the following information from your Ampliene and SFCC account:
+You will need the following information from your Amplience and SFCC account:
 
 * Amplience Hub ID
 * API details: Note the [Amplience Account](amplience-account.md) specifics which require admin and DAM-API access.
