@@ -27,7 +27,7 @@ export default {
             top: {base: '5px', sm: '15px'},
             position: 'fixed',
             boxShadow: 'lg',
-            backgroundColor: '#e80d8c',
+            backgroundColor: '#F88B8B',
             color: '#fff',
             minWidth: [9, 11],
             height: [9, 11],
@@ -35,7 +35,7 @@ export default {
             zIndex: 1600,
 
             _hover: {
-                backgroundColor: '#ba0a71'
+                backgroundColor: '#B66869'
             },
             _focus: {
                 boxShadow: 'outline'
@@ -90,7 +90,7 @@ export default {
             padding: '20px'
         },
         infoContainer: {
-            zIndex: 1000,
+            zIndex: 998,
             position: 'absolute',
             right: '10px',
             top: '10px',

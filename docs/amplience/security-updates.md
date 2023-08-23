@@ -21,6 +21,18 @@ Because Amplience visualisations are loaded via iFrame, we also need to tell you
 |:----|:----|
 |iFrame (frame ancestors)|`*.amplience.net`|
 
+In this demo we also have a sample integration with [Stylitics](https://stylitics.com). In order for this to work we also need to add configurations for stylitics domains:
+
+|Type|Value|
+|:----|:----|
+|img-src|`*.stylitics.com`|
+|script-src|`*.stylitics.com`|
+|connect-src|`*.stylitics.com`|
+|default-src|`*.stylitics.com`|
+
+
+
+
 ## What should my security policy look like?
 
 If you have already changed your security policy, please be careful and add to rather than simply replacing.
@@ -36,7 +48,9 @@ contentSecurityPolicy: {
             'data:',
             '*.cdn.content.amplience.net',
             'cdn.media.amplience.net',
-            '*.staging.bigcontent.io'
+            '*.staging.bigcontent.io',
+            'i8.amplience.net',
+            '*.stylitics.com'
         ],
         'script-src': [
             "'self'",
@@ -44,7 +58,9 @@ contentSecurityPolicy: {
             'storage.googleapis.com',
             '*.cdn.content.amplience.net',
             'cdn.media.amplience.net',
-            '*.staging.bigcontent.io'
+            '*.staging.bigcontent.io',
+            '*.stylitics.com',
+            "'unsafe-inline'"
         ],
         'connect-src': [
             "'self'",
@@ -53,9 +69,19 @@ contentSecurityPolicy: {
             '*.cdn.content.amplience.net',
             'cdn.media.amplience.net',
             'cdn.static.amplience.net',
-            '*.staging.bigcontent.io'
+            '*.staging.bigcontent.io',
+            '*.stylitics.com'
         ],
-        'default-src': ["'self'", "'unsafe-eval'", '*.cdn.content.amplience.net', 'cdn.media.amplience.net', '*.staging.bigcontent.io'],
+        'default-src': [
+            "'self'",
+            "'unsafe-eval'",
+            '*.cdn.content.amplience.net',
+            'cdn.media.amplience.net',
+            'cdn.static.amplience.net',
+            '*.staging.bigcontent.io',
+            '*.stylitics.com',
+            'data:'
+        ],
         'frame-ancestors': ["'self'", '*.amplience.net'],
         // Do not upgrade insecure requests for local development
         'upgrade-insecure-requests': isRemote() ? [] : null

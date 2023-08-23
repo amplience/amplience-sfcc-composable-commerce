@@ -50,7 +50,7 @@ const AboutPanel = ({toolbarOpacity, setToolbarOpacity}) => {
                 })}
                 defaultValue={toolbarOpacity * 200 - 100}
                 step={1}
-                colorScheme={'ampliencePink'}
+                colorScheme={'amplienceColor'}
                 onChange={(val) => setToolbarOpacity(0.5 + val / 200.0)}
             >
                 <SliderTrack>

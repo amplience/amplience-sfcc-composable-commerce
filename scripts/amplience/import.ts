@@ -136,6 +136,11 @@ export const importArgs = (yargs: Argv) => {
             default: null,
             type: 'string'
         })
+        .option('openaiKey', {
+            describe: 'OpenAI Key (required for rich text AI features)',
+            default: '',
+            type: 'string'
+        })
 };
 
 export const importHandler = async (context: Arguments<Context>): Promise<any> => {

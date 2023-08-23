@@ -1,0 +1,1073 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://sfcc.com/lib/stylitics",
+
+    "definitions": {
+        "account": {
+            "title": "Account",
+            "type": "string",
+            "enum": [
+                "demo",
+                "demo-home-labels",
+                "demo-home",
+                "demo-kidboys",
+                "demo-kidgirls",
+                "demo-labels-classic",
+                "demo-mens",
+                "demo-womens"
+            ],
+            "default": "demo"
+        },
+        
+        "api": {
+            "title": "API Properties",
+            "type": "object",
+            "properties": {
+                "min": {
+                    "title": "Minimum",
+                    "type": "number"
+                },
+                "max": {
+                    "title": "Maximum",
+                    "type": "number"
+                }
+            },
+            "propertyOrder": []
+        },
+
+        "display": {
+            "title": "Display Properties",
+            "type": "object",
+            "properties": {
+                "imglazyLoadNextScreen": {
+                    "title": "Image Lazy Loading",
+                    "description": "Enable next screen preloading",
+                    "type": "boolean",
+                    "default": true
+                },
+                "bundleBackgroundColor": {
+                    "title": "Bundle Background Color",
+                    "type": "string",
+                    "description": "Enter a hex value including the #",
+                    "pattern": "[#][0-9A-Fa-f]{6}"
+                },
+                "disableMnM": {
+                    "title": "Mix and Match",
+                    "description": "Disable Mix and Match",
+                    "type": "boolean",
+                    "default": true
+                },
+                "swipeableCarouselNextItemPeek": {
+                    "title": "Next Bundle Peek (Mobile)",
+                    "description": "Set \"peeking\" visibility factor of the next (offscreen) mobile swipe gallery item from 0 to 1, for instance 0.275",
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                },
+                "swipeableCarouselDots": {
+                    "title": "Advancement Progress Indicator (Mobile)",
+                    "description": "Display carousel-advancement progress indicators (dots)",
+                    "type": "boolean",
+                    "default": false
+                }
+            }
+        },
+
+        "price": {
+            "title": "Price Properties",
+            "type": "object",
+            "properties": {
+                "roundingStyle": {
+                    "title": "Rounding Style",
+                    "description": "description",
+                    "type": "string",
+                    "enum": [
+                        "none",
+                        "floor",
+                        "ceiling",
+                        "round"
+                    ]
+                },
+                "hideDoubleZeroCents": {
+                    "title": "Hide decimals",
+                    "description": "Hide decimals that are .00",
+                    "type": "boolean"
+                },
+                "salesPriceStyle": {
+                    "title": "Sales Price Style",
+                    "description": "Text styling, strikethrough or sales price only",
+                    "type": "string",
+                    "enum": [
+                        "strikethrough",
+                        "sales-price-only"
+                    ]
+                }
+                
+            }
+        },
+
+        "tags": {
+            "title": "Tags",
+            "description": "Tags, for instance \"mens_stylistspicks_gallery\"",
+            "type": "string",
+            "minLength": 0,
+            "maxLength": 255
+        },
+
+        "hideAnchorItem": {
+            "title": "Hide Anchor Item",
+            "description": "Remove an anchor item from the product list",
+            "type": "boolean",
+            "default": false
+        },
+
+        "clickableImageMnM": {
+            "title": "Enable Collage Image Swapping (with MnM)",
+            "description": "Enable MnM functionality that allows swapping items in Collage",
+            "type": "boolean",
+            "default": false
+        },
+
+        "bundleCounter": {
+            "title": "Bundle Counter Visibility (with MnM)",
+            "description": "Display of the bundle counter badge",
+            "type": "boolean",
+            "default": true
+        },
+
+        "clickableModalDots": {
+            "title": "Advancement Progress Indicator (with MnM)",
+            "description": "Display carousel-advancement progress indicators (dots) on the desktop modal when MnM is enabled",
+            "type": "boolean",
+            "default": false
+        },
+
+        "bundleProductList": {
+            "title": "Product List Display (without MnM)",
+            "description": "Applicable only when Mix and Match is disabled",
+            "type": "string",
+            "default": "slideout-on-click",
+            "enum": [
+                "slideout-on-click",
+                "product-list-on-click",
+                "product-list-on-hover"
+            ]
+        },
+
+        "clickableCarouselDots": {
+            "title": "Advancement Progress Indicator (dots)",
+            "description": "Display carousel-advancement progress indicators (dots)",
+            "type": "boolean",
+            "default": false
+        },
+
+        "clickableCarouselAdvancementRate": {
+            "title": "Carousel Advancement Rate",
+            "description": "Set the amount of cards to scroll by: min = 1, max = columnCount",
+            "type": "number",
+            "default": 1,
+            "minimum": 1
+        },
+        
+        "clickableCarouselNextItemPeek": {
+            "title": "Next Bundle Peek",
+            "description": "Set 'peeking' visibility factor of the next (offscreen) carousel item in pixels",
+            "type": "number",
+            "default": 0
+        },
+
+        "clickableCarouselPreviousItemPeek": {
+            "title": "Previous Bundle Peek",
+            "description": "Set 'peeking' visibility factor of the previous (offscreen) carousel item in pixels",
+            "type": "number",
+            "default": 0
+        },
+
+        "clickableCarouselGutterWidth": {
+            "title": "Gutter Width",
+            "description": "Set gutterWidth for the desktop",
+            "type": "number",
+            "default": 16
+        },
+
+        "swipeableCarouselGutterWidth": {
+            "title": "Gutter Width (Mobile)",
+            "description": "Set gutterWidth for the mobile carousel",
+            "type": "number"
+        },
+
+        "swipeableCarouselLeftPadding": {
+            "title": "Left Padding (Mobile)",
+            "description": "Set the left-most item margin on mobile swipe gallery",
+            "type": "number",
+            "default": 0
+        },
+
+        "swipeableCarouselArrows": {
+            "title": "Carousel Arrows (Mobile)",
+            "description": "Display carousel arrows",
+            "type": "boolean",
+            "default": false
+        },
+
+        "labelStyle": {
+            "title": "Label Style",
+            "description": "Add the labelStyle parameter to your widget configuration to set the label style",
+            "type": "string",
+            "enum": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5"
+            ]
+        },
+
+        "labelBorderColor": {
+            "title": "Label Border Color",
+            "description": "Change the border color of the label. Hex value including the #.",
+            "pattern": "[#][0-9A-Fa-f]{6}",
+            "type": "string"
+        },
+
+        "dynamicLabelBackground": {
+            "title": "Dynamic Label Background",
+            "description": "Enable dynamic background color",
+            "type": "boolean"
+        },
+
+        "hotspotsAppearOnLoad": {
+            "title": "Show Over Modals on Load",
+            "description": "Invert the behavior of hotspots",
+            "type": "boolean"
+        },
+
+        "hotspotsOverlayOrder": {
+            "title": "Hotspots Overlay Order - Input",
+            "description": "The inputs for any of these child arrays is 'name', 'brand', 'price', 'sales_price'. Use CSV format, for instance 'price_list,list'.",
+            "type": "array",
+            "minItems": 0,
+            "maxItems": 10,
+            "items": {
+                "type": "string"
+            }
+        },
+
+        "individualHotspots": {
+            "title": "Individual Hotspots",
+            "description": "Set this configuration parameter to true to reveal a single hotspot when hovering over an item",
+            "type": "boolean",
+            "default": false
+        },
+
+        "showArrowsMnM": {
+            "title": "MnM Design with Arrows",
+            "description": "Displays navigational arrows with MnM enabled",
+            "type": "boolean"
+        },
+
+        "moodboardImageType": {
+            "title": "Image Type",
+            "description": "Pass \"non-editorial\" to set the image type as non-editorial (images with white backgrounds). Note: the default is \"editorial,\" which expects images to be squared and not require any padding/margin within the cell",
+            "type": "string",
+            "default": "editorial",
+            "enum": [
+                "editorial",
+                "non-editorial"
+            ]
+        },
+
+        "coerceMoodboardImageAspectRatio": {
+            "title": "Image Aspect Ratio",
+            "description": "Set this to \"square\" if you would like moodboard item images to be coerced to square aspect ratios",
+            "type": "string",
+            "enum": [
+                "square"
+            ]
+        },
+
+        "mobileCtaClickOnly": {
+            "title": "Mobile Product Shelf",
+            "description": "Set this to true to make only the CTA (not the bundle) launch the items list shelf",
+            "type": "boolean",
+            "default": false
+        },
+
+        "hideAnchorItemCard": {
+            "title": "Anchor Item Card Visibility",
+            "description": "Pass true to hide the anchor card. Note: the default is false which means the anchor card is automatically shown",
+            "type": "boolean",
+            "default": false
+        },
+
+        "maxGridSize": {
+            "title": "Grid Size",
+            "description": "Set this to a number if you would like to limit the size of the grid by dropping non-anchor items in the bundle beyond this number",
+            "type": "number"
+        },
+
+        "mobileGalleryLayout": {
+            "title": "Gallery Layout (Mobile)",
+            "description": "Set this configuration parameter to true to display a gallery layout instead of a carousel on touch devices",
+            "type": "boolean"
+        },
+
+        "clickItemLinkDesktop": {
+            "title": "Shop Button Link Behavior (Desktop)",
+            "description": "By default, clicking the \"shop\" button will open the product detail page (PDP) in a new tab on desktop, and in the same tab on mobile",
+            "type": "string",
+            "default": "new-tab",
+            "enum": [
+                "new-tab",
+                "same-tab"
+            ]
+        },
+
+        "clickItemLinkMobile": {
+            "title": "Shop Button Link Behavior (Mobile)",
+            "description": "By default, clicking the \"shop\" button will open the product detail page (PDP) in a new tab on desktop, and in the same tab on mobile",
+            "type": "string",
+            "default": "same-tab",
+            "enum": [
+                "new-tab",
+                "same-tab"
+            ]
+        },
+
+        "viewDetailsCTA": {
+            "title": "View Details Default Text",
+            "description": "Override the default text \"View details\"",
+            "allOf": [
+                { "$ref": "http://bigcontent.io/cms/schema/v1/localization#/definitions/localized-string" }
+            ]
+        },
+
+        "itemLinkCTA": {
+            "title": "SHOP Default Text",
+            "description": "Override the default text \"SHOP\"",
+            "allOf": [
+                { "$ref": "http://bigcontent.io/cms/schema/v1/localization#/definitions/localized-string" }
+            ]
+        },
+
+        "itemDetailsModalHeader": {
+            "title": "Details Modal Default Text",
+            "description": "Override the default text for the mobile item details modal",
+            "allOf": [
+                { "$ref": "http://bigcontent.io/cms/schema/v1/localization#/definitions/localized-string" }
+            ]
+        },
+
+        "bundleCounterLabel": {
+            "title": "Bundle Counter Prefix Label",
+            "description": "Add a prefix label to the 1/N label e.g. \"Room 2/8\"",
+            "allOf": [
+                { "$ref": "http://bigcontent.io/cms/schema/v1/localization#/definitions/localized-string" }
+            ]
+        },
+
+        "classic": {
+            "title": "Classic Widget",
+            "type": "object",
+            "properties": {
+                "display": {
+                    "title": "Display Properties",
+                    "type": "object",
+                    "properties": {
+                        "hideAnchorItem": {
+                            "title": "Hide Anchor Item",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/hideAnchorItem"
+                                }
+                            ]
+                        },
+                        "clickableImageMnM": {
+                            "title": "Enable Collage Image Swapping (with MnM)",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/clickableImageMnM"
+                                }
+                            ]
+                        },
+                        "bundleCounter": {
+                            "title": "Bundle Counter Visibility (with MnM)",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/bundleCounter"
+                                }
+                            ]
+                        },
+                        "clickableModalDots": {
+                            "title": "Advancement Progress Indicator (with MnM)",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/clickableModalDots"
+                                }
+                            ]
+                        },
+                        "bundleProductList": {
+                            "title": "Product List Display (without MnM)",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/bundleProductList"
+                                }
+                            ]
+                        },
+                        "clickableCarouselDots": {
+                            "title": "Advancement Progress Indicator (dots)",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/clickableCarouselDots"
+                                }
+                            ]
+                        },
+                        "clickableCarouselAdvancementRate": {
+                            "title": "Carousel Advancement Rate",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/clickableCarouselAdvancementRate"
+                                }
+                            ]
+                        },
+                        "clickableCarouselNextItemPeek": {
+                            "title": "Next Bundle Peek",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/clickableCarouselNextItemPeek"
+                                }
+                            ]
+                        },
+
+                        "clickableCarouselPreviousItemPeek": {
+                            "title": "Previous Bundle Peek",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/clickableCarouselPreviousItemPeek"
+                                }
+                            ]
+                        },
+
+                        "clickableCarouselGutterWidth": {
+                            "title": "Gutter Width",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/clickableCarouselGutterWidth"
+                                }
+                            ]
+                        },
+
+                        "swipeableCarouselGutterWidth": {
+                            "title": "Gutter Width (Mobile)",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/swipeableCarouselGutterWidth"
+                                }
+                            ]
+                        },
+
+                        "swipeableCarouselLeftPadding": {
+                            "title": "Left Padding (Mobile)",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/swipeableCarouselLeftPadding"
+                                }
+                            ]
+                        },
+
+                        "swipeableCarouselArrows": {
+                            "title": "Carousel Arrows (Mobile)",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/swipeableCarouselArrows"
+                                }
+                            ]
+                        },
+
+                        "labelStyle": {
+                            "title": "Label Style",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/labelStyle"
+                                }
+                            ]
+                        },
+
+                        "labelBorderColor": {
+                            "title": "Label Border Color",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/labelBorderColor"
+                                }
+                            ]
+                        },
+
+                        "dynamicLabelBackground": {
+                            "title": "Dynamic Label Background",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/dynamicLabelBackground"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "navigation": {
+                    "title": "Navigation Properties",
+                    "type": "object",
+                    "properties": {
+                        "clickItemLinkDesktop": {
+                            "title": "Shop Button Link Behavior (Desktop)",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/clickItemLinkDesktop"
+                                }
+                            ]
+                        },
+
+                        "clickItemLinkMobile": {
+                            "title": "Shop Button Link Behavior (Mobile)",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/clickItemLinkMobile"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "text": {
+                    "title": "Text Properties",
+                    "type": "object",
+                    "properties": {
+                        "viewDetailsCTA": {
+                            "title": "View Details Default Text",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/viewDetailsCTA"
+                                }
+                            ]
+                        },
+
+                        "itemLinkCTA": {
+                            "title": "SHOP Default Text",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/itemLinkCTA"
+                                }
+                            ]
+                        },
+
+                        "itemDetailsModalHeader": {
+                            "title": "Details Modal Default Text",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/itemDetailsModalHeader"
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+
+        "hotspots": {
+            "title": "Hotspots Widget",
+            "type": "object",
+            "properties": {
+                "display": {
+                    "title": "Display Properties",
+                    "type": "object",
+                    "properties": {
+                        "hideAnchorItem": {
+                            "title": "Hide Anchor Item",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/hideAnchorItem"
+                                }
+                            ]
+                        },
+                        "clickableImageMnM": {
+                            "title": "Enable Collage Image Swapping (with MnM)",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/clickableImageMnM"
+                                }
+                            ]
+                        },
+
+                        "bundleCounter": {
+                            "title": "Bundle Counter Visibility (with MnM)",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/bundleCounter"
+                                }
+                            ]
+                        },
+                        "clickableModalDots": {
+                            "title": "Advancement Progress Indicator (with MnM)",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/clickableModalDots"
+                                }
+                            ]
+                        },
+
+                        "bundleProductList": {
+                            "title": "Product List Display (without MnM)",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/bundleProductList"
+                                }
+                            ]
+                        },
+
+                        "clickableCarouselDots": {
+                            "title": "Advancement Progress Indicator (dots)",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/clickableCarouselDots"
+                                }
+                            ]
+                        },
+
+                        "clickableCarouselAdvancementRate": {
+                            "title": "Carousel Advancement Rate",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/clickableCarouselAdvancementRate"
+                                }
+                            ]
+                        },
+                        
+                        "clickableCarouselNextItemPeek": {
+                            "title": "Next Bundle Peek",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/clickableCarouselNextItemPeek"
+                                }
+                            ]
+                        },
+
+                        "clickableCarouselPreviousItemPeek": {
+                            "title": "Previous Bundle Peek",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/clickableCarouselPreviousItemPeek"
+                                }
+                            ]
+                        },
+                        "hotspotsAppearOnLoad": {
+                            "title": "Show Over Modals on Load",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/hotspotsAppearOnLoad"
+                                }
+                            ]
+                        },
+
+                        "hotspotsOverlayOrder": {
+                            "title": "Hotspots Overlay Order - Input",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/hotspotsOverlayOrder"
+                                }
+                            ]
+                        },
+
+                        "individualHotspots": {
+                            "title": "Individual Hotspots",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/individualHotspots"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "text": {
+                    "title": "Text Properties",
+                    "type": "object",
+                    "properties": {
+                        "viewDetailsCTA": {
+                            "title": "View Details Default Text",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/viewDetailsCTA"
+                                }
+                            ]
+                        },
+
+                        "itemLinkCTA": {
+                            "title": "SHOP Default Text",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/itemLinkCTA"
+                                }
+                            ]
+                        },
+
+                        "itemDetailsModalHeader": {
+                            "title": "Details Modal Default Text",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/itemDetailsModalHeader"
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+
+        "moodboard": {
+            "title": "Moodboard Widget",
+            "type": "object",
+            "properties": {
+                "display": {
+                    "title": "Display Properties",
+                    "type": "object",
+                    "properties": {
+                        "bundleCounter": {
+                            "title": "Bundle Counter Visibility (with MnM)",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/bundleCounter"
+                                }
+                            ]
+                        },
+                        "swipeableCarouselLeftPadding": {
+                            "title": "Left Padding (Mobile)",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/swipeableCarouselLeftPadding"
+                                }
+                            ]
+                        },
+                        "swipeableCarouselArrows": {
+                            "title": "Carousel Arrows (Mobile)",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/swipeableCarouselArrows"
+                                }
+                            ]
+                        },
+
+                        "labelStyle": {
+                            "title": "Label Style",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/labelStyle"
+                                }
+                            ]
+                        },
+
+                        "labelBorderColor": {
+                            "title": "Label Border Color",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/labelBorderColor"
+                                }
+                            ]
+                        },
+
+                        "dynamicLabelBackground": {
+                            "title": "Dynamic Label Background",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/dynamicLabelBackground"
+                                }
+                            ]
+                        },
+                        "showArrowsMnM": {
+                            "title": "MnM Design with Arrows",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/showArrowsMnM"
+                                }
+                            ]
+                        },
+
+                        "moodboardImageType": {
+                            "title": "Image Type",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/moodboardImageType"
+                                }
+                            ]
+                        },
+
+                        "coerceMoodboardImageAspectRatio": {
+                            "title": "Image Aspect Ratio",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/coerceMoodboardImageAspectRatio"
+                                }
+                            ]
+                        },
+
+                        "mobileCtaClickOnly": {
+                            "title": "Mobile Product Shelf",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/mobileCtaClickOnly"
+                                }
+                            ]
+                        },
+
+                        "hideAnchorItemCard": {
+                            "title": "Anchor Item Card Visibility",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/hideAnchorItemCard"
+                                }
+                            ]
+                        },
+
+                        "maxGridSize": {
+                            "title": "Grid Size",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/maxGridSize"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "navigation": {
+                    "title": "Navigation Properties",
+                    "type": "object",
+                    "properties": {
+                        "clickItemLinkDesktop": {
+                            "title": "Shop Button Link Behavior (Desktop)",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/clickItemLinkDesktop"
+                                }
+                            ]
+                        },
+
+                        "clickItemLinkMobile": {
+                            "title": "Shop Button Link Behavior (Mobile)",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/clickItemLinkMobile"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "text": {
+                    "title": "Text Properties",
+                    "type": "object",
+                    "properties": {
+                        "itemLinkCTA": {
+                            "title": "SHOP Default Text",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/itemLinkCTA"
+                                }
+                            ]
+                        },
+
+                        "itemDetailsModalHeader": {
+                            "title": "Details Modal Default Text",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/itemDetailsModalHeader"
+                                }
+                            ]
+                        },
+
+                        "bundleCounterLabel": {
+                            "title": "Bundle Counter Prefix Label",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/bundleCounterLabel"
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+
+        "gallery": {
+            "title": "Gallery Widget",
+            "type": "object",
+            "properties": {
+                "api": {
+                    "title": "API Properties",
+                    "type": "object",
+                    "properties": {
+                        "tags": {
+                            "title": "Tags",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/tags"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "display": {
+                    "title": "Display Properties",
+                    "type": "object",
+                    "properties": {
+                        "hideAnchorItem": {
+                            "title": "Hide Anchor Item",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/hideAnchorItem"
+                                }
+                            ]
+                        },
+                        "clickableImageMnM": {
+                            "title": "Enable Collage Image Swapping (with MnM)",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/clickableImageMnM"
+                                }
+                            ]
+                        },
+
+                        "bundleCounter": {
+                            "title": "Bundle Counter Visibility (with MnM)",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/bundleCounter"
+                                }
+                            ]
+                        },
+
+                        "clickableModalDots": {
+                            "title": "Advancement Progress Indicator (with MnM)",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/clickableModalDots"
+                                }
+                            ]
+                        },
+
+                        "bundleProductList": {
+                            "title": "Product List Display (without MnM)",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/bundleProductList"
+                                }
+                            ]
+                        },
+                        "swipeableCarouselGutterWidth": {
+                            "title": "Gutter Width (Mobile)",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/swipeableCarouselGutterWidth"
+                                }
+                            ]
+                        },
+
+                        "swipeableCarouselLeftPadding": {
+                            "title": "Left Padding (Mobile)",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/swipeableCarouselLeftPadding"
+                                }
+                            ]
+                        },
+                        "swipeableCarouselArrows": {
+                            "title": "Carousel Arrows (Mobile)",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/swipeableCarouselArrows"
+                                }
+                            ]
+                        },
+                        "mobileGalleryLayout": {
+                            "title": "Gallery Layout (Mobile)",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/mobileGalleryLayout"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "navigation": {
+                    "title": "Navigation Properties",
+                    "type": "object",
+                    "properties": {
+                        "clickItemLinkDesktop": {
+                            "title": "Shop Button Link Behavior (Desktop)",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/clickItemLinkDesktop"
+                                }
+                            ]
+                        },
+
+                        "clickItemLinkMobile": {
+                            "title": "Shop Button Link Behavior (Mobile)",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/clickItemLinkMobile"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "text": {
+                    "title": "Text Properties",
+                    "type": "object",
+                    "properties": {
+                        "viewDetailsCTA": {
+                            "title": "View Details Default Text",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/viewDetailsCTA"
+                                }
+                            ]
+                        },
+
+                        "itemLinkCTA": {
+                            "title": "SHOP Default Text",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/itemLinkCTA"
+                                }
+                            ]
+                        },
+
+                        "itemDetailsModalHeader": {
+                            "title": "Details Modal Default Text",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/itemDetailsModalHeader"
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+
+        "mainAndDetail": {
+            "title": "Main and Detail Widget",
+            "type": "object",
+            "properties": {
+                "display": {
+                    "title": "Display Properties",
+                    "type": "object",
+                    "properties": {
+                        "swipeableCarouselArrows": {
+                            "title": "Carousel Arrows (Mobile)",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/swipeableCarouselArrows"
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

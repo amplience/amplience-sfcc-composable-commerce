@@ -49,7 +49,7 @@ const PersonalisationPanel = ({customerGroups}) => {
             <Wrap spacing={2} paddingTop={4}>
                 {customerGroups.sort().map((group, index) => {
                     const groupColor = previewCustomerGroups.includes(group)
-                        ? 'ampliencePink'
+                        ? 'amplienceColor'
                         : 'gray'
                     return (
                         <WrapItem key={index}>

@@ -1,0 +1,58 @@
+{
+  "name": "ecomm-toolkit-stylitics",
+  "label": "eCommerce Toolkit Stylitics",
+  "description": "Interfaces with core eComm elements like product, categories, segments",
+  "url": "https://ecomm-toolkit.extensions.content.amplience.net",
+  "height": 200,
+  "enabledForAllContentTypes": true,
+  "category": "CONTENT_FIELD",
+  "parameters": "{\n  \"vendor\": \"rest\",\n  \"codec_params\": {\n    \"productURL\": \"https://demostore-catalog.s3.us-east-2.amazonaws.com/products.json\",\n    \"categoryURL\": \"https://demostore-catalog.s3.us-east-2.amazonaws.com/categories.json\",\n    \"customerGroupURL\": \"https://demostore-catalog.s3.us-east-2.amazonaws.com/customerGroups.json\",\n    \"translationsURL\": \"https://demostore-catalog.s3.us-east-2.amazonaws.com/translations.json\"\n  }\n}",
+  "snippets": [
+    {
+      "label": "User Segments - Multi select - object",
+      "body": "{\n  \"title\": \"User Segments\",\n  \"description\": \"Multi-select User Segments and store as {name:string,id:string}\",\n  \"type\": \"array\",\n  \"minItems\": 0,\n  \"maxItems\": 5,\n  \"items\": {\n    \"type\": \"object\",\n    \"properties\": {\n      \"id\": {\n        \"title\": \"ID\",\n        \"type\": \"string\"\n      },\n      \"name\": {\n        \"title\": \"Name\",\n        \"type\": \"string\"\n      }\n    }\n  },\n  \"ui:extension\": {\n    \"name\": \"ecomm-toolkit-stylitics\",\n    \"params\": {\n      \"label\": \"User Segments\",\n      \"view\": \"multi\",\n      \"data\": \"segment\",\n      \"type\": \"object\"\n    }\n  }\n}"
+    },
+    {
+      "label": "User Segments - Multi select - string",
+      "body": "{\n  \"title\": \"User Groups\",\n  \"description\": \"Multi-select User Segments and store as string\",\n  \"type\": \"array\",\n  \"minItems\": 0,\n  \"maxItems\": 5,\n  \"items\": {\n    \"type\": \"string\"\n  },\n  \"ui:extension\": {\n    \"name\": \"ecomm-toolkit-stylitics\",\n    \"params\": {\n      \"label\": \"User Segments\",\n      \"view\": \"multi\",\n      \"data\": \"segment\",\n      \"type\": \"string\"\n    }\n  }\n}"
+    },
+    {
+      "label": "Category - Single Select - object",
+      "body": "{\n  \"title\": \"Category\",\n  \"description\": \"Single-select Category and store Name,ID as {name:string,id:string}\",\n  \"type\": \"object\",\n  \"properties\": {\n    \"name\": {\n      \"title\": \"Name\",\n      \"type\": \"string\"\n    },\n    \"id\": {\n      \"title\": \"ID\",\n      \"type\": \"string\"\n    }\n  },\n  \"propertyOrder\": [\n    \"id\",\n    \"name\"\n  ],\n  \"ui:extension\": {\n    \"name\": \"ecomm-toolkit-stylitics\",\n    \"params\": {\n      \"label\": \"Category\",\n      \"view\": \"single\",\n      \"data\": \"category\",\n      \"type\": \"object\"\n    }\n  }\n}"
+    },
+    {
+      "label": "Category - Single Select - string",
+      "body": "{\n  \"title\": \"Category\",\n  \"description\": \"Single-select Category and store ID as string\",\n  \"type\": \"string\",\n  \"ui:extension\": {\n    \"name\": \"ecomm-toolkit-stylitics\",\n    \"params\": {\n      \"label\": \"Category\",\n      \"view\": \"single\",\n      \"data\": \"category\",\n      \"type\": \"string\"\n    }\n  }\n}"
+    },
+    {
+      "label": "Category - Single Select - enforced string",
+      "body": "{\n  \"title\": \"Category\",\n  \"description\": \"Single-select Category and store ID as string\",\n  \"type\": \"string\",\n  \"pattern\": \"category/.*\",\n  \"ui:extension\": {\n    \"name\": \"ecomm-toolkit-stylitics\",\n    \"params\": {\n      \"label\": \"Category\",\n      \"view\": \"single\",\n      \"data\": \"category\",\n      \"type\": \"string\"\n    }\n  }\n}"
+    },
+    {
+      "label": "Category - Single Select Tree - string",
+      "body": "{\n  \"title\": \"Category\",\n  \"description\": \"Single-select Category Tree and store ID as string\",\n  \"type\": \"string\",\n  \"ui:extension\": {\n    \"name\": \"ecomm-toolkit-stylitics\",\n    \"params\": {\n      \"label\": \"Category\",\n      \"view\": \"tree\",\n      \"data\": \"category\",\n      \"type\": \"string\"\n    }\n  }\n}"
+    },
+    {
+      "label": "Category - Single Select Tree - enforced string",
+      "body": "{\n  \"title\": \"Category\",\n  \"description\": \"Single-select Category Tree and store ID as string\",\n  \"type\": \"string\",\n  \"pattern\": \"category/.*\",\n  \"ui:extension\": {\n    \"name\": \"ecomm-toolkit-stylitics\",\n    \"params\": {\n      \"label\": \"Category\",\n      \"view\": \"tree\",\n      \"data\": \"category\",\n      \"type\": \"string\"\n    }\n  }\n}"
+    },
+    {
+      "label": "Product Selector - Single String",
+      "body": "{\n  \"title\": \"Product Selector (string)\",\n  \"description\": \"Single-select Category and store ID as string\",\n  \"type\": \"string\",\n  \"ui:extension\": {\n    \"name\": \"ecomm-toolkit-stylitics\",\n    \"params\": {\n      \"label\": \"Search By Category\",\n      \"view\": \"product\",\n      \"data\": \"product\",\n      \"type\": \"string\"\n    }\n  }\n}"
+    },
+    {
+      "label": "Product Selector - Single Enforced String",
+      "body": "{\n  \"title\": \"Product Selector (string)\",\n  \"description\": \"Single-select Category and store ID as string\",\n  \"type\": \"string\",\n  \"pattern\": \"pdp/content/.*\",\n  \"ui:extension\": {\n    \"name\": \"ecomm-toolkit-stylitics\",\n    \"params\": {\n      \"label\": \"Search By Category\",\n      \"view\": \"product\",\n      \"data\": \"product\",\n      \"type\": \"string\"\n    }\n  }\n}"
+    },
+    {
+      "label": "Product Selector -  ID String Array",
+      "body": "{\n  \"title\": \"Product Selector (strings)\",\n  \"description\": \"Single-select Category and store ID as string\",\n  \"type\": \"array\",\n  \"items\": {\n    \"type\": \"string\"\n  },\n  \"ui:extension\": {\n    \"name\": \"ecomm-toolkit-stylitics\",\n    \"params\": {\n      \"label\": \"Search By Category\",\n      \"view\": \"product\",\n      \"data\": \"product\",\n      \"type\": \"strings\"\n    }\n  }\n}"
+    }
+  ],
+  "settings": "{\"API\":{\"READ\":true,\"EDIT\":true},\"SANDBOX\":{\"SAME_ORIGIN\":true,\"MODALS\":false,\"NAVIGATION\":false,\"POPUPS\":false,\"POPUP_ESCAPE_SANDBOX\":false,\"DOWNLOADS\":false,\"FORMS\":false}}",
+  "status": "ACTIVE",
+  "createdBy": "64fcf4b9-9af5-49bc-81d1-4d95feb173fe",
+  "createdDate": "2023-05-17T15:55:56.913Z",
+  "lastModifiedBy": "df984790-5cf9-4b6e-96a0-3a0ea9475b64",
+  "lastModifiedDate": "2023-07-06T15:15:24.183Z"
+}

@@ -75,7 +75,7 @@ const PreviewPanel = ({vseTimestamp, vse, ...otherProps}) => {
                         size="xs"
                         mr={2}
                         mt={2}
-                        colorScheme={'ampliencePink'}
+                        colorScheme={'amplienceColor'}
                         onClick={updateVseTimestamp}
                     >
                         {formatMessage({
@@ -84,7 +84,7 @@ const PreviewPanel = ({vseTimestamp, vse, ...otherProps}) => {
                         })}
                     </Button>
                 )}
-                <Button size="xs" mt={2} colorScheme={'ampliencePink'} onClick={clearVse}>
+                <Button size="xs" mt={2} colorScheme={'amplienceColor'} onClick={clearVse}>
                     {formatMessage({
                         id: 'toolbar.preview.cancel',
                         defaultMessage: 'Cancel'

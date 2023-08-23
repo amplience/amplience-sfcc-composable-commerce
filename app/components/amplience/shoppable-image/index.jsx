@@ -9,11 +9,18 @@ import {
     DrawerCloseButton,
     DrawerHeader,
     DrawerBody,
+    Modal,
+    ModalOverlay,
+    ModalContent,
+    ModalHeader,
+    ModalBody,
+    ModalCloseButton,
     Image,
     Tooltip,
     useDisclosure,
     Heading
 } from '@chakra-ui/react'
+import ProductViewModal from '../product-view-modal'
 import {categoryUrlBuilder, productUrlBuilder} from '../../../utils/url'
 import {useFlattenedCategories} from '../../../hooks/use-categories'
 import {useRef} from 'react'
@@ -89,6 +96,12 @@ export const useShoppableTooltip = (target, selector, tooltips) => {
                 defaultMessage: 'Loading...'
             })
             break
+        case 'quickview':
+            defaultTooltip = intl.formatMessage({
+                id: 'amplience.shoppable_image.loading',
+                defaultMessage: 'Loading...'
+            })
+            break
         case 'category': {
             const cats = useFlattenedCategories()
             defaultTooltip = cats[target]?.name ?? target
@@ -100,9 +113,16 @@ export const useShoppableTooltip = (target, selector, tooltips) => {
                 defaultMessage: 'Click to open...'
             })
             break
+        case 'modal':
+            defaultTooltip = intl.formatMessage({
+                id: 'amplience.shoppable_image.modal',
+                defaultMessage: 'Click to open modal...'
+            })
+            break
     }
 
     const [tooltip, setTooltip] = useState(defaultTooltip)
+    const [qvProduct, setqvProduct] = useState(null)
 
     // Effects which rewrite the tooltip after fetching data.
     useEffect(() => {
@@ -139,6 +159,38 @@ export const useShoppableTooltip = (target, selector, tooltips) => {
                         })
                 }
                 break
+            case 'quickview':
+                {
+                    api.shopperProducts
+                        .getProduct({
+                            parameters: {
+                                id: target,
+                                allImages: true
+                            }
+                        })
+                        .then((product) => {
+                            if (useResult) {
+                                if (product.isError) {
+                                    setTooltip(
+                                        intl.formatMessage({
+                                            id: 'amplience.shoppable_image.product_404',
+                                            defaultMessage: 'Product not found'
+                                        })
+                                    )
+                                    setqvProduct(null)
+                                } else {
+                                    setTooltip(
+                                        `${product.name} - ${intl.formatNumber(product.price, {
+                                            style: 'currency',
+                                            currency: product.currency
+                                        })}`
+                                    )
+                                    setqvProduct(product)
+                                }
+                            }
+                        })
+                }
+                break
             default:
                 setTooltip(defaultTooltip)
         }
@@ -146,7 +198,7 @@ export const useShoppableTooltip = (target, selector, tooltips) => {
         return () => (useResult = false)
     }, [selector, target])
 
-    return matchTooltip?.value ?? tooltip
+    return {label: matchTooltip?.value ?? tooltip, qvProduct: qvProduct}
 }
 
 export const ShoppableImageInteractable = ({
@@ -157,7 +209,8 @@ export const ShoppableImageInteractable = ({
     children,
     transform
 }) => {
-    const label = useShoppableTooltip(target, selector, tooltips)
+    const api = useCommerceAPI()
+    const {label, qvProduct} = useShoppableTooltip(target, selector, tooltips)
     const {isOpen, onOpen, onClose} = useDisclosure()
     const tProps = {placement: tooltipPlacement ?? 'bottom'}
 
@@ -175,6 +228,26 @@ export const ShoppableImageInteractable = ({
                         {children}
                     </Link>
                 </Tooltip>
+            )
+        }
+        case 'quickview': {
+            return (
+                <>
+                    <Tooltip label={label} {...tProps}>
+                        <Link
+                            to="#"
+                            onClick={(evt) => {
+                                onOpen()
+                                evt.preventDefault()
+                                return false
+                            }}
+                            {...style}
+                        >
+                            {children}
+                        </Link>
+                    </Tooltip>
+                    {qvProduct && <ProductViewModal product={qvProduct} onClose={onClose} isOpen={isOpen} />}
+                </>
             )
         }
         case 'category': {
@@ -245,7 +318,7 @@ export const ShoppableImageInteractable = ({
                         <DrawerOverlay />
                         <DrawerContent>
                             <DrawerBody>
-                                <DrawerCloseButton />
+                                <DrawerCloseButton sx={{zIndex: 1}} />
                                 {matchTooltip?.value && (
                                     <DrawerHeader>{matchTooltip?.value}</DrawerHeader>
                                 )}
@@ -253,6 +326,37 @@ export const ShoppableImageInteractable = ({
                             </DrawerBody>
                         </DrawerContent>
                     </Drawer>
+                </>
+            )
+        }
+        case 'modal': {
+            const matchTooltip = tooltips?.find((tooltip) => tooltip.key === target)
+
+            return (
+                <>
+                    <Tooltip label={label} {...tProps}>
+                        <Link
+                            to="#"
+                            onClick={(evt) => {
+                                onOpen()
+                                evt.preventDefault()
+                                return false
+                            }}
+                            {...style}
+                        >
+                            {children}
+                        </Link>
+                    </Tooltip>
+                    <Modal isOpen={isOpen} onClose={onClose}>
+                        <ModalOverlay />
+                        <ModalContent>
+                            <ModalHeader>{matchTooltip?.value}</ModalHeader>
+                            <ModalCloseButton />
+                            <ModalBody>
+                                <AmplienceWrapper fetch={{key: target}}></AmplienceWrapper>
+                            </ModalBody>
+                        </ModalContent>
+                    </Modal>
                 </>
             )
         }

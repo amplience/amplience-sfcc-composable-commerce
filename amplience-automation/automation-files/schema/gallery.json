@@ -1,0 +1,5 @@
+{
+  "body": "./schemas/gallery-schema.json",
+  "schemaId": "https://sfcc.com/content/stylitics/gallery",
+  "validationLevel": "CONTENT_TYPE"
+}

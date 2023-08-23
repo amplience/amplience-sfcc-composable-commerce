@@ -11,3 +11,4 @@
 | `shoppable-image` | [Shoppable Image](https://github.com/amplience/dc-extension-shoppable-image) | Shoppable Image Extension |
 | `shoppable-video` | [Shoppable Video](https://github.com/amplience/dc-extension-shoppable-video) | Shoppable Video Extension |
 | `ecomm-toolkit` | [eCommerce Toolkit](https://github.com/amplience/dc-extension-ecomm-toolkit) | eCommerce Toolkit |
+| `ecomm-toolkit-stylitics` | [eCommerce Toolkit](https://github.com/amplience/dc-extension-ecomm-toolkit) | Specific eCommerce Toolkit configuration pointing to Stylitics demo data for use in demo components |
