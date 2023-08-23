@@ -4,11 +4,11 @@
 
 Uses the [Amplience Stylitics Integration (see link for full documentation)](https://github.com/amplience/dc-integration-stylitics) to render Stylitics widgets as a component. Stylitics and Amplience are a great fit for our creating automated shoppable experience using the great capabilities of Stylitics to increase AOV and basket size.
 
-## Key implementation areas:
+## Key implementation areas
 * Sample product set that can be used when selecting products (see [documentation](https://github.com/amplience/dc-integration-middleware/blob/main/docs/vendor/commerce/rest.md))
 * All of the components for available Stylitics Widgets and implementation
 
-## Key Demonstration areas:
+## Key Demonstration areas
 * Configuring Stylitics as a component like any other to place in your experience (content, slots)
 * Use of Stylitics In Grid for category pages (note: rendering is by the Stylitics widgets. Would recommend full width placements)
 * Personalisation examples like any other content
