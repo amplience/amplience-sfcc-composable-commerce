@@ -55,9 +55,9 @@ This version of the SF Retail React app integrates Amplience as the Content CMS 
   * [Stylitics components specifics](docs/amplience/stylitics-components.md)
 * [Toolbar Framework](docs/amplience/toolbar-framework.md)
 
-> Note: This code is built against the code version @latest at the time which was PWAKit v2.7.0 released on March 3rd 2023: https://github.com/SalesforceCommerceCloud/pwa-kit/releases/tag/v2.7.0
+> Note: This code is built against the code version of PWAKit v2.7.3 released on June 20th 2023 for Node 18: https://github.com/SalesforceCommerceCloud/pwa-kit/releases/tag/v2.7.3
 
-If you are using an earlier version, please consider upgrading your codebase to match this for Node 16 support.
+If you are using an earlier version, please consider upgrading your codebase to match this for Node 18 support.
 
 ## Known Limitations
 
@@ -79,8 +79,8 @@ Developers don’t have to worry about the underlying infrastructure, whether th
 
 ## Requirements
 
--   Node 14.17.0 or later - recommend Node 16.x
--   npm 6.14.4 or later
+-   Node 18.x
+-   npm 9.x
 
 ## Get Started
 
