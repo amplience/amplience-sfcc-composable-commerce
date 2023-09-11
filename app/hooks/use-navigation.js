@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021, salesforce.com, inc.
+ * Copyright (c) 2023, Salesforce, Inc.
  * All rights reserved.
  * SPDX-License-Identifier: BSD-3-Clause
  * For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
@@ -7,6 +7,7 @@
 import {useCallback} from 'react'
 import {useHistory} from 'react-router'
 import useMultiSite from './use-multi-site'
+import {removeSiteLocaleFromPath} from '../utils/url'
 
 const keepParams = ['vse', 'pagevse', 'vse-timestamp']
 
@@ -58,7 +59,7 @@ const useNavigation = () => {
             if (path == null) {
                 history[action](history.location.pathname + history.location.search, ...args)
             } else {
-                const dest = keepVse(history.location.search, path === '/' ? '/' : buildUrl(path))
+                const dest = keepVse(history.location.search, path === '/' ? '/' : buildUrl(removeSiteLocaleFromPath(path)))
                 history[action](dest, ...args)
             }
         },
