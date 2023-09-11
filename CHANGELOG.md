@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.16.0](https://github.com/amplience/amplience-sfcc-composable-commerce/compare/v1.15.0...v1.16.0) (2023-09-11)
+
+
+### Bug Fixes
+
+* Node 18 for deployment ([11727ae](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/11727ae866a585373aaaf28fa458895c02a7ac27))
+
 ## [1.15.0](https://github.com/amplience/amplience-sfcc-composable-commerce/compare/v1.14.0...v1.15.0) (2023-08-23)
 
 
