@@ -24,6 +24,7 @@ import GridLock from '../grid-lock'
 import Brightcove from '../brightcove'
 import FormBuilder from '../form-builder'
 import Stylitics from '../stylitics'
+import AmplienceText from '../text'
 
 const Blank = () => <></>
 
@@ -59,6 +60,8 @@ const componentsMapping = {
     'https://sfcc.com/site/navigation/content-page': Blank,
     'https://sfcc.com/site/navigation/category': Blank,
     'https://sfcc.com/site/navigation/group': Blank,
+
+    'https://amplience.com/composablecommerce/text.json': AmplienceText
 }
 
 const AmplienceWrapper = ({fetch, content, components, skeleton, rtvActive, ...rest}) => {
