@@ -1133,7 +1133,7 @@ const DemoImage = ({
                         data-bleed="0"
                         data-position="center center"
                         data-speed="0.0"
-                        data-image-src={`//${endpoint}.a.bigcontent.io/v1/static/${imageName}`}
+                        data-image-src={`https://${endpoint}.a.bigcontent.io/v1/static/${imageName}`}
                         data-mirror-container={`.amp-dc-advanced-banner-mirror-${imageName}`}
                     ></div>
                 ) : (
@@ -1147,7 +1147,7 @@ const DemoImage = ({
                         data-bleed="0"
                         data-position="center center"
                         data-speed="0.0"
-                        data-image-src={`//${defaultHost}/i/${endpoint}/${imageName}?$poi_old$&w=2560&sm=aspect&aspect=${
+                        data-image-src={`https://${defaultHost}/i/${endpoint}/${imageName}?$poi_old$&w=2560&sm=aspect&aspect=${
                             smallerheight ? 3 : 2
                         }:1&qlt=80`}
                         data-mirror-container={`.amp-dc-advanced-banner-mirror-${imageName}`}
@@ -1159,56 +1159,56 @@ const DemoImage = ({
                         <img
                             loading="lazy"
                             className="amp-dc-image-pic"
-                            src={`//${endpoint}.a.bigcontent.io/v1/static/${imageName}`}
+                            src={`https://${endpoint}.a.bigcontent.io/v1/static/${imageName}`}
                             alt={imageAltText}
                         />
                     ) : togglePOI ? (
                         <>
                             <source
                                 media="(max-width: 640px)"
-                                srcSet={`//${defaultHost}/i/${endpoint}/${imageName}.webp?w=640&qlt=75`}
+                                srcSet={`https://${defaultHost}/i/${endpoint}/${imageName}.webp?w=640&qlt=75`}
                                 type="image/webp"
                             />
                             <source
                                 media="(max-width: 768px)"
-                                srcSet={`//${defaultHost}/i/${endpoint}/${imageName}.webp?w=1024&qlt=75`}
+                                srcSet={`https://${defaultHost}/i/${endpoint}/${imageName}.webp?w=1024&qlt=75`}
                                 type="image/webp"
                             />
                             <source
                                 media="(min-width: 768px)"
-                                srcSet={`//${defaultHost}/i/${endpoint}/${imageName}.webp?w=1440&qlt=75`}
+                                srcSet={`https://${defaultHost}/i/${endpoint}/${imageName}.webp?w=1440&qlt=75`}
                                 type="image/webp"
                             />
                             <source
                                 media="(min-width: 1024px)"
-                                srcSet={`//${defaultHost}/i/${endpoint}/${imageName}.webp?w=2000&qlt=75`}
+                                srcSet={`https://${defaultHost}/i/${endpoint}/${imageName}.webp?w=2000&qlt=75`}
                                 type="image/webp"
                             />
 
                             <source
                                 media="(max-width: 640px)"
-                                srcSet={`//${defaultHost}/i/${endpoint}/${imageName}?w=640&qlt=75`}
+                                srcSet={`https://${defaultHost}/i/${endpoint}/${imageName}?w=640&qlt=75`}
                                 type="image/jpeg"
                             />
                             <source
                                 media="(max-width: 768px)"
-                                srcSet={`//${defaultHost}/i/${endpoint}/${imageName}?w=1024&qlt=75`}
+                                srcSet={`https://${defaultHost}/i/${endpoint}/${imageName}?w=1024&qlt=75`}
                                 type="image/jpeg"
                             />
                             <source
                                 media="(min-width: 768px)"
-                                srcSet={`//${defaultHost}/i/${endpoint}/${imageName}?w=1440&qlt=75`}
+                                srcSet={`https://${defaultHost}/i/${endpoint}/${imageName}?w=1440&qlt=75`}
                                 type="image/jpeg"
                             />
                             <source
                                 media="(min-width: 1024px)"
-                                srcSet={`//${defaultHost}/i/${endpoint}/${imageName}?w=2000&qlt=75`}
+                                srcSet={`https://${defaultHost}/i/${endpoint}/${imageName}?w=2000&qlt=75`}
                                 type="image/jpeg"
                             />
                             <img
                                 loading="lazy"
                                 className="amp-dc-image-pic"
-                                src={`//${defaultHost}/i/${endpoint}/${imageName}`}
+                                src={`https://${defaultHost}/i/${endpoint}/${imageName}`}
                                 alt={imageAltText}
                             />
                         </>
@@ -1216,49 +1216,49 @@ const DemoImage = ({
                         <>
                             <source
                                 media="(max-width: 640px)"
-                                srcSet={`//${defaultHost}/i/${endpoint}/${imageName}.webp?w=640&qlt=75`}
+                                srcSet={`https://${defaultHost}/i/${endpoint}/${imageName}.webp?w=640&qlt=75`}
                                 type="image/webp"
                             />
                             <source
                                 media="(max-width: 768px)"
-                                srcSet={`//${defaultHost}/i/${endpoint}/${imageName}.webp?w=1024&qlt=75`}
+                                srcSet={`https://${defaultHost}/i/${endpoint}/${imageName}.webp?w=1024&qlt=75`}
                                 type="image/webp"
                             />
                             <source
                                 media="(min-width: 768px)"
-                                srcSet={`//${defaultHost}/i/${endpoint}/${imageName}.webp?w=1440&qlt=75`}
+                                srcSet={`https://${defaultHost}/i/${endpoint}/${imageName}.webp?w=1440&qlt=75`}
                                 type="image/webp"
                             />
                             <source
                                 media="(min-width: 1024px)"
-                                srcSet={`//${defaultHost}/i/${endpoint}/${imageName}.webp?w=2000&qlt=75`}
+                                srcSet={`https://${defaultHost}/i/${endpoint}/${imageName}.webp?w=2000&qlt=75`}
                                 type="image/webp"
                             />
 
                             <source
                                 media="(max-width: 640px)"
-                                srcSet={`//${defaultHost}/i/${endpoint}/${imageName}?w=640&qlt=75`}
+                                srcSet={`https://${defaultHost}/i/${endpoint}/${imageName}?w=640&qlt=75`}
                                 type="image/jpeg"
                             />
                             <source
                                 media="(max-width: 768px)"
-                                srcSet={`//${defaultHost}/i/${endpoint}/${imageName}?w=1024&qlt=75`}
+                                srcSet={`https://${defaultHost}/i/${endpoint}/${imageName}?w=1024&qlt=75`}
                                 type="image/jpeg"
                             />
                             <source
                                 media="(min-width: 768px)"
-                                srcSet={`//${defaultHost}/i/${endpoint}/${imageName}?w=1440&qlt=75`}
+                                srcSet={`https://${defaultHost}/i/${endpoint}/${imageName}?w=1440&qlt=75`}
                                 type="image/jpeg"
                             />
                             <source
                                 media="(min-width: 1024px)"
-                                srcSet={`//${defaultHost}/i/${endpoint}/${imageName}?w=2000&qlt=75`}
+                                srcSet={`https://${defaultHost}/i/${endpoint}/${imageName}?w=2000&qlt=75`}
                                 type="image/jpeg"
                             />
                             <img
                                 loading="lazy"
                                 className="amp-dc-image-pic"
-                                src={`//${defaultHost}/i/${endpoint}/${imageName}`}
+                                src={`https://${defaultHost}/i/${endpoint}/${imageName}`}
                                 alt={imageAltText}
                             />
                         </>
@@ -1266,49 +1266,49 @@ const DemoImage = ({
                         <>
                             <source
                                 media="(max-width: 640px)"
-                                srcSet={`//${defaultHost}/i/${endpoint}/${imageName}.webp?$poi$${imageQueryText}&w=640&sm=aspect&aspect=1:1&qlt=75`}
+                                srcSet={`https://${defaultHost}/i/${endpoint}/${imageName}.webp?$poi$${imageQueryText}&w=640&sm=aspect&aspect=1:1&qlt=75`}
                                 type="image/webp"
                             />
                             <source
                                 media="(max-width: 768px)"
-                                srcSet={`//${defaultHost}/i/${endpoint}/${imageName}.webp?$poi$${imageQueryText}&w=1024&sm=aspect&aspect=4:3&qlt=75`}
+                                srcSet={`https://${defaultHost}/i/${endpoint}/${imageName}.webp?$poi$${imageQueryText}&w=1024&sm=aspect&aspect=4:3&qlt=75`}
                                 type="image/webp"
                             />
                             <source
                                 media="(min-width: 768px)"
-                                srcSet={`//${defaultHost}/i/${endpoint}/${imageName}.webp?$poi$${imageQueryText}&w=1440&sm=aspect&aspect=2:1&qlt=75`}
+                                srcSet={`https://${defaultHost}/i/${endpoint}/${imageName}.webp?$poi$${imageQueryText}&w=1440&sm=aspect&aspect=2:1&qlt=75`}
                                 type="image/webp"
                             />
                             <source
                                 media="(min-width: 1024px)"
-                                srcSet={`//${defaultHost}/i/${endpoint}/${imageName}.webp?$poi$${imageQueryText}&w=2000&qlt=75`}
+                                srcSet={`https://${defaultHost}/i/${endpoint}/${imageName}.webp?$poi$${imageQueryText}&w=2000&qlt=75`}
                                 type="image/webp"
                             />
 
                             <source
                                 media="(max-width: 640px)"
-                                srcSet={`//${defaultHost}/i/${endpoint}/${imageName}?$poi$${imageQueryText}&w=640&sm=aspect&aspect=1:1&qlt=75`}
+                                srcSet={`https://${defaultHost}/i/${endpoint}/${imageName}?$poi$${imageQueryText}&w=640&sm=aspect&aspect=1:1&qlt=75`}
                                 type="image/jpeg"
                             />
                             <source
                                 media="(max-width: 768px)"
-                                srcSet={`//${defaultHost}/i/${endpoint}/${imageName}?$poi$${imageQueryText}&w=1024&sm=aspect&aspect=4:3&qlt=75`}
+                                srcSet={`https://${defaultHost}/i/${endpoint}/${imageName}?$poi$${imageQueryText}&w=1024&sm=aspect&aspect=4:3&qlt=75`}
                                 type="image/jpeg"
                             />
                             <source
                                 media="(min-width: 768px)"
-                                srcSet={`//${defaultHost}/i/${endpoint}/${imageName}?$poi$${imageQueryText}&w=1440&sm=aspect&aspect=2:1&qlt=75`}
+                                srcSet={`https://${defaultHost}/i/${endpoint}/${imageName}?$poi$${imageQueryText}&w=1440&sm=aspect&aspect=2:1&qlt=75`}
                                 type="image/jpeg"
                             />
                             <source
                                 media="(min-width: 1024px)"
-                                srcSet={`//${defaultHost}/i/${endpoint}/${imageName}?$poi$${imageQueryText}&w=2000&qlt=75`}
+                                srcSet={`https://${defaultHost}/i/${endpoint}/${imageName}?$poi$${imageQueryText}&w=2000&qlt=75`}
                                 type="image/jpeg"
                             />
                             <img
                                 loading="lazy"
                                 className="amp-dc-image-pic"
-                                src={`//${defaultHost}/i/${endpoint}/${imageName}?$poi$${imageQueryText}&w=1440&sm=aspect&aspect=${
+                                src={`https://${defaultHost}/i/${endpoint}/${imageName}?$poi$${imageQueryText}&w=1440&sm=aspect&aspect=${
                                     smallerheight ? 3 : 2
                                 }:1&qlt=75`}
                                 alt={imageAltText}
