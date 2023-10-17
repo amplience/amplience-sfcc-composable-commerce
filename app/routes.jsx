@@ -42,6 +42,7 @@ const Developers = loadable(() => import('./pages/amplience/developers'), {fallb
 
 //Amplience Pages
 const RealtimeVisualization = loadable(() => import('./pages/amplience/realtime-visualization'))
+const RealtimeVisualizationDemo = loadable(() => import('./pages/amplience/realtime-visualization-demo'))
 const ContentPage = loadable(() => import('./pages/amplience/page'))
 const SearchList = loadable(() => import('./pages/amplience/search-list'))
 
@@ -113,6 +114,11 @@ const routes = [
     {
         path: '/visualization',
         component: RealtimeVisualization,
+        exact: false
+    },
+    {
+        path: '/visualization-demo',
+        component: RealtimeVisualizationDemo,
         exact: false
     },
     {

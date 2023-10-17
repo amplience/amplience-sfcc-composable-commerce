@@ -26,6 +26,8 @@ import FormBuilder from '../form-builder'
 import Stylitics from '../stylitics'
 import AmplienceText from '../text'
 
+import DemoBanner from '../demo-banner'
+
 const Blank = () => <></>
 
 const componentsMapping = {
@@ -61,7 +63,8 @@ const componentsMapping = {
     'https://sfcc.com/site/navigation/category': Blank,
     'https://sfcc.com/site/navigation/group': Blank,
 
-    'https://amplience.com/composablecommerce/text.json': AmplienceText
+    'https://amplience.com/composablecommerce/text.json': AmplienceText,
+    'https://amplience.com/composablecommerce/banner.json': DemoBanner
 }
 
 const AmplienceWrapper = ({fetch, content, components, skeleton, rtvActive, ...rest}) => {
