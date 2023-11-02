@@ -138,7 +138,7 @@ export const importArgs = (yargs: Argv) => {
         })
         .option('openaiKey', {
             describe: 'OpenAI Key (required for rich text AI features)',
-            default: '',
+            default: null,
             type: 'string'
         })
 };

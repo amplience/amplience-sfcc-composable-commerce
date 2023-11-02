@@ -263,9 +263,11 @@
                     "language": "json",
                     "styles": "",
                     "tools": {
+                        {{#if openaiKey}}
                         "ai": {
                             "key": "{{openaiKey}}"
                         },
+                        {{/if}}
                         "blacklist": [],
                         "dc-content-link": {
                             "contentTypes": [
