@@ -8,6 +8,6 @@
     "category": "CONTENT_FIELD",
     "parameters": "{}",
     "snippets": [],
-    "settings": "{\"API\":{\"READ\":true,\"EDIT\":true},\"SANDBOX\":{\"SAME_ORIGIN\":false,\"MODALS\":false,\"NAVIGATION\":false,\"POPUPS\":false,\"POPUP_ESCAPE_SANDBOX\":false,\"DOWNLOADS\":false,\"FORMS\":false}}",
+    "settings": "{\"API\":{\"READ\":true,\"EDIT\":true},\"SANDBOX\":{\"SAME_ORIGIN\":false,\"MODALS\":false,\"NAVIGATION\":false,\"POPUPS\":true,\"POPUP_ESCAPE_SANDBOX\":false,\"DOWNLOADS\":false,\"FORMS\":false}}",
     "status": "ACTIVE"
 }
