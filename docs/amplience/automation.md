@@ -38,7 +38,9 @@ You will need the following information from your Amplience and SFCC account:
     * Auth secret
     * Site ID
 
-There is an optional command to specify your OpenAI key for use with the Rich Text component for Generative Content `--openaiKey`.
+By default, the automation will use the [Amplience Credit Service](https://amplience.com/developers/docs/ai-services/credits) for creating Generative Content with the Rich Text component so there is no need to use the `--openaiKey` parameter.
+There is an optional command to specify your own OpenAI key for use with the Rich Text component for Generative Content `--openaiKey`.
+
 
 [Documentation](https://github.com/amplience/dc-extension-rich-text)
 
