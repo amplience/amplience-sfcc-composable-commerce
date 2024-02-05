@@ -1,3 +1,4 @@
+// THIS COMPONENT IS FOR DEMO PURPOSES ONLY
 import React from 'react'
 import PropTypes from 'prop-types'
 import {Box, Flex, Heading, Stack, useMultiStyleConfig} from '@chakra-ui/react'
@@ -5,8 +6,9 @@ import Button from '../button'
 
 const Brightcove = ({
     title,
-    video,
-    playerType,
+    accountId,
+    videoId,
+    playerId,
     actions,
     textAlign = 'Left',
     justifyContent = 'Left',
@@ -16,11 +18,12 @@ const Brightcove = ({
 }) => {
     const styles = useMultiStyleConfig('Brightcove')
     
-    const playerID = playerType.split(' - ')[1]
-    const type = playerType.split(' - ')[0]
-    const videoID = type == 'Single' ? video : ''
-    const playlistID = type == 'Playlist' ? video : ''
-    const param = type == 'Single' ? 'videoId' : 'playlistId'
+    const acctID = accountId.split(' - ')[0]
+    const playerID = playerId.split(' - ')[0]
+    const type = playerId.split(' - ')[1]
+    const videoID = type == 'Single' ? videoId : ''
+    const playlistID = type == 'Playlist' ? videoId : ''
+    const param = type == 'Single' ? 'videoId' : 'videoId'
 
     return (
         <Box
@@ -47,7 +50,7 @@ const Brightcove = ({
                             <div style={{position: 'relative', display: 'block'}}>
                                 <div style={{paddingTop: '56.25%'}}>
                                     <iframe 
-                                        src={`https://players.brightcove.net/6415707867001/${playerID}_default/index.html?${param}=${video}`}
+                                        src={`https://players.brightcove.net/${acctID}/${playerID}_default/index.html?${param}=${videoId}`}
                                         allowfullscreen="" 
                                         allow="encrypted-media" 
                                         style={{position: 'absolute', top: '0px', right: '0px', bottom: '0px', left: '0px', width: '100%', height: '100%'}}>
@@ -78,6 +81,7 @@ Brightcove.propTypes = {
      * Brightcove component main title
      */
     title: PropTypes.string,
+    acct: PropTypes.string
 }
 
 export default Brightcove

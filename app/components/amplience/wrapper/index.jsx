@@ -43,7 +43,7 @@ const componentsMapping = {
     'https://sfcc.com/components/card-list': CardList,
     'https://sfcc.com/components/features': Features,
     'https://sfcc.com/components/grid-lock': GridLock,
-    'https://sfcc.com/components/video': Brightcove,
+    'https://sfcc.com/components/brightcove': Brightcove,
     'https://sfcc.com/components/form-builder': FormBuilder,
 
     'https://sfcc.com/content/stylitics/generic': Stylitics,

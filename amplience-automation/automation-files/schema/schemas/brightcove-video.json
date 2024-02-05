@@ -1,0 +1,40 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://sfcc.com/components/brightcove",
+    "title": "Title",
+    "description": "Description",
+    "allOf": [
+        {
+            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+        }
+    ],
+    "type": "object",
+    "properties": {
+        "accountId": {
+            "title": "Account ID",
+            "description": "Brightcove Account ID",
+            "type": "string",
+            "default": "6415818451001 - Amplience",
+            "enum": [
+                "6415818451001 - Amplience"
+            ]
+        },
+        "videoId": {
+            "title": "Video ID",
+            "description": "Brightcove Video ID",
+            "type": "string",
+            "minLength": 0,
+            "maxLength": 16
+        },
+        "playerId": {
+            "title": "Player ID",
+            "description": "Brightcove Player ID",
+            "type": "string",
+            "default": "default - Brightcove Default Player",
+            "enum": [
+                "default - Brightcove Default Player"
+            ]
+        }
+    },
+    "propertyOrder": []
+}
