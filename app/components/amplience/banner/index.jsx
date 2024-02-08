@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {Box, Flex, Image, Link, Stack, useMultiStyleConfig} from '@chakra-ui/react'
+import {Box, Flex, Image, Link, useMultiStyleConfig} from '@chakra-ui/react'
 import {getImageUrl} from '../../../utils/amplience/image'
 
 const Banner = ({
