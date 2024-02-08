@@ -24,10 +24,12 @@ import GridLock from '../grid-lock'
 import Brightcove from '../brightcove'
 import FormBuilder from '../form-builder'
 import Stylitics from '../stylitics'
+import Banner from '../banner'
 
 const Blank = () => <></>
 
 const componentsMapping = {
+    'https://sfcc.com/components/banner': Banner,
     'https://sfcc.com/components/hero': Hero,
     'https://sfcc.com/components/section': Section,
     'https://sfcc.com/components/rich-text': AmplienceRichText,
