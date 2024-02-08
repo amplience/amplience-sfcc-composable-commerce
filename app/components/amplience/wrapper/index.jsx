@@ -26,12 +26,16 @@ import FormBuilder from '../form-builder'
 import Stylitics from '../stylitics'
 import Banner from '../banner'
 import Promo from '../promo'
+import BannerBynder from '../banner-bynder'
+import PromoBynder from '../promo-bynder'
 
 const Blank = () => <></>
 
 const componentsMapping = {
     'https://sfcc.com/components/banner': Banner,
+    'https://sfcc.com/components/banner-bynder': BannerBynder,
     'https://sfcc.com/components/promo': Promo,
+    'https://sfcc.com/components/promo-bynder': PromoBynder,
     'https://sfcc.com/components/hero': Hero,
     'https://sfcc.com/components/section': Section,
     'https://sfcc.com/components/rich-text': AmplienceRichText,
