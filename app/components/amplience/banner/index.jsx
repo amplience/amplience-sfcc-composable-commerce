@@ -3,11 +3,7 @@ import PropTypes from 'prop-types'
 import {Box, Flex, Image, Link, useMultiStyleConfig} from '@chakra-ui/react'
 import {getImageUrl} from '../../../utils/amplience/image'
 
-const Banner = ({
-                  img,
-                  clickThru,
-                  ...props
-              }) => {
+const Banner = ({img, clickThru, ...props}) => {
     const styles = useMultiStyleConfig('Hero', {})
     let src = ''
     let alt = ''
@@ -17,46 +13,35 @@ const Banner = ({
     }
 
     return (
-        <Box
-            {...styles.container}
-            {...props}
-        >
-            {
-                img?.image && (
-                    <Flex
-                        {...styles.imageContainer}
-                    >
-                        <Box position={'relative'} width={'full'}>
-                            {
-                                clickThru && (
-                                    <Link href={clickThru}>
-                                        <Image
-                                            fit={'cover'}
-                                            align={'center'}
-                                            width={'100%'}
-                                            height={'100%'}
-                                            src={src}
-                                            alt={alt} 
-                                        />
-                                    </Link>
-                                )
-                            }
-                            {
-                                !clickThru && (
-                                    <Image
-                                        fit={'cover'}
-                                        align={'center'}
-                                        width={'100%'}
-                                        height={'100%'}
-                                        src={src}
-                                        alt={alt} 
-                                    />
-                                )
-                            }
-                        </Box>
-                    </Flex>
-                )
-            }
+        <Box {...styles.container} {...props}>
+            {img?.image && (
+                <Flex {...styles.imageContainer}>
+                    <Box position={'relative'} width={'full'}>
+                        {clickThru && (
+                            <Link href={clickThru}>
+                                <Image
+                                    fit={'cover'}
+                                    align={'center'}
+                                    width={'100%'}
+                                    height={'100%'}
+                                    src={src}
+                                    alt={alt}
+                                />
+                            </Link>
+                        )}
+                        {!clickThru && (
+                            <Image
+                                fit={'cover'}
+                                align={'center'}
+                                width={'100%'}
+                                height={'100%'}
+                                src={src}
+                                alt={alt}
+                            />
+                        )}
+                    </Box>
+                </Flex>
+            )}
         </Box>
     )
 }

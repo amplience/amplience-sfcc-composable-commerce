@@ -1,9 +1,12 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import PropTypes from 'prop-types'
-import {Box, Flex, Image, Stack, useMultiStyleConfig} from '@chakra-ui/react'
+import {Box, Flex, Image, Stack, Text, useMultiStyleConfig} from '@chakra-ui/react'
 import Button from '../button'
 import AmplienceMarkdown from '../markdown'
+import ProductScroller from '../product-scroller'
 import styled from '@emotion/styled'
+import {useCommerceAPI} from '../../../commerce-api/contexts'
+import {handleAsyncError} from '../../../commerce-api/utils'
 
 const Contain = styled(Box)`
     .amp-rich-text h1 {
@@ -82,38 +85,88 @@ const Contain = styled(Box)`
         margin-block-end: 1em;
     }
 `
+
+const selectImage = (product) => {
+    const groups = product.imageGroups
+    if (groups == null || groups.length === 0) {
+        return {}
+    }
+
+    const desiredViewType = 'large'
+    const desiredGroup = groups.find((group) => group.viewType === desiredViewType) ?? groups[0]
+
+    return desiredGroup.images[0]
+}
 const PromoBynder = ({
-                  headline,
-                  bynder,
-                  clickThru,
-                  coupon,
-                  promotionalLanguage,
-                  productSku,
-                  ...props
-              }) => {
+    headline,
+    bynder,
+    clickThru,
+    coupon,
+    promotionalLanguage,
+    productSku,
+    ...props
+}) => {
     const styles = useMultiStyleConfig('Hero', {})
     let src = ''
     if (bynder) {
         src = bynder.files?.webImage?.url
     }
 
+    const api = useCommerceAPI()
+    const [apiProducts, setApiProducts] = useState(null)
+    const [isLoading, setIsLoading] = useState(true)
+
+    useEffect(() => {
+        let active = true
+
+        if (!productSku) {
+            // No products likely means that the IDs haven't arrived yet.
+            setApiProducts(null)
+            setIsLoading(true)
+            return
+        }
+
+        handleAsyncError(async () => {
+            const response = await api.shopperProducts.getProducts({
+                parameters: {ids: [productSku]}
+            })
+
+            if (active) {
+                const product = response.data.map((product) => ({
+                    ...product,
+                    productId: product.id,
+                    image: selectImage(product)
+                }))
+
+                setApiProducts(product)
+                setIsLoading(false)
+            }
+        })()
+
+        return () => (active = false)
+    }, [api, productSku])
+
     return (
         <Contain>
-            <Box
-                {...styles.container}
-                {...props}
-            >
+            <Box {...styles.container} {...props}>
                 <Stack
                     {...styles.stackContainer}
-                    justifyContent={{base: "unset"}}
-                    alignItems={{base: "unset"}}
+                    justifyContent={{base: 'unset'}}
+                    alignItems={{base: 'unset'}}
                 >
-                    <Stack {...styles.textContainer} textAlign={{base: 'center'}}
-                        position={{base: 'unset', md: 'absolute'}}>
-                        
+                    <Stack
+                        {...styles.textContainer}
+                        textAlign={{base: 'center'}}
+                        position={{base: 'unset', md: 'absolute'}}
+                    >
                         <AmplienceMarkdown content={headline} className="amp-rich-text" />
 
-                        {headline}
+                        {coupon?.length && (
+                            <Box position={'relative'} width={'full'}>
+                                <Text>{coupon[0].code}</Text>
+                                <Text>{coupon[0].limit}</Text>
+                            </Box>
+                        )}
 
                         {clickThru && (
                             <Box maxWidth={{base: 'full', md: '75%'}}>
@@ -122,9 +175,7 @@ const PromoBynder = ({
                         )}
                     </Stack>
                     {src && (
-                        <Flex
-                            {...styles.imageContainer}
-                        >
+                        <Flex {...styles.imageContainer}>
                             <Box position={'relative'} width={'full'}>
                                 <Image
                                     fit={'cover'}
@@ -137,6 +188,11 @@ const PromoBynder = ({
                         </Flex>
                     )}
                 </Stack>
+                {productSku && (
+                    <Stack pt={8} spacing={16}>
+                        <ProductScroller title="" products={apiProducts} isLoading={isLoading} />
+                    </Stack>
+                )}
             </Box>
         </Contain>
     )
@@ -149,24 +205,20 @@ PromoBynder.propTypes = {
      * Hero component image
      */
     bynder: PropTypes.shape({
-        image: PropTypes.shape({
-            files: PropTypes.shape({
-                webImage: PropTypes.shape({
-                    url: PropTypes.string
-                })
+        files: PropTypes.shape({
+            webImage: PropTypes.shape({
+                url: PropTypes.string
             })
-        }),
+        })
     }),
     /**
      * Click Thru
      */
     clickThru: PropTypes.string,
     headline: PropTypes.string,
+    productSku: PropTypes.string,
     promotionalLanguage: PropTypes.string,
-    coupon: PropTypes.shape({
-        code: PropTypes.string,
-        limit: PropTypes.number
-    }),
+    coupon: PropTypes.array
 }
 
 export default PromoBynder

@@ -1,10 +1,13 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import PropTypes from 'prop-types'
-import {Box, Flex, Image, Stack, useMultiStyleConfig} from '@chakra-ui/react'
+import {Box, Flex, Image, Stack, Text, useMultiStyleConfig} from '@chakra-ui/react'
 import Button from '../button'
 import {getImageUrl} from '../../../utils/amplience/image'
+import ProductScroller from '../product-scroller'
 import AmplienceMarkdown from '../markdown'
 import styled from '@emotion/styled'
+import {useCommerceAPI} from '../../../commerce-api/contexts'
+import {handleAsyncError} from '../../../commerce-api/utils'
 
 const Contain = styled(Box)`
     .amp-rich-text h1 {
@@ -83,15 +86,19 @@ const Contain = styled(Box)`
         margin-block-end: 1em;
     }
 `
-const Promo = ({
-                  headline,
-                  img,
-                  clickThru,
-                  coupon,
-                  promotionalLanguage,
-                  productSku,
-                  ...props
-              }) => {
+
+const selectImage = (product) => {
+    const groups = product.imageGroups
+    if (groups == null || groups.length === 0) {
+        return {}
+    }
+
+    const desiredViewType = 'large'
+    const desiredGroup = groups.find((group) => group.viewType === desiredViewType) ?? groups[0]
+
+    return desiredGroup.images[0]
+}
+const Promo = ({headline, img, clickThru, coupon, promotionalLanguage, productSku, ...props}) => {
     const styles = useMultiStyleConfig('Hero', {})
     let src = ''
     let alt = ''
@@ -99,25 +106,60 @@ const Promo = ({
         src = getImageUrl(img.image)
         alt = img.alt
     }
+    const api = useCommerceAPI()
+    const [apiProducts, setApiProducts] = useState(null)
+    const [isLoading, setIsLoading] = useState(true)
+
+    useEffect(() => {
+        let active = true
+
+        if (!productSku) {
+            // No products likely means that the IDs haven't arrived yet.
+            setApiProducts(null)
+            setIsLoading(true)
+            return
+        }
+
+        handleAsyncError(async () => {
+            const response = await api.shopperProducts.getProducts({
+                parameters: {ids: [productSku]}
+            })
+
+            if (active) {
+                const products = response.data.map((product) => ({
+                    ...product,
+                    productId: product.id,
+                    image: selectImage(product)
+                }))
+
+                setApiProducts(products)
+                setIsLoading(false)
+            }
+        })()
+
+        return () => (active = false)
+    }, [api, productSku])
 
     return (
         <Contain>
-            <Box
-                {...styles.container}
-                {...props}
-            >
+            <Box {...styles.container} {...props}>
                 <Stack
                     {...styles.stackContainer}
-                    justifyContent={{base: "unset"}}
-                    alignItems={{base: "unset"}}
+                    justifyContent={{base: 'unset'}}
+                    alignItems={{base: 'unset'}}
                 >
-                    <Stack {...styles.textContainer} textAlign={{base: 'center'}}
-                        position={{base: 'unset', md: 'absolute'}}>
-                        
+                    <Stack
+                        {...styles.textContainer}
+                        textAlign={{base: 'center'}}
+                        position={{base: 'unset', md: 'absolute'}}
+                    >
                         <AmplienceMarkdown content={headline} className="amp-rich-text" />
-
-                        {headline}
-
+                        {coupon?.length && (
+                            <Box position={'relative'} width={'full'}>
+                                <Text>{coupon[0].code}</Text>
+                                <Text>{coupon[0].limit}</Text>
+                            </Box>
+                        )}
                         {clickThru && (
                             <Box maxWidth={{base: 'full', md: '75%'}}>
                                 <Button label={promotionalLanguage} url={clickThru}></Button>
@@ -125,9 +167,7 @@ const Promo = ({
                         )}
                     </Stack>
                     {img?.image && (
-                        <Flex
-                            {...styles.imageContainer}
-                        >
+                        <Flex {...styles.imageContainer}>
                             <Box position={'relative'} width={'full'}>
                                 <Image
                                     fit={'cover'}
@@ -141,6 +181,11 @@ const Promo = ({
                         </Flex>
                     )}
                 </Stack>
+                {productSku && (
+                    <Stack pt={8} spacing={16}>
+                        <ProductScroller title="" products={apiProducts} isLoading={isLoading} />
+                    </Stack>
+                )}
             </Box>
         </Contain>
     )
@@ -166,11 +211,9 @@ Promo.propTypes = {
      */
     clickThru: PropTypes.string,
     headline: PropTypes.string,
+    productSku: PropTypes.string,
     promotionalLanguage: PropTypes.string,
-    coupon: PropTypes.shape({
-        code: PropTypes.string,
-        limit: PropTypes.number
-    }),
+    coupon: PropTypes.array
 }
 
 export default Promo

@@ -48,7 +48,7 @@ const {handler} = runtime.createHandler(options, (app) => {
                         '*.staging.bigcontent.io',
                         'i8.amplience.net',
                         '*.stylitics.com',
-                        'wave-trial.getbynder.com',
+                        'wave-trial.getbynder.com'
                     ],
                     'script-src': [
                         "'self'",
