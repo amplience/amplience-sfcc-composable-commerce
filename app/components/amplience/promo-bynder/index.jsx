@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react'
 import PropTypes from 'prop-types'
-import {Box, Flex, Image, Stack, Text, useMultiStyleConfig} from '@chakra-ui/react'
+import {Box, Flex, Image, Stack, Text, Center, useMultiStyleConfig} from '@chakra-ui/react'
 import Button from '../button'
 import AmplienceMarkdown from '../markdown'
-import ProductScroller from '../product-scroller'
+import ProductTile from '../product-tile'
 import styled from '@emotion/styled'
 import {useCommerceAPI} from '../../../commerce-api/contexts'
 import {handleAsyncError} from '../../../commerce-api/utils'
@@ -169,9 +169,24 @@ const PromoBynder = ({
                         )}
 
                         {clickThru && (
-                            <Box maxWidth={{base: 'full', md: '75%'}}>
-                                <Button label={promotionalLanguage} url={clickThru}></Button>
-                            </Box>
+                            <Center>
+                                <Box maxWidth={{base: 'full', md: '75%'}}>
+                                    <Button label={promotionalLanguage} url={clickThru}></Button>
+                                </Box>
+                            </Center>
+                        )}
+                        {apiProducts && (
+                            <Center>
+                                <Box position={'relative'} width={'sm'}>
+                                    <ProductTile
+                                        data-testid="product-scroller-item"
+                                        product={apiProducts[0]}
+                                        dynamicImageProps={{
+                                            widths: ['70vw', '70vw', '40vw', '30vw']
+                                        }}
+                                    />
+                                </Box>
+                            </Center>
                         )}
                     </Stack>
                     {src && (
@@ -188,11 +203,6 @@ const PromoBynder = ({
                         </Flex>
                     )}
                 </Stack>
-                {productSku && (
-                    <Stack pt={8} spacing={16}>
-                        <ProductScroller title="" products={apiProducts} isLoading={isLoading} />
-                    </Stack>
-                )}
             </Box>
         </Contain>
     )

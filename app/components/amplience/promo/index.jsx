@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react'
 import PropTypes from 'prop-types'
-import {Box, Flex, Image, Stack, Text, useMultiStyleConfig} from '@chakra-ui/react'
+import {Box, Flex, Image, Stack, Text, Center, useMultiStyleConfig} from '@chakra-ui/react'
 import Button from '../button'
 import {getImageUrl} from '../../../utils/amplience/image'
-import ProductScroller from '../product-scroller'
+import ProductTile from '../product-tile'
 import AmplienceMarkdown from '../markdown'
 import styled from '@emotion/styled'
 import {useCommerceAPI} from '../../../commerce-api/contexts'
@@ -132,6 +132,7 @@ const Promo = ({headline, img, clickThru, coupon, promotionalLanguage, productSk
                     image: selectImage(product)
                 }))
 
+                console.log(products)
                 setApiProducts(products)
                 setIsLoading(false)
             }
@@ -161,9 +162,24 @@ const Promo = ({headline, img, clickThru, coupon, promotionalLanguage, productSk
                             </Box>
                         )}
                         {clickThru && (
-                            <Box maxWidth={{base: 'full', md: '75%'}}>
-                                <Button label={promotionalLanguage} url={clickThru}></Button>
-                            </Box>
+                            <Center>
+                                <Box maxWidth={{base: 'full', md: '75%'}}>
+                                    <Button label={promotionalLanguage} url={clickThru}></Button>
+                                </Box>
+                            </Center>
+                        )}
+                        {apiProducts && (
+                            <Center>
+                                <Box position={'relative'} width={'sm'}>
+                                    <ProductTile
+                                        data-testid="product-scroller-item"
+                                        product={apiProducts[0]}
+                                        dynamicImageProps={{
+                                            widths: ['70vw', '70vw', '40vw', '30vw']
+                                        }}
+                                    />
+                                </Box>
+                            </Center>
                         )}
                     </Stack>
                     {img?.image && (
@@ -181,11 +197,6 @@ const Promo = ({headline, img, clickThru, coupon, promotionalLanguage, productSk
                         </Flex>
                     )}
                 </Stack>
-                {productSku && (
-                    <Stack pt={8} spacing={16}>
-                        <ProductScroller title="" products={apiProducts} isLoading={isLoading} />
-                    </Stack>
-                )}
             </Box>
         </Contain>
     )
