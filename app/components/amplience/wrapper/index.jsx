@@ -28,6 +28,7 @@ import Banner from '../banner'
 import Promo from '../promo'
 import BannerBynder from '../banner-bynder'
 import PromoBynder from '../promo-bynder'
+import PersonalisedExperiencesList from '../personalised-experiences-list'
 
 const Blank = () => <></>
 
@@ -44,6 +45,7 @@ const componentsMapping = {
     'https://sfcc.com/components/personalised-component': PersonalisedComponent,
     'https://sfcc.com/components/personalised-ingrid-component': PersonalisedComponent,
     'https://sfcc.com/components/personalised-container': PersonalisedContainer,
+    'https://sfcc.com/components/personalised-experiences-list': PersonalisedExperiencesList,
     'https://sfcc.com/components/shoppable-image': ShoppableImage,
     'https://sfcc.com/components/shoppable-video': ShoppableVideo,
     'https://sfcc.com/slots/flexible-list': flexibleListSlot,

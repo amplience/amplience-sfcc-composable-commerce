@@ -557,6 +557,31 @@ export class AmplienceAPI {
             result.responses :
             this.filterPages(result.responses, filter);
     }
+
+    async getPersonalisedExperiences(locale = 'en-US', segment: string, categoryFilter: string) {
+        console.log("Getting personalised experiences")
+        await this.clientReady
+        let result: any
+
+        if (categoryFilter != null) {
+            result = await this.client
+                .filterByContentType('https://sfcc.com/components/personalised-experience')
+                .filterBy("/active", true)
+                .filterBy("/segment", segment)
+                .filterBy("/category", categoryFilter)
+                .sortBy("/ranking", "ASC")
+                .request({locale: locale + ',*'})
+        } else {
+            result = await this.client
+                .filterByContentType('https://sfcc.com/components/personalised-experience')
+                .filterBy("/active", true)
+                .filterBy("/segment", segment)
+                .sortBy("/ranking", "ASC")
+                .request({locale: locale + ',*'})
+        }
+        console.log("Experiences", result)
+        return result.responses
+    }
 }
 
 /**

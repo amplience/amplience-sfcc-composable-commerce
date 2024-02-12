@@ -1,0 +1,41 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://sfcc.com/components/personalised-experiences-list",
+
+	"title": "Title",
+	"description": "Description",
+
+	"allOf": [
+		{
+			"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+		}
+	],
+	
+	"type": "object",
+	"properties": {
+		"maxNumber": {
+			"title": "Max Number",
+			"description": "Maximum of personalised experiences",
+			"type": "number",
+			"minimum": 0,
+			"maximum": 10
+		},
+		"categoryFilter": {
+			"title": "Category Filter",
+			"description": "Single-select Category and store ID as string",
+			"type": "string",
+			"ui:extension": {
+				"name": "ecomm-toolkit",
+				"params": {
+					"label": "Category",
+					"view": "single",
+					"data": "category",
+					"type": "string"
+				}
+			}
+		}
+
+		
+	},
+	"propertyOrder": []
+}
