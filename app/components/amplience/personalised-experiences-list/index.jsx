@@ -22,10 +22,7 @@ const PersonalisedExperiencesList = ({
             }
             setExperiences(newExperiences)
         }
-
         retrieveAllExperiences()
-
-        console.log("Group change")
     }, [groups, categoryFilter])
 
     return <>
@@ -42,7 +39,6 @@ const PersonalisedExperiencesList = ({
                 </div>
             }) || <></>
         }
-        {/* <pre>{JSON.stringify(experiences,null,4)}</pre> */}
     </>
 }
 
