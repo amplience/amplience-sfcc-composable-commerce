@@ -1,0 +1,46 @@
+{
+    "contentTypeUri": "https://sfcc.com/components/promo",
+    "status": "ACTIVE",
+    "settings": {
+        "label": "Promo",
+        "icons": [
+            {
+                "size": 256,
+                "url": "https://bigcontent.io/cms/icons/potter/potter-promo.png"
+            }
+        ],
+        "visualizations": [
+            {{#each visualisations}}
+            {
+                "label": "{{this.name}}",
+                "templatedUri": "{{this.url}}/\{{locales}}/visualization?vse=\{{vse.domain}}&contentId=\{{content.sys.id}}&hub=\{{hub.name}}",
+                "default": "{{this.default}}"
+            },
+            {{/each}}
+            {
+                "label": "JSON",
+                "templatedUri": "https://delivery-preview.visualizations.content.amplience.net?id=\{{content.sys.id}}&vse=\{{vse.domain}}&locale=\{{locales}}&hub=\{{cms.hub}}&realtime=true",
+                "default": false
+            },
+            {
+                "label" : "Email",
+                "templatedUri" : "https://\{{vse.domain}}/v1/content/demo/content-item/\{{content.sys.id}}?template=sfmc-template-visualization",
+                "default" : false
+            },
+            {
+                "label" : "iOS App",
+                "templatedUri" : "https://appetize.io/embed/ughrpyly2oqcfgozludkeixat4?device=iphone14pro&osVersion=17.2&params=%7B%22contentId%22%3A%22\{{content.sys.id}}%22%2C%22hubName%22%3A%22\{{hub.name}}%22%2C%22stagingEnvironment%22%3A%22\{{vse.domain}}%22%7D",
+                "default" : false
+            }
+
+        ],
+        "cards": [
+            {
+                "templatedUri": "https://bigcontent.io/cms/cards/summary-photo/index.html?headline=/headline&image=/img/image&imageAlt=/img/alt&src=%2F%2F\{{vse.domain}}%2Fcms%2Fcontent%2Fquery%3FfullBodyObject%3Dtrue%26query%3D%257B%2522sys.iri%2522%253A%2522http%253A%252F%252Fcontent.cms.amplience.com%252F\{{content.sys.id}}%2522%257D%26scope%3Dtree%26store%3Dstaging"
+            }
+        ]
+    },
+    "repositories": [
+        "content"
+    ]
+}
