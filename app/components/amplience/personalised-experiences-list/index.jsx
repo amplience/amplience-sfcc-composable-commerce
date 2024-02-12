@@ -26,7 +26,7 @@ const PersonalisedExperiencesList = ({
         retrieveAllExperiences()
 
         console.log("Group change")
-    }, [groups])
+    }, [groups, categoryFilter])
 
     return <>
         {
