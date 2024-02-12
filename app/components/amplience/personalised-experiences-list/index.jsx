@@ -33,7 +33,6 @@ const PersonalisedExperiencesList = ({
                 return <div>
                     <AmplienceWrapper
                         content={experience.content}
-                        // fecth={{id: experience.content.id}}
                         key={index} 
                     />
                 </div>
