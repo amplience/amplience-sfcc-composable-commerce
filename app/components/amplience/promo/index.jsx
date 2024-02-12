@@ -132,7 +132,6 @@ const Promo = ({headline, img, clickThru, coupon, promotionalLanguage, productSk
                     image: selectImage(product)
                 }))
 
-                console.log(products)
                 setApiProducts(products)
                 setIsLoading(false)
             }
