@@ -1,0 +1,110 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://sfcc.com/components/promo",
+    "title": "Promo",
+    "description": "A Promotional Item",
+
+    "allOf": [
+        {
+            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+        }
+    ],
+
+    "type": "object",
+    "properties": {
+        "headline": {
+            "title": "Headline",
+            "description": "Headline content",
+            "type": "string",
+            "format": "markdown"
+        },
+        "img": {
+            "title": "Image",
+            "type": "object",
+            "properties": {
+                "image": {
+                    "title": "Image",
+                    "allOf": [
+                        {
+                            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                        }
+                    ]
+                },
+                "alt": {
+                    "title": "Alt",
+                    "description": "Image Alt Text",
+                    "type": "string",
+                    "minLength": 0,
+                    "maxLength": 250,
+                    "ui:extension": {
+                        "name": "ai-image-caption",
+                        "params": {
+                            "image": "1/image"
+                        }
+                    }
+                }
+            }
+        },
+        "clickThru": {
+            "title": "Click Thru",
+            "description": "Target URL",
+            "type": "string",
+            "minLength": 0,
+            "maxLength": 250
+        },
+        "promotionalLanguage": {
+            "title": "Promotional Language",
+            "description": "Promotional Language to use",
+            "type": "string",
+            "enum": [
+                "Buy 1, Get 1 Free",
+                "Free Shipping",
+                "Amount Off",
+                "Percentage Off",
+                "Free Gift"
+            ]
+        },
+        "productSku": {
+            "title": "Product",
+            "description": "Product to be used for the promo",
+            "ui:extension": {
+                "name": "ecomm-toolkit",
+                "params": {
+                    "label": "Search By Category",
+                    "view": "product",
+                    "data": "product",
+                    "type": "string"
+                }
+            },
+            "type": "string"
+        },
+        "coupon": {
+            "title": "Coupon",
+            "description": "Use a coupon code with limit",
+            "type": "array",
+            "minItems": 0,
+            "maxItems": 1,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "title": "Coupon Code",
+                        "description": "Coupon Code, max 10 characters",
+                        "type": "string",
+                        "minLength": 0,
+                        "maxLength": 10
+                    },
+                    "limit": {
+                        "title": "Promotion Limit",
+                        "description": "Promotion Limit, 0 is unlimited use",
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 100,
+                        "default": 0
+                    }
+                }
+            }
+        }
+    },
+    "propertyOrder": []
+}

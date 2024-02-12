@@ -1,0 +1,20 @@
+{
+  "name": "bynder-single",
+  "label": "Bynder Single",
+  "description": "Sample extension configuration for single select",
+  "url": "https://bynder.extensions.content.amplience.net",
+  "height": 200,
+  "enabledForAllContentTypes": false,
+  "category": "CONTENT_FIELD",
+  "parameters" : "{\n    \"bynderConfig\":{\n        \"mode\": \"SingleSelect\",\n        \"assetTypes\": [\"image\"]\n    }\n}",
+  "snippets" : [ {
+    "label" : "Bynder - Single Select",
+    "body" : "{\n    \"title\": \"Bynder Object\",\n    \"description\": \"A single reference to an item in Bynder\",\n    \"type\": \"object\",\n    \"properties\": {},\n    \"ui:extension\": {\n        \"name\": \"bynder-single\"\n    }\n}"
+  } ],
+  "settings" : "{\"API\":{\"READ\":true,\"EDIT\":true},\"SANDBOX\":{\"SAME_ORIGIN\":true,\"MODALS\":false,\"NAVIGATION\":false,\"POPUPS\":true,\"POPUP_ESCAPE_SANDBOX\":true,\"DOWNLOADS\":false,\"FORMS\":false}}",
+  "status" : "ACTIVE",
+  "createdBy" : "abcbd95f-d499-46e1-8adf-5fe93dd277b5",
+  "createdDate" : "2024-02-08T13:11:18.717Z",
+  "lastModifiedBy" : "abcbd95f-d499-46e1-8adf-5fe93dd277b5",
+  "lastModifiedDate" : "2024-02-08T13:11:18.717Z"
+}
