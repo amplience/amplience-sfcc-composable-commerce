@@ -559,12 +559,10 @@ export class AmplienceAPI {
     }
 
     async getPersonalisedExperiences(locale = 'en-US', segment: string, categoryFilter: string) {
-        console.log("Getting personalised experiences")
         await this.clientReady
         let result: any
 
         if (categoryFilter != null) {
-            console.log("Segment:", segment)
             result = await this.client
                 .filterByContentType('https://sfcc.com/components/personalised-experience')
                 .filterBy("/active", true)
@@ -574,8 +572,6 @@ export class AmplienceAPI {
                 .request({locale: locale + ',*', "depth": "all", "format": "inlined"})
 
         } else {
-            console.log("No category filter used")
-            console.log("Segment:", segment)
             result = await this.client
                 .filterByContentType('https://sfcc.com/components/personalised-experience')
                 .filterBy("/active", true)
@@ -583,7 +579,6 @@ export class AmplienceAPI {
                 .sortBy("default", "ASC")
                 .request({locale: locale + ',*', "depth": "all", "format": "inlined"})
         }
-        console.log("Experiences", result)
         return result.responses
     }
 }

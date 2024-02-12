@@ -8,8 +8,7 @@ import AmplienceWrapper from '../wrapper'
 
 const PersonalisedExperiencesList = ({
     maxNumber,
-    categoryFilter = null,
-    ...props
+    categoryFilter = null
 }) => {
     const {groups} = useContext(AmplienceContext)
     const {locale} = useIntl()
@@ -19,11 +18,9 @@ const PersonalisedExperiencesList = ({
         const retrieveAllExperiences = async () => {
             const newExperiences = []
             for (const group in groups) {
-                console.log("Group: ", groups[group])
                 const experience = await defaultAmpClient.getPersonalisedExperiences(locale, groups[group], categoryFilter)
                 newExperiences.push(...experience)
             }
-            console.log("Experiences: ", newExperiences)
             setExperiences(newExperiences)
         }
 
@@ -36,7 +33,7 @@ const PersonalisedExperiencesList = ({
         {
             experiences 
             && experiences.length
-            && experiences.map((experience, index) => {
+            && experiences.slice(0, maxNumber).map((experience, index) => {
                 return <div>
                     <AmplienceWrapper
                         content={experience.content}
@@ -44,9 +41,9 @@ const PersonalisedExperiencesList = ({
                         key={index} 
                     />
                 </div>
-            })
+            }) || <></>
         }
-        <pre>{JSON.stringify(experiences,null,4)}</pre>
+        {/* <pre>{JSON.stringify(experiences,null,4)}</pre> */}
     </>
 }
 
