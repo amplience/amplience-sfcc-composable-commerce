@@ -564,20 +564,24 @@ export class AmplienceAPI {
         let result: any
 
         if (categoryFilter != null) {
+            console.log("Segment:", segment)
             result = await this.client
                 .filterByContentType('https://sfcc.com/components/personalised-experience')
                 .filterBy("/active", true)
                 .filterBy("/segment", segment)
                 .filterBy("/category", categoryFilter)
-                .sortBy("/ranking", "ASC")
-                .request({locale: locale + ',*'})
+                .sortBy("default", "ASC")
+                .request({locale: locale + ',*', "depth": "all", "format": "inlined"})
+
         } else {
+            console.log("No category filter used")
+            console.log("Segment:", segment)
             result = await this.client
                 .filterByContentType('https://sfcc.com/components/personalised-experience')
                 .filterBy("/active", true)
                 .filterBy("/segment", segment)
-                .sortBy("/ranking", "ASC")
-                .request({locale: locale + ',*'})
+                .sortBy("default", "ASC")
+                .request({locale: locale + ',*', "depth": "all", "format": "inlined"})
         }
         console.log("Experiences", result)
         return result.responses

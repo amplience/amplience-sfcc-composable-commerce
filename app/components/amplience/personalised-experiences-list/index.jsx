@@ -4,6 +4,7 @@ import { AmplienceContext } from '../../../contexts/amplience'
 import { defaultAmpClient } from '../../../amplience-api'
 import { useIntl } from 'react-intl'
 import { handleAsyncError } from '../../../commerce-api/utils'
+import AmplienceWrapper from '../wrapper'
 
 const PersonalisedExperiencesList = ({
     maxNumber,
@@ -16,14 +17,14 @@ const PersonalisedExperiencesList = ({
 
     useEffect(() => {
         const retrieveAllExperiences = async () => {
-            const experiences = []
+            const newExperiences = []
             for (const group in groups) {
                 console.log("Group: ", groups[group])
-                const experience = await defaultAmpClient.getPersonalisedExperiences(locale, group, categoryFilter)
-                experiences.push(...experience)
+                const experience = await defaultAmpClient.getPersonalisedExperiences(locale, groups[group], categoryFilter)
+                newExperiences.push(...experience)
             }
-            console.log("Experiences: ", experiences)
-            setExperiences(experiences)
+            console.log("Experiences: ", newExperiences)
+            setExperiences(newExperiences)
         }
 
         retrieveAllExperiences()
@@ -32,8 +33,20 @@ const PersonalisedExperiencesList = ({
     }, [groups])
 
     return <>
-        <p>Groups: {JSON.stringify(groups)}</p>
-        <p>Experiences: {JSON.stringify(experiences)}</p>
+        {
+            experiences 
+            && experiences.length
+            && experiences.map((experience, index) => {
+                return <div>
+                    <AmplienceWrapper
+                        content={experience.content}
+                        fecth={{id: experience.content.id}}
+                        key={index} 
+                    />
+                </div>
+            })
+        }
+        <pre>{JSON.stringify(experiences,null,4)}</pre>
     </>
 }
 
