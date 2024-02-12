@@ -168,7 +168,7 @@ const Promo = ({headline, img, clickThru, coupon, promotionalLanguage, productSk
                                 </Box>
                             </Center>
                         )}
-                        {apiProducts && (
+                        {apiProducts?.length && (
                             <Center>
                                 <Box position={'relative'} width={'sm'}>
                                     <ProductTile
