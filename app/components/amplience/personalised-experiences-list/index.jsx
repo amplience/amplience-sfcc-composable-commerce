@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { AmplienceContext } from '../../../contexts/amplience'
 import { defaultAmpClient } from '../../../amplience-api'
 import { useIntl } from 'react-intl'
-import { handleAsyncError } from '../../../commerce-api/utils'
 import AmplienceWrapper from '../wrapper'
 
 const PersonalisedExperiencesList = ({
