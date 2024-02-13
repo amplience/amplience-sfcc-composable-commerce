@@ -53,7 +53,7 @@
 			"ui:extension": {
 				"name": "ecomm-toolkit",
 				"params": {
-					"label": "User Segments",
+					"label": "User Segment",
 					"view": "single",
 					"data": "segment",
 					"type": "string"
