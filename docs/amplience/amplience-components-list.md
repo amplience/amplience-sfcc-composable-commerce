@@ -12,7 +12,6 @@
 | https://sfcc.com/components/personalised-ingrid-component | `./personalised-component/PersonalisedComponent` | A component that contains variants associated to customer groups to display personalised content, but only for grid items |
 | https://sfcc.com/components/rich-text| `./rich-text/RichText` | Component using the dc-extension-rich-text with Markdown and visual editing |
 | https://sfcc.com/components/section | `./section/Section` | ![Section](./media/components-section.png) A block of text with a localised title and localised subtitle|
-| https://sfcc.com/components/brightcove-video | `./brightcove-video` | ![Brightcove Video](./media/component-brightcove-video.png) An open source example of embedding a brightcove video using parameters for their iframe players|
 | https://sfcc.com/components/shoppable-image | `./shoppable-image/ShoppableImage` | A component that allows the merchandizer to add hotspot links to an image. Links may point to Commerce products & catagories, as well as simple tooltips and external URLs.  |
 | https://sfcc.com/components/shoppable-video | `./shoppable-video/ShoppableVideo` | A component that allows the merchandizer to add hotspot links to a video. Links may point to Commerce products & catagories, as well as simple tooltips and external URLs.  |
 | https://sfcc.com/content/stylitics/generic           | `./stylitics`              | ![Stylitics Generic](./media/component-stylitics-generic.png) Can render all stylitics widgets from a single content type with all available options |
@@ -23,3 +22,7 @@
 | https://sfcc.com/content/stylitics/main-and-detail            | `./stylitics`             | ![Stylitics Main & Detail](./media/component-stylitics-main-and-detail.png) Only options for a Stylitics Main & Detail Widget |
 | https://sfcc.com/slots/flexible-list | `./flexibleListSlot/flexibleListSlot` | A slot that contains a flexible list of content |
 | https://sfcc.com/slots/personalised-slot | `./personalised-slot/PersonalisedComponent` | A slot that contains variants associated to customer groups to display personalised content |
+| https://sfcc.com/components/promo-bynder| `./promo-bynder/PromoBynder` ![PromoBynder](./media/promobynder.png) | A Promotional Item with Bynder asset |
+|https://sfcc.com/components/banner-bynder| `./banner-bynder/BannerBynder` ![BannerBynder](./media/bannerbynder.png) | A single reference to an item in Bynder with file selection |
+|https://sfcc.com/components/banner| `./banner/Banner` ![Banner](./media/banner.png) | A single reference to an item with file selection |
+| https://sfcc.com/components/promo| `./promo/Promo` ![Promo](./media/promo.png) | A Promotional Item |
