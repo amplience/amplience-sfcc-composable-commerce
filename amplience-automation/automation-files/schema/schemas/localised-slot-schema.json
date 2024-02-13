@@ -26,23 +26,29 @@
 					"items": {
 						"properties": {
 							"value": {
-								"allOf": [
-									{
-										"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
-									},
-									{
-										"properties": {
-											"contentType": {
-												"$ref": "https://sfcc.com/libs/all-definitions#/definitions/anyComponent"
+								"type": "array",
+								"minItems": 0,
+								"maxItems": 10,
+								"items": {
+									"allOf": [
+										{
+											"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+										},
+										{
+											"properties": {
+												"contentType": {
+													"$ref": "https://sfcc.com/libs/all-definitions#/definitions/anyComponent"
+												}
 											}
 										}
-									}
-								]
+									]
+								}
 							}
 						}
 					}
 				}
 			}
+
 		}
 	},
 	"propertyOrder": []
