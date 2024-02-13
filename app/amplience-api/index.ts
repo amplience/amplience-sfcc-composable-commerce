@@ -164,16 +164,7 @@ export class AmplienceAPI {
                 hubName: app.amplience.default.hub,
                 stagingEnvironment: vse
             })
-
-            if (isTimeMachineVse(vse)) {
-                this.hierarchyClient = new ContentClient({
-                    hubName: app.amplience.default.hub,
-                    stagingEnvironment: clearTimeMachine(vse)
-                })
-            } else {
-                this.hierarchyClient = this.client
-            }
-
+            this.hierarchyClient = this.client
             this.vse = vse
         }
 
