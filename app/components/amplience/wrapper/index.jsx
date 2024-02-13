@@ -8,6 +8,7 @@ import CuratedProductList from '../curated-product-list'
 import CardEnhanced from '../card-enhanced'
 // Slots
 import flexibleListSlot from '../flexibleListSlot'
+import LocalisedSlot from '../localised-slot'
 import {useIntl} from 'react-intl'
 import {AmplienceContext} from '../../../contexts/amplience'
 import {Skeleton} from '@chakra-ui/react'
@@ -50,8 +51,11 @@ const componentsMapping = {
     'https://sfcc.com/components/personalised-experiences-list': PersonalisedExperiencesList,
     'https://sfcc.com/components/shoppable-image': ShoppableImage,
     'https://sfcc.com/components/shoppable-video': ShoppableVideo,
+
     'https://sfcc.com/slots/flexible-list': flexibleListSlot,
     'https://sfcc.com/slots/personalised-slot': flexibleListSlot,
+    'https://sfcc.com/slots/localised': LocalisedSlot,
+    
     'https://sfcc.com/components/card-list': CardList,
     'https://sfcc.com/components/features': Features,
     'https://sfcc.com/components/grid-lock': GridLock,

@@ -1,0 +1,49 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://sfcc.com/slots/localised-slot",
+
+	"title": "Title",
+	"description": "Description",
+
+	"allOf": [
+		{
+			"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+		}
+	],
+	
+	"type": "object",
+	"properties": {
+		"content": {
+			"title": "Content",
+			"description": "Content",
+			"allOf": [
+				{
+					"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+				}
+			],
+			"properties": {
+				"values": {
+					"items": {
+						"properties": {
+							"value": {
+								"allOf": [
+									{
+										"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+									},
+									{
+										"properties": {
+											"contentType": {
+												"$ref": "https://sfcc.com/libs/all-definitions#/definitions/anyComponent"
+											}
+										}
+									}
+								]
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"propertyOrder": []
+}
