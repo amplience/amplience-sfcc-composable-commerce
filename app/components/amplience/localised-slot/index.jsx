@@ -8,7 +8,11 @@ const LocalisedSlot = ({...props}) => {
 
     if (content) {
         return (
-            <AmplienceWrapper content={{...content, slot: meta}} />
+            <>
+                {content.map((content, index) => {
+                    return <AmplienceWrapper content={{...content, slot: meta}} key={index} />
+                })}
+            </>
         )
     } else {
         return <></>
@@ -18,7 +22,8 @@ const LocalisedSlot = ({...props}) => {
 LocalisedSlot.displayName = 'Localised Slot'
 
 LocalisedSlot.propTypes = {
-    content: PropTypes.array
+    content: PropTypes.array,
+    _meta: PropTypes.object
 }
 
 export default LocalisedSlot
