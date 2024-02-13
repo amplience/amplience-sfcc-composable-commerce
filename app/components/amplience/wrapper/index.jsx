@@ -54,7 +54,7 @@ const componentsMapping = {
 
     'https://sfcc.com/slots/flexible-list': flexibleListSlot,
     'https://sfcc.com/slots/personalised-slot': flexibleListSlot,
-    'https://sfcc.com/slots/localised': LocalisedSlot,
+    'https://sfcc.com/slots/localised-slot': LocalisedSlot,
     
     'https://sfcc.com/components/card-list': CardList,
     'https://sfcc.com/components/features': Features,
