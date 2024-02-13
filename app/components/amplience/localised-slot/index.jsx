@@ -8,7 +8,15 @@ const LocalisedSlot = ({...props}) => {
 
     if (content) {
         return (
-            <AmplienceWrapper content={{...content, slot: meta}} />
+            <>
+                {
+                    content.map((value, index) => {
+                        return (
+                            <AmplienceWrapper content={value} key={index} />
+                        )
+                    })
+                }
+            </>
         )
     } else {
         return <></>
