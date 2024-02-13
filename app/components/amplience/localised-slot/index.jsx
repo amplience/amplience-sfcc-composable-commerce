@@ -4,7 +4,6 @@ import AmplienceWrapper from '../wrapper'
 
 const LocalisedSlot = ({...props}) => {
     const content = props.content
-    const meta = props._meta
 
     if (content) {
         return (
@@ -26,7 +25,8 @@ const LocalisedSlot = ({...props}) => {
 LocalisedSlot.displayName = 'Localised Slot'
 
 LocalisedSlot.propTypes = {
-    content: PropTypes.array
+    content: PropTypes.array,
+    _meta: PropTypes.object
 }
 
 export default LocalisedSlot
