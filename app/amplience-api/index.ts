@@ -559,7 +559,7 @@ export class AmplienceAPI {
                 .filterBy("/active", true)
                 .filterBy("/segment", segment)
                 .filterBy("/category", categoryFilter)
-                .sortBy("default", "ASC")
+                .sortBy("default", "DESC")
                 .request({locale: locale + ',*', "depth": "all", "format": "inlined"})
 
         } else {
@@ -567,7 +567,7 @@ export class AmplienceAPI {
                 .filterByContentType('https://sfcc.com/components/personalised-experience')
                 .filterBy("/active", true)
                 .filterBy("/segment", segment)
-                .sortBy("default", "ASC")
+                .sortBy("default", "DESC")
                 .request({locale: locale + ',*', "depth": "all", "format": "inlined"})
         }
         return result.responses
