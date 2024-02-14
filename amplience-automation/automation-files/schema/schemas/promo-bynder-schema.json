@@ -79,10 +79,8 @@
                     "limit": {
                         "title": "Promotion Limit",
                         "description": "Promotion Limit, 0 is unlimited use",
-                        "type": "integer",
-                        "minimum": 0,
-                        "maximum": 100,
-                        "default": 0
+                        "type": "string",
+                        "default":"Limit 1 per customer"
                     }
                 }
             }
