@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useRef, useState} from 'react'
 import PropTypes from 'prop-types'
 import {Box, Flex, Image, Stack, Text, Center, useMultiStyleConfig} from '@chakra-ui/react'
 import Button from '../button'
@@ -98,17 +98,17 @@ const selectImage = (product) => {
 
     return desiredGroup.images[0]
 }
-const Promo = ({headline, img, clickThru, coupon, promotionalLanguage, productSku, ...props}) => {
+const Promo = ({headline, image, clickThru, coupon, promotionalLanguage, productSku, ...props}) => {
     const styles = useMultiStyleConfig('Hero', {})
+    const imageRef = useRef()
     let src = ''
     let alt = ''
-    if (img) {
-        src = getImageUrl(img.image)
-        alt = img.alt
+    if (image && image?.image && image?.image?.image) {
+        src = getImageUrl(image?.image?.image) + `?${image?.image?.query}&fmt=auto`
+        alt = image?.imageAltText
     }
     const api = useCommerceAPI()
     const [apiProducts, setApiProducts] = useState(null)
-    const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
         let active = true
@@ -116,7 +116,6 @@ const Promo = ({headline, img, clickThru, coupon, promotionalLanguage, productSk
         if (!productSku) {
             // No products likely means that the IDs haven't arrived yet.
             setApiProducts(null)
-            setIsLoading(true)
             return
         }
 
@@ -133,7 +132,6 @@ const Promo = ({headline, img, clickThru, coupon, promotionalLanguage, productSk
                 }))
 
                 setApiProducts(products)
-                setIsLoading(false)
             }
         })()
 
@@ -181,17 +179,30 @@ const Promo = ({headline, img, clickThru, coupon, promotionalLanguage, productSk
                             </Center>
                         )}
                     </Stack>
-                    {img?.image && (
+                    {image?.image?.image && (
                         <Flex {...styles.imageContainer}>
                             <Box position={'relative'} width={'full'}>
-                                <Image
-                                    fit={'cover'}
-                                    align={'center'}
-                                    width={'100%'}
-                                    height={'100%'}
-                                    src={src}
-                                    alt={alt}
-                                />
+                                <picture>
+                                    <source
+                                        srcSet={`${src}&w=1280&sm=aspect&aspect=16:9`}
+                                        media="(min-width: 1280px)"
+                                    />
+                                    <source
+                                        srcSet={`${src}&w=1024&sm=aspect&aspect=2:1`}
+                                        media="(min-width: 1024px)"
+                                    />
+                                    <source
+                                        srcSet={`${src}&w=768&sm=aspect&aspect=1.5:1`}
+                                        media="(min-width: 768px)"
+                                    />
+                                    <Image
+                                        width={'100%'}
+                                        height={'100%'}
+                                        src={`${src}&w=768&sm=aspect&aspect=1:1`}
+                                        alt={alt}
+                                        ref={imageRef}
+                                    />
+                                </picture>
                             </Box>
                         </Flex>
                     )}
@@ -205,16 +216,19 @@ Promo.displayName = 'Promo'
 
 Promo.propTypes = {
     /**
-     * Hero component image
+     * New Adaptive Image
      */
-    img: PropTypes.shape({
+    image: PropTypes.shape({
         image: PropTypes.shape({
-            id: PropTypes.string,
-            name: PropTypes.string,
-            endpoint: PropTypes.string,
-            defaultHost: PropTypes.string
+            image: PropTypes.shape({
+                id: PropTypes.string,
+                name: PropTypes.string,
+                endpoint: PropTypes.string,
+                defaultHost: PropTypes.string
+            }),
+            query: PropTypes.string
         }),
-        alt: PropTypes.string
+        imageAltText: PropTypes.string
     }),
     /**
      * Click Thru
