@@ -13,32 +13,15 @@
 
     "type": "object",
     "properties": {
-        "img": {
-            "title": "Image",
+        "image": {
             "type": "object",
-            "properties": {
-                "image": {
-                    "title": "Image",
-                    "allOf": [
-                        {
-                            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
-                        }
-                    ]
-                },
-                "alt": {
-                    "title": "Alt",
-                    "description": "Image Alt Text",
-                    "type": "string",
-                    "minLength": 0,
-                    "maxLength": 250,
-                    "ui:extension": {
-                        "name": "ai-image-caption",
-                        "params": {
-                            "image": "1/image"
-                        }
-                    }
+            "title": "Image",
+            "description": "Image to show in the snippet",
+            "allOf": [
+                {
+                    "$ref": "https://sfcc.com/libs/all-definitions#/definitions/diImage"
                 }
-            }
+            ]
         },
         "clickThru": {
             "title": "Click Thru",

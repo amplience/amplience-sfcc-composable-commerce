@@ -24,7 +24,7 @@
             },
             {
                 "label" : "Email",
-                "templatedUri" : "https://\{{vse.domain}}/v1/content/demo/content-item/\{{content.sys.id}}?template=sfmc-template-visualization",
+                "templatedUri" : "https://\{{vse.domain}}/v1/content/demo/content-item/\{{content.sys.id}}?template=sfmc-template-visualization&locale=\{{locales}},*",
                 "default" : false
             },
             {
@@ -36,7 +36,7 @@
         ],
         "cards": [
             {
-                "templatedUri": "https://bigcontent.io/cms/cards/summary-photo/index.html?headline=/headline&image=/img/image&imageAlt=/img/alt&src=%2F%2F\{{vse.domain}}%2Fcms%2Fcontent%2Fquery%3FfullBodyObject%3Dtrue%26query%3D%257B%2522sys.iri%2522%253A%2522http%253A%252F%252Fcontent.cms.amplience.com%252F\{{content.sys.id}}%2522%257D%26scope%3Dtree%26store%3Dstaging"
+                "templatedUri": "https://bigcontent.io/cms/cards/summary-photo/index.html?headline=/headline&image=/image/image/image&imageAlt=/image/imageAltText&src=%2F%2F\{{vse.domain}}%2Fcms%2Fcontent%2Fquery%3FfullBodyObject%3Dtrue%26query%3D%257B%2522sys.iri%2522%253A%2522http%253A%252F%252Fcontent.cms.amplience.com%252F\{{content.sys.id}}%2522%257D%26scope%3Dtree%26store%3Dstaging"
             }
         ]
     },
