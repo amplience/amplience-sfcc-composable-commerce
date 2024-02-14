@@ -21,10 +21,18 @@ const PersonalisedExperiencesList = ({maxNumber, categoryFilter = null, _meta}) 
                 )
                 newExperiences.push(...experience)
             }
+            if (groups == null) {
+                const experience = await defaultAmpClient.getPersonalisedExperiences(
+                    locale,
+                    'Everyone',
+                    categoryFilter
+                )
+                newExperiences.push(...experience)
+            }
             setExperiences(newExperiences)
         }
         retrieveAllExperiences()
-    }, [groups, categoryFilter])
+    }, [groups, categoryFilter, maxNumber])
 
     return (
         <>
