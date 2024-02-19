@@ -165,19 +165,7 @@ const Promo = ({headline, image, clickThru, coupon, promotionalLanguage, product
                                 </Box>
                             </Center>
                         )}
-                        {apiProducts?.length && (
-                            <Center>
-                                <Box position={'relative'} width={'sm'}>
-                                    <ProductTile
-                                        data-testid="product-scroller-item"
-                                        product={apiProducts[0]}
-                                        dynamicImageProps={{
-                                            widths: ['70vw', '70vw', '40vw', '30vw']
-                                        }}
-                                    />
-                                </Box>
-                            </Center>
-                        )}
+                        
                     </Stack>
                     {image?.image?.image && (
                         <Flex {...styles.imageContainer}>
@@ -203,6 +191,26 @@ const Promo = ({headline, image, clickThru, coupon, promotionalLanguage, product
                                         ref={imageRef}
                                     />
                                 </picture>
+                                {apiProducts?.length && (
+                                    <Box
+                                        position={{base: 'unset', md: 'absolute'}}
+                                        width={{base: '100%', md: '200px'}}
+                                        marginTop={{base: '30px', md: 'unset'}}
+                                        style={{
+                                            bottom: 10,
+                                            right: 10
+                                        }}
+                                    >
+                                        <ProductTile
+                                            width={{base: '100%', md: '200px'}}
+                                            data-testid="product-scroller-item"
+                                            product={apiProducts[0]}
+                                            dynamicImageProps={{
+                                                widths: ['70vw', '70vw', '40vw', '30vw']
+                                            }}
+                                        />
+                                    </Box>
+                                )}
                             </Box>
                         </Flex>
                     )}
