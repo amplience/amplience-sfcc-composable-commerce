@@ -1,12 +1,12 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
-import {Box, Flex, Image, Stack, Text, Center, useMultiStyleConfig} from '@chakra-ui/react'
+import { Box, Flex, Image, Stack, Text, Center, useMultiStyleConfig } from '@chakra-ui/react'
 import Button from '../button'
 import AmplienceMarkdown from '../markdown'
 import ProductTile from '../product-tile'
 import styled from '@emotion/styled'
-import {useCommerceAPI} from '../../../commerce-api/contexts'
-import {handleAsyncError} from '../../../commerce-api/utils'
+import { useCommerceAPI } from '../../../commerce-api/contexts'
+import { handleAsyncError } from '../../../commerce-api/utils'
 
 const Contain = styled(Box)`
     .amp-rich-text h1 {
@@ -128,7 +128,7 @@ const PromoBynder = ({
 
         handleAsyncError(async () => {
             const response = await api.shopperProducts.getProducts({
-                parameters: {ids: [productSku]}
+                parameters: { ids: [productSku] }
             })
 
             if (active) {
@@ -151,13 +151,13 @@ const PromoBynder = ({
             <Box {...styles.container} {...props}>
                 <Stack
                     {...styles.stackContainer}
-                    justifyContent={{base: 'unset'}}
-                    alignItems={{base: 'unset'}}
+                    justifyContent={{ base: 'unset' }}
+                    alignItems={{ base: 'unset' }}
                 >
                     <Stack
                         {...styles.textContainer}
-                        textAlign={{base: 'center'}}
-                        position={{base: 'unset', md: 'absolute'}}
+                        textAlign={{ base: 'center' }}
+                        position={{ base: 'unset', md: 'absolute' }}
                     >
                         <AmplienceMarkdown content={headline} className="amp-rich-text" />
 
@@ -170,21 +170,8 @@ const PromoBynder = ({
 
                         {clickThru && (
                             <Center>
-                                <Box maxWidth={{base: 'full', md: '75%'}}>
+                                <Box maxWidth={{ base: 'full', md: '75%' }}>
                                     <Button label={promotionalLanguage} url={clickThru}></Button>
-                                </Box>
-                            </Center>
-                        )}
-                        {apiProducts?.length && (
-                            <Center>
-                                <Box position={'relative'} width={'sm'}>
-                                    <ProductTile
-                                        data-testid="product-scroller-item"
-                                        product={apiProducts[0]}
-                                        dynamicImageProps={{
-                                            widths: ['70vw', '70vw', '40vw', '30vw']
-                                        }}
-                                    />
                                 </Box>
                             </Center>
                         )}
@@ -199,6 +186,26 @@ const PromoBynder = ({
                                     height={'100%'}
                                     src={src}
                                 />
+                                {apiProducts?.length && (
+                                    <Box
+                                        position={{ base: 'unset', md: 'absolute' }}
+                                        width={{ base: '100%', md: '200px' }}
+                                        marginTop={{ base: '30px', md: 'unset' }}
+                                        style={{
+                                            bottom: 10,
+                                            right: 10
+                                        }}
+                                    >
+                                        <ProductTile
+                                            width={{ base: '100%', md: '200px' }}
+                                            data-testid="product-scroller-item"
+                                            product={apiProducts[0]}
+                                            dynamicImageProps={{
+                                                widths: ['70vw', '70vw', '40vw', '30vw']
+                                            }}
+                                        />
+                                    </Box>
+                                )}
                             </Box>
                         </Flex>
                     )}
