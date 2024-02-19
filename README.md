@@ -38,6 +38,7 @@ This version of the SF Retail React app integrates Amplience as the Content CMS 
 * [Preview](docs/amplience/preview.md)
 * [Amplience Account](docs/amplience/amplience-account.md)
 * [Automation](docs/amplience/automation.md)
+* [Localisation](docs/amplience/localisation.md)
 
 ### 👥 Experience Management
 * [Navigation](./docs/amplience/navigation.md)
