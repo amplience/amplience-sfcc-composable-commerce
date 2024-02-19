@@ -10,6 +10,8 @@
 | https://sfcc.com/components/personalised-component | `./personalised-component/PersonalisedComponent` | A component that contains variants associated to customer groups to display personalised content |
 | https://sfcc.com/components/personalised-container | `./personalised-container/PersonalisedContainer` | A container that contains variants associated to customer groups to display personalised content |
 | https://sfcc.com/components/personalised-ingrid-component | `./personalised-component/PersonalisedComponent` | A component that contains variants associated to customer groups to display personalised content, but only for grid items |
+| https://sfcc.com/components/personalised-experience | `./personalised-experience/PersonalisedExperience` | A wrapper that allows any content to be associated to segment, category, define is the experience is active or not to delivery content dynamically |
+| https://sfcc.com/components/personalised-experiences-list | `./personalised-experiences-list/PersonalisedExperiencesList` | A container that lets user configure the criteria to dynamically load in `personalisedExperience` content |
 | https://sfcc.com/components/rich-text| `./rich-text/RichText` | Component using the dc-extension-rich-text with Markdown and visual editing |
 | https://sfcc.com/components/section | `./section/Section` | ![Section](./media/components-section.png) A block of text with a localised title and localised subtitle|
 | https://sfcc.com/components/shoppable-image | `./shoppable-image/ShoppableImage` | A component that allows the merchandizer to add hotspot links to an image. Links may point to Commerce products & catagories, as well as simple tooltips and external URLs.  |
@@ -22,6 +24,7 @@
 | https://sfcc.com/content/stylitics/main-and-detail            | `./stylitics`             | ![Stylitics Main & Detail](./media/component-stylitics-main-and-detail.png) Only options for a Stylitics Main & Detail Widget |
 | https://sfcc.com/slots/flexible-list | `./flexibleListSlot/flexibleListSlot` | A slot that contains a flexible list of content |
 | https://sfcc.com/slots/personalised-slot | `./personalised-slot/PersonalisedComponent` | A slot that contains variants associated to customer groups to display personalised content |
+| https://sfcc.com/slots/localised-slot | `./localised-slot/LocalisedSlot` | A slot that contains variants associated different locales to support content item level localisation |
 | https://sfcc.com/components/promo-bynder| `./promo-bynder/PromoBynder` ![PromoBynder](./media/promobynder.png) | A Promotional Item with Bynder asset |
 |https://sfcc.com/components/banner-bynder| `./banner-bynder/BannerBynder` ![BannerBynder](./media/bannerbynder.png) | A single reference to an item in Bynder with file selection |
 |https://sfcc.com/components/banner| `./banner/Banner` ![Banner](./media/banner.png) | A single reference to an item with file selection |
