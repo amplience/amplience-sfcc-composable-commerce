@@ -1,0 +1,53 @@
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background-color: {{wrapper.bgColor}};">
+  <tr>
+    <td align="center"{{#unlessEq imageSettings.imageWrapperPadding compare=""}} style="padding: {{imageSettings.imageWrapperPadding}};"{{/unlessEq}}>
+      <a href="{{imageSettings.linkUrl}}" alias="{{imageSettings.linkAlias}}" target="_blank">
+       {{#if imageSettings.isAnimatedGif}}
+            <img src="https://gaptest.a.bigcontent.io/v1/static/{{encodeURI imageSettings.image.name}}" alt="{{imageSettings.imageAltText}}" width="{{imageSettings.imageWidth}}" style="display: block; max-width: {{imageSettings.imageWidth}}px; width: 100%;">
+      
+        {{else}}
+        <img src="https://{{imageSettings.image.defaultHost}}/i/{{imageSettings.image.endpoint}}/{{imageSettings.image.name}}" alt="{{imageSettings.imageAltText}}" width="{{imageSettings.imageWidth}}" style="display: block; max-width: {{imageSettings.imageWidth}}px; width: 100%;">
+       {{/if}}
+      </a>
+    </td>
+  </tr>
+   {{#if headingSettings.headingText}}
+  <tr>
+     
+    <td align="center" style="padding: 40px 0 30px;">
+      <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+        <tr>
+          <td align="center">
+            <h1 class="heading" style="color: {{headingSettings.headingColor}}; font-family: serif; font-size: {{headingSettings.headingSize}}px; line-height: 1.3; margin: 0 10px 15px; font-weight: normal;">
+              {{headingSettings.headingText}}
+            </h1>
+          </td>
+        </tr>
+        <tr>
+          <td class="demo-text" align="center" style="color: {{paragraphSettings.paragraphColor}}; font-size: {{paragraphSettings.paragraphSize}}px; line-height: 1.3; padding: 0 20px;">
+            {{#each paragraphSettings.paragraphText}}
+              {{{markdown this}}}
+            {{/each}}
+          </td>
+        </tr>
+        {{#unlessEq ctaSettings.buttonStyle compare="Hide"}}
+        <tr>
+          <td align="center" style="padding: 5px 0 30px;">
+            <table border="0" cellpadding="0" cellspacing="0" role="presentation">
+              <tr>
+                <td class="cta-btn" align="center" style="{{#eq ctaSettings.buttonStyle compare="Solid"}}background-color: {{ctaSettings.buttonColor}}; {{else}}border: 1px solid {{ctaSettings.buttonColor}}; {{/eq}} mso-padding-alt: 12px 25px 10px; min-width: 255px; font-family: sans-serif;">
+                  <a href="{{ctaSettings.linkUrl}}" alias="{{ctaSettings.linkAlias}}" target="_blank" style="color: {{ctaSettings.textColor}}; display: inline-block; font-size: 18px; font-weight: bold; line-height: 1; mso-line-height-alt: 90%; padding: 12px 25px 10px; text-decoration: none; text-transform: uppercase;">
+                    {{ctaSettings.buttonText}}
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        {{/unlessEq}}
+      </table>
+    </td>
+  </tr>
+     {{else}}
+      {{/if}}
+</table>

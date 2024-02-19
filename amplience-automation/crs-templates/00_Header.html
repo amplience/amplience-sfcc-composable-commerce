@@ -1,0 +1,48 @@
+<table class="header" border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%" style="font-family: sans-serif;">
+  <tr>
+    <td class="top-nav" align="center" style="padding: 10px 20px;">
+      <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+        <tr>
+          <td align="left" style="line-height: 1;">
+            <a class="sans-serif" href="{{topLinks.leftLinkProperties.leftLinkUrl}}" alias="HeaderLink_{{topLinks.leftLinkProperties.leftLinkText}}" target="_blank" style="color: {{topLinks.leftLinkProperties.leftLinkColor.colors}}; display: inline-block; font-size: 12px; line-height: 1.2; text-decoration: none; text-transform: uppercase">
+              {{topLinks.leftLinkProperties.leftLinkText}}
+            </a>
+          </td>
+          <td align="right" style="line-height: 1;">
+            <a class="sans-serif" href="{{topLinks.rightLinkProperties.rightLinkUrl}}" alias="HeaderLink_{{topLinks.rightLinkProperties.rightLinkText}}" target="_blank" style="color: {{topLinks.rightLinkProperties.rightLinkColor.colors}}; display: inline-block; font-size: 12px; line-height: 1.2; text-decoration: none; text-transform: uppercase">
+              {{topLinks.rightLinkProperties.rightLinkText}}
+            </a>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" style="padding: 20px 0 40px;">
+      <a class="sans-serif" href="{{logoSettings.imageProperties.linkUrl}}" alias="Logo_{{logoSettings.imageProperties.linkAlias}}" target="_blank">
+        <img src="https://{{logoSettings.imageSrc.defaultHost}}/i/{{logoSettings.imageSrc.endpoint}}/{{logoSettings.imageSrc.name}}" alt="{{logoSettings.imageProperties.imageAlt}}" width="{{logoSettings.imageProperties.imageWidth}}" style="display: block; max-width: {{logoSettings.imageProperties.imageWidth}}px; margin: 0; border: 0; width: 100%;" />
+      </a>
+    </td>
+  </tr>
+  {{#isTruthy navSettings.toggle}}
+  <tr>
+    <td align="center">
+      <!--[if true]>
+      <table border="0" cellpadding="0" cellspacing="0" role="presentation">
+        <tr>
+          {{#each navSettings.navigation}}
+          <td align="center" style="padding: 0 20px 10px;">
+            <![endif]-->
+            <a class="sans-serif" href="{{this.url}}" alias="NavHeader_{{this.text}}" target="_blank" style="color: {{this.color.colors}}; display: inline-block; font-size: 11px; line-height: 1.2; padding: 0 20px 13px; mso-padding-alt: 0; text-decoration: none; text-transform: uppercase">
+              {{this.text}}
+            </a>
+            <!--[if true]>
+          </td>
+          {{/each}}
+        </tr>
+      </table>
+      <![endif]-->
+    </td>
+  </tr>
+  {{/isTruthy}}
+</table>
