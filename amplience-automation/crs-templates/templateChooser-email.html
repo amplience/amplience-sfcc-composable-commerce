@@ -1,0 +1,9 @@
+{{#if (test this.[@type] (toRegex ".*/email/banner")) ~}} {{> email-banner }} {{~/if}}
+{{#if (test this.[@type] (toRegex ".*/simple-banner")) ~}} {{> simple-banner-email }} {{~/if}}
+{{#if (test this.[@type] (toRegex ".*/email/template")) ~}} {{> email-page-template }} {{~/if}}
+{{#if (test this.[@type] (toRegex ".*/email/header")) ~}} {{> 00_Header }} {{~/if}}
+{{#if (test this.[@type] (toRegex ".*/email/footer")) ~}} {{> 00_Footer }} {{~/if}}
+{{#if (test this.[@type] (toRegex ".*/components/promo$")) ~}} {{> crs-template-promo }} {{~/if}}
+{{#if (test this.[@type] (toRegex ".*/components/promo-bynder$")) ~}} {{> crs-template-promo-bynder }} {{~/if}}
+{{#if (test this.[@type] (toRegex ".*/components/banner$")) ~}} {{> crs-template-banner }} {{~/if}}
+{{#if (test this.[@type] (toRegex ".*/components/banner-bynder$")) ~}} {{> crs-template-banner-bynder }} {{~/if}}

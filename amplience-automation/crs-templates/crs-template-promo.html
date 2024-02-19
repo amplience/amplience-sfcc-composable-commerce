@@ -1,0 +1,52 @@
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+  <tr>
+    <td align="center">
+      <a href="{{clickThru}}">
+        <img src="https://{{image.image.image.defaultHost}}/i/{{image.image.image.endpoint}}/{{image.image.image.name}}?poi={($root.layer0.metadata.pointOfInterest.w==0)?0.5:$root.layer0.metadata.pointOfInterest.x},{($root.layer0.metadata.pointOfInterest.w==0)?0.5:$root.layer0.metadata.pointOfInterest.y},{$root.layer0.metadata.pointOfInterest.w},{$root.layer0.metadata.pointOfInterest.h}&scaleFit=poi&sm=aspect&aspect=1:1&{{image.image.query}}&w=640" alt="{{image.imageAltText}}" style="display: block; width: 100%;">
+        <!--<img src="https://{{img.image.defaultHost}}/i/{{img.image.endpoint}}/{{img.image.name}}?w=640" alt="{{img.alt}}" style="display: block; width: 100%;">-->
+      </a>  
+    </td>
+  </tr>
+  <td align="center" style="padding: 40px 0 30px;">
+    <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+      <tr>
+        <td align="center">
+          <h1 class="heading" style="color: #000; font-family: serif; font-size: 12px; line-height: 1.3; margin: 0 10px 15px; font-weight: normal;">
+            {{{markdown headline}}}
+          </h1>
+         
+        </td>
+      </tr>
+      <tr>
+        <td align="center">
+          <h2 class="heading" style="color: #ff0000; font-family: serif; font-size: 12px; line-height: 1.3; margin: 0 10px 15px; font-weight: normal;">
+            {{promotionalLanguage}}
+          </h2>
+        </td>
+      </tr>
+      <tr>
+        <td align="center">
+          <h3 class="heading" style="color: #2c2c2c; font-family: serif; font-size: 10px; line-height: 1.3; margin: 0 10px 15px; font-weight: normal;">
+            {{productSku}}
+          </h3>
+        </td>
+      </tr>
+      {{#each coupon}}
+      <tr>
+        <td align="center">
+          <h4 class="heading" style="color: #2c2c2c; font-family: serif; font-size: 10px; line-height: 1.3; margin: 0 10px 15px; font-weight: normal;">
+            {{code}}
+          </h4>
+        </td>
+      </tr>
+      <tr>
+        <td align="center">
+          <h4 class="heading" style="color: #2c2c2c; font-family: serif; font-size: 10px; line-height: 1.3; margin: 0 10px 15px; font-weight: normal;">
+            {{limit}}
+          </h4>
+        </td>
+      </tr>
+      {{/each}}
+    </table>
+  </td>
+</table>
