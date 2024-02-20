@@ -1,0 +1,20 @@
+{
+  "id": "9c36f6e7-dd02-4b49-8784-6d9e85bda676",
+  "body": {
+    "maxNumber": 3,
+    "_meta": {
+      "name": "Personalised Experiences List - All",
+      "schema": "https://sfcc.com/components/personalised-experiences-list"
+    }
+  },
+  "version": 1,
+  "label": "Personalised Experiences List - All",
+  "status": "ACTIVE",
+  "createdBy": "ff2c9bf5-61c0-4c01-966b-4443918c74a8",
+  "createdDate": "2023-07-10T14:26:07.182Z",
+  "lastModifiedBy": "ff2c9bf5-61c0-4c01-966b-4443918c74a8",
+  "lastModifiedDate": "2023-07-10T14:32:51.466Z",
+  "lastPublishedVersion": 1,
+  "lastPublishedDate": "2023-07-11T15:04:58.318Z",
+  "deliveryId": "9c36f6e7-dd02-4b49-8784-6d9e85bda676"
+}
