@@ -1,7 +1,7 @@
 # Personalised Experiences
 
 Using the personalised experiences feature, you can dynamically display ordered content for specific user segments.
-You can also optionnaly display content for a specific category. Under the hood, the Filter API is used to filter personalised experiences based on segment and optionnaly category.
+You can also optionally display content for a specific category. Under the hood, the Filter API is used to filter personalised experiences based on segment and optionally category.
 
 ## Personalised Experience type
 
@@ -9,7 +9,7 @@ You can also optionnaly display content for a specific category. Under the hood,
 
 You can create as many Personalised Experiences as you want.
 Each Personalised Experience contains the following:
-- an active flag, used to filter our experiences globally
+- an active flag, used to filter experiences globally
 - one segment, selected using the eCommerce Toolkit extension
 - one optional category, also selected using the eCommerce Toolkit extension
 - a ranking, the higher the ranking, the higher priority it will be

@@ -78,7 +78,7 @@ The default visualisations are different per node:
 * **External link**: Points to just a visualisation with no content
 * **Internal**: Points to just a visualisation with no content
 
-> Note: For a Content page, to see the content simply select select the menu item in the visualisation. Alternatively open the content type
+> Note: For a Content page, to see the content simply select the menu item in the visualisation. Alternatively open the content type
 
 ## Building a custom navigation hierarchy
 
@@ -121,7 +121,7 @@ Each Category node has a delivery key `Navigation Key`. This needs to be removed
 ## Limitations
 
 ### Maximum items per level
-You can currently only put a maximum of 12 items at any hierachy level. For example, 12 Level 1 menu items.
+You can currently only put a maximum of 12 items at any hierarchy level. For example, 12 Level 1 menu items.
 [Docs](https://amplience.com/docs/development/limits.html#filterapi)
 > Note: This limit will be resolved in a future release.
 
