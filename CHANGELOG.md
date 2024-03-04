@@ -2,6 +2,48 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.18.0](https://github.com/amplience/amplience-sfcc-composable-commerce/compare/v1.17.0...v1.18.0) (2024-03-04)
+
+
+### Features
+
+* added render and using wrapper ([429bd4f](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/429bd4f598af4e1cc6726c69e0ed1281eae3e8c6))
+* Automation for DI image and promo text ([0bbf63a](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/0bbf63a5b7174b153517117fd513c70bb3ecfafd))
+* Automation types for banners and promos ([fc2cede](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/fc2cede300e61134d326ad43a3636d7a24626e36))
+* banner component ([7ba0dee](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/7ba0dee4dc49a90630f6c8d9fc71428363e28848))
+* Brightcove video automation and component merge ([9ab26ad](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/9ab26ad0013eef41cc10b53119076fe25d00782d))
+* experiences list component and automation ([5240985](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/524098506e5200b3f8e6401bfebb59a1efe8b84b))
+* localised slot test ([3c4d6f6](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/3c4d6f6c8263b54231babb2b56bd903a8c90dd47))
+* Promo & banner using adaptive image ([a640d96](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/a640d9652534606e054e27642fc3dae8b62fd13c))
+* promo and banner with Bynder, added Bynder domain in ssr ([ae43ffe](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/ae43ffe9b5a84cadfa020e4ae18a977b852a7620))
+* promo component ([c0e8e6d](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/c0e8e6d65654c9dff112eb7bc9b621c72c35a24f))
+* Promo product, conditional render and coupon ([7fdf691](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/7fdf69131f6424b44c385fcf7377d36fb12ece46))
+* schema automation for promo and banner ([8b193d8](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/8b193d8ce4289253c6a84d490ad537c3f3aa1b4d))
+
+
+### Bug Fixes
+
+* Added new components to all definitions and fixed Rich Text Cards ([b9a3d52](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/b9a3d5285b0db925b63ae9ccc466ceb9dc6e1ecb))
+* array of content ([e22a792](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/e22a792c9044e1a256c449e8ec970667dde2b431))
+* array of content ([2953429](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/2953429643f44b158906cff32cd36f50b0cf864d))
+* category filtering ([21b0c70](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/21b0c7039722464061bd60b6949649426df84873))
+* empty display ([9edea33](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/9edea336741f1bae914ed2b7a86120f3103492eb))
+* If product does not exist in catalogue that FE is pointing to does not crash ([ef5c13e](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/ef5c13ea105f89f07bff380bcc1c9a1dfc00e600))
+* Issue with broken images with images with spaces ([141ade0](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/141ade0602e49e99f71eb749f2940c7d3a0c05c3))
+* Localised slot array rendering ([5068ceb](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/5068ceb695c3a695d70ec45384c29edefbfbb3d9))
+* Personalised ranking defaults to everyone if there is no selected segment ([d96a24e](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/d96a24e29e70e9fb13bb0779abdea0a65d9f7845))
+* Product in with overlay on desktop for promos ([1d4fdd6](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/1d4fdd67bf82d0f8edb069c3212b7c864f0e37c4))
+* pushing content types ([f14243b](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/f14243b2a5ff14a9f8f00459c4b24276339a38bd))
+* ramking desc order ([c646237](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/c6462373ebde1c82240154ade9bea2ed01cb4406))
+* Removed defensive Time machine VSE coding ([05d9bcb](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/05d9bcb09d9e10fabaee3b44ad14875707cef459))
+* removed fetching ([193e0b5](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/193e0b56087feb15275ada8001a26a6e7180b5f8))
+* removed import ([afb3035](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/afb3035b7fc5672738a013a329893545d410cb5a))
+* Rich text card for brightcove and updated examples matching the docs page ([e4b2a08](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/e4b2a08a3ffe9cb9c46c51a037ed3e090a126786))
+* ui rework with responsive design ([12f0d41](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/12f0d4143da8e733c67424c56cbf2170863de279))
+* updated any components and slot ([6447b9f](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/6447b9f6f4a40f9f992df8a330fb10d3092a16df))
+* updated ui with responsibe design ([4a5b60f](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/4a5b60fdeb3a1efae21ba23ea2424fbe0ce9bda4))
+* wrong validation level ([4824685](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/4824685ceb0405d25fbd6f92067a3b48d402cbd7))
+
 ## [1.17.0](https://github.com/amplience/amplience-sfcc-composable-commerce/compare/v1.16.0...v1.17.0) (2023-11-03)
 
 ## [1.16.0](https://github.com/amplience/amplience-sfcc-composable-commerce/compare/v1.15.0...v1.16.0) (2023-09-11)
