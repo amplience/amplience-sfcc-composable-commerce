@@ -1,0 +1,50 @@
+{
+    "id": "5242d9ae-d102-4cae-9750-50e13ed0b028",
+    "body": {
+        "content": {
+            "values": [
+                {
+                    "locale": "en-US",
+                    "value": [
+                        {
+                            "_meta": {
+                                "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                            },
+                            "contentType": "https://sfcc.com/components/hero",
+                            "id": "3387dd36-cfc2-4fcc-ad18-95384dc6c3f5"
+                        }
+                    ]
+                },
+                {
+                    "locale": "fr-FR",
+                    "value": [
+                        {
+                            "_meta": {
+                                "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                            },
+                            "contentType": "https://sfcc.com/components/hero",
+                            "id": "657df3b9-d047-4981-b31b-d6b77bb7528f"
+                        }
+                    ]
+                }
+            ],
+            "_meta": {
+                "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+            }
+        },
+        "_meta": {
+            "name": "Localised Slot - Example 1",
+            "schema": "https://sfcc.com/slots/localised-slot"
+        }
+    },
+    "version": 1,
+    "label": "Localised Slot - Example 1",
+    "status": "ACTIVE",
+    "createdBy": "9afdef5b-e35e-472a-8265-f37d29ff1154",
+    "createdDate": "2022-08-04T09:25:08.509Z",
+    "lastModifiedBy": "9afdef5b-e35e-472a-8265-f37d29ff1154",
+    "lastModifiedDate": "2022-08-04T09:38:23.005Z",
+    "lastPublishedVersion": 1,
+    "lastPublishedDate": "2022-08-04T10:00:09.491Z",
+    "deliveryId": "5242d9ae-d102-4cae-9750-50e13ed0b028"
+}

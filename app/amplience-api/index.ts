@@ -164,16 +164,7 @@ export class AmplienceAPI {
                 hubName: app.amplience.default.hub,
                 stagingEnvironment: vse
             })
-
-            if (isTimeMachineVse(vse)) {
-                this.hierarchyClient = new ContentClient({
-                    hubName: app.amplience.default.hub,
-                    stagingEnvironment: clearTimeMachine(vse)
-                })
-            } else {
-                this.hierarchyClient = this.client
-            }
-
+            this.hierarchyClient = this.client
             this.vse = vse
         }
 
@@ -556,6 +547,30 @@ export class AmplienceAPI {
         return filter == null ?
             result.responses :
             this.filterPages(result.responses, filter);
+    }
+
+    async getPersonalisedExperiences(locale = 'en-US', segment: string, categoryFilter: string) {
+        await this.clientReady
+        let result: any
+
+        if (categoryFilter != null) {
+            result = await this.client
+                .filterByContentType('https://sfcc.com/components/personalised-experience')
+                .filterBy("/active", true)
+                .filterBy("/segment", segment)
+                .filterBy("/category", categoryFilter)
+                .sortBy("default", "DESC")
+                .request({locale: locale + ',*', "depth": "all", "format": "inlined"})
+
+        } else {
+            result = await this.client
+                .filterByContentType('https://sfcc.com/components/personalised-experience')
+                .filterBy("/active", true)
+                .filterBy("/segment", segment)
+                .sortBy("default", "DESC")
+                .request({locale: locale + ',*', "depth": "all", "format": "inlined"})
+        }
+        return result.responses
     }
 }
 

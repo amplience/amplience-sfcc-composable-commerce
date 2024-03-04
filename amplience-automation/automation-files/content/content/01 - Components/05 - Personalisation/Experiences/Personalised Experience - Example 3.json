@@ -1,0 +1,32 @@
+{
+  "id": "a879cb36-8d7f-4ea8-a986-8adfdb77febd",
+  "body": {
+    "_meta": {
+      "name": "Personalised Experience - Example 3",
+      "schema": "https://sfcc.com/components/personalised-experience"
+    },
+    "active": true,
+    "ranking": 30,
+    "content": [
+      {
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+        },
+        "contentType": "https://sfcc.com/components/card-list",
+        "id": "d8922094-a56f-4771-a56e-b488c367e465"
+      }
+    ],
+    "segment": "Registered",
+    "category": "womens"
+  },
+  "version": 1,
+  "label": "Personalised Experience - Example 3",
+  "status": "ACTIVE",
+  "createdBy": "ff2c9bf5-61c0-4c01-966b-4443918c74a8",
+  "createdDate": "2023-07-10T14:26:07.182Z",
+  "lastModifiedBy": "ff2c9bf5-61c0-4c01-966b-4443918c74a8",
+  "lastModifiedDate": "2023-07-10T14:32:51.466Z",
+  "lastPublishedVersion": 1,
+  "lastPublishedDate": "2023-07-11T15:04:58.318Z",
+  "deliveryId": "a879cb36-8d7f-4ea8-a986-8adfdb77febd"
+}

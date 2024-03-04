@@ -1,0 +1,21 @@
+{
+  "id": "815c3f26-eea4-4090-aeb3-a8709526fd9b",
+  "body": {
+    "_meta": {
+      "name": "Personalised Experiences List - Category",
+      "schema": "https://sfcc.com/components/personalised-experiences-list"
+    },
+    "maxNumber": 3,
+    "categoryFilter": "womens-clothing"
+  },
+  "version": 1,
+  "label": "Personalised Experiences List - Category",
+  "status": "ACTIVE",
+  "createdBy": "ff2c9bf5-61c0-4c01-966b-4443918c74a8",
+  "createdDate": "2023-07-10T14:26:07.182Z",
+  "lastModifiedBy": "ff2c9bf5-61c0-4c01-966b-4443918c74a8",
+  "lastModifiedDate": "2023-07-10T14:32:51.466Z",
+  "lastPublishedVersion": 1,
+  "lastPublishedDate": "2023-07-11T15:04:58.318Z",
+  "deliveryId": "815c3f26-eea4-4090-aeb3-a8709526fd9b"
+}

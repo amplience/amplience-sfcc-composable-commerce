@@ -1,0 +1,31 @@
+{
+  "id": "bf7751c3-42c4-4d74-978f-ad51a1599a29",
+  "body": {
+    "_meta": {
+      "name": "Personalised Experience - Example 4",
+      "schema": "https://sfcc.com/components/personalised-experience"
+    },
+    "active": true,
+    "ranking": 20,
+    "content": [
+      {
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+        },
+        "contentType": "https://sfcc.com/components/hero",
+        "id": "3387dd36-cfc2-4fcc-ad18-95384dc6c3f5"
+      }
+    ],
+    "segment": "Unregistered"
+  },
+  "version": 1,
+  "label": "Personalised Experience - Example 4",
+  "status": "ACTIVE",
+  "createdBy": "ff2c9bf5-61c0-4c01-966b-4443918c74a8",
+  "createdDate": "2023-07-10T14:26:07.182Z",
+  "lastModifiedBy": "ff2c9bf5-61c0-4c01-966b-4443918c74a8",
+  "lastModifiedDate": "2023-07-10T14:32:51.466Z",
+  "lastPublishedVersion": 1,
+  "lastPublishedDate": "2023-07-11T15:04:58.318Z",
+  "deliveryId": "bf7751c3-42c4-4d74-978f-ad51a1599a29"
+}

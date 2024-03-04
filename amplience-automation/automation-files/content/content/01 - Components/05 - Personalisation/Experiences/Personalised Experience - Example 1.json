@@ -1,0 +1,39 @@
+{
+  "id": "3fc0f896-d96b-4d60-bff5-cfddb1feb0a7",
+  "body": {
+    "active": true,
+    "ranking": 50,
+    "content": [
+      {
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+        },
+        "contentType": "https://sfcc.com/components/hero",
+        "id": "af9803be-e9b7-456c-89e3-267a90e726cc"
+      },
+      {
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+        },
+        "contentType": "https://sfcc.com/components/section",
+        "id": "c18343f7-61c4-4d4f-9ea4-be9286f6f6ab"
+      }
+    ],
+    "segment": "Registered",
+    "category": "womens",
+    "_meta": {
+      "name": "Personalised Experience - Example 1",
+      "schema": "https://sfcc.com/components/personalised-experience"
+    }
+  },
+  "version": 1,
+  "label": "Personalised Experience - Example 1",
+  "status": "ACTIVE",
+  "createdBy": "ff2c9bf5-61c0-4c01-966b-4443918c74a8",
+  "createdDate": "2023-07-10T14:26:07.182Z",
+  "lastModifiedBy": "ff2c9bf5-61c0-4c01-966b-4443918c74a8",
+  "lastModifiedDate": "2023-07-10T14:32:51.466Z",
+  "lastPublishedVersion": 1,
+  "lastPublishedDate": "2023-07-11T15:04:58.318Z",
+  "deliveryId": "3fc0f896-d96b-4d60-bff5-cfddb1feb0a7"
+}

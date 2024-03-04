@@ -1,0 +1,95 @@
+<table class="footer" border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+  {{#isTruthy logoSettings.toggle}}
+  <tr>
+    <td align="center" style="padding: 0 0 30px;">
+      <a class="sans-serif" href="{{logoSettings.imageProperties.linkUrl}}" alias="Logo_{{logoSettings.imageProperties.linkAlias}}" target="_blank">
+        <img src="https://{{logoSettings.imageSrc.defaultHost}}/i/{{logoSettings.imageSrc.endpoint}}/{{logoSettings.imageSrc.name}}" alt="{{logoSettings.imageProperties.imageAlt}}" width="{{logoSettings.imageProperties.imageWidth}}" style="display: block; max-width: {{logoSettings.imageProperties.imageWidth}}px; margin: 0; border: 0; width: 100%;" />
+      </a>
+    </td>
+  </tr>
+  {{/isTruthy}}
+  {{#isTruthy navSettings.toggle}}
+  <tr>
+    <td align="center">
+      <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+        {{#each navSettings.navigation}}
+        <tr>
+          <td class="sans-serif" align="center" style="border-top: 1px solid #000000; mso-padding-alt: 20px 0;">
+            <a href="{{this.url}}" alias="NavFooter_{{this.text}}" target="_blank" style="color: {{this.color.colors}}; display: inline-block; font-size: 18px; line-height: 1; padding: 20px 0; mso-padding-alt: 0; text-decoration: none; text-transform: uppercase; width: 100%;">
+              {{this.text}}
+            </a>
+          </td>
+        </tr>
+        {{/each}}
+        <tr>
+          <td style="border-top: 1px solid #000000; line-height: 35px;">&nbsp;</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  {{/isTruthy}}
+  <tr>
+    <td align="center" style="padding: 0 0 30px;">
+      <table border="0" cellpadding="0" cellspacing="0" role="presentation">
+        <tr>
+          <td align="center" valign="middle" style="width: 90px;">
+            <a href="https://www.facebook.com/amplience" alias="Facebook" target="_blank">
+              <img src="https://i8.amplience.net/i/coach/facebook" alt="Facebook" width="16" style="border: 0; display: block; margin: 0; max-width: 16px; width: 100%;" />
+            </a>
+          </td>
+          <td align="center" valign="middle" style="width: 90px;">
+            <a href="https://www.instagram.com/amplience/" alias="Instagram" target="_blank">
+              <img src="https://i8.amplience.net/i/coach/instagram" alt="Instagram" width="31" style="border: 0; display: block; margin: 0; max-width: 31px; width: 100%;" />
+            </a>
+          </td>
+          <td align="center" valign="middle" style="width: 90px;">
+            <a href="https://twitter.com/amplience" alias="Twitter" target="_blank">
+              <img src="https://i8.amplience.net/i/coach/twitter" alt="Twitter" width="36" style="border: 0; display: block; margin: 0; max-width: 36px; width: 100%;" />
+            </a>
+          </td>
+          <td align="center" valign="middle" style="width: 90px;">
+            <a href="https://www.youtube.com/user/amplience?sub_confirmation=1" alias="YouTube" target="_blank">
+              <img src="https://i8.amplience.net/i/coach/youtube" alt="YouTube" width="35" style="border: 0; display: block; margin: 0; max-width: 35px; width: 100%;" />
+            </a>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" style="padding: 0 20px;">
+      <table border="0" cellpadding="0" cellspacing="0" role="presentation">
+        <tr>
+          <td class="sans-serif" align="center" style="color: #444444; font-size: 12px; line-height: 1.2; width: 470px;">
+            <p style="margin: 0 0 15px;">
+              <a href="%%view_email_url%%" alias="vawp" target="_blank" style="color: #444444; text-decoration: underline;">
+                View this email online
+              </a>
+            </p>
+            {{#isTruthy disclaimer.toggle}}
+            {{#each disclaimer.disclaimerText}}
+            <p style="margin: 0 0 15px;">
+              {{{this}}}
+            </p>
+            {{/each}}
+            {{/isTruthy}}
+            <p style="margin: 0 0 15px;">
+              Please do not reply to this message. If you have any questions, please contact us via email at <a href="mailto:enewsinquiries@anyafinn.com" alias="footer_contact" style="color: #444444; text-decoration: underline;">enewsinquiries@anyafinn.com</a> or call us at <a href="tel:1-888-262-6224" alias="footer_phone" style="color: #444444; text-decoration: none;">1.888.262.6224</a>. <a href="https://www.coach.com/privacy.html?utm_term=ft&utm_content=prvp" alias="privacy" target="_blank" data-litmus-ignore style="color: #444444; text-decoration: underline;">Click here</a> to learn more about <a href="https://www.coach.com/" alias="footer_webaddress" style="color: #444444; text-decoration: underline;">anyafinn.com's</a> privacy policy. 
+            </p>
+            <p style="margin: 0 0 15px;">
+              Add <a href="mailto:info@anyafinn.com" alias="footer_fromAddress" style="color: #444444; text-decoration: underline;">info@anyafinn.com</a> to your address book. Forward this email to a friend or <a href="https://www.coach.com/account?utm_term=ft&utm_content=account" alias="subscribe" target="_blank" data-litmus-ignore style="color: #444444; text-decoration: underline;">click here</a> if you wish to subscribe to future AnyaFinn emails.
+            </p>
+            <p style="margin: 0 0 15px;">
+              This message may constitute an advertisement or solicitation under federal law. If you wish to unsubscribe or change your email address, please <a href="%%=redirectto(CloudPagesURL(4428))=%%" alias="footer_unsubscribe" target="_blank" data-litmus-ignore style="color: #444444; text-decoration: underline;">click here</a>. 
+            </p>
+            <p class="samsungfix" style="font-size: 14px; margin: 0 0 15px;">
+              © %%xtyear%%  %%Member_Busname%% 
+              %%Member_Addr%% 
+              %%Member_City%%, %%Member_State%% %%Member_PostalCode%% %%member_country%%
+            </p>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>

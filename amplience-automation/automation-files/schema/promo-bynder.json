@@ -1,0 +1,5 @@
+{
+    "body": "./schemas/promo-bynder-schema.json",
+    "schemaId": "https://sfcc.com/components/promo-bynder",
+    "validationLevel": "CONTENT_TYPE"
+}

@@ -1,0 +1,5 @@
+{
+    "body": "./schemas/banner-schema.json",
+    "schemaId": "https://sfcc.com/components/banner",
+    "validationLevel": "CONTENT_TYPE"
+}

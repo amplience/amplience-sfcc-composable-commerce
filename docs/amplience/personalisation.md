@@ -2,13 +2,13 @@
 
 ![Amplience Personalisation)](./media/personalisation-rules.png)
 
-Salesforce B2C Commerce has some powerful capabilties for personalisation. Typically this uses **Customer Groups**. Customers can be assigned to one or many static customer groups as well as dynamic customer groups.
+Salesforce B2C Commerce has some powerful capabilities for personalisation. Typically this uses **Customer Groups**. Customers can be assigned to one or many static customer groups as well as dynamic customer groups.
 
 In a headless storefront we can use the same concepts but there are architectural differences as Salesforce is no longer responsible for delivering content and experiences onto the page.
 
 ## Hooks Setup
 
-In order for personalised content to fully work **in your own SFCC environment/instances** you'll need to install our [Amplience Hooks Cartridge](https://github.com/amplience/amplience-sfcc-hooksbridge) into your SFCC instance(s). There are detailed instructions there on how to install and add it to your cartrdge path, **as well as some additional OCAPI settings**. 
+In order for personalised content to fully work **in your own SFCC environment/instances** you'll need to install our [Amplience Hooks Cartridge](https://github.com/amplience/amplience-sfcc-hooksbridge) into your SFCC instance(s). There are detailed instructions there on how to install and add it to your cartridge path, **as well as some additional OCAPI settings**. 
 
 ## Headless roles
 
@@ -24,7 +24,7 @@ The API is the source to:
 Amplience acts as the place where business teams curate and manage personalised experiences. Content variations are associated to customer groups.
 
 ### Composable Storefront (FE):
-The front end is where the the API's are called from Amplience and Salesforce in order to display the right content variations to the customer.
+The front end is where the APIs are called from Amplience and Salesforce in order to display the right content variations to the customer.
 
 ## Personalisation approach
 
@@ -61,14 +61,14 @@ A ***list*** of personalised content that accepts any component defined in the `
 
 - **Default** content is an `Array` of content links -- the content data is loaded on first fetch. 
 - **Variant** content is an `Array` of Content References -- the content is loaded via reference ID ***after*** determining the customer's qualifying group(s)
-- **maxNumberMatches** - to define how many Content Variants a qualifying custimer will see
+- **maxNumberMatches** - to define how many Content Variants a qualifying customer will see
 
 ### Personalized Slot Container
 
 A ***list*** of personalised content with a **Delivery Key** that accepts any component defined in the `all-definitions#/definitions/anyComponent` schema partial.
 
 - **Delivery Key** - Container may be fetched with `AmplienceWrapper` using the key you've entered
-- **Default** content is an `Array` of content links -- the content data is loaded on first fetch. 
+- **Default** content is an `Array` of content links -- the content data is loaded on first fetch 
 - **Variant** content is an `Array` of Content Links -- ***the content data is loaded on first fetch***
 - **maxNumberMatches** - to define how many Content Variants a qualifying customer will see
 
@@ -78,7 +78,7 @@ In addition to the preview features of the Toolbar, we've also incorporated the 
 
 ![OCAPI Hook Request](./media/folders-hook.png)
 
-In order for this part of the toolbar to work you'll also need to install our [Amplience Hooks Bridge](https://github.com/amplience/amplience-sfcc-hooksbridge) cartridge in your SFCC envrionment. When installed your preview toolbar should include all your site's customer groups. Below is an example of what it will look like. 
+In order for this part of the toolbar to work you'll also need to install our [Amplience Hooks Bridge](https://github.com/amplience/amplience-sfcc-hooksbridge) cartridge in your SFCC envrironment. When installed your preview toolbar should include all your site's customer groups. Below is an example of what it will look like. 
 
 ![Amplience Personalisation Toolbar](./media/personalisation-toolbar.png)
 
@@ -107,14 +107,14 @@ Because this runs on any fetch, it can be used seamlessly for fetches on the ser
 
 We would recommend that any sensitive personalised content is fetched server-side.
 
-In addition, because we've structured content variants as references in our schemas, content will not be exposed ***UNLESS*** a user is in fact 'allowed' to view it, i.e., they are part of a targeted user segment.
+In addition, because we've structured content variants as references in our schemas, content will not be exposed ***UNLESS*** a user is in fact 'allowed' to view it, i.e. they are part of a targeted user segment.
 
 
 ### Fetching groups and passing through the application
 
-Active customer groups are primarily stored on cookies, so that the serverside renderer can use them when initially navigating to a page. Cookies from the client are initially read in `_app`, then passed through as props to the `AmplienceContext` and the Amplience content clients from there.
+Active customer groups are primarily stored on cookies, so that the server side renderer can use them when initially navigating to a page. Cookies from the client are initially read in `_app`, then passed through as props to the `AmplienceContext` and the Amplience content clients from there.
 
-When the site is first loaded, the customer will be a guest as they are not logged. In this case the default content of any personalised content will be visible.
+When the site is first loaded, the customer will be a guest as they are not logged in. In this case the default content of any personalised content will be visible.
 
 When the customer logs in or creates an account, we make an OCAPI call to `customer/{customer_id}` which we've enhanced with a hook (that hook can be found and included in your setup [here](https://github.com/amplience/amplience-sfcc-hooksbridge))
 
@@ -131,9 +131,9 @@ Documentation: [CustomerGroups resource (Data API)](https://documentation.b2c.co
 
 ![Customer Groups Call)](./media/personalisation_customer-groups-authoring.png)
 
-The eComm Toolkit Extension calls the customer groups enpoint to retrieve the list for user selection.
+The eComm Toolkit Extension calls the customer groups endpoint to retrieve the list for user selection.
 
-The selected customer groups are then stored in the content so thqt they can be used, filtered, referenced for decision making.
+The selected customer groups are then stored in the content so they can be used, filtered and referenced for decision making.
 
 ```json
 "segment": [

@@ -1,0 +1,22 @@
+{
+  "id": "83ddc9ee-84df-4499-a5fe-422932887018",
+  "body": {
+    "_meta": {
+      "name": "Brightcove Video - Example 1",
+      "schema": "https://sfcc.com/components/brightcove-video"
+    },
+    "accountId": "1752604059001",
+    "videoId": "6156696074001",
+    "playerId": "WRgbJgqAe"
+  },
+  "version": 1,
+  "label": "Brightcove Video - Example 1",
+  "status": "ACTIVE",
+  "createdBy": "ff2c9bf5-61c0-4c01-966b-4443918c74a8",
+  "createdDate": "2023-07-10T14:26:07.182Z",
+  "lastModifiedBy": "ff2c9bf5-61c0-4c01-966b-4443918c74a8",
+  "lastModifiedDate": "2023-07-10T14:32:51.466Z",
+  "lastPublishedVersion": 1,
+  "lastPublishedDate": "2023-07-11T15:04:58.318Z",
+  "deliveryId": "83ddc9ee-84df-4499-a5fe-422932887018"
+}

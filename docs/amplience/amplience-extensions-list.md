@@ -2,6 +2,7 @@
 
 | name | label / link to project | description |
 |-----------|-----------------|-------------|
+| `dc-extension-bynder` | [Bynder](https://github.com/amplience/dc-extension-bynder) | Extension that allows browsing and selecting assets from Bynder |
 | `di-image-transformation` | [DI Image Transformation](https://github.com/amplience/dc-extension-di-transform) | Extension that allows defining DI image transformations in content items |
 | `deep-copy` | [Deep Copy](https://github.com/amplience/dc-extension-deep-copy) | Dashboard extension which enables customers to copy nested content items |
 | `grid-layout` | [Grid](https://github.com/amplience/dc-extension-grid) | This extension allows users to place and resize grid items using a WYSIWYG editor, and edit their content by selecting them |

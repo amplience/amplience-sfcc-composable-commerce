@@ -1,0 +1,110 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://sfcc.com/components/personalised-experience",
+
+	"title": "Title",
+	"description": "Description",
+
+	"allOf": [
+		{
+			"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+		}
+	],
+	
+	"trait:sortable": {
+		"sortBy": [
+			{
+				"key": "default",
+				"paths": ["/ranking"]
+			}
+		]
+	},
+
+	"trait:filterable": {
+		"filterBy": [
+			{
+				"paths": [
+					"/active",
+					"/segment"
+				]
+			},
+			{
+				"paths": [
+					"/active",
+					"/segment",
+					"/category"
+				]
+			}
+		]
+	},
+
+	"type": "object",
+	"properties": {
+		"active": {
+			"title": "Active",
+			"description": "Active personalised experience",
+			"type": "boolean",
+			"default": true
+		},
+		"segment": {
+			"title": "User Segment",
+			"description": "User Segment selection",
+			"type": "string",
+			"ui:extension": {
+				"name": "ecomm-toolkit",
+				"params": {
+					"label": "User Segment",
+					"view": "single",
+					"data": "segment",
+					"type": "string"
+				}
+			}
+		},
+
+
+		"category": {
+			"title": "Category",
+			"description": "Single-select Category and store ID as string",
+			"type": "string",
+			"ui:extension": {
+				"name": "ecomm-toolkit",
+				"params": {
+					"label": "Category",
+					"view": "single",
+					"data": "category",
+					"type": "string"
+				}
+			}
+		},
+		"ranking": {
+			"title": "Ranking",
+			"description": "Numeric value for ranking this experience",
+			"type": "number",
+			"minimum": 0,
+			"maximum": 100,
+			"default": 0
+		},
+		"content": {
+            "title": "Content",
+            "type": "array",
+            "minItems": 0,
+            "maxItems": 10,
+            "items": {
+                "title": "Personalised Content",
+                "allOf": [
+                    {
+                        "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+                    },
+                    {
+                        "properties": {
+                            "contentType": {
+                                "$ref": "https://sfcc.com/libs/all-definitions#/definitions/anyComponent"
+                            }
+                        }
+                    }
+                ]
+            }
+		}
+	},
+	"propertyOrder": []
+}

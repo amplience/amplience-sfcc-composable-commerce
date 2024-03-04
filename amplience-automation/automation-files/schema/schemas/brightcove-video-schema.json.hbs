@@ -1,0 +1,49 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://sfcc.com/components/brightcove-video",
+    "title": "Brightcove Video",
+    "description": "An example Brightcove Video",
+    "allOf": [
+        {
+            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+        }
+    ],
+    "type": "object",
+    "properties": {
+        "accountId": {
+            "title": "Account ID",
+            "description": "Brightcove Account ID",
+            "type": "string",
+            "examples": ["1752604059001"]
+        },
+        "videoId": {
+            "title": "Video ID",
+            "description": "Brightcove Video ID",
+            "type": "string",
+            "minLength": 0,
+            "maxLength": 50,
+            "examples": [
+                "6156696074001",
+                "5811864560001",
+                "5715315990001",
+                "5550679964001",
+                "5686632029001",
+                "5819230967001",
+                "5992439742001",
+                "5811857173001",
+                "6026822730001"
+                ]
+        },
+        "playerId": {
+            "title": "Player ID",
+            "description": "Brightcove Player ID",
+            "type": "string",
+            "$comment": "Your Brightcove Player ID",
+            "examples": [
+                "default",
+                "WRgbJgqAe"
+            ]
+        }
+    },
+    "propertyOrder": []
+}

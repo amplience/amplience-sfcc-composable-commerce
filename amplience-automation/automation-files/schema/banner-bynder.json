@@ -1,0 +1,5 @@
+{
+    "body": "./schemas/banner-bynder-schema.json",
+    "schemaId": "https://sfcc.com/components/banner-bynder",
+    "validationLevel": "CONTENT_TYPE"
+}
