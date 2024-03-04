@@ -13,6 +13,8 @@ export default {
         },
         textContainer: {
             flex: 1,
+            zIndex: 2,
+            padding: 2,
             spacing: {base: 2, md: 5},
             textAlign: {base: 'center'},
             alignItems: {base: 'center', md: 'unset'},

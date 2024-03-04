@@ -1,0 +1,5 @@
+{
+    "body": "./schemas/promo-schema.json",
+    "schemaId": "https://sfcc.com/components/promo",
+    "validationLevel": "CONTENT_TYPE"
+}

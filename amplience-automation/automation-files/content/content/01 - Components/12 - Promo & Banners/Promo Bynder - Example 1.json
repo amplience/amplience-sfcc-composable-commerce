@@ -1,0 +1,115 @@
+{
+  "id": "67bbd9f3-8dd6-4453-b1eb-0e1aaf22ddac",
+  "body": {
+    "_meta": {
+      "name": "Promo Bynder - Example 1",
+      "schema": "https://sfcc.com/components/promo-bynder"
+    },
+    "headline": "**Headline**",
+    "bynder": {
+      "__typename": "Image",
+      "id": "KEFzc2V0X2lkIDJEODMxOTIyLTNCM0QtNDVFNy04MDJGOTgxRjZDREY4MjY3KQ==",
+      "name": "austin-neill-247047",
+      "databaseId": "2D831922-3B3D-45E7-802F981F6CDF8267",
+      "createdAt": "2022-11-03T09:26:47Z",
+      "originalUrl": "https://wave-trial.getbynder.com/m/68ce663bc967e3ac/original/austin-neill-247047.jpg",
+      "publishedAt": "2022-11-03T09:26:21Z",
+      "type": "IMAGE",
+      "updatedAt": "2024-01-09T18:45:44Z",
+      "url": "https://wave-trial.getbynder.com/media/?mediaId=2D831922-3B3D-45E7-802F981F6CDF8267",
+      "extensions": [
+        "jpg"
+      ],
+      "metaproperties": {
+        "nodes": [
+          {
+            "name": "AssetType",
+            "type": "select2",
+            "options": [
+              {
+                "name": "Graphic",
+                "displayLabel": "Graphic/Visual"
+              }
+            ]
+          },
+          {
+            "name": "AssetSubType",
+            "type": "select",
+            "options": [
+              {
+                "name": "Artwork",
+                "displayLabel": "Artwork"
+              }
+            ]
+          },
+          {
+            "name": "Goal",
+            "type": "select2",
+            "options": [
+              {
+                "name": "NewCustomers",
+                "displayLabel": "New Customers"
+              }
+            ]
+          },
+          {
+            "name": "Restrictions",
+            "type": "select",
+            "options": [
+              {
+                "name": "Available",
+                "displayLabel": "Available"
+              }
+            ]
+          }
+        ]
+      },
+      "derivatives": {
+        "thumbnail": "https://wave-trial.getbynder.com/m/68ce663bc967e3ac/thul-austin-neill-247047.jpg",
+        "webImage": "https://wave-trial.getbynder.com/m/68ce663bc967e3ac/webimage-austin-neill-247047.jpg"
+      },
+      "files": {
+        "original": {
+          "url": "https://wave-trial.getbynder.com/m/68ce663bc967e3ac/original/austin-neill-247047.jpg",
+          "width": 800,
+          "height": 533,
+          "fileSize": 62475
+        },
+        "webImage": {
+          "url": "https://wave-trial.getbynder.com/m/68ce663bc967e3ac/webimage-austin-neill-247047.jpg",
+          "width": 800,
+          "height": 533
+        },
+        "thumbnail": {
+          "url": "https://wave-trial.getbynder.com/m/68ce663bc967e3ac/thul-austin-neill-247047.jpg",
+          "width": 250,
+          "height": 167
+        },
+        "mini": {
+          "url": "https://wave-trial.getbynder.com/m/68ce663bc967e3ac/mini-austin-neill-247047.jpg",
+          "width": 80,
+          "height": 80
+        }
+      }
+    },
+    "coupon": [
+      {
+        "code": "COUPON001",
+        "limit": "Limited 1 time use"
+      }
+    ],
+    "clickThru": "https://amplience.com/",
+    "promotionalLanguage": "Buy 1, Get 1 Free",
+    "productSku": "25592581M"
+  },
+  "version": 1,
+  "label": "Promo Bynder - Example 1",
+  "status": "ACTIVE",
+  "createdBy": "ff2c9bf5-61c0-4c01-966b-4443918c74a8",
+  "createdDate": "2023-07-10T14:26:07.182Z",
+  "lastModifiedBy": "ff2c9bf5-61c0-4c01-966b-4443918c74a8",
+  "lastModifiedDate": "2023-07-10T14:32:51.466Z",
+  "lastPublishedVersion": 1,
+  "lastPublishedDate": "2023-07-11T15:04:58.318Z",
+  "deliveryId": "67bbd9f3-8dd6-4453-b1eb-0e1aaf22ddac"
+}

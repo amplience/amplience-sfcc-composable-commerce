@@ -1,0 +1,62 @@
+{
+  "id": "089596d0-437b-4f0e-bf89-5e5938fa9542",
+  "body": {
+    "_meta": {
+      "name": "Banner - Example 1",
+      "schema": "https://sfcc.com/components/banner"
+    },
+    "image": {
+      "image": {
+        "crop": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "rot": 0,
+        "hue": 0,
+        "sat": -100,
+        "bri": 0,
+        "fliph": false,
+        "flipv": false,
+        "poi": {
+          "x": 0.1728280961182994,
+          "y": 0.4091763811497261
+        },
+        "aspectLock": "poi",
+        "query": "sat=-100&poi=0.1728,0.4092,0,0&scaleFit=poi",
+        "image": {
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+          },
+          "id": "3b05e420-78c4-42d4-8b55-f11b993f6816",
+          "name": "freestocks-_3Q3tsJ01nc-unsplash-2",
+          "endpoint": "sfcccompdev2",
+          "defaultHost": "cdn.media.amplience.net"
+        }
+      },
+      "imageAltText": {
+        "values": [
+          {
+            "locale": "en-US",
+            "value": "aSDasd"
+          }
+        ],
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      }
+    },
+    "clickThru": "#"
+  },
+  "version": 1,
+  "label": "Banner - Example 1",
+  "status": "ACTIVE",
+  "createdBy": "ff2c9bf5-61c0-4c01-966b-4443918c74a8",
+  "createdDate": "2023-07-10T14:26:07.182Z",
+  "lastModifiedBy": "ff2c9bf5-61c0-4c01-966b-4443918c74a8",
+  "lastModifiedDate": "2023-07-10T14:32:51.466Z",
+  "lastPublishedVersion": 1,
+  "lastPublishedDate": "2023-07-11T15:04:58.318Z",
+  "deliveryId": "089596d0-437b-4f0e-bf89-5e5938fa9542"
+}

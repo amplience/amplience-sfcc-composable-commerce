@@ -1,0 +1,5 @@
+{
+    "body": "./schemas/personalised-experience-schema.json",
+    "schemaId": "https://sfcc.com/components/personalised-experience",
+    "validationLevel": "CONTENT_TYPE"
+}

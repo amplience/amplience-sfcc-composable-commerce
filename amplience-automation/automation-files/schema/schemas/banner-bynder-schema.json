@@ -1,0 +1,34 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://sfcc.com/components/banner-bynder",
+
+    "title": "Banner Bynder",
+    "description": "Banner Bynder Schema",
+
+    "allOf": [
+        {
+            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+        }
+    ],
+
+    "type": "object",
+    "properties": {
+        "bynder": {
+            "title": "Bynder Image",
+            "description": "A single reference to an item in Bynder with file selection",
+            "type": "object",
+            "properties": {},
+            "ui:extension": {
+                "name": "bynder-single"
+            }
+        },
+        "clickThru": {
+            "title": "Click Thru",
+            "description": "Target URL",
+            "type": "string",
+            "minLength": 0,
+            "maxLength": 250
+        }
+    },
+    "propertyOrder": []
+}

@@ -8,6 +8,7 @@ import CuratedProductList from '../curated-product-list'
 import CardEnhanced from '../card-enhanced'
 // Slots
 import flexibleListSlot from '../flexibleListSlot'
+import LocalisedSlot from '../localised-slot'
 import {useIntl} from 'react-intl'
 import {AmplienceContext} from '../../../contexts/amplience'
 import {Skeleton} from '@chakra-ui/react'
@@ -21,13 +22,23 @@ import {useLocation} from 'react-router-dom'
 import ShoppableVideo from '../shoppable-video'
 import Features from '../features'
 import GridLock from '../grid-lock'
-import Brightcove from '../brightcove'
+import BrightcoveVideo from '../brightcove-video'
 import FormBuilder from '../form-builder'
 import Stylitics from '../stylitics'
+import Banner from '../banner'
+import Promo from '../promo'
+import BannerBynder from '../banner-bynder'
+import PromoBynder from '../promo-bynder'
+import PersonalisedExperiencesList from '../personalised-experiences-list'
+import PersonalisedExperience from '../personalised-experience'
 
 const Blank = () => <></>
 
 const componentsMapping = {
+    'https://sfcc.com/components/banner': Banner,
+    'https://sfcc.com/components/banner-bynder': BannerBynder,
+    'https://sfcc.com/components/promo': Promo,
+    'https://sfcc.com/components/promo-bynder': PromoBynder,
     'https://sfcc.com/components/hero': Hero,
     'https://sfcc.com/components/section': Section,
     'https://sfcc.com/components/rich-text': AmplienceRichText,
@@ -36,14 +47,19 @@ const componentsMapping = {
     'https://sfcc.com/components/personalised-component': PersonalisedComponent,
     'https://sfcc.com/components/personalised-ingrid-component': PersonalisedComponent,
     'https://sfcc.com/components/personalised-container': PersonalisedContainer,
+    'https://sfcc.com/components/personalised-experience': PersonalisedExperience,
+    'https://sfcc.com/components/personalised-experiences-list': PersonalisedExperiencesList,
     'https://sfcc.com/components/shoppable-image': ShoppableImage,
     'https://sfcc.com/components/shoppable-video': ShoppableVideo,
+
     'https://sfcc.com/slots/flexible-list': flexibleListSlot,
     'https://sfcc.com/slots/personalised-slot': flexibleListSlot,
+    'https://sfcc.com/slots/localised-slot': LocalisedSlot,
+    
     'https://sfcc.com/components/card-list': CardList,
     'https://sfcc.com/components/features': Features,
     'https://sfcc.com/components/grid-lock': GridLock,
-    'https://sfcc.com/components/video': Brightcove,
+    'https://sfcc.com/components/brightcove-video': BrightcoveVideo,
     'https://sfcc.com/components/form-builder': FormBuilder,
 
     'https://sfcc.com/content/stylitics/generic': Stylitics,
