@@ -19,20 +19,8 @@ module.exports = [
                     preferredCurrency: 'USD'
                 },
                 {
-                    id: 'fr-FR',
-                    preferredCurrency: 'EUR'
-                },
-                {
-                    id: 'de-DE',
-                    preferredCurrency: 'EUR'
-                },
-                {
-                    id: 'es-ES',
-                    preferredCurrency: 'EUR'
-                },
-                {
-                    id: 'it-IT',
-                    preferredCurrency: 'EUR'
+                    id: 'en-CA',
+                    preferredCurrency: 'USD'
                 }
             ]
         }
@@ -40,20 +28,20 @@ module.exports = [
     {
         id: 'RefArchGlobal',
         l10n: {
-            supportedCurrencies: ['USD', 'EUR'],
-            defaultCurrency: 'USD',
+            supportedCurrencies: ['GBP', 'EUR', 'CNY', 'JPY'],
+            defaultCurrency: 'GBP',
             supportedLocales: [
-                {
-                    id: 'en-US',
-                    preferredCurrency: 'USD'
-                },
                 {
                     id: 'de-DE',
                     preferredCurrency: 'EUR'
                 },
                 {
-                    id: 'es-ES',
-                    preferredCurrency: 'EUR'
+                    id: 'en-GB',
+                    preferredCurrency: 'GBP'
+                },
+                {
+                    id: 'es-MX',
+                    preferredCurrency: 'MXN'
                 },
                 {
                     id: 'fr-FR',
@@ -62,9 +50,29 @@ module.exports = [
                 {
                     id: 'it-IT',
                     preferredCurrency: 'EUR'
+                },
+                {
+                    id: 'ja-JP',
+                    preferredCurrency: 'JPY'
+                },
+                {
+                    id: 'ko-KR',
+                    preferredCurrency: 'KRW'
+                },
+                {
+                    id: 'pt-BR',
+                    preferredCurrency: 'BRL'
+                },
+                {
+                    id: 'zh-CN',
+                    preferredCurrency: 'CNY'
+                },
+                {
+                    id: 'zh-TW',
+                    preferredCurrency: 'TWD'
                 }
             ],
-            defaultLocale: 'en-US'
+            defaultLocale: 'en-GB'
         }
     }
 ]
