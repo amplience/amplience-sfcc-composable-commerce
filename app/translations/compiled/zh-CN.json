@@ -361,6 +361,60 @@
       "value": "您可能还喜欢"
     }
   ],
+  "amplience.search.suggestions.categories": [
+    {
+      "type": 0,
+      "value": "类别"
+    }
+  ],
+  "amplience.search.suggestions.pages": [
+    {
+      "type": 0,
+      "value": "页面"
+    }
+  ],
+  "amplience.search.suggestions.products": [
+    {
+      "type": 0,
+      "value": "产品"
+    }
+  ],
+  "amplience.search.suggestions.searches": [
+    {
+      "type": 0,
+      "value": "搜索"
+    }
+  ],
+  "amplience.search.suggestions.suggestions": [
+    {
+      "type": 0,
+      "value": "建议"
+    }
+  ],
+  "amplience.shoppable_image.content_key": [
+    {
+      "type": 0,
+      "value": "点击打开..."
+    }
+  ],
+  "amplience.shoppable_image.loading": [
+    {
+      "type": 0,
+      "value": "加载中..."
+    }
+  ],
+  "amplience.shoppable_image.modal": [
+    {
+      "type": 0,
+      "value": "点击打开模式..."
+    }
+  ],
+  "amplience.shoppable_image.product_404": [
+    {
+      "type": 0,
+      "value": "未找到产品"
+    }
+  ],
   "auth_modal.description.now_signed_in": [
     {
       "type": 0,

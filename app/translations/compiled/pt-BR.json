@@ -361,6 +361,60 @@
       "value": "Talvez você também queira"
     }
   ],
+  "amplience.search.suggestions.categories": [
+    {
+      "type": 0,
+      "value": "Categorias"
+    }
+  ],
+  "amplience.search.suggestions.pages": [
+    {
+      "type": 0,
+      "value": "Páginas"
+    }
+  ],
+  "amplience.search.suggestions.products": [
+    {
+      "type": 0,
+      "value": "Produtos"
+    }
+  ],
+  "amplience.search.suggestions.searches": [
+    {
+      "type": 0,
+      "value": "Pesquisas"
+    }
+  ],
+  "amplience.search.suggestions.suggestions": [
+    {
+      "type": 0,
+      "value": "Sugestões"
+    }
+  ],
+  "amplience.shoppable_image.content_key": [
+    {
+      "type": 0,
+      "value": "Clique para abrir..."
+    }
+  ],
+  "amplience.shoppable_image.loading": [
+    {
+      "type": 0,
+      "value": "Carregando..."
+    }
+  ],
+  "amplience.shoppable_image.modal": [
+    {
+      "type": 0,
+      "value": "Clique para abrir o modal..."
+    }
+  ],
+  "amplience.shoppable_image.product_404": [
+    {
+      "type": 0,
+      "value": "Produto não encontrado"
+    }
+  ],
   "auth_modal.description.now_signed_in": [
     {
       "type": 0,
