@@ -190,6 +190,7 @@ class Auth {
         data.append('usid', usid)
         data.append('code_verifier', codeVerifier)
         data.append('client_id', this._config.parameters.clientId)
+        data.append('channel_id', this._config.parameters.siteId)
         data.append('redirect_uri', redirectUri)
 
         const options = {
@@ -306,14 +307,8 @@ class Auth {
      * @param {object} tokenResponse - access_token,id_token,refresh_token, expires_in,token_type, usid, customer_id, enc_user_id, idp_access_token
      */
     _handleShopperLoginTokenResponse(tokenResponse) {
-        const {
-            access_token,
-            refresh_token,
-            customer_id,
-            usid,
-            enc_user_id,
-            id_token
-        } = tokenResponse
+        const {access_token, refresh_token, customer_id, usid, enc_user_id, id_token} =
+            tokenResponse
         this.authToken = `Bearer ${access_token}`
         this.usid = usid
         this.cid = customer_id
@@ -471,6 +466,7 @@ class Auth {
         data.append('grant_type', 'refresh_token')
         data.append('refresh_token', this.refreshToken)
         data.append('client_id', this._config.parameters.clientId)
+        data.append('channel_id', this._config.parameters.siteId)
 
         const options = {
             headers: {
