@@ -361,6 +361,60 @@
       "value": "こちらもどうぞ"
     }
   ],
+  "amplience.search.suggestions.categories": [
+    {
+      "type": 0,
+      "value": "カテゴリー"
+    }
+  ],
+  "amplience.search.suggestions.pages": [
+    {
+      "type": 0,
+      "value": "ページ"
+    }
+  ],
+  "amplience.search.suggestions.products": [
+    {
+      "type": 0,
+      "value": "製品"
+    }
+  ],
+  "amplience.search.suggestions.searches": [
+    {
+      "type": 0,
+      "value": "検索"
+    }
+  ],
+  "amplience.search.suggestions.suggestions": [
+    {
+      "type": 0,
+      "value": "提案"
+    }
+  ],
+  "amplience.shoppable_image.content_key": [
+    {
+      "type": 0,
+      "value": "クリックして開く..."
+    }
+  ],
+  "amplience.shoppable_image.loading": [
+    {
+      "type": 0,
+      "value": "読み込み中..."
+    }
+  ],
+  "amplience.shoppable_image.modal": [
+    {
+      "type": 0,
+      "value": "クリックしてモーダルを開く..."
+    }
+  ],
+  "amplience.shoppable_image.product_404": [
+    {
+      "type": 0,
+      "value": "商品が見つかりません"
+    }
+  ],
   "auth_modal.description.now_signed_in": [
     {
       "type": 0,

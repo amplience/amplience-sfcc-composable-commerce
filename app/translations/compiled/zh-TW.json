@@ -361,6 +361,60 @@
       "value": "您可能也喜歡"
     }
   ],
+  "amplience.search.suggestions.categories": [
+    {
+      "type": 0,
+      "value": "類別"
+    }
+  ],
+  "amplience.search.suggestions.pages": [
+    {
+      "type": 0,
+      "value": "頁數"
+    }
+  ],
+  "amplience.search.suggestions.products": [
+    {
+      "type": 0,
+      "value": "產品"
+    }
+  ],
+  "amplience.search.suggestions.searches": [
+    {
+      "type": 0,
+      "value": "搜尋次數"
+    }
+  ],
+  "amplience.search.suggestions.suggestions": [
+    {
+      "type": 0,
+      "value": "建議"
+    }
+  ],
+  "amplience.shoppable_image.content_key": [
+    {
+      "type": 0,
+      "value": "點擊打開..."
+    }
+  ],
+  "amplience.shoppable_image.loading": [
+    {
+      "type": 0,
+      "value": "載入中..."
+    }
+  ],
+  "amplience.shoppable_image.modal": [
+    {
+      "type": 0,
+      "value": "點選開啟模態..."
+    }
+  ],
+  "amplience.shoppable_image.product_404": [
+    {
+      "type": 0,
+      "value": "未找到產品"
+    }
+  ],
   "auth_modal.description.now_signed_in": [
     {
       "type": 0,
