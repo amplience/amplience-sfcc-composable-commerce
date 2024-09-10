@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.18.2](https://github.com/amplience/amplience-sfcc-composable-commerce/compare/v1.18.1...v1.18.2) (2024-09-10)
+
+
+### Bug Fixes
+
+* channel_id in SLAs calls ([b7e741e](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/b7e741ec5e5b95d0c87bf9bc8b935f73e6715533))
+* Missing amplience translations for locales ([605d190](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/605d190f23f3e39fb01d9c810d69844678827719))
+
 ### [1.18.1](https://github.com/amplience/amplience-sfcc-composable-commerce/compare/v1.18.0...v1.18.1) (2024-07-11)
 
 
