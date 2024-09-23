@@ -1,17 +1,17 @@
 {
-    "name" : "di-image-transformation",
-    "label" : "DI Image Transformation",
-    "description" : "Extension that allows defining DI image transformations in content items.",
-    "url" : "https://di-transform.extensions.content.amplience.net",
-    "height" : 200,
-    "enabledForAllContentTypes" : false,
-    "category" : "CONTENT_FIELD",
-    "parameters" : "{\n  \"useVSE\": true\n}",
-    "snippets" : [ ],
-    "settings" : "{\"API\":{\"READ\":false,\"EDIT\":false},\"SANDBOX\":{\"SAME_ORIGIN\":true,\"MODALS\":false,\"NAVIGATION\":false,\"POPUPS\":false,\"POPUP_ESCAPE_SANDBOX\":false,\"DOWNLOADS\":false,\"FORMS\":false}}",
-    "status" : "ACTIVE",
-    "createdBy" : "fb90fd96-dcaf-4d67-9747-b9676282f661",
-    "createdDate" : "2022-08-30T13:58:47.270Z",
-    "lastModifiedBy" : "fb90fd96-dcaf-4d67-9747-b9676282f661",
-    "lastModifiedDate" : "2022-08-30T14:05:16.857Z"
-  }
+    "name": "di-image-transformation",
+    "label": "DI Image Transformation",
+    "description": "Extension that allows defining DI image transformations in content items.",
+    "url": "https://di-transform.extensions.content.amplience.net",
+    "height": 200,
+    "enabledForAllContentTypes": false,
+    "category": "CONTENT_FIELD",
+    "parameters": "{\n  \"useVSE\": true\n}",
+    "snippets": [],
+    "settings": "{\"API\":{\"READ\":true,\"EDIT\":true},\"SANDBOX\":{\"SAME_ORIGIN\":true,\"MODALS\":false,\"NAVIGATION\":false,\"POPUPS\":true,\"POPUP_ESCAPE_SANDBOX\":true,\"DOWNLOADS\":false,\"FORMS\":false}}",
+    "status": "ACTIVE",
+    "createdBy": "fb90fd96-dcaf-4d67-9747-b9676282f661",
+    "createdDate": "2022-08-30T13:58:47.270Z",
+    "lastModifiedBy": "fb90fd96-dcaf-4d67-9747-b9676282f661",
+    "lastModifiedDate": "2022-08-30T14:05:16.857Z"
+}
