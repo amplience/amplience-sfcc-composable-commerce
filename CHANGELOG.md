@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.19.0](https://github.com/amplience/amplience-sfcc-composable-commerce/compare/v1.18.2...v1.19.0) (2024-09-24)
+
+
+### Features
+
+* updated extensions permissions to allow image studio integrations ([d91a2bf](https://github.com/amplience/amplience-sfcc-composable-commerce/commit/d91a2bfbaa9b7e020ba0503be43365c90354f2b9))
+
 ### [1.18.2](https://github.com/amplience/amplience-sfcc-composable-commerce/compare/v1.18.1...v1.18.2) (2024-09-10)
 
 
