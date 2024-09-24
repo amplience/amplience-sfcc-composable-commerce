@@ -97,4 +97,4 @@ Make your changes in Image Studio. Once the image is amended in Image Studio, yo
 Further information for [Shoppable Image Extension](https://github.com/amplience/dc-extension-shoppable-image)
 
 
-Further information for [Image Studio](https://github.com/amplience/image-studio)
+Further information for [Image Studio](https://amplience.com/developers/docs/amplience-studios/image-studio/)
