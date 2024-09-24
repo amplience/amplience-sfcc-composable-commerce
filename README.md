@@ -22,6 +22,8 @@ This version of the SF Retail React app integrates Amplience as the Content CMS 
  - enhanced search suggestions and search results page with content, products and category parents
  - automation scripts to load required content schemas and types to your Content HUB 
  - [Stylitics](https://stylitics.com) components for configuration in content not code
+ - Image Studio integration
+ - Content Studio integration
  
  The documentation [starting here below](#the-retail-react-app) is 'as-is' from Salesforce. For Amplience specifics please see the docs listed under [Amplience Contents](#amplience-contents).
  
